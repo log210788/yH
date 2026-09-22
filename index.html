@@ -1003,26 +1003,23 @@
             </div>
 
             <div class="prompt-structure">
-              <strong>Recommended Structure & Signposting:</strong>
-              <div id="pStructure" style="line-height:1.6; color:var(--text-muted);">
-                1. <strong>Hook & Pain Point:</strong> "Many organizations face significant overhead when managing X..."<br>
-                2. <strong>Product Value Proposition:</strong> "Our platform addresses this by delivering a streamlined, automated workflow..."<br>
-                3. <strong>Core Differentiator:</strong> "Unlike conventional tools, we integrate directly with your existing infrastructure..."<br>
-                4. <strong>Measurable Impact & Next Step:</strong> "Clients typically observe a 35% gain in operational velocity. I'd love to show you how this looks in practice."
+              <strong>💡 A Little Nudge (Things to talk about):</strong>
+              <div id="pNudge" style="line-height:1.7; color:var(--text-muted);">
+                <!-- Dynamically populated from topicsData.nudge -->
               </div>
             </div>
 
             <!-- Optional Custom Notes Area for Option 5 or preparation -->
             <div class="custom-notes-box">
               <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
-                📝 Optional Speaker Notes / Bullet Points (Keep it in view while speaking):
+                📝 Optional Speaker Notes (Jot down your product name or key points):
               </label>
-              <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 key features, client names, or statistics you want to mention..."></textarea>
+              <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 quick bullet points or client names if you'd like..."></textarea>
             </div>
 
             <div style="margin-top:14px;">
               <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px;">
-                🎯 Target Client-Facing Vernacular (Click to copy):
+                💡 Optional Words & Phrasing (Use only if natural):
               </span>
               <div id="pVernacular" class="vernacular-chips">
                 <!-- Injected via JS -->
@@ -1075,32 +1072,31 @@
           <div class="option-card-full">
             <div class="option-badge-row">
               <span class="option-pill">OPTION 1 • NEW PROSPECT</span>
-              <span style="font-size:0.85rem; color:var(--emerald); font-weight:700;">★ High-Impact Value Pitch (2.5–3 Mins)</span>
+              <span style="font-size:0.85rem; color:var(--emerald); font-weight:700;">Product Value Overview (2–3 Mins)</span>
             </div>
             <h3 style="font-size:1.15rem; color:var(--text);">The 3-Minute Product Value Pitch</h3>
             <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are meeting a prospective client for an introductory demonstration. They currently use outdated, manual tools or a competing vendor. Pitch your product cleanly, focusing on their pain points and quantifiable business ROI.
+              <strong>Scenario:</strong> You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.
             </p>
-            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent);">
-              <strong>Outline Blueprint:</strong><br>
-              1. <em>Validate Client Pain Point:</em> "We frequently hear that teams struggle with data fragmentation..."<br>
-              2. <em>Introduce Solution:</em> "Our platform consolidates this into an end-to-end dashboard..."<br>
-              3. <em>Differentiator:</em> "What sets us apart is our frictionless onboarding and real-time syncing..."<br>
-              4. <em>Call to Action:</em> "I suggest setting up a 14-day proof of concept."
+            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent); line-height:1.6;">
+              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
+              • What problem or frustration does the client usually have?<br>
+              • How does your product solve it or save them time?<br>
+              • What would you ask or invite them to do at the end?
             </div>
             <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
               <div class="vernacular-chips">
                 <span class="v-chip">value proposition</span>
                 <span class="v-chip">end-to-end solution</span>
                 <span class="v-chip">frictionless onboarding</span>
-                <span class="v-chip">operational efficiency</span>
+                <span class="v-chip">operational velocity</span>
                 <span class="v-chip">tangible ROI</span>
                 <span class="v-chip">seamless integration</span>
               </div>
             </div>
             <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_pitch')">
-              👉 Load this Option in Recording Studio
+              👉 Choose this Option & Record
             </button>
           </div>
 
@@ -1112,17 +1108,16 @@
             </div>
             <h3 style="font-size:1.15rem; color:var(--text);">Live Feature Walkthrough & Solution Demo</h3>
             <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are screensharing with a client technical lead. Walk them through a core workflow or flagship feature. Explain *why* it is designed this way and how it saves them time every single day.
+              <strong>Scenario:</strong> You are screensharing with a client. Walk them through one or two key features of your product.
             </p>
-            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--amber);">
-              <strong>Outline Blueprint:</strong><br>
-              1. <em>Orienting the Client:</em> "Looking at the central interface, you will notice how intuitive the navigation is..."<br>
-              2. <em>Live Action / Step-by-Step:</em> "With just two clicks, the system generates automated client reports..."<br>
-              3. <em>Highlighting Benefit:</em> "This eliminates 4 hours of manual data entry each week for your operators..."<br>
-              4. <em>Interactive Check-in:</em> "Let me pause here—how does this align with your team's current reporting flow?"
+            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--amber); line-height:1.6;">
+              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
+              • Which feature are you showing, and why is it useful?<br>
+              • How does someone actually use it in practice?<br>
+              • Ask the client a quick question to check their thoughts!
             </div>
             <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
               <div class="vernacular-chips">
                 <span class="v-chip">intuitive interface</span>
                 <span class="v-chip">flagship capability</span>
@@ -1133,7 +1128,7 @@
               </div>
             </div>
             <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_demo')">
-              👉 Load this Option in Recording Studio
+              👉 Choose this Option & Record
             </button>
           </div>
 
@@ -1145,17 +1140,16 @@
             </div>
             <h3 style="font-size:1.15rem; color:var(--text);">Handling Tough Client Objections (Cost & Switching Friction)</h3>
             <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> The client says: <em>"Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter."</em> Deliver a confident, empathetic response that reframes switching cost into long-term savings.
+              <strong>Scenario:</strong> The client says: <em>"Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter."</em> Respond in your own natural style.
             </p>
-            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--rose);">
-              <strong>Outline Blueprint:</strong><br>
-              1. <em>Validate & Empathize:</em> "I completely appreciate that migration and budget are primary concerns..."<br>
-              2. <em>De-risk Migration:</em> "Our dedicated implementation team handles data migration with zero downtime..."<br>
-              3. <em>Reframing ROI:</em> "When factoring in the time saved and error reduction, most clients recoup investment within 90 days..."<br>
-              4. <em>Flexible Next Step:</em> "We can structure a phased rollout so you only commit as milestones are verified."
+            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--rose); line-height:1.6;">
+              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
+              • Acknowledge their concern calmly so they feel heard.<br>
+              • Explain why your product is worth the cost or effort in the long run.<br>
+              • Propose a simple, safe next step to take the pressure off.
             </div>
             <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
               <div class="vernacular-chips">
                 <span class="v-chip">cost-benefit trade-off</span>
                 <span class="v-chip">zero downtime</span>
@@ -1166,7 +1160,7 @@
               </div>
             </div>
             <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_objection')">
-              👉 Load this Option in Recording Studio
+              👉 Choose this Option & Record
             </button>
           </div>
 
@@ -1178,17 +1172,16 @@
             </div>
             <h3 style="font-size:1.15rem; color:var(--text);">Client Success Review & Expansion / Upsell</h3>
             <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are meeting an existing client for a quarterly check-in. Review their positive adoption numbers, celebrate their milestones, and pitch expanding the solution to their wider regional teams.
+              <strong>Scenario:</strong> You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.
             </p>
-            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--purple);">
-              <strong>Outline Blueprint:</strong><br>
-              1. <em>Celebrating Wins:</em> "Over the past 6 months, your team has processed over 10,000 transactions seamlessly..."<br>
-              2. <em>Highlighting Untapped Value:</em> "We noticed your APAC branch is still handling compliance manually..."<br>
-              3. <em>The Upsell Proposal:</em> "By enabling our enterprise module across both regions, you unlock bulk licensing..."<br>
-              4. <em>Actionable Next Step:</em> "I have prepared an impact projection we can review together."
+            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--purple); line-height:1.6;">
+              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
+              • Mention how things have been going well so far.<br>
+              • Bring up another feature or team that could also benefit.<br>
+              • Ask if they'd be open to taking a look.
             </div>
             <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
               <div class="vernacular-chips">
                 <span class="v-chip">accelerate adoption</span>
                 <span class="v-chip">synergy across teams</span>
@@ -1199,7 +1192,7 @@
               </div>
             </div>
             <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_qbr')">
-              👉 Load this Option in Recording Studio
+              👉 Choose this Option & Record
             </button>
           </div>
 
@@ -1213,11 +1206,13 @@
             <p style="font-size:0.9rem; color:var(--text-muted);">
               <strong>Scenario:</strong> Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.
             </p>
-            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent);">
-              <strong>Suggested Cadence:</strong> Hook → Why clients need it → How your product solves it → 1 key differentiator → Closing call to action.
+            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent); line-height:1.6;">
+              <strong>💡 A gentle nudge:</strong><br>
+              • Talk freely about your product in your own natural words.<br>
+              • Don't worry about any fixed script—let's hear your natural presentation style!
             </div>
             <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_custom')">
-              👉 Load this Option in Recording Studio
+              👉 Choose this Option & Record
             </button>
           </div>
 
@@ -1619,37 +1614,37 @@
       opt_pitch: {
         title: "Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)",
         filename: "YH_Client_ProductPitch",
-        scenario: "You are pitching your product to a prospective client who wants to solve efficiency bottlenecks. Present a concise 2.5-minute overview highlighting their pain point, your core solution, and key business ROI.",
-        structure: "1. <strong>Hook & Pain Point:</strong> 'Many organizations face significant overhead when managing X...'<br>2. <strong>Product Value Proposition:</strong> 'Our platform addresses this by delivering a streamlined, automated workflow...'<br>3. <strong>Core Differentiator:</strong> 'Unlike conventional tools, we integrate directly with your existing infrastructure...'<br>4. <strong>Measurable Impact & Next Step:</strong> 'Clients typically observe a 35% gain in operational velocity. I'd love to show you how this looks in practice.'",
-        vernacular: ["value proposition", "end-to-end solution", "frictionless onboarding", "operational velocity", "tangible ROI", "seamless integration", "eliminate overhead", "differentiator"]
+        scenario: "You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.",
+        nudge: "• What problem or frustration does the client usually have?<br>• How does your product solve it or save them time?<br>• What would you ask or invite them to do at the end?",
+        vernacular: ["value proposition", "end-to-end solution", "frictionless onboarding", "operational velocity", "tangible ROI", "seamless integration"]
       },
       opt_demo: {
         title: "Option 2: Live Feature Walkthrough & Solution Demo",
         filename: "YH_Client_FeatureDemo",
-        scenario: "You are screensharing with a client technical lead. Walk them through a core workflow or flagship feature. Explain why it is designed this way and how it saves them time every single day.",
-        structure: "1. <strong>Orienting the Client:</strong> 'Looking at the central interface, you will notice how intuitive the navigation is...'<br>2. <strong>Live Action / Step-by-Step:</strong> 'With just two clicks, the system generates automated client reports...'<br>3. <strong>Highlighting Benefit:</strong> 'This eliminates 4 hours of manual data entry each week for your operators...'<br>4. <strong>Interactive Check-in:</strong> 'Let me pause here—how does this align with your team's current reporting flow?'",
-        vernacular: ["intuitive interface", "flagship capability", "eliminate manual overhead", "granular permissions", "actionable insights", "streamlined workflow", "real-time synchronization"]
+        scenario: "You are screensharing with a client. Walk them through one or two key features of your product.",
+        nudge: "• Which feature are you showing, and why is it useful?<br>• How does someone actually use it in practice?<br>• Ask the client a quick question to check their thoughts!",
+        vernacular: ["intuitive interface", "flagship capability", "eliminate manual overhead", "granular permissions", "actionable insights", "streamlined workflow"]
       },
       opt_objection: {
         title: "Option 3: Handling Tough Client Objections (Cost, Switching & Timing)",
         filename: "YH_Client_HandlingObjections",
-        scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Deliver a confident, empathetic response that reframes switching cost into long-term savings.",
-        structure: "1. <strong>Validate & Empathize:</strong> 'I completely appreciate that migration and budget are primary concerns...'<br>2. <strong>De-risk Migration:</strong> 'Our dedicated implementation team handles data migration with zero downtime...'<br>3. <strong>Reframing ROI:</strong> 'When factoring in the time saved and error reduction, most clients recoup investment within 90 days...'<br>4. <strong>Flexible Next Step:</strong> 'We can structure a phased rollout so you only commit as milestones are verified.'",
-        vernacular: ["cost-benefit trade-off", "zero downtime", "de-risk transition", "phased rollout", "recoup investment", "tailored implementation", "mitigate risk"]
+        scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Respond in your own natural style.",
+        nudge: "• Acknowledge their concern calmly so they feel heard.<br>• Explain why your product is worth the cost or effort in the long run.<br>• Propose a simple, safe next step to take the pressure off.",
+        vernacular: ["cost-benefit trade-off", "zero downtime", "de-risk transition", "phased rollout", "recoup investment", "tailored implementation"]
       },
       opt_qbr: {
         title: "Option 4: Client Success Review & Upsell / Expansion Pitch",
         filename: "YH_Client_SuccessReview_Upsell",
-        scenario: "You are meeting an existing client for a quarterly check-in. Review their positive adoption numbers, celebrate their milestones, and pitch expanding the solution to their wider regional teams.",
-        structure: "1. <strong>Celebrating Wins:</strong> 'Over the past 6 months, your team has processed over 10,000 transactions seamlessly...'<br>2. <strong>Highlighting Untapped Value:</strong> 'We noticed your APAC branch is still handling compliance manually...'<br>3. <strong>The Upsell Proposal:</strong> 'By enabling our enterprise module across both regions, you unlock bulk licensing...'<br>4. <strong>Actionable Next Step:</strong> 'I have prepared an impact projection we can review together.'",
-        vernacular: ["accelerate adoption", "synergy across teams", "enterprise tier", "scalability", "quantifiable milestones", "long-term partnership", "expansion strategy"]
+        scenario: "You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.",
+        nudge: "• Mention how things have been going well so far.<br>• Bring up another feature or team that could also benefit.<br>• Ask if they'd be open to taking a look.",
+        vernacular: ["accelerate adoption", "synergy across teams", "enterprise tier", "scalability", "quantifiable milestones", "long-term partnership"]
       },
       opt_custom: {
         title: "Option 5: Custom Work Pitch (Present Your Actual Real-World Product)",
         filename: "YH_RealWorld_ProductDemo",
-        scenario: "Present your actual company product or solution as if your tutor were your real client. Pitch its value, walk through its core features, and practice your real business vocabulary.",
-        structure: "1. <strong>Hook:</strong> Introduce who your product is for and what problem it solves.<br>2. <strong>Feature Showcase:</strong> Highlight 1–2 features you present most often.<br>3. <strong>Client Value:</strong> Why should the client choose you today?<br>4. <strong>Next Step:</strong> Propose an actionable follow-up.",
-        vernacular: ["core functionality", "tailored solution", "client success", "seamless adoption", "proven reliability", "competitive edge", "actionable takeaway"]
+        scenario: "Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.",
+        nudge: "• Talk freely about your product in your own natural words.<br>• Don't worry about any fixed script—let's hear your natural presentation style!",
+        vernacular: ["core functionality", "tailored solution", "client success", "seamless adoption", "proven reliability", "competitive edge"]
       }
     };
 
@@ -1660,7 +1655,7 @@
 
       document.getElementById('pTitle').textContent = data.title;
       document.getElementById('pScenario').textContent = data.scenario;
-      document.getElementById('pStructure').innerHTML = data.structure;
+      document.getElementById('pNudge').innerHTML = data.nudge;
       document.getElementById('filenamePreview').textContent = `${data.filename}.webm`;
 
       const chipContainer = document.getElementById('pVernacular');
