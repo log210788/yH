@@ -13,7 +13,7 @@ A minimalist web portal and in-browser audio recording suite designed for **YH**
    - **60 BPM Isochrony Metronome Drill:** 3-beat cadence retention (*"CATS EAT MICE"*).
    - **Subtext Navigation Drill:** How shifting sentence stress completely changes the underlying workplace message (*"I didn't tell him to cancel the project"*).
    - **Two-Syllable Business Word Stress Diagnostic:** 1st syllable noun stress vs. 2nd syllable verb stress (*REC-ord vs. re-CORD*, *PRES-ent vs. pre-SENT*, *PROJ-ect vs. pro-JECT*).
-3. **🎯 4-Week Milestone Assessment:** The 100-point benchmark rubric evaluating development across 4 weeks.
+3. **🎯 4-Week Milestone:** Simple summary of what we are working on (vernacular, presentation skills, cadence) and our 4-week development evaluation.
 
 ---
 
@@ -37,11 +37,13 @@ A minimalist web portal and in-browser audio recording suite designed for **YH**
 
 ---
 
-## 🎯 4-Week Milestone Assessment Rubric (100 Points Total)
+## 🎯 4-Week Development Milestone
 
-In 4 weeks, YH's development will be evaluated across 4 core competencies:
+What we are working on going forward:
 
-1. **Workplace Vocabulary & Precision (25 pts)**
-2. **Sentence Stress & Cadence (25 pts)**
-3. **Structure & Demo Flow (25 pts)**
-4. **Subtext Control & Tone (25 pts)**
+1. **Improving Vernacular & Vocabulary:** Expanding natural, professional business vocabulary and idioms at work.
+2. **Presentation & Communication Skills:** Presenting products and ideas smoothly and clearly to clients and colleagues.
+3. **Cadence, Rhythm & Sentence Stress:** Punching key content words while reducing small connector words so speech flows naturally.
+
+**Assessment in Four Weeks:**
+In four weeks, we will review YH's recorded presentations together in class to assess his development, celebrate his progress, and tune his next goals.
