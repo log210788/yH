@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YH — Workplace Communication & Executive Vernacular</title>
+  <title>YH — Client Product Presentation & Communication Studio</title>
   
-  <!-- Inter Font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -314,9 +314,9 @@
       gap: 24px;
     }
 
-    @media (min-width: 840px) {
+    @media (min-width: 860px) {
       .recorder-grid {
-        grid-template-columns: 340px 1fr;
+        grid-template-columns: 350px 1fr;
       }
     }
 
@@ -462,8 +462,9 @@
 
     .select-label {
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
     }
 
     select.topic-select {
@@ -471,7 +472,7 @@
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 10px 14px;
+      padding: 12px 14px;
       font-size: 0.95rem;
       font-weight: 600;
       outline: none;
@@ -487,18 +488,18 @@
       background: var(--surface-subtle);
       border-left: 4px solid var(--accent);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 16px;
+      padding: 18px;
     }
 
     .prompt-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 6px;
     }
 
     .prompt-scenario {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text);
       margin-bottom: 12px;
     }
@@ -506,7 +507,7 @@
     .prompt-structure {
       font-size: 0.85rem;
       background: var(--bg);
-      padding: 12px;
+      padding: 12px 14px;
       border-radius: var(--radius-sm);
       margin-top: 10px;
     }
@@ -531,9 +532,9 @@
       background: var(--accent-bg);
       color: var(--accent);
       border: 1px solid rgba(88, 166, 255, 0.3);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 14px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.15s ease;
@@ -541,6 +542,29 @@
     .v-chip:hover {
       background: var(--accent);
       color: #fff;
+    }
+
+    /* Custom Notes Area */
+    .custom-notes-box {
+      margin-top: 8px;
+    }
+
+    .custom-textarea {
+      width: 100%;
+      height: 70px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      resize: vertical;
+      outline: none;
+    }
+
+    .custom-textarea:focus {
+      border-color: var(--accent);
     }
 
     /* Audio Player Preview */
@@ -570,8 +594,8 @@
       background: linear-gradient(135deg, rgba(56, 139, 253, 0.08), rgba(188, 140, 255, 0.08));
       border: 1px solid var(--border-accent);
       border-radius: var(--radius);
-      padding: 20px;
-      margin-top: 24px;
+      padding: 18px 20px;
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -662,6 +686,45 @@
       font-style: italic;
     }
 
+    /* Options Showcase */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .option-card-full {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.15s ease;
+    }
+
+    .option-card-full:hover {
+      border-color: var(--accent);
+    }
+
+    .option-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .option-pill {
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
     /* Interactive Drills */
     .drill-container {
       display: flex;
@@ -728,48 +791,6 @@
       padding: 6px 12px;
       border-radius: var(--radius-sm);
       border-left: 3px solid var(--accent);
-    }
-
-    /* 4-Week Milestone Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      position: relative;
-    }
-
-    .timeline-week {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: relative;
-    }
-
-    .week-badge-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .week-tag {
-      background: var(--accent-bg);
-      color: var(--accent);
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .week-focus {
-      font-size: 0.85rem;
-      color: var(--amber);
-      font-weight: 600;
     }
 
     /* Rubric Table */
@@ -854,10 +875,10 @@
         <div class="brand-badge">YH</div>
         <div>
           <div class="brand-title">
-            Executive Communication Studio
+            Client Presentation & Communication Studio
             <span style="font-size:0.75rem; font-weight:600; color:var(--emerald); background:var(--emerald-bg); padding:2px 8px; border-radius:10px;">Preply Track</span>
           </div>
-          <div class="brand-subtitle">4-Week Milestone Preparation: Business Vernacular & Presentation Pacing</div>
+          <div class="brand-subtitle">Product Demos, Client Pitches, Value Framing & Executive Vernacular</div>
         </div>
       </div>
       <div class="header-actions">
@@ -871,19 +892,19 @@
     <div class="container" style="padding:0;">
       <nav class="nav-tabs">
         <button class="tab-btn active" onclick="switchTab('studio')">
-          🎙️ Recording Studio <span class="tab-badge">Weekly Task</span>
+          🎙️ Recording Studio <span class="tab-badge">Practice Today</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('curriculum')">
-          🗓️ 4-Week Curriculum & Topics
+        <button class="tab-btn" onclick="switchTab('options')">
+          📋 Client Presentation Options
         </button>
         <button class="tab-btn" onclick="switchTab('vernacular')">
-          💼 Executive Vernacular Bank
+          💼 Client Pitch Vernacular
         </button>
         <button class="tab-btn" onclick="switchTab('cadence')">
           ⚡ Cadence & Rhythm Lab
         </button>
         <button class="tab-btn" onclick="switchTab('rubric')">
-          🎯 4-Week Assessment Rubric
+          🎯 4-Week Milestone Assessment
         </button>
       </nav>
     </div>
@@ -901,23 +922,23 @@
       <div class="steps-banner">
         <div class="step-card">
           <div class="step-num">Step 1</div>
-          <div class="step-title">Select Topic & Study Vernacular</div>
-          <div class="step-text">Pick your weekly prompt below. Review the executive phrasing and suggested outline before speaking.</div>
+          <div class="step-title">Select Presentation Option</div>
+          <div class="step-text">Choose the client presentation scenario that best fits your product or target skill today.</div>
         </div>
         <div class="step-card">
           <div class="step-num">Step 2</div>
           <div class="step-title">Record in Browser (2–3 Mins)</div>
-          <div class="step-text">Click "Start Recording", speak clearly with sentence stress, and watch your voice visualizer and timer.</div>
+          <div class="step-text">Click "Start Recording", pitch your product with strong sentence stress, and watch the live visualizer.</div>
         </div>
         <div class="step-card">
           <div class="step-num">Step 3</div>
-          <div class="step-title">Listen & Download Audio</div>
-          <div class="step-text">Review your recording in the built-in player. Click "Download Recording" to save your audio file.</div>
+          <div class="step-title">Listen Back & Download</div>
+          <div class="step-text">Review your take in the built-in player. Click "Download Recording" to save your audio file.</div>
         </div>
         <div class="step-card">
           <div class="step-num">Step 4</div>
-          <div class="step-title">Send in Preply Chat</div>
-          <div class="step-text">Upload your downloaded audio file in your Preply chat/classroom to your tutor for personalized diagnostic feedback.</div>
+          <div class="step-title">Drop into Preply Chat</div>
+          <div class="step-text">Send the downloaded audio file directly to your Preply tutor for diagnostic review and pronunciation calibration.</div>
         </div>
       </div>
 
@@ -931,7 +952,7 @@
           </div>
           
           <div id="timerDisplay" class="timer-display">00:00</div>
-          <div class="timer-target">Recommended length: <strong>2:00 – 3:00 mins</strong></div>
+          <div class="timer-target">Target client presentation length: <strong>2:00 – 3:00 mins</strong></div>
 
           <!-- Waveform Canvas -->
           <canvas id="visualizer" width="300" height="64"></canvas>
@@ -957,54 +978,51 @@
           </div>
 
           <div style="font-size:0.75rem; color:var(--text-dim); margin-top:14px; text-align:center;">
-            🔒 Audio is processed 100% locally in your browser. Nothing is uploaded to third-party servers.
+            🔒 Audio records 100% locally in your browser. Nothing is uploaded to external servers.
           </div>
         </div>
 
         <!-- Right: Prompt & Vernacular Focus -->
         <div class="prompt-panel">
           <div class="select-group">
-            <label class="select-label" for="topicSelect">CURRENT PRESENTATION ASSIGNMENT:</label>
+            <label class="select-label" for="topicSelect">CHOOSE YOUR PRESENTATION OPTION FOR TODAY:</label>
             <select id="topicSelect" class="topic-select" onchange="onTopicChange()">
-              <optgroup label="Week 1: Status Briefings & Executive Cadence">
-                <option value="w1_p1" selected>Week 1 • Prompt A: Executive Status Report on a Complex Project</option>
-                <option value="w1_p2">Week 1 • Prompt B: Explaining a Technical Delay Diplomatically</option>
-              </optgroup>
-              <optgroup label="Week 2: Navigating Trade-offs & Proposals">
-                <option value="w2_p1">Week 2 • Prompt A: Pitching an Architectural or Tooling Pivot</option>
-                <option value="w2_p2">Week 2 • Prompt B: Pushing Back Against Unrealistic Deadlines</option>
-              </optgroup>
-              <optgroup label="Week 3: Crisis Management & Post-Mortems">
-                <option value="w3_p1">Week 3 • Prompt A: Major Incident Post-Mortem & Containment</option>
-                <option value="w3_p2">Week 3 • Prompt B: Communicating Unexpected Bad News to Leadership</option>
-              </optgroup>
-              <optgroup label="Week 4: Strategic Vision & 4-Week Milestone Assessment">
-                <option value="w4_p1">Week 4 • Prompt A: 3-Year Strategic Vision & Technology Roadmap</option>
-                <option value="w4_p2">Week 4 • Prompt B: Process Overhaul to Drive 2x Operational Efficiency</option>
-              </optgroup>
+              <option value="opt_pitch" selected>Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)</option>
+              <option value="opt_demo">Option 2: Live Feature Walkthrough & Solution Demo</option>
+              <option value="opt_objection">Option 3: Handling Tough Client Objections (Cost, Switching & Timing)</option>
+              <option value="opt_qbr">Option 4: Client Success Review & Upsell / Expansion Pitch</option>
+              <option value="opt_custom">Option 5: Custom Work Pitch (Present Your Actual Real-World Product)</option>
             </select>
           </div>
 
           <!-- Dynamic Prompt Details -->
           <div class="prompt-box">
-            <div id="pTitle" class="prompt-title">Prompt 1A: Executive Status Report on a Complex Project</div>
+            <div id="pTitle" class="prompt-title">Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)</div>
             <div id="pScenario" class="prompt-scenario">
-              You are leading a cross-functional workstream. Present a concise 2-minute status update to senior stakeholders who want clarity on current deliverables, bottlenecks, and the upcoming trajectory.
+              You are pitching your product to a prospective client who wants to solve efficiency bottlenecks. Present a concise 2.5-minute overview highlighting their pain point, your core solution, and key business ROI.
             </div>
 
             <div class="prompt-structure">
-              <strong>Recommended Cadence & Signposting:</strong>
+              <strong>Recommended Structure & Signposting:</strong>
               <div id="pStructure" style="line-height:1.6; color:var(--text-muted);">
-                1. <strong>Executive Summary:</strong> "To give a brief high-level overview, the initiative is currently tracking on schedule..."<br>
-                2. <strong>Key Accomplishments:</strong> "Over the last sprint, we spearheaded the migration and closed critical milestones..."<br>
-                3. <strong>Bottleneck & Mitigation:</strong> "Our primary bottleneck involves dependency X; however, we've mitigated this by..."<br>
-                4. <strong>Next Steps & Ask:</strong> "Looking ahead, our actionable takeaway is..."
+                1. <strong>Hook & Pain Point:</strong> "Many organizations face significant overhead when managing X..."<br>
+                2. <strong>Product Value Proposition:</strong> "Our platform addresses this by delivering a streamlined, automated workflow..."<br>
+                3. <strong>Core Differentiator:</strong> "Unlike conventional tools, we integrate directly with your existing infrastructure..."<br>
+                4. <strong>Measurable Impact & Next Step:</strong> "Clients typically observe a 35% gain in operational velocity. I'd love to show you how this looks in practice."
               </div>
+            </div>
+
+            <!-- Optional Custom Notes Area for Option 5 or preparation -->
+            <div class="custom-notes-box">
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+                📝 Optional Speaker Notes / Bullet Points (Keep it in view while speaking):
+              </label>
+              <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 key features, client names, or statistics you want to mention..."></textarea>
             </div>
 
             <div style="margin-top:14px;">
               <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px;">
-                🎯 Target Vernacular to Include in Your Recording:
+                🎯 Target Client-Facing Vernacular (Click to copy):
               </span>
               <div id="pVernacular" class="vernacular-chips">
                 <!-- Injected via JS -->
@@ -1024,11 +1042,11 @@
               </div>
               <div class="preply-step-item">
                 <span class="step-bullet">2</span>
-                <span>The file will save as <code id="filenamePreview" style="background:var(--bg); padding:2px 6px; border-radius:4px; font-weight:700; color:var(--accent);">YH_Week1_PromptA_StatusReport_2026-09-22.webm</code></span>
+                <span>The file will save as <code id="filenamePreview" style="background:var(--bg); padding:2px 6px; border-radius:4px; font-weight:700; color:var(--accent);">YH_Client_ProductPitch.webm</code></span>
               </div>
               <div class="preply-step-item">
                 <span class="step-bullet">3</span>
-                <span>Open your <strong>Preply Messages</strong>, drag & drop the audio file, and add a short note: <em>"Hi, here is my weekly presentation recording for our next class review!"</em></span>
+                <span>Open your <strong>Preply Messages</strong>, drag & drop the audio file, and add a quick note: <em>"Hi! Here is my presentation recording for our next lesson review."</em></span>
               </div>
             </div>
           </div>
@@ -1040,141 +1058,167 @@
     </div>
 
     <!-- ==================================================== -->
-    <!-- TAB 2: 4-WEEK CURRICULUM & TOPICS -->
+    <!-- TAB 2: CLIENT PRESENTATION OPTIONS -->
     <!-- ==================================================== -->
-    <div id="tab-curriculum" class="tab-pane">
+    <div id="tab-options" class="tab-pane">
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">🗓️ 4-Week Milestone Curriculum: Workplace Vernacular & Presentation Mastery</div>
-            <div class="card-desc">Structured progression designed to take YH from baseline speech to polished executive presence in 4 weeks.</div>
+            <div class="card-title">📋 Client Presentation Options Menu</div>
+            <div class="card-desc">Review these options to pick the best scenario for your practice session today, or prepare multiple takes.</div>
           </div>
         </div>
 
-        <div class="timeline">
-          
-          <!-- WEEK 1 -->
-          <div class="timeline-week">
-            <div class="week-badge-bar">
-              <span class="week-tag">WEEK 1: FOUNDATIONS & HIGH-IMPACT STATUS</span>
-              <span class="week-focus">Focus: Rhythm, Content Word Punching, Crisp Cadence</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text); margin-top:6px;">Milestone Objective: Executive Brevity & Punchy Transitions</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              Eliminate filler words, reduce unstressed function words, and introduce executive verbs for daily work updates.
-            </p>
-            <div style="background:var(--surface-subtle); padding:14px; border-radius:var(--radius-sm); border-left:3px solid var(--accent);">
-              <strong style="font-size:0.85rem; color:var(--accent);">Assigned Presentation Topics:</strong>
-              <ul style="margin:6px 0 0 18px; font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
-                <li><strong>Topic 1A: Executive Status Report</strong> — 2-minute status brief on your current core project. Highlight progress, identify one bottleneck, and outline mitigating steps.</li>
-                <li><strong>Topic 1B: Explaining a Technical Delay Diplomatically</strong> — 2-minute update explaining why a feature release date shifted by 1 week without sounding defensive or apologetic.</li>
-              </ul>
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Core Vernacular Target:</span>
-              <div class="vernacular-chips" style="margin-top:6px;">
-                <span class="v-chip">spearheaded</span>
-                <span class="v-chip">bottleneck</span>
-                <span class="v-chip">mitigate risk</span>
-                <span class="v-chip">actionable takeaways</span>
-                <span class="v-chip">milestone trajectory</span>
-                <span class="v-chip">streamline</span>
-                <span class="v-chip">deliverables</span>
-              </div>
-            </div>
-          </div>
+        <div class="options-grid">
 
-          <!-- WEEK 2 -->
-          <div class="timeline-week">
-            <div class="week-badge-bar">
-              <span class="week-tag">WEEK 2: DEFENDING DECISIONS & TRADE-OFFS</span>
-              <span class="week-focus">Focus: Diplomatic Disagreement, Syllable Stress, Justification</span>
+          <!-- Option 1 -->
+          <div class="option-card-full">
+            <div class="option-badge-row">
+              <span class="option-pill">OPTION 1 • NEW PROSPECT</span>
+              <span style="font-size:0.85rem; color:var(--emerald); font-weight:700;">★ High-Impact Value Pitch (2.5–3 Mins)</span>
             </div>
-            <h3 style="font-size:1.15rem; color:var(--text); margin-top:6px;">Milestone Objective: Persuasion & Diplomatic Pushback</h3>
+            <h3 style="font-size:1.15rem; color:var(--text);">The 3-Minute Product Value Pitch</h3>
             <p style="font-size:0.9rem; color:var(--text-muted);">
-              Master the art of disagreeing productively with stakeholders, reframing trade-offs, and correctly stressing business nouns vs. verbs.
+              <strong>Scenario:</strong> You are meeting a prospective client for an introductory demonstration. They currently use outdated, manual tools or a competing vendor. Pitch your product cleanly, focusing on their pain points and quantifiable business ROI.
             </p>
-            <div style="background:var(--surface-subtle); padding:14px; border-radius:var(--radius-sm); border-left:3px solid var(--amber);">
-              <strong style="font-size:0.85rem; color:var(--amber);">Assigned Presentation Topics:</strong>
-              <ul style="margin:6px 0 0 18px; font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
-                <li><strong>Topic 2A: Pitching a Technical/Architectural Pivot</strong> — 2.5 minutes presenting why your team should adopt a new approach or library instead of continuing with legacy tech.</li>
-                <li><strong>Topic 2B: Pushing Back Against Unrealistic Deadlines</strong> — 2.5 minutes addressing leadership’s request to pull a release forward by 3 weeks, using cost-benefit and trade-off vernacular.</li>
-              </ul>
+            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent);">
+              <strong>Outline Blueprint:</strong><br>
+              1. <em>Validate Client Pain Point:</em> "We frequently hear that teams struggle with data fragmentation..."<br>
+              2. <em>Introduce Solution:</em> "Our platform consolidates this into an end-to-end dashboard..."<br>
+              3. <em>Differentiator:</em> "What sets us apart is our frictionless onboarding and real-time syncing..."<br>
+              4. <em>Call to Action:</em> "I suggest setting up a 14-day proof of concept."
             </div>
             <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Core Vernacular Target:</span>
-              <div class="vernacular-chips" style="margin-top:6px;">
-                <span class="v-chip">cost-benefit analysis</span>
-                <span class="v-chip">weighing trade-offs</span>
-                <span class="v-chip">diminishing returns</span>
-                <span class="v-chip">strategic alignment</span>
-                <span class="v-chip">viable alternative</span>
-                <span class="v-chip">technical debt</span>
-                <span class="v-chip">opportunity cost</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- WEEK 3 -->
-          <div class="timeline-week">
-            <div class="week-badge-bar">
-              <span class="week-tag">WEEK 3: CRISIS MANAGEMENT & ACCOUNTABILITY</span>
-              <span class="week-focus">Focus: Subtext Control, De-escalation, Solution Framing</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text); margin-top:6px;">Milestone Objective: Navigating Responsibility Without Blame</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              Learn to deliver bad news with authority, take ownership, control tone subtext, and pivot immediately to remediation and safeguards.
-            </p>
-            <div style="background:var(--surface-subtle); padding:14px; border-radius:var(--radius-sm); border-left:3px solid var(--rose);">
-              <strong style="font-size:0.85rem; color:var(--rose);">Assigned Presentation Topics:</strong>
-              <ul style="margin:6px 0 0 18px; font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
-                <li><strong>Topic 3A: Outage / Incident Retrospective</strong> — 2.5 minutes briefing cross-functional stakeholders on a severe production glitch, the root cause, containment, and preventive safeguards.</li>
-                <li><strong>Topic 3B: Breaking Unexpected Bad News to Leadership</strong> — 2.5 minutes announcing an unforeseen blocker (e.g. third-party API deprecation or vendor price hike) with immediate solutions.</li>
-              </ul>
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Core Vernacular Target:</span>
-              <div class="vernacular-chips" style="margin-top:6px;">
-                <span class="v-chip">root cause analysis</span>
-                <span class="v-chip">corrective measures</span>
-                <span class="v-chip">contingency plan</span>
-                <span class="v-chip">immediate containment</span>
-                <span class="v-chip">mitigate fallout</span>
-                <span class="v-chip">retrospective findings</span>
-                <span class="v-chip">safeguards</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- WEEK 4 -->
-          <div class="timeline-week" style="border: 2px solid var(--purple);">
-            <div class="week-badge-bar">
-              <span class="week-tag" style="background:var(--purple-bg); color:var(--purple);">WEEK 4: MILESTONE ASSESSMENT & STRATEGIC VISION</span>
-              <span class="week-focus" style="color:var(--purple);">★ 4-Week Formal Benchmark Assessment</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text); margin-top:6px;">Milestone Objective: Comprehensive Workplace Evaluation</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              Deliver a full 3-minute executive presentation demonstrating mastery of rhythm, reduction, advanced business vernacular, and persuasive storytelling.
-            </p>
-            <div style="background:var(--surface-subtle); padding:14px; border-radius:var(--radius-sm); border-left:3px solid var(--purple);">
-              <strong style="font-size:0.85rem; color:var(--purple);">Milestone Evaluation Topics:</strong>
-              <ul style="margin:6px 0 0 18px; font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
-                <li><strong>Topic 4A: 3-Year Strategic Vision Pitch</strong> — 3 minutes pitching a major initiative to senior executives. Frame the problem, the market opportunity, the proposed solution, and projected ROI.</li>
-                <li><strong>Topic 4B: Re-engineering a Legacy Workflow for 2x Velocity</strong> — 3 minutes proposing an overhaul of your company’s internal engineering/delivery cycle.</li>
-              </ul>
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Core Vernacular Target:</span>
-              <div class="vernacular-chips" style="margin-top:6px;">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <div class="vernacular-chips">
                 <span class="v-chip">value proposition</span>
-                <span class="v-chip">catalyst for growth</span>
-                <span class="v-chip">operational velocity</span>
-                <span class="v-chip">scalable architecture</span>
-                <span class="v-chip">paradigm shift</span>
-                <span class="v-chip">measurable ROI</span>
-                <span class="v-chip">stakeholder buy-in</span>
+                <span class="v-chip">end-to-end solution</span>
+                <span class="v-chip">frictionless onboarding</span>
+                <span class="v-chip">operational efficiency</span>
+                <span class="v-chip">tangible ROI</span>
+                <span class="v-chip">seamless integration</span>
               </div>
             </div>
+            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_pitch')">
+              👉 Load this Option in Recording Studio
+            </button>
+          </div>
+
+          <!-- Option 2 -->
+          <div class="option-card-full">
+            <div class="option-badge-row">
+              <span class="option-pill" style="background:var(--amber-bg); color:var(--amber);">OPTION 2 • LIVE DEMO</span>
+              <span style="font-size:0.85rem; color:var(--amber); font-weight:700;">Feature Walkthrough & Interaction (2–3 Mins)</span>
+            </div>
+            <h3 style="font-size:1.15rem; color:var(--text);">Live Feature Walkthrough & Solution Demo</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted);">
+              <strong>Scenario:</strong> You are screensharing with a client technical lead. Walk them through a core workflow or flagship feature. Explain *why* it is designed this way and how it saves them time every single day.
+            </p>
+            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--amber);">
+              <strong>Outline Blueprint:</strong><br>
+              1. <em>Orienting the Client:</em> "Looking at the central interface, you will notice how intuitive the navigation is..."<br>
+              2. <em>Live Action / Step-by-Step:</em> "With just two clicks, the system generates automated client reports..."<br>
+              3. <em>Highlighting Benefit:</em> "This eliminates 4 hours of manual data entry each week for your operators..."<br>
+              4. <em>Interactive Check-in:</em> "Let me pause here—how does this align with your team's current reporting flow?"
+            </div>
+            <div>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <div class="vernacular-chips">
+                <span class="v-chip">intuitive interface</span>
+                <span class="v-chip">flagship capability</span>
+                <span class="v-chip">eliminate manual overhead</span>
+                <span class="v-chip">granular permissions</span>
+                <span class="v-chip">actionable insights</span>
+                <span class="v-chip">streamlined workflow</span>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_demo')">
+              👉 Load this Option in Recording Studio
+            </button>
+          </div>
+
+          <!-- Option 3 -->
+          <div class="option-card-full">
+            <div class="option-badge-row">
+              <span class="option-pill" style="background:var(--rose-bg); color:var(--rose);">OPTION 3 • DIPLOMATIC PERSUASION</span>
+              <span style="font-size:0.85rem; color:var(--rose); font-weight:700;">Handling Client Objections (2–2.5 Mins)</span>
+            </div>
+            <h3 style="font-size:1.15rem; color:var(--text);">Handling Tough Client Objections (Cost & Switching Friction)</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted);">
+              <strong>Scenario:</strong> The client says: <em>"Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter."</em> Deliver a confident, empathetic response that reframes switching cost into long-term savings.
+            </p>
+            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--rose);">
+              <strong>Outline Blueprint:</strong><br>
+              1. <em>Validate & Empathize:</em> "I completely appreciate that migration and budget are primary concerns..."<br>
+              2. <em>De-risk Migration:</em> "Our dedicated implementation team handles data migration with zero downtime..."<br>
+              3. <em>Reframing ROI:</em> "When factoring in the time saved and error reduction, most clients recoup investment within 90 days..."<br>
+              4. <em>Flexible Next Step:</em> "We can structure a phased rollout so you only commit as milestones are verified."
+            </div>
+            <div>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <div class="vernacular-chips">
+                <span class="v-chip">cost-benefit trade-off</span>
+                <span class="v-chip">zero downtime</span>
+                <span class="v-chip">de-risk transition</span>
+                <span class="v-chip">phased rollout</span>
+                <span class="v-chip">recoup investment</span>
+                <span class="v-chip">tailored implementation</span>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_objection')">
+              👉 Load this Option in Recording Studio
+            </button>
+          </div>
+
+          <!-- Option 4 -->
+          <div class="option-card-full">
+            <div class="option-badge-row">
+              <span class="option-pill" style="background:var(--purple-bg); color:var(--purple);">OPTION 4 • EXISTING CLIENT</span>
+              <span style="font-size:0.85rem; color:var(--purple); font-weight:700;">Success Review & Expansion Pitch (2.5 Mins)</span>
+            </div>
+            <h3 style="font-size:1.15rem; color:var(--text);">Client Success Review & Expansion / Upsell</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted);">
+              <strong>Scenario:</strong> You are meeting an existing client for a quarterly check-in. Review their positive adoption numbers, celebrate their milestones, and pitch expanding the solution to their wider regional teams.
+            </p>
+            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--purple);">
+              <strong>Outline Blueprint:</strong><br>
+              1. <em>Celebrating Wins:</em> "Over the past 6 months, your team has processed over 10,000 transactions seamlessly..."<br>
+              2. <em>Highlighting Untapped Value:</em> "We noticed your APAC branch is still handling compliance manually..."<br>
+              3. <em>The Upsell Proposal:</em> "By enabling our enterprise module across both regions, you unlock bulk licensing..."<br>
+              4. <em>Actionable Next Step:</em> "I have prepared an impact projection we can review together."
+            </div>
+            <div>
+              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Key Vernacular Target:</span>
+              <div class="vernacular-chips">
+                <span class="v-chip">accelerate adoption</span>
+                <span class="v-chip">synergy across teams</span>
+                <span class="v-chip">enterprise tier</span>
+                <span class="v-chip">scalability</span>
+                <span class="v-chip">quantifiable milestones</span>
+                <span class="v-chip">long-term partnership</span>
+              </div>
+            </div>
+            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_qbr')">
+              👉 Load this Option in Recording Studio
+            </button>
+          </div>
+
+          <!-- Option 5 -->
+          <div class="option-card-full" style="border: 2px dashed var(--accent);">
+            <div class="option-badge-row">
+              <span class="option-pill">OPTION 5 • REAL WORK PRODUCT</span>
+              <span style="font-size:0.85rem; color:var(--accent); font-weight:700;">★ Present Your Actual Product / Demo</span>
+            </div>
+            <h3 style="font-size:1.15rem; color:var(--text);">Custom Work Pitch (Your Actual Real-World Product)</h3>
+            <p style="font-size:0.9rem; color:var(--text-muted);">
+              <strong>Scenario:</strong> Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.
+            </p>
+            <div style="background:var(--surface-subtle); padding:12px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent);">
+              <strong>Suggested Cadence:</strong> Hook → Why clients need it → How your product solves it → 1 key differentiator → Closing call to action.
+            </div>
+            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_custom')">
+              👉 Load this Option in Recording Studio
+            </button>
           </div>
 
         </div>
@@ -1182,106 +1226,106 @@
     </div>
 
     <!-- ==================================================== -->
-    <!-- TAB 3: EXECUTIVE VERNACULAR BANK -->
+    <!-- TAB 3: CLIENT PITCH VERNACULAR -->
     <!-- ==================================================== -->
     <div id="tab-vernacular" class="tab-pane">
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">💼 Executive Vernacular Bank & Phrasing Upgrades</div>
-            <div class="card-desc">Replace conversational, colloquial, or hesitant English with punchy, polished corporate phrasing.</div>
+            <div class="card-title">💼 Client Pitch Vernacular & Phrasing Upgrades</div>
+            <div class="card-desc">Upgrade conversational phrases into compelling, executive client-facing language.</div>
           </div>
         </div>
 
         <div class="search-bar">
           <input type="text" id="vernacularSearch" class="search-input" placeholder="🔍 Search expressions, keywords, or casual phrases..." onkeyup="filterVernacular()">
           <button class="btn-secondary" onclick="filterCategory('all')">All</button>
-          <button class="btn-secondary" onclick="filterCategory('status')">Status & Progress</button>
-          <button class="btn-secondary" onclick="filterCategory('pushback')">Pushback & Disagreement</button>
-          <button class="btn-secondary" onclick="filterCategory('problem')">Crisis & Problem Solving</button>
-          <button class="btn-secondary" onclick="filterCategory('transition')">Signposting Transitions</button>
+          <button class="btn-secondary" onclick="filterCategory('pitch')">Product Pitch</button>
+          <button class="btn-secondary" onclick="filterCategory('demo')">Live Demo</button>
+          <button class="btn-secondary" onclick="filterCategory('objection')">Client Objections</button>
+          <button class="btn-secondary" onclick="filterCategory('transition')">Signposting & Check-ins</button>
         </div>
 
         <div class="upgrade-grid" id="vernacularList">
 
           <!-- Card 1 -->
-          <div class="upgrade-card" data-category="status">
-            <span class="upgrade-tag">Status & Milestones</span>
-            <div class="upgrade-before">"We are working hard on the task and it is going okay."</div>
-            <div class="upgrade-after">"We are tracking according to schedule, and key deliverables remain on trajectory."</div>
-            <div class="upgrade-context">Use in standups and executive briefings to project competence.</div>
+          <div class="upgrade-card" data-category="pitch">
+            <span class="upgrade-tag">Product Pitch</span>
+            <div class="upgrade-before">"Our product has lots of cool functions."</div>
+            <div class="upgrade-after">"Our platform delivers a comprehensive suite of capabilities designed to eliminate operational friction."</div>
+            <div class="upgrade-context">Focuses on business value rather than just a feature list.</div>
           </div>
 
           <!-- Card 2 -->
-          <div class="upgrade-card" data-category="status">
-            <span class="upgrade-tag">Status & Milestones</span>
-            <div class="upgrade-before">"I did this part myself."</div>
-            <div class="upgrade-after">"I spearheaded the initiative and coordinated the integration."</div>
-            <div class="upgrade-context">Demonstrates proactive leadership without bragging.</div>
+          <div class="upgrade-card" data-category="pitch">
+            <span class="upgrade-tag">Product Pitch</span>
+            <div class="upgrade-before">"It's better than what you're using now."</div>
+            <div class="upgrade-after">"Where we differentiate ourselves is in our real-time synchronization and rapid time-to-value."</div>
+            <div class="upgrade-context">Professional comparison without criticizing their current choices.</div>
           </div>
 
           <!-- Card 3 -->
-          <div class="upgrade-card" data-category="pushback">
-            <span class="upgrade-tag">Diplomatic Pushback</span>
-            <div class="upgrade-before">"That's a bad idea, we don't have enough time."</div>
-            <div class="upgrade-after">"Given our current bandwidth, that scope would introduce significant delivery risk."</div>
-            <div class="upgrade-context">Focuses on objective project risk rather than personal resistance.</div>
+          <div class="upgrade-card" data-category="demo">
+            <span class="upgrade-tag">Live Demo</span>
+            <div class="upgrade-before">"Look at this button here."</div>
+            <div class="upgrade-after">"As you can see in this view, the workflow is entirely streamlined with one-click execution."</div>
+            <div class="upgrade-context">Directs client attention with polished narrative flow.</div>
           </div>
 
           <!-- Card 4 -->
-          <div class="upgrade-card" data-category="pushback">
-            <span class="upgrade-tag">Diplomatic Pushback</span>
-            <div class="upgrade-before">"I don't agree with your solution."</div>
-            <div class="upgrade-after">"While I appreciate that perspective, let's consider the cost-benefit trade-offs of an alternative approach."</div>
-            <div class="upgrade-context">Softens friction and redirects to analytical comparison.</div>
+          <div class="upgrade-card" data-category="demo">
+            <span class="upgrade-tag">Live Demo</span>
+            <div class="upgrade-before">"Do you understand what I showed you?"</div>
+            <div class="upgrade-after">"I'd love to pause here—how does this workflow compare to your team's current process?"</div>
+            <div class="upgrade-context">Invites engagement without questioning the client's comprehension.</div>
           </div>
 
           <!-- Card 5 -->
-          <div class="upgrade-card" data-category="problem">
-            <span class="upgrade-tag">Crisis & Problem Solving</span>
-            <div class="upgrade-before">"We broke the system by mistake."</div>
-            <div class="upgrade-after">"We experienced an unforeseen regression, but immediate containment measures are in place."</div>
-            <div class="upgrade-context">Signals immediate control and systematic remediation.</div>
+          <div class="upgrade-card" data-category="objection">
+            <span class="upgrade-tag">Client Objections</span>
+            <div class="upgrade-before">"It's not that expensive."</div>
+            <div class="upgrade-after">"When factoring in error reduction and hours saved, the investment delivers a measurable ROI within the first quarter."</div>
+            <div class="upgrade-context">Pivots the conversation from cost to return on investment.</div>
           </div>
 
           <!-- Card 6 -->
-          <div class="upgrade-card" data-category="problem">
-            <span class="upgrade-tag">Crisis & Problem Solving</span>
-            <div class="upgrade-before">"We don't know why it happened yet."</div>
-            <div class="upgrade-after">"We are currently conducting a root cause analysis and will publish retrospective findings by EOD."</div>
-            <div class="upgrade-context">Replaces uncertainty with a structured diagnostic timeline.</div>
+          <div class="upgrade-card" data-category="objection">
+            <span class="upgrade-tag">Client Objections</span>
+            <div class="upgrade-before">"Changing systems won't be that hard."</div>
+            <div class="upgrade-after">"We provide a dedicated onboarding specialist and white-glove migration to ensure zero downtime."</div>
+            <div class="upgrade-context">Reassures risk-averse stakeholders with concrete support mechanisms.</div>
           </div>
 
           <!-- Card 7 -->
           <div class="upgrade-card" data-category="transition">
-            <span class="upgrade-tag">Signposting Transitions</span>
-            <div class="upgrade-before">"Next thing I want to talk about is..."</div>
-            <div class="upgrade-after">"Pivoting now to our architectural considerations..." / "Turning our attention to the ROI..."</div>
-            <div class="upgrade-context">Guides the audience's focus smoothly between slide sections.</div>
+            <span class="upgrade-tag">Signposting & Check-ins</span>
+            <div class="upgrade-before">"Next thing is our pricing."</div>
+            <div class="upgrade-after">"Turning our attention now to licensing structures and customized rollout tiers..."</div>
+            <div class="upgrade-context">Creates smooth narrative transitions during slide decks.</div>
           </div>
 
           <!-- Card 8 -->
           <div class="upgrade-card" data-category="transition">
-            <span class="upgrade-tag">Signposting Transitions</span>
-            <div class="upgrade-before">"So that's the end of my presentation."</div>
-            <div class="upgrade-after">"To summarize our actionable takeaway: we propose greenlighting phase two. I welcome your questions."</div>
-            <div class="upgrade-context">Ends with a clear call-to-action and crisp professional closure.</div>
+            <span class="upgrade-tag">Signposting & Check-ins</span>
+            <div class="upgrade-before">"That's all I have for today."</div>
+            <div class="upgrade-after">"To summarize our recommended next step: we propose launching a 2-week pilot. I welcome your feedback."</div>
+            <div class="upgrade-context">Closes with a decisive, commercial call to action.</div>
           </div>
 
           <!-- Card 9 -->
-          <div class="upgrade-card" data-category="status">
-            <span class="upgrade-tag">Status & Milestones</span>
-            <div class="upgrade-before">"We are blocked by the backend team."</div>
-            <div class="upgrade-after">"Our primary dependency is with backend services; we are actively aligning on contract schemas to unblock this."</div>
-            <div class="upgrade-context">Reframes finger-pointing into proactive alignment.</div>
+          <div class="upgrade-card" data-category="pitch">
+            <span class="upgrade-tag">Product Pitch</span>
+            <div class="upgrade-before">"We can change the software if you want."</div>
+            <div class="upgrade-after">"Our architecture is highly modular, allowing tailored customization to your exact enterprise requirements."</div>
+            <div class="upgrade-context">Conveys technical capability and enterprise-grade adaptability.</div>
           </div>
 
           <!-- Card 10 -->
-          <div class="upgrade-card" data-category="pushback">
-            <span class="upgrade-tag">Diplomatic Pushback</span>
-            <div class="upgrade-before">"Can you just do what I asked?"</div>
-            <div class="upgrade-after">"To ensure we maintain alignment with our quarterly OKRs, let's prioritize the most critical deliverables."</div>
-            <div class="upgrade-context">Anchors requests to shared organizational goals.</div>
+          <div class="upgrade-card" data-category="objection">
+            <span class="upgrade-tag">Client Objections</span>
+            <div class="upgrade-before">"You can buy it later if you want."</div>
+            <div class="upgrade-after">"To maintain momentum and secure our current onboarding window, let's establish our pilot timeline today."</div>
+            <div class="upgrade-context">Maintains sales cadence and urgency politely.</div>
           </div>
 
         </div>
@@ -1297,7 +1341,7 @@
         <div class="card-header">
           <div>
             <div class="card-title">⚡ Rhythm, Stress & Subtext Practice Lab</div>
-            <div class="card-desc">Practice isochrony (equal beats) and subtext nuances. Click words to toggle STRESS (Yellow) or REDUCED (Strikethrough).</div>
+            <div class="card-desc">Practice sentence stress, isochrony (equal beats), and subtext. Click words to toggle STRESS (Yellow) or REDUCED (Strikethrough).</div>
           </div>
           <button class="btn-secondary" onclick="startMetronome()">
             <span id="metroIcon">⏱</span> <span id="metroText">Start 60 BPM Metronome</span>
@@ -1484,7 +1528,7 @@
         <div class="card-header">
           <div>
             <div class="card-title">🎯 4-Week Milestone Assessment Rubric & Scorecard</div>
-            <div class="card-desc">In 4 weeks, YH's development will be evaluated across these 4 core competencies (100 Points Total).</div>
+            <div class="card-desc">In 4 weeks, YH's development will be evaluated across these 4 client communication competencies (100 Points Total).</div>
           </div>
         </div>
 
@@ -1493,46 +1537,46 @@
             <tr>
               <th style="width:25%;">Competency</th>
               <th style="width:15%;">Target Benchmark</th>
-              <th style="width:35%;">What Good Looks Like</th>
+              <th style="width:35%;">What Good Looks Like (Client Presentations)</th>
               <th style="width:25%;">Common Pitfalls to Avoid</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                <strong>1. Executive Vernacular & Collocations</strong><br>
+                <strong>1. Client-Facing Vernacular & ROI Terms</strong><br>
                 <span style="font-size:0.75rem; color:var(--accent);">25 Points</span>
               </td>
-              <td>Accurate use of ≥5 advanced professional terms per presentation.</td>
-              <td>Naturally deploys words like <em>spearhead, mitigate, bottleneck, trade-off, stakeholder buy-in</em> in correct business contexts.</td>
-              <td>Over-relying on basic verbs (<em>do, make, fix, get</em>) or literal translations.</td>
+              <td>Accurate use of ≥5 advanced commercial terms per pitch.</td>
+              <td>Effortlessly uses terms like <em>value proposition, friction, frictionless onboarding, tangible ROI, seamless integration, differentiator</em>.</td>
+              <td>Relying on generic phrases (*"it's very good, it has nice things, you should buy it"*).</td>
             </tr>
             <tr>
               <td>
                 <strong>2. Sentence Stress & Cadence</strong><br>
                 <span style="font-size:0.75rem; color:var(--accent);">25 Points</span>
               </td>
-              <td>Rhythmic beat retention; unstressed function word reduction.</td>
-              <td>Punches key nouns/verbs with higher pitch and volume; weakens auxiliary words (<em>to, the, of, will</em>) into natural reductions.</td>
-              <td>Flat monotone cadence; giving every syllable equal stress (machine-gun rhythm).</td>
+              <td>Rhythmic beat retention; punching key nouns and action verbs.</td>
+              <td>Punches product benefits with pitch/volume variation; reduces function words (*to, a, the, will*), sounding natural and energetic.</td>
+              <td>Flat monotone rhythm that sounds like reading a script or reciting memorized lines.</td>
             </tr>
             <tr>
               <td>
-                <strong>3. Signposting & Framing Structure</strong><br>
+                <strong>3. Signposting & Demo Navigation</strong><br>
                 <span style="font-size:0.75rem; color:var(--accent);">25 Points</span>
               </td>
-              <td>Clear progression: Context → Core Issue → Data/Options → Recommendation.</td>
-              <td>Uses explicit verbal roadmaps: <em>"Pivoting now to...", "To summarize our actionable takeaway...", "Looking ahead to next steps..."</em></td>
-              <td>Abrupt slide transitions; jumping straight into granular details without executive context.</td>
+              <td>Clear structure: Pain Point → Solution → Differentiator → Next Step.</td>
+              <td>Explicit conversational signposts: <em>"Pivoting to how this works in practice...", "To address the migration concern...", "Let's look at the next step..."</em></td>
+              <td>Jumping abruptly between screens or slides without orienting the client.</td>
             </tr>
             <tr>
               <td>
-                <strong>4. Subtext Control & Diplomatic Tone</strong><br>
+                <strong>4. Handling Objections & Poise</strong><br>
                 <span style="font-size:0.75rem; color:var(--accent);">25 Points</span>
               </td>
-              <td>Ownership and constructive problem framing under pressure.</td>
-              <td>De-escalates blockers diplomatically without sounding defensive or accusatory; articulates trade-offs with poise.</td>
-              <td>Defensive phrasing (<em>"It's not my fault"</em>) or passive defeatism.</td>
+              <td>Calm, persuasive de-escalation of client pushback.</td>
+              <td>Empathizes with client concerns (cost, disruption) and reframes them with confidence into long-term strategic value.</td>
+              <td>Becoming defensive, apologetic, or giving up when a client asks a hard question.</td>
             </tr>
           </tbody>
         </table>
@@ -1540,9 +1584,9 @@
         <div style="margin-top:20px; background:var(--surface-subtle); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);">
           <strong style="color:var(--text); font-size:0.95rem;">Preply Tutor Milestone Scoring System:</strong>
           <div style="display:flex; gap:20px; margin-top:8px; font-size:0.85rem; flex-wrap:wrap;">
-            <div>🏆 <strong>90–100 Pts:</strong> Ready for C-level & Global Executive Presentations</div>
-            <div>⚡ <strong>75–89 Pts:</strong> Strong Workplace Fluency & High Impact</div>
-            <div>🌱 <strong>60–74 Pts:</strong> Developing Proficiency (Target Areas Identified)</div>
+            <div>🏆 <strong>90–100 Pts:</strong> Ready for Senior Enterprise & C-Level Client Pitches</div>
+            <div>⚡ <strong>75–89 Pts:</strong> Confident, Highly Persuasive Client Communication</div>
+            <div>🌱 <strong>60–74 Pts:</strong> Developing Proficiency (Key Areas Identified)</div>
           </div>
         </div>
 
@@ -1554,14 +1598,14 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div>YH Workplace Communication & Executive Vernacular System</div>
+      <div>YH Client Product Presentation & Executive Vernacular System</div>
       <div style="font-size:0.8rem; margin-top:4px;">Designed for Preply English Coaching • Built for In-Browser Practice</div>
       <div class="footer-links">
         <a href="https://github.com/log210788/yH" target="_blank" rel="noopener">GitHub Repository</a>
         <span>•</span>
         <a href="#studio" onclick="switchTab('studio')">Recording Studio</a>
         <span>•</span>
-        <a href="#curriculum" onclick="switchTab('curriculum')">4-Week Timeline</a>
+        <a href="#options" onclick="switchTab('options')">Presentation Options</a>
       </div>
     </div>
   </footer>
@@ -1569,64 +1613,43 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     // ==========================================
-    // TOPICS & VERNACULAR DATA
+    // CLIENT PRESENTATION OPTIONS DATA
     // ==========================================
     const topicsData = {
-      w1_p1: {
-        title: "Prompt 1A: Executive Status Report on a Complex Project",
-        filename: "YH_Week1_PromptA_StatusReport",
-        scenario: "You are leading a cross-functional workstream. Present a concise 2-minute status update to senior stakeholders who want clarity on current deliverables, bottlenecks, and the upcoming trajectory.",
-        structure: "1. Executive Summary: 'To give a brief high-level overview, the initiative is currently tracking on schedule...'<br>2. Key Accomplishments: 'Over the last sprint, we spearheaded the migration and closed critical milestones...'<br>3. Bottleneck & Mitigation: 'Our primary bottleneck involves dependency X; however, we've mitigated this by...'<br>4. Next Steps & Ask: 'Looking ahead, our actionable takeaway is...'",
-        vernacular: ["spearheaded", "bottleneck", "mitigate risk", "actionable takeaways", "milestone trajectory", "streamline", "deliverables", "cross-functional"]
+      opt_pitch: {
+        title: "Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)",
+        filename: "YH_Client_ProductPitch",
+        scenario: "You are pitching your product to a prospective client who wants to solve efficiency bottlenecks. Present a concise 2.5-minute overview highlighting their pain point, your core solution, and key business ROI.",
+        structure: "1. <strong>Hook & Pain Point:</strong> 'Many organizations face significant overhead when managing X...'<br>2. <strong>Product Value Proposition:</strong> 'Our platform addresses this by delivering a streamlined, automated workflow...'<br>3. <strong>Core Differentiator:</strong> 'Unlike conventional tools, we integrate directly with your existing infrastructure...'<br>4. <strong>Measurable Impact & Next Step:</strong> 'Clients typically observe a 35% gain in operational velocity. I'd love to show you how this looks in practice.'",
+        vernacular: ["value proposition", "end-to-end solution", "frictionless onboarding", "operational velocity", "tangible ROI", "seamless integration", "eliminate overhead", "differentiator"]
       },
-      w1_p2: {
-        title: "Prompt 1B: Explaining a Technical Delay Diplomatically",
-        filename: "YH_Week1_PromptB_TechnicalDelay",
-        scenario: "An unforeseen dependency has pushed your deployment date back by one week. Deliver a calm, assertive 2-minute briefing explaining the reason, avoiding defensiveness, and highlighting preventive steps.",
-        structure: "1. Framing the Adjustment: 'I want to provide an update regarding our launch trajectory...'<br>2. The Underlying Factor: 'During regression testing, we uncovered an edge case that warrants containment...'<br>3. Remediation & Safeguard: 'To preserve system integrity, we have buffered the rollout by one week...'<br>4. Reassurance: 'All stakeholder deliverables remain well within our secondary risk tolerance.'",
-        vernacular: ["underlying factor", "preserve system integrity", "containment", "risk tolerance", "adjusted trajectory", "regression testing", "proactive safeguard"]
+      opt_demo: {
+        title: "Option 2: Live Feature Walkthrough & Solution Demo",
+        filename: "YH_Client_FeatureDemo",
+        scenario: "You are screensharing with a client technical lead. Walk them through a core workflow or flagship feature. Explain why it is designed this way and how it saves them time every single day.",
+        structure: "1. <strong>Orienting the Client:</strong> 'Looking at the central interface, you will notice how intuitive the navigation is...'<br>2. <strong>Live Action / Step-by-Step:</strong> 'With just two clicks, the system generates automated client reports...'<br>3. <strong>Highlighting Benefit:</strong> 'This eliminates 4 hours of manual data entry each week for your operators...'<br>4. <strong>Interactive Check-in:</strong> 'Let me pause here—how does this align with your team's current reporting flow?'",
+        vernacular: ["intuitive interface", "flagship capability", "eliminate manual overhead", "granular permissions", "actionable insights", "streamlined workflow", "real-time synchronization"]
       },
-      w2_p1: {
-        title: "Prompt 2A: Pitching an Architectural or Tooling Pivot",
-        filename: "YH_Week2_PromptA_ToolingPivot",
-        scenario: "Your team has been struggling with technical debt caused by an outdated tool. Deliver a 2.5-minute pitch recommending a switch to a modern solution, highlighting cost-benefit trade-offs.",
-        structure: "1. The Challenge: 'Our current framework is exhibiting diminishing returns...'<br>2. The Proposed Alternative: 'We evaluated several options and identified tool X as our most viable alternative...'<br>3. Cost-Benefit Trade-Off: 'While the initial onboarding incurs a 2-week overhead, our long-term velocity increases by 40%...'<br>4. Call to Action: 'I propose allocating a two-day spike to validate this POC.'",
-        vernacular: ["cost-benefit analysis", "diminishing returns", "technical debt", "viable alternative", "velocity increase", "proof of concept (POC)", "trade-off"]
+      opt_objection: {
+        title: "Option 3: Handling Tough Client Objections (Cost, Switching & Timing)",
+        filename: "YH_Client_HandlingObjections",
+        scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Deliver a confident, empathetic response that reframes switching cost into long-term savings.",
+        structure: "1. <strong>Validate & Empathize:</strong> 'I completely appreciate that migration and budget are primary concerns...'<br>2. <strong>De-risk Migration:</strong> 'Our dedicated implementation team handles data migration with zero downtime...'<br>3. <strong>Reframing ROI:</strong> 'When factoring in the time saved and error reduction, most clients recoup investment within 90 days...'<br>4. <strong>Flexible Next Step:</strong> 'We can structure a phased rollout so you only commit as milestones are verified.'",
+        vernacular: ["cost-benefit trade-off", "zero downtime", "de-risk transition", "phased rollout", "recoup investment", "tailored implementation", "mitigate risk"]
       },
-      w2_p2: {
-        title: "Prompt 2B: Pushing Back Against Unrealistic Deadlines",
-        filename: "YH_Week2_PromptB_Pushback",
-        scenario: "Management asks if a 6-month feature can be delivered in 2 months. Deliver a diplomatic 2.5-minute pushback that protects engineering standards while offering creative compromises.",
-        structure: "1. Validating the Urgency: 'I completely recognize why expediting this launch is a strategic priority...'<br>2. Reality of Bandwidth: 'Given our current team bandwidth, delivering the full scope in 2 months would introduce severe reliability risks...'<br>3. The Pragmatic Alternative: 'However, by decoupling feature A and launching an MVP, we can satisfy the date without compromising security...'<br>4. Buy-In: 'Does that phased approach align with your core objectives?'",
-        vernacular: ["team bandwidth", "decouple features", "phased approach", "MVP", "strategic alignment", "protect reliability", "pragmatic compromise"]
+      opt_qbr: {
+        title: "Option 4: Client Success Review & Upsell / Expansion Pitch",
+        filename: "YH_Client_SuccessReview_Upsell",
+        scenario: "You are meeting an existing client for a quarterly check-in. Review their positive adoption numbers, celebrate their milestones, and pitch expanding the solution to their wider regional teams.",
+        structure: "1. <strong>Celebrating Wins:</strong> 'Over the past 6 months, your team has processed over 10,000 transactions seamlessly...'<br>2. <strong>Highlighting Untapped Value:</strong> 'We noticed your APAC branch is still handling compliance manually...'<br>3. <strong>The Upsell Proposal:</strong> 'By enabling our enterprise module across both regions, you unlock bulk licensing...'<br>4. <strong>Actionable Next Step:</strong> 'I have prepared an impact projection we can review together.'",
+        vernacular: ["accelerate adoption", "synergy across teams", "enterprise tier", "scalability", "quantifiable milestones", "long-term partnership", "expansion strategy"]
       },
-      w3_p1: {
-        title: "Prompt 3A: Major Incident Post-Mortem & Containment",
-        filename: "YH_Week3_PromptA_IncidentPostMortem",
-        scenario: "A production incident affected customer checkouts for 45 minutes yesterday. Present the incident retrospective to the executive leadership team.",
-        structure: "1. Incident Overview: 'At 14:00 yesterday, an edge-case memory leak degraded payment services for 45 minutes...'<br>2. Immediate Containment: 'Our on-call team responded within 8 minutes, rolled back the commit, and fully restored normal operations...'<br>3. Root Cause Analysis: 'Our preliminary retrospective points to an unindexed database query...'<br>4. Preventive Safeguards: 'We have instituted automated load tests and alerting thresholds to preclude recurrence.'",
-        vernacular: ["root cause analysis", "immediate containment", "retrospective findings", "preclude recurrence", "preventive safeguards", "remediation timeline", "system integrity"]
-      },
-      w3_p2: {
-        title: "Prompt 3B: Communicating Unexpected Bad News to Leadership",
-        filename: "YH_Week3_PromptB_DeliveringBadNews",
-        scenario: "A primary software vendor just announced a 300% price increase and deprecation of their API by next month. Brief the department head on the issue and your immediate contingency plan.",
-        structure: "1. Clear Headline: 'I'm sharing an unexpected vendor update along with our recommended course of action...'<br>2. The Impact: 'Vendor X has initiated API deprecation sooner than anticipated...'<br>3. Contingency Action Plan: 'We have drafted three contingency paths: internalizing the service, renegotiating, or migrating to partner Y...'<br>4. Next Step: 'I recommend option B as it minimizes disruption.'",
-        vernacular: ["contingency plan", "course of action", "mitigate fallout", "minimize disruption", "unforeseen impediment", "renegotiate terms", "decisive action"]
-      },
-      w4_p1: {
-        title: "Prompt 4A: 3-Year Strategic Vision & Technology Roadmap",
-        filename: "YH_Week4_PromptA_StrategicVision",
-        scenario: "This is your 4-Week Milestone Assessment Presentation. Pitch an ambitious 3-year strategic technology vision to company leadership. Showcase command of business vernacular, rhythm, and presence.",
-        structure: "1. The Paradigm Shift: 'Over the next three years, our industry will undergo a fundamental paradigm shift toward automation...'<br>2. Value Proposition: 'By modernizing our infrastructure today, we position ourselves as the market benchmark...'<br>3. Strategic Pillars: 'Our roadmap centers on three catalysts: scalability, security, and developer velocity...'<br>4. Measurable ROI & Call to Action: 'This investment unlocks an estimated 3x return on capital. I invite you to partner with us in greenlighting this transformation.'",
-        vernacular: ["paradigm shift", "value proposition", "market benchmark", "catalyst for growth", "developer velocity", "measurable ROI", "stakeholder buy-in", "transformational roadmap"]
-      },
-      w4_p2: {
-        title: "Prompt 4B: Process Overhaul to Drive 2x Operational Efficiency",
-        filename: "YH_Week4_PromptB_ProcessOverhaul",
-        scenario: "This is your 4-Week Milestone Assessment Presentation. Propose a complete overhaul of an inefficient cross-team process. Persuade stakeholders with structured data, clear trade-offs, and inspiring delivery.",
-        structure: "1. Problem Framing: 'Our current delivery cycle incurs substantial drag, costing an estimated 15 hours per engineer each sprint...'<br>2. Operational Redesign: 'We have benchmarked high-performing organizations and designed a streamlined 3-stage delivery pipeline...'<br>3. Mitigating Friction: 'Change management will be supported by hands-on workshops and dedicated documentation...'<br>4. Closing Call to Action: 'Let's launch the pilot program next Monday.'",
-        vernacular: ["operational efficiency", "substantial drag", "benchmarked standards", "change management", "streamlined pipeline", "frictionless execution", "pilot program"]
+      opt_custom: {
+        title: "Option 5: Custom Work Pitch (Present Your Actual Real-World Product)",
+        filename: "YH_RealWorld_ProductDemo",
+        scenario: "Present your actual company product or solution as if your tutor were your real client. Pitch its value, walk through its core features, and practice your real business vocabulary.",
+        structure: "1. <strong>Hook:</strong> Introduce who your product is for and what problem it solves.<br>2. <strong>Feature Showcase:</strong> Highlight 1–2 features you present most often.<br>3. <strong>Client Value:</strong> Why should the client choose you today?<br>4. <strong>Next Step:</strong> Propose an actionable follow-up.",
+        vernacular: ["core functionality", "tailored solution", "client success", "seamless adoption", "proven reliability", "competitive edge", "actionable takeaway"]
       }
     };
 
@@ -1646,6 +1669,7 @@
         const chip = document.createElement('span');
         chip.className = 'v-chip';
         chip.textContent = word;
+        chip.title = "Click to copy to clipboard";
         chip.onclick = () => {
           navigator.clipboard.writeText(word);
           chip.style.transform = 'scale(1.1)';
@@ -1653,6 +1677,12 @@
         };
         chipContainer.appendChild(chip);
       });
+    }
+
+    function selectAndGo(optKey) {
+      document.getElementById('topicSelect').value = optKey;
+      onTopicChange();
+      switchTab('studio');
     }
 
     // Initialize default topic
@@ -1670,7 +1700,7 @@
 
       const tabs = {
         'studio': 0,
-        'curriculum': 1,
+        'options': 1,
         'vernacular': 2,
         'cadence': 3,
         'rubric': 4
@@ -1716,7 +1746,7 @@
 
     function drawIdleVisualizer() {
       canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-      canvasCtx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#333';
+      canvasCtx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#30363d';
       canvasCtx.lineWidth = 1;
       canvasCtx.beginPath();
       canvasCtx.moveTo(0, canvas.height / 2);
@@ -1866,7 +1896,7 @@
     function downloadRecording() {
       if (!audioBlob) return;
       const select = document.getElementById('topicSelect');
-      const topic = topicsData[select.value] || { filename: 'YH_Presentation_Recording' };
+      const topic = topicsData[select.value] || { filename: 'YH_Client_Presentation' };
       const dateStr = new Date().toISOString().slice(0, 10);
       const extension = audioBlob.type.includes('mp4') ? 'mp4' : (audioBlob.type.includes('ogg') ? 'ogg' : 'webm');
       const fileName = `${topic.filename}_${dateStr}.${extension}`;

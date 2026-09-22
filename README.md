@@ -1,68 +1,62 @@
-# YH — Workplace Communication & Executive Vernacular Studio
+# YH — Client Product Presentation & Communication Studio
 
-A minimalist web portal and in-browser recording suite designed for **YH** to develop executive business vernacular, master sentence stress and presentation cadence, and prepare for his **4-Week Milestone Assessment** in his Preply English coaching sessions.
+A minimalist web portal and in-browser audio recording suite designed for **YH** to practice **presenting products to clients**, develop commercial business vernacular, master sentence stress and presentation cadence, and prepare for his **4-Week Milestone Assessment** in his Preply English coaching sessions.
 
 🌐 **Live GitHub Pages URL:** [https://log210788.github.io/yH/](https://log210788.github.io/yH/)
 
 ---
 
-## 🎙️ How YH Should Use the Studio
+## 🎙️ Practice Options Available Today
 
-### Step 1: Select Your Topic & Study the Vernacular
-- Open the portal at [https://log210788.github.io/yH/](https://log210788.github.io/yH/).
-- Select your assigned weekly presentation prompt from the dropdown.
-- Review the **Recommended Cadence & Signposting** and click any of the **Target Vernacular** chips to copy or practice them.
+YH can choose any of the following 5 client presentation scenarios to practice and record today:
 
-### Step 2: Record Your Presentation in the Browser
-- Click **"Start Recording"** (allow microphone permissions in your browser when prompted).
-- Deliver a **2 to 3 minute** presentation using your natural cadence and target business terms.
-- Watch the live timer and the audio visualizer to monitor your pacing and volume.
+1. **Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)**
+   - *Scenario:* Pitching your product to an interested prospect who wants to solve operational bottlenecks.
+   - *Key Vernacular:* *value proposition, end-to-end solution, frictionless onboarding, operational velocity, tangible ROI, seamless integration*.
+2. **Option 2: Live Feature Walkthrough & Solution Demo**
+   - *Scenario:* Screensharing with a client technical lead to demo a core workflow or flagship capability.
+   - *Key Vernacular:* *intuitive interface, flagship capability, eliminate manual overhead, granular permissions, actionable insights, streamlined workflow*.
+3. **Option 3: Handling Tough Client Objections (Cost, Switching & Timing)**
+   - *Scenario:* Answering concerns like *"Your product looks great, but switching sounds risky and budget is tight."*
+   - *Key Vernacular:* *cost-benefit trade-off, zero downtime, de-risk transition, phased rollout, recoup investment, tailored implementation*.
+4. **Option 4: Client Success Review & Upsell / Expansion Pitch**
+   - *Scenario:* Quarterly check-in with an existing client celebrating their adoption numbers and pitching an expansion to wider teams.
+   - *Key Vernacular:* *accelerate adoption, synergy across teams, enterprise tier, scalability, quantifiable milestones, long-term partnership*.
+5. **Option 5: Custom Work Pitch (Present Your Actual Real-World Product)**
+   - *Scenario:* Pitch your actual company product or upcoming client demo using your own real-world slides and workflow!
 
-### Step 3: Listen Back & Download Your Audio
+---
+
+## 🎧 Step-by-Step Guide for YH
+
+### Step 1: Select Your Option & Review the Phrasing
+- Open [https://log210788.github.io/yH/](https://log210788.github.io/yH/).
+- Select your presentation option from the dropdown.
+- Check the **Target Client Vernacular** chips (click any chip to copy).
+- Optional: Use the built-in **Speaker Notes** box to jot down your product bullet points.
+
+### Step 2: Record in the Browser (2–3 Minutes)
+- Click **"Start Recording"** (allow microphone access when prompted).
+- Speak with strong sentence stress, punching key product benefits and nouns.
+- Watch the live timer and the audio visualizer.
+
+### Step 3: Listen Back & Download
 - Click **"Stop Recording"**.
-- Use the built-in audio player to listen to your take:
-  - Did you punch content words (nouns, main verbs)?
-  - Did you weaken function words (reductions)?
-  - Did you incorporate the target executive vocabulary?
-- When satisfied, click **"Download Recording"**. The file will automatically save to your computer with a clean name (e.g. `YH_Week1_PromptA_StatusReport_2026-09-22.webm`).
+- Play back your take to review your rhythm and clarity.
+- Click **"Download Recording"** to save your audio file (e.g. `YH_Client_ProductPitch_2026-09-22.webm`).
 
 ### Step 4: Send to Your Tutor in Preply
-- Go to your **Preply Messages / Classroom**.
-- Drag and drop your downloaded audio file into the chat.
-- Add a short message:
-  > *"Hi, here is my weekly presentation recording for our next class review!"*
-- Your tutor will review your recording, diagnose stress and vernacular usage, and calibrate your progress for the 4-week assessment.
+- Open **Preply Messages / Classroom**.
+- Drag and drop your downloaded audio file into the chat with your tutor.
+- Your tutor will listen and calibrate your pronunciation, rhythm, and business vernacular during your next session!
 
 ---
 
-## 🗓️ 4-Week Milestone Curriculum
+## 🎯 4-Week Milestone Assessment Rubric (100 Points Total)
 
-| Week | Theme & Focus | Core Vernacular Target | Presentation Topics |
-| :--- | :--- | :--- | :--- |
-| **Week 1** | **Foundations & Status Updates**<br>Rhythm, Content Word Punching, Crisp Cadence | *spearheaded, bottleneck, mitigate risk, actionable takeaways, milestone trajectory, streamline, deliverables* | **1A:** Executive Status Report on a Complex Project<br>**1B:** Explaining a Technical Delay Diplomatically |
-| **Week 2** | **Defending Decisions & Trade-Offs**<br>Diplomatic Disagreement, Syllable Stress, Justification | *cost-benefit analysis, weighing trade-offs, diminishing returns, strategic alignment, viable alternative, technical debt* | **2A:** Pitching an Architectural or Tooling Pivot<br>**2B:** Pushing Back Against Unrealistic Deadlines |
-| **Week 3** | **Crisis Management & Accountability**<br>Subtext Control, De-escalation, Solution Framing | *root cause analysis, corrective measures, contingency plan, immediate containment, mitigate fallout, retrospective* | **3A:** Major Incident Post-Mortem & Containment<br>**3B:** Communicating Unexpected Bad News to Leadership |
-| **Week 4** | **Strategic Vision & Milestone Assessment**<br>★ 4-Week Formal Benchmark Assessment | *value proposition, catalyst for growth, operational velocity, scalable architecture, paradigm shift, measurable ROI* | **4A:** 3-Year Strategic Vision & Technology Roadmap<br>**4B:** Process Overhaul to Drive 2x Velocity |
+In 4 weeks, YH's development will be evaluated across 4 core client communication competencies:
 
----
-
-## 🎯 4-Week Assessment Rubric (100 Points Total)
-
-In Week 4, YH's development will be evaluated across 4 core competencies:
-
-1. **Executive Vernacular & Collocations (25 pts)**: Accurate deployment of ≥5 advanced professional terms per presentation without over-relying on basic verbs (*do, make, fix, get*).
-2. **Sentence Stress & Cadence (25 pts)**: Rhythmic beat retention, punching key nouns/verbs with higher pitch and volume, and natural reduction of unstressed auxiliary words.
-3. **Signposting & Framing Structure (25 pts)**: Clean progression (*Context → Core Issue → Data/Options → Recommendation*) with explicit verbal roadmaps (*"Pivoting now to...", "To summarize our actionable takeaway..."*).
-4. **Subtext Control & Diplomatic Tone (25 pts)**: Ownership and constructive problem framing under pressure; de-escalating blockers diplomatically without defensiveness.
-
-### Score Benchmarks:
-- 🏆 **90–100 Pts**: Executive & C-Level Ready
-- ⚡ **75–89 Pts**: Strong Workplace Fluency & High Impact
-- 🌱 **60–74 Pts**: Developing Proficiency (Target Areas Identified)
-
----
-
-## ⚡ Practice Drills Included in the Portal
-- **60 BPM Isochrony Metronome Drill**: Master English sentence beat retention (*"CATS EAT MICE"*).
-- **Workplace Subtext Navigation**: Understand the 6 different subtext meanings of *"I didn't tell him to cancel the project"* depending on which word is stressed.
-- **Two-Syllable Business Word Diagnostic**: Master 1st syllable noun stress vs. 2nd syllable verb stress (*REC-ord vs. re-CORD*, *PRES-ent vs. pre-SENT*, *PROJ-ect vs. pro-JECT*).
+1. **Client-Facing Vernacular & ROI Terms (25 pts)**: Accurate use of ≥5 advanced commercial terms per pitch (*value proposition, frictionless onboarding, tangible ROI, seamless integration*).
+2. **Sentence Stress & Cadence (25 pts)**: Rhythmic beat retention, punching product names and action verbs, and reducing unstressed function words.
+3. **Signposting & Demo Navigation (25 pts)**: Clear structure (*Pain Point → Solution → Differentiator → Next Step*) with explicit verbal roadmaps (*"Pivoting to how this works in practice...", "To address the migration concern..."*).
+4. **Handling Objections & Poise (25 pts)**: Calm, persuasive de-escalation of client pushback; reframing friction into long-term strategic value.
