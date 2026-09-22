@@ -894,12 +894,6 @@
         <button class="tab-btn active" onclick="switchTab('studio')">
           🎙️ Recording Studio <span class="tab-badge">Practice Today</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('options')">
-          📋 Client Presentation Options
-        </button>
-        <button class="tab-btn" onclick="switchTab('vernacular')">
-          💼 Client Pitch Vernacular
-        </button>
         <button class="tab-btn" onclick="switchTab('cadence')">
           ⚡ Cadence & Rhythm Lab
         </button>
@@ -922,8 +916,8 @@
       <div class="steps-banner">
         <div class="step-card">
           <div class="step-num">Step 1</div>
-          <div class="step-title">Select Presentation Option</div>
-          <div class="step-text">Choose the client presentation scenario that best fits your product or target skill today.</div>
+          <div class="step-title">Select Presentation Topic</div>
+          <div class="step-text">Choose what you want to present today or pitch your actual real-world product.</div>
         </div>
         <div class="step-card">
           <div class="step-num">Step 2</div>
@@ -952,7 +946,7 @@
           </div>
           
           <div id="timerDisplay" class="timer-display">00:00</div>
-          <div class="timer-target">Target client presentation length: <strong>2:00 – 3:00 mins</strong></div>
+          <div class="timer-target">Target presentation length: <strong>2:00 – 3:00 mins</strong></div>
 
           <!-- Waveform Canvas -->
           <canvas id="visualizer" width="300" height="64"></canvas>
@@ -982,24 +976,24 @@
           </div>
         </div>
 
-        <!-- Right: Prompt & Vernacular Focus -->
+        <!-- Right: Topic & Speaker Area -->
         <div class="prompt-panel">
           <div class="select-group">
-            <label class="select-label" for="topicSelect">CHOOSE YOUR PRESENTATION OPTION FOR TODAY:</label>
+            <label class="select-label" for="topicSelect">CHOOSE YOUR PRESENTATION TOPIC:</label>
             <select id="topicSelect" class="topic-select" onchange="onTopicChange()">
-              <option value="opt_pitch" selected>Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)</option>
-              <option value="opt_demo">Option 2: Live Feature Walkthrough & Solution Demo</option>
-              <option value="opt_objection">Option 3: Handling Tough Client Objections (Cost, Switching & Timing)</option>
-              <option value="opt_qbr">Option 4: Client Success Review & Upsell / Expansion Pitch</option>
-              <option value="opt_custom">Option 5: Custom Work Pitch (Present Your Actual Real-World Product)</option>
+              <option value="opt_pitch" selected>Topic 1: 3-Minute Product Overview (Pitch to Client)</option>
+              <option value="opt_demo">Topic 2: Live Feature Walkthrough & Demo</option>
+              <option value="opt_objection">Topic 3: Addressing Client Concerns & Questions</option>
+              <option value="opt_qbr">Topic 4: Client Review & Project Update</option>
+              <option value="opt_custom">Topic 5: Your Real Work Product Presentation</option>
             </select>
           </div>
 
           <!-- Dynamic Prompt Details -->
           <div class="prompt-box">
-            <div id="pTitle" class="prompt-title">Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)</div>
+            <div id="pTitle" class="prompt-title">Topic 1: 3-Minute Product Overview (Pitch to Client)</div>
             <div id="pScenario" class="prompt-scenario">
-              You are pitching your product to a prospective client who wants to solve efficiency bottlenecks. Present a concise 2.5-minute overview highlighting their pain point, your core solution, and key business ROI.
+              You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.
             </div>
 
             <div class="prompt-structure">
@@ -1015,15 +1009,6 @@
                 📝 Optional Speaker Notes (Jot down your product name or key points):
               </label>
               <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 quick bullet points or client names if you'd like..."></textarea>
-            </div>
-
-            <div style="margin-top:14px;">
-              <span style="font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.5px;">
-                💡 Optional Words & Phrasing (Use only if natural):
-              </span>
-              <div id="pVernacular" class="vernacular-chips">
-                <!-- Injected via JS -->
-              </div>
             </div>
           </div>
 
@@ -1054,279 +1039,7 @@
 
     </div>
 
-    <!-- ==================================================== -->
-    <!-- TAB 2: CLIENT PRESENTATION OPTIONS -->
-    <!-- ==================================================== -->
-    <div id="tab-options" class="tab-pane">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">📋 Client Presentation Options Menu</div>
-            <div class="card-desc">Review these options to pick the best scenario for your practice session today, or prepare multiple takes.</div>
-          </div>
-        </div>
 
-        <div class="options-grid">
-
-          <!-- Option 1 -->
-          <div class="option-card-full">
-            <div class="option-badge-row">
-              <span class="option-pill">OPTION 1 • NEW PROSPECT</span>
-              <span style="font-size:0.85rem; color:var(--emerald); font-weight:700;">Product Value Overview (2–3 Mins)</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text);">The 3-Minute Product Value Pitch</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.
-            </p>
-            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent); line-height:1.6;">
-              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
-              • What problem or frustration does the client usually have?<br>
-              • How does your product solve it or save them time?<br>
-              • What would you ask or invite them to do at the end?
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
-              <div class="vernacular-chips">
-                <span class="v-chip">value proposition</span>
-                <span class="v-chip">end-to-end solution</span>
-                <span class="v-chip">frictionless onboarding</span>
-                <span class="v-chip">operational velocity</span>
-                <span class="v-chip">tangible ROI</span>
-                <span class="v-chip">seamless integration</span>
-              </div>
-            </div>
-            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_pitch')">
-              👉 Choose this Option & Record
-            </button>
-          </div>
-
-          <!-- Option 2 -->
-          <div class="option-card-full">
-            <div class="option-badge-row">
-              <span class="option-pill" style="background:var(--amber-bg); color:var(--amber);">OPTION 2 • LIVE DEMO</span>
-              <span style="font-size:0.85rem; color:var(--amber); font-weight:700;">Feature Walkthrough & Interaction (2–3 Mins)</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text);">Live Feature Walkthrough & Solution Demo</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are screensharing with a client. Walk them through one or two key features of your product.
-            </p>
-            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--amber); line-height:1.6;">
-              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
-              • Which feature are you showing, and why is it useful?<br>
-              • How does someone actually use it in practice?<br>
-              • Ask the client a quick question to check their thoughts!
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
-              <div class="vernacular-chips">
-                <span class="v-chip">intuitive interface</span>
-                <span class="v-chip">flagship capability</span>
-                <span class="v-chip">eliminate manual overhead</span>
-                <span class="v-chip">granular permissions</span>
-                <span class="v-chip">actionable insights</span>
-                <span class="v-chip">streamlined workflow</span>
-              </div>
-            </div>
-            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_demo')">
-              👉 Choose this Option & Record
-            </button>
-          </div>
-
-          <!-- Option 3 -->
-          <div class="option-card-full">
-            <div class="option-badge-row">
-              <span class="option-pill" style="background:var(--rose-bg); color:var(--rose);">OPTION 3 • DIPLOMATIC PERSUASION</span>
-              <span style="font-size:0.85rem; color:var(--rose); font-weight:700;">Handling Client Objections (2–2.5 Mins)</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text);">Handling Tough Client Objections (Cost & Switching Friction)</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> The client says: <em>"Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter."</em> Respond in your own natural style.
-            </p>
-            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--rose); line-height:1.6;">
-              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
-              • Acknowledge their concern calmly so they feel heard.<br>
-              • Explain why your product is worth the cost or effort in the long run.<br>
-              • Propose a simple, safe next step to take the pressure off.
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
-              <div class="vernacular-chips">
-                <span class="v-chip">cost-benefit trade-off</span>
-                <span class="v-chip">zero downtime</span>
-                <span class="v-chip">de-risk transition</span>
-                <span class="v-chip">phased rollout</span>
-                <span class="v-chip">recoup investment</span>
-                <span class="v-chip">tailored implementation</span>
-              </div>
-            </div>
-            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_objection')">
-              👉 Choose this Option & Record
-            </button>
-          </div>
-
-          <!-- Option 4 -->
-          <div class="option-card-full">
-            <div class="option-badge-row">
-              <span class="option-pill" style="background:var(--purple-bg); color:var(--purple);">OPTION 4 • EXISTING CLIENT</span>
-              <span style="font-size:0.85rem; color:var(--purple); font-weight:700;">Success Review & Expansion Pitch (2.5 Mins)</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text);">Client Success Review & Expansion / Upsell</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.
-            </p>
-            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--purple); line-height:1.6;">
-              <strong>💡 A gentle nudge (ideas to talk about):</strong><br>
-              • Mention how things have been going well so far.<br>
-              • Bring up another feature or team that could also benefit.<br>
-              • Ask if they'd be open to taking a look.
-            </div>
-            <div>
-              <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Optional Inspiration Words:</span>
-              <div class="vernacular-chips">
-                <span class="v-chip">accelerate adoption</span>
-                <span class="v-chip">synergy across teams</span>
-                <span class="v-chip">enterprise tier</span>
-                <span class="v-chip">scalability</span>
-                <span class="v-chip">quantifiable milestones</span>
-                <span class="v-chip">long-term partnership</span>
-              </div>
-            </div>
-            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_qbr')">
-              👉 Choose this Option & Record
-            </button>
-          </div>
-
-          <!-- Option 5 -->
-          <div class="option-card-full" style="border: 2px dashed var(--accent);">
-            <div class="option-badge-row">
-              <span class="option-pill">OPTION 5 • REAL WORK PRODUCT</span>
-              <span style="font-size:0.85rem; color:var(--accent); font-weight:700;">★ Present Your Actual Product / Demo</span>
-            </div>
-            <h3 style="font-size:1.15rem; color:var(--text);">Custom Work Pitch (Your Actual Real-World Product)</h3>
-            <p style="font-size:0.9rem; color:var(--text-muted);">
-              <strong>Scenario:</strong> Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.
-            </p>
-            <div style="background:var(--surface-subtle); padding:12px 14px; border-radius:var(--radius-sm); font-size:0.85rem; border-left:3px solid var(--accent); line-height:1.6;">
-              <strong>💡 A gentle nudge:</strong><br>
-              • Talk freely about your product in your own natural words.<br>
-              • Don't worry about any fixed script—let's hear your natural presentation style!
-            </div>
-            <button class="btn-secondary" style="width:fit-content; margin-top:4px;" onclick="selectAndGo('opt_custom')">
-              👉 Choose this Option & Record
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================================================== -->
-    <!-- TAB 3: CLIENT PITCH VERNACULAR -->
-    <!-- ==================================================== -->
-    <div id="tab-vernacular" class="tab-pane">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">💼 Client Pitch Vernacular & Phrasing Upgrades</div>
-            <div class="card-desc">Upgrade conversational phrases into compelling, executive client-facing language.</div>
-          </div>
-        </div>
-
-        <div class="search-bar">
-          <input type="text" id="vernacularSearch" class="search-input" placeholder="🔍 Search expressions, keywords, or casual phrases..." onkeyup="filterVernacular()">
-          <button class="btn-secondary" onclick="filterCategory('all')">All</button>
-          <button class="btn-secondary" onclick="filterCategory('pitch')">Product Pitch</button>
-          <button class="btn-secondary" onclick="filterCategory('demo')">Live Demo</button>
-          <button class="btn-secondary" onclick="filterCategory('objection')">Client Objections</button>
-          <button class="btn-secondary" onclick="filterCategory('transition')">Signposting & Check-ins</button>
-        </div>
-
-        <div class="upgrade-grid" id="vernacularList">
-
-          <!-- Card 1 -->
-          <div class="upgrade-card" data-category="pitch">
-            <span class="upgrade-tag">Product Pitch</span>
-            <div class="upgrade-before">"Our product has lots of cool functions."</div>
-            <div class="upgrade-after">"Our platform delivers a comprehensive suite of capabilities designed to eliminate operational friction."</div>
-            <div class="upgrade-context">Focuses on business value rather than just a feature list.</div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="upgrade-card" data-category="pitch">
-            <span class="upgrade-tag">Product Pitch</span>
-            <div class="upgrade-before">"It's better than what you're using now."</div>
-            <div class="upgrade-after">"Where we differentiate ourselves is in our real-time synchronization and rapid time-to-value."</div>
-            <div class="upgrade-context">Professional comparison without criticizing their current choices.</div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="upgrade-card" data-category="demo">
-            <span class="upgrade-tag">Live Demo</span>
-            <div class="upgrade-before">"Look at this button here."</div>
-            <div class="upgrade-after">"As you can see in this view, the workflow is entirely streamlined with one-click execution."</div>
-            <div class="upgrade-context">Directs client attention with polished narrative flow.</div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="upgrade-card" data-category="demo">
-            <span class="upgrade-tag">Live Demo</span>
-            <div class="upgrade-before">"Do you understand what I showed you?"</div>
-            <div class="upgrade-after">"I'd love to pause here—how does this workflow compare to your team's current process?"</div>
-            <div class="upgrade-context">Invites engagement without questioning the client's comprehension.</div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="upgrade-card" data-category="objection">
-            <span class="upgrade-tag">Client Objections</span>
-            <div class="upgrade-before">"It's not that expensive."</div>
-            <div class="upgrade-after">"When factoring in error reduction and hours saved, the investment delivers a measurable ROI within the first quarter."</div>
-            <div class="upgrade-context">Pivots the conversation from cost to return on investment.</div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="upgrade-card" data-category="objection">
-            <span class="upgrade-tag">Client Objections</span>
-            <div class="upgrade-before">"Changing systems won't be that hard."</div>
-            <div class="upgrade-after">"We provide a dedicated onboarding specialist and white-glove migration to ensure zero downtime."</div>
-            <div class="upgrade-context">Reassures risk-averse stakeholders with concrete support mechanisms.</div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="upgrade-card" data-category="transition">
-            <span class="upgrade-tag">Signposting & Check-ins</span>
-            <div class="upgrade-before">"Next thing is our pricing."</div>
-            <div class="upgrade-after">"Turning our attention now to licensing structures and customized rollout tiers..."</div>
-            <div class="upgrade-context">Creates smooth narrative transitions during slide decks.</div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="upgrade-card" data-category="transition">
-            <span class="upgrade-tag">Signposting & Check-ins</span>
-            <div class="upgrade-before">"That's all I have for today."</div>
-            <div class="upgrade-after">"To summarize our recommended next step: we propose launching a 2-week pilot. I welcome your feedback."</div>
-            <div class="upgrade-context">Closes with a decisive, commercial call to action.</div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="upgrade-card" data-category="pitch">
-            <span class="upgrade-tag">Product Pitch</span>
-            <div class="upgrade-before">"We can change the software if you want."</div>
-            <div class="upgrade-after">"Our architecture is highly modular, allowing tailored customization to your exact enterprise requirements."</div>
-            <div class="upgrade-context">Conveys technical capability and enterprise-grade adaptability.</div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="upgrade-card" data-category="objection">
-            <span class="upgrade-tag">Client Objections</span>
-            <div class="upgrade-before">"You can buy it later if you want."</div>
-            <div class="upgrade-after">"To maintain momentum and secure our current onboarding window, let's establish our pilot timeline today."</div>
-            <div class="upgrade-context">Maintains sales cadence and urgency politely.</div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
 
     <!-- ==================================================== -->
     <!-- TAB 4: CADENCE & RHYTHM LAB -->
@@ -1600,7 +1313,9 @@
         <span>•</span>
         <a href="#studio" onclick="switchTab('studio')">Recording Studio</a>
         <span>•</span>
-        <a href="#options" onclick="switchTab('options')">Presentation Options</a>
+        <a href="#cadence" onclick="switchTab('cadence')">Cadence Lab</a>
+        <span>•</span>
+        <a href="#rubric" onclick="switchTab('rubric')">Milestone Rubric</a>
       </div>
     </div>
   </footer>
@@ -1608,43 +1323,38 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     // ==========================================
-    // CLIENT PRESENTATION OPTIONS DATA
+    // PRESENTATION TOPICS DATA
     // ==========================================
     const topicsData = {
       opt_pitch: {
-        title: "Option 1: The 3-Minute Product Value Pitch (New Client / Prospect)",
-        filename: "YH_Client_ProductPitch",
+        title: "Topic 1: 3-Minute Product Overview (Pitch to Client)",
+        filename: "YH_Product_Overview",
         scenario: "You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.",
-        nudge: "• What problem or frustration does the client usually have?<br>• How does your product solve it or save them time?<br>• What would you ask or invite them to do at the end?",
-        vernacular: ["value proposition", "end-to-end solution", "frictionless onboarding", "operational velocity", "tangible ROI", "seamless integration"]
+        nudge: "• What problem or frustration does the client usually have?<br>• How does your product solve it or save them time?<br>• What would you ask or invite them to do at the end?"
       },
       opt_demo: {
-        title: "Option 2: Live Feature Walkthrough & Solution Demo",
-        filename: "YH_Client_FeatureDemo",
+        title: "Topic 2: Live Feature Walkthrough & Demo",
+        filename: "YH_Feature_Demo",
         scenario: "You are screensharing with a client. Walk them through one or two key features of your product.",
-        nudge: "• Which feature are you showing, and why is it useful?<br>• How does someone actually use it in practice?<br>• Ask the client a quick question to check their thoughts!",
-        vernacular: ["intuitive interface", "flagship capability", "eliminate manual overhead", "granular permissions", "actionable insights", "streamlined workflow"]
+        nudge: "• Which feature are you showing, and why is it useful?<br>• How does someone actually use it in practice?<br>• Ask the client a quick question to check their thoughts!"
       },
       opt_objection: {
-        title: "Option 3: Handling Tough Client Objections (Cost, Switching & Timing)",
-        filename: "YH_Client_HandlingObjections",
+        title: "Topic 3: Addressing Client Concerns & Questions",
+        filename: "YH_Client_QandA",
         scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Respond in your own natural style.",
-        nudge: "• Acknowledge their concern calmly so they feel heard.<br>• Explain why your product is worth the cost or effort in the long run.<br>• Propose a simple, safe next step to take the pressure off.",
-        vernacular: ["cost-benefit trade-off", "zero downtime", "de-risk transition", "phased rollout", "recoup investment", "tailored implementation"]
+        nudge: "• Acknowledge their concern calmly so they feel heard.<br>• Explain why your product is worth the cost or effort in the long run.<br>• Propose a simple, safe next step to take the pressure off."
       },
       opt_qbr: {
-        title: "Option 4: Client Success Review & Upsell / Expansion Pitch",
-        filename: "YH_Client_SuccessReview_Upsell",
+        title: "Topic 4: Client Review & Project Update",
+        filename: "YH_Client_Review",
         scenario: "You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.",
-        nudge: "• Mention how things have been going well so far.<br>• Bring up another feature or team that could also benefit.<br>• Ask if they'd be open to taking a look.",
-        vernacular: ["accelerate adoption", "synergy across teams", "enterprise tier", "scalability", "quantifiable milestones", "long-term partnership"]
+        nudge: "• Mention how things have been going well so far.<br>• Bring up another feature or team that could also benefit.<br>• Ask if they'd be open to taking a look."
       },
       opt_custom: {
-        title: "Option 5: Custom Work Pitch (Present Your Actual Real-World Product)",
-        filename: "YH_RealWorld_ProductDemo",
+        title: "Topic 5: Your Real Work Product Presentation",
+        filename: "YH_Work_Presentation",
         scenario: "Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.",
-        nudge: "• Talk freely about your product in your own natural words.<br>• Don't worry about any fixed script—let's hear your natural presentation style!",
-        vernacular: ["core functionality", "tailored solution", "client success", "seamless adoption", "proven reliability", "competitive edge"]
+        nudge: "• Talk freely about your product in your own natural words.<br>• Don't worry about any fixed script—let's hear your natural presentation style!"
       }
     };
 
@@ -1657,27 +1367,6 @@
       document.getElementById('pScenario').textContent = data.scenario;
       document.getElementById('pNudge').innerHTML = data.nudge;
       document.getElementById('filenamePreview').textContent = `${data.filename}.webm`;
-
-      const chipContainer = document.getElementById('pVernacular');
-      chipContainer.innerHTML = '';
-      data.vernacular.forEach(word => {
-        const chip = document.createElement('span');
-        chip.className = 'v-chip';
-        chip.textContent = word;
-        chip.title = "Click to copy to clipboard";
-        chip.onclick = () => {
-          navigator.clipboard.writeText(word);
-          chip.style.transform = 'scale(1.1)';
-          setTimeout(() => chip.style.transform = 'scale(1)', 200);
-        };
-        chipContainer.appendChild(chip);
-      });
-    }
-
-    function selectAndGo(optKey) {
-      document.getElementById('topicSelect').value = optKey;
-      onTopicChange();
-      switchTab('studio');
     }
 
     // Initialize default topic
@@ -1695,10 +1384,8 @@
 
       const tabs = {
         'studio': 0,
-        'options': 1,
-        'vernacular': 2,
-        'cadence': 3,
-        'rubric': 4
+        'cadence': 1,
+        'rubric': 2
       };
       const buttons = document.querySelectorAll('.tab-btn');
       if (buttons[tabs[tabId]]) {
@@ -1904,29 +1591,7 @@
       document.body.removeChild(link);
     }
 
-    // ==========================================
-    // VERNACULAR FILTERING
-    // ==========================================
-    function filterVernacular() {
-      const query = document.getElementById('vernacularSearch').value.toLowerCase();
-      const cards = document.querySelectorAll('.upgrade-card');
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
-    }
 
-    function filterCategory(cat) {
-      document.getElementById('vernacularSearch').value = '';
-      const cards = document.querySelectorAll('.upgrade-card');
-      cards.forEach(card => {
-        if (cat === 'all' || card.getAttribute('data-category') === cat) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
 
     // ==========================================
     // CADENCE & DRILL LOGIC
