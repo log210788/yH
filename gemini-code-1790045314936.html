@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Stress & Cadence — Preply Trial Board</title>
+    <style>
+        :root {
+            --bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --accent: #ffd700;
+            --accent-bg: #332b00;
+            --border: #333;
+            --muted: #888;
+            --subtext-bg: #2a2a2a;
+        }
+
+        body.light-mode {
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --accent: #d97706;
+            --accent-bg: #fef3c7;
+            --border: #e5e7eb;
+            --muted: #6b7280;
+            --subtext-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin: 0;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        button.theme-toggle {
+            background: var(--card-bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p.instruction {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 0;
+        }
+
+        /* Interactive Text & Words */
+        .drill-line {
+            font-size: 1.3rem;
+            margin: 12px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .word {
+            padding: 2px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.15s ease;
+            display: inline-block;
+        }
+
+        .word:hover {
+            background-color: var(--border);
+        }
+
+        .word.stressed {
+            background-color: var(--accent-bg);
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .word.reduced {
+            opacity: 0.35;
+            text-decoration: line-through;
+        }
+
+        /* Tables & Subtext Reveal */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        th {
+            color: var(--muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .reveal-btn {
+            background: var(--border);
+            color: var(--text);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .reveal-btn:hover {
+            background: var(--muted);
+            color: #fff;
+        }
+
+        .subtext-content {
+            display: none;
+            font-style: italic;
+            color: var(--accent);
+            background: var(--subtext-bg);
+            padding: 6px 10px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .beat-badge {
+            background: var(--border);
+            color: var(--text);
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: normal;
+        }
+
+        .option-box {
+            background: var(--bg);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Sentence Stress & Cadence — Board</h1>
+        <button class="theme-toggle" onclick="document.body.classList.toggle('light-mode')">☀ / ☾ Theme</button>
+    </header>
+
+    <!-- SECTION 1: CADENCE & ISOCHRONY -->
+    <section>
+        <h2>1. Cadence & Beat Retention <span class="beat-badge">3 Equal Beats</span></h2>
+        <p class="instruction">Tap desk at 60 BPM. Click words to toggle STRESS (Yellow) or REDUCED (Strikethrough).</p>
+
+        <div class="drill-line">
+            1. <span class="word" onclick="toggleWord(this)">CATS</span> 
+               <span class="word" onclick="toggleWord(this)">EAT</span> 
+               <span class="word" onclick="toggleWord(this)">MICE.</span>
+        </div>
+
+        <div class="drill-line">
+            2. <span class="word" onclick="toggleWord(this)">The</span> 
+               <span class="word" onclick="toggleWord(this)">CATS</span> 
+               <span class="word" onclick="toggleWord(this)">EAT</span> 
+               <span class="word" onclick="toggleWord(this)">MICE.</span>
+        </div>
+
+        <div class="drill-line">
+            3. <span class="word" onclick="toggleWord(this)">The</span> 
+               <span class="word" onclick="toggleWord(this)">CATS</span> 
+               <span class="word" onclick="toggleWord(this)">will</span> 
+               <span class="word" onclick="toggleWord(this)">EAT</span> 
+               <span class="word" onclick="toggleWord(this)">the</span> 
+               <span class="word" onclick="toggleWord(this)">MICE.</span>
+        </div>
+
+        <div class="drill-line">
+            4. <span class="word" onclick="toggleWord(this)">The</span> 
+               <span class="word" onclick="toggleWord(this)">CATS</span> 
+               <span class="word" onclick="toggleWord(this)">might</span> 
+               <span class="word" onclick="toggleWord(this)">have</span> 
+               <span class="word" onclick="toggleWord(this)">EATen</span> 
+               <span class="word" onclick="toggleWord(this)">the</span> 
+               <span class="word" onclick="toggleWord(this)">MICE.</span>
+        </div>
+    </section>
+
+    <!-- SECTION 2: NAVIGATING RESPONSIBILITY (FULL SENTENCES + HIDDEN SUBTEXT) -->
+    <section>
+        <h2>2. Navigating Responsibility (Workplace Subtext)</h2>
+        <p class="instruction">Read each variation with strong stress on the highlighted word. Click button to reveal subtext.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Full Sentence & Target Stress</th>
+                    <th style="width: 50%;">Hidden Workplace Subtext</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"<span class="word stressed" onclick="toggleWord(this)">I</span> didn't tell him to cancel the project."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"Someone else gave that order—don't look at me!"</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"I <span class="word stressed" onclick="toggleWord(this)">DIDN'T</span> tell him to cancel the project."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"Strong, direct denial of a false accusation."</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"I didn't <span class="word stressed" onclick="toggleWord(this)">TELL</span> him to cancel the project."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"I implied or suggested it, but never ordered it."</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"I didn't tell <span class="word stressed" onclick="toggleWord(this)">HIM</span> to cancel the project."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"I told the project lead or manager, not him."</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"I didn't tell him to <span class="word stressed" onclick="toggleWord(this)">CANCEL</span> the project."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"I said pause or postpone, not kill it completely!"</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>"I didn't tell him to cancel the <span class="word stressed" onclick="toggleWord(this)">PROJECT</span>."</td>
+                    <td>
+                        <button class="reveal-btn" onclick="revealSubtext(this)">Reveal Subtext</button>
+                        <div class="subtext-content">"I said cancel today's meeting, not the whole project!"</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 3: NOUN VS VERB CHECK -->
+    <section>
+        <h2>3. Word Stress Diagnostic (Noun vs. Verb)</h2>
+        <p class="instruction">Ask student to mark 1st syllable (Noun) or 2nd syllable (Verb) stress.</p>
+
+        <div class="drill-line">
+            • "Can you re<span class="word" onclick="toggleWord(this)">CORD</span> this meeting?" / "Break the <span class="word" onclick="toggleWord(this)">REC</span>ord."
+        </div>
+        <div class="drill-line">
+            • "It's a nice <span class="word" onclick="toggleWord(this)">PRE</span>sent." / "Please pre<span class="word" onclick="toggleWord(this)">SENT</span> your work."
+        </div>
+        <div class="drill-line">
+            • "We signed a new <span class="word" onclick="toggleWord(this)">CON</span>tract." / "Metals con<span class="word" onclick="toggleWord(this)">TRACT</span> in cold."
+        </div>
+    </section>
+
+    <!-- SECTION 4: STUDENT PRESENTATION & FEEDBACK -->
+    <section>
+        <h2>4. Student Presentation (60 Seconds)</h2>
+        <p class="instruction">Have the student select ONE option below and speak for 1 minute off the cuff.</p>
+
+        <div class="option-box">
+            <strong>Option A (Workplace):</strong> Briefly explain a project or task you recently completed.<br>
+            <strong>Option B (Opinion):</strong> Pitch your favourite coffee shop, restaurant, or city.<br>
+            <strong>Option C (Story):</strong> Tell a short story about a time something went wrong.
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Evaluation Criteria</th>
+                    <th>Teacher Live Diagnostic Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Content Word Punching</strong></td>
+                    <td><span style="color: var(--muted);">Did they clearly boost nouns, main verbs, and adjectives?</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Rhythm & Reduction</strong></td>
+                    <td><span style="color: var(--muted);">Did function words shrink to weak forms or stay equal length?</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Stress Accuracy</strong></td>
+                    <td><span style="color: var(--muted);">Did they place stress correctly on 2-syllable business words?</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script>
+    function toggleWord(element) {
+        if (!element.classList.contains('stressed') && !element.classList.contains('reduced')) {
+            element.classList.add('stressed');
+        } else if (element.classList.contains('stressed')) {
+            element.classList.remove('stressed');
+            element.classList.add('reduced');
+        } else {
+            element.classList.remove('reduced');
+        }
+    }
+
+    function revealSubtext(buttonElement) {
+        var subtextDiv = buttonElement.nextElementSibling;
+        buttonElement.style.display = 'none';
+        subtextDiv.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
