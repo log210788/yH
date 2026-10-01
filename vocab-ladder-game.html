@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vocabulary Upgrade Ladder — Preply Business English Interactive Suite</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-card: #1c2129;
+      --surface-hover: #262c36;
+      --border: #30363d;
+      --border-focus: #58a6ff;
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --text-dim: #6e7681;
+      
+      --t1-color: #f87171;
+      --t1-bg: rgba(239, 68, 68, 0.12);
+      --t1-border: rgba(239, 68, 68, 0.35);
+      
+      --t2-color: #60a5fa;
+      --t2-bg: rgba(59, 130, 246, 0.12);
+      --t2-border: rgba(59, 130, 246, 0.35);
+      
+      --t3-color: #34d399;
+      --t3-gold: #fbbf24;
+      --t3-bg: rgba(52, 211, 153, 0.12);
+      --t3-border: rgba(52, 211, 153, 0.4);
+      --t3-glow: rgba(52, 211, 153, 0.25);
+      
+      --accent: #58a6ff;
+      --accent-hover: #79b8ff;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    body.light-theme {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-card: #f1f5f9;
+      --surface-hover: #e2e8f0;
+      --border: #cbd5e1;
+      --border-focus: #2563eb;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      
+      --t1-color: #dc2626;
+      --t1-bg: #fee2e2;
+      --t1-border: #fca5a5;
+      
+      --t2-color: #2563eb;
+      --t2-bg: #dbeafe;
+      --t2-border: #93c5fd;
+      
+      --t3-color: #059669;
+      --t3-gold: #d97706;
+      --t3-bg: #d1fae5;
+      --t3-border: #6ee7b7;
+      --t3-glow: rgba(5, 150, 105, 0.2);
+      
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* Top Nav / Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      background: var(--t3-bg);
+      color: var(--t3-color);
+      border: 1px solid var(--t3-border);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-icon {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.15s ease;
+    }
+    .btn-icon:hover {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Main Tab Navigation */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      background: var(--surface-card);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin: 24px auto 20px;
+      max-width: 680px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 16px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      font-family: inherit;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+    }
+    .tab-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+    }
+    body.light-theme .tab-btn.active {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Sub-tabs / View switcher */
+    .view-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .pill-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .pill-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    /* Common Buttons */
+    .btn {
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: inherit;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+    }
+    .btn-secondary {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-focus);
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+    }
+
+    /* Tier Badges */
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .tier-1-badge {
+      background: var(--t1-bg);
+      color: var(--t1-color);
+      border: 1px solid var(--t1-border);
+    }
+    .tier-2-badge {
+      background: var(--t2-bg);
+      color: var(--t2-color);
+      border: 1px solid var(--t2-border);
+    }
+    .tier-3-badge {
+      background: var(--t3-bg);
+      color: var(--t3-color);
+      border: 1px solid var(--t3-border);
+    }
+
+    /* ==========================================================================
+       SECTION 1: LADDER REVEAL (BOARD VIEW)
+       ========================================================================== */
+    .ladder-section {
+      margin-bottom: 60px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--text) 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      margin-bottom: 18px;
+    }
+    .toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Table Grid View */
+    .ladder-table-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .ladder-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .ladder-table th {
+      background: var(--surface-card);
+      padding: 14px 16px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .ladder-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+      font-size: 0.94rem;
+    }
+    .ladder-table tr:last-child td {
+      border-bottom: none;
+    }
+    .ladder-table tr:hover td {
+      background: var(--surface-card);
+    }
+
+    /* Mystery Reveal Pill / Card */
+    .reveal-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 48px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px dashed var(--border);
+      background: var(--surface-card);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .reveal-pill:hover {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .reveal-pill.hidden-state {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(255, 255, 255, 0.02) 8px,
+        rgba(255, 255, 255, 0.04) 8px,
+        rgba(255, 255, 255, 0.04) 16px
+      );
+      color: var(--text-muted);
+      font-style: italic;
+      border-style: dashed;
+    }
+    body.light-theme .reveal-pill.hidden-state {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.02) 8px,
+        rgba(0, 0, 0, 0.04) 8px,
+        rgba(0, 0, 0, 0.04) 16px
+      );
+    }
+    .reveal-pill.revealed-t2 {
+      background: var(--t2-bg);
+      border: 1px solid var(--t2-border);
+      color: var(--text);
+      font-weight: 600;
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .reveal-pill.revealed-t3 {
+      background: var(--t3-bg);
+      border: 1px solid var(--t3-border);
+      color: var(--text);
+      font-weight: 700;
+      box-shadow: 0 0 16px var(--t3-glow);
+      animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .reveal-pill-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sparkle-icon {
+      color: var(--t3-gold);
+      display: inline-block;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.92); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* Audio Speaker Button */
+    .audio-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .audio-btn:hover {
+      color: var(--accent);
+      background: rgba(88, 166, 255, 0.15);
+      transform: scale(1.15);
+    }
+
+    /* Example Toggle Box */
+    .example-btn {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .example-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .example-sentence {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 6px 10px;
+      border-left: 3px solid var(--t3-color);
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 0 6px 6px 0;
+      display: none;
+    }
+    body.light-theme .example-sentence {
+      background: rgba(0, 0, 0, 0.04);
+    }
+    .example-sentence.visible {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    /* ==========================================================================
+       SECTION 1-B: FOCUS SLIDE / STEP-BY-STEP VIEW
+       ========================================================================== */
+    .focus-view {
+      display: none;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .focus-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .focus-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--t1-color), var(--t2-color), var(--t3-color));
+    }
+    .focus-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+    }
+
+    .focus-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .focus-step-item {
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-card);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .focus-step-item.t1 {
+      border-color: var(--t1-border);
+      background: var(--t1-bg);
+    }
+    .focus-step-item.t2.unrevealed,
+    .focus-step-item.t3.unrevealed {
+      border-style: dashed;
+      background: var(--surface);
+      cursor: pointer;
+    }
+    .focus-step-item.t2.unrevealed:hover,
+    .focus-step-item.t3.unrevealed:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .focus-step-item.t2.revealed {
+      border-color: var(--t2-border);
+      background: var(--t2-bg);
+      animation: popIn 0.3s ease;
+    }
+    .focus-step-item.t3.revealed {
+      border-color: var(--t3-border);
+      background: var(--t3-bg);
+      box-shadow: 0 0 20px var(--t3-glow);
+      animation: popIn 0.35s ease;
+    }
+    .step-main-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .step-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .focus-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ==========================================================================
+       SECTION 2: SORTING GAME
+       ========================================================================== */
+    .game-section {
+      display: none;
+      margin-bottom: 60px;
+    }
+    .game-stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 22px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .stat-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+    }
+
+    /* Card Pool / Staging */
+    .card-pool-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .pool-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .pool-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pool-instruction {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .card-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      min-height: 110px;
+      padding: 14px;
+      background: var(--surface-card);
+      border-radius: 10px;
+      border: 2px dashed var(--border);
+      transition: all 0.2s ease;
+    }
+
+    /* Draggable Item Card */
+    .game-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: grab;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .game-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+    .game-card.selected {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .game-card.dragging {
+      opacity: 0.45;
+      transform: scale(0.95);
+    }
+
+    /* Sorting Buckets */
+    .buckets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 820px) {
+      .buckets-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .bucket {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+    .bucket.drag-over {
+      border-color: var(--accent);
+      background: rgba(88, 166, 255, 0.05);
+      transform: scale(1.01);
+    }
+    .bucket-header {
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bucket-info h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+    .bucket-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .bucket-count {
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+    }
+
+    .bucket-cards {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      background: var(--surface-card);
+      overflow-y: auto;
+      max-height: 480px;
+    }
+    .bucket-cards:empty::after {
+      content: 'Drop or Tap cards here';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      color: var(--text-dim);
+      font-size: 0.84rem;
+      font-style: italic;
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+    }
+
+    /* Sorted Card item styling */
+    .sorted-card {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: popIn 0.25s ease;
+    }
+    .sorted-card.t1 {
+      background: var(--t1-bg);
+      border: 1px solid var(--t1-border);
+      color: var(--t1-color);
+    }
+    .sorted-card.t2 {
+      background: var(--t2-bg);
+      border: 1px solid var(--t2-border);
+      color: var(--t2-color);
+    }
+    .sorted-card.t3 {
+      background: var(--t3-bg);
+      border: 1px solid var(--t3-border);
+      color: var(--t3-color);
+    }
+
+    /* ==========================================================================
+       SECTION 3: RAPID FIRE SPEED QUIZ
+       ========================================================================== */
+    .quiz-section {
+      display: none;
+      max-width: 760px;
+      margin: 0 auto 60px;
+    }
+    .quiz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .quiz-progress-bar {
+      height: 6px;
+      background: var(--surface-card);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+    .quiz-question-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--t1-color);
+      background: var(--t1-bg);
+      border: 1px solid var(--t1-border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .quiz-prompt {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .quiz-subprompt {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+    }
+    .quiz-option-btn {
+      padding: 16px;
+      border-radius: 12px;
+      background: var(--surface-card);
+      border: 2px solid var(--border);
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quiz-option-btn:hover {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+    .quiz-option-btn.correct {
+      background: var(--t3-bg);
+      border-color: var(--t3-color);
+      color: var(--t3-color);
+    }
+    .quiz-option-btn.wrong {
+      background: var(--t1-bg);
+      border-color: var(--t1-color);
+      color: var(--t1-color);
+    }
+
+    /* Modal / Win Overlay */
+    .win-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+      animation: fadeIn 0.25s ease;
+    }
+    .win-modal {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .win-trophy {
+      font-size: 4rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Canvas for Confetti */
+    #confetti-canvas {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 300;
+    }
+
+    /* Preply Lesson Tips Drawer */
+    .tutor-tips-drawer {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 30px auto;
+      max-width: 1080px;
+    }
+    .drawer-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .drawer-content {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fullscreen Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">🪜</div>
+        <div>
+          <div class="brand-title">
+            The Vocabulary Upgrade Ladder
+            <span class="brand-badge">Preply Suite</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <!-- Sound Effect Toggle -->
+        <button class="btn-icon" id="soundToggleBtn" title="Toggle Sound Effects" onclick="toggleSound()">
+          🔊
+        </button>
+        <!-- Theme Toggle -->
+        <button class="btn-icon" id="themeToggleBtn" title="Toggle Light/Dark Theme" onclick="toggleTheme()">
+          🌓
+        </button>
+        <!-- Back to Master Studio link if hosted together -->
+        <a href="index.html" class="btn btn-secondary" style="font-size: 0.82rem; padding: 6px 12px; text-decoration: none;">
+          🎙️ Main Studio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="flex: 1; padding-top: 10px;">
+    
+    <!-- Navigation Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchMainTab('ladder')">
+        <span>🪜</span> The Upgrade Ladder
+      </button>
+      <button class="tab-btn" onclick="switchMainTab('game')">
+        <span>🎮</span> Tier Sorting Game
+      </button>
+      <button class="tab-btn" onclick="switchMainTab('quiz')">
+        <span>⚡</span> Rapid Fire Quiz
+      </button>
+    </div>
+
+    <!-- =========================================================================
+         TAB 1: THE UPGRADE LADDER (REVEAL MODE)
+         ========================================================================= -->
+    <section id="ladder-tab" class="ladder-section">
+      
+      <div class="section-header">
+        <h1 class="section-title">The Vocabulary Upgrade Ladder</h1>
+        <p class="section-desc">
+          Shift student habits from basic conversational English (Tier 1) into decisive, executive boardroom language (Tier 3).
+        </p>
+      </div>
+
+      <!-- View Switcher (Grid Table vs. Step-by-Step Focus Slide) -->
+      <div class="view-switcher">
+        <button class="pill-btn active" id="viewGridBtn" onclick="switchLadderView('grid')">
+          📋 All 10 Rows (Board View)
+        </button>
+        <button class="pill-btn" id="viewFocusBtn" onclick="switchLadderView('focus')">
+          🎯 Focus Mode (1-by-1 Slide)
+        </button>
+      </div>
+
+      <!-- BOARD VIEW -->
+      <div id="grid-view-container">
+        <!-- Controls Toolbar -->
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <span style="font-size:0.82rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Quick Elicit Controls:</span>
+            <button class="btn btn-secondary" style="font-size:0.8rem; padding:6px 12px;" onclick="revealColumn(2)">
+              🔵 Reveal All Tier 2
+            </button>
+            <button class="btn btn-emerald" style="font-size:0.8rem; padding:6px 12px;" onclick="revealColumn(3)">
+              ✨ Unlock All Tier 3
+            </button>
+            <button class="btn btn-secondary" style="font-size:0.8rem; padding:6px 12px;" onclick="resetAllReveals()">
+              🔄 Hide All & Reset
+            </button>
+          </div>
+          <div class="toolbar-group">
+            <button class="btn btn-secondary" style="font-size:0.8rem; padding:6px 12px;" onclick="toggleAllExamples()">
+              💬 Toggle All Sentences
+            </button>
+          </div>
+        </div>
+
+        <!-- Master 10-Item Ladder Table -->
+        <div class="ladder-table-card">
+          <table class="ladder-table">
+            <thead>
+              <tr>
+                <th style="width: 28%;">
+                  <span class="tier-badge tier-1-badge">Tier 1</span> Elementary / Conversational
+                </th>
+                <th style="width: 32%;">
+                  <span class="tier-badge tier-2-badge">Tier 2</span> Clear & Functional
+                </th>
+                <th style="width: 34%;">
+                  <span class="tier-badge tier-3-badge">Tier 3</span> Executive Impact
+                </th>
+                <th style="width: 6%; text-align: center;">Practice</th>
+              </tr>
+            </thead>
+            <tbody id="ladderTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FOCUS SLIDE VIEW (Step-by-step for Screen Share) -->
+      <div id="focus-view-container" class="focus-view">
+        <div class="focus-card">
+          <div class="focus-counter" id="focusCounter">CARD 1 OF 10</div>
+          
+          <div class="focus-steps">
+            <!-- Step 1 -->
+            <div class="focus-step-item t1">
+              <div>
+                <span class="tier-badge tier-1-badge" style="margin-bottom:6px;">Tier 1: Elementary</span>
+                <div class="step-main-text" id="focusT1Text">Do the project</div>
+              </div>
+              <div class="step-meta">
+                <button class="audio-btn" title="Listen" onclick="speakText(document.getElementById('focusT1Text').innerText)">🔊</button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="focus-step-item t2 unrevealed" id="focusT2Box" onclick="revealFocusTier(2)">
+              <div>
+                <span class="tier-badge tier-2-badge" style="margin-bottom:6px;">Tier 2: Clear & Functional</span>
+                <div class="step-main-text" id="focusT2Text">❓ Click to reveal Tier 2</div>
+              </div>
+              <div class="step-meta">
+                <button class="audio-btn" id="focusT2Audio" style="display:none;" title="Listen" onclick="event.stopPropagation(); speakText(vocabData[currentFocusIndex].t2)">🔊</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="focus-step-item t3 unrevealed" id="focusT3Box" onclick="revealFocusTier(3)">
+              <div>
+                <span class="tier-badge tier-3-badge" style="margin-bottom:6px;">Tier 3: Executive Impact</span>
+                <div class="step-main-text" id="focusT3Text">✨ Click to unlock Tier 3 Power Word</div>
+              </div>
+              <div class="step-meta">
+                <button class="audio-btn" id="focusT3Audio" style="display:none;" title="Listen" onclick="event.stopPropagation(); speakText(vocabData[currentFocusIndex].t3)">🔊</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentence Example Card -->
+          <div id="focusSentenceBox" style="background:var(--surface-card); border:1px solid var(--border); border-left:4px solid var(--t3-color); border-radius:10px; padding:14px 18px; text-align:left; margin-top:16px;">
+            <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--t3-color); margin-bottom:4px;">Executive Context:</div>
+            <div id="focusSentenceText" style="font-size:1.02rem; font-style:italic; color:var(--text);">
+              "Our team will execute the deployment ahead of schedule."
+            </div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="focus-navigation">
+            <button class="btn btn-secondary" onclick="prevFocusCard()">
+              ⬅️ Previous
+            </button>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" onclick="revealAllFocusTiers()">
+                👀 Reveal Both
+              </button>
+              <button class="btn btn-primary" onclick="nextFocusCard()">
+                Next Ladder Card ➡️
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preply Teacher Pedagogy Note -->
+      <div class="tutor-tips-drawer">
+        <div class="drawer-title">
+          <span>💡</span> Preply Tutor Facilitation Script
+        </div>
+        <div class="drawer-content">
+          <strong>How to run this in a 1-on-1 lesson:</strong><br>
+          1. <strong>Elicit First:</strong> Show Tier 1 (*"Do the project"*). Ask: <em>"YH, imagine you are writing an email to a peer. What's a clearer, more standard verb?"</em> Click to reveal <strong>Tier 2</strong>.<br>
+          2. <strong>Elevate to Boardroom:</strong> Ask: <em>"Now you are presenting to the Vice President or overseas stakeholders. How do we make it sound strategic and decisive?"</em> Click to unlock <strong>Tier 3</strong> with fanfare!<br>
+          3. <strong>Drill Pronunciation & Stress:</strong> Click the 🔊 button to hear native pronunciation. Emphasize stress placement (e.g., <em><strong>EX</strong>-e-cute</em>, <em><strong>FORM</strong>-u-late</em>, <em>stream-<strong>LINE</strong></em>, <em><strong>DEL</strong>-e-gate</em>).
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         TAB 2: TIER SORTING GAME
+         ========================================================================= -->
+    <section id="game-tab" class="game-section">
+      
+      <div class="section-header">
+        <h1 class="section-title">The Executive Tier Sorter</h1>
+        <p class="section-desc">
+          Drag and drop (or click and tap) each business phrase into its correct tier: 
+          <strong>Tier 1</strong> (Conversational), <strong>Tier 2</strong> (Clear & Functional), or <strong>Tier 3</strong> (Executive Impact).
+        </p>
+      </div>
+
+      <!-- Game Stats Bar -->
+      <div class="game-stats-bar">
+        <div class="stat-box">
+          <span style="font-size:1.6rem;">🎯</span>
+          <div>
+            <div class="stat-label">Cards Sorted</div>
+            <div class="stat-value" id="gameSortedCount">0 / 30</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <span style="font-size:1.6rem;">🔥</span>
+          <div>
+            <div class="stat-label">Executive Streak</div>
+            <div class="stat-value" id="gameStreakCount">0x</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <span style="font-size:1.6rem;">⏱️</span>
+          <div>
+            <div class="stat-label">Timer</div>
+            <div class="stat-value" id="gameTimer">00:00</div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-secondary" onclick="restartGame()">
+            🔄 Restart & Reshuffle
+          </button>
+        </div>
+      </div>
+
+      <!-- Card Pool (Unsorted Items) -->
+      <div class="card-pool-container">
+        <div class="pool-header">
+          <div class="pool-title">
+            <span>📦</span> Phrase Bank <span style="font-size:0.82rem; font-weight:normal; color:var(--text-muted);">(Drag or Click to Select)</span>
+          </div>
+          <div class="pool-instruction">
+            Tip: You can drag cards OR click a card then click a bucket!
+          </div>
+        </div>
+        <div class="card-pool" id="cardPool" ondragover="allowDrop(event)" ondrop="dropToPool(event)">
+          <!-- Cards injected dynamically -->
+        </div>
+      </div>
+
+      <!-- 3 Buckets / Columns -->
+      <div class="buckets-grid">
+        
+        <!-- BUCKET 1 -->
+        <div class="bucket" id="bucket-1" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropCard(event, 1)" onclick="bucketClicked(1)">
+          <div class="bucket-header">
+            <div class="bucket-info">
+              <span class="tier-badge tier-1-badge" style="margin-bottom:4px;">Tier 1</span>
+              <h3>Conversational</h3>
+              <p>Elementary, simple, everyday</p>
+            </div>
+            <div class="bucket-count" id="count-b1">0 / 10</div>
+          </div>
+          <div class="bucket-cards" id="cards-b1"></div>
+        </div>
+
+        <!-- BUCKET 2 -->
+        <div class="bucket" id="bucket-2" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropCard(event, 2)" onclick="bucketClicked(2)">
+          <div class="bucket-header">
+            <div class="bucket-info">
+              <span class="tier-badge tier-2-badge" style="margin-bottom:4px;">Tier 2</span>
+              <h3>Clear & Functional</h3>
+              <p>Standard professional communication</p>
+            </div>
+            <div class="bucket-count" id="count-b2">0 / 10</div>
+          </div>
+          <div class="bucket-cards" id="cards-b2"></div>
+        </div>
+
+        <!-- BUCKET 3 -->
+        <div class="bucket" id="bucket-3" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropCard(event, 3)" onclick="bucketClicked(3)">
+          <div class="bucket-header">
+            <div class="bucket-info">
+              <span class="tier-badge tier-3-badge" style="margin-bottom:4px;">Tier 3</span>
+              <h3>Executive Impact</h3>
+              <p>Strategic, decisive, high leverage</p>
+            </div>
+            <div class="bucket-count" id="count-b3">0 / 10</div>
+          </div>
+          <div class="bucket-cards" id="cards-b3"></div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         TAB 3: RAPID FIRE QUIZ
+         ========================================================================= -->
+    <section id="quiz-tab" class="quiz-section">
+      
+      <div class="section-header">
+        <h1 class="section-title">Executive Upgrade Rapid Fire</h1>
+        <p class="section-desc">
+          Test your spontaneous recall! Given a Tier 1 phrase, pick the high-impact Tier 3 executive upgrade.
+        </p>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quizProgressFill"></div>
+        </div>
+
+        <div class="quiz-question-badge" id="quizQuestionNum">Question 1 of 10</div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:4px;">HOW WOULD AN EXECUTIVE UPGRADE THIS?</div>
+        <div class="quiz-prompt" id="quizPrompt">"Make work faster"</div>
+        <div class="quiz-subprompt" id="quizTier2Hint">Tier 2 alternative: Speed up / Improve</div>
+
+        <div class="quiz-options" id="quizOptionsGrid">
+          <!-- 4 Multiple Choice Options -->
+        </div>
+
+        <div id="quizFeedbackBox" style="display:none; padding:12px; border-radius:10px; font-weight:700; margin-top:14px;"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- VICTORY MODAL OVERLAY -->
+  <div class="win-overlay" id="winModal">
+    <div class="win-modal">
+      <div class="win-trophy">🏆</div>
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:8px;">Executive Mastery!</h2>
+      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px;" id="winModalSub">
+        All 30 phrases categorized flawlessly. You are speaking with pure executive authority!
+      </p>
+      <div style="background:var(--surface-card); border:1px solid var(--border); border-radius:12px; padding:14px; margin-bottom:24px;">
+        <div style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted);">Title Awarded</div>
+        <div style="font-size:1.4rem; font-weight:800; color:var(--t3-color);" id="winRankTitle">Chief Communications Officer</div>
+      </div>
+      <div style="display:flex; justify-content:center; gap:12px;">
+        <button class="btn btn-secondary" onclick="closeWinModal()">Close</button>
+        <button class="btn btn-emerald" onclick="restartGame(); closeWinModal();">Play Again 🚀</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       DATA: THE 10 VOCABULARY UPGRADE LADDER SETS
+       ========================================================================== */
+    const vocabData = [
+      {
+        id: 1,
+        t1: "Do the project",
+        t2: "Carry out the project",
+        t3: "Execute / Implement",
+        example: "Our engineering leads will execute the cloud migration ahead of schedule.",
+        t3Audio: "Execute and implement"
+      },
+      {
+        id: 2,
+        t1: "Make a plan",
+        t2: "Create / Build a plan",
+        t3: "Formulate / Architect",
+        example: "We need to formulate a robust go-to-market strategy for Q4.",
+        t3Audio: "Formulate and architect"
+      },
+      {
+        id: 3,
+        t1: "Big problem",
+        t2: "Serious issue / Trouble",
+        t3: "Critical bottleneck",
+        example: "Supply chain disruptions have become a critical bottleneck for production.",
+        t3Audio: "Critical bottleneck"
+      },
+      {
+        id: 4,
+        t1: "Fix the bug",
+        t2: "Solve / Sort out",
+        t3: "Troubleshoot / Rectify",
+        example: "The DevOps team is mobilizing to troubleshoot and rectify the database outage.",
+        t3Audio: "Troubleshoot and rectify"
+      },
+      {
+        id: 5,
+        t1: "Make work faster",
+        t2: "Speed up / Improve",
+        t3: "Streamline operations",
+        example: "Automating cross-border billing will streamline client operations significantly.",
+        t3Audio: "Streamline operations"
+      },
+      {
+        id: 6,
+        t1: "Think it will grow",
+        t2: "Expect / Believe",
+        t3: "Anticipate / Forecast",
+        example: "We anticipate double-digit adoption across APAC enterprise clients.",
+        t3Audio: "Anticipate and forecast"
+      },
+      {
+        id: 7,
+        t1: "Talk about the budget",
+        t2: "Discuss the budget",
+        t3: "Deliberate on / Address",
+        example: "The executive steering committee will deliberate on capital allocations today.",
+        t3Audio: "Deliberate on and address"
+      },
+      {
+        id: 8,
+        t1: "Give work to someone",
+        t2: "Pass over / Hand off",
+        t3: "Delegate / Assign",
+        example: "To maintain strategic focus, leadership must delegate routine sprint tasks.",
+        t3Audio: "Delegate and assign"
+      },
+      {
+        id: 9,
+        t1: "Lower the bad effects",
+        t2: "Reduce damage",
+        t3: "Mitigate risks",
+        example: "We have instituted strict redundancy protocols to mitigate compliance risks.",
+        t3Audio: "Mitigate risks"
+      },
+      {
+        id: 10,
+        t1: "Check that we agree",
+        t2: "Make sure we agree",
+        t3: "Align on expectations",
+        example: "Let's schedule a 10-minute touchpoint to align on client expectations.",
+        t3Audio: "Align on expectations"
+      }
+    ];
+
+    /* ==========================================================================
+       SYNTHESIZED SOUND EFFECTS (Web Audio API - No CDNs required!)
+       ========================================================================== */
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('soundToggleBtn');
+      btn.innerText = soundEnabled ? '🔊' : '🔇';
+      btn.title = soundEnabled ? 'Sound is ON' : 'Sound is MUTED';
+      if (soundEnabled) playPop();
+    }
+
+    function playTone(freq, type, duration, gainVal = 0.15) {
+      if (!soundEnabled) return;
+      initAudio();
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(gainVal, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch(e){}
+    }
+
+    function playPop() {
+      playTone(520, 'sine', 0.12, 0.1);
+    }
+
+    function playRevealT2() {
+      if (!soundEnabled) return;
+      playTone(440, 'triangle', 0.15, 0.12);
+      setTimeout(() => playTone(660, 'sine', 0.25, 0.15), 80);
+    }
+
+    function playExecutiveUnlock() {
+      if (!soundEnabled) return;
+      playTone(523.25, 'triangle', 0.2, 0.15); // C5
+      setTimeout(() => playTone(659.25, 'triangle', 0.25, 0.15), 90); // E5
+      setTimeout(() => playTone(783.99, 'triangle', 0.35, 0.18), 180); // G5
+      setTimeout(() => playTone(1046.50, 'sine', 0.5, 0.2), 270); // C6
+    }
+
+    function playSuccessChime() {
+      if (!soundEnabled) return;
+      playTone(587.33, 'sine', 0.15, 0.15); // D5
+      setTimeout(() => playTone(880, 'sine', 0.35, 0.18), 120); // A5
+    }
+
+    function playWrongBuzzer() {
+      if (!soundEnabled) return;
+      playTone(180, 'sawtooth', 0.18, 0.12);
+      setTimeout(() => playTone(140, 'sawtooth', 0.25, 0.12), 100);
+    }
+
+    function playFanfare() {
+      if (!soundEnabled) return;
+      const notes = [523.25, 659.25, 783.99, 1046.50, 783.99, 1046.50];
+      const times = [0, 120, 240, 360, 520, 680];
+      notes.forEach((freq, idx) => {
+        setTimeout(() => playTone(freq, 'triangle', 0.35, 0.2), times[idx]);
+      });
+    }
+
+    /* ==========================================================================
+       TEXT TO SPEECH (SpeechSynthesis API)
+       ========================================================================== */
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any pending speech
+        const clean = text.replace(/[\/\?]/g, ' ');
+        const utterance = new SpeechSynthesisUtterance(clean);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.95; // Slightly measured executive cadence
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    /* ==========================================================================
+       THEME TOGGLE
+       ========================================================================== */
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+      playPop();
+    }
+
+    /* ==========================================================================
+       TAB SWITCHING
+       ========================================================================== */
+    function switchMainTab(tab) {
+      playPop();
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('ladder-tab').style.display = 'none';
+      document.getElementById('game-tab').style.display = 'none';
+      document.getElementById('quiz-tab').style.display = 'none';
+
+      if (tab === 'ladder') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('ladder-tab').style.display = 'block';
+      } else if (tab === 'game') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('game-tab').style.display = 'block';
+        if (!gameStarted) startGame();
+      } else if (tab === 'quiz') {
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+        document.getElementById('quiz-tab').style.display = 'block';
+        initQuiz();
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 1: LADDER REVEAL LOGIC (BOARD & FOCUS)
+       ========================================================================== */
+    const ladderState = vocabData.map(() => ({ t2: false, t3: false, example: false }));
+
+    function renderLadderTable() {
+      const tbody = document.getElementById('ladderTableBody');
+      tbody.innerHTML = '';
+
+      vocabData.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        const st = ladderState[index];
+
+        // Tier 1 cell
+        const t1Html = `
+          <td>
+            <div style="font-weight:700; color:var(--t1-color); margin-bottom:2px; font-size:1.02rem;">
+              ${item.t1}
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button class="audio-btn" title="Listen" onclick="speakText('${item.t1}')">🔊</button>
+              <button class="example-btn" onclick="toggleExample(${index})">💬 Context</button>
+            </div>
+            <div class="example-sentence ${st.example ? 'visible' : ''}" id="example-row-${index}">
+              "${item.example}"
+            </div>
+          </td>
+        `;
+
+        // Tier 2 cell
+        const t2Content = st.t2 
+          ? `<div class="reveal-pill revealed-t2" onclick="toggleRowTier(${index}, 2)">
+               <span class="reveal-pill-text"><span>🔵</span> ${item.t2}</span>
+               <button class="audio-btn" title="Listen" onclick="event.stopPropagation(); speakText('${item.t2}')">🔊</button>
+             </div>`
+          : `<div class="reveal-pill hidden-state" onclick="toggleRowTier(${index}, 2)">
+               <span>❓ Click to reveal Tier 2</span>
+               <span style="font-size:0.78rem; opacity:0.6;">Reveal</span>
+             </div>`;
+
+        // Tier 3 cell
+        const t3Content = st.t3
+          ? `<div class="reveal-pill revealed-t3" onclick="toggleRowTier(${index}, 3)">
+               <span class="reveal-pill-text"><span class="sparkle-icon">✨</span> ${item.t3}</span>
+               <button class="audio-btn" title="Listen" onclick="event.stopPropagation(); speakText('${item.t3Audio}')">🔊</button>
+             </div>`
+          : `<div class="reveal-pill hidden-state" onclick="toggleRowTier(${index}, 3)">
+               <span>🔒 Unlock Executive Impact</span>
+               <span style="font-size:0.78rem; opacity:0.6;">Upgrade</span>
+             </div>`;
+
+        // Actions
+        const actionsHtml = `
+          <td style="text-align:center;">
+            <button class="audio-btn" title="Hear Tier 3" onclick="speakText('${item.t3Audio}')">
+              🎙️
+            </button>
+          </td>
+        `;
+
+        tr.innerHTML = t1Html + `<td>${t2Content}</td>` + `<td>${t3Content}</td>` + actionsHtml;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function toggleRowTier(index, tier) {
+      if (tier === 2) {
+        ladderState[index].t2 = !ladderState[index].t2;
+        if (ladderState[index].t2) playRevealT2();
+        else playPop();
+      } else if (tier === 3) {
+        ladderState[index].t3 = !ladderState[index].t3;
+        if (ladderState[index].t3) {
+          playExecutiveUnlock();
+          triggerMiniConfetti();
+        } else {
+          playPop();
+        }
+      }
+      renderLadderTable();
+    }
+
+    function toggleExample(index) {
+      ladderState[index].example = !ladderState[index].example;
+      playPop();
+      renderLadderTable();
+    }
+
+    function toggleAllExamples() {
+      const anyOpen = ladderState.some(s => s.example);
+      ladderState.forEach(s => s.example = !anyOpen);
+      playPop();
+      renderLadderTable();
+    }
+
+    function revealColumn(tier) {
+      if (tier === 2) {
+        ladderState.forEach(s => s.t2 = true);
+        playRevealT2();
+      } else if (tier === 3) {
+        ladderState.forEach(s => s.t3 = true);
+        playExecutiveUnlock();
+        triggerConfetti(60);
+      }
+      renderLadderTable();
+    }
+
+    function resetAllReveals() {
+      ladderState.forEach(s => { s.t2 = false; s.t3 = false; });
+      playPop();
+      renderLadderTable();
+    }
+
+    /* Switch between Table Grid View & Focus Slide View */
+    function switchLadderView(mode) {
+      playPop();
+      const gridContainer = document.getElementById('grid-view-container');
+      const focusContainer = document.getElementById('focus-view-container');
+      const gridBtn = document.getElementById('viewGridBtn');
+      const focusBtn = document.getElementById('viewFocusBtn');
+
+      if (mode === 'grid') {
+        gridContainer.style.display = 'block';
+        focusContainer.style.display = 'none';
+        gridBtn.classList.add('active');
+        focusBtn.classList.remove('active');
+      } else {
+        gridContainer.style.display = 'none';
+        focusContainer.style.display = 'block';
+        gridBtn.classList.remove('active');
+        focusBtn.classList.add('active');
+        renderFocusCard();
+      }
+    }
+
+    /* Focus Mode Logic */
+    let currentFocusIndex = 0;
+    let focusRevealed = { t2: false, t3: false };
+
+    function renderFocusCard() {
+      const item = vocabData[currentFocusIndex];
+      document.getElementById('focusCounter').innerText = `CARD ${currentFocusIndex + 1} OF ${vocabData.length}`;
+      document.getElementById('focusT1Text').innerText = item.t1;
+      
+      const t2Box = document.getElementById('focusT2Box');
+      const t2Text = document.getElementById('focusT2Text');
+      const t2Audio = document.getElementById('focusT2Audio');
+      if (focusRevealed.t2) {
+        t2Box.className = 'focus-step-item t2 revealed';
+        t2Text.innerText = `🔵 ${item.t2}`;
+        t2Audio.style.display = 'inline-flex';
+      } else {
+        t2Box.className = 'focus-step-item t2 unrevealed';
+        t2Text.innerText = '❓ Click to reveal Tier 2 (Clear & Functional)';
+        t2Audio.style.display = 'none';
+      }
+
+      const t3Box = document.getElementById('focusT3Box');
+      const t3Text = document.getElementById('focusT3Text');
+      const t3Audio = document.getElementById('focusT3Audio');
+      if (focusRevealed.t3) {
+        t3Box.className = 'focus-step-item t3 revealed';
+        t3Text.innerHTML = `<span class="sparkle-icon">✨</span> ${item.t3}`;
+        t3Audio.style.display = 'inline-flex';
+      } else {
+        t3Box.className = 'focus-step-item t3 unrevealed';
+        t3Text.innerText = '🔒 Click to unlock Tier 3 (Executive Power Verb)';
+        t3Audio.style.display = 'none';
+      }
+
+      document.getElementById('focusSentenceText').innerText = `"${item.example}"`;
+    }
+
+    function revealFocusTier(tier) {
+      if (tier === 2) {
+        focusRevealed.t2 = true;
+        playRevealT2();
+      } else if (tier === 3) {
+        focusRevealed.t3 = true;
+        playExecutiveUnlock();
+        triggerMiniConfetti();
+      }
+      renderFocusCard();
+    }
+
+    function revealAllFocusTiers() {
+      focusRevealed.t2 = true;
+      focusRevealed.t3 = true;
+      playExecutiveUnlock();
+      triggerMiniConfetti();
+      renderFocusCard();
+    }
+
+    function nextFocusCard() {
+      if (currentFocusIndex < vocabData.length - 1) {
+        currentFocusIndex++;
+        focusRevealed = { t2: false, t3: false };
+        playPop();
+        renderFocusCard();
+      } else {
+        playFanfare();
+        triggerConfetti(80);
+      }
+    }
+
+    function prevFocusCard() {
+      if (currentFocusIndex > 0) {
+        currentFocusIndex--;
+        focusRevealed = { t2: false, t3: false };
+        playPop();
+        renderFocusCard();
+      }
+    }
+
+    // Keyboard navigation in focus view
+    window.addEventListener('keydown', (e) => {
+      const focusContainer = document.getElementById('focus-view-container');
+      if (focusContainer && focusContainer.style.display === 'block') {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown') nextFocusCard();
+        if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevFocusCard();
+        if (e.key === ' ' || e.key === 'Enter') {
+          if (!focusRevealed.t2) revealFocusTier(2);
+          else if (!focusRevealed.t3) revealFocusTier(3);
+          else nextFocusCard();
+        }
+      }
+    });
+
+    /* ==========================================================================
+       SECTION 2: TIER SORTING GAME LOGIC
+       ========================================================================== */
+    let gameCards = [];
+    let selectedCard = null;
+    let streak = 0;
+    let sortedCount = 0;
+    let gameStarted = false;
+    let timerSeconds = 0;
+    let timerInterval = null;
+
+    function buildGameDeck() {
+      const deck = [];
+      vocabData.forEach(item => {
+        deck.push({ id: `c-${item.id}-1`, phrase: item.t1, tier: 1, rootId: item.id });
+        deck.push({ id: `c-${item.id}-2`, phrase: item.t2, tier: 2, rootId: item.id });
+        deck.push({ id: `c-${item.id}-3`, phrase: item.t3, tier: 3, rootId: item.id });
+      });
+      // Shuffle array
+      return deck.sort(() => Math.random() - 0.5);
+    }
+
+    function startGame() {
+      gameStarted = true;
+      streak = 0;
+      sortedCount = 0;
+      timerSeconds = 0;
+      selectedCard = null;
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        timerSeconds++;
+        const mins = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+        const secs = String(timerSeconds % 60).padStart(2, '0');
+        document.getElementById('gameTimer').innerText = `${mins}:${secs}`;
+      }, 1000);
+
+      document.getElementById('cards-b1').innerHTML = '';
+      document.getElementById('cards-b2').innerHTML = '';
+      document.getElementById('cards-b3').innerHTML = '';
+      updateCounts();
+
+      gameCards = buildGameDeck();
+      renderCardPool();
+    }
+
+    function restartGame() {
+      playPop();
+      startGame();
+    }
+
+    function renderCardPool() {
+      const pool = document.getElementById('cardPool');
+      pool.innerHTML = '';
+      gameCards.forEach(card => {
+        const el = document.createElement('div');
+        el.className = 'game-card';
+        el.id = card.id;
+        el.draggable = true;
+        el.innerHTML = `
+          <span>💬</span>
+          <span>${card.phrase}</span>
+        `;
+
+        // Drag events
+        el.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', card.id);
+          el.classList.add('dragging');
+          selectCard(card);
+        });
+        el.addEventListener('dragend', () => {
+          el.classList.remove('dragging');
+        });
+
+        // Click to select
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectCard(card);
+        });
+
+        pool.appendChild(el);
+      });
+    }
+
+    function selectCard(card) {
+      if (selectedCard && selectedCard.id === card.id) {
+        // Deselect
+        selectedCard = null;
+        document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
+        return;
+      }
+      selectedCard = card;
+      playPop();
+      document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
+      const activeEl = document.getElementById(card.id);
+      if (activeEl) activeEl.classList.add('selected');
+    }
+
+    /* Drag and Drop Helpers */
+    function allowDrop(e) {
+      e.preventDefault();
+      const bucket = e.currentTarget;
+      if (bucket.classList.contains('bucket')) {
+        bucket.classList.add('drag-over');
+      }
+    }
+
+    function dragLeave(e) {
+      const bucket = e.currentTarget;
+      if (bucket.classList.contains('bucket')) {
+        bucket.classList.remove('drag-over');
+      }
+    }
+
+    function dropCard(e, targetTier) {
+      e.preventDefault();
+      const bucket = e.currentTarget;
+      bucket.classList.remove('drag-over');
+      const cardId = e.dataTransfer.getData('text/plain');
+      const card = gameCards.find(c => c.id === cardId);
+      if (card) {
+        verifyAndSort(card, targetTier);
+      }
+    }
+
+    function bucketClicked(tier) {
+      if (selectedCard) {
+        verifyAndSort(selectedCard, tier);
+      }
+    }
+
+    function dropToPool(e) {
+      e.preventDefault();
+      // Drop back to pool is no-op
+    }
+
+    function verifyAndSort(card, targetTier) {
+      const cardEl = document.getElementById(card.id);
+
+      if (card.tier === targetTier) {
+        // CORRECT!
+        streak++;
+        sortedCount++;
+        if (targetTier === 3) playExecutiveUnlock();
+        else playSuccessChime();
+
+        // Remove from pool list
+        gameCards = gameCards.filter(c => c.id !== card.id);
+        if (cardEl) cardEl.remove();
+
+        // Add to bucket
+        const bucketCards = document.getElementById(`cards-b${targetTier}`);
+        const sortedItem = document.createElement('div');
+        sortedItem.className = `sorted-card t${targetTier}`;
+        sortedItem.innerHTML = `
+          <span>${card.phrase}</span>
+          <span style="font-size:0.75rem; opacity:0.8;">✔ T${targetTier}</span>
+        `;
+        bucketCards.prepend(sortedItem);
+
+        selectedCard = null;
+        updateCounts();
+
+        // Check if finished
+        if (gameCards.length === 0) {
+          triggerVictory();
+        }
+      } else {
+        // INCORRECT!
+        streak = 0;
+        playWrongBuzzer();
+        if (cardEl) {
+          cardEl.style.animation = 'wrongShake 0.4s ease';
+          setTimeout(() => { cardEl.style.animation = ''; }, 400);
+        }
+        updateCounts();
+      }
+    }
+
+    function updateCounts() {
+      document.getElementById('gameSortedCount').innerText = `${sortedCount} / 30`;
+      document.getElementById('gameStreakCount').innerText = `${streak}x`;
+      document.getElementById('count-b1').innerText = `${document.getElementById('cards-b1').children.length} / 10`;
+      document.getElementById('count-b2').innerText = `${document.getElementById('cards-b2').children.length} / 10`;
+      document.getElementById('count-b3').innerText = `${document.getElementById('cards-b3').children.length} / 10`;
+    }
+
+    function triggerVictory() {
+      clearInterval(timerInterval);
+      playFanfare();
+      triggerConfetti(150);
+
+      const mins = Math.floor(timerSeconds / 60);
+      const secs = timerSeconds % 60;
+      const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+
+      document.getElementById('winModalSub').innerText = 
+        `All 30 phrases categorized flawlessly in ${timeStr}! You are ready for the boardroom.`;
+      document.getElementById('winModal').style.display = 'flex';
+    }
+
+    function closeWinModal() {
+      document.getElementById('winModal').style.display = 'none';
+    }
+
+    /* CSS shake animation for mistakes */
+    const styleEl = document.createElement('style');
+    styleEl.innerHTML = `
+      @keyframes wrongShake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-6px); }
+        40%, 80% { transform: translateX(6px); }
+      }
+    `;
+    document.head.appendChild(styleEl);
+
+    /* ==========================================================================
+       SECTION 3: RAPID FIRE SPEED QUIZ
+       ========================================================================== */
+    let quizCurrent = 0;
+    let quizQuestions = [];
+
+    function initQuiz() {
+      quizCurrent = 0;
+      quizQuestions = [...vocabData].sort(() => Math.random() - 0.5);
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const q = quizQuestions[quizCurrent];
+      const progressPercent = ((quizCurrent + 1) / quizQuestions.length) * 100;
+      document.getElementById('quizProgressFill').style.width = `${progressPercent}%`;
+      document.getElementById('quizQuestionNum').innerText = `Question ${quizCurrent + 1} of ${quizQuestions.length}`;
+      document.getElementById('quizPrompt').innerText = `"${q.t1}"`;
+      document.getElementById('quizTier2Hint').innerText = `Tier 2 alternative: ${q.t2}`;
+
+      const feedback = document.getElementById('quizFeedbackBox');
+      feedback.style.display = 'none';
+
+      // Pick 3 distractors from other t3 phrases
+      const distractors = vocabData
+        .filter(item => item.id !== q.id)
+        .map(item => item.t3)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
+      const options = [q.t3, ...distractors].sort(() => Math.random() - 0.5);
+      const grid = document.getElementById('quizOptionsGrid');
+      grid.innerHTML = '';
+
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option-btn';
+        btn.innerHTML = `<span>${opt}</span> <span>👉</span>`;
+        btn.onclick = () => handleQuizAnswer(opt, q.t3, btn);
+        grid.appendChild(btn);
+      });
+    }
+
+    function handleQuizAnswer(selected, correct, btn) {
+      const allBtns = document.querySelectorAll('.quiz-option-btn');
+      allBtns.forEach(b => b.disabled = true);
+      const feedback = document.getElementById('quizFeedbackBox');
+
+      if (selected === correct) {
+        btn.classList.add('correct');
+        playExecutiveUnlock();
+        triggerMiniConfetti();
+        feedback.style.display = 'block';
+        feedback.style.background = 'var(--t3-bg)';
+        feedback.style.color = 'var(--t3-color)';
+        feedback.innerText = `✨ Executive Choice! Correct upgrade: "${correct}"`;
+      } else {
+        btn.classList.add('wrong');
+        playWrongBuzzer();
+        allBtns.forEach(b => {
+          if (b.innerText.includes(correct)) b.classList.add('correct');
+        });
+        feedback.style.display = 'block';
+        feedback.style.background = 'var(--t1-bg)';
+        feedback.style.color = 'var(--t1-color)';
+        feedback.innerText = `💡 The executive power phrase is: "${correct}"`;
+      }
+
+      setTimeout(() => {
+        if (quizCurrent < quizQuestions.length - 1) {
+          quizCurrent++;
+          renderQuizQuestion();
+        } else {
+          playFanfare();
+          triggerConfetti(120);
+          feedback.innerText = '🎉 Rapid Fire Complete! You mastered all 10 executive upgrades!';
+        }
+      }, 1500);
+    }
+
+    /* ==========================================================================
+       CONFETTI SYSTEM (Pure HTML5 Canvas - Zero CDN dependencies)
+       ========================================================================== */
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+    let confettiAnimation = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function triggerConfetti(count = 80) {
+      const colors = ['#3b82f6', '#10b981', '#fbbf24', '#bc8cff', '#f87171', '#38bdf8'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * -canvas.height * 0.5,
+          w: Math.random() * 9 + 5,
+          h: Math.random() * 5 + 3,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 6,
+          vy: Math.random() * 4 + 3,
+          rotation: Math.random() * 360,
+          rotationSpeed: (Math.random() - 0.5) * 8,
+          opacity: 1
+        });
+      }
+      if (!confettiAnimation) animateConfetti();
+    }
+
+    function triggerMiniConfetti() {
+      triggerConfetti(25);
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confettiParticles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.rotationSpeed;
+        p.opacity -= 0.007;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, p.opacity);
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+
+        if (p.y > canvas.height || p.opacity <= 0) {
+          confettiParticles.splice(idx, 1);
+        }
+      });
+
+      if (confettiParticles.length > 0) {
+        confettiAnimation = requestAnimationFrame(animateConfetti);
+      } else {
+        cancelAnimationFrame(confettiAnimation);
+        confettiAnimation = null;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    /* Initialize Ladder on page load */
+    renderLadderTable();
+  </script>
+</body>
+</html>

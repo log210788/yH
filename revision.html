@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Upgrade Ladder — Revision Sheet & Homework | YH & Lewis O.</title>
+  
+  <style>
+    /* ==========================================================================
+       EDITORIAL / EXECUTIVE COACHING DESIGN SYSTEM
+       Intentional: Clean, authoritative, human-crafted. Zero AI vibe-coding tropes.
+       ========================================================================== */
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      
+      --navy: #0f2744;
+      --navy-light: #1e3a8a;
+      --slate-tag: #f1f5f9;
+      
+      --t1-text: #991b1b;
+      --t1-bg: #fef2f2;
+      --t1-border: #fecaca;
+      
+      --t2-text: #1e40af;
+      --t2-bg: #eff6ff;
+      --t2-border: #bfdbfe;
+      
+      --t3-text: #166534;
+      --t3-bg: #f0fdf4;
+      --t3-border: #bbf7d0;
+
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --radius: 6px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 32px 16px;
+    }
+
+    .sheet-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 48px;
+    }
+
+    /* Header & Metadata */
+    .sheet-header {
+      border-bottom: 2px solid var(--navy);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .header-main {
+      flex: 1;
+    }
+    .header-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-light);
+      background: var(--slate-tag);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .sheet-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .sheet-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .meta-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      font-size: 0.85rem;
+      min-width: 240px;
+    }
+    .meta-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      border-bottom: 1px dotted var(--border);
+    }
+    .meta-item:last-child {
+      border-bottom: none;
+    }
+    .meta-label {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+    .meta-val {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Action Bar (Top) */
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      font-size: 0.85rem;
+    }
+    .action-bar-left {
+      color: var(--text-muted);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .action-bar-links a {
+      color: var(--navy-light);
+      text-decoration: underline;
+      font-weight: 600;
+      margin-right: 12px;
+    }
+    .action-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-secondary {
+      background: var(--paper);
+      border-color: var(--border-dark);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: var(--text-dim);
+    }
+    .btn-primary {
+      background: var(--navy-light);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--navy);
+    }
+    .save-indicator {
+      font-size: 0.8rem;
+      color: var(--t3-text);
+      font-weight: 600;
+      display: none;
+    }
+
+    /* Note from Tutor */
+    .tutor-note {
+      background: #f8fafc;
+      border-left: 4px solid var(--navy-light);
+      padding: 18px 22px;
+      margin-bottom: 36px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .tutor-note-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .tutor-note p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .tutor-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Section Styling */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin: 40px 0 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    /* Table: The 10 Ladders */
+    .ladder-table-container {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .ladder-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    .ladder-table th {
+      background: #f1f5f9;
+      color: var(--navy);
+      font-weight: 700;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+    }
+    .ladder-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .ladder-table tr:last-child td {
+      border-bottom: none;
+    }
+    .ladder-table tr:hover td {
+      background: #fcfcfd;
+    }
+    .tier-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .badge-t1 {
+      color: var(--t1-text);
+      background: var(--t1-bg);
+      border-color: var(--t1-border);
+    }
+    .badge-t2 {
+      color: var(--t2-text);
+      background: var(--t2-bg);
+      border-color: var(--t2-border);
+    }
+    .badge-t3 {
+      color: var(--t3-text);
+      background: var(--t3-bg);
+      border-color: var(--t3-border);
+      font-weight: 700;
+    }
+    .usage-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Grammatical Guide Grid */
+    .rule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 768px) {
+      .rule-grid { grid-template-columns: 1fr; }
+      .sheet-wrapper { padding: 24px 16px; }
+      .sheet-header { flex-direction: column; }
+      .meta-box { width: 100%; }
+    }
+    .rule-card {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .rule-card-header {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .rule-tag {
+      font-size: 0.72rem;
+      padding: 1px 6px;
+      border-radius: 3px;
+      background: var(--slate-tag);
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .rule-body {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .rule-trap {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.82rem;
+      color: #b91c1c;
+    }
+    .rule-trap strong {
+      color: #991b1b;
+    }
+
+    /* Exercises */
+    .exercise-box {
+      margin-bottom: 32px;
+    }
+    .exercise-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .original-text {
+      background: #f8fafc;
+      border-left: 3px solid #94a3b8;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      color: #334155;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .original-text mark {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 1px 4px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+    .target-hint {
+      font-size: 0.82rem;
+      color: var(--t3-text);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .input-field {
+      width: 100%;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .input-field:focus {
+      border-color: var(--navy-light);
+      box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+    }
+    textarea.input-field {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    /* Drill Fill-ins */
+    .drill-list {
+      list-style: none;
+    }
+    .drill-item {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+    .drill-item:last-child {
+      border-bottom: none;
+    }
+    .drill-num {
+      font-weight: 700;
+      color: var(--text-dim);
+      min-width: 24px;
+    }
+    .drill-sentence {
+      flex: 1;
+    }
+    .drill-select {
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 4px 8px;
+      border: 1px solid var(--border-dark);
+      border-radius: 4px;
+      background: #ffffff;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .drill-select:focus {
+      outline: none;
+      border-color: var(--navy-light);
+    }
+
+    /* Workplace Scenario & Audio Recorder */
+    .scenario-brief {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .scenario-brief h4 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .scenario-brief ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+    .scenario-brief li {
+      margin-bottom: 4px;
+    }
+
+    .prep-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .prep-step {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .prep-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* Audio Recording Module */
+    .audio-module {
+      border: 1px solid var(--border-dark);
+      background: #fafafa;
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .audio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .audio-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .audio-timer {
+      font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .audio-player-wrapper {
+      margin-top: 12px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+    }
+    audio {
+      height: 38px;
+      flex: 1;
+    }
+
+    /* Answer Key Collapsible */
+    .answer-key-box {
+      margin-top: 48px;
+      border-top: 2px solid var(--navy);
+      padding-top: 24px;
+    }
+    .answer-toggle-btn {
+      background: var(--slate-tag);
+      border: 1px solid var(--border-dark);
+      color: var(--navy);
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .answer-toggle-btn:hover {
+      background: #e2e8f0;
+    }
+    .answer-content {
+      display: none;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      font-size: 0.88rem;
+    }
+    .answer-content.revealed {
+      display: block;
+    }
+    .answer-block {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .answer-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .answer-block h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .model-text {
+      background: #f0fdf4;
+      border-left: 3px solid #16a34a;
+      padding: 8px 12px;
+      color: #14532d;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .notes-text {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    /* Print Formatting */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .sheet-wrapper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .action-bar, .audio-module, .answer-toggle-btn, .btn {
+        display: none !important;
+      }
+      .answer-content {
+        display: block !important;
+        background: #ffffff;
+        border: 1px solid #ccc;
+      }
+      .input-field {
+        border: 1px solid #999;
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sheet-wrapper">
+
+  <!-- Document Header -->
+  <header class="sheet-header">
+    <div class="header-main">
+      <span class="header-badge">Executive English Coaching · Week 1</span>
+      <h1 class="sheet-title">The Vocabulary Upgrade Ladder</h1>
+      <p class="sheet-subtitle">Core Reference Matrix, Preposition Precision Drills & Executive PREP Task</p>
+    </div>
+    <div class="meta-box">
+      <div class="meta-item">
+        <span class="meta-label">Student:</span>
+        <span class="meta-val">YH</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Coach:</span>
+        <span class="meta-val">Lewis O.</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Focus:</span>
+        <span class="meta-val">Meeting Agility & Executive Lexicon</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Delivery:</span>
+        <span class="meta-val">Preply Coaching Portal</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Action Toolbar -->
+  <div class="action-bar">
+    <div class="action-bar-left">
+      <div class="action-bar-links">
+        <a href="game.html" target="_blank">Interactive Game (game.html)</a>
+        <a href="index.backup.html" target="_blank">Recording Studio Backup</a>
+      </div>
+      <span id="saveNotice" class="save-indicator">Answers saved locally</span>
+    </div>
+    <div class="action-btn-group">
+      <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
+      <button class="btn btn-secondary" onclick="copyAnswersToClipboard()">Copy My Answers</button>
+      <button class="btn btn-primary" onclick="saveProgress()">Save Progress</button>
+    </div>
+  </div>
+
+  <!-- Note from Lewis -->
+  <div class="tutor-note">
+    <div class="tutor-note-title">Coach Note from Lewis:</div>
+    <p>Hi YH. In our first session, we focused on breaking the habit of relying on elementary conversational default verbs (Tier 1) and transitioning decisively to the language used by engineering directors, project leads, and department heads in multinational organizations (Tier 3).</p>
+    <p>Using words like <em>do, make, big problem,</em> or <em>talk about</em> is grammatically functional, but it conceals your seniority and technical expertise. This worksheet consolidates our 10 core ladders, details the exact preposition rules to prevent Japanese L1 interference, and provides realistic workplace scenarios for you to practice before our next lesson.</p>
+  </div>
+
+  <!-- SECTION 1: MASTER REFERENCE -->
+  <section>
+    <div class="section-title">
+      <span>1. The 10 Vocabulary Upgrade Ladders</span>
+      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Reference Matrix</span>
+    </div>
+    <p class="section-desc">Tier 1 is acceptable for casual chat with familiar peers. In cross-functional status meetings, formal emails, and client discussions, systematically deploy Tier 3.</p>
+
+    <div class="ladder-table-container">
+      <table class="ladder-table">
+        <thead>
+          <tr>
+            <th style="width: 6%;">#</th>
+            <th style="width: 25%;">Tier 1 (Casual Default)</th>
+            <th style="width: 27%;">Tier 2 (Functional Standard)</th>
+            <th style="width: 42%;">Tier 3 (Executive Precision) & Register Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td><span class="tier-badge badge-t1">Do the project</span></td>
+            <td><span class="tier-badge badge-t2">Carry out the project</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Execute / Implement</span>
+              <div class="usage-note"><em>Execute a strategy / migration</em> (rigorous operational delivery). <em>Implement changes / policies</em> (deploying into active use).</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td><span class="tier-badge badge-t1">Make a plan</span></td>
+            <td><span class="tier-badge badge-t2">Create / Build a plan</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Formulate / Architect</span>
+              <div class="usage-note"><em>Formulate</em> implies structured strategic thinking; <em>architect</em> implies designing a resilient, scalable solution.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td><span class="tier-badge badge-t1">Big problem</span></td>
+            <td><span class="tier-badge badge-t2">Serious issue / Trouble</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Critical bottleneck</span>
+              <div class="usage-note">Identifies the specific constraint restricting system throughput, replacing vague panic words like <em>toraburu</em>.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td><span class="tier-badge badge-t1">Fix the bug</span></td>
+            <td><span class="tier-badge badge-t2">Solve / Sort out</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Troubleshoot / Rectify</span>
+              <div class="usage-note"><em>Troubleshoot</em> = methodically investigate root cause. <em>Rectify</em> = restore errors, data discrepancies, or oversights to correct state.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td><span class="tier-badge badge-t1">Make work faster</span></td>
+            <td><span class="tier-badge badge-t2">Speed up / Improve</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Streamline operations</span>
+              <div class="usage-note">Systematically eliminating redundancies and operational friction rather than merely rushing.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td><span class="tier-badge badge-t1">Think it will grow</span></td>
+            <td><span class="tier-badge badge-t2">Expect / Believe</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Anticipate / Forecast</span>
+              <div class="usage-note"><em>Anticipate</em> = proactive readiness for expected events. <em>Forecast</em> = systematic forward projection based on data.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>7</strong></td>
+            <td><span class="tier-badge badge-t1">Talk about the budget</span></td>
+            <td><span class="tier-badge badge-t2">Discuss the budget</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Deliberate on / Address</span>
+              <div class="usage-note"><em>Deliberate on</em> = formal committee discussion before deciding. <em>Address</em> = tackle directly (no preposition).</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>8</strong></td>
+            <td><span class="tier-badge badge-t1">Give work to someone</span></td>
+            <td><span class="tier-badge badge-t2">Pass over / Hand off</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Delegate / Assign</span>
+              <div class="usage-note"><em>Delegate [task] to [person]</em> (entrusting responsibility). <em>Assign [task] to [person]</em> (allocating ownership).</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>9</strong></td>
+            <td><span class="tier-badge badge-t1">Lower the bad effects</span></td>
+            <td><span class="tier-badge badge-t2">Reduce damage</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Mitigate risks</span>
+              <div class="usage-note">Standard risk-governance terminology to describe preventative action reducing downside exposure.</div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td><span class="tier-badge badge-t1">Check that we agree</span></td>
+            <td><span class="tier-badge badge-t2">Make sure we agree</span></td>
+            <td>
+              <span class="tier-badge badge-t3">Align on expectations</span>
+              <div class="usage-note">Establishes shared clarity on deliverables and timelines without sounding confrontational or clumsy.</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 2: GRAMMAR & L1 TRAPS -->
+  <section>
+    <div class="section-title">
+      <span>2. Grammatical Precision & L1 Interference Guide</span>
+      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Syntax Rules</span>
+    </div>
+    <p class="section-desc">Review these four structural rules where Japanese business speakers most frequently experience grammatical interference.</p>
+
+    <div class="rule-grid">
+      <div class="rule-card">
+        <div class="rule-card-header">
+          <span>Rule 1: Direct Transitive Verbs (No Preposition)</span>
+          <span class="rule-tag">Syntax</span>
+        </div>
+        <div class="rule-body">
+          The verbs <strong>address</strong>, <strong>mitigate</strong>, <strong>formulate</strong>, and <strong>rectify</strong> are direct transitive verbs. They take their object immediately without a preposition.
+        </div>
+        <div class="rule-trap">
+          <strong>Trap:</strong> Do not say <em>"address about the problem"</em> or <em>"rectify with the error"</em>. Say: <em>"address the problem"</em> and <em>"rectify the error"</em>.
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-card-header">
+          <span>Rule 2: "Deliberate" Requires "On"</span>
+          <span class="rule-tag">Preposition</span>
+        </div>
+        <div class="rule-body">
+          Unlike <em>discuss</em> (which takes no preposition), <strong>deliberate</strong> requires the preposition <strong>on</strong> (or occasionally <em>over</em>) when indicating the topic under consideration.
+        </div>
+        <div class="rule-trap">
+          <strong>Trap:</strong> Say: <em>"The board deliberated on the acquisition."</em> (Not <em>"deliberated the acquisition"</em> or <em>"deliberated about"</em>).
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-card-header">
+          <span>Rule 3: "Align On" vs. "Align With"</span>
+          <span class="rule-tag">Preposition</span>
+        </div>
+        <div class="rule-body">
+          You align <strong>on</strong> a deliverable, roadmap, timeline, or expectation (the shared topic). You align <strong>with</strong> a stakeholder, team, client, or policy (the counterpart).
+        </div>
+        <div class="rule-trap">
+          <strong>Trap:</strong> <em>"Let's align <strong>on</strong> the deadline <strong>with</strong> the client."</em>
+        </div>
+      </div>
+
+      <div class="rule-card">
+        <div class="rule-card-header">
+          <span>Rule 4: Eliminating "Suru" & "Toraburu"</span>
+          <span class="rule-tag">Loanword Purge</span>
+        </div>
+        <div class="rule-body">
+          Japanese relies heavily on general-purpose verbs (<em>suru</em> / do) and loanwords (<em>toraburu</em> / trouble). In English, state the exact operational reality: <em>bottleneck</em>, <em>latency spike</em>, <em>discrepancy</em>.
+        </div>
+        <div class="rule-trap">
+          <strong>Trap:</strong> Replace <em>"We had big trouble with the server"</em> with <em>"We hit a critical bottleneck during database synchronization."</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: HOMEWORK -->
+  <section class="exercise-box">
+    <div class="section-title">
+      <span>3. Homework Assignment</span>
+      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Written Exercises</span>
+    </div>
+
+    <!-- Exercise A -->
+    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Part A: Contextual Sentence Upgrades (Email & Chat Messages)</h3>
+    <p class="section-desc">Each message below was drafted with elementary, conversational phrasing in brackets. Rewrite each sentence into executive Tier-3 English.</p>
+
+    <!-- Item 1 -->
+    <div class="exercise-item">
+      <div class="item-header">
+        <span>ITEM 1 · PROJECT MILESTONE & REVIEW</span>
+        <span>Target: execute / critical bottleneck</span>
+      </div>
+      <div class="original-text">
+        "Our team needs to <mark>do the project</mark> before October, but the legal sign-off has become a <mark>big problem</mark> for everyone."
+      </div>
+      <textarea id="ex_a1" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="exercise-item">
+      <div class="item-header">
+        <span>ITEM 2 · OPERATIONAL EFFICIENCY</span>
+        <span>Target: streamline operations (or workflows) / mitigate risks</span>
+      </div>
+      <div class="original-text">
+        "We should automate this report to <mark>make work faster</mark> and <mark>lower the bad effects</mark> of human data entry mistakes."
+      </div>
+      <textarea id="ex_a2" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="exercise-item">
+      <div class="item-header">
+        <span>ITEM 3 · CLIENT & VENDOR ALIGNMENT</span>
+        <span>Target: align on expectations / deliberate on</span>
+      </div>
+      <div class="original-text">
+        "Before we finalize the vendor agreement, we must schedule a call to <mark>check that we agree</mark> on delivery milestones and <mark>talk about the budget</mark> for external contractors."
+      </div>
+      <textarea id="ex_a3" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="exercise-item">
+      <div class="item-header">
+        <span>ITEM 4 · TECHNICAL INCIDENT RESOLUTION</span>
+        <span>Target: troubleshoot / rectify / anticipate (or forecast)</span>
+      </div>
+      <div class="original-text">
+        "The infrastructure team spent six hours trying to <mark>fix the bug</mark> in the payment microservice, and we <mark>think it will grow</mark> steadily now that the patch is deployed."
+      </div>
+      <textarea id="ex_a4" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="exercise-item">
+      <div class="item-header">
+        <span>ITEM 5 · LEADERSHIP & RESOURCE ALLOCATION</span>
+        <span>Target: delegate / formulate (or architect)</span>
+      </div>
+      <div class="original-text">
+        "To maintain strategic focus, the director asked me to <mark>give work to someone</mark> on the junior team rather than <mark>making a plan</mark> for every small detail myself."
+      </div>
+      <textarea id="ex_a5" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
+    </div>
+
+    <!-- Exercise B -->
+    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 32px 0 8px 0;">Part B: Preposition & Syntax Accuracy Drill</h3>
+    <p class="section-desc">Select the grammatically accurate preposition or syntax pattern for each executive business context.</p>
+
+    <div style="background:#ffffff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;">
+      <ul class="drill-list">
+        <li class="drill-item">
+          <span class="drill-num">1.</span>
+          <span class="drill-sentence">The steering committee will deliberate 
+            <select id="drill_1" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="on">on</option>
+              <option value="about">about</option>
+              <option value="with">with</option>
+              <option value="NONE">[no preposition]</option>
+            </select> 
+            the capital expenditure proposals this Thursday.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">2.</span>
+          <span class="drill-sentence">In our cross-functional sync, the tech lead will address 
+            <select id="drill_2" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="about">about</option>
+              <option value="to">to</option>
+              <option value="NONE">[no preposition]</option>
+            </select> 
+            the outstanding latency issues directly.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">3.</span>
+          <span class="drill-sentence">We must ensure all project leads are fully aligned 
+            <select id="drill_3" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="on">on</option>
+              <option value="to">to</option>
+              <option value="with">with</option>
+              <option value="at">at</option>
+            </select> 
+            the final release deliverables.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">4.</span>
+          <span class="drill-sentence">It is critical that our security framework aligns closely 
+            <select id="drill_4" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="with">with</option>
+              <option value="on">on</option>
+              <option value="to">to</option>
+            </select> 
+            international ISO compliance standards.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">5.</span>
+          <span class="drill-sentence">The project manager chose to delegate sprint ticket management 
+            <select id="drill_5" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="to">to</option>
+              <option value="for">for</option>
+              <option value="toward">toward</option>
+            </select> 
+            the senior QA analyst.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">6.</span>
+          <span class="drill-sentence">Implementing automated backup protocols helped our team mitigate 
+            <select id="drill_6" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="NONE">[no preposition]</option>
+              <option value="against">against</option>
+              <option value="from">from</option>
+            </select> 
+            critical downtime risks.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">7.</span>
+          <span class="drill-sentence">Late component shipments created a severe operational bottleneck 
+            <select id="drill_7" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="in">in</option>
+              <option value="at">at</option>
+              <option value="on">on</option>
+            </select> 
+            our hardware fulfillment schedule.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">8.</span>
+          <span class="drill-sentence">We will spend tomorrow morning formulating 
+            <select id="drill_8" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="NONE">[no preposition]</option>
+              <option value="up">up</option>
+              <option value="out">out</option>
+            </select> 
+            a comprehensive response for the stakeholder committee.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">9.</span>
+          <span class="drill-sentence">Our finance department has taken immediate steps to rectify 
+            <select id="drill_9" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="NONE">[no preposition]</option>
+              <option value="about">about</option>
+              <option value="with">with</option>
+            </select> 
+            the billing discrepancies reported by the client.
+          </span>
+        </li>
+        <li class="drill-item">
+          <span class="drill-num">10.</span>
+          <span class="drill-sentence">Based on third-quarter telemetry data, engineering forecasts 
+            <select id="drill_10" class="drill-select">
+              <option value="">-- select --</option>
+              <option value="NONE">[no preposition]</option>
+              <option value="for">for</option>
+              <option value="about">about</option>
+            </select> 
+            a 25% decrease in database load.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PRACTICAL TASK -->
+  <section>
+    <div class="section-title">
+      <span>4. Practical Workplace Application Task</span>
+      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Simulation & Production</span>
+    </div>
+
+    <div class="scenario-brief">
+      <h4>Simulation Scenario: Cross-Border Platform Migration Briefing</h4>
+      <p>You are the project lead on an international initiative migrating client workflows to a new centralized cloud system. In your weekly cross-functional sync with overseas leadership, you must deliver a 60-to-90 second project status update addressing the following situation:</p>
+      <ul>
+        <li>Third-party API latency caused an unexpected 3-day testing slowdown.</li>
+        <li>Your team identified the root cause, deployed a patch, and restructured testing steps to accelerate future sprints.</li>
+        <li>You want to confirm next week's revised launch milestone with all regional teams.</li>
+      </ul>
+      <p style="margin-top:10px; font-weight:600; color:var(--navy);">Requirements:</p>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Use the <strong>PREP framework</strong> (Point, Reason, Example, Point) and naturally integrate at least <strong>four (4) Tier-3 collocations</strong> from today's ladder (e.g., <em>execute, critical bottleneck, troubleshoot, rectify, streamline, mitigate risks, align on expectations, delegate</em>).</p>
+    </div>
+
+    <!-- PREP Worksheet Input -->
+    <div class="prep-grid">
+      <div class="prep-step">
+        <label class="prep-label" for="prep_p1">Point (Current Milestone & Objective):</label>
+        <input type="text" id="prep_p1" class="input-field" placeholder="State your team's current delivery status directly and decisively...">
+      </div>
+      <div class="prep-step">
+        <label class="prep-label" for="prep_r">Reason (The Operational Constraint / Root Cause):</label>
+        <input type="text" id="prep_r" class="input-field" placeholder="Explain the primary bottleneck and its impact on the schedule...">
+      </div>
+      <div class="prep-step">
+        <label class="prep-label" for="prep_e">Example / Action (Specific Resolution & Risk Mitigation):</label>
+        <input type="text" id="prep_e" class="input-field" placeholder="Detail the actions taken to rectify the issue and streamline workflows...">
+      </div>
+      <div class="prep-step">
+        <label class="prep-label" for="prep_p2">Point (Next Deliverable & Alignment Step):</label>
+        <input type="text" id="prep_p2" class="input-field" placeholder="Conclude with the revised milestone and call to align on expectations...">
+      </div>
+    </div>
+
+    <!-- Full Draft Textarea -->
+    <div style="margin-top:16px;">
+      <label class="prep-label" for="prep_full">Complete Written Briefing (Email / Meeting Script):</label>
+      <textarea id="prep_full" class="input-field" style="min-height: 120px;" placeholder="Assemble your full 5-to-7 sentence update here..."></textarea>
+    </div>
+
+    <!-- Spoken Option / In-Browser Audio Recorder -->
+    <div class="audio-module">
+      <div class="audio-header">
+        <span class="audio-title">Spoken Option: In-Browser Voice Memo Recording Studio</span>
+        <span id="audioTimer" class="audio-timer">00:00</span>
+      </div>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom: 12px;">Deliver your PREP update aloud. Speak clearly, observe consonant stops, and keep your recording between 60 and 90 seconds.</p>
+      
+      <div class="audio-controls">
+        <button id="recordBtn" class="btn btn-primary" onclick="toggleAudioRecording()">Start Recording</button>
+        <button id="downloadAudioBtn" class="btn btn-secondary" style="display:none;" onclick="downloadRecordedAudio()">Download Recording (.webm)</button>
+        <span id="recordingStatus" style="font-size:0.82rem; font-weight:600; color:var(--text-dim);">Ready to record</span>
+      </div>
+
+      <div id="audioPlayerWrapper" class="audio-player-wrapper">
+        <audio id="audioPlayback" controls></audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ANSWER KEY -->
+  <div class="answer-key-box">
+    <button class="answer-toggle-btn" onclick="toggleAnswerKey()">
+      <span id="toggleIcon">▶</span> Coach Model Answers & Explanations (Click to Reveal)
+    </button>
+    
+    <div id="answerContent" class="answer-content">
+      
+      <!-- Model for Exercise A -->
+      <div class="answer-block">
+        <h5>Part A: Model Sentence Upgrades</h5>
+        
+        <p style="font-weight:600; font-size:0.85rem; margin-top:8px;">Item 1:</p>
+        <div class="model-text">"Our team needs to <strong>execute the project</strong> before October, but legal sign-off has become a <strong>critical bottleneck</strong> for all stakeholders."</div>
+        <div class="notes-text">Alternative: <em>"We are scheduled to <strong>implement the initiative</strong> by October; however, securing legal approval remains our primary <strong>operational bottleneck</strong>."</em></div>
+
+        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 2:</p>
+        <div class="model-text">"We should automate this report to <strong>streamline our workflow</strong> and <strong>mitigate the risks</strong> of manual data entry errors."</div>
+        <div class="notes-text">Alternative: <em>"Automating this reporting process will <strong>streamline operations</strong> while <strong>mitigating downside exposure</strong> caused by human discrepancies."</em></div>
+
+        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 3:</p>
+        <div class="model-text">"Prior to finalizing the vendor agreement, let's schedule a call to <strong>align on expectations</strong> regarding delivery milestones and <strong>deliberate on</strong> contractor budget allocations."</div>
+        <div class="notes-text">Alternative: <em>"Before locking in the contract, we should connect to ensure all parties are <strong>fully aligned on deliverables</strong> and <strong>address</strong> contractor budget constraints."</em></div>
+
+        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 4:</p>
+        <div class="model-text">"The infrastructure team spent six hours <strong>troubleshooting and rectifying</strong> the defect in the payment microservice, and we <strong>anticipate</strong> steady throughput now that the patch is deployed."</div>
+        <div class="notes-text">Alternative: <em>"DevOps successfully <strong>troubleshot the root cause</strong> and <strong>rectified</strong> the payment gateway; we <strong>forecast</strong> stable transaction volume moving forward."</em></div>
+
+        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 5:</p>
+        <div class="model-text">"To maintain strategic focus, the director advised me to <strong>delegate operational tasks</strong> across the junior team rather than attempting to <strong>architect</strong> every minor detail myself."</div>
+        <div class="notes-text">Alternative: <em>"I will <strong>delegate routine sprint tickets</strong> to teammates so I can dedicate time to <strong>formulating</strong> our broader quarterly roadmap."</em></div>
+      </div>
+
+      <!-- Key for Exercise B -->
+      <div class="answer-block">
+        <h5>Part B: Preposition Key & Grammatical Rationale</h5>
+        <ul style="margin-left: 20px; line-height: 1.6; font-size:0.85rem;">
+          <li><strong>1. on</strong> — <em>deliberate on</em> is the formal standard. Avoid <em>deliberate about</em>.</li>
+          <li><strong>2. NONE</strong> — <em>address</em> is a direct transitive verb. Never use <em>address about</em>.</li>
+          <li><strong>3. on</strong> — align <strong>on</strong> a deliverable, timeline, or scope.</li>
+          <li><strong>4. with</strong> — align <strong>with</strong> a third party, department, or standard.</li>
+          <li><strong>5. to</strong> — delegate responsibilities <strong>to</strong> a designated person.</li>
+          <li><strong>6. NONE</strong> — <em>mitigate risks</em> (direct object; no preposition in business English).</li>
+          <li><strong>7. in</strong> — a bottleneck occurs <strong>in</strong> a process, stage, or workflow.</li>
+          <li><strong>8. NONE</strong> — <em>formulate a response</em> (transitive verb; no <em>up</em> or <em>out</em>).</li>
+          <li><strong>9. NONE</strong> — <em>rectify the discrepancies</em> (direct transitive verb; no <em>with</em>).</li>
+          <li><strong>10. NONE</strong> — <em>forecasts a 25% decrease</em> (direct transitive verb; no <em>for</em>).</li>
+        </ul>
+      </div>
+
+      <!-- Model PREP Task -->
+      <div class="answer-block">
+        <h5>Part C: Model Executive Briefing (Written & Spoken)</h5>
+        
+        <p style="font-weight:600; font-size:0.85rem; margin-top:6px;">Written Email / Slack Format:</p>
+        <div class="model-text" style="font-family: inherit; font-size:0.85rem; font-style:normal; white-space:pre-line;">
+Team,
+We remain firmly on track to <strong>execute</strong> the platform migration by mid-month.
+Over the past three days, third-party API latency emerged as a <strong>critical bottleneck</strong> during regression testing. The engineering squad mobilized immediately to <strong>troubleshoot</strong> the integration defect, and we have deployed a patch to <strong>rectify</strong> the data synchronization errors.
+To protect our revised timeline, I have <strong>delegated</strong> ticket verification to our regional QA leads and simplified our staging criteria to <strong>streamline operations</strong>. These measures will effectively <strong>mitigate risks</strong> ahead of our client rollout.
+Let's hold a brief 10-minute sync tomorrow at 10:00 AM SGT to <strong>align on expectations</strong> for next week's release schedule.
+        </div>
+
+        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Spoken Briefing Transcript (approx. 70 seconds):</p>
+        <div class="model-text" style="font-family: inherit; font-size:0.85rem; font-style:italic; white-space:pre-line;">
+"Good morning everyone. Here is a brief milestone update on the platform migration. We are progressing well and preparing to <strong>execute</strong> our production rollout by the middle of this month.
+The reason for our brief testing delay earlier this week was a <strong>critical bottleneck</strong> in the third-party API integration. Our backend team spent Wednesday <strong>troubleshooting</strong> the root cause, and they were able to <strong>rectify</strong> the synchronization issues yesterday evening.
+To recover lost ground, I have <strong>delegated</strong> secondary verification tasks to the APAC squad and introduced automated scripts to <strong>streamline</strong> our staging workflows. This step will <strong>mitigate risks</strong> of further slippage.
+I look forward to connecting tomorrow at 10 AM so we can <strong>align on expectations</strong> and confirm the final go-live date. Thank you."
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Client-side Logic (Draft Persistence, Audio Recording, Export) -->
+<script>
+  // 1. Local Storage Persistence
+  const STORAGE_KEY = 'yh_vocab_ladder_homework_v1';
+  const fieldIds = [
+    'ex_a1', 'ex_a2', 'ex_a3', 'ex_a4', 'ex_a5',
+    'drill_1', 'drill_2', 'drill_3', 'drill_4', 'drill_5',
+    'drill_6', 'drill_7', 'drill_8', 'drill_9', 'drill_10',
+    'prep_p1', 'prep_r', 'prep_e', 'prep_p2', 'prep_full'
+  ];
+
+  function saveProgress() {
+    const data = {};
+    fieldIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) data[id] = el.value;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    
+    const notice = document.getElementById('saveNotice');
+    notice.style.display = 'inline';
+    notice.innerText = '✓ Progress saved to this browser';
+    setTimeout(() => {
+      notice.style.display = 'none';
+    }, 3000);
+  }
+
+  function loadSavedProgress() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      fieldIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && data[id] !== undefined) {
+          el.value = data[id];
+        }
+      });
+    } catch(e){}
+  }
+
+  // Auto-save on typing (debounced)
+  let autoSaveTimeout = null;
+  fieldIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', () => {
+        clearTimeout(autoSaveTimeout);
+        autoSaveTimeout = setTimeout(saveProgress, 1200);
+      });
+    }
+  });
+
+  // 2. Copy formatted answers for Preply chat
+  function copyAnswersToClipboard() {
+    saveProgress();
+    let text = "=== YH: VOCABULARY LADDER HOMEWORK SUBMISSION ===\n\n";
+    text += "--- PART A: SENTENCE UPGRADES ---\n";
+    text += "1. " + (document.getElementById('ex_a1').value || "[Not answered]") + "\n";
+    text += "2. " + (document.getElementById('ex_a2').value || "[Not answered]") + "\n";
+    text += "3. " + (document.getElementById('ex_a3').value || "[Not answered]") + "\n";
+    text += "4. " + (document.getElementById('ex_a4').value || "[Not answered]") + "\n";
+    text += "5. " + (document.getElementById('ex_a5').value || "[Not answered]") + "\n\n";
+
+    text += "--- PART B: PREPOSITION DRILLS ---\n";
+    for (let i = 1; i <= 10; i++) {
+      const val = document.getElementById('drill_' + i).value || "[Empty]";
+      text += i + ". " + val + "  ";
+      if (i % 5 === 0) text += "\n";
+    }
+    text += "\n--- PART C: PREP WORKPLACE BRIEFING ---\n";
+    text += "Point: " + (document.getElementById('prep_p1').value || "") + "\n";
+    text += "Reason: " + (document.getElementById('prep_r').value || "") + "\n";
+    text += "Example: " + (document.getElementById('prep_e').value || "") + "\n";
+    text += "Point: " + (document.getElementById('prep_p2').value || "") + "\n\n";
+    text += "Full Briefing Draft:\n" + (document.getElementById('prep_full').value || "[No draft entered]");
+
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Answers copied to clipboard! You can now paste them directly into Preply chat or an email.");
+    }).catch(() => {
+      prompt("Copy your answers manually below:", text);
+    });
+  }
+
+  // 3. Toggle Answer Key
+  function toggleAnswerKey() {
+    const panel = document.getElementById('answerContent');
+    const icon = document.getElementById('toggleIcon');
+    const isOpen = panel.classList.contains('revealed');
+    if (isOpen) {
+      panel.classList.remove('revealed');
+      icon.innerText = '▶';
+    } else {
+      panel.classList.add('revealed');
+      icon.innerText = '▼';
+    }
+  }
+
+  // 4. In-Browser Audio Recorder
+  let mediaRecorder = null;
+  let audioChunks = [];
+  let audioBlob = null;
+  let timerInterval = null;
+  let secondsElapsed = 0;
+
+  async function toggleAudioRecording() {
+    const btn = document.getElementById('recordBtn');
+    const status = document.getElementById('recordingStatus');
+    const timer = document.getElementById('audioTimer');
+
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+      // Stop recording
+      mediaRecorder.stop();
+      clearInterval(timerInterval);
+      btn.innerText = 'Record Again';
+      btn.className = 'btn btn-secondary';
+      status.innerText = 'Recording completed';
+      return;
+    }
+
+    // Start recording
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      audioChunks = [];
+      mediaRecorder = new MediaRecorder(stream);
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) audioChunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const player = document.getElementById('audioPlayback');
+        player.src = audioUrl;
+        document.getElementById('audioPlayerWrapper').style.display = 'flex';
+        document.getElementById('downloadAudioBtn').style.display = 'inline-flex';
+        stream.getTracks().forEach(track => track.stop());
+      };
+
+      mediaRecorder.start();
+      secondsElapsed = 0;
+      timer.innerText = '00:00';
+      timerInterval = setInterval(() => {
+        secondsElapsed++;
+        const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+        const secs = String(secondsElapsed % 60).padStart(2, '0');
+        timer.innerText = `${mins}:${secs}`;
+      }, 1000);
+
+      btn.innerText = 'Stop Recording';
+      btn.className = 'btn btn-primary';
+      status.innerText = '● Recording live...';
+      document.getElementById('audioPlayerWrapper').style.display = 'none';
+      document.getElementById('downloadAudioBtn').style.display = 'none';
+
+    } catch (err) {
+      alert('Could not access microphone. Please check your browser microphone permissions.');
+      status.innerText = 'Microphone access denied';
+    }
+  }
+
+  function downloadRecordedAudio() {
+    if (!audioBlob) return;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(audioBlob);
+    a.download = `YH_PREP_Briefing_${new Date().toISOString().slice(0,10)}.webm`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  // Initialize on page load
+  window.addEventListener('DOMContentLoaded', loadSavedProgress);
+</script>
+
+</body>
+</html>

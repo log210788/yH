@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preply Business Vocab Arena — YH Executive Coaching</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #141b26;
+      --surface-card: #1b2433;
+      --surface-hover: #222e40;
+      --surface-border: #2a374d;
+      
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.25);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.25);
+      --rose: #f43f5e;
+      --rose-glow: rgba(244, 63, 94, 0.25);
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.25);
+      
+      --radius-sm: 8px;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    body.light-mode {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-card: #f1f5f9;
+      --surface-hover: #e2e8f0;
+      --surface-border: #cbd5e1;
+      
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      
+      --accent: #0284c7;
+      --accent-glow: rgba(2, 132, 199, 0.2);
+      --emerald: #059669;
+      --emerald-glow: rgba(5, 150, 105, 0.2);
+      --amber: #d97706;
+      --amber-glow: rgba(217, 119, 6, 0.2);
+      --rose: #e11d48;
+      --rose-glow: rgba(225, 29, 72, 0.2);
+      --purple: #9333ea;
+      --purple-glow: rgba(147, 51, 234, 0.2);
+      
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.25s, color 0.25s;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* Top Navigation Bar */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-icon:hover {
+      background: var(--surface-hover);
+      border-color: var(--text-muted);
+      transform: translateY(-1px);
+    }
+
+    /* Live Game HUD / Stat Bar */
+    .hud-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--surface-border);
+      padding: 10px 0;
+      font-size: 0.85rem;
+    }
+
+    .hud-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-card);
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid var(--surface-border);
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .rank-badge {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(168, 85, 247, 0.15));
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    /* Game Mode Tabs */
+    .mode-nav {
+      display: flex;
+      gap: 8px;
+      padding: 16px 0 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .mode-nav::-webkit-scrollbar { display: none; }
+
+    .mode-btn {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .mode-btn:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+    }
+    .mode-btn.active {
+      background: var(--surface-card);
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    /* Main Area */
+    main {
+      flex: 1;
+      padding: 16px 0 60px;
+    }
+
+    .game-section {
+      display: none;
+      animation: slideUp 0.25s ease;
+    }
+    .game-section.active {
+      display: block;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card Panels */
+    .arena-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mode-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Teacher / Co-pilot Toggle Banner */
+    .copilot-banner {
+      background: linear-gradient(90deg, rgba(168, 85, 247, 0.12), rgba(56, 189, 248, 0.12));
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .copilot-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    /* MODE 1: REFLEX SPRINT (THE FIRST EXERCISE) */
+    .sprint-display-box {
+      background: var(--surface-card);
+      border: 2px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .sprint-display-box.active-timer {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+    .sprint-display-box.speaking-timer {
+      border-color: var(--emerald);
+      box-shadow: 0 0 35px var(--emerald-glow);
+    }
+
+    .trigger-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .trigger-word {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .trigger-ipa {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    /* Timers & Countdown */
+    .timer-ring-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 16px auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timer-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+    }
+
+    .timer-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .reflex-stage-text {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 8px;
+      min-height: 24px;
+    }
+
+    /* Starter Formula Tabs */
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .formula-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .formula-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .formula-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .formula-starter {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .formula-snippet {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      border-top: 1px dashed var(--surface-border);
+      padding-top: 6px;
+      display: none;
+    }
+    .formula-card.open .formula-snippet {
+      display: block;
+    }
+
+    /* Teacher Grading / Co-Pilot Evaluation Bar */
+    .grading-shelf {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .grading-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-grade {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-grade:hover {
+      border-color: var(--text-muted);
+      background: var(--surface-hover);
+    }
+    .btn-grade.success {
+      border-color: var(--emerald);
+      color: var(--emerald);
+    }
+    .btn-grade.success:hover {
+      background: var(--emerald-glow);
+    }
+    .btn-grade.warn {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+    .btn-grade.warn:hover {
+      background: var(--amber-glow);
+    }
+
+    /* Sprint Action Buttons */
+    .sprint-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      background: linear-gradient(135deg, var(--accent), #2563eb);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(56, 189, 248, 0.4);
+    }
+    .btn-hero:active {
+      transform: translateY(0);
+    }
+
+    .btn-alt {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 14px 22px;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-alt:hover {
+      background: var(--surface-hover);
+      border-color: var(--text-muted);
+    }
+
+    /* QUIZ & BLITZ MODE (MULTIPLE CHOICE) */
+    .quiz-question-box {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .quiz-scenario-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .quiz-question-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .quiz-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .quiz-options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .quiz-opt-btn {
+      background: var(--surface-card);
+      border: 2px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: var(--surface-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .quiz-opt-key {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .quiz-opt-btn.correct {
+      border-color: var(--emerald);
+      background: var(--emerald-glow);
+      color: #fff;
+    }
+    .quiz-opt-btn.wrong {
+      border-color: var(--rose);
+      background: var(--rose-glow);
+      color: #fff;
+    }
+
+    .quiz-feedback-box {
+      background: var(--surface-card);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin-top: 16px;
+      display: none;
+      animation: fadeIn 0.2s;
+    }
+    .quiz-feedback-box.correct {
+      border-left-color: var(--emerald);
+    }
+    .quiz-feedback-box.wrong {
+      border-left-color: var(--rose);
+    }
+
+    /* MATCHING GRID (WORD PAIRS & COLLOCATIONS) */
+    .matching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .match-tile {
+      background: var(--surface-card);
+      border: 2px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 16px 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .match-tile:hover {
+      background: var(--surface-hover);
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
+    }
+    .match-tile.selected {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    .match-tile.matched {
+      border-color: var(--emerald);
+      background: var(--emerald-glow);
+      opacity: 0.4;
+      cursor: default;
+      transform: scale(0.96);
+    }
+
+    /* Progress bar */
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: var(--surface-border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 12px 0 20px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Modal & Dialogs */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      animation: scaleIn 0.2s ease;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 300;
+    }
+
+    /* Audio visual wave bars (aesthetic) */
+    .audio-waves {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 24px;
+      margin-top: 10px;
+    }
+    .wave-bar {
+      width: 4px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: height 0.15s ease;
+    }
+    .wave-bar.animating {
+      animation: wave 0.8s infinite ease-in-out alternate;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.6s; }
+
+    @keyframes wave {
+      0% { height: 4px; }
+      100% { height: 22px; }
+    }
+
+    /* Katakana Card Highlight */
+    .katakana-box {
+      background: rgba(244, 63, 94, 0.08);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+    .upgrade-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile tweak */
+    @media (max-width: 600px) {
+      .trigger-word { font-size: 1.8rem; }
+      .timer-number { font-size: 2.2rem; }
+      .arena-card { padding: 18px; }
+      .btn-hero { width: 100%; justify-content: center; }
+      .hud-inner { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand-group">
+          <div class="logo-badge">
+            <span>PREPLY</span>
+            <span style="opacity:0.75;">|</span>
+            <span>PRO</span>
+          </div>
+          <div>
+            <div class="brand-title">
+              <span>Executive Vocab Arena</span>
+              <span style="font-size:0.75rem; background:var(--emerald-glow); color:var(--emerald); border:1px solid var(--emerald); padding:2px 8px; border-radius:12px;">Lesson 1 Practice</span>
+            </div>
+            <div class="brand-sub">Student: YH &bull; Tutor: Lewis O. &bull; Anti-Translation & Katakana Purge</div>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <button class="btn-icon" onclick="toggleAudioSpeech()" id="speechToggleBtn" title="Toggle Word Pronunciation Voice">
+            <span id="speechIcon">🗣️</span> Voice: <strong id="speechStatus">ON</strong>
+          </button>
+          <button class="btn-icon" onclick="toggleSfx()" id="sfxToggleBtn" title="Toggle Game Audio Effects">
+            <span id="sfxIcon">🔊</span> SFX: <strong id="sfxStatus">ON</strong>
+          </button>
+          <button class="btn-icon" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+            <span id="themeIcon">☀️ / 🌙</span>
+          </button>
+          <a href="index.html" class="btn-icon" style="text-decoration:none;">
+            <span>🎙️</span> Portal
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIVE HUD / SCOREBAR -->
+  <div class="hud-bar">
+    <div class="container">
+      <div class="hud-inner">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="rank-badge" id="playerRank">Level 1: Conversational Cadet</div>
+          <div class="stat-pill">
+            <span class="stat-label">XP</span>
+            <span class="stat-value" id="xpDisplay" style="color:var(--accent);">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Streak</span>
+            <span class="stat-value" id="streakDisplay" style="color:var(--amber);">0 🔥</span>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="stat-pill">
+            <span class="stat-label">High Score</span>
+            <span class="stat-value" id="highScoreDisplay">0</span>
+          </div>
+          <button class="btn-icon" style="padding:4px 8px; font-size:0.75rem;" onclick="resetProgress()">
+            Reset Stats
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION TABS -->
+  <div class="container">
+    <nav class="mode-nav">
+      <button class="mode-btn active" onclick="switchMode('sprint')">
+        <span>⚡</span> 3s Reflex Sprint (Exercise 1)
+      </button>
+      <button class="mode-btn" onclick="switchMode('blitz')">
+        <span>🎯</span> Speed Definition Blitz
+      </button>
+      <button class="mode-btn" onclick="switchMode('katakana')">
+        <span>🛡️</span> Katakana Purge Blaster
+      </button>
+      <button class="mode-btn" onclick="switchMode('matcher')">
+        <span>🧩</span> Collocation Connector
+      </button>
+      <button class="mode-btn" onclick="switchMode('cloze')">
+        <span>📝</span> Meeting Simulation Master
+      </button>
+    </nav>
+  </div>
+
+  <!-- MAIN GAME VIEW -->
+  <main class="container">
+
+    <!-- CO-PILOT / TEACHER CONTROLS -->
+    <div class="copilot-banner">
+      <div class="copilot-info">
+        <span style="font-size:1.3rem;">👨‍🏫</span>
+        <div>
+          <strong style="color:var(--purple);">Preply Live Classroom Co-Pilot Active</strong>
+          <div style="color:var(--text-muted); font-size:0.8rem;">
+            Screen share this during lessons. Tutor can trigger countdowns, play model audio, and award XP for spontaneous speech!
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-icon" onclick="triggerRandomTrigger()" style="background:var(--surface);">
+          🎲 Random Trigger
+        </button>
+        <button class="btn-icon" onclick="speakCurrentWord()" style="background:var(--surface);">
+          🔊 Say Word
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODE 1: 3-SECOND COGNITIVE REFLEX SPRINT -->
+    <!-- (Direct Digital Version of Lesson 1 First Exercise) -->
+    <!-- ========================================== -->
+    <section id="mode-sprint" class="game-section active">
+      <div class="arena-card">
+        <div class="card-top">
+          <div>
+            <span class="mode-tag">Lesson 1 &bull; Exercise 1.1</span>
+            <h2 style="font-size:1.4rem; margin-top:6px;">Anti-Translation 3-Second Speed Matrix</h2>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-top:2px;">
+              Deactivate Japanese translation! When you see the trigger, open your mouth within <strong>3 seconds</strong> and explain what it is for 20–30 seconds.
+            </p>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:0.8rem; color:var(--text-muted);">Word: <span id="sprintIndexDisplay">1</span> of 10</span>
+          </div>
+        </div>
+
+        <!-- The Trigger Display Box -->
+        <div class="sprint-display-box" id="sprintBox">
+          <div class="trigger-badge" id="sprintCategory">BUSINESS & EVERYDAY CONCEPT</div>
+          <div class="trigger-word" id="sprintWord">A Bottleneck</div>
+          <div class="trigger-ipa" id="sprintIpa">/ˈbɒt.əl.nek/</div>
+
+          <!-- Central Timer -->
+          <div class="timer-ring-wrapper">
+            <div>
+              <div class="timer-number" id="sprintTimerNum">3</div>
+              <div class="timer-label" id="sprintTimerLabel">REFLEX CLOCK</div>
+            </div>
+          </div>
+
+          <div class="reflex-stage-text" id="sprintStageText" style="color:var(--accent);">
+            Press "Start Reflex Sprint" when ready!
+          </div>
+
+          <!-- Audio Wave Animation Placeholder -->
+          <div class="audio-waves" id="sprintAudioWaves">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+        </div>
+
+        <!-- The 3-Angle Definition Formula Quick Helpers -->
+        <div style="margin-top:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <strong style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">
+              ⚡ 3-Angle Instant Starters (Click to inspect model ideas):
+            </strong>
+            <span style="font-size:0.75rem; color:var(--text-dim);">Pick one within 3s</span>
+          </div>
+
+          <div class="formula-grid">
+            <div class="formula-card" onclick="toggleFormula(this)">
+              <div class="formula-title">
+                <span>Angle 1: Functional Meaning</span>
+                <span>💡</span>
+              </div>
+              <div class="formula-starter">"It essentially refers to a situation where..."</div>
+              <div class="formula-snippet" id="sprintSnippetAngle1">
+                A choke point where an entire workflow slows down because one specific stage cannot keep up.
+              </div>
+            </div>
+
+            <div class="formula-card" onclick="toggleFormula(this)">
+              <div class="formula-title">
+                <span>Angle 2: Direct Contrast</span>
+                <span>⚖️</span>
+              </div>
+              <div class="formula-starter">"It's practically the polar opposite of [X]—instead of [Y]..."</div>
+              <div class="formula-snippet" id="sprintSnippetAngle2">
+                Instead of a smooth, streamlined pipeline, work is stuck at one specific desk or stage.
+              </div>
+            </div>
+
+            <div class="formula-card" onclick="toggleFormula(this)">
+              <div class="formula-title">
+                <span>Angle 3: Workplace Vignette</span>
+                <span>💼</span>
+              </div>
+              <div class="formula-starter">"For example, imagine you are at work and..."</div>
+              <div class="formula-snippet" id="sprintSnippetAngle3">
+                "Our developers finished the feature in two days, but the legal team review took three weeks."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutor / Evaluation Bar -->
+        <div class="grading-shelf">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:1.1rem;">🏆</span>
+            <div>
+              <strong style="font-size:0.85rem;">Preply Live Assessment:</strong>
+              <div style="font-size:0.75rem; color:var(--text-muted);">Rate YH's spontaneous delivery</div>
+            </div>
+          </div>
+
+          <div class="grading-buttons">
+            <button class="btn-grade success" onclick="awardSprintScore(50, '⚡ Instant Start (<3s)!')">
+              +50 Started &lt;3s
+            </button>
+            <button class="btn-grade success" onclick="awardSprintScore(50, '🚫 Zero Ano/Eto Fillers!')">
+              +50 No Fillers
+            </button>
+            <button class="btn-grade success" onclick="awardSprintScore(100, '🌟 Crisp Executive Flow!')">
+              +100 Fluid 25s Explanation
+            </button>
+            <button class="btn-grade warn" onclick="playSfx('recast'); showToast('⚠️ Recast needed: remember Angle 1 formula!');">
+              🔄 Flag for Recast
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="sprint-controls">
+          <button class="btn-hero" id="sprintStartBtn" onclick="startSprintTimer()">
+            <span>⚡</span> Start 3s Reflex Sprint (Space)
+          </button>
+          <button class="btn-alt" onclick="prevSprintTrigger()">
+            ◀ Previous Word
+          </button>
+          <button class="btn-alt" onclick="nextSprintTrigger()">
+            Next Word ▶
+          </button>
+          <button class="btn-alt" onclick="playModelAnswer()">
+            🎧 Listen to Model Answer
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODE 2: SPEED DEFINITION BLITZ (ARCADE QUIZ) -->
+    <!-- ========================================== -->
+    <section id="mode-blitz" class="game-section">
+      <div class="arena-card">
+        <div class="card-top">
+          <div>
+            <span class="mode-tag" style="background:var(--amber-glow); color:var(--amber); border-color:var(--amber);">Speed Challenge</span>
+            <h2 style="font-size:1.4rem; margin-top:6px;">Executive Vocabulary Blitz</h2>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-top:2px;">
+              Read the workplace definition or scenario and pick the matching business term before time runs out!
+            </p>
+          </div>
+          <div>
+            <span style="font-size:0.85rem; font-weight:700; color:var(--accent);" id="blitzProgressDisplay">Q 1/10</span>
+          </div>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="blitzProgressBar"></div>
+        </div>
+
+        <!-- Quiz Question Box -->
+        <div class="quiz-question-box">
+          <div class="quiz-scenario-badge" id="blitzCategoryBadge">SCENARIO &bull; WORKPLACE AGILITY</div>
+          <div class="quiz-question-text" id="blitzQuestionText">
+            Loading question...
+          </div>
+          <div class="quiz-feedback-box" id="blitzFeedbackBox">
+            <strong id="blitzFeedbackTitle">Correct!</strong>
+            <p id="blitzFeedbackDesc" style="font-size:0.85rem; margin-top:4px;"></p>
+          </div>
+        </div>
+
+        <!-- Options Grid -->
+        <div class="quiz-options-grid" id="blitzOptionsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Actions -->
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-icon" onclick="speakBlitzQuestion()">
+            <span>🔊</span> Hear Question
+          </button>
+          <button class="btn-hero" id="blitzNextBtn" onclick="nextBlitzQuestion()" style="display:none;">
+            Next Question ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODE 3: KATAKANA PURGE BLASTER -->
+    <!-- ========================================== -->
+    <section id="mode-katakana" class="game-section">
+      <div class="arena-card">
+        <div class="card-top">
+          <div>
+            <span class="mode-tag" style="background:var(--rose-glow); color:var(--rose); border-color:var(--rose);">Wasei-Eigo Purge</span>
+            <h2 style="font-size:1.4rem; margin-top:6px;">The Katakana Trap Blaster</h2>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-top:2px;">
+              Eliminate Japanese-invented English words (*Wasei-Eigo*). Spot the blunder and select the executive international business replacement!
+            </p>
+          </div>
+          <div>
+            <span style="font-size:0.85rem; font-weight:700; color:var(--rose);" id="katakanaProgressDisplay">Trap 1/8</span>
+          </div>
+        </div>
+
+        <div class="quiz-question-box" style="border-left: 4px solid var(--rose);">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="quiz-scenario-badge" style="color:var(--rose);" id="katakanaBadge">JAPANESE LOANWORD TRAP</span>
+            <span style="font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:var(--text-dim);" id="katakanaTermDisplay">クレーム (Claim)</span>
+          </div>
+
+          <div class="katakana-box">
+            <strong>❌ What Was Said in the Meeting:</strong>
+            <div id="katakanaFlawedSentence" style="font-size:1.05rem; font-weight:700; margin-top:4px; color:var(--rose);">
+              "Our client called us with a big claim because the system was down yesterday."
+            </div>
+          </div>
+
+          <div style="font-size:0.88rem; color:var(--text-muted); margin-bottom:12px;" id="katakanaExplanation">
+            Why it's a trap: In English, "claim" means demanding insurance money or asserting a legal right. It does not mean customer complaint.
+          </div>
+
+          <div class="quiz-feedback-box" id="katakanaFeedbackBox">
+            <strong id="katakanaFeedbackTitle">Correct Upgrade!</strong>
+            <p id="katakanaFeedbackDesc" style="font-size:0.85rem; margin-top:4px;"></p>
+          </div>
+        </div>
+
+        <div class="quiz-options-grid" id="katakanaOptionsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-icon" onclick="speakKatakanaTarget()">
+            <span>🔊</span> Listen to Correct Sentence
+          </button>
+          <button class="btn-hero" id="katakanaNextBtn" onclick="nextKatakanaTrap()" style="display:none;">
+            Next Katakana Trap ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODE 4: COLLOCATION CONNECTOR -->
+    <!-- ========================================== -->
+    <section id="mode-matcher" class="game-section">
+      <div class="arena-card">
+        <div class="card-top">
+          <div>
+            <span class="mode-tag" style="background:var(--emerald-glow); color:var(--emerald); border-color:var(--emerald);">Memory & Fluency</span>
+            <h2 style="font-size:1.4rem; margin-top:6px;">Executive Collocation Connector</h2>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-top:2px;">
+              Pair the high-impact business verbs with their natural executive targets (e.g., <em>Streamline</em> + <em>operations</em>).
+            </p>
+          </div>
+          <div>
+            <span style="font-weight:700; color:var(--emerald);" id="matcherMatchesLeft">5 Pairs Left</span>
+          </div>
+        </div>
+
+        <div class="matching-grid" id="matcherGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            Tap one word from the left and match it to its partner!
+          </div>
+          <button class="btn-alt" onclick="initMatcherGame()">
+            🔄 Reshuffle Tiles
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODE 5: MEETING SIMULATION MASTER (CLOZE) -->
+    <!-- ========================================== -->
+    <section id="mode-cloze" class="game-section">
+      <div class="arena-card">
+        <div class="card-top">
+          <div>
+            <span class="mode-tag" style="background:var(--purple-glow); color:var(--purple); border-color:var(--purple);">Simulation Lab</span>
+            <h2 style="font-size:1.4rem; margin-top:6px;">Boardroom Dialogue Master</h2>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-top:2px;">
+              Step into YH's shoes in realistic Preply meeting scenarios. Select the missing Tier-3 word to complete the executive response!
+            </p>
+          </div>
+          <div>
+            <span style="font-size:0.85rem; font-weight:700; color:var(--purple);" id="clozeProgressDisplay">Scenario 1/6</span>
+          </div>
+        </div>
+
+        <div class="quiz-question-box" style="border-left:4px solid var(--purple);">
+          <div class="quiz-scenario-badge" id="clozeContextBadge">MEETING STANDUP &bull; CROSS-FUNCTIONAL SYNC</div>
+          
+          <!-- Dialogue script -->
+          <div style="margin:14px 0; background:var(--surface); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--surface-border);">
+            <div style="margin-bottom:10px; color:var(--text-muted); font-size:0.9rem;">
+              <strong style="color:var(--accent);" id="clozeSpeaker1">Colleague (Marcus):</strong>
+              <span id="clozePrompt1">"The client wants the extra dashboard features delivered by Monday, but our engineering team is already working at maximum capacity."</span>
+            </div>
+            <div style="font-size:1rem; color:var(--text); font-weight:700;">
+              <strong style="color:var(--emerald);">You (YH):</strong>
+              <span id="clozePrompt2">"I completely agree. In that case, we need to politely defend our project boundary and prevent uncontrolled ________ creep."</span>
+            </div>
+          </div>
+
+          <div class="quiz-feedback-box" id="clozeFeedbackBox">
+            <strong id="clozeFeedbackTitle">Outstanding!</strong>
+            <p id="clozeFeedbackDesc" style="font-size:0.85rem; margin-top:4px;"></p>
+          </div>
+        </div>
+
+        <div class="quiz-options-grid" id="clozeOptionsGrid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-icon" onclick="speakClozeDialogue()">
+            <span>🔊</span> Read Full Dialogue
+          </button>
+          <button class="btn-hero" id="clozeNextBtn" onclick="nextClozeDialogue()" style="display:none;">
+            Next Simulation ▶
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: VICTORY / SUMMARY -->
+  <div class="modal-overlay" id="victoryModal">
+    <div class="modal-content">
+      <div style="font-size:3rem; margin-bottom:8px;">🏆</div>
+      <h2 style="font-size:1.6rem; color:var(--accent);" id="victoryTitle">Session Accomplished!</h2>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;" id="victoryDesc">
+        You've mastered this vocabulary round with exceptional precision.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:20px; margin:24px 0;">
+        <div class="stat-pill" style="padding:10px 18px;">
+          <span class="stat-label">Total XP</span>
+          <span class="stat-value" id="modalXp" style="font-size:1.2rem; color:var(--accent);">0</span>
+        </div>
+        <div class="stat-pill" style="padding:10px 18px;">
+          <span class="stat-label">Max Streak</span>
+          <span class="stat-value" id="modalStreak" style="font-size:1.2rem; color:var(--amber);">0 🔥</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center;">
+        <button class="btn-hero" onclick="closeModalAndReplay()">
+          <span>🔄</span> Play Again
+        </button>
+        <button class="btn-alt" onclick="closeModal()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" style="position:fixed; bottom:24px; right:24px; background:var(--surface-card); border:1px solid var(--accent); color:var(--text); padding:12px 20px; border-radius:var(--radius); box-shadow:var(--shadow); display:none; z-index:999; font-weight:700; font-size:0.9rem; align-items:center; gap:8px;">
+    <span id="toastIcon">✨</span> <span id="toastMsg">Message</span>
+  </div>
+
+  <script>
+    /* =====================================================================
+       CURRICULUM VOCABULARY DATABASE (WEEK 1: THE FIRST EXERCISE & BEYOND)
+       ===================================================================== */
+
+    // 10 CONCEPT TRIGGERS FROM EXERCISE 1.1 (ANTI-TRANSLATION SPEED MATRIX)
+    const CONCEPT_TRIGGERS = [
+      {
+        id: 'bottleneck',
+        word: 'A Bottleneck',
+        ipa: '/ˈbɒt.əl.nek/',
+        category: 'WORKFLOW & TIMELINE',
+        definition: 'A point of congestion or delay where an entire process slows down because one specific stage cannot keep up.',
+        collocations: ['critical bottleneck', 'identify the bottleneck', 'bottleneck in the workflow', 'resolve the bottleneck'],
+        angle1: 'It essentially refers to a choke point where everything gets stuck because one person or system is too slow.',
+        angle2: 'It is practically the opposite of a smooth, streamlined pipeline—it is the single spot where progress stops.',
+        angle3: 'For example, imagine you finish a software feature in two hours, but QA takes two weeks to approve it—QA is your bottleneck.',
+        modelAnswer: 'A bottleneck essentially refers to a choke point in a workflow where tasks pile up because one stage cannot keep up with demand. For example, in our software team, the legal review is often a bottleneck before deployment.'
+      },
+      {
+        id: 'bandwidth',
+        word: 'Bandwidth',
+        ipa: '/ˈbænd.wɪdθ/',
+        category: 'CAPACITY & ENERGY',
+        definition: 'Mental capacity, energy, or free time available to take on more work or personal tasks.',
+        collocations: ['limited bandwidth', 'free up bandwidth', 'have zero bandwidth today', 'lack the bandwidth'],
+        angle1: 'It essentially refers to how much free time, energy, and mental capacity someone has to take on extra responsibilities.',
+        angle2: 'It is practically the opposite of being overloaded and burnt out; high bandwidth means you have room for more tasks.',
+        angle3: 'For example, imagine a manager asks you to join a new project, but you are already working 10 hours a day—you lack the bandwidth.',
+        modelAnswer: 'Bandwidth refers to a person\'s cognitive capacity and available time to handle tasks. When a colleague asks for assistance and you are overcommitted, you simply say you lack the bandwidth this week.'
+      },
+      {
+        id: 'tradeoff',
+        word: 'A Trade-off',
+        ipa: '/ˈtreɪd.ɒf/',
+        category: 'DECISION-MAKING & STRATEGY',
+        definition: 'Giving up one desirable benefit in order to gain another (e.g., speed vs. quality, cost vs. convenience).',
+        collocations: ['a necessary trade-off', 'weigh up the trade-offs', 'fair trade-off', 'acceptable trade-off'],
+        angle1: 'It essentially refers to a situational compromise where you sacrifice one good thing to get another advantage.',
+        angle2: 'It is the opposite of having it all; you cannot have top quality, instant speed, and lowest price at the same time.',
+        angle3: 'For example, choosing a cheap flight with a 6-hour layover is a trade-off between saving money and saving time.',
+        modelAnswer: 'A trade-off is a compromise where you accept sacrificing one advantage in order to gain another. For instance, launching a software feature early often involves a trade-off against exhaustive bug testing.'
+      },
+      {
+        id: 'workaround',
+        word: 'A Workaround',
+        ipa: '/ˈwɜːk.ə.raʊnd/',
+        category: 'PROBLEM SOLVING & IT',
+        definition: 'A temporary, clever fix or shortcut used to bypass a bug or broken system so work can continue.',
+        collocations: ['a temporary workaround', 'find a quick workaround', 'clever workaround', 'interim workaround'],
+        angle1: 'It essentially refers to a temporary bypass or unofficial method used to keep working when official tools fail.',
+        angle2: 'It is practically the opposite of a permanent software patch—it is an emergency shortcut.',
+        angle3: 'For example, imagine the office printer is broken, so you email files directly to a coworker in another building.',
+        modelAnswer: 'A workaround is an interim shortcut used to bypass a technical flaw or operational block so productivity doesn\'t halt. It is not the permanent fix, but it keeps the business running.'
+      },
+      {
+        id: 'outoftheloop',
+        word: 'Out of the Loop',
+        ipa: '/ˈaʊt əv ðə luːp/',
+        category: 'COMMUNICATION & TEAMWORK',
+        definition: 'Being uninformed, left out, or excluded from important decisions or updates (vs. kept in the loop).',
+        collocations: ['keep me in the loop', 'feel completely out of the loop', 'loop someone in', 'left out of the loop'],
+        angle1: 'It essentially refers to a situation where you don\'t know what is happening because nobody sent you the updates.',
+        angle2: 'It is practically the opposite of being kept in the loop and informed on company decisions.',
+        angle3: 'For example, imagine returning from a three-day business trip and discovering your team reorganized the whole project without telling you.',
+        modelAnswer: 'Being out of the loop means being excluded from key information or communication channels. In workplace meetings, professionals often request colleagues to loop them in on future correspondence.'
+      },
+      {
+        id: 'scopecreep',
+        word: 'Scope Creep',
+        ipa: '/skəʊp kriːp/',
+        category: 'PROJECT MANAGEMENT',
+        definition: 'When a project gradually expands beyond its original agreement, adding unplanned extra work without extra budget or time.',
+        collocations: ['prevent scope creep', 'uncontrolled scope creep', 'victim of scope creep', 'manage scope boundaries'],
+        angle1: 'It essentially refers to a project slowly swelling in size because the client keeps requesting extra unapproved features.',
+        angle2: 'It is practically the opposite of strict milestone discipline and sticking to the original contractual deliverables.',
+        angle3: 'For example, you agree to build a 3-page website, but the client gradually asks for an e-commerce store and blog for free.',
+        modelAnswer: 'Scope creep occurs when the parameters of a project expand continuously beyond the original agreement without proportional budget or timeline adjustments. Project managers must actively guard against scope creep.'
+      },
+      {
+        id: 'blindspot',
+        word: 'A Blind Spot',
+        ipa: '/ˈblaɪnd spɒt/',
+        category: 'RISK & AWARENESS',
+        definition: 'An area where someone lacks awareness, information, or objectivity—in strategy, driving, or habits.',
+        collocations: ['critical blind spot', 'have a blind spot for', 'uncover a blind spot', 'address organizational blind spots'],
+        angle1: 'It essentially refers to a dangerous flaw or hidden hazard that you fail to notice yourself, even though outsiders see it.',
+        angle2: 'It is the opposite of 360-degree awareness and objective strategic visibility.',
+        angle3: 'For example, imagine spending months building an app for desktop computers and completely forgetting to test it on mobile phones.',
+        modelAnswer: 'A blind spot is an area of vulnerability or ignorance that a team overlooks due to bias or familiarity. Cross-functional audits help uncover critical strategic blind spots before product release.'
+      },
+      {
+        id: 'handoff',
+        word: 'A Handoff',
+        ipa: '/ˈhænd.ɒf/',
+        category: 'COLLABORATION & TRANSITION',
+        definition: 'The process of transferring a task, client, document, or responsibility smoothly to the next person or team.',
+        collocations: ['smooth handoff', 'clean handoff', 'design-to-dev handoff', 'messy handoff'],
+        angle1: 'It essentially refers to passing the baton in a relay race—transferring ownership of a project cleanly to the next team.',
+        angle2: 'It is the opposite of holding onto work or abruptly dropping a project without documentation.',
+        angle3: 'For example, imagine the design squad finishing wireframes and scheduling a sync to brief the engineering squad.',
+        modelAnswer: 'A handoff represents the formal transfer of project deliverables and accountability from one department to another, such as a design-to-development handoff.'
+      },
+      {
+        id: 'micromanagement',
+        word: 'Micromanagement',
+        ipa: '/ˈmaɪ.krəʊˌmæn.ɪdʒ.mənt/',
+        category: 'LEADERSHIP & CULTURE',
+        definition: 'When a boss or colleague excessively controls and monitors every tiny detail instead of trusting you to do the work.',
+        collocations: ['hate micromanagement', 'prone to micromanage', 'avoid micromanaging', 'stifle autonomy'],
+        angle1: 'It essentially refers to excessive oversight where a supervisor inspects every trivial step rather than trusting people.',
+        angle2: 'It is practically the opposite of autonomy, delegation, and empowering team members.',
+        angle3: 'For example, imagine your manager asking for email drafts before you send them and pinging you every 30 minutes for status updates.',
+        modelAnswer: 'Micromanagement is a management style characterized by excessive scrutiny and control over minor operational details, which often destroys team morale and hampers autonomy.'
+      },
+      {
+        id: 'downside',
+        word: 'The Downside',
+        ipa: '/ˈdaʊn.saɪd/',
+        category: 'EVALUATION & RISK',
+        definition: 'The negative aspect, risk, or disadvantage of a plan or choice (compared to the upside benefits).',
+        collocations: ['the main downside', 'weigh upside vs downside', 'downside risk', 'mitigate the downside'],
+        angle1: 'It essentially refers to the negative consequence, hidden cost, or vulnerability of an otherwise attractive plan.',
+        angle2: 'It is practically the polar opposite of the upside and positive advantages.',
+        angle3: 'For example, the upside of remote work is flexibility; the downside is that building personal team rapport is harder.',
+        modelAnswer: 'The downside refers to the negative risks or disadvantages inherent in a decision. In business proposals, leaders evaluate the upside revenue potential against the operational downside risks.'
+      }
+    ];
+
+    // KATAKANA TRAPS & EXECUTIVE UPGRADES (WASEI-EIGO PURGE)
+    const KATAKANA_TRAPS = [
+      {
+        katakana: 'Claim (クレーム)',
+        flawed: 'Our client called us with a big claim because the server went down.',
+        trapExplanation: 'In international English, "claim" means asserting legal rights or claiming money from insurance. For client grievances, native speakers say "lodge a complaint" or "raise an escalation".',
+        upgrade: 'Lodged a formal complaint / Raised an escalation',
+        options: [
+          'Lodged a formal complaint',
+          'Made an angry claim',
+          'Pushed an insurance claim',
+          'Declared a big claim'
+        ],
+        correctIndex: 0,
+        modelSentence: 'Our client lodged a formal complaint after experiencing yesterday\'s unexpected system downtime.'
+      },
+      {
+        katakana: 'Cost-performance (コスパ)',
+        flawed: 'We checked the software tools, and this vendor offers the best cospa for our team.',
+        trapExplanation: '"Cost-performance" or "cospa" is Japanese business slang that confuses international counterparts. Use "cost-effective", "high ROI", or "strong value proposition".',
+        upgrade: 'Cost-effective solution / High ROI',
+        options: [
+          'High cost-performance ratio',
+          'Cost-effective solution with strong ROI',
+          'Cheap cospa budget',
+          'Low expense performance'
+        ],
+        correctIndex: 1,
+        modelSentence: 'We evaluated several vendors and found this platform to be the most cost-effective solution with the highest ROI.'
+      },
+      {
+        katakana: 'Appo / Appoint (アポ)',
+        flawed: 'Can you take an appo with the regional director for next Thursday afternoon?',
+        trapExplanation: '"Appoint" is a verb for hiring or designating officials (e.g. appoint a CEO). It cannot be used as a noun for a meeting. Say "schedule a sync" or "lock in a meeting".',
+        upgrade: 'Schedule a sync / Lock in a meeting',
+        options: [
+          'Make an appointment appo',
+          'Schedule a 30-minute sync or meeting',
+          'Appoint the director',
+          'Take a fast appointment'
+        ],
+        correctIndex: 1,
+        modelSentence: 'Could you schedule a sync with the regional director for next Thursday afternoon?'
+      },
+      {
+        katakana: 'Remake (リメイク)',
+        flawed: 'The design team needs to remake the entire presentation deck before the pitch.',
+        trapExplanation: '"Remake" in English is strictly reserved for Hollywood movies or pop songs. Business slide decks, architectures, and proposals are "overhauled", "revised", or "redesigned".',
+        upgrade: 'Overhaul / Revise / Redesign',
+        options: [
+          'Overhaul and redesign the slide deck',
+          'Remake the presentation track',
+          'Do a remake version of the deck',
+          'Re-produce the slide film'
+        ],
+        correctIndex: 0,
+        modelSentence: 'The design team needs to overhaul the presentation deck prior to the upcoming executive pitch.'
+      },
+      {
+        katakana: 'NG (エヌジー)',
+        flawed: 'Executive management said the proposed Q4 hiring budget is totally NG.',
+        trapExplanation: '"NG" (No Good) is widely understood in Japan and East Asia, but sounds cryptic or informal in Western boardrooms. Use "non-viable", "out of scope", or "off the table".',
+        upgrade: 'Completely non-viable / Off the table',
+        options: [
+          'Non-viable and off the table',
+          'Totally NG and no good',
+          'Rejected into NG status',
+          'Disqualified as NG'
+        ],
+        correctIndex: 0,
+        modelSentence: 'Executive leadership determined that the proposed Q4 hiring budget is currently non-viable.'
+      },
+      {
+        katakana: 'Sign (サイン)',
+        flawed: 'Please forward the contract to legal so we can get the sign before Friday.',
+        trapExplanation: '"Sign" by itself is a noun referring to a physical street sign or billboard. The formal approval is "formal sign-off", "signature", or "execution".',
+        upgrade: 'Secure formal sign-off / Signature',
+        options: [
+          'Receive the contract sign',
+          'Secure formal sign-off and signature',
+          'Collect the legal road sign',
+          'Grab the client mark'
+        ],
+        correctIndex: 1,
+        modelSentence: 'Please forward the agreement to legal so we can secure formal sign-off before Friday.'
+      },
+      {
+        katakana: 'Consent (コンセント)',
+        flawed: 'Does the boardroom have enough consents for everyone to charge their laptops?',
+        trapExplanation: 'In English, "consent" means legal permission or approval. An electrical wall plugin is a "power outlet", "electrical socket", or "docking station".',
+        upgrade: 'Power outlets / Electrical sockets',
+        options: [
+          'Sufficient legal consents',
+          'Enough power outlets and sockets',
+          'Boardroom charging consents',
+          'Wall electricity permissions'
+        ],
+        correctIndex: 1,
+        modelSentence: 'Does the conference room have enough power outlets to accommodate everyone\'s laptops?'
+      },
+      {
+        katakana: 'Salaryman (サラリーマン)',
+        flawed: 'Our enterprise software is tailored specifically for busy Tokyo salarymen.',
+        trapExplanation: '"Salaryman" is a Japan-specific cultural term. International business uses "corporate professionals", "knowledge workers", or "white-collar employees".',
+        upgrade: 'Corporate professionals / Knowledge workers',
+        options: [
+          'Corporate professionals and knowledge workers',
+          'Urban salarymen and workers',
+          'Wage earners and salary people',
+          'Company man workers'
+        ],
+        correctIndex: 0,
+        modelSentence: 'Our productivity platform is designed specifically for corporate professionals and knowledge workers.'
+      }
+    ];
+
+    // SPEED DEFINITION BLITZ QUESTIONS (MULTIPLE CHOICE)
+    const BLITZ_QUESTIONS = [
+      {
+        category: 'TIMELINE BOTTLENECKS',
+        question: 'Which term describes a point of congestion where an entire workflow stalls because one stage is too slow?',
+        options: ['A Trade-off', 'A Bottleneck', 'A Workaround', 'Scope Creep'],
+        correctIndex: 1,
+        explanation: 'A bottleneck represents a choke point that slows down throughput across the entire operational pipeline.'
+      },
+      {
+        category: 'CAPACITY & STRESS',
+        question: 'When an engineer says "I would love to help, but I lack the ________ this week", which word fits best?',
+        options: ['Bandwidth', 'Downside', 'Sign-off', 'Handoff'],
+        correctIndex: 0,
+        explanation: '"Bandwidth" in professional contexts refers to mental capacity, energy, or free time available.'
+      },
+      {
+        category: 'DECISION ANALYSIS',
+        question: 'Giving up rapid delivery speed in order to achieve flawless, military-grade code quality is an example of what?',
+        options: ['A Workaround', 'A Blind Spot', 'A Necessary Trade-off', 'Micromanagement'],
+        correctIndex: 2,
+        explanation: 'A trade-off is a situational compromise where you accept sacrificing one benefit to gain another.'
+      },
+      {
+        category: 'TEMPORARY FIXES',
+        question: 'When the official API crashes and engineers use a temporary shortcut script so clients can still login, what is that called?',
+        options: ['A Workaround', 'Scope Creep', 'A Bottleneck', 'Out of the loop'],
+        correctIndex: 0,
+        explanation: 'A workaround is a clever, interim method used to bypass a bug until a permanent patch is deployed.'
+      },
+      {
+        category: 'EXECUTIVE COMMUNICATION',
+        question: 'You return from vacation and realize your team changed the database architecture without telling you. How do you feel?',
+        options: ['Cost-effective', 'Out of the loop', 'Under micromanagement', 'Full of bandwidth'],
+        correctIndex: 1,
+        explanation: '"Out of the loop" means being uninformed, excluded, or left out of vital updates.'
+      },
+      {
+        category: 'PROJECT HAZARDS',
+        question: 'A client continuously asks for extra features, buttons, and reports without paying extra money. What project management risk is this?',
+        options: ['Scope Creep', 'Bandwidth Expansion', 'Process Handoff', 'System Workaround'],
+        correctIndex: 0,
+        explanation: 'Scope creep is the gradual, uncontrolled expansion of a project beyond its agreed contractual boundaries.'
+      },
+      {
+        category: 'ORGANIZATIONAL AWARENESS',
+        question: 'A leadership team completely fails to notice that competitor mobile apps are 50% faster because they only test on desktops. What is this?',
+        options: ['A Trade-off', 'A Critical Blind Spot', 'A Clean Handoff', 'A Cost-performance error'],
+        correctIndex: 1,
+        explanation: 'A blind spot is an area where someone lacks awareness or objectivity despite clear external risks.'
+      },
+      {
+        category: 'WORKPLACE COLLABORATION',
+        question: 'What do we call the formal, smooth transfer of project files and responsibility from the design team to the development team?',
+        options: ['A Workaround', 'A Handoff', 'A Bottleneck', 'A Downside'],
+        correctIndex: 1,
+        explanation: 'A handoff is the smooth, organized transfer of a task, client, or deliverable between teams.'
+      },
+      {
+        category: 'LEADERSHIP STYLES',
+        question: 'A manager insists on reading every email draft you write and demands status updates every 20 minutes. What practice is this?',
+        options: ['Micromanagement', 'Scope Creep', 'Bandwidth allocation', 'Downside protection'],
+        correctIndex: 0,
+        explanation: 'Micromanagement involves excessive, suffocating control and monitoring over minor details.'
+      },
+      {
+        category: 'STRATEGIC RISK',
+        question: 'A new cloud platform offers incredible speed (the upside), but costs $20,000 extra per month. What is the $20,000 extra cost called?',
+        options: ['The Bottleneck', 'The Downside', 'The Workaround', 'The Handoff'],
+        correctIndex: 1,
+        explanation: 'The downside is the negative risk, cost, or disadvantage of a strategic proposal.'
+      }
+    ];
+
+    // MATCHING PAIRS (COLLOCATIONS)
+    const COLLOCATION_PAIRS = [
+      { id: 1, left: 'Streamline', right: 'operations & workflows' },
+      { id: 2, left: 'Mitigate', right: 'risks & downside' },
+      { id: 3, left: 'Identify the', right: 'critical bottleneck' },
+      { id: 4, left: 'Align on', right: 'expectations & deliverables' },
+      { id: 5, left: 'Iron out', right: 'technical details & kinks' },
+      { id: 6, left: 'Circle back', right: 'with updated figures' },
+      { id: 7, left: 'Prevent', right: 'uncontrolled scope creep' },
+      { id: 8, left: 'Free up', right: 'engineering bandwidth' }
+    ];
+
+    // MEETING CLOZE DIALOGUES (SIMULATIONS)
+    const CLOZE_DATA = [
+      {
+        badge: 'CROSS-FUNCTIONAL STANDUP',
+        speaker1: 'Marcus (Product Lead)',
+        prompt1: '"The QA department is running 4 days behind schedule, and nobody can merge their pull requests."',
+        speaker2: 'You (YH)',
+        prompt2: '"I see. QA review is clearly our critical ________ right now; let\'s step in and unblock them."',
+        options: ['bottleneck', 'workaround', 'trade-off', 'downside'],
+        correctWord: 'bottleneck',
+        explanation: 'A bottleneck is the point of congestion holding up the entire sprint.'
+      },
+      {
+        badge: 'CLIENT EXPECTATION DEFENSE',
+        speaker1: 'David Chen (Key Client)',
+        prompt1: '"Could your team also build custom Salesforce integration for this milestone without altering the fee?"',
+        speaker2: 'You (YH)',
+        prompt2: '"I appreciate the suggestion; however, that is currently out of ________ for Phase 1. We can explore it in Phase 2."',
+        options: ['scope', 'bandwidth', 'sign-off', 'loop'],
+        correctWord: 'scope',
+        explanation: '"Out of scope" is the polite executive phrase to defend against scope creep.'
+      },
+      {
+        badge: 'CAPACITY MANAGEMENT',
+        speaker1: 'Director Sarah',
+        prompt1: '"Can you take the lead on preparing the regional security audit slides for tomorrow morning?"',
+        speaker2: 'You (YH)',
+        prompt2: '"I would welcome the opportunity, but I genuinely lack the ________ this week due to the live client migration."',
+        options: ['bandwidth', 'bottleneck', 'downside', 'workaround'],
+        correctWord: 'bandwidth',
+        explanation: '"Lack the bandwidth" is the professional corporate expression for having zero free time/capacity.'
+      },
+      {
+        badge: 'DECISION-MAKING & SACRIFICE',
+        speaker1: 'VP of Engineering',
+        prompt1: '"If we switch to the cheaper database provider, what impact will that have on user experience?"',
+        speaker2: 'You (YH)',
+        prompt2: '"Going with the lower-cost vendor is a necessary ________ against query speed during peak traffic."',
+        options: ['trade-off', 'bottleneck', 'handoff', 'blind spot'],
+        correctWord: 'trade-off',
+        explanation: 'A trade-off balances one advantage against an associated compromise.'
+      },
+      {
+        badge: 'ALIGNMENT & CONSENSUS',
+        speaker1: 'Engineering Lead',
+        prompt1: '"Before we write any production code, we need to ensure product, design, and QA are synchronized."',
+        speaker2: 'You (YH)',
+        prompt2: '"Agreed. Let\'s schedule a 20-minute sync tomorrow morning so we can ________ on expectations and key deliverables."',
+        options: ['align', 'circle', 'streamline', 'mitigate'],
+        correctWord: 'align',
+        explanation: '"Align on expectations" is the premier Tier-3 collocation for achieving consensus.'
+      },
+      {
+        badge: 'FOLLOW-UP CADENCE',
+        speaker1: 'Regional Client Manager',
+        prompt1: '"Let me check with our finance committee regarding the approved enterprise license terms."',
+        speaker2: 'You (YH)',
+        prompt2: '"Sounds great. I will review the architecture notes and ________ back with you by Thursday at 2 PM."',
+        options: ['circle', 'iron', 'streamline', 'handoff'],
+        correctWord: 'circle',
+        explanation: '"Circle back" means to reconnect with an update once further information is confirmed.'
+      }
+    ];
+
+    /* =====================================================================
+       AUDIO SYNTHESIZER (WEB AUDIO API & WEB SPEECH SYNTHESIS)
+       ===================================================================== */
+    let audioCtx = null;
+    let sfxEnabled = true;
+    let speechEnabled = true;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSfx(type) {
+      if (!sfxEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+
+        if (type === 'tick') {
+          // Sharp wooden click
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(600, now);
+          osc.frequency.exponentialRampToValueAtTime(120, now + 0.05);
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'countdown') {
+          // 3-2-1 Beep
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.12);
+        } else if (type === 'go') {
+          // Higher celebratory launch tone
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(880, now);
+          gain.gain.setValueAtTime(0.4, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        } else if (type === 'correct') {
+          // Ascending major chord (C5, E5, G5)
+          const notes = [523.25, 659.25, 783.99, 1046.50];
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+            gain.gain.setValueAtTime(0.25, now + idx * 0.07);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.25);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + idx * 0.07);
+            osc.stop(now + idx * 0.07 + 0.25);
+          });
+        } else if (type === 'wrong') {
+          // Dissonant low buzzer
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(140, now);
+          osc.frequency.exponentialRampToValueAtTime(110, now + 0.25);
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.25);
+        } else if (type === 'fanfare') {
+          // Level up chime
+          const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+          notes.forEach((freq, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.09);
+            gain.gain.setValueAtTime(0.3, now + idx * 0.09);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.4);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(now + idx * 0.09);
+            osc.stop(now + idx * 0.09 + 0.4);
+          });
+        } else if (type === 'recast') {
+          // Gentle warning chime
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, now);
+          gain.gain.setValueAtTime(0.25, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        }
+      } catch (e) {
+        console.warn('Audio SFX error:', e);
+      }
+    }
+
+    function speakText(text, rate = 0.95) {
+      if (!speechEnabled || !('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = rate;
+      utterance.lang = 'en-US';
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function toggleAudioSpeech() {
+      speechEnabled = !speechEnabled;
+      document.getElementById('speechStatus').textContent = speechEnabled ? 'ON' : 'OFF';
+      document.getElementById('speechIcon').textContent = speechEnabled ? '🗣️' : '🔇';
+      showToast(speechEnabled ? 'Speech Pronunciation Enabled' : 'Speech Pronunciation Muted');
+    }
+
+    function toggleSfx() {
+      sfxEnabled = !sfxEnabled;
+      document.getElementById('sfxStatus').textContent = sfxEnabled ? 'ON' : 'OFF';
+      document.getElementById('sfxIcon').textContent = sfxEnabled ? '🔊' : '🔇';
+      showToast(sfxEnabled ? 'Audio Sound Effects Enabled' : 'Audio Sound Effects Muted');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      localStorage.setItem('yh_vocab_theme', isLight ? 'light' : 'dark');
+    }
+
+    /* =====================================================================
+       PLAYER STATS & LEVEL SYSTEM
+       ===================================================================== */
+    let playerXP = parseInt(localStorage.getItem('yh_vocab_xp') || '0', 10);
+    let playerStreak = 0;
+    let highScore = parseInt(localStorage.getItem('yh_vocab_highscore') || '0', 10);
+
+    const RANKS = [
+      { minXp: 0, title: 'Level 1: Conversational Cadet' },
+      { minXp: 200, title: 'Level 2: Agile Collaborator' },
+      { minXp: 500, title: 'Level 3: Senior Meeting Specialist' },
+      { minXp: 900, title: 'Level 4: Executive Director' },
+      { minXp: 1500, title: 'Level 5: Global Boardroom Legend' }
+    ];
+
+    function updateHud() {
+      document.getElementById('xpDisplay').textContent = playerXP;
+      document.getElementById('streakDisplay').textContent = `${playerStreak} 🔥`;
+      document.getElementById('highScoreDisplay').textContent = highScore;
+
+      let currentRank = RANKS[0].title;
+      for (let i = RANKS.length - 1; i >= 0; i--) {
+        if (playerXP >= RANKS[i].minXp) {
+          currentRank = RANKS[i].title;
+          break;
+        }
+      }
+      document.getElementById('playerRank').textContent = currentRank;
+
+      localStorage.setItem('yh_vocab_xp', playerXP.toString());
+      if (playerXP > highScore) {
+        highScore = playerXP;
+        localStorage.setItem('yh_vocab_highscore', highScore.toString());
+      }
+    }
+
+    function addXP(amount, reason = '') {
+      playerXP += amount;
+      playerStreak += 1;
+      updateHud();
+      playSfx('correct');
+      if (reason) showToast(`+${amount} XP: ${reason}`);
+      if (playerStreak > 0 && playerStreak % 5 === 0) {
+        playSfx('fanfare');
+        triggerConfetti();
+        showToast(`🔥 Hot Streak! ${playerStreak} In A Row!`);
+      }
+    }
+
+    function breakStreak() {
+      playerStreak = 0;
+      updateHud();
+      playSfx('wrong');
+    }
+
+    function resetProgress() {
+      if (confirm('Reset your score and streak to start fresh?')) {
+        playerXP = 0;
+        playerStreak = 0;
+        localStorage.removeItem('yh_vocab_xp');
+        updateHud();
+        showToast('Stats reset to zero!');
+      }
+    }
+
+    /* =====================================================================
+       NAVIGATION & MODE SWITCHING
+       ===================================================================== */
+    function switchMode(modeKey) {
+      document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.game-section').forEach(sec => sec.classList.remove('active'));
+
+      const targetBtn = Array.from(document.querySelectorAll('.mode-btn')).find(b => b.getAttribute('onclick').includes(modeKey));
+      if (targetBtn) targetBtn.classList.add('active');
+
+      const targetSec = document.getElementById(`mode-${modeKey}`);
+      if (targetSec) targetSec.classList.add('active');
+
+      // Initialize specific mode
+      if (modeKey === 'matcher') {
+        initMatcherGame();
+      } else if (modeKey === 'blitz') {
+        loadBlitzQuestion(blitzIndex);
+      } else if (modeKey === 'katakana') {
+        loadKatakanaTrap(katakanaIndex);
+      } else if (modeKey === 'cloze') {
+        loadClozeDialogue(clozeIndex);
+      }
+    }
+
+    /* =====================================================================
+       MODE 1: 3-SECOND COGNITIVE REFLEX SPRINT (THE FIRST EXERCISE)
+       ===================================================================== */
+    let sprintIndex = 0;
+    let sprintInterval = null;
+    let sprintStage = 'idle'; // idle, reflex (3s), speaking (25s)
+    let sprintCountdown = 3;
+
+    function renderSprintTrigger() {
+      const data = CONCEPT_TRIGGERS[sprintIndex];
+      document.getElementById('sprintIndexDisplay').textContent = (sprintIndex + 1);
+      document.getElementById('sprintCategory').textContent = data.category;
+      document.getElementById('sprintWord').textContent = data.word;
+      document.getElementById('sprintIpa').textContent = data.ipa;
+
+      document.getElementById('sprintSnippetAngle1').textContent = data.angle1;
+      document.getElementById('sprintSnippetAngle2').textContent = data.angle2;
+      document.getElementById('sprintSnippetAngle3').textContent = data.angle3;
+
+      // Reset timer UI
+      resetSprintTimerUI();
+    }
+
+    function resetSprintTimerUI() {
+      clearInterval(sprintInterval);
+      sprintStage = 'idle';
+      const box = document.getElementById('sprintBox');
+      box.classList.remove('active-timer', 'speaking-timer');
+      document.getElementById('sprintTimerNum').textContent = '3';
+      document.getElementById('sprintTimerLabel').textContent = 'REFLEX CLOCK';
+      document.getElementById('sprintStageText').innerHTML = 'Press <strong>"Start 3s Reflex Sprint"</strong> to begin!';
+      document.getElementById('sprintStageText').style.color = 'var(--accent)';
+      document.getElementById('sprintStartBtn').innerHTML = '<span>⚡</span> Start 3s Reflex Sprint (Space)';
+
+      // Stop wave animation
+      document.querySelectorAll('.wave-bar').forEach(w => w.classList.remove('animating'));
+    }
+
+    function startSprintTimer() {
+      if (sprintStage === 'speaking') {
+        // Stop speaking early
+        finishSpeakingSprint();
+        return;
+      }
+
+      getAudioContext();
+      clearInterval(sprintInterval);
+      sprintStage = 'reflex';
+      sprintCountdown = 3;
+
+      const box = document.getElementById('sprintBox');
+      box.classList.add('active-timer');
+      box.classList.remove('speaking-timer');
+
+      document.getElementById('sprintTimerNum').textContent = sprintCountdown;
+      document.getElementById('sprintTimerLabel').textContent = 'GET READY TO SPEAK';
+      document.getElementById('sprintStageText').textContent = 'Deactivate Japanese! Mouth open in:';
+      document.getElementById('sprintStageText').style.color = 'var(--amber)';
+      playSfx('countdown');
+
+      // Speak word aloud
+      speakText(CONCEPT_TRIGGERS[sprintIndex].word);
+
+      sprintInterval = setInterval(() => {
+        sprintCountdown--;
+        if (sprintCountdown > 0) {
+          document.getElementById('sprintTimerNum').textContent = sprintCountdown;
+          playSfx('countdown');
+        } else {
+          // TRANSITION TO 25-SECOND SPEAKING STAGE
+          clearInterval(sprintInterval);
+          startSpeakingStage();
+        }
+      }, 1000);
+    }
+
+    function startSpeakingStage() {
+      sprintStage = 'speaking';
+      sprintCountdown = 25;
+
+      const box = document.getElementById('sprintBox');
+      box.classList.remove('active-timer');
+      box.classList.add('speaking-timer');
+
+      document.getElementById('sprintTimerNum').textContent = sprintCountdown;
+      document.getElementById('sprintTimerLabel').textContent = 'SPEAKING TIME';
+      document.getElementById('sprintStageText').innerHTML = '🎤 <strong>SPEAK NOW!</strong> Explain what it is, give a contrast, or workplace example!';
+      document.getElementById('sprintStageText').style.color = 'var(--emerald)';
+      document.getElementById('sprintStartBtn').innerHTML = '<span>⏹️</span> Finish Speaking';
+
+      playSfx('go');
+      document.querySelectorAll('.wave-bar').forEach(w => w.classList.add('animating'));
+
+      sprintInterval = setInterval(() => {
+        sprintCountdown--;
+        document.getElementById('sprintTimerNum').textContent = sprintCountdown;
+        if (sprintCountdown <= 5 && sprintCountdown > 0) {
+          playSfx('tick');
+        }
+        if (sprintCountdown <= 0) {
+          clearInterval(sprintInterval);
+          finishSpeakingSprint();
+        }
+      }, 1000);
+    }
+
+    function finishSpeakingSprint() {
+      clearInterval(sprintInterval);
+      sprintStage = 'idle';
+      const box = document.getElementById('sprintBox');
+      box.classList.remove('speaking-timer', 'active-timer');
+      document.querySelectorAll('.wave-bar').forEach(w => w.classList.remove('animating'));
+
+      document.getElementById('sprintTimerNum').textContent = 'DONE';
+      document.getElementById('sprintTimerLabel').textContent = 'COMPLETED';
+      document.getElementById('sprintStageText').innerHTML = '👏 <strong>Great sprint!</strong> Tutor/Student evaluate below or listen to model answer.';
+      document.getElementById('sprintStageText').style.color = 'var(--accent)';
+      document.getElementById('sprintStartBtn').innerHTML = '<span>⚡</span> Restart Sprint';
+
+      playSfx('correct');
+    }
+
+    function awardSprintScore(pts, reason) {
+      addXP(pts, reason);
+    }
+
+    function prevSprintTrigger() {
+      sprintIndex = (sprintIndex - 1 + CONCEPT_TRIGGERS.length) % CONCEPT_TRIGGERS.length;
+      renderSprintTrigger();
+    }
+
+    function nextSprintTrigger() {
+      sprintIndex = (sprintIndex + 1) % CONCEPT_TRIGGERS.length;
+      renderSprintTrigger();
+    }
+
+    function triggerRandomTrigger() {
+      sprintIndex = Math.floor(Math.random() * CONCEPT_TRIGGERS.length);
+      renderSprintTrigger();
+      showToast(`Selected: ${CONCEPT_TRIGGERS[sprintIndex].word}`);
+    }
+
+    function speakCurrentWord() {
+      speakText(CONCEPT_TRIGGERS[sprintIndex].word);
+    }
+
+    function playModelAnswer() {
+      const answer = CONCEPT_TRIGGERS[sprintIndex].modelAnswer;
+      showToast('Playing Native Model Answer...');
+      speakText(answer, 0.9);
+    }
+
+    function toggleFormula(card) {
+      card.classList.toggle('open');
+    }
+
+    /* =====================================================================
+       MODE 2: SPEED DEFINITION BLITZ (ARCADE QUIZ)
+       ===================================================================== */
+    let blitzIndex = 0;
+    let blitzAnswered = false;
+
+    function loadBlitzQuestion(idx) {
+      blitzAnswered = false;
+      const q = BLITZ_QUESTIONS[idx];
+      document.getElementById('blitzProgressDisplay').textContent = `Q ${idx + 1}/${BLITZ_QUESTIONS.length}`;
+      document.getElementById('blitzCategoryBadge').textContent = q.category;
+      document.getElementById('blitzQuestionText').textContent = q.question;
+
+      // Update progress bar
+      const pct = ((idx) / BLITZ_QUESTIONS.length) * 100;
+      document.getElementById('blitzProgressBar').style.width = `${pct}%`;
+
+      // Hide feedback and next button
+      document.getElementById('blitzFeedbackBox').style.display = 'none';
+      document.getElementById('blitzNextBtn').style.display = 'none';
+
+      // Populate options
+      const grid = document.getElementById('blitzOptionsGrid');
+      grid.innerHTML = '';
+      q.options.forEach((optText, optIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span class="quiz-opt-key">${optIdx + 1}</span> <span>${optText}</span>`;
+        btn.onclick = () => selectBlitzOption(optIdx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function selectBlitzOption(selectedIdx) {
+      if (blitzAnswered) return;
+      blitzAnswered = true;
+
+      const q = BLITZ_QUESTIONS[blitzIndex];
+      const buttons = document.querySelectorAll('#blitzOptionsGrid .quiz-opt-btn');
+      const isCorrect = (selectedIdx === q.correctIndex);
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correctIndex) btn.classList.add('correct');
+        else if (idx === selectedIdx) btn.classList.add('wrong');
+      });
+
+      const feedbackBox = document.getElementById('blitzFeedbackBox');
+      feedbackBox.style.display = 'block';
+      feedbackBox.className = `quiz-feedback-box ${isCorrect ? 'correct' : 'wrong'}`;
+      document.getElementById('blitzFeedbackTitle').textContent = isCorrect ? '🎯 Bullseye! Correct!' : '❌ Not Quite!';
+      document.getElementById('blitzFeedbackDesc').textContent = q.explanation;
+
+      if (isCorrect) {
+        addXP(100, 'Correct Blitz Answer');
+      } else {
+        breakStreak();
+      }
+
+      document.getElementById('blitzNextBtn').style.display = 'inline-flex';
+    }
+
+    function nextBlitzQuestion() {
+      blitzIndex++;
+      if (blitzIndex >= BLITZ_QUESTIONS.length) {
+        showVictoryModal('Blitz Challenge Complete!', 'You answered all definition questions. Outstanding work!');
+        blitzIndex = 0;
+      }
+      loadBlitzQuestion(blitzIndex);
+    }
+
+    function speakBlitzQuestion() {
+      const q = BLITZ_QUESTIONS[blitzIndex];
+      speakText(q.question);
+    }
+
+    /* =====================================================================
+       MODE 3: KATAKANA PURGE BLASTER
+       ===================================================================== */
+    let katakanaIndex = 0;
+    let katakanaAnswered = false;
+
+    function loadKatakanaTrap(idx) {
+      katakanaAnswered = false;
+      const trap = KATAKANA_TRAPS[idx];
+      document.getElementById('katakanaProgressDisplay').textContent = `Trap ${idx + 1}/${KATAKANA_TRAPS.length}`;
+      document.getElementById('katakanaTermDisplay').textContent = trap.katakana;
+      document.getElementById('katakanaFlawedSentence').textContent = `"${trap.flawed}"`;
+      document.getElementById('katakanaExplanation').textContent = trap.trapExplanation;
+
+      document.getElementById('katakanaFeedbackBox').style.display = 'none';
+      document.getElementById('katakanaNextBtn').style.display = 'none';
+
+      const grid = document.getElementById('katakanaOptionsGrid');
+      grid.innerHTML = '';
+      trap.options.forEach((optText, optIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span class="quiz-opt-key">${optIdx + 1}</span> <span>${optText}</span>`;
+        btn.onclick = () => selectKatakanaOption(optIdx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function selectKatakanaOption(selectedIdx) {
+      if (katakanaAnswered) return;
+      katakanaAnswered = true;
+
+      const trap = KATAKANA_TRAPS[katakanaIndex];
+      const buttons = document.querySelectorAll('#katakanaOptionsGrid .quiz-opt-btn');
+      const isCorrect = (selectedIdx === trap.correctIndex);
+
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === trap.correctIndex) btn.classList.add('correct');
+        else if (idx === selectedIdx) btn.classList.add('wrong');
+      });
+
+      const feedbackBox = document.getElementById('katakanaFeedbackBox');
+      feedbackBox.style.display = 'block';
+      feedbackBox.className = `quiz-feedback-box ${isCorrect ? 'correct' : 'wrong'}`;
+      document.getElementById('katakanaFeedbackTitle').textContent = isCorrect ? '🛡️ Katakana Purged!' : '❌ Katakana Trap Triggered!';
+      document.getElementById('katakanaFeedbackDesc').textContent = `Executive Upgrade: "${trap.modelSentence}"`;
+
+      if (isCorrect) {
+        addXP(120, 'Katakana Purged Successfully');
+      } else {
+        breakStreak();
+      }
+
+      document.getElementById('katakanaNextBtn').style.display = 'inline-flex';
+    }
+
+    function nextKatakanaTrap() {
+      katakanaIndex++;
+      if (katakanaIndex >= KATAKANA_TRAPS.length) {
+        showVictoryModal('Katakana Purge Completed!', 'You dismantled all high-frequency Wasei-Eigo traps. Executive fluency unlocked!');
+        katakanaIndex = 0;
+      }
+      loadKatakanaTrap(katakanaIndex);
+    }
+
+    function speakKatakanaTarget() {
+      const trap = KATAKANA_TRAPS[katakanaIndex];
+      speakText(trap.modelSentence);
+    }
+
+    /* =====================================================================
+       MODE 4: COLLOCATION CONNECTOR (MEMORY MATCHING)
+       ===================================================================== */
+    let matcherSelectedTile = null;
+    let matchesRemaining = 0;
+
+    function initMatcherGame() {
+      const grid = document.getElementById('matcherGrid');
+      grid.innerHTML = '';
+      matcherSelectedTile = null;
+
+      // Pick 5 random pairs
+      const shuffled = [...COLLOCATION_PAIRS].sort(() => 0.5 - Math.random()).slice(0, 5);
+      matchesRemaining = shuffled.length;
+      document.getElementById('matcherMatchesLeft').textContent = `${matchesRemaining} Pairs Left`;
+
+      // Split into left and right tiles
+      const tiles = [];
+      shuffled.forEach(p => {
+        tiles.push({ id: p.id, text: p.left, type: 'left' });
+        tiles.push({ id: p.id, text: p.right, type: 'right' });
+      });
+
+      // Shuffle tiles thoroughly
+      tiles.sort(() => 0.5 - Math.random());
+
+      tiles.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'match-tile';
+        div.textContent = t.text;
+        div.dataset.id = t.id;
+        div.dataset.type = t.type;
+        div.onclick = () => onTileClick(div);
+        grid.appendChild(div);
+      });
+    }
+
+    function onTileClick(tile) {
+      if (tile.classList.contains('matched')) return;
+
+      playSfx('tick');
+
+      if (!matcherSelectedTile) {
+        matcherSelectedTile = tile;
+        tile.classList.add('selected');
+        return;
+      }
+
+      // If clicked the exact same tile
+      if (matcherSelectedTile === tile) {
+        matcherSelectedTile.classList.remove('selected');
+        matcherSelectedTile = null;
+        return;
+      }
+
+      // Check match: same ID and opposite types
+      const firstId = matcherSelectedTile.dataset.id;
+      const secondId = tile.dataset.id;
+      const firstType = matcherSelectedTile.dataset.type;
+      const secondType = tile.dataset.type;
+
+      if (firstId === secondId && firstType !== secondType) {
+        // MATCH!
+        matcherSelectedTile.classList.remove('selected');
+        matcherSelectedTile.classList.add('matched');
+        tile.classList.add('matched');
+
+        playSfx('correct');
+        addXP(60, 'Collocation Paired');
+        matchesRemaining--;
+        document.getElementById('matcherMatchesLeft').textContent = `${matchesRemaining} Pairs Left`;
+
+        matcherSelectedTile = null;
+
+        if (matchesRemaining === 0) {
+          triggerConfetti();
+          setTimeout(() => {
+            showVictoryModal('All Collocations Connected!', 'Flawless pairing! Your executive collocation mastery is strengthening.');
+          }, 400);
+        }
+      } else {
+        // MISMATCH
+        tile.classList.add('selected');
+        playSfx('wrong');
+        setTimeout(() => {
+          if (matcherSelectedTile) matcherSelectedTile.classList.remove('selected');
+          tile.classList.remove('selected');
+          matcherSelectedTile = null;
+        }, 500);
+      }
+    }
+
+    /* =====================================================================
+       MODE 5: MEETING SIMULATION MASTER (CLOZE)
+       ===================================================================== */
+    let clozeIndex = 0;
+    let clozeAnswered = false;
+
+    function loadClozeDialogue(idx) {
+      clozeAnswered = false;
+      const item = CLOZE_DATA[idx];
+      document.getElementById('clozeProgressDisplay').textContent = `Scenario ${idx + 1}/${CLOZE_DATA.length}`;
+      document.getElementById('clozeContextBadge').textContent = item.badge;
+      document.getElementById('clozeSpeaker1').textContent = `${item.speaker1}:`;
+      document.getElementById('clozePrompt1').textContent = item.prompt1;
+      document.getElementById('clozePrompt2').textContent = item.prompt2;
+
+      document.getElementById('clozeFeedbackBox').style.display = 'none';
+      document.getElementById('clozeNextBtn').style.display = 'none';
+
+      const grid = document.getElementById('clozeOptionsGrid');
+      grid.innerHTML = '';
+      item.options.forEach((optText, optIdx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span class="quiz-opt-key">${optIdx + 1}</span> <span>${optText}</span>`;
+        btn.onclick = () => selectClozeOption(optText, btn);
+        grid.appendChild(btn);
+      });
+    }
+
+    function selectClozeOption(chosenWord, clickedBtn) {
+      if (clozeAnswered) return;
+      clozeAnswered = true;
+
+      const item = CLOZE_DATA[clozeIndex];
+      const isCorrect = (chosenWord.toLowerCase() === item.correctWord.toLowerCase());
+      const buttons = document.querySelectorAll('#clozeOptionsGrid .quiz-opt-btn');
+
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent.toLowerCase().includes(item.correctWord.toLowerCase())) {
+          btn.classList.add('correct');
+        } else if (btn === clickedBtn) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      const feedbackBox = document.getElementById('clozeFeedbackBox');
+      feedbackBox.style.display = 'block';
+      feedbackBox.className = `quiz-feedback-box ${isCorrect ? 'correct' : 'wrong'}`;
+      document.getElementById('clozeFeedbackTitle').textContent = isCorrect ? '🌟 Executive Response Formulated!' : '❌ Sub-optimal Word Choice!';
+      document.getElementById('clozeFeedbackDesc').textContent = item.explanation;
+
+      if (isCorrect) {
+        addXP(110, 'Boardroom Dialogue Completed');
+      } else {
+        breakStreak();
+      }
+
+      document.getElementById('clozeNextBtn').style.display = 'inline-flex';
+    }
+
+    function nextClozeDialogue() {
+      clozeIndex++;
+      if (clozeIndex >= CLOZE_DATA.length) {
+        showVictoryModal('Meeting Simulation Mastered!', 'You handled tough client inquiries and sprint blockers with diplomatic authority!');
+        clozeIndex = 0;
+      }
+      loadClozeDialogue(clozeIndex);
+    }
+
+    function speakClozeDialogue() {
+      const item = CLOZE_DATA[clozeIndex];
+      const filledText = item.prompt2.replace('________', item.correctWord);
+      speakText(`${item.prompt1} ... ${filledText}`);
+    }
+
+    /* =====================================================================
+       VICTORY MODAL & CONFETTI SYSTEM
+       ===================================================================== */
+    function showVictoryModal(title, desc) {
+      document.getElementById('victoryTitle').textContent = title;
+      document.getElementById('victoryDesc').textContent = desc;
+      document.getElementById('modalXp').textContent = playerXP;
+      document.getElementById('modalStreak').textContent = `${playerStreak} 🔥`;
+      document.getElementById('victoryModal').classList.add('open');
+      playSfx('fanfare');
+      triggerConfetti();
+    }
+
+    function closeModal() {
+      document.getElementById('victoryModal').classList.remove('open');
+    }
+
+    function closeModalAndReplay() {
+      closeModal();
+      location.reload();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.style.display = 'flex';
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }
+
+    // Confetti particles in pure HTML5 canvas
+    function triggerConfetti() {
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#38bdf8', '#10b981', '#f59e0b', '#f43f5e', '#a855f7'];
+
+      for (let i = 0; i < 120; i++) {
+        particles.push({
+          x: canvas.width / 2,
+          y: canvas.height / 2,
+          vx: (Math.random() - 0.5) * 18,
+          vy: (Math.random() - 0.7) * 20,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          size: Math.random() * 8 + 4,
+          rotation: Math.random() * 360,
+          vRot: (Math.random() - 0.5) * 10,
+          alpha: 1
+        });
+      }
+
+      let animId;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let alive = false;
+
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.4; // gravity
+          p.rotation += p.vRot;
+          p.alpha -= 0.012;
+
+          if (p.alpha > 0) {
+            alive = true;
+            ctx.save();
+            ctx.globalAlpha = p.alpha;
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+          }
+        });
+
+        if (alive) {
+          animId = requestAnimationFrame(animate);
+        } else {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          cancelAnimationFrame(animId);
+        }
+      }
+      animate();
+    }
+
+    /* =====================================================================
+       KEYBOARD SHORTCUTS FOR PREPLY CLASSROOM AGILITY
+       ===================================================================== */
+    window.addEventListener('keydown', (e) => {
+      // Spacebar starts/stops sprint in Mode 1
+      if (e.code === 'Space' && document.getElementById('mode-sprint').classList.contains('active')) {
+        const activeTag = document.activeElement ? document.activeElement.tagName : '';
+        if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+          e.preventDefault();
+          startSprintTimer();
+        }
+      }
+
+      // Keys 1, 2, 3, 4 trigger quiz options
+      if (['Digit1', 'Digit2', 'Digit3', 'Digit4'].includes(e.code)) {
+        const num = parseInt(e.key, 10) - 1;
+        if (document.getElementById('mode-blitz').classList.contains('active')) {
+          selectBlitzOption(num);
+        } else if (document.getElementById('mode-katakana').classList.contains('active')) {
+          selectKatakanaOption(num);
+        }
+      }
+
+      // Left / Right arrows for sprint words
+      if (document.getElementById('mode-sprint').classList.contains('active')) {
+        if (e.code === 'ArrowRight') nextSprintTrigger();
+        if (e.code === 'ArrowLeft') prevSprintTrigger();
+      }
+    });
+
+    /* =====================================================================
+       INITIALIZATION
+       ===================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      // Load saved theme
+      if (localStorage.getItem('yh_vocab_theme') === 'light') {
+        document.body.classList.add('light-mode');
+      }
+
+      updateHud();
+      renderSprintTrigger();
+    });
+  </script>
+</body>
+</html>
