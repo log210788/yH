@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,7 +50,162 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding: 32px 16px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* Top Sticky Header */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      letter-spacing: 0.5px;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      padding: 0;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--text-muted);
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+
+    .tab-btn:hover {
+      color: var(--navy);
+      background: #f8fafc;
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: #eff6ff;
+      font-weight: 700;
+    }
+
+    .tab-badge {
+      font-size: 0.72rem;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    /* Tab Panes */
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* Card Component */
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
     .sheet-wrapper {
@@ -1361,6 +1516,8 @@
         border: 1px solid #999;
         background: #fff;
       }
+    }
+
     /* Studio, Cadence, and Rubric Styles */
     .steps-banner {
       display: grid;
@@ -1847,7 +2004,8 @@
   </header>
 
   <!-- Action Toolbar -->
-  <div class="action-bar">
+  <div class="container" style="margin-top: 16px;">
+    <div class="action-bar" style="margin-bottom: 0;">
     <div class="action-bar-left">
       <div class="action-bar-links">
         <a href="game.html" target="_blank">Interactive Game (game.html)</a>
@@ -1862,6 +2020,8 @@
   </div>
 
   <!-- ==================================================== -->
+  </div>
+
   <!-- TAB 1: TODAY'S LESSON REVIEW (PRIMARY LANDING PAGE) -->
   <!-- ==================================================== -->
   <div id="tab-lesson1" class="tab-pane active" style="padding: 24px 0 48px;">
@@ -3040,7 +3200,8 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         <!-- ==================================================== -->
     <!-- TAB: RECORDING STUDIO -->
     <!-- ==================================================== -->
-    <div id="tab-studio" class="tab-pane">
+    <div id="tab-studio" class="tab-pane" style="padding: 24px 0 48px;">
+      <div class="container">
 
       <!-- How It Works Steps -->
       <div class="steps-banner">
@@ -3051,7 +3212,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         </div>
         <div class="step-card">
           <div class="step-num">Step 2</div>
-          <div class="step-title">Record in Browser (2â€“3 Mins)</div>
+          <div class="step-title">Record in Browser (2&ndash;3 Mins)</div>
           <div class="step-text">Click "Start Recording", pitch your product with strong sentence stress, and watch the live visualizer.</div>
         </div>
         <div class="step-card">
@@ -3072,37 +3233,37 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         <!-- Left: Audio Controller -->
         <div class="recorder-box">
           <div id="statusBadge" class="status-badge status-ready">
-            â— Microphone Ready
+            &#9679; Microphone Ready
           </div>
           
           <div id="timerDisplay" class="timer-display">00:00</div>
-          <div class="timer-target">Target presentation length: <strong>2:00 â€“ 3:00 mins</strong></div>
+          <div class="timer-target">Target presentation length: <strong>2:00 &ndash; 3:00 mins</strong></div>
 
           <!-- Waveform Canvas -->
           <canvas id="visualizer" width="300" height="64"></canvas>
 
           <div class="btn-group">
             <button id="recordBtn" class="btn-action btn-record" onclick="toggleRecording()">
-              <span>ðŸ”´</span> <span id="recordBtnText">Start Recording</span>
+              <span>&#128308;</span> <span id="recordBtnText">Start Recording</span>
             </button>
             <button id="stopBtn" class="btn-action btn-stop" onclick="stopRecording()" style="display: none;">
-              <span>â¹</span> <span>Stop Recording</span>
+              <span>&#9209;</span> <span>Stop Recording</span>
             </button>
             <button id="downloadBtn" class="btn-action btn-download" onclick="downloadRecording()" disabled>
-              <span>ðŸ’¾</span> <span>Download Recording</span>
+              <span>&#128190;</span> <span>Download Recording</span>
             </button>
           </div>
 
           <!-- Audio Preview Player -->
           <div id="audioPlayerCard" class="audio-player-card">
             <div style="font-size:0.85rem; font-weight:600; color:var(--text); text-align:left;">
-              ðŸŽ§ Review Take Before Sending:
+              &#127911; Review Take Before Sending:
             </div>
             <audio id="audioPreview" controls></audio>
           </div>
 
           <div style="font-size:0.75rem; color:var(--text-dim); margin-top:14px; text-align:center;">
-            ðŸ”’ Audio records 100% locally in your browser. Nothing is uploaded to external servers.
+            &#128274; Audio records 100% locally in your browser. Nothing is uploaded to external servers.
           </div>
         </div>
 
@@ -3128,7 +3289,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
             </div>
 
             <div class="prompt-structure">
-              <strong>ðŸ’¡ A Little Nudge (Things to talk about):</strong>
+              <strong>💡 A Little Nudge (Things to talk about):</strong>
               <div id="pNudge" style="line-height:1.7; color:var(--text-muted);">
                 <!-- Dynamically populated from topicsData.nudge -->
               </div>
@@ -3137,7 +3298,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
             <!-- Optional Custom Notes Area -->
             <div class="custom-notes-box">
               <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
-                ðŸ“ Optional Speaker Notes (Jot down your product name or key points):
+                📝 Optional Speaker Notes (Jot down your product name or key points):
               </label>
               <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 quick bullet points or client names if you'd like..."></textarea>
             </div>
@@ -3146,7 +3307,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           <!-- Preply Submission Reminder -->
           <div class="preply-dispatch">
             <div class="preply-dispatch-title">
-              <span>ðŸ“©</span> Preply Homework Submission Instructions
+              <span>📬</span> Preply Homework Submission Instructions
             </div>
             <div class="preply-steps">
               <div class="preply-step-item">
@@ -3159,7 +3320,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
               </div>
               <div class="preply-step-item">
                 <span class="step-bullet">3</span>
-                <span>Open your <strong>Preply Messages</strong>, click the <strong>Paperclip (ðŸ“Ž)</strong> to attach the audio file, and add a quick note to Lewis: <em>"Hi Lewis! Here is my audio recording for review."</em></span>
+                <span>Open your <strong>Preply Messages</strong>, click the <strong>Paperclip (📎)</strong> to attach the audio file, and add a quick note to Lewis: <em>"Hi Lewis! Here is my audio recording for review."</em></span>
               </div>
             </div>
           </div>
@@ -3168,12 +3329,14 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
 
       </div>
 
+      </div>
     </div>
 
     <!-- ==================================================== -->
     <!-- TAB 2: BUSINESS VOCAB LAB (WEEK 1 LESSON) -->
     <!-- ==================================================== -->
-    <div id="tab-vocab" class="tab-pane">
+    <div id="tab-vocab" class="tab-pane" style="padding: 24px 0 48px;">
+      <div class="container">
       
       <!-- Intro Card -->
       <div class="card" style="border-left: 4px solid var(--emerald);">
@@ -3188,6 +3351,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           <button class="btn-secondary" onclick="switchTab('studio'); onTopicChange();">
             🎙️ Go To Recording Studio
           </button>
+        </div>
         <!-- Game Launch Hero Banner -->
         <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.15)); border: 1px solid var(--accent); border-radius: var(--radius); padding: 18px 24px; margin-bottom: 24px; margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
           <div>
@@ -3547,17 +3711,19 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         </div>
 
       </div>
+      </div>
     </div>
 
 
     <!-- ==================================================== -->
     <!-- TAB 4: CADENCE & RHYTHM LAB -->
     <!-- ==================================================== -->
-    <div id="tab-cadence" class="tab-pane">
+    <div id="tab-cadence" class="tab-pane" style="padding: 24px 0 48px;">
+      <div class="container">
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">âš¡ Rhythm, Stress & Subtext Practice Lab</div>
+            <div class="card-title">⚡ Rhythm, Stress & Subtext Practice Lab</div>
             <div class="card-desc">Practice sentence stress, isochrony (equal beats), and subtext. Click words to toggle STRESS (Yellow) or REDUCED (Strikethrough).</div>
           </div>
           <button class="btn-secondary" onclick="startMetronome()">
@@ -3735,16 +3901,18 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         </div>
 
       </div>
+      </div>
     </div>
 
     <!-- ==================================================== -->
     <!-- TAB 5: 4-WEEK ASSESSMENT RUBRIC -->
     <!-- ==================================================== -->
-    <div id="tab-rubric" class="tab-pane">
+    <div id="tab-rubric" class="tab-pane" style="padding: 24px 0 48px;">
+      <div class="container">
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">ðŸŽ¯ 4-Week Development Milestone</div>
+            <div class="card-title">🎯 4-Week Development Milestone</div>
             <div class="card-desc">What we are working on going forward, and what we will assess in four weeks.</div>
           </div>
         </div>
@@ -3778,7 +3946,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         </div>
 
         <div style="margin-top:24px; background:linear-gradient(135deg, var(--accent-bg), var(--purple-bg)); border:1px solid var(--border-accent); padding:20px; border-radius:var(--radius); display:flex; align-items:flex-start; gap:14px;">
-          <div style="font-size:1.8rem; line-height:1;">ðŸ“…</div>
+          <div style="font-size:1.8rem; line-height:1;">📅</div>
           <div>
             <h4 style="font-size:1rem; color:var(--accent); margin-bottom:4px;">Four-Week Development Assessment</h4>
             <p style="font-size:0.9rem; color:var(--text); line-height:1.5;">
@@ -3788,8 +3956,9 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         </div>
 
       </div>
+      </div>
     </div>
-  </main>
+
 
   <!-- FOOTER -->
   <footer>
@@ -3820,37 +3989,37 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         title: "Topic 1: Executive Meeting Update (Week 1 PREP Sprint)",
         filename: "YH_Meeting_PREP_Update",
         scenario: "You are giving a spontaneous 60-90 second project status update in a weekly cross-functional team meeting. Use the PREP framework and today's executive vocabulary (critical bottleneck, streamline, mitigate risks, align on expectations, iron out, circle back).",
-        nudge: "â€¢ P (Point): State your team's milestone status clearly in one sentence.<br>â€¢ R (Reason): Identify the critical bottleneck or driver.<br>â€¢ E (Example): Cite a specific test result, metric, or deployment detail.<br>â€¢ P (Point): Propose the next alignment step or follow-up before Friday."
+        nudge: "&bull; P (Point): State your team's milestone status clearly in one sentence.<br>&bull; R (Reason): Identify the critical bottleneck or driver.<br>&bull; E (Example): Cite a specific test result, metric, or deployment detail.<br>&bull; P (Point): Propose the next alignment step or follow-up before Friday."
       },
       opt_pitch: {
         title: "Topic 2: 3-Minute Product Overview (Pitch to Client)",
         filename: "YH_Product_Overview",
         scenario: "You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.",
-        nudge: "â€¢ What problem or frustration does the client usually have?<br>â€¢ How does your product solve it or save them time?<br>â€¢ What would you ask or invite them to do at the end?"
+        nudge: "&bull; What problem or frustration does the client usually have?<br>&bull; How does your product solve it or save them time?<br>&bull; What would you ask or invite them to do at the end?"
       },
       opt_demo: {
         title: "Topic 3: Live Feature Walkthrough & Demo",
         filename: "YH_Feature_Demo",
         scenario: "You are screensharing with a client. Walk them through one or two key features of your product.",
-        nudge: "â€¢ Which feature are you showing, and why is it useful?<br>â€¢ How does someone actually use it in practice?<br>â€¢ Ask the client a quick question to check their thoughts!"
+        nudge: "&bull; Which feature are you showing, and why is it useful?<br>&bull; How does someone actually use it in practice?<br>&bull; Ask the client a quick question to check their thoughts!"
       },
       opt_objection: {
         title: "Topic 4: Addressing Client Concerns & Questions",
         filename: "YH_Client_QandA",
         scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Respond in your own natural style.",
-        nudge: "â€¢ Acknowledge their concern calmly so they feel heard.<br>â€¢ Explain why your product is worth the cost or effort in the long run.<br>â€¢ Propose a simple, safe next step to take the pressure off."
+        nudge: "&bull; Acknowledge their concern calmly so they feel heard.<br>&bull; Explain why your product is worth the cost or effort in the long run.<br>&bull; Propose a simple, safe next step to take the pressure off."
       },
       opt_qbr: {
         title: "Topic 5: Client Review & Project Update",
         filename: "YH_Client_Review",
         scenario: "You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.",
-        nudge: "â€¢ Mention how things have been going well so far.<br>â€¢ Bring up another feature or team that could also benefit.<br>â€¢ Ask if they'd be open to taking a look."
+        nudge: "&bull; Mention how things have been going well so far.<br>&bull; Bring up another feature or team that could also benefit.<br>&bull; Ask if they'd be open to taking a look."
       },
       opt_custom: {
         title: "Topic 6: Your Real Work Product Presentation",
         filename: "YH_Work_Presentation",
         scenario: "Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.",
-        nudge: "â€¢ Talk freely about your product in your own natural words.<br>â€¢ Don't worry about any fixed scriptâ€”let's hear your natural presentation style!"
+        nudge: "&bull; Talk freely about your product in your own natural words.<br>&bull; Don't worry about any fixed script &mdash; let's hear your natural presentation style!"
       }
     };
 
@@ -3945,13 +4114,13 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       const isLight = body.classList.toggle('light-theme');
       localStorage.setItem('yh_theme', isLight ? 'light' : 'dark');
       const icon = document.getElementById('themeIcon');
-      if (icon) icon.textContent = isLight ? 'â˜¾' : 'â˜€';
+      if (icon) icon.textContent = isLight ? '\u263E' : '\u2600';
     }
 
     if (localStorage.getItem('yh_theme') === 'light' || !localStorage.getItem('yh_theme')) {
       document.body.classList.add('light-theme');
       const icon = document.getElementById('themeIcon');
-      if (icon) icon.textContent = 'â˜¾';
+      if (icon) icon.textContent = '\u263E';
     }
 
     // ==========================================
@@ -4037,7 +4206,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           const badge = document.getElementById('statusBadge');
           if (badge) {
             badge.className = 'status-badge status-recorded';
-            badge.innerHTML = 'âœ” Take Recorded â€” Ready to Download';
+            badge.innerHTML = '\u2714 Take Recorded \u2014 Ready to Download';
           }
         };
 
@@ -4584,6 +4753,12 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       loadSavedProgress();
       loadSavedPitchProgress();
       drawIdleVisualizer();
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        if (document.getElementById('tab-' + hash)) {
+          switchTab(hash);
+        }
+      }
     });
   </script>
 </body>
