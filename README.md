@@ -13,14 +13,29 @@ A comprehensive workplace English curriculum, lesson planning system, and intera
 yH/
 ├── messages/
 │   └── Learning needs.txt              # Preply student profile, timezone, goals & preferences
-├── Curriculum-Overview.md              # Master 4-Week / 8-Week Executive Business English Curriculum
+├── Curriculum-Overview.md              # Master Executive Business English Curriculum & Specialization Tracks
 ├── Lessons/
-│   └── Week-01/
-│       ├── Teacher-Lesson-Plan.md      # Minute-by-minute 50-minute lesson plan for today
-│       ├── Student-Handout.md          # Clean, student-facing reference guide & cheat sheet
-│       ├── Vocab-Ladder-Revision-Sheet.md # Dedicated student revision sheet, drills & PREP task
-│       └── How-To-Teach-Guide.md       # Tutor's pedagogical playbook & neuro-linguistic scripts
+│   ├── Week-01/
+│   │   ├── Teacher-Lesson-Plan.md      # Minute-by-minute 50-minute lesson plan for Week 1
+│   │   ├── Student-Handout.md          # Clean, student-facing reference guide & cheat sheet
+│   │   ├── Vocab-Ladder-Revision-Sheet.md # Dedicated student revision sheet, drills & PREP task
+│   │   └── How-To-Teach-Guide.md       # Tutor's pedagogical playbook & neuro-linguistic scripts
+│   └── Selling-Pitching-Presentations/ # 4-Lesson Pitch & Presentation Specialization Track
+│       ├── Teacher-Playbook-How-To-Teach-On-Preply.md # Complete 1-on-1 coaching field manual
+│       ├── Lesson-1-The-Executive-Hook/
+│       │   ├── Teacher-Lesson-Plan.md  # Frame Control, Croc Brain & 3-Part Hook
+│       │   └── Student-Handout.md      # Student cheat sheet, drill cards & vocal checklist
+│       ├── Lesson-2-The-Value-Proposition-and-Demo/
+│       │   ├── Teacher-Lesson-Plan.md  # PISP Stack, "So What?" Drill & Power Pause
+│       │   └── Student-Handout.md      # Solution architecture templates & practice cards
+│       ├── Lesson-3-Data-Narration-and-Slide-Deck/
+│       │   ├── Teacher-Lesson-Plan.md  # NMTA formula, contrastive stress & boardroom Q&A
+│       │   └── Student-Handout.md      # Trajectory lexicon & slide transition formulas
+│       └── Lesson-4-Closing-Objections-and-Pricing/
+│           ├── Teacher-Lesson-Plan.md  # Objection Aikido, Prize Frame & Hardball close
+│           └── Student-Handout.md      # Objection cheat sheet & non-negotiable thresholds
 ├── Teacher-Materials/
+│   ├── New-Preply-Teacher-Playbook-Selling-Pitching.md # Quick reference for new Preply teachers
 │   ├── Week-01-Homework.md             # Written & audio recording homework assignment
 │   ├── Week-01-Answer-Key.md           # Model answers, recasts & assessment rubrics
 │   └── Complete-Curriculum-Lexicon.md  # 100-word cross-functional Business Lexicon (7 domains)

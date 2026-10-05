@@ -169,3 +169,27 @@ Week 4: High-Stakes Negotiations & Client Boundary Setting
    - Incorrect: *"We got a big claim from the client about the cost-performance."*
    - Tutor Recast: *"Understood—so the client **lodged a formal complaint** regarding the **ROI** of the product. How did the team respond?"*
    - Outcome: YH hears the native phrase immediately reinforced in context without experiencing performance anxiety.
+
+---
+
+## 7. Specialization Track: 4-Lesson Selling, Pitching & Business Presentation Series
+### (Adapted from Oren Klaff's *Pitch Anything* & Executive B2/C1 Coaching)
+
+For intensive training in sales, pitches, boardroom decks, and commercial closing, this 4-lesson sequence is fully developed with dedicated Teacher Lesson Plans, Student Handouts, Warm-ups, and Exercises:
+
+- **Master Preply Teacher Guide**: [`Lessons/Selling-Pitching-Presentations/Teacher-Playbook-How-To-Teach-On-Preply.md`](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Teacher-Playbook-How-To-Teach-On-Preply.md)
+  *(Also mirrored in [`Teacher-Materials/New-Preply-Teacher-Playbook-Selling-Pitching.md`](file:///d:/Documents/yH/Teacher-Materials/New-Preply-Teacher-Playbook-Selling-Pitching.md))*
+
+### Lesson Breakdown:
+1. **Lesson 1: The Executive Hook & Frame Control**
+   - *Core Objective*: Capturing the Croc Brain in the first 90 seconds, setting the Time Frame, and eliminating apologetic "beta" openers.
+   - *Materials*: [Teacher Plan](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-1-The-Executive-Hook/Teacher-Lesson-Plan.md) | [Student Handout](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-1-The-Executive-Hook/Student-Handout.md)
+2. **Lesson 2: The Value Proposition & Solution Architecture**
+   - *Core Objective*: The Problem-Impact-Solution-Proof (PISP) stack, passing the "So What?" test, mastering the Power Pause, and liquid consonant clarity.
+   - *Materials*: [Teacher Plan](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-2-The-Value-Proposition-and-Demo/Teacher-Lesson-Plan.md) | [Student Handout](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-2-The-Value-Proposition-and-Demo/Student-Handout.md)
+3. **Lesson 3: Executive Storytelling & Data Narration**
+   - *Core Objective*: The NMTA Formula (Number-Meaning-Trajectory-Action), contrastive numerical stress, and commanding boardroom slide Q&A.
+   - *Materials*: [Teacher Plan](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-3-Data-Narration-and-Slide-Deck/Teacher-Lesson-Plan.md) | [Student Handout](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-3-Data-Narration-and-Slide-Deck/Student-Handout.md)
+4. **Lesson 4: Closing, Handling Objections & The Prize Frame**
+   - *Core Objective*: Objection Aikido (ARPP), flipping the power dynamic with Prizing, defending value against 35% discount demands, and closing without neediness.
+   - *Materials*: [Teacher Plan](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-4-Closing-Objections-and-Pricing/Teacher-Lesson-Plan.md) | [Student Handout](file:///d:/Documents/yH/Lessons/Selling-Pitching-Presentations/Lesson-4-Closing-Objections-and-Pricing/Student-Handout.md)
