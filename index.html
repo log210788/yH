@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1361,6 +1361,431 @@
         border: 1px solid #999;
         background: #fff;
       }
+    /* Studio, Cadence, and Rubric Styles */
+    .steps-banner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .recorder-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 860px) {
+      .recorder-grid {
+        grid-template-columns: 350px 1fr;
+      }
+    }
+
+    .recorder-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .timer-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 2px;
+      margin: 12px 0 8px;
+    }
+
+    .timer-target {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .status-ready {
+      background: var(--surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .status-recording {
+      background: var(--rose-bg);
+      color: var(--rose);
+      border: 1px solid var(--rose);
+      animation: pulse 1.5s infinite;
+    }
+
+    .status-recorded {
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      border: 1px solid var(--emerald);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    canvas#visualizer {
+      width: 100%;
+      height: 64px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .btn-action {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      border: none;
+    }
+
+    .btn-record {
+      background: var(--rose);
+      color: #ffffff;
+    }
+    .btn-record:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-stop {
+      background: var(--amber);
+      color: #111;
+    }
+
+    .btn-download {
+      background: var(--emerald);
+      color: #ffffff;
+    }
+    .btn-download:hover {
+      opacity: 0.9;
+    }
+
+    .btn-download:disabled {
+      background: var(--surface-subtle);
+      color: var(--text-dim);
+      cursor: not-allowed;
+      border: 1px solid var(--border);
+    }
+
+    .prompt-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .select-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .select-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+
+    select.topic-select {
+      background: var(--surface-subtle);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+
+    select.topic-select:focus {
+      border-color: var(--accent);
+    }
+
+    .prompt-box {
+      background: var(--surface-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px;
+    }
+
+    .prompt-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .prompt-scenario {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .prompt-structure {
+      font-size: 0.85rem;
+      background: var(--bg);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      margin-top: 10px;
+    }
+
+    .prompt-structure strong {
+      color: var(--amber);
+      display: block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .custom-notes-box {
+      margin-top: 8px;
+    }
+
+    .custom-textarea {
+      width: 100%;
+      height: 70px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      resize: vertical;
+      outline: none;
+    }
+
+    .custom-textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .audio-player-card {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-top: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .audio-player-card.active {
+      display: flex;
+    }
+
+    .preply-dispatch {
+      background: linear-gradient(135deg, rgba(56, 139, 253, 0.08), rgba(188, 140, 255, 0.08));
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .preply-dispatch-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .preply-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.88rem;
+    }
+
+    .preply-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .step-bullet {
+      background: var(--accent);
+      color: #ffffff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Cadence & Stress Styles */
+    .drill-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .drill-sentence {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      padding: 6px 12px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+    }
+
+    .word {
+      padding: 2px 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      display: inline-block;
+    }
+
+    .word:hover {
+      background-color: var(--surface-hover);
+      color: var(--accent);
+    }
+
+    .word.stressed {
+      background-color: var(--amber-bg);
+      color: var(--amber);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .word.reduced {
+      opacity: 0.35;
+      text-decoration: line-through;
+    }
+
+    .reveal-box {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .subtext-hint {
+      display: none;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 0.88rem;
+      background: var(--accent-bg);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--accent);
+    }
+
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    .rubric-table th, .rubric-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .rubric-table th {
+      background: var(--surface-hover);
+      color: var(--text-muted);
+      font-weight: 600;
     }
   
 </style>
@@ -1393,17 +1818,20 @@
     <!-- TABS -->
     <div class="container" style="padding:0;">
       <nav class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('pitching')">
-          🎯 Pitching & Hook Homework <span class="tab-badge" style="background:var(--emerald-bg); color:var(--emerald); border-color:rgba(63,185,80,0.3);">Active Due</span>
+        <button class="tab-btn active" onclick="switchTab('lesson1')">
+          🎯 Today's Lesson Review <span class="tab-badge" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">Focus</span>
         </button>
-        <button class="tab-btn" onclick="switchTab('revision')">
-          📝 Week 1 Meeting Vocab & PREP
+        <button class="tab-btn" onclick="switchTab('homework')">
+          📝 Lesson 1 Homework & Audio <span class="tab-badge" style="background:var(--emerald-bg); color:var(--emerald); border-color:rgba(63,185,80,0.3);">Assignment</span>
         </button>
         <button class="tab-btn" onclick="switchTab('studio')">
           🎙️ Recording Studio <span class="tab-badge">Practice Studio</span>
         </button>
+        <button class="tab-btn" onclick="switchTab('revision')">
+          💼 Week 1 Meeting Vocab & PREP
+        </button>
         <button class="tab-btn" onclick="switchTab('vocab')">
-          🔠 Business Vocab Lab <span class="tab-badge" style="background:var(--emerald-bg); color:var(--emerald); border-color:rgba(63,185,80,0.3);">Lesson 1</span>
+          🔠 Business Vocab Lab
         </button>
         <button class="tab-btn" onclick="switchTab('cadence')">
           ⚡ Cadence & Rhythm Lab
@@ -1429,23 +1857,22 @@
     </div>
     <div class="action-btn-group">
       <button class="btn btn-secondary" onclick="window.print()">Print / Save PDF</button>
-      <button class="btn btn-secondary" onclick="copyPitchAnswersToClipboard()">Copy My Answers</button>
-      <button class="btn btn-primary" onclick="savePitchProgress()">Save Progress</button>
+      <button class="btn btn-primary" onclick="copyPitchAnswersToClipboard()">📋 Copy My Answers for Preply</button>
     </div>
   </div>
 
   <!-- ==================================================== -->
-  <!-- TAB: LESSON 1 PITCHING & HOOK HOMEWORK (LANDING PAGE) -->
+  <!-- TAB 1: TODAY'S LESSON REVIEW (PRIMARY LANDING PAGE) -->
   <!-- ==================================================== -->
-  <div id="tab-pitching" class="tab-pane active" style="padding: 24px 0 48px;">
+  <div id="tab-lesson1" class="tab-pane active" style="padding: 24px 0 48px;">
     <div class="sheet-wrapper">
       
       <!-- Document Header -->
       <header class="sheet-header">
         <div class="header-main">
-          <span class="header-badge" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">Executive Pitching & Presentations · Lesson 1 Active Homework</span>
+          <span class="header-badge" style="background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">Executive Pitching & Presentations · Lesson 1 Core Focus</span>
           <h1 class="sheet-title">The Executive Hook & Frame Control</h1>
-          <p class="sheet-subtitle">Macro Shift Zoom-Out Clinic, Tier-3 Lexical Upgrades, Audio Voice Memo & Lesson 2 Vocab Preview</p>
+          <p class="sheet-subtitle">Commanding the First 90 Seconds, Eradicating Neediness & The "Zoom-Out" Secret</p>
         </div>
         <div class="meta-box">
           <div class="meta-item">
@@ -1457,51 +1884,216 @@
             <span class="meta-val">Lewis O.</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Module:</span>
-            <span class="meta-val">Selling & Pitching</span>
+            <span class="meta-label">Lesson:</span>
+            <span class="meta-val">Selling & Pitching #1</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Status:</span>
-            <span class="meta-val" style="color:#16a34a;">● Due Next Lesson</span>
+            <span class="meta-label">Focus:</span>
+            <span class="meta-val" style="color:#2563eb;">● What We Covered Today</span>
           </div>
         </div>
       </header>
 
       <!-- Coach Note from Lewis -->
       <div class="tutor-note" style="border-left-color: #2563eb; background:#f0f9ff;">
-        <div class="tutor-note-title" style="color:#1e40af;">💬 Coach Feedback & Action Plan from Lewis:</div>
-        <p><strong>Hi YH!</strong> Outstanding breakthrough in our session today on <em>The Executive Hook & Frame Control</em>. You conquered the hardest psychological hurdle: dropping the apologetic <em>"I'm sorry"</em> habit, maintaining steady downward vocal inflection, and speaking like an executive peer.</p>
-        <p>In class, our main discovery was that <strong>busy managers and clients do not care about small personal problems at our desk</strong>. They only listen when the problem threatens <strong>company growth, release deadlines, or client retention</strong>.</p>
-        <p>This interactive homework trains your <strong>"Zoom-Out" camera</strong>, locks in today's 6 Tier-3 collocations, lets you record your 90-second pitch voice memo directly in your browser, and previews our 14 presentation terms for Lesson 2!</p>
+        <div class="tutor-note-title" style="color:#1e40af;">💬 Today's Breakthrough & Focus Areas from Lewis:</div>
+        <p><strong>Hi YH!</strong> Incredible work in our lesson today. You made your biggest psychological breakthrough yet: <strong>stopping the apologetic <em>"I'm sorry"</em> habit</strong> and practicing the steady downward vocal inflection that makes you sound like a peer to directors and international clients.</p>
+        <p>Our main takeaway from today's session: <strong>When pitching an idea, busy managers don't care about small personal problems at our desk.</strong> They only care when a problem threatens <strong>company growth, deadlines, or customer retention</strong>. Use this landing page to review the core formulas we practiced today!</p>
       </div>
 
-      <!-- ======================================================== -->
-      <!-- PART 1: THE ZOOM-OUT MACRO SHIFT CLINIC                  -->
-      <!-- ======================================================== -->
+      <!-- CORE CONCEPT 1: THE 3-PART HOOK -->
       <h3 class="section-title">
-        <span>Part 1: The "Zoom-Out" Macro Shift Clinic</span>
-        <span style="font-size:0.75rem; font-weight:600; color:#2563eb; text-transform:uppercase;">Stakes & Scope Training</span>
+        <span>1. The 3-Part Executive Hook Blueprint</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#2563eb; text-transform:uppercase;">First 90 Seconds</span>
       </h3>
-      <p class="section-desc">When pitching an idea, never start with personal desk-level inconvenience. Fly the <strong>Drone Camera</strong> up to see the company and market horizon:</p>
+      <p class="section-desc">Never open a pitch or meeting by describing your tools or asking for favors. Capture the listener's brain with this 3-step sequence:</p>
 
-      <div style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; margin-bottom:24px;">
-        <div style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem;">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span style="background:#fee2e2; color:#991b1b; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem;">LEVEL 1: MY DESK (Too Small)</span>
-            <span style="color:#64748b;">❌ "I spend too much time on manual Excel entry." <em>(Manager thinks: "So work faster.")</em></span>
-          </div>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span style="background:#fef3c7; color:#92400e; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem;">LEVEL 2: OUR TEAM (Better)</span>
-            <span style="color:#64748b;">⚠️ "Our team is slow at updating customer records." <em>(Manager thinks: "Why?")</em></span>
-          </div>
-          <div style="display:flex; align-items:center; gap:10px;">
-            <span style="background:#dcfce7; color:#166534; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem;">LEVEL 3: MACRO HORIZON (Executive Stakes)</span>
-            <span style="color:#0f172a; font-weight:600;">💎 "Since our active accounts doubled to 5,000, our 48-hour data lag creates bottlenecks that put our Q4 renewal targets at risk." <em>(Manager sits up!)</em></span>
-          </div>
+      <div style="display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:28px;">
+        <div style="background:#f8fafc; border-left:4px solid #2563eb; padding:14px 18px; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; color:#1e40af; font-size:0.92rem; margin-bottom:4px;">STEP 1: THE MACRO SHIFT (The World Changed)</div>
+          <p style="font-size:0.88rem; color:#334155; margin:0;">
+            <em>"Over the past [6-12 months], the market / operational landscape has shifted fundamentally..."</em><br>
+            <span style="font-size:0.8rem; color:#64748b;">👉 Establishes common ground and makes the listener nod "yes" in the first 5 seconds.</span>
+          </p>
+        </div>
+
+        <div style="background:#f8fafc; border-left:4px solid #e11d48; padding:14px 18px; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; color:#be123c; font-size:0.92rem; margin-bottom:4px;">STEP 2: THE HIGH-STAKES FRICTION (The Pain of the Old Way)</div>
+          <p style="font-size:0.88rem; color:#334155; margin:0;">
+            <em>"Yet, most teams are still relying on legacy approaches, leading to [wasted hours / cost / release delays]..."</em><br>
+            <span style="font-size:0.8rem; color:#64748b;">👉 Highlights the urgent cost of doing nothing. Without friction, executives take no action.</span>
+          </p>
+        </div>
+
+        <div style="background:#f8fafc; border-left:4px solid #16a34a; padding:14px 18px; border-radius:0 6px 6px 0;">
+          <div style="font-weight:700; color:#15803d; font-size:0.92rem; margin-bottom:4px;">STEP 3: THE VALUE ANCHOR (The Concrete Win)</div>
+          <p style="font-size:0.88rem; color:#334155; margin:0;">
+            <em>"Our proposal eliminates this friction and delivers [specific, quantified business outcome]..."</em><br>
+            <span style="font-size:0.8rem; color:#64748b;">👉 Drops a solid anchor (e.g., "saves 20 hours a week" or "recovers 15% of lost sales").</span>
+          </p>
         </div>
       </div>
 
-      <!-- Scenario Exercises -->
+      <!-- CORE CONCEPT 2: THE ZOOM-OUT CAMERA -->
+      <h3 class="section-title">
+        <span>2. The "Zoom-Out Camera" Secret</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#b45309; text-transform:uppercase;">Scope & Executive Stakes</span>
+      </h3>
+      <p class="section-desc">Why did the manager not care about your Macro Shift? Because it was stuck at desk level! Fly the <strong>Drone Camera</strong> up into the sky:</p>
+
+      <div style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius); padding:18px 22px; margin-bottom:28px;">
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:0.88rem;">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <span style="background:#fee2e2; color:#991b1b; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; white-space:nowrap;">LEVEL 1: MY DESK</span>
+            <span style="color:#64748b;">❌ <em>"I spend too much time on manual Excel entry."</em> <strong style="color:#991b1b;">(Sounds like personal complaining. Manager ignores.)</strong></span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <span style="background:#fef3c7; color:#92400e; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; white-space:nowrap;">LEVEL 2: OUR TEAM</span>
+            <span style="color:#64748b;">⚠️ <em>"Our team is slow at updating customer records."</em> (A bit better, but still vague.)</span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <span style="background:#dcfce7; color:#166534; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.75rem; white-space:nowrap;">LEVEL 3: MACRO HORIZON</span>
+            <span style="color:#0f172a; font-weight:600;">💎 <em>"Since our customer accounts doubled to 5,000, our 48-hour data lag creates bottlenecks that put our Q4 renewal targets at risk."</em> <strong style="color:#166534;">(Executive sits up and listens!)</strong></span>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; padding-top:12px; border-top:1px dashed var(--border); font-size:0.82rem; color:var(--text-muted);">
+          <strong>The 3 Executive Levers:</strong> An executive only cares if your Macro Shift touches:
+          <strong>1. Company Scale / Volume</strong> (accounts doubled, traffic up 70%), 
+          <strong>2. Market Expectations</strong> (clients demand 24h turnaround), or 
+          <strong>3. High-Stakes Deadlines</strong> (Q4 release at risk).
+        </div>
+      </div>
+
+      <!-- CORE CONCEPT 3: TIER-3 VOCABULARY MATRIX -->
+      <h3 class="section-title">
+        <span>3. Today's 6 Tier-3 Executive Collocations</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#166534; text-transform:uppercase;">Click 🔊 to Listen</span>
+      </h3>
+      <p class="section-desc">These are the 6 power phrases we practiced in class today to replace weak conversational words:</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:28px;">
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">direct your attention to...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>I want to talk about / show you</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('I want to direct your attention to')">🔊</button>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">engineered a robust platform...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>we made a good tool</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('We have engineered a robust platform')">🔊</button>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">alleviate critical bottlenecks...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>fix big problems</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('alleviate critical bottlenecks')">🔊</button>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">accelerate time-to-market...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>make work faster / launch quickly</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('accelerate time to market')">🔊</button>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">directly addresses your core mandate...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>good for your goal</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('directly addresses your core mandate')">🔊</button>
+        </div>
+
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:12px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div style="font-weight:700; color:#166534; font-size:0.9rem;">from our strategic vantage point...</div>
+            <div style="font-size:0.78rem; color:#15803d;">Replaces: <em>in my opinion / I think maybe</em></div>
+          </div>
+          <button class="speak-btn" onclick="speakText('from our strategic vantage point')">🔊</button>
+        </div>
+      </div>
+
+      <!-- CORE CONCEPT 4: VOCAL MECHANICS -->
+      <h3 class="section-title">
+        <span>4. Vocal Mechanics & Delivery Rules</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#475569; text-transform:uppercase;">Webcam Presence</span>
+      </h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+        <div style="background:#ffffff; border:1px solid var(--border); border-radius:6px; padding:14px 18px;">
+          <h5 style="color:var(--navy); font-size:0.9rem; margin-bottom:4px;">1. Downward Declarative Inflection (↘)</h5>
+          <p style="font-size:0.85rem; color:#475569; margin:0;">
+            Stop ending statements with rising pitch like a question (<em>"We can do this? ↗"</em>). Drop your pitch firmly on the period (<em>"We can do this. ↘"</em>). It creates instant executive gravity.
+          </p>
+        </div>
+        <div style="background:#ffffff; border:1px solid var(--border); border-radius:6px; padding:14px 18px;">
+          <h5 style="color:var(--navy); font-size:0.9rem; margin-bottom:4px;">2. The Consonant Guillotine</h5>
+          <p style="font-size:0.85rem; color:#475569; margin:0;">
+            Cut off trailing Katakana vowels on stops! Say <strong>/pɪtʃ/</strong> (pitch), not <em>pitch-u</em>. Say <strong>/ˈklaɪənt/</strong> (client), not <em>clien-to</em>. Lock your tongue to stop the breath dead.
+          </p>
+        </div>
+      </div>
+
+      <!-- CALL TO ACTION BANNER TO GO TO HOMEWORK TAB -->
+      <div style="background:#1e3a8a; color:#ffffff; padding:24px; border-radius:8px; text-align:center; margin-top:36px;">
+        <h4 style="font-size:1.15rem; font-weight:800; margin-bottom:8px;">Ready to Complete Your Homework Assignment?</h4>
+        <p style="font-size:0.92rem; color:#cbd5e1; max-width:600px; margin:0 auto 16px;">
+          Your exercises (Zoom-Out rewrites, sentence upgrades, native audio recorder, and Lesson 2 Vocab preview) are ready on Tab 2!
+        </p>
+        <button class="btn btn-primary" style="background:#22c55e; border-color:#22c55e; font-size:0.95rem; padding:10px 24px; font-weight:700;" onclick="switchTab('homework')">
+          👉 Go to Homework & Audio Mission Tab ➔
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- TAB 2: LESSON 1 HOMEWORK & AUDIO MISSION (WORK TAB) -->
+  <!-- ==================================================== -->
+  <div id="tab-homework" class="tab-pane" style="padding: 24px 0 48px;">
+    <div class="sheet-wrapper">
+      
+      <!-- Header -->
+      <header class="sheet-header">
+        <div class="header-main">
+          <span class="header-badge" style="background:#f0fdf4; color:#166534; border-color:#bbf7d0;">Lesson 1 Active Homework Assignment</span>
+          <h1 class="sheet-title">Practice Drills, Voice Memo & Preply Submission</h1>
+          <p class="sheet-subtitle">Complete Tasks 1 & 2 in writing, record your 90s pitch in Task 3, and study the Lesson 2 Vocab preview!</p>
+        </div>
+        <div class="meta-box">
+          <div class="meta-item">
+            <span class="meta-label">Due:</span>
+            <span class="meta-val" style="color:#dc2626;">Before Next Lesson</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Submission:</span>
+            <span class="meta-val">Preply Chat</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Audio:</span>
+            <span class="meta-val">In-Browser Recorder</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ======================================================== -->
+      <!-- TASK 1: THE ZOOM-OUT MACRO SHIFT CLINIC                  -->
+      <!-- ======================================================== -->
+      <h3 class="section-title">
+        <span>Task 1: The "Zoom-Out" Macro Shift Clinic</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#2563eb; text-transform:uppercase;">Stakes & Scope Training</span>
+      </h3>
+      <p class="section-desc">Rewrite each "Too Small" statement into a <strong>Level 3 Executive Macro Shift</strong> that will make a director care:</p>
+
       <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:32px;">
         
         <!-- Scenario A -->
@@ -1520,7 +2112,6 @@
               <div class="model-text">
                 "With our Q4 project roadmap accelerating and engineering deadlines tightening, our cross-functional team losing 20 focus hours every week puts our delivery milestones at serious risk."
               </div>
-              <div class="notes-text">Why it works: Connects the meeting time to the Q4 roadmap and delivery milestones—things the manager's bonus depends on!</div>
             </div>
           </div>
         </div>
@@ -1541,7 +2132,6 @@
               <div class="model-text">
                 "As our client portfolio expanded to over 400 active project documents across distributed teams, lack of version control has become a major operational liability that risks sending outdated pricing to clients."
               </div>
-              <div class="notes-text">Why it works: Frames messy folders as an "operational liability" and prevents client contract errors.</div>
             </div>
           </div>
         </div>
@@ -1562,7 +2152,6 @@
               <div class="model-text">
                 "Over the past year, mobile traffic across our sector has surged to over 70%, yet our multi-step contact form is driving a 50% drop-off rate, resulting in substantial lost customer pipeline."
               </div>
-              <div class="notes-text">Why it works: Cites 70% mobile traffic and translates the friction directly into lost revenue pipeline.</div>
             </div>
           </div>
         </div>
@@ -1570,66 +2159,14 @@
       </div>
 
       <!-- ======================================================== -->
-      <!-- PART 2: TIER-3 EXECUTIVE VOCABULARY UPGRADE              -->
+      <!-- TASK 2: TIER-3 EXECUTIVE VOCABULARY UPGRADE              -->
       <!-- ======================================================== -->
       <h3 class="section-title">
-        <span>Part 2: Tier-3 Executive Vocabulary Upgrade</span>
-        <span style="font-size:0.75rem; font-weight:600; color:#166534; text-transform:uppercase;">6 Power Collocations</span>
+        <span>Task 2: Tier-3 Executive Vocabulary Upgrade</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#166534; text-transform:uppercase;">Sentence Transformations</span>
       </h3>
-      <p class="section-desc">Click the speaker icon 🔊 to listen to native pronunciation. Then rewrite each basic sentence below into executive English:</p>
+      <p class="section-desc">Rewrite each sentence below using our 6 Tier-3 collocations:</p>
 
-      <!-- Reference Chips -->
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:24px;">
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">direct your attention to...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>look at / show you</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('I want to direct your attention to')">🔊</button>
-        </div>
-
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">engineered a robust platform...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>made a good tool</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('We have engineered a robust platform')">🔊</button>
-        </div>
-
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">alleviate critical bottlenecks...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>fix big problems</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('alleviate critical bottlenecks')">🔊</button>
-        </div>
-
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">accelerate time-to-market...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>launch faster</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('accelerate time to market')">🔊</button>
-        </div>
-
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">directly addresses your core mandate...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>good for your goal</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('directly addresses your core mandate')">🔊</button>
-        </div>
-
-        <div style="background:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <div style="font-weight:700; color:#166534; font-size:0.88rem;">from our strategic vantage point...</div>
-            <div style="font-size:0.75rem; color:#15803d;">Basic: <em>in my opinion / I think</em></div>
-          </div>
-          <button class="speak-btn" onclick="speakText('from our strategic vantage point')">🔊</button>
-        </div>
-      </div>
-
-      <!-- Sentence Rewrite Inputs -->
       <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
         <div style="background:#fafafa; border:1px solid var(--border); border-radius:4px; padding:12px 16px;">
           <div style="font-size:0.85rem; color:var(--text-muted); margin-bottom:6px;">1. <em>"I want to show you the drop in customer retention this quarter."</em></div>
@@ -1677,65 +2214,39 @@
       </div>
 
       <!-- ======================================================== -->
-      <!-- PART 3: THE 3-PART HOOK VOICE MEMO MISSION               -->
+      <!-- TASK 3: THE 3-PART HOOK VOICE MEMO MISSION               -->
       <!-- ======================================================== -->
       <h3 class="section-title">
-        <span>Part 3: The 3-Part Hook Voice Memo Mission</span>
-        <span style="font-size:0.75rem; font-weight:600; color:#9333ea; text-transform:uppercase;">60-90s Spoken Pitch</span>
+        <span>Task 3: 3-Part Hook Voice Memo Mission</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#9333ea; text-transform:uppercase;">60-90s Audio Pitch</span>
       </h3>
-      <p class="section-desc">Plan your 3-step pitch outline below, then record your voice memo right here in your browser using the microphone:</p>
-
-      <div class="scenario-brief" style="border-left:4px solid var(--navy-light);">
-        <h4 style="margin-bottom:6px;">📋 Choose 1 Everyday Workplace Pitch Topic:</h4>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin-top:10px; font-size:0.85rem;">
-          <div style="background:#ffffff; padding:10px; border:1px solid var(--border); border-radius:4px;">
-            <strong>Topic A: Meeting Detox</strong><br>Pitch your boss to replace 90-min status meetings with async Slack updates.
-          </div>
-          <div style="background:#ffffff; padding:10px; border:1px solid var(--border); border-radius:4px;">
-            <strong>Topic B: Messy Shared Drive</strong><br>Pitch your team to adopt a 3-folder template to stop lost file mistakes.
-          </div>
-          <div style="background:#ffffff; padding:10px; border:1px solid var(--border); border-radius:4px;">
-            <strong>Topic C: $25 Software Tool</strong><br>Pitch your manager to buy an export tool that saves 5 hours of Excel work.
-          </div>
-        </div>
-      </div>
+      <p class="section-desc">Plan your outline, then record your spoken pitch right here in your browser:</p>
 
       <!-- Outline Planner -->
       <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
         <div>
-          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Step 1: The Macro Shift (Zoomed out to company/market stakes):</label>
+          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">1. The Macro Shift (Company/market stakes):</label>
           <input type="text" id="pitch_plan_shift" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-family:inherit; font-size:0.88rem;" placeholder="e.g., Over the past three months, our project deadlines have tightened across all teams...">
         </div>
         <div>
-          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Step 2: The High-Stakes Friction (Wasted time, cost, or operational risk):</label>
+          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">2. The High-Stakes Friction (Wasted time, cost, or risk):</label>
           <input type="text" id="pitch_plan_friction" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-family:inherit; font-size:0.88rem;" placeholder="e.g., Yet, five engineers spend two hours every Monday reading tasks out loud, burning 20 focus hours weekly...">
         </div>
         <div>
-          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Step 3: The Value Anchor (Concrete action + measurable win):</label>
+          <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">3. The Value Anchor (Concrete action + measurable win):</label>
           <input type="text" id="pitch_plan_anchor" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-family:inherit; font-size:0.88rem;" placeholder="e.g., My proposal replaces those calls with a 5-minute async update, giving everyone back a full workday of focus monthly.">
         </div>
       </div>
 
-      <!-- Delivery Checklist -->
-      <div style="background:#f8fafc; border:1px solid var(--border); border-radius:4px; padding:12px 16px; margin-bottom:20px; font-size:0.85rem;">
-        <div style="font-weight:700; color:var(--navy); margin-bottom:6px;">🎙️ Executive Delivery Checklist Before You Hit Record:</div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div><input type="checkbox" id="chk_apology"> <label for="chk_apology">Zero apologies ("I'm sorry" banned!)</label></div>
-          <div><input type="checkbox" id="chk_inflection"> <label for="chk_inflection">Downward pitch drop on periods (↘)</label></div>
-          <div><input type="checkbox" id="chk_stops"> <label for="chk_stops">Clean stops on /t/, /k/, /tʃ/ (no trailing vowels)</label></div>
-          <div><input type="checkbox" id="chk_tier3"> <label for="chk_tier3">Used at least two Tier-3 collocations</label></div>
-        </div>
-      </div>
-
       <!-- IN-BROWSER AUDIO RECORDER -->
-      <div class="audio-module" style="background:#ffffff; border:2px solid var(--navy-light);">
+      <div class="audio-module" style="background:#ffffff; border:2px solid var(--navy-light); margin-bottom:24px;">
         <div class="audio-header">
           <div class="audio-title">🎙️ Native Audio Recorder — Record Your 60–90s Pitch Memo</div>
           <div id="pitchAudioTimer" class="audio-timer" style="color:#2563eb;">00:00</div>
         </div>
         <div class="audio-controls">
           <button id="pitchRecordBtn" class="btn btn-primary" onclick="togglePitchAudioRecording()">Start Recording</button>
-          <button id="pitchDownloadBtn" class="btn btn-secondary" style="display:none;" onclick="downloadPitchAudio()">Download Recording (.webm)</button>
+          <button id="pitchDownloadBtn" class="btn btn-secondary" style="display:none; background:#dcfce7; border-color:#86efac; color:#166534;" onclick="downloadPitchAudio()">⬇️ Download Recording (.webm)</button>
           <span id="pitchRecordingStatus" style="font-size:0.82rem; font-weight:600; color:var(--text-dim);">Ready to record</span>
         </div>
         <div id="pitchAudioPlayerWrapper" class="audio-player-wrapper" style="margin-top:14px; display:none;">
@@ -1744,13 +2255,34 @@
       </div>
 
       <!-- ======================================================== -->
-      <!-- PART 4: VOCABULARY PREVIEW FOR LESSON 2                  -->
+      <!-- HOW TO UPLOAD TO PREPLY (STEP-BY-STEP GUIDE)             -->
       <!-- ======================================================== -->
-      <h3 class="section-title" style="margin-top:48px;">
-        <span>Part 4: Vocabulary Preview for Lesson 2</span>
+      <div style="background:#f0f9ff; border:2px solid #0284c7; border-radius:8px; padding:20px 24px; margin-bottom:36px;">
+        <h4 style="color:#0369a1; margin-bottom:12px; font-size:1.05rem; display:flex; align-items:center; gap:8px;">
+          <span>📤</span> Step-by-Step: How to Submit Your Homework to Lewis on Preply
+        </h4>
+        <ol style="margin-left:20px; font-size:0.9rem; color:#0f172a; line-height:1.75;">
+          <li><strong>Record & Download:</strong> Click <strong>"Start Recording"</strong> above, speak your 60-90 second pitch, and click <strong>"Stop Recording"</strong>. Then click the green <strong>"Download Recording (.webm)"</strong> button. The audio file will save directly to your computer or phone downloads.</li>
+          <li><strong>Copy Your Written Answers:</strong> Click the button below: <button class="btn btn-secondary" style="font-size:0.75rem; padding:2px 8px;" onclick="copyPitchAnswersToClipboard()">📋 Copy My Answers</button> to copy all your text answers to your clipboard.</li>
+          <li><strong>Open Preply Messages:</strong> Log in to Preply and open your chat with Lewis.</li>
+          <li><strong>Paste & Attach:</strong>
+            <ul style="margin-left:18px; margin-top:4px;">
+              <li>Paste your text into the message box (<code>Ctrl+V</code> on Windows or <code>Cmd+V</code> on Mac).</li>
+              <li>Click the <strong>Paperclip icon (📎)</strong> in the Preply chat window and select your downloaded <code>.webm</code> audio file.</li>
+            </ul>
+          </li>
+          <li><strong>Hit Send:</strong> Lewis will listen to your recording and prepare tailored feedback for our next session!</li>
+        </ol>
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- TASK 4: LESSON 2 VOCABULARY PREVIEW                     -->
+      <!-- ======================================================== -->
+      <h3 class="section-title">
+        <span>Task 4: Vocabulary Preview for Lesson 2</span>
         <span style="font-size:0.75rem; font-weight:600; color:#2563eb; text-transform:uppercase;">Product Demos & Presentations</span>
       </h3>
-      <p class="section-desc">Study these <strong>14 executive presentation collocations</strong> before our next class. Click 🔊 to listen to authentic pronunciation:</p>
+      <p class="section-desc">Study these <strong>14 executive presentation collocations</strong> before our next class. Click 🔊 to listen:</p>
 
       <div class="ladder-table-container">
         <table class="ladder-table">
@@ -1920,6 +2452,10 @@
 
     </div>
   </div>
+
+  <!-- ==================================================== -->
+  <!-- TAB 0: VOCABULARY LADDER REVISION SHEET & HOMEWORK   -->
+  <!-- ==================================================== -->
 
   <!-- ==================================================== -->
   <!-- TAB 0: VOCABULARY LADDER REVISION SHEET & HOMEWORK   -->
@@ -2501,151 +3037,73 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
 
     </div>
 
-    <!-- ==================================================== -->
-    <!-- TAB 1: RECORDING STUDIO -->
+        <!-- ==================================================== -->
+    <!-- TAB: RECORDING STUDIO -->
     <!-- ==================================================== -->
     <div id="tab-studio" class="tab-pane">
 
-  <!-- SECTION 1: MASTER REFERENCE -->
-  <section>
-    <div class="section-title">
-      <span>1. The 10 Vocabulary Upgrade Ladders</span>
-      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Reference Matrix</span>
-    </div>
-    <p class="section-desc">Tier 1 is acceptable for casual chat with familiar peers. In cross-functional status meetings, formal emails, and client discussions, systematically deploy Tier 3.</p>
-
-    <div class="ladder-table-container">
-      <table class="ladder-table">
-        <thead>
-          <tr>
-            <th style="width: 6%;">#</th>
-            <th style="width: 25%;">Tier 1 (Casual Default)</th>
-            <th style="width: 27%;">Tier 2 (Functional Standard)</th>
-            <th style="width: 42%;">Tier 3 (Executive Precision) & Register Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>1</strong></td>
-            <td><span class="tier-badge badge-t1">Do the project</span></td>
-            <td><span class="tier-badge badge-t2">Carry out the project</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Execute / Implement</span>
-              <div class="usage-note"><em>Execute a strategy / migration</em> (rigorous operational delivery). <em>Implement changes / policies</em> (deploying into active use).</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>2</strong></td>
-            <td><span class="tier-badge badge-t1">Make a plan</span></td>
-            <td><span class="tier-badge badge-t2">Create / Build a plan</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Formulate / Architect</span>
-              <div class="usage-note"><em>Formulate</em> implies structured strategic thinking; <em>architect</em> implies designing a resilient, scalable solution.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>3</strong></td>
-            <td><span class="tier-badge badge-t1">Big problem</span></td>
-            <td><span class="tier-badge badge-t2">Serious issue / Trouble</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Critical bottleneck</span>
-              <div class="usage-note">Identifies the specific constraint restricting system throughput, replacing vague panic words like <em>toraburu</em>.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>4</strong></td>
-            <td><span class="tier-badge badge-t1">Fix the bug</span></td>
-            <td><span class="tier-badge badge-t2">Solve / Sort out</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Troubleshoot / Rectify</span>
-              <div class="usage-note"><em>Troubleshoot</em> = methodically investigate root cause. <em>Rectify</em> = restore errors, data discrepancies, or oversights to correct state.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>5</strong></td>
-            <td><span class="tier-badge badge-t1">Make work faster</span></td>
-            <td><span class="tier-badge badge-t2">Speed up / Improve</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Streamline operations</span>
-              <div class="usage-note">Systematically eliminating redundancies and operational friction rather than merely rushing.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>6</strong></td>
-            <td><span class="tier-badge badge-t1">Think it will grow</span></td>
-            <td><span class="tier-badge badge-t2">Expect / Believe</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Anticipate / Forecast</span>
-              <div class="usage-note"><em>Anticipate</em> = proactive readiness for expected events. <em>Forecast</em> = systematic forward projection based on data.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>7</strong></td>
-            <td><span class="tier-badge badge-t1">Talk about the budget</span></td>
-            <td><span class="tier-badge badge-t2">Discuss the budget</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Deliberate on / Address</span>
-              <div class="usage-note"><em>Deliberate on</em> = formal committee discussion before deciding. <em>Address</em> = tackle directly (no preposition).</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>8</strong></td>
-            <td><span class="tier-badge badge-t1">Give work to someone</span></td>
-            <td><span class="tier-badge badge-t2">Pass over / Hand off</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Delegate / Assign</span>
-              <div class="usage-note"><em>Delegate [task] to [person]</em> (entrusting responsibility). <em>Assign [task] to [person]</em> (allocating ownership).</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>9</strong></td>
-            <td><span class="tier-badge badge-t1">Lower the bad effects</span></td>
-            <td><span class="tier-badge badge-t2">Reduce damage</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Mitigate risks</span>
-              <div class="usage-note">Standard risk-governance terminology to describe preventative action reducing downside exposure.</div>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>10</strong></td>
-            <td><span class="tier-badge badge-t1">Check that we agree</span></td>
-            <td><span class="tier-badge badge-t2">Make sure we agree</span></td>
-            <td>
-              <span class="tier-badge badge-t3">Align on expectations</span>
-              <div class="usage-note">Establishes shared clarity on deliverables and timelines without sounding confrontational or clumsy.</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- SECTION 2: GRAMMAR & L1 TRAPS -->
-  <section>
-    <div class="section-title">
-      <span>2. Grammatical Precision & L1 Interference Guide</span>
-      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Syntax Rules</span>
-    </div>
-    <p class="section-desc">Review these four structural rules where Japanese business speakers most frequently experience grammatical interference.</p>
-
-    <div class="rule-grid">
-      <div class="rule-card">
-        <div class="rule-card-header">
-          <span>Rule 1: Direct Transitive Verbs (No Preposition)</span>
-          <span class="rule-tag">Syntax</span>
+      <!-- How It Works Steps -->
+      <div class="steps-banner">
+        <div class="step-card">
+          <div class="step-num">Step 1</div>
+          <div class="step-title">Select Presentation Topic</div>
+          <div class="step-text">Choose what you want to present today or pitch your actual real-world product.</div>
         </div>
-        <div class="rule-body">
-          The verbs <strong>address</strong>, <strong>mitigate</strong>, <strong>formulate</strong>, and <strong>rectify</strong> are direct transitive verbs. They take their object immediately without a preposition.
+        <div class="step-card">
+          <div class="step-num">Step 2</div>
+          <div class="step-title">Record in Browser (2â€“3 Mins)</div>
+          <div class="step-text">Click "Start Recording", pitch your product with strong sentence stress, and watch the live visualizer.</div>
         </div>
-        <div class="rule-trap">
-          <strong>Trap:</strong> Do not say <em>"address about the problem"</em> or <em>"rectify with the error"</em>. Say: <em>"address the problem"</em> and <em>"rectify the error"</em>.
+        <div class="step-card">
+          <div class="step-num">Step 3</div>
+          <div class="step-title">Listen Back & Download</div>
+          <div class="step-text">Review your take in the built-in player. Click "Download Recording" to save your audio file.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">Step 4</div>
+          <div class="step-title">Drop into Preply Chat</div>
+          <div class="step-text">Send the downloaded audio file directly to your Preply tutor for diagnostic review and pronunciation calibration.</div>
         </div>
       </div>
 
-      <div class="rule-card">
-        <div class="rule-card-header">
-          <span>Rule 2: "Deliberate" Requires "On"</span>
-          <span class="rule-tag">Preposition</span>
+      <!-- Main Recording & Prompt Area -->
+      <div class="recorder-grid">
+        
+        <!-- Left: Audio Controller -->
+        <div class="recorder-box">
+          <div id="statusBadge" class="status-badge status-ready">
+            â— Microphone Ready
+          </div>
+          
+          <div id="timerDisplay" class="timer-display">00:00</div>
+          <div class="timer-target">Target presentation length: <strong>2:00 â€“ 3:00 mins</strong></div>
+
+          <!-- Waveform Canvas -->
+          <canvas id="visualizer" width="300" height="64"></canvas>
+
+          <div class="btn-group">
+            <button id="recordBtn" class="btn-action btn-record" onclick="toggleRecording()">
+              <span>ðŸ”´</span> <span id="recordBtnText">Start Recording</span>
+            </button>
+            <button id="stopBtn" class="btn-action btn-stop" onclick="stopRecording()" style="display: none;">
+              <span>â¹</span> <span>Stop Recording</span>
+            </button>
+            <button id="downloadBtn" class="btn-action btn-download" onclick="downloadRecording()" disabled>
+              <span>ðŸ’¾</span> <span>Download Recording</span>
+            </button>
+          </div>
+
+          <!-- Audio Preview Player -->
+          <div id="audioPlayerCard" class="audio-player-card">
+            <div style="font-size:0.85rem; font-weight:600; color:var(--text); text-align:left;">
+              ðŸŽ§ Review Take Before Sending:
+            </div>
+            <audio id="audioPreview" controls></audio>
+          </div>
+
+          <div style="font-size:0.75rem; color:var(--text-dim); margin-top:14px; text-align:center;">
+            ðŸ”’ Audio records 100% locally in your browser. Nothing is uploaded to external servers.
+          </div>
         </div>
 
         <!-- Right: Topic & Speaker Area -->
@@ -2653,7 +3111,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           <div class="select-group">
             <label class="select-label" for="topicSelect">CHOOSE YOUR PRESENTATION TOPIC:</label>
             <select id="topicSelect" class="topic-select" onchange="onTopicChange()">
-              <option value="opt_prep_meeting" selected>Topic 1: Executive Meeting Update (Week 1 PREP Sprint) [NEW]</option>
+              <option value="opt_prep_meeting" selected>Topic 1: Executive Meeting Update (Week 1 PREP Sprint)</option>
               <option value="opt_pitch">Topic 2: 3-Minute Product Overview (Pitch to Client)</option>
               <option value="opt_demo">Topic 3: Live Feature Walkthrough & Demo</option>
               <option value="opt_objection">Topic 4: Addressing Client Concerns & Questions</option>
@@ -2664,22 +3122,22 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
 
           <!-- Dynamic Prompt Details -->
           <div class="prompt-box">
-            <div id="pTitle" class="prompt-title">Topic 1: 3-Minute Product Overview (Pitch to Client)</div>
+            <div id="pTitle" class="prompt-title">Topic 1: Executive Meeting Update (Week 1 PREP Sprint)</div>
             <div id="pScenario" class="prompt-scenario">
-              You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.
+              You are giving a spontaneous 60-90 second project status update in a weekly cross-functional team meeting. Use the PREP framework and today's executive vocabulary (critical bottleneck, streamline, mitigate risks, align on expectations, iron out, circle back).
             </div>
 
             <div class="prompt-structure">
-              <strong>💡 A Little Nudge (Things to talk about):</strong>
+              <strong>ðŸ’¡ A Little Nudge (Things to talk about):</strong>
               <div id="pNudge" style="line-height:1.7; color:var(--text-muted);">
                 <!-- Dynamically populated from topicsData.nudge -->
               </div>
             </div>
 
-            <!-- Optional Custom Notes Area for Option 5 or preparation -->
+            <!-- Optional Custom Notes Area -->
             <div class="custom-notes-box">
               <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
-                📝 Optional Speaker Notes (Jot down your product name or key points):
+                ðŸ“ Optional Speaker Notes (Jot down your product name or key points):
               </label>
               <textarea id="speakerNotes" class="custom-textarea" placeholder="Jot down 2-3 quick bullet points or client names if you'd like..."></textarea>
             </div>
@@ -2688,7 +3146,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           <!-- Preply Submission Reminder -->
           <div class="preply-dispatch">
             <div class="preply-dispatch-title">
-              <span>📩</span> Preply Homework Submission Instructions
+              <span>ðŸ“©</span> Preply Homework Submission Instructions
             </div>
             <div class="preply-steps">
               <div class="preply-step-item">
@@ -2697,292 +3155,19 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
               </div>
               <div class="preply-step-item">
                 <span class="step-bullet">2</span>
-                <span>The file will save as <code id="filenamePreview" style="background:var(--bg); padding:2px 6px; border-radius:4px; font-weight:700; color:var(--accent);">YH_Client_ProductPitch.webm</code></span>
+                <span>The file will save as <code id="filenamePreview" style="background:var(--bg); padding:2px 6px; border-radius:4px; font-weight:700; color:var(--accent);">YH_Meeting_PREP_Update.webm</code></span>
               </div>
               <div class="preply-step-item">
                 <span class="step-bullet">3</span>
-                <span>Open your <strong>Preply Messages</strong>, drag & drop the audio file, and add a quick note: <em>"Hi! Here is my presentation recording for our next lesson review."</em></span>
+                <span>Open your <strong>Preply Messages</strong>, click the <strong>Paperclip (ðŸ“Ž)</strong> to attach the audio file, and add a quick note to Lewis: <em>"Hi Lewis! Here is my audio recording for review."</em></span>
               </div>
             </div>
           </div>
 
         </div>
+
       </div>
 
-      <div class="rule-card">
-        <div class="rule-card-header">
-          <span>Rule 3: "Align On" vs. "Align With"</span>
-          <span class="rule-tag">Preposition</span>
-        </div>
-        <div class="rule-body">
-          You align <strong>on</strong> a deliverable, roadmap, timeline, or expectation (the shared topic). You align <strong>with</strong> a stakeholder, team, client, or policy (the counterpart).
-        </div>
-        <div class="rule-trap">
-          <strong>Trap:</strong> <em>"Let's align <strong>on</strong> the deadline <strong>with</strong> the client."</em>
-        </div>
-      </div>
-
-      <div class="rule-card">
-        <div class="rule-card-header">
-          <span>Rule 4: Eliminating "Suru" & "Toraburu"</span>
-          <span class="rule-tag">Loanword Purge</span>
-        </div>
-        <div class="rule-body">
-          Japanese relies heavily on general-purpose verbs (<em>suru</em> / do) and loanwords (<em>toraburu</em> / trouble). In English, state the exact operational reality: <em>bottleneck</em>, <em>latency spike</em>, <em>discrepancy</em>.
-        </div>
-        <div class="rule-trap">
-          <strong>Trap:</strong> Replace <em>"We had big trouble with the server"</em> with <em>"We hit a critical bottleneck during database synchronization."</em>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: HOMEWORK -->
-  <section class="exercise-box">
-    <div class="section-title">
-      <span>3. Homework Assignment</span>
-      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Written Exercises</span>
-    </div>
-
-    <!-- Exercise A -->
-    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Part A: Contextual Sentence Upgrades (Email & Chat Messages)</h3>
-    <p class="section-desc">Each message below was drafted with elementary, conversational phrasing in brackets. Rewrite each sentence into executive Tier-3 English.</p>
-
-    <!-- Item 1 -->
-    <div class="exercise-item">
-      <div class="item-header">
-        <span>ITEM 1 · PROJECT MILESTONE & REVIEW</span>
-        <span>Target: execute / critical bottleneck</span>
-      </div>
-      <div class="original-text">
-        "Our team needs to <mark>do the project</mark> before October, but the legal sign-off has become a <mark>big problem</mark> for everyone."
-      </div>
-      <textarea id="ex_a1" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
-    </div>
-
-    <!-- Item 2 -->
-    <div class="exercise-item">
-      <div class="item-header">
-        <span>ITEM 2 · OPERATIONAL EFFICIENCY</span>
-        <span>Target: streamline operations (or workflows) / mitigate risks</span>
-      </div>
-      <div class="original-text">
-        "We should automate this report to <mark>make work faster</mark> and <mark>lower the bad effects</mark> of human data entry mistakes."
-      </div>
-      <textarea id="ex_a2" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="exercise-item">
-      <div class="item-header">
-        <span>ITEM 3 · CLIENT & VENDOR ALIGNMENT</span>
-        <span>Target: align on expectations / deliberate on</span>
-      </div>
-      <div class="original-text">
-        "Before we finalize the vendor agreement, we must schedule a call to <mark>check that we agree</mark> on delivery milestones and <mark>talk about the budget</mark> for external contractors."
-      </div>
-      <textarea id="ex_a3" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
-    </div>
-
-    <!-- Item 4 -->
-    <div class="exercise-item">
-      <div class="item-header">
-        <span>ITEM 4 · TECHNICAL INCIDENT RESOLUTION</span>
-        <span>Target: troubleshoot / rectify / anticipate (or forecast)</span>
-      </div>
-      <div class="original-text">
-        "The infrastructure team spent six hours trying to <mark>fix the bug</mark> in the payment microservice, and we <mark>think it will grow</mark> steadily now that the patch is deployed."
-      </div>
-      <textarea id="ex_a4" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
-    </div>
-
-    <!-- Item 5 -->
-    <div class="exercise-item">
-      <div class="item-header">
-        <span>ITEM 5 · LEADERSHIP & RESOURCE ALLOCATION</span>
-        <span>Target: delegate / formulate (or architect)</span>
-      </div>
-      <div class="original-text">
-        "To maintain strategic focus, the director asked me to <mark>give work to someone</mark> on the junior team rather than <mark>making a plan</mark> for every small detail myself."
-      </div>
-      <textarea id="ex_a5" class="input-field" placeholder="Type your upgraded executive sentence here..."></textarea>
-    </div>
-
-    <!-- Exercise B -->
-    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 32px 0 8px 0;">Part B: Preposition & Syntax Accuracy Drill</h3>
-    <p class="section-desc">Select the grammatically accurate preposition or syntax pattern for each executive business context.</p>
-
-    <div style="background:#ffffff; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;">
-      <ul class="drill-list">
-        <li class="drill-item">
-          <span class="drill-num">1.</span>
-          <span class="drill-sentence">The steering committee will deliberate 
-            <select id="drill_1" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="on">on</option>
-              <option value="about">about</option>
-              <option value="with">with</option>
-              <option value="NONE">[no preposition]</option>
-            </select> 
-            the capital expenditure proposals this Thursday.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">2.</span>
-          <span class="drill-sentence">In our cross-functional sync, the tech lead will address 
-            <select id="drill_2" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="about">about</option>
-              <option value="to">to</option>
-              <option value="NONE">[no preposition]</option>
-            </select> 
-            the outstanding latency issues directly.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">3.</span>
-          <span class="drill-sentence">We must ensure all project leads are fully aligned 
-            <select id="drill_3" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="on">on</option>
-              <option value="to">to</option>
-              <option value="with">with</option>
-              <option value="at">at</option>
-            </select> 
-            the final release deliverables.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">4.</span>
-          <span class="drill-sentence">It is critical that our security framework aligns closely 
-            <select id="drill_4" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="with">with</option>
-              <option value="on">on</option>
-              <option value="to">to</option>
-            </select> 
-            international ISO compliance standards.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">5.</span>
-          <span class="drill-sentence">The project manager chose to delegate sprint ticket management 
-            <select id="drill_5" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="to">to</option>
-              <option value="for">for</option>
-              <option value="toward">toward</option>
-            </select> 
-            the senior QA analyst.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">6.</span>
-          <span class="drill-sentence">Implementing automated backup protocols helped our team mitigate 
-            <select id="drill_6" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="NONE">[no preposition]</option>
-              <option value="against">against</option>
-              <option value="from">from</option>
-            </select> 
-            critical downtime risks.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">7.</span>
-          <span class="drill-sentence">Late component shipments created a severe operational bottleneck 
-            <select id="drill_7" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="in">in</option>
-              <option value="at">at</option>
-              <option value="on">on</option>
-            </select> 
-            our hardware fulfillment schedule.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">8.</span>
-          <span class="drill-sentence">We will spend tomorrow morning formulating 
-            <select id="drill_8" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="NONE">[no preposition]</option>
-              <option value="up">up</option>
-              <option value="out">out</option>
-            </select> 
-            a comprehensive response for the stakeholder committee.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">9.</span>
-          <span class="drill-sentence">Our finance department has taken immediate steps to rectify 
-            <select id="drill_9" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="NONE">[no preposition]</option>
-              <option value="about">about</option>
-              <option value="with">with</option>
-            </select> 
-            the billing discrepancies reported by the client.
-          </span>
-        </li>
-        <li class="drill-item">
-          <span class="drill-num">10.</span>
-          <span class="drill-sentence">Based on third-quarter telemetry data, engineering forecasts 
-            <select id="drill_10" class="drill-select">
-              <option value="">-- select --</option>
-              <option value="NONE">[no preposition]</option>
-              <option value="for">for</option>
-              <option value="about">about</option>
-            </select> 
-            a 25% decrease in database load.
-          </span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- SECTION 4: PRACTICAL TASK -->
-  <section>
-    <div class="section-title">
-      <span>4. Practical Workplace Application Task</span>
-      <span style="font-size:0.75rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em;">Simulation & Production</span>
-    </div>
-
-    <div class="scenario-brief">
-      <h4>Simulation Scenario: Cross-Border Platform Migration Briefing</h4>
-      <p>You are the project lead on an international initiative migrating client workflows to a new centralized cloud system. In your weekly cross-functional sync with overseas leadership, you must deliver a 60-to-90 second project status update addressing the following situation:</p>
-      <ul>
-        <li>Third-party API latency caused an unexpected 3-day testing slowdown.</li>
-        <li>Your team identified the root cause, deployed a patch, and restructured testing steps to accelerate future sprints.</li>
-        <li>You want to confirm next week's revised launch milestone with all regional teams.</li>
-      </ul>
-      <p style="margin-top:10px; font-weight:600; color:var(--navy);">Requirements:</p>
-      <p style="font-size:0.85rem; color:var(--text-muted);">Use the <strong>PREP framework</strong> (Point, Reason, Example, Point) and naturally integrate at least <strong>four (4) Tier-3 collocations</strong> from today's ladder (e.g., <em>execute, critical bottleneck, troubleshoot, rectify, streamline, mitigate risks, align on expectations, delegate</em>).</p>
-    </div>
-
-    <!-- PREP Worksheet Input -->
-    <div class="prep-grid">
-      <div class="prep-step">
-        <label class="prep-label" for="prep_p1">Point (Current Milestone & Objective):</label>
-        <input type="text" id="prep_p1" class="input-field" placeholder="State your team's current delivery status directly and decisively...">
-      </div>
-      <div class="prep-step">
-        <label class="prep-label" for="prep_r">Reason (The Operational Constraint / Root Cause):</label>
-        <input type="text" id="prep_r" class="input-field" placeholder="Explain the primary bottleneck and its impact on the schedule...">
-      </div>
-      <div class="prep-step">
-        <label class="prep-label" for="prep_e">Example / Action (Specific Resolution & Risk Mitigation):</label>
-        <input type="text" id="prep_e" class="input-field" placeholder="Detail the actions taken to rectify the issue and streamline workflows...">
-      </div>
-      <div class="prep-step">
-        <label class="prep-label" for="prep_p2">Point (Next Deliverable & Alignment Step):</label>
-        <input type="text" id="prep_p2" class="input-field" placeholder="Conclude with the revised milestone and call to align on expectations...">
-      </div>
-    </div>
-
-    <!-- Full Draft Textarea -->
-    <div style="margin-top:16px;">
-      <label class="prep-label" for="prep_full">Complete Written Briefing (Email / Meeting Script):</label>
-      <textarea id="prep_full" class="input-field" style="min-height: 120px;" placeholder="Assemble your full 5-to-7 sentence update here..."></textarea>
     </div>
 
     <!-- ==================================================== -->
@@ -3363,7 +3548,247 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
 
       </div>
     </div>
+
 
+    <!-- ==================================================== -->
+    <!-- TAB 4: CADENCE & RHYTHM LAB -->
+    <!-- ==================================================== -->
+    <div id="tab-cadence" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">âš¡ Rhythm, Stress & Subtext Practice Lab</div>
+            <div class="card-desc">Practice sentence stress, isochrony (equal beats), and subtext. Click words to toggle STRESS (Yellow) or REDUCED (Strikethrough).</div>
+          </div>
+          <button class="btn-secondary" onclick="startMetronome()">
+            <span id="metroIcon">â±</span> <span id="metroText">Start 60 BPM Metronome</span>
+          </button>
+        </div>
+
+        <div class="drill-container">
+          
+          <!-- DRILL 1 -->
+          <div class="drill-item">
+            <div style="font-size:0.85rem; font-weight:700; color:var(--accent); margin-bottom:4px; text-transform:uppercase;">
+              Drill 1: 3-Beat Isochrony (Equal Beat Intervals)
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+              Tap the desk on the 3 capitalised beats. Notice how the extra words squeeze into the same time span without rushing the beat!
+            </p>
+
+            <div class="drill-sentence">
+              1. <span class="word stressed" onclick="toggleWord(this)">CATS</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">EAT</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">MICE.</span>
+            </div>
+            <div class="drill-sentence">
+              2. <span class="word reduced" onclick="toggleWord(this)">The</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">CATS</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">EAT</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">MICE.</span>
+            </div>
+            <div class="drill-sentence">
+              3. <span class="word reduced" onclick="toggleWord(this)">The</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">CATS</span> 
+                 <span class="word reduced" onclick="toggleWord(this)">will</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">EAT</span> 
+                 <span class="word reduced" onclick="toggleWord(this)">the</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">MICE.</span>
+            </div>
+            <div class="drill-sentence">
+              4. <span class="word reduced" onclick="toggleWord(this)">The</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">CATS</span> 
+                 <span class="word reduced" onclick="toggleWord(this)">might have</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">EATen</span> 
+                 <span class="word reduced" onclick="toggleWord(this)">the</span> 
+                 <span class="word stressed" onclick="toggleWord(this)">MICE.</span>
+            </div>
+          </div>
+
+          <!-- DRILL 2 -->
+          <div class="drill-item">
+            <div style="font-size:0.85rem; font-weight:700; color:var(--amber); margin-bottom:4px; text-transform:uppercase;">
+              Drill 2: Navigating Workplace Responsibility & Subtext
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+              Read each sentence out loud by punching ONLY the stressed word. Then click <strong>"Reveal Subtext"</strong> to inspect what the listener actually hears!
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "<span class="word stressed" onclick="toggleWord(this)">I</span> didn't tell him to cancel the project."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Subject (I)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"Someone else gave that orderâ€”don't look at me or hold me accountable!"</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "I <span class="word stressed" onclick="toggleWord(this)">DIDN'T</span> tell him to cancel the project."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Auxiliary (DIDN'T)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"Strong, categorical denial of a direct accusation."</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "I didn't <span class="word stressed" onclick="toggleWord(this)">TELL</span> him to cancel the project."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Verb (TELL)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"I might have hinted or implied it, but I never officially authorized or ordered it."</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "I didn't tell <span class="word stressed" onclick="toggleWord(this)">HIM</span> to cancel the project."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Object (HIM)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"I spoke to the team lead or the engineering director, not to him!"</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "I didn't tell him to <span class="word stressed" onclick="toggleWord(this)">CANCEL</span> the project."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Action (CANCEL)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"I suggested pausing or deprioritizing it, not killing it completely!"</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg); padding:12px; border-radius:var(--radius-sm);">
+                <div style="font-size:1.05rem;">
+                  "I didn't tell him to cancel the <span class="word stressed" onclick="toggleWord(this)">PROJECT</span>."
+                </div>
+                <div class="reveal-box">
+                  <span style="font-size:0.8rem; color:var(--text-muted);">Stress on: <strong>Noun (PROJECT)</strong></span>
+                  <button class="btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="toggleSubtext(this)">Reveal Subtext</button>
+                  <div class="subtext-hint">"I said cancel today's sprint planning meeting, not the entire initiative!"</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DRILL 3 -->
+          <div class="drill-item">
+            <div style="font-size:0.85rem; font-weight:700; color:var(--purple); margin-bottom:4px; text-transform:uppercase;">
+              Drill 3: Two-Syllable Business Word Stress (Noun vs. Verb)
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+              English rule: <strong>Nouns</strong> usually take stress on the 1st syllable; <strong>Verbs</strong> take stress on the 2nd syllable.
+            </p>
+
+            <table class="rubric-table">
+              <thead>
+                <tr>
+                  <th>Word Pair</th>
+                  <th>Noun (1st Syllable Stress)</th>
+                  <th>Verb (2nd Syllable Stress)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>RECORD</strong></td>
+                  <td>"Break the <span class="word stressed">REC</span>-ord."</td>
+                  <td>"Can you re-<span class="word stressed">CORD</span> this demo?"</td>
+                </tr>
+                <tr>
+                  <td><strong>PRESENT</strong></td>
+                  <td>"It's a birthday <span class="word stressed">PRES</span>-ent."</td>
+                  <td>"Please pre-<span class="word stressed">SENT</span> the findings."</td>
+                </tr>
+                <tr>
+                  <td><strong>PROJECT</strong></td>
+                  <td>"Who owns this <span class="word stressed">PROJ</span>-ect?"</td>
+                  <td>"We pro-<span class="word stressed">JECT</span> 20% growth."</td>
+                </tr>
+                <tr>
+                  <td><strong>CONTRACT</strong></td>
+                  <td>"Sign the <span class="word stressed">CON</span>-tract."</td>
+                  <td>"Metals con-<span class="word stressed">TRACT</span> in cold."</td>
+                </tr>
+                <tr>
+                  <td><strong>PROGRESS</strong></td>
+                  <td>"We made great <span class="word stressed">PROG</span>-ress."</td>
+                  <td>"How will the task pro-<span class="word stressed">GRESS</span>?"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- TAB 5: 4-WEEK ASSESSMENT RUBRIC -->
+    <!-- ==================================================== -->
+    <div id="tab-rubric" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">ðŸŽ¯ 4-Week Development Milestone</div>
+            <div class="card-desc">What we are working on going forward, and what we will assess in four weeks.</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-top:8px;">
+          
+          <div style="background:var(--surface-subtle); border:1px solid var(--border); border-radius:var(--radius); padding:20px; border-left:4px solid var(--accent);">
+            <div style="font-size:0.8rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Focus Area 1</div>
+            <h4 style="font-size:1.1rem; color:var(--text); margin-bottom:8px;">Improving Vernacular & Vocabulary</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+              Expanding natural, professional business vocabulary and idioms at work. Moving away from overly simple or hesitant phrasing into confident, clear workplace terms.
+            </p>
+          </div>
+
+          <div style="background:var(--surface-subtle); border:1px solid var(--border); border-radius:var(--radius); padding:20px; border-left:4px solid var(--emerald);">
+            <div style="font-size:0.8rem; font-weight:800; color:var(--emerald); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Focus Area 2</div>
+            <h4 style="font-size:1.1rem; color:var(--text); margin-bottom:8px;">Presentation & Communication Skills</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+              Presenting products and ideas smoothly to clients and colleagues. Explaining concepts clearly, pacing information comfortably, and handling questions with ease.
+            </p>
+          </div>
+
+          <div style="background:var(--surface-subtle); border:1px solid var(--border); border-radius:var(--radius); padding:20px; border-left:4px solid var(--amber);">
+            <div style="font-size:0.8rem; font-weight:800; color:var(--amber); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Focus Area 3</div>
+            <h4 style="font-size:1.1rem; color:var(--text); margin-bottom:8px;">Cadence, Rhythm & Sentence Stress</h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+              Punching key nouns and action verbs while reducing small connector words. Controlling sentence stress so the listener hears the right message and subtext.
+            </p>
+          </div>
+
+        </div>
+
+        <div style="margin-top:24px; background:linear-gradient(135deg, var(--accent-bg), var(--purple-bg)); border:1px solid var(--border-accent); padding:20px; border-radius:var(--radius); display:flex; align-items:flex-start; gap:14px;">
+          <div style="font-size:1.8rem; line-height:1;">ðŸ“…</div>
+          <div>
+            <h4 style="font-size:1rem; color:var(--accent); margin-bottom:4px;">Four-Week Development Assessment</h4>
+            <p style="font-size:0.9rem; color:var(--text); line-height:1.5;">
+              Over the next four weeks, YH will record short practice presentations here. In <strong>four weeks</strong>, we will review his recordings together in class to assess his development, celebrate his progress, and tune his next goals.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -3385,66 +3810,69 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT LOGIC -->
   <script>
     // ==========================================
-    // PRESENTATION TOPICS DATA
+    // 1. PRESENTATION TOPICS DATA
     // ==========================================
     const topicsData = {
       opt_prep_meeting: {
         title: "Topic 1: Executive Meeting Update (Week 1 PREP Sprint)",
         filename: "YH_Meeting_PREP_Update",
         scenario: "You are giving a spontaneous 60-90 second project status update in a weekly cross-functional team meeting. Use the PREP framework and today's executive vocabulary (critical bottleneck, streamline, mitigate risks, align on expectations, iron out, circle back).",
-        nudge: "• P (Point): State your team's milestone status clearly in one sentence.<br>• R (Reason): Identify the critical bottleneck or driver.<br>• E (Example): Cite a specific test result, metric, or deployment detail.<br>• P (Point): Propose the next alignment step or follow-up before Friday."
+        nudge: "â€¢ P (Point): State your team's milestone status clearly in one sentence.<br>â€¢ R (Reason): Identify the critical bottleneck or driver.<br>â€¢ E (Example): Cite a specific test result, metric, or deployment detail.<br>â€¢ P (Point): Propose the next alignment step or follow-up before Friday."
       },
       opt_pitch: {
         title: "Topic 2: 3-Minute Product Overview (Pitch to Client)",
         filename: "YH_Product_Overview",
         scenario: "You are meeting a prospective client for an introductory chat. Pitch your product in your own words, focusing on what it does and why it makes their life easier.",
-        nudge: "• What problem or frustration does the client usually have?<br>• How does your product solve it or save them time?<br>• What would you ask or invite them to do at the end?"
+        nudge: "â€¢ What problem or frustration does the client usually have?<br>â€¢ How does your product solve it or save them time?<br>â€¢ What would you ask or invite them to do at the end?"
       },
       opt_demo: {
         title: "Topic 3: Live Feature Walkthrough & Demo",
         filename: "YH_Feature_Demo",
         scenario: "You are screensharing with a client. Walk them through one or two key features of your product.",
-        nudge: "• Which feature are you showing, and why is it useful?<br>• How does someone actually use it in practice?<br>• Ask the client a quick question to check their thoughts!"
+        nudge: "â€¢ Which feature are you showing, and why is it useful?<br>â€¢ How does someone actually use it in practice?<br>â€¢ Ask the client a quick question to check their thoughts!"
       },
       opt_objection: {
         title: "Topic 4: Addressing Client Concerns & Questions",
         filename: "YH_Client_QandA",
         scenario: "The client says: 'Your solution looks great, but switching our current systems sounds risky, and our budget is tight this quarter.' Respond in your own natural style.",
-        nudge: "• Acknowledge their concern calmly so they feel heard.<br>• Explain why your product is worth the cost or effort in the long run.<br>• Propose a simple, safe next step to take the pressure off."
+        nudge: "â€¢ Acknowledge their concern calmly so they feel heard.<br>â€¢ Explain why your product is worth the cost or effort in the long run.<br>â€¢ Propose a simple, safe next step to take the pressure off."
       },
       opt_qbr: {
         title: "Topic 5: Client Review & Project Update",
         filename: "YH_Client_Review",
         scenario: "You are meeting an existing client for a quarterly check-in. Review how things are going and mention an opportunity to expand or use another feature.",
-        nudge: "• Mention how things have been going well so far.<br>• Bring up another feature or team that could also benefit.<br>• Ask if they'd be open to taking a look."
+        nudge: "â€¢ Mention how things have been going well so far.<br>â€¢ Bring up another feature or team that could also benefit.<br>â€¢ Ask if they'd be open to taking a look."
       },
       opt_custom: {
         title: "Topic 6: Your Real Work Product Presentation",
         filename: "YH_Work_Presentation",
         scenario: "Present your actual company product or solution as if your tutor were your real client. Use your real terminology, real client scenarios, and your own product workflow.",
-        nudge: "• Talk freely about your product in your own natural words.<br>• Don't worry about any fixed script—let's hear your natural presentation style!"
+        nudge: "â€¢ Talk freely about your product in your own natural words.<br>â€¢ Don't worry about any fixed scriptâ€”let's hear your natural presentation style!"
       }
     };
 
     function onTopicChange() {
       const select = document.getElementById('topicSelect');
+      if (!select) return;
       const data = topicsData[select.value];
       if (!data) return;
 
-      document.getElementById('pTitle').textContent = data.title;
-      document.getElementById('pScenario').textContent = data.scenario;
-      document.getElementById('pNudge').innerHTML = data.nudge;
-      document.getElementById('filenamePreview').textContent = `${data.filename}.webm`;
+      const pTitle = document.getElementById('pTitle');
+      const pScenario = document.getElementById('pScenario');
+      const pNudge = document.getElementById('pNudge');
+      const filenamePreview = document.getElementById('filenamePreview');
+
+      if (pTitle) pTitle.textContent = data.title;
+      if (pScenario) pScenario.textContent = data.scenario;
+      if (pNudge) pNudge.innerHTML = data.nudge;
+      if (filenamePreview) filenamePreview.textContent = `${data.filename}.webm`;
     }
 
-    // Initialize default topic
-    onTopicChange();
-
     // ==========================================
-    // TAB SWITCHING
+    // 2. TAB SWITCHING (ROBUST ATTRIBUTE LOOKUP)
     // ==========================================
     function switchTab(tabId) {
       document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
@@ -3455,23 +3883,18 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         targetPane.classList.add('active');
       }
 
-      const tabs = {
-        'pitching': 0,
-        'revision': 1,
-        'studio': 2,
-        'vocab': 3,
-        'cadence': 4,
-        'rubric': 5
-      };
-      const buttons = document.querySelectorAll('.tab-btn');
-      if (buttons[tabs[tabId]]) {
-        buttons[tabs[tabId]].classList.add('active');
-      }
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        const onclickAttr = b.getAttribute('onclick') || '';
+        if (onclickAttr.includes(`'${tabId}'`)) {
+          b.classList.add('active');
+        }
+      });
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // ==========================================
-    // VOCAB LAB HELPER FUNCTIONS
+    // 3. VOCAB LAB HELPER FUNCTIONS
     // ==========================================
     function toggleKatakanaCard(cardEl) {
       cardEl.classList.toggle('revealed');
@@ -3490,82 +3913,75 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
     }
 
     function sendPrepToStudio() {
-      const p1 = document.getElementById('prepPoint').value.trim();
-      const r = document.getElementById('prepReason').value.trim();
-      const e = document.getElementById('prepExample').value.trim();
-      const p2 = document.getElementById('prepCallToAction').value.trim();
-
-      const fullScript = `[POINT]: ${p1}\n[REASON]: ${r}\n[EXAMPLE]: ${e}\n[POINT / ACTION]: ${p2}`;
-
-      document.getElementById('speakerNotes').value = fullScript;
-      document.getElementById('topicSelect').value = 'opt_prep_meeting';
-      onTopicChange();
+      const p = document.getElementById('prepPoint')?.value || '';
+      const r = document.getElementById('prepReason')?.value || '';
+      const e = document.getElementById('prepExample')?.value || '';
+      const a = document.getElementById('prepCallToAction')?.value || '';
+      const fullText = `${p}\n\n${r}\n\n${e}\n\n${a}`;
+      
+      const notesEl = document.getElementById('speakerNotes');
+      if (notesEl) notesEl.value = fullText;
+      
+      const select = document.getElementById('topicSelect');
+      if (select) {
+        select.value = 'opt_prep_meeting';
+        onTopicChange();
+      }
       switchTab('studio');
-      showToast("🚀 PREP Script loaded into Speaker Notes! Ready to record.");
     }
 
-    function showToast(msg) {
-      let toast = document.getElementById('appToast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'appToast';
-        toast.style.cssText = 'position:fixed; bottom:24px; right:24px; background:#238636; color:#fff; padding:12px 20px; border-radius:8px; font-weight:600; font-size:0.9rem; z-index:9999; box-shadow:0 6px 20px rgba(0,0,0,0.3); transition:all 0.3s ease; opacity:0; transform:translateY(10px); pointer-events:none;';
-        document.body.appendChild(toast);
-      }
-      toast.innerText = msg;
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateY(0)';
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(10px)';
-      }, 3500);
+    function fillPrepScenario(p, r, e, a) {
+      if (document.getElementById('prepPoint')) document.getElementById('prepPoint').value = p;
+      if (document.getElementById('prepReason')) document.getElementById('prepReason').value = r;
+      if (document.getElementById('prepExample')) document.getElementById('prepExample').value = e;
+      if (document.getElementById('prepCallToAction')) document.getElementById('prepCallToAction').value = a;
     }
 
     // ==========================================
-    // THEME TOGGLE
+    // 4. THEME TOGGLE
     // ==========================================
     function toggleTheme() {
       const body = document.body;
       const isLight = body.classList.toggle('light-theme');
       localStorage.setItem('yh_theme', isLight ? 'light' : 'dark');
-      document.getElementById('themeIcon').textContent = isLight ? '☾' : '☀';
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = isLight ? 'â˜¾' : 'â˜€';
     }
 
-    // Load saved theme
     if (localStorage.getItem('yh_theme') === 'light' || !localStorage.getItem('yh_theme')) {
       document.body.classList.add('light-theme');
-      document.getElementById('themeIcon').textContent = '☾';
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = 'â˜¾';
     }
 
     // ==========================================
-    // AUDIO RECORDER & MEDIARECORDER LOGIC
+    // 5. RECORDING STUDIO AUDIO RECORDER
     // ==========================================
-    let mediaRecorder = null;
-    let audioChunks = [];
-    let audioBlob = null;
-    let timerInterval = null;
-    let secondsElapsed = 0;
-    let audioContext = null;
-    let analyser = null;
-    let animFrameId = null;
-    let currentStream = null;
-
-    const canvas = document.getElementById('visualizer');
-    const canvasCtx = canvas.getContext('2d');
+    let studioMediaRecorder = null;
+    let studioAudioChunks = [];
+    let studioAudioBlob = null;
+    let studioTimerInterval = null;
+    let studioSecondsElapsed = 0;
+    let studioAudioContext = null;
+    let studioAnalyser = null;
+    let studioAnimFrameId = null;
+    let studioCurrentStream = null;
 
     function drawIdleVisualizer() {
-      canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
-      canvasCtx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#30363d';
-      canvasCtx.lineWidth = 1;
-      canvasCtx.beginPath();
-      canvasCtx.moveTo(0, canvas.height / 2);
-      canvasCtx.lineTo(canvas.width, canvas.height / 2);
-      canvasCtx.stroke();
+      const canvas = document.getElementById('visualizer');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#30363d';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, canvas.height / 2);
+      ctx.lineTo(canvas.width, canvas.height / 2);
+      ctx.stroke();
     }
-    drawIdleVisualizer();
 
     async function toggleRecording() {
-      if (mediaRecorder && mediaRecorder.state === 'recording') {
+      if (studioMediaRecorder && studioMediaRecorder.state === 'recording') {
         stopRecording();
         return;
       }
@@ -3574,248 +3990,120 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
 
     async function startRecording() {
       try {
-        currentStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        
-        <p style="font-weight:600; font-size:0.85rem; margin-top:8px;">Item 1:</p>
-        <div class="model-text">"Our team needs to <strong>execute the project</strong> before October, but legal sign-off has become a <strong>critical bottleneck</strong> for all stakeholders."</div>
-        <div class="notes-text">Alternative: <em>"We are scheduled to <strong>implement the initiative</strong> by October; however, securing legal approval remains our primary <strong>operational bottleneck</strong>."</em></div>
-
-        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 2:</p>
-        <div class="model-text">"We should automate this report to <strong>streamline our workflow</strong> and <strong>mitigate the risks</strong> of manual data entry errors."</div>
-        <div class="notes-text">Alternative: <em>"Automating this reporting process will <strong>streamline operations</strong> while <strong>mitigating downside exposure</strong> caused by human discrepancies."</em></div>
-
-        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 3:</p>
-        <div class="model-text">"Prior to finalizing the vendor agreement, let's schedule a call to <strong>align on expectations</strong> regarding delivery milestones and <strong>deliberate on</strong> contractor budget allocations."</div>
-        <div class="notes-text">Alternative: <em>"Before locking in the contract, we should connect to ensure all parties are <strong>fully aligned on deliverables</strong> and <strong>address</strong> contractor budget constraints."</em></div>
-
-        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 4:</p>
-        <div class="model-text">"The infrastructure team spent six hours <strong>troubleshooting and rectifying</strong> the defect in the payment microservice, and we <strong>anticipate</strong> steady throughput now that the patch is deployed."</div>
-        <div class="notes-text">Alternative: <em>"DevOps successfully <strong>troubleshot the root cause</strong> and <strong>rectified</strong> the payment gateway; we <strong>forecast</strong> stable transaction volume moving forward."</em></div>
-
-        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Item 5:</p>
-        <div class="model-text">"To maintain strategic focus, the director advised me to <strong>delegate operational tasks</strong> across the junior team rather than attempting to <strong>architect</strong> every minor detail myself."</div>
-        <div class="notes-text">Alternative: <em>"I will <strong>delegate routine sprint tickets</strong> to teammates so I can dedicate time to <strong>formulating</strong> our broader quarterly roadmap."</em></div>
-      </div>
-
-      <!-- Key for Exercise B -->
-      <div class="answer-block">
-        <h5>Part B: Preposition Key & Grammatical Rationale</h5>
-        <ul style="margin-left: 20px; line-height: 1.6; font-size:0.85rem;">
-          <li><strong>1. on</strong> — <em>deliberate on</em> is the formal standard. Avoid <em>deliberate about</em>.</li>
-          <li><strong>2. NONE</strong> — <em>address</em> is a direct transitive verb. Never use <em>address about</em>.</li>
-          <li><strong>3. on</strong> — align <strong>on</strong> a deliverable, timeline, or scope.</li>
-          <li><strong>4. with</strong> — align <strong>with</strong> a third party, department, or standard.</li>
-          <li><strong>5. to</strong> — delegate responsibilities <strong>to</strong> a designated person.</li>
-          <li><strong>6. NONE</strong> — <em>mitigate risks</em> (direct object; no preposition in business English).</li>
-          <li><strong>7. in</strong> — a bottleneck occurs <strong>in</strong> a process, stage, or workflow.</li>
-          <li><strong>8. NONE</strong> — <em>formulate a response</em> (transitive verb; no <em>up</em> or <em>out</em>).</li>
-          <li><strong>9. NONE</strong> — <em>rectify the discrepancies</em> (direct transitive verb; no <em>with</em>).</li>
-          <li><strong>10. NONE</strong> — <em>forecasts a 25% decrease</em> (direct transitive verb; no <em>for</em>).</li>
-        </ul>
-      </div>
-
-      <!-- Model PREP Task -->
-      <div class="answer-block">
-        <h5>Part C: Model Executive Briefing (Written & Spoken)</h5>
-        
-        <p style="font-weight:600; font-size:0.85rem; margin-top:6px;">Written Email / Slack Format:</p>
-        <div class="model-text" style="font-family: inherit; font-size:0.85rem; font-style:normal; white-space:pre-line;">
-Team,
-We remain firmly on track to <strong>execute</strong> the platform migration by mid-month.
-Over the past three days, third-party API latency emerged as a <strong>critical bottleneck</strong> during regression testing. The engineering squad mobilized immediately to <strong>troubleshoot</strong> the integration defect, and we have deployed a patch to <strong>rectify</strong> the data synchronization errors.
-To protect our revised timeline, I have <strong>delegated</strong> ticket verification to our regional QA leads and simplified our staging criteria to <strong>streamline operations</strong>. These measures will effectively <strong>mitigate risks</strong> ahead of our client rollout.
-Let's hold a brief 10-minute sync tomorrow at 10:00 AM SGT to <strong>align on expectations</strong> for next week's release schedule.
-        </div>
-
-        <p style="font-weight:600; font-size:0.85rem; margin-top:12px;">Spoken Briefing Transcript (approx. 70 seconds):</p>
-        <div class="model-text" style="font-family: inherit; font-size:0.85rem; font-style:italic; white-space:pre-line;">
-"Good morning everyone. Here is a brief milestone update on the platform migration. We are progressing well and preparing to <strong>execute</strong> our production rollout by the middle of this month.
-The reason for our brief testing delay earlier this week was a <strong>critical bottleneck</strong> in the third-party API integration. Our backend team spent Wednesday <strong>troubleshooting</strong> the root cause, and they were able to <strong>rectify</strong> the synchronization issues yesterday evening.
-To recover lost ground, I have <strong>delegated</strong> secondary verification tasks to the APAC squad and introduced automated scripts to <strong>streamline</strong> our staging workflows. This step will <strong>mitigate risks</strong> of further slippage.
-I look forward to connecting tomorrow at 10 AM so we can <strong>align on expectations</strong> and confirm the final go-live date. Thank you."
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-<!-- Client-side Logic (Draft Persistence, Audio Recording, Export) -->
-<script>
-  // 1. Local Storage Persistence
-  const STORAGE_KEY = 'yh_vocab_ladder_homework_v1';
-  const fieldIds = [
-    'ex_a1', 'ex_a2', 'ex_a3', 'ex_a4', 'ex_a5',
-    'drill_1', 'drill_2', 'drill_3', 'drill_4', 'drill_5',
-    'drill_6', 'drill_7', 'drill_8', 'drill_9', 'drill_10',
-    'prep_p1', 'prep_r', 'prep_e', 'prep_p2', 'prep_full'
-  ];
-
-  function saveProgress() {
-    const data = {};
-    fieldIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) data[id] = el.value;
-    });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    
-    const notice = document.getElementById('saveNotice');
-    notice.style.display = 'inline';
-    notice.innerText = '✓ Progress saved to this browser';
-    setTimeout(() => {
-      notice.style.display = 'none';
-    }, 3000);
-  }
-
-  function loadSavedProgress() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw);
-      fieldIds.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && data[id] !== undefined) {
-          el.value = data[id];
+        studioCurrentStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const canvas = document.getElementById('visualizer');
+        if (canvas) {
+          studioAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const source = studioAudioContext.createMediaStreamSource(studioCurrentStream);
+          studioAnalyser = studioAudioContext.createAnalyser();
+          studioAnalyser.fftSize = 256;
+          source.connect(studioAnalyser);
         }
-      });
-    } catch(e){}
-  }
 
-  // Auto-save on typing (debounced)
-  let autoSaveTimeout = null;
-  fieldIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', () => {
-        clearTimeout(autoSaveTimeout);
-        autoSaveTimeout = setTimeout(saveProgress, 1200);
-      });
-    }
-  });
+        let mimeType = 'audio/webm';
+        if (!MediaRecorder.isTypeSupported('audio/webm')) {
+          if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
+          else if (MediaRecorder.isTypeSupported('audio/ogg')) mimeType = 'audio/ogg';
+          else mimeType = '';
+        }
 
-  // 2. Copy formatted answers for Preply chat
-  function copyAnswersToClipboard() {
-    saveProgress();
-    let text = "=== YH: VOCABULARY LADDER HOMEWORK SUBMISSION ===\n\n";
-    text += "--- PART A: SENTENCE UPGRADES ---\n";
-    text += "1. " + (document.getElementById('ex_a1').value || "[Not answered]") + "\n";
-    text += "2. " + (document.getElementById('ex_a2').value || "[Not answered]") + "\n";
-    text += "3. " + (document.getElementById('ex_a3').value || "[Not answered]") + "\n";
-    text += "4. " + (document.getElementById('ex_a4').value || "[Not answered]") + "\n";
-    text += "5. " + (document.getElementById('ex_a5').value || "[Not answered]") + "\n\n";
+        studioMediaRecorder = mimeType ? new MediaRecorder(studioCurrentStream, { mimeType }) : new MediaRecorder(studioCurrentStream);
+        studioAudioChunks = [];
 
-    text += "--- PART B: PREPOSITION DRILLS ---\n";
-    for (let i = 1; i <= 10; i++) {
-      const val = document.getElementById('drill_' + i).value || "[Empty]";
-      text += i + ". " + val + "  ";
-      if (i % 5 === 0) text += "\n";
-    }
-    text += "\n--- PART C: PREP WORKPLACE BRIEFING ---\n";
-    text += "Point: " + (document.getElementById('prep_p1').value || "") + "\n";
-    text += "Reason: " + (document.getElementById('prep_r').value || "") + "\n";
-    text += "Example: " + (document.getElementById('prep_e').value || "") + "\n";
-    text += "Point: " + (document.getElementById('prep_p2').value || "") + "\n\n";
-    text += "Full Briefing Draft:\n" + (document.getElementById('prep_full').value || "[No draft entered]");
+        studioMediaRecorder.ondataavailable = e => {
+          if (e.data.size > 0) studioAudioChunks.push(e.data);
+        };
 
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Answers copied to clipboard! You can now paste them directly into Preply chat or an email.");
-    }).catch(() => {
-      prompt("Copy your answers manually below:", text);
-    });
-  }
+        studioMediaRecorder.onstop = () => {
+          const mime = studioMediaRecorder.mimeType || 'audio/webm';
+          studioAudioBlob = new Blob(studioAudioChunks, { type: mime });
+          const audioUrl = URL.createObjectURL(studioAudioBlob);
+          const preview = document.getElementById('audioPreview');
+          if (preview) preview.src = audioUrl;
+          const playerCard = document.getElementById('audioPlayerCard');
+          if (playerCard) playerCard.classList.add('active');
+          const dlBtn = document.getElementById('downloadBtn');
+          if (dlBtn) dlBtn.disabled = false;
 
-  // 3. Toggle Answer Key
-  function toggleAnswerKey() {
-    const panel = document.getElementById('answerContent');
-    const icon = document.getElementById('toggleIcon');
-    const isOpen = panel.classList.contains('revealed');
-    if (isOpen) {
-      panel.classList.remove('revealed');
-      icon.innerText = '▶';
-    } else {
-      panel.classList.add('revealed');
-      icon.innerText = '▼';
-    }
-  }
+          if (studioCurrentStream) {
+            studioCurrentStream.getTracks().forEach(track => track.stop());
+          }
+          if (studioAudioContext && studioAudioContext.state !== 'closed') {
+            studioAudioContext.close();
+          }
+          cancelAnimationFrame(studioAnimFrameId);
+          drawIdleVisualizer();
 
-  // 4. In-Browser Audio Recorder
-  let mediaRecorder = null;
-  let audioChunks = [];
-  let audioBlob = null;
-  let timerInterval = null;
-  let secondsElapsed = 0;
+          const badge = document.getElementById('statusBadge');
+          if (badge) {
+            badge.className = 'status-badge status-recorded';
+            badge.innerHTML = 'âœ” Take Recorded â€” Ready to Download';
+          }
+        };
 
-  async function toggleAudioRecording() {
-    const btn = document.getElementById('recordBtn');
-    const status = document.getElementById('recordingStatus');
-    const timer = document.getElementById('audioTimer');
+        studioMediaRecorder.start(200);
 
-    if (mediaRecorder && mediaRecorder.state === 'recording') {
-      // Stop recording
-      mediaRecorder.stop();
-      clearInterval(timerInterval);
-      btn.innerText = 'Record Again';
-      btn.className = 'btn btn-secondary';
-      status.innerText = 'Recording completed';
-      return;
+        studioSecondsElapsed = 0;
+        updateTimerDisplay();
+        clearInterval(studioTimerInterval);
+        studioTimerInterval = setInterval(() => {
+          studioSecondsElapsed++;
+          updateTimerDisplay();
+        }, 1000);
+
+        const recText = document.getElementById('recordBtnText');
+        if (recText) recText.textContent = 'Recording... (Click to Pause)';
+        const recBtn = document.getElementById('recordBtn');
+        if (recBtn) recBtn.classList.add('btn-stop');
+        const stopBtn = document.getElementById('stopBtn');
+        if (stopBtn) stopBtn.style.display = 'inline-flex';
+        const dlBtn = document.getElementById('downloadBtn');
+        if (dlBtn) dlBtn.disabled = true;
+
+        const badge = document.getElementById('statusBadge');
+        if (badge) {
+          badge.className = 'status-badge status-recording';
+          badge.innerHTML = 'â— Recording Live Audio';
+        }
+
+        if (canvas) visualize();
+
+      } catch (err) {
+        console.error("Microphone access error:", err);
+        alert("Microphone access is required to record. Please allow microphone permissions in your browser.");
+      }
     }
 
-    // Start recording
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      audioChunks = [];
-      mediaRecorder = new MediaRecorder(stream);
-
-      mediaRecorder.ondataavailable = (e) => {
-        if (e.data.size > 0) audioChunks.push(e.data);
-      };
-
-      mediaRecorder.onstop = () => {
-        audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-        const audioUrl = URL.createObjectURL(audioBlob);
-        const player = document.getElementById('audioPlayback');
-        player.src = audioUrl;
-        document.getElementById('audioPlayerWrapper').style.display = 'flex';
-        document.getElementById('downloadAudioBtn').style.display = 'inline-flex';
-        stream.getTracks().forEach(track => track.stop());
-      };
-
-      mediaRecorder.start();
-      secondsElapsed = 0;
-      timer.innerText = '00:00';
-      timerInterval = setInterval(() => {
-        secondsElapsed++;
-        const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
-        const secs = String(secondsElapsed % 60).padStart(2, '0');
-        timer.innerText = `${mins}:${secs}`;
-      }, 1000);
-
-      btn.innerText = 'Stop Recording';
-      btn.className = 'btn btn-primary';
-      status.innerText = '● Recording live...';
-      document.getElementById('audioPlayerWrapper').style.display = 'none';
-      document.getElementById('downloadAudioBtn').style.display = 'none';
-
-    } catch (err) {
-      alert('Could not access microphone. Please check your browser microphone permissions.');
-      status.innerText = 'Microphone access denied';
+    function stopRecording() {
+      if (studioMediaRecorder && studioMediaRecorder.state !== 'inactive') {
+        studioMediaRecorder.stop();
+      }
+      clearInterval(studioTimerInterval);
+      const recText = document.getElementById('recordBtnText');
+      if (recText) recText.textContent = 'Record New Take';
+      const recBtn = document.getElementById('recordBtn');
+      if (recBtn) recBtn.classList.remove('btn-stop');
+      const stopBtn = document.getElementById('stopBtn');
+      if (stopBtn) stopBtn.style.display = 'none';
     }
-  }
 
-  function downloadRecordedAudio() {
-    if (!audioBlob) return;
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(audioBlob);
-    a.download = `YH_PREP_Briefing_${new Date().toISOString().slice(0,10)}.webm`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
+    function updateTimerDisplay() {
+      const mins = Math.floor(studioSecondsElapsed / 60);
+      const secs = studioSecondsElapsed % 60;
+      const el = document.getElementById('timerDisplay');
+      if (el) el.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
 
-  // Initialize on page load
-  window.addEventListener('DOMContentLoaded', loadSavedProgress);
-</script>
+    function visualize() {
+      const canvas = document.getElementById('visualizer');
+      if (!canvas || !studioAnalyser) return;
+      const canvasCtx = canvas.getContext('2d');
+      const bufferLength = studioAnalyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      function renderFrame() {
+        studioAnimFrameId = requestAnimationFrame(renderFrame);
+        studioAnalyser.getByteFrequencyData(dataArray);
 
         canvasCtx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#0d1117';
         canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
@@ -3827,7 +4115,6 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         for (let i = 0; i < bufferLength; i++) {
           barHeight = (dataArray[i] / 255) * canvas.height;
 
-          // Color gradient based on volume
           if (dataArray[i] > 180) {
             canvasCtx.fillStyle = '#f85149';
           } else if (dataArray[i] > 100) {
@@ -3844,25 +4131,23 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
     }
 
     function downloadRecording() {
-      if (!audioBlob) return;
+      if (!studioAudioBlob) return;
       const select = document.getElementById('topicSelect');
-      const topic = topicsData[select.value] || { filename: 'YH_Client_Presentation' };
+      const topic = topicsData[select ? select.value : 'opt_pitch'] || { filename: 'YH_Client_Presentation' };
       const dateStr = new Date().toISOString().slice(0, 10);
-      const extension = audioBlob.type.includes('mp4') ? 'mp4' : (audioBlob.type.includes('ogg') ? 'ogg' : 'webm');
+      const extension = studioAudioBlob.type.includes('mp4') ? 'mp4' : (studioAudioBlob.type.includes('ogg') ? 'ogg' : 'webm');
       const fileName = `${topic.filename}_${dateStr}.${extension}`;
 
       const link = document.createElement('a');
-      link.href = URL.createObjectURL(audioBlob);
+      link.href = URL.createObjectURL(studioAudioBlob);
       link.download = fileName;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
 
-
-
     // ==========================================
-    // CADENCE & DRILL LOGIC
+    // 6. CADENCE & DRILL LOGIC
     // ==========================================
     function toggleWord(element) {
       if (!element.classList.contains('stressed') && !element.classList.contains('reduced')) {
@@ -3886,7 +4171,6 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       }
     }
 
-    // Metronome (60 BPM)
     let metronomeInterval = null;
     let metroContext = null;
 
@@ -3913,393 +4197,394 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       if (metronomeInterval) {
         clearInterval(metronomeInterval);
         metronomeInterval = null;
-        text.textContent = 'Start 60 BPM Metronome';
+        if (text) text.textContent = 'Start 60 BPM Metronome';
       } else {
         playBeep();
         metronomeInterval = setInterval(playBeep, 1000);
-        text.textContent = 'Stop 60 BPM Metronome';
+        if (text) text.textContent = 'Stop 60 BPM Metronome';
       }
     }
-  
-    /* ====================================================
-       REVISION SHEET & HOMEWORK HELPER FUNCTIONS
-       ==================================================== */
 
-  // 1. Local Storage Persistence
-  const STORAGE_KEY = 'yh_vocab_ladder_homework_v1';
-  const fieldIds = [
-    'ex_a1', 'ex_a2', 'ex_a3', 'ex_a4', 'ex_a5',
-    'drill_1', 'drill_2', 'drill_3', 'drill_4', 'drill_5',
-    'drill_6', 'drill_7', 'drill_8', 'drill_9', 'drill_10',
-    'prep_p1', 'prep_r', 'prep_e', 'prep_p2', 'prep_full'
-  ];
+    // ==========================================
+    // 7. WEEK 1 REVISION SHEET (VOCAB LADDER)
+    // ==========================================
+    const STORAGE_KEY = 'yh_vocab_ladder_homework_v1';
+    const fieldIds = [
+      'ex_a1', 'ex_a2', 'ex_a3', 'ex_a4', 'ex_a5',
+      'drill_1', 'drill_2', 'drill_3', 'drill_4', 'drill_5',
+      'drill_6', 'drill_7', 'drill_8', 'drill_9', 'drill_10',
+      'prep_p1', 'prep_r', 'prep_e', 'prep_p2', 'prep_full'
+    ];
 
-  function saveProgress() {
-    const data = {};
-    fieldIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) data[id] = el.value;
-    });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    
-    const notice = document.getElementById('saveNotice');
-    notice.style.display = 'inline';
-    notice.innerText = '✓ Progress saved to this browser';
-    setTimeout(() => {
-      notice.style.display = 'none';
-    }, 3000);
-  }
-
-  function loadSavedProgress() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw);
+    function saveProgress() {
+      const data = {};
       fieldIds.forEach(id => {
         const el = document.getElementById(id);
-        if (el && data[id] !== undefined) {
-          el.value = data[id];
+        if (el) data[id] = el.value;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      
+      const notice = document.getElementById('saveNotice');
+      if (notice) {
+        notice.style.display = 'inline';
+        notice.innerText = 'âœ“ Week 1 progress saved';
+        setTimeout(() => { notice.style.display = 'none'; }, 3000);
+      }
+    }
+
+    function loadSavedProgress() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        fieldIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && data[id] !== undefined) {
+            el.value = data[id];
+          }
+        });
+      } catch(e){}
+    }
+
+    let autoSaveTimeout = null;
+    fieldIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          clearTimeout(autoSaveTimeout);
+          autoSaveTimeout = setTimeout(saveProgress, 1200);
+        });
+      }
+    });
+
+    function copyAnswersToClipboard() {
+      saveProgress();
+      let text = "=== YH: VOCABULARY LADDER HOMEWORK SUBMISSION ===\n\n";
+      text += "--- PART A: SENTENCE UPGRADES ---\n";
+      text += "1. " + (document.getElementById('ex_a1')?.value || "[Not answered]") + "\n";
+      text += "2. " + (document.getElementById('ex_a2')?.value || "[Not answered]") + "\n";
+      text += "3. " + (document.getElementById('ex_a3')?.value || "[Not answered]") + "\n";
+      text += "4. " + (document.getElementById('ex_a4')?.value || "[Not answered]") + "\n";
+      text += "5. " + (document.getElementById('ex_a5')?.value || "[Not answered]") + "\n\n";
+
+      text += "--- PART B: PREPOSITION DRILLS ---\n";
+      for (let i = 1; i <= 10; i++) {
+        const val = document.getElementById('drill_' + i)?.value || "[Empty]";
+        text += i + ". " + val + "  ";
+        if (i % 5 === 0) text += "\n";
+      }
+      text += "\n--- PART C: PREP WORKPLACE BRIEFING ---\n";
+      text += "Point: " + (document.getElementById('prep_p1')?.value || "") + "\n";
+      text += "Reason: " + (document.getElementById('prep_r')?.value || "") + "\n";
+      text += "Example: " + (document.getElementById('prep_e')?.value || "") + "\n";
+      text += "Point: " + (document.getElementById('prep_p2')?.value || "") + "\n\n";
+      text += "Full Briefing Draft:\n" + (document.getElementById('prep_full')?.value || "[No draft entered]");
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Week 1 answers copied to clipboard! You can paste into Preply chat.");
+      }).catch(() => {
+        prompt("Copy your answers manually below:", text);
+      });
+    }
+
+    function toggleAnswerKey() {
+      const panel = document.getElementById('answerContent');
+      const icon = document.getElementById('toggleIcon');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('revealed');
+      if (isOpen) {
+        panel.classList.remove('revealed');
+        if (icon) icon.innerText = 'â–¶';
+      } else {
+        panel.classList.add('revealed');
+        if (icon) icon.innerText = 'â–¼';
+      }
+    }
+
+    let revisionMediaRecorder = null;
+    let revisionAudioChunks = [];
+    let revisionAudioBlob = null;
+    let revisionTimerInterval = null;
+    let revisionSecondsElapsed = 0;
+
+    async function toggleAudioRecording() {
+      const btn = document.getElementById('recordBtn');
+      const status = document.getElementById('recordingStatus');
+      const timer = document.getElementById('audioTimer');
+
+      if (revisionMediaRecorder && revisionMediaRecorder.state === 'recording') {
+        revisionMediaRecorder.stop();
+        clearInterval(revisionTimerInterval);
+        if (btn) {
+          btn.innerText = 'Record Again';
+          btn.className = 'btn btn-secondary';
+        }
+        if (status) status.innerText = 'Recording completed';
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        revisionAudioChunks = [];
+        revisionMediaRecorder = new MediaRecorder(stream);
+
+        revisionMediaRecorder.ondataavailable = (e) => {
+          if (e.data.size > 0) revisionAudioChunks.push(e.data);
+        };
+
+        revisionMediaRecorder.onstop = () => {
+          revisionAudioBlob = new Blob(revisionAudioChunks, { type: 'audio/webm' });
+          const audioUrl = URL.createObjectURL(revisionAudioBlob);
+          const player = document.getElementById('audioPlayback');
+          if (player) player.src = audioUrl;
+          const wrapper = document.getElementById('audioPlayerWrapper');
+          if (wrapper) wrapper.style.display = 'flex';
+          const dlBtn = document.getElementById('downloadAudioBtn');
+          if (dlBtn) dlBtn.style.display = 'inline-flex';
+          stream.getTracks().forEach(track => track.stop());
+        };
+
+        revisionMediaRecorder.start();
+        revisionSecondsElapsed = 0;
+        if (timer) timer.innerText = '00:00';
+        revisionTimerInterval = setInterval(() => {
+          revisionSecondsElapsed++;
+          const mins = String(Math.floor(revisionSecondsElapsed / 60)).padStart(2, '0');
+          const secs = String(revisionSecondsElapsed % 60).padStart(2, '0');
+          if (timer) timer.innerText = `${mins}:${secs}`;
+        }, 1000);
+
+        if (btn) {
+          btn.innerText = 'Stop Recording';
+          btn.className = 'btn btn-primary';
+        }
+        if (status) status.innerText = 'â— Recording live...';
+        const wrapper = document.getElementById('audioPlayerWrapper');
+        if (wrapper) wrapper.style.display = 'none';
+        const dlBtn = document.getElementById('downloadAudioBtn');
+        if (dlBtn) dlBtn.style.display = 'none';
+
+      } catch (err) {
+        alert('Could not access microphone. Please check your browser microphone permissions.');
+        if (status) status.innerText = 'Microphone access denied';
+      }
+    }
+
+    function downloadRecordedAudio() {
+      if (!revisionAudioBlob) return;
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(revisionAudioBlob);
+      a.download = `YH_PREP_Briefing_${new Date().toISOString().slice(0,10)}.webm`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // ==========================================
+    // 8. LESSON 1 PITCHING & EXECUTIVE HOOK HOMEWORK
+    // ==========================================
+    const PITCH_STORAGE_KEY = 'yh_pitch_homework_v1';
+    const pitchFieldIds = [
+      'pitch_macro_a', 'pitch_macro_b', 'pitch_macro_c',
+      'pitch_t3_1', 'pitch_t3_2', 'pitch_t3_3', 'pitch_t3_4', 'pitch_t3_5', 'pitch_t3_6',
+      'pitch_plan_shift', 'pitch_plan_friction', 'pitch_plan_anchor',
+      'quiz_q1', 'quiz_q2', 'quiz_q3', 'quiz_q4'
+    ];
+
+    function toggleAnswer(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('revealed');
+    }
+
+    function savePitchProgress() {
+      const data = {};
+      pitchFieldIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          data[id] = el.value;
         }
       });
-    } catch(e){}
-  }
-
-  // Auto-save on typing (debounced)
-  let autoSaveTimeout = null;
-  fieldIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', () => {
-        clearTimeout(autoSaveTimeout);
-        autoSaveTimeout = setTimeout(saveProgress, 1200);
-      });
-    }
-  });
-
-  // 2. Copy formatted answers for Preply chat
-  function copyAnswersToClipboard() {
-    saveProgress();
-    let text = "=== YH: VOCABULARY LADDER HOMEWORK SUBMISSION ===\n\n";
-    text += "--- PART A: SENTENCE UPGRADES ---\n";
-    text += "1. " + (document.getElementById('ex_a1').value || "[Not answered]") + "\n";
-    text += "2. " + (document.getElementById('ex_a2').value || "[Not answered]") + "\n";
-    text += "3. " + (document.getElementById('ex_a3').value || "[Not answered]") + "\n";
-    text += "4. " + (document.getElementById('ex_a4').value || "[Not answered]") + "\n";
-    text += "5. " + (document.getElementById('ex_a5').value || "[Not answered]") + "\n\n";
-
-    text += "--- PART B: PREPOSITION DRILLS ---\n";
-    for (let i = 1; i <= 10; i++) {
-      const val = document.getElementById('drill_' + i).value || "[Empty]";
-      text += i + ". " + val + "  ";
-      if (i % 5 === 0) text += "\n";
-    }
-    text += "\n--- PART C: PREP WORKPLACE BRIEFING ---\n";
-    text += "Point: " + (document.getElementById('prep_p1').value || "") + "\n";
-    text += "Reason: " + (document.getElementById('prep_r').value || "") + "\n";
-    text += "Example: " + (document.getElementById('prep_e').value || "") + "\n";
-    text += "Point: " + (document.getElementById('prep_p2').value || "") + "\n\n";
-    text += "Full Briefing Draft:\n" + (document.getElementById('prep_full').value || "[No draft entered]");
-
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Answers copied to clipboard! You can now paste them directly into Preply chat or an email.");
-    }).catch(() => {
-      prompt("Copy your answers manually below:", text);
-    });
-  }
-
-  // 3. Toggle Answer Key
-  function toggleAnswerKey() {
-    const panel = document.getElementById('answerContent');
-    const icon = document.getElementById('toggleIcon');
-    const isOpen = panel.classList.contains('revealed');
-    if (isOpen) {
-      panel.classList.remove('revealed');
-      icon.innerText = '▶';
-    } else {
-      panel.classList.add('revealed');
-      icon.innerText = '▼';
-    }
-  }
-
-  // 4. In-Browser Audio Recorder
-  let mediaRecorder = null;
-  let audioChunks = [];
-  let audioBlob = null;
-  let timerInterval = null;
-  let secondsElapsed = 0;
-
-  async function toggleAudioRecording() {
-    const btn = document.getElementById('recordBtn');
-    const status = document.getElementById('recordingStatus');
-    const timer = document.getElementById('audioTimer');
-
-    if (mediaRecorder && mediaRecorder.state === 'recording') {
-      // Stop recording
-      mediaRecorder.stop();
-      clearInterval(timerInterval);
-      btn.innerText = 'Record Again';
-      btn.className = 'btn btn-secondary';
-      status.innerText = 'Recording completed';
-      return;
+      localStorage.setItem(PITCH_STORAGE_KEY, JSON.stringify(data));
+      const notice = document.getElementById('saveNotice');
+      if (notice) {
+        notice.style.display = 'inline';
+        notice.innerText = 'âœ“ Homework saved locally';
+        setTimeout(() => { notice.style.display = 'none'; }, 3000);
+      }
     }
 
-    // Start recording
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      audioChunks = [];
-      mediaRecorder = new MediaRecorder(stream);
-
-      mediaRecorder.ondataavailable = (e) => {
-        if (e.data.size > 0) audioChunks.push(e.data);
-      };
-
-      mediaRecorder.onstop = () => {
-        audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-        const audioUrl = URL.createObjectURL(audioBlob);
-        const player = document.getElementById('audioPlayback');
-        player.src = audioUrl;
-        document.getElementById('audioPlayerWrapper').style.display = 'flex';
-        document.getElementById('downloadAudioBtn').style.display = 'inline-flex';
-        stream.getTracks().forEach(track => track.stop());
-      };
-
-      mediaRecorder.start();
-      secondsElapsed = 0;
-      timer.innerText = '00:00';
-      timerInterval = setInterval(() => {
-        secondsElapsed++;
-        const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
-        const secs = String(secondsElapsed % 60).padStart(2, '0');
-        timer.innerText = `${mins}:${secs}`;
-      }, 1000);
-
-      btn.innerText = 'Stop Recording';
-      btn.className = 'btn btn-primary';
-      status.innerText = '● Recording live...';
-      document.getElementById('audioPlayerWrapper').style.display = 'none';
-      document.getElementById('downloadAudioBtn').style.display = 'none';
-
-    } catch (err) {
-      alert('Could not access microphone. Please check your browser microphone permissions.');
-      status.innerText = 'Microphone access denied';
+    function loadSavedPitchProgress() {
+      try {
+        const raw = localStorage.getItem(PITCH_STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        pitchFieldIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && data[id] !== undefined) {
+            el.value = data[id];
+          }
+        });
+      } catch(e){}
     }
-  }
 
-  function downloadRecordedAudio() {
-    if (!audioBlob) return;
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(audioBlob);
-    a.download = `YH_PREP_Briefing_${new Date().toISOString().slice(0,10)}.webm`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-
-  // ==========================================
-  // PITCHING TAB INTERACTIVITY & DRAFT STORAGE
-  // ==========================================
-  const PITCH_STORAGE_KEY = 'yh_pitch_homework_v1';
-  const pitchFieldIds = [
-    'pitch_macro_a', 'pitch_macro_b', 'pitch_macro_c',
-    'pitch_t3_1', 'pitch_t3_2', 'pitch_t3_3', 'pitch_t3_4', 'pitch_t3_5', 'pitch_t3_6',
-    'pitch_plan_shift', 'pitch_plan_friction', 'pitch_plan_anchor',
-    'quiz_q1', 'quiz_q2', 'quiz_q3', 'quiz_q4',
-    'chk_apology', 'chk_inflection', 'chk_stops', 'chk_tier3'
-  ];
-
-  function toggleAnswer(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.toggle('revealed');
-  }
-
-  function savePitchProgress() {
-    const data = {};
+    let autoSavePitchTimeout = null;
     pitchFieldIds.forEach(id => {
       const el = document.getElementById(id);
       if (el) {
-        if (el.type === 'checkbox') {
-          data[id] = el.checked;
-        } else {
-          data[id] = el.value;
-        }
+        el.addEventListener('input', () => {
+          clearTimeout(autoSavePitchTimeout);
+          autoSavePitchTimeout = setTimeout(savePitchProgress, 1200);
+        });
       }
     });
-    localStorage.setItem(PITCH_STORAGE_KEY, JSON.stringify(data));
-    const notice = document.getElementById('saveNotice');
-    if (notice) {
-      notice.style.display = 'inline';
-      notice.innerText = '✓ Pitch homework saved locally';
-      setTimeout(() => { notice.style.display = 'none'; }, 3000);
-    }
-  }
 
-  function loadSavedPitchProgress() {
-    try {
-      const raw = localStorage.getItem(PITCH_STORAGE_KEY);
-      if (!raw) return;
-      const data = JSON.parse(raw);
-      pitchFieldIds.forEach(id => {
+    function copyPitchAnswersToClipboard() {
+      savePitchProgress();
+      let text = "=== YH: EXECUTIVE HOOK & PITCHING HOMEWORK (LESSON 1) ===\n\n";
+      text += "--- PART 1: THE ZOOM-OUT MACRO SHIFT CLINIC ---\n";
+      text += "Scenario A (Meeting Overload):\n" + (document.getElementById('pitch_macro_a')?.value || "[Not answered]") + "\n\n";
+      text += "Scenario B (Disorganized Shared Drive):\n" + (document.getElementById('pitch_macro_b')?.value || "[Not answered]") + "\n\n";
+      text += "Scenario C (Slow Mobile Website):\n" + (document.getElementById('pitch_macro_c')?.value || "[Not answered]") + "\n\n";
+
+      text += "--- PART 2: TIER-3 EXECUTIVE VOCABULARY UPGRADES ---\n";
+      for (let i = 1; i <= 6; i++) {
+        text += i + ". " + (document.getElementById('pitch_t3_' + i)?.value || "[Not answered]") + "\n";
+      }
+
+      text += "\n--- PART 3: 3-PART HOOK OUTLINE ---\n";
+      text += "1. Macro Shift: " + (document.getElementById('pitch_plan_shift')?.value || "") + "\n";
+      text += "2. Friction: " + (document.getElementById('pitch_plan_friction')?.value || "") + "\n";
+      text += "3. Value Anchor: " + (document.getElementById('pitch_plan_anchor')?.value || "") + "\n\n";
+
+      text += "--- PART 4: LESSON 2 PREVIEW QUIZ ---\n";
+      text += "Q1: " + (document.getElementById('quiz_q1')?.value || "") + "\n";
+      text += "Q2: " + (document.getElementById('quiz_q2')?.value || "") + "\n";
+      text += "Q3: " + (document.getElementById('quiz_q3')?.value || "") + "\n";
+      text += "Q4: " + (document.getElementById('quiz_q4')?.value || "") + "\n";
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("All pitch homework answers copied to clipboard! You can now paste them directly into Preply chat.");
+      }).catch(() => {
+        prompt("Copy your answers manually below:", text);
+      });
+    }
+
+    function checkPreviewQuiz() {
+      const answers = {
+        'quiz_q1': 'high-level overview',
+        'quiz_q2': 'scalable architecture',
+        'quiz_q3': 'plateaued',
+        'quiz_q4': 'brings to the table'
+      };
+      let score = 0;
+      Object.keys(answers).forEach(id => {
         const el = document.getElementById(id);
-        if (el && data[id] !== undefined) {
-          if (el.type === 'checkbox') {
-            el.checked = data[id];
-          } else {
-            el.value = data[id];
-          }
+        if (el && el.value === answers[id]) {
+          score++;
+          el.style.borderColor = '#16a34a';
+          el.style.backgroundColor = '#f0fdf4';
+        } else if (el) {
+          el.style.borderColor = '#dc2626';
+          el.style.backgroundColor = '#fef2f2';
         }
       });
-    } catch(e){}
-  }
-
-  // Auto-save on typing in pitch fields
-  let autoSavePitchTimeout = null;
-  pitchFieldIds.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('input', () => {
-        clearTimeout(autoSavePitchTimeout);
-        autoSavePitchTimeout = setTimeout(savePitchProgress, 1200);
-      });
-    }
-  });
-
-  function copyPitchAnswersToClipboard() {
-    savePitchProgress();
-    let text = "=== YH: EXECUTIVE HOOK & PITCHING HOMEWORK (LESSON 1) ===\n\n";
-    text += "--- PART 1: THE ZOOM-OUT MACRO SHIFT CLINIC ---\n";
-    text += "Scenario A (Meeting Overload):\n" + (document.getElementById('pitch_macro_a')?.value || "[Not answered]") + "\n\n";
-    text += "Scenario B (Disorganized Shared Drive):\n" + (document.getElementById('pitch_macro_b')?.value || "[Not answered]") + "\n\n";
-    text += "Scenario C (Slow Mobile Website):\n" + (document.getElementById('pitch_macro_c')?.value || "[Not answered]") + "\n\n";
-
-    text += "--- PART 2: TIER-3 EXECUTIVE VOCABULARY UPGRADES ---\n";
-    for (let i = 1; i <= 6; i++) {
-      text += i + ". " + (document.getElementById('pitch_t3_' + i)?.value || "[Not answered]") + "\n";
-    }
-
-    text += "\n--- PART 3: 3-PART HOOK OUTLINE ---\n";
-    text += "1. Macro Shift: " + (document.getElementById('pitch_plan_shift')?.value || "") + "\n";
-    text += "2. Friction: " + (document.getElementById('pitch_plan_friction')?.value || "") + "\n";
-    text += "3. Value Anchor: " + (document.getElementById('pitch_plan_anchor')?.value || "") + "\n\n";
-
-    text += "--- PART 4: LESSON 2 PREVIEW QUIZ ---\n";
-    text += "Q1: " + (document.getElementById('quiz_q1')?.value || "") + "\n";
-    text += "Q2: " + (document.getElementById('quiz_q2')?.value || "") + "\n";
-    text += "Q3: " + (document.getElementById('quiz_q3')?.value || "") + "\n";
-    text += "Q4: " + (document.getElementById('quiz_q4')?.value || "") + "\n";
-
-    navigator.clipboard.writeText(text).then(() => {
-      alert("All pitch homework answers copied to clipboard! You can now paste them directly into Preply chat.");
-    }).catch(() => {
-      prompt("Copy your answers manually below:", text);
-    });
-  }
-
-  function checkPreviewQuiz() {
-    const answers = {
-      'quiz_q1': 'high-level overview',
-      'quiz_q2': 'scalable architecture',
-      'quiz_q3': 'plateaued',
-      'quiz_q4': 'brings to the table'
-    };
-    let score = 0;
-    Object.keys(answers).forEach(id => {
-      const el = document.getElementById(id);
-      if (el && el.value === answers[id]) {
-        score++;
-        el.style.borderColor = '#16a34a';
-        el.style.backgroundColor = '#f0fdf4';
-      } else if (el) {
-        el.style.borderColor = '#dc2626';
-        el.style.backgroundColor = '#fef2f2';
-      }
-    });
-    const scoreText = document.getElementById('quizScoreText');
-    if (scoreText) {
-      scoreText.innerText = `Score: ${score} / 4 correct!`;
-      if (score === 4) {
-        scoreText.innerText += " 🎉 Perfect!";
+      const scoreText = document.getElementById('quizScoreText');
+      if (scoreText) {
+        scoreText.innerText = `Score: ${score} / 4 correct!`;
+        if (score === 4) {
+          scoreText.innerText += " ðŸŽ‰ Perfect!";
+        }
       }
     }
-  }
 
-  // Audio Recorder for Pitching Tab
-  let pitchMediaRecorder = null;
-  let pitchAudioChunks = [];
-  let pitchAudioBlob = null;
-  let pitchTimerInterval = null;
-  let pitchSecondsElapsed = 0;
+    let pitchMediaRecorder = null;
+    let pitchAudioChunks = [];
+    let pitchAudioBlob = null;
+    let pitchTimerInterval = null;
+    let pitchSecondsElapsed = 0;
 
-  async function togglePitchAudioRecording() {
-    const btn = document.getElementById('pitchRecordBtn');
-    const status = document.getElementById('pitchRecordingStatus');
-    const timer = document.getElementById('pitchAudioTimer');
+    async function togglePitchAudioRecording() {
+      const btn = document.getElementById('pitchRecordBtn');
+      const status = document.getElementById('pitchRecordingStatus');
+      const timer = document.getElementById('pitchAudioTimer');
 
-    if (pitchMediaRecorder && pitchMediaRecorder.state === 'recording') {
-      pitchMediaRecorder.stop();
-      clearInterval(pitchTimerInterval);
-      btn.innerText = 'Record Again';
-      btn.className = 'btn btn-secondary';
-      status.innerText = 'Recording completed';
-      return;
+      if (pitchMediaRecorder && pitchMediaRecorder.state === 'recording') {
+        pitchMediaRecorder.stop();
+        clearInterval(pitchTimerInterval);
+        if (btn) {
+          btn.innerText = 'Record Again';
+          btn.className = 'btn btn-secondary';
+        }
+        if (status) status.innerText = 'Recording completed';
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        pitchAudioChunks = [];
+        pitchMediaRecorder = new MediaRecorder(stream);
+
+        pitchMediaRecorder.ondataavailable = (e) => {
+          if (e.data.size > 0) pitchAudioChunks.push(e.data);
+        };
+
+        pitchMediaRecorder.onstop = () => {
+          pitchAudioBlob = new Blob(pitchAudioChunks, { type: 'audio/webm' });
+          const audioUrl = URL.createObjectURL(pitchAudioBlob);
+          const player = document.getElementById('pitchAudioPlayback');
+          if (player) player.src = audioUrl;
+          const wrapper = document.getElementById('pitchAudioPlayerWrapper');
+          if (wrapper) wrapper.style.display = 'flex';
+          const dlBtn = document.getElementById('pitchDownloadBtn');
+          if (dlBtn) dlBtn.style.display = 'inline-flex';
+          stream.getTracks().forEach(track => track.stop());
+        };
+
+        pitchMediaRecorder.start();
+        pitchSecondsElapsed = 0;
+        if (timer) timer.innerText = '00:00';
+        pitchTimerInterval = setInterval(() => {
+          pitchSecondsElapsed++;
+          const mins = String(Math.floor(pitchSecondsElapsed / 60)).padStart(2, '0');
+          const secs = String(pitchSecondsElapsed % 60).padStart(2, '0');
+          if (timer) timer.innerText = `${mins}:${secs}`;
+        }, 1000);
+
+        if (btn) {
+          btn.innerText = 'Stop Recording';
+          btn.className = 'btn btn-primary';
+        }
+        if (status) status.innerText = 'â— Recording live pitch...';
+        const wrapper = document.getElementById('pitchAudioPlayerWrapper');
+        if (wrapper) wrapper.style.display = 'none';
+        const dlBtn = document.getElementById('pitchDownloadBtn');
+        if (dlBtn) dlBtn.style.display = 'none';
+      } catch (err) {
+        alert('Could not access microphone. Please enable microphone permissions in your browser.');
+        if (status) status.innerText = 'Microphone access denied';
+      }
     }
 
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      pitchAudioChunks = [];
-      pitchMediaRecorder = new MediaRecorder(stream);
-
-      pitchMediaRecorder.ondataavailable = (e) => {
-        if (e.data.size > 0) pitchAudioChunks.push(e.data);
-      };
-
-      pitchMediaRecorder.onstop = () => {
-        pitchAudioBlob = new Blob(pitchAudioChunks, { type: 'audio/webm' });
-        const audioUrl = URL.createObjectURL(pitchAudioBlob);
-        const player = document.getElementById('pitchAudioPlayback');
-        player.src = audioUrl;
-        document.getElementById('pitchAudioPlayerWrapper').style.display = 'flex';
-        document.getElementById('pitchDownloadBtn').style.display = 'inline-flex';
-        stream.getTracks().forEach(track => track.stop());
-      };
-
-      pitchMediaRecorder.start();
-      pitchSecondsElapsed = 0;
-      timer.innerText = '00:00';
-      pitchTimerInterval = setInterval(() => {
-        pitchSecondsElapsed++;
-        const mins = String(Math.floor(pitchSecondsElapsed / 60)).padStart(2, '0');
-        const secs = String(pitchSecondsElapsed % 60).padStart(2, '0');
-        timer.innerText = `${mins}:${secs}`;
-      }, 1000);
-
-      btn.innerText = 'Stop Recording';
-      btn.className = 'btn btn-primary';
-      status.innerText = '● Recording live pitch...';
-      document.getElementById('pitchAudioPlayerWrapper').style.display = 'none';
-      document.getElementById('pitchDownloadBtn').style.display = 'none';
-    } catch (err) {
-      alert('Could not access microphone. Please enable microphone permissions in your browser.');
-      status.innerText = 'Microphone access denied';
+    function downloadPitchAudio() {
+      if (!pitchAudioBlob) return;
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(pitchAudioBlob);
+      a.download = `YH_Lesson1_Executive_Pitch_${new Date().toISOString().slice(0,10)}.webm`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
-  }
 
-  function downloadPitchAudio() {
-    if (!pitchAudioBlob) return;
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(pitchAudioBlob);
-    a.download = `YH_Lesson1_Executive_Pitch_${new Date().toISOString().slice(0,10)}.webm`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-
-  // Initialize on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    loadSavedProgress();
-    loadSavedPitchProgress();
-  });
-
-</script>
+    // ==========================================
+    // 9. INITIALIZATION
+    // ==========================================
+    window.addEventListener('DOMContentLoaded', () => {
+      onTopicChange();
+      loadSavedProgress();
+      loadSavedPitchProgress();
+      drawIdleVisualizer();
+    });
+  </script>
 </body>
 </html>
