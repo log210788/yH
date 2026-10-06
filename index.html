@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -219,10 +219,10 @@
       margin-top: 4px;
     }
 
-    /* ==========================================
-       14 EXECUTIVE VOCABULARY MASTER SUITE
-       ========================================== */
-    .vocab-suite {
+    /* ========================================================
+       CORE CONCEPT 4 & TASK 4: WHEN TO USE 6 TIER-3 COLLOCATIONS
+       ======================================================== */
+    .wtu-suite {
       margin: 32px 0;
       background: #ffffff;
       border: 1px solid var(--border);
@@ -230,7 +230,7 @@
       padding: 24px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
-    .vocab-suite-header {
+    .wtu-suite-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -240,202 +240,117 @@
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
     }
-    .vocab-filter-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .vocab-pill {
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      color: #475569;
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .vocab-pill:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-    .vocab-pill.active {
-      background: #1e40af;
-      color: #ffffff;
-      border-color: #1e40af;
-      box-shadow: 0 2px 8px rgba(30,64,175,0.25);
-    }
-    .vocab-mode-btns {
-      display: flex;
-      gap: 6px;
-      background: #f1f5f9;
-      padding: 4px;
-      border-radius: 8px;
-    }
-    .vocab-mode-btn {
-      background: none;
-      border: none;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 6px;
-      color: #64748b;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .vocab-mode-btn.active {
-      background: #ffffff;
-      color: #0f172a;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .vcard-grid {
+    .wtu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 16px;
     }
-    .vcard {
+    .wtu-card {
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 18px;
+      padding: 18px 20px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
     }
-    .vcard:hover {
+    .wtu-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       border-color: #cbd5e1;
     }
-    .vcard-top {
+    .wtu-badge-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
     }
-    .vcard-cat {
-      font-size: 0.7rem;
+    .wtu-num-pill {
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      font-size: 0.72rem;
       font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 3px 8px;
-      border-radius: 12px;
     }
-    .cat-openers { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
-    .cat-metrics { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-    .cat-arch { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
-    .vcard-pos {
-      font-size: 0.72rem;
-      color: #64748b;
-      font-weight: 600;
-      font-style: italic;
+    .wtu-context-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #166534;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 2px 8px;
+      border-radius: 4px;
     }
-    .vcard-l1 {
+    .wtu-phrase {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #0f2744;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wtu-trigger {
+      background: #f8fafc;
+      border-left: 3px solid #2563eb;
+      padding: 8px 12px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.83rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+    .wtu-replaces {
       font-size: 0.78rem;
       color: #991b1b;
       background: #fef2f2;
       border: 1px solid #fecaca;
       padding: 4px 10px;
       border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       margin-bottom: 8px;
-      width: fit-content;
     }
-    .vcard-term {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #0f2744;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .vcard-def {
-      font-size: 0.84rem;
-      color: #475569;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-    .vcard-example {
-      background: #f8fafc;
-      border-left: 3px solid #2563eb;
-      padding: 10px 12px;
+    .wtu-example {
+      background: #f0fdf4;
+      border-left: 3px solid #16a34a;
+      padding: 8px 12px;
       border-radius: 0 6px 6px 0;
-      font-size: 0.83rem;
-      color: #1e293b;
+      font-size: 0.82rem;
+      color: #14532d;
       line-height: 1.45;
     }
-    .vcard-speak-btn {
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.15s;
-      color: #2563eb;
-    }
-    .vcard-speak-btn:hover {
-      background: #2563eb;
-      color: #ffffff;
-      border-color: #2563eb;
-      transform: scale(1.08);
-    }
-    .matcher-container {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      margin-top: 16px;
-    }
-    .matcher-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 14px;
-    }
-    .matcher-item {
+    .scenario-exercise-card {
       background: #ffffff;
-      border: 2px solid #e2e8f0;
+      border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      text-align: left;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: border-color 0.2s ease;
     }
-    .matcher-item:hover {
+    .scenario-exercise-card:hover {
       border-color: #93c5fd;
-      background: #eff6ff;
     }
-    .matcher-item.selected {
-      border-color: #2563eb;
-      background: #dbeafe;
-      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+    .scenario-exercise-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 10px;
     }
-    .matcher-item.matched {
-      border-color: #16a34a;
-      background: #f0fdf4;
-      color: #166534;
-      cursor: default;
-      opacity: 0.8;
-    }
-    .matcher-item.wrong {
-      border-color: #dc2626;
-      background: #fef2f2;
-      color: #991b1b;
+    .scenario-num-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: #1e3a8a;
+      color: #ffffff;
+      padding: 3px 9px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .sheet-wrapper {
@@ -2238,7 +2153,7 @@
     <div class="action-bar" style="margin-bottom: 0;">
     <div class="action-bar-left">
       <div class="action-bar-links">
-        <a href="javascript:void(0)" onclick="jumpToVocabSuite()" style="color:#2563eb; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:#eff6ff; padding:3px 10px; border-radius:12px; border:1px solid #bfdbfe;"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> 💎 14 Executive Collocations</a>
+        <a href="javascript:void(0)" onclick="jumpToWhenToUse()" style="color:#2563eb; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:#eff6ff; padding:3px 10px; border-radius:12px; border:1px solid #bfdbfe;"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> 💎 When to Use the 6 Collocations</a>
         <a href="game.html" target="_blank">Interactive Game (game.html)</a>
         <a href="revision.html" target="_blank">Week 1 Revision Sheet</a>
       </div>
@@ -2297,7 +2212,7 @@
         <a href="#section-hook" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px;"><i data-lucide="compass" style="width:13px;height:13px;"></i> 1. The 3-Part Hook</a>
         <a href="#section-macro" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px;"><i data-lucide="trending-up" style="width:13px;height:13px;"></i> 2. The Zoom-Out Secret</a>
         <a href="#section-tier3" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px;"><i data-lucide="layers" style="width:13px;height:13px;"></i> 3. 6 Tier-3 Upgrades</a>
-        <a href="#master-vocab-suite" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px; background:#eff6ff; color:#1d4ed8; border-color:#93c5fd; font-weight:700;"><i data-lucide="sparkles" style="width:13px;height:13px;color:#2563eb;"></i> 4. 14 Executive Collocations</a>
+        <a href="#section-when-to-use" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px; background:#eff6ff; color:#1d4ed8; border-color:#93c5fd; font-weight:700;"><i data-lucide="sparkles" style="width:13px;height:13px;color:#2563eb;"></i> 4. When to Use the 6 Collocations</a>
         <a href="#section-vocal" class="btn btn-secondary" style="font-size:0.8rem; text-decoration:none; border-radius:20px; padding:6px 14px;"><i data-lucide="volume-2" style="width:13px;height:13px;"></i> 5. Vocal Mechanics</a>
       </div>
 
@@ -2422,468 +2337,178 @@
         </div>
       </div>
 
+            <!-- ======================================================== -->
+      <!-- CORE CONCEPT 4: WHEN TO USE THE 6 TIER-3 COLLOCATIONS      -->
       <!-- ======================================================== -->
-      <!-- CORE CONCEPT 4: THE 14 EXECUTIVE COLLOCATIONS MASTER LAB -->
-      <!-- ======================================================== -->
-      <div id="master-vocab-suite" class="vocab-suite">
-        <div class="vocab-suite-header">
+      <div id="section-when-to-use" class="wtu-suite">
+        <div class="wtu-suite-header">
           <div>
             <div style="display:flex; align-items:center; gap:8px;">
-              <i data-lucide="sparkles" style="width:22px;height:22px;color:#2563eb;"></i>
+              <i data-lucide="compass" style="width:22px;height:22px;color:#2563eb;"></i>
               <h3 style="font-size:1.18rem; font-weight:800; color:var(--navy); margin:0;">
-                The 14 Executive Presentation & Product Collocations
+                4. When to Use the 6 Tier-3 Executive Collocations (Decision Guide)
               </h3>
-              <span style="background:var(--emerald-bg); color:var(--emerald); border:1px solid rgba(22,101,52,0.2); font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:12px;">Next-Level Lexicon</span>
+              <span style="background:var(--emerald-bg); color:var(--emerald); border:1px solid rgba(22,101,52,0.2); font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:12px;">Strategic Playbook</span>
             </div>
             <p style="font-size:0.86rem; color:var(--text-muted); margin:4px 0 0;">
-              High-impact phrases and idioms used by Silicon Valley product leaders and engineering managers. Click any card to hear native executive pronunciation and study definitions.
+              High-performing executives do not pick vocabulary randomly. Use this decision matrix to know the exact boardroom trigger, psychological context, and weak habits replaced by each of our 6 power phrases.
             </p>
           </div>
 
-          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-            <div class="vocab-mode-btns">
-              <button id="vmode-cards" class="vocab-mode-btn active" onclick="setVocabMode('cards')"><i data-lucide="layers" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i> Flashcards</button>
-              <button id="vmode-matrix" class="vocab-mode-btn" onclick="setVocabMode('matrix')"><i data-lucide="table" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i> Full Matrix</button>
-              <button id="vmode-matcher" class="vocab-mode-btn" onclick="setVocabMode('matcher')"><i data-lucide="zap" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"></i> Matcher Game</button>
-            </div>
-            <button class="btn btn-secondary" style="font-size:0.8rem; padding:6px 12px; display:inline-flex; align-items:center; gap:6px;" onclick="speakAllVocab()">
-              <i data-lucide="volume-2" style="width:15px;height:15px;"></i> Listen All (14)
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button class="btn btn-secondary" style="font-size:0.8rem; padding:6px 14px; display:inline-flex; align-items:center; gap:6px;" onclick="speakAll6Collocations()">
+              <i data-lucide="volume-2" style="width:15px;height:15px;"></i> Listen to All 6 Collocations
             </button>
           </div>
         </div>
 
-        <!-- Filter Pills Bar -->
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
-          <div class="vocab-filter-pills">
-            <button class="vocab-pill active" onclick="filterVocab('all', this)">All (14)</button>
-            <button class="vocab-pill" onclick="filterVocab('openers', this)"><i data-lucide="compass" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> Openers & Roadmap (5)</button>
-            <button class="vocab-pill" onclick="filterVocab('metrics', this)"><i data-lucide="trending-up" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> Metrics & Growth (5)</button>
-            <button class="vocab-pill" onclick="filterVocab('arch', this)"><i data-lucide="cpu" style="width:13px;height:13px;vertical-align:middle;margin-right:4px;"></i> Architecture & Solutions (4)</button>
-          </div>
-          <div style="font-size:0.78rem; color:var(--text-dim); display:flex; align-items:center; gap:6px;">
-            <span><i data-lucide="info" style="width:13px;height:13px;vertical-align:middle;margin-right:3px;"></i> Click speaker on any card to hear natural cadence</span>
-          </div>
-        </div>
-
-        <!-- FLASHCARDS VIEW -->
-        <div id="vocab-view-cards" class="vcard-grid">
-          <!-- 1. Walk you through -->
-          <div class="vcard" data-cat="openers">
+        <div class="wtu-grid">
+          <!-- Collocation 1 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-openers">Openers & Roadmap</span>
-                <span class="vcard-pos">Phrasal Verb</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #1</span>
+                <span class="wtu-context-tag">Boardroom Slides & Metric Reveals</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Show you"</em></div>
-              <div class="vcard-term">
-                <span>Walk you through</span>
-                <button class="vcard-speak-btn" onclick="speakText('walk you through')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>direct your attention to...</span>
+                <button class="speak-btn" onclick="speakText('I want to direct your attention to')">🔊</button>
               </div>
-              <div class="vcard-def">To guide an audience step-by-step through a system, process, or product roadmap with clarity.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase when advancing slides, introducing an important chart/table, or pointing executives to an alarming data anomaly. It commands the room's gaze with calm authority.
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"I want to show you / Look at this chart / Let me talk about this slide."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"I'd like to <strong>walk you through</strong> our new user interface."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"I want to <strong>direct your attention to</strong> the sudden drop in customer retention this quarter."</em>
             </div>
           </div>
 
-          <!-- 2. Shed light on -->
-          <div class="vcard" data-cat="openers">
+          <!-- Collocation 2 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-openers">Openers & Roadmap</span>
-                <span class="vcard-pos">Idiom</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #2</span>
+                <span class="wtu-context-tag">Technical Architecture & Stack Reliability</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Explain clearly"</em></div>
-              <div class="vcard-term">
-                <span>Shed light on</span>
-                <button class="vcard-speak-btn" onclick="speakText('shed light on')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>engineered a robust platform...</span>
+                <button class="speak-btn" onclick="speakText('We have engineered a robust platform')">🔊</button>
               </div>
-              <div class="vcard-def">To clarify a complex or ambiguous concept by revealing underlying root causes and facts.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase during client capability pitches or technical architecture reviews to emphasize engineering rigor, durability, and multi-region fault tolerance.
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"We made a good tool / Our team built nice software / It works well."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"These metrics <strong>shed light on</strong> why user engagement dipped in Q2."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"Our engineering team has <strong>engineered a robust platform</strong> capable of handling peak loads with zero downtime."</em>
             </div>
           </div>
 
-          <!-- 3. High-level overview -->
-          <div class="vcard" data-cat="openers">
+          <!-- Collocation 3 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-openers">Openers & Roadmap</span>
-                <span class="vcard-pos">Noun Phrase</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #3</span>
+                <span class="wtu-context-tag">Operations Friction & Team Throughput</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Short summary"</em></div>
-              <div class="vcard-term">
-                <span>High-level overview</span>
-                <button class="vcard-speak-btn" onclick="speakText('high level overview')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>alleviate critical bottlenecks...</span>
+                <button class="speak-btn" onclick="speakText('alleviate critical bottlenecks')">🔊</button>
               </div>
-              <div class="vcard-def">A strategic executive summary covering big-picture goals without getting bogged down in minutiae.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase when pitching workflow automations, CI/CD pipelines, or async updates that unblock stalled engineers, slow approvals, or manual data entry lag.
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"Fix big problems / Solve trouble / Help slow steps."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"Let me start with a <strong>high-level overview</strong> of our product roadmap."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"Transitioning to automated testing will <strong>alleviate critical bottlenecks</strong> across our release pipeline."</em>
             </div>
           </div>
 
-          <!-- 4. Bring to the table -->
-          <div class="vcard" data-cat="openers">
+          <!-- Collocation 4 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-openers">Openers & Roadmap</span>
-                <span class="vcard-pos">Idiom</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #4</span>
+                <span class="wtu-context-tag">Business Velocity & Competitive Urgency</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Offer / Provide"</em></div>
-              <div class="vcard-term">
-                <span>Bring to the table</span>
-                <button class="vcard-speak-btn" onclick="speakText('bring to the table')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>accelerate time-to-market...</span>
+                <button class="speak-btn" onclick="speakText('accelerate time to market')">🔊</button>
               </div>
-              <div class="vcard-def">To contribute unique expertise, tools, or tangible business value that others cannot easily replicate.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase when advocating for streamlined feature scope or ready-made integrations, linking development velocity directly to revenue and beating rivals.
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"Make work faster / Launch quickly / Ship sooner."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"What our engineering squad <strong>brings to the table</strong> is zero-downtime migration."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"Adopting this turnkey API will <strong>accelerate time-to-market</strong> by three full weeks before our competitors launch."</em>
             </div>
           </div>
 
-          <!-- 5. Key takeaway -->
-          <div class="vcard" data-cat="openers">
+          <!-- Collocation 5 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-openers">Openers & Roadmap</span>
-                <span class="vcard-pos">Noun Phrase</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #5</span>
+                <span class="wtu-context-tag">Executive Alignment & Boardroom KPIs</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Main point"</em></div>
-              <div class="vcard-term">
-                <span>Key takeaway</span>
-                <button class="vcard-speak-btn" onclick="speakText('key takeaway')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>directly addresses your core mandate...</span>
+                <button class="speak-btn" onclick="speakText('directly addresses your core mandate')">🔊</button>
               </div>
-              <div class="vcard-def">The primary strategic lesson, conclusion, or action item you want the listener to remember.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase when closing a proposal to a Director, VP, or C-suite executive, tying your solution directly to their personal OKRs (e.g. risk mitigation, cost reduction).
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"Good for your goal / Helps what you want / Matches your plan."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"The <strong>key takeaway</strong> from this pilot rollout is a 30% reduction in lead time."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"This enterprise encryption module <strong>directly addresses your core mandate</strong> of cutting compliance risk."</em>
             </div>
           </div>
 
-          <!-- 6. Value proposition -->
-          <div class="vcard" data-cat="arch">
+          <!-- Collocation 6 -->
+          <div class="wtu-card">
             <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-arch">Architecture & Solutions</span>
-                <span class="vcard-pos">Noun Phrase</span>
+              <div class="wtu-badge-row">
+                <span class="wtu-num-pill">Collocation #6</span>
+                <span class="wtu-context-tag">Executive Pushback & Strategic Counsel</span>
               </div>
-              <div class="vcard-l1">Level 1: <em>"Good points"</em></div>
-              <div class="vcard-term">
-                <span>Value proposition</span>
-                <button class="vcard-speak-btn" onclick="speakText('value proposition')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
+              <div class="wtu-phrase">
+                <span>from our strategic vantage point...</span>
+                <button class="speak-btn" onclick="speakText('from our strategic vantage point')">🔊</button>
               </div>
-              <div class="vcard-def">The unique, compelling bundle of measurable benefits that solving this problem delivers to the buyer.</div>
+              <div class="wtu-trigger">
+                <strong>🎯 When to Use:</strong> Deploy this phrase when offering macro-level advisory counsel, warning leadership against short-sighted risks, or pushing back without sounding defensive.
+              </div>
+              <div class="wtu-replaces">
+                <strong>❌ Eradicates:</strong> <em>"In my opinion / I think maybe / If you ask me."</em>
+              </div>
             </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"Our core <strong>value proposition</strong> is automated compliance with zero downtime."</em>
-            </div>
-          </div>
-
-          <!-- 7. Seamless integration -->
-          <div class="vcard" data-cat="arch">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-arch">Architecture & Solutions</span>
-                <span class="vcard-pos">Adj + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Easy connection"</em></div>
-              <div class="vcard-term">
-                <span>Seamless integration</span>
-                <button class="vcard-speak-btn" onclick="speakText('seamless integration')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">Flawless technical compatibility between systems without causing user friction or workflow disruptions.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"The software provides <strong>seamless integration</strong> with your existing Slack and Jira stacks."</em>
-            </div>
-          </div>
-
-          <!-- 8. Scalable architecture -->
-          <div class="vcard" data-cat="arch">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-arch">Architecture & Solutions</span>
-                <span class="vcard-pos">Adj + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Can grow big"</em></div>
-              <div class="vcard-term">
-                <span>Scalable architecture</span>
-                <button class="vcard-speak-btn" onclick="speakText('scalable architecture')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">A system design engineered to handle massive workload or user expansion without crashing or degrading.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"We engineered a fully <strong>scalable architecture</strong> to handle peak holiday traffic spikes."</em>
-            </div>
-          </div>
-
-          <!-- 9. Turnkey solution -->
-          <div class="vcard" data-cat="arch">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-arch">Architecture & Solutions</span>
-                <span class="vcard-pos">Adj + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Ready to use"</em></div>
-              <div class="vcard-term">
-                <span>Turnkey solution</span>
-                <button class="vcard-speak-btn" onclick="speakText('turnkey solution')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">A fully configured and tested product package ready for immediate, frictionless operational deployment.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"We provide a <strong>turnkey solution</strong> for automated client onboarding and security."</em>
-            </div>
-          </div>
-
-          <!-- 10. Outpace competitors -->
-          <div class="vcard" data-cat="metrics">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-metrics">Metrics & Growth</span>
-                <span class="vcard-pos">Verb + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Beat others"</em></div>
-              <div class="vcard-term">
-                <span>Outpace competitors</span>
-                <button class="vcard-speak-btn" onclick="speakText('outpace competitors')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">To grow, release, or execute faster and more reliably than rival companies in your space.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"Our processing throughput will <strong>outpace competitors</strong> by 40% this fiscal year."</em>
-            </div>
-          </div>
-
-          <!-- 11. Plateau -->
-          <div class="vcard" data-cat="metrics">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-metrics">Metrics & Growth</span>
-                <span class="vcard-pos">Verb / Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Stop growing"</em></div>
-              <div class="vcard-term">
-                <span>Plateau</span>
-                <button class="vcard-speak-btn" onclick="speakText('plateau')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">To reach a flat, stable period with no further upward expansion, signaling the need for innovation.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"User acquisition has <strong>plateaued</strong> over the last two quarters without fresh campaigns."</em>
-            </div>
-          </div>
-
-          <!-- 12. Exponential growth -->
-          <div class="vcard" data-cat="metrics">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-metrics">Metrics & Growth</span>
-                <span class="vcard-pos">Adj + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Very fast growth"</em></div>
-              <div class="vcard-term">
-                <span>Exponential growth</span>
-                <button class="vcard-speak-btn" onclick="speakText('exponential growth')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">Compounding, hyper-rapid upward expansion that multiplies over time rather than growing linearly.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"Following our API overhaul, enterprise signups experienced <strong>exponential growth</strong>."</em>
-            </div>
-          </div>
-
-          <!-- 13. Granular data -->
-          <div class="vcard" data-cat="metrics">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-metrics">Metrics & Growth</span>
-                <span class="vcard-pos">Adj + Noun</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Detailed numbers"</em></div>
-              <div class="vcard-term">
-                <span>Granular data</span>
-                <button class="vcard-speak-btn" onclick="speakText('granular data')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">Highly specific, high-resolution metrics and breakdown figures rather than vague macro estimations.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"By examining more <strong>granular data</strong>, we isolated the root cause to regional gateways."</em>
-            </div>
-          </div>
-
-          <!-- 14. Benchmark against -->
-          <div class="vcard" data-cat="metrics">
-            <div>
-              <div class="vcard-top">
-                <span class="vcard-cat cat-metrics">Metrics & Growth</span>
-                <span class="vcard-pos">Verb + Prep</span>
-              </div>
-              <div class="vcard-l1">Level 1: <em>"Compare with"</em></div>
-              <div class="vcard-term">
-                <span>Benchmark against</span>
-                <button class="vcard-speak-btn" onclick="speakText('benchmark against')" title="Hear Pronunciation"><i data-lucide="volume-2" style="width:15px;height:15px;"></i></button>
-              </div>
-              <div class="vcard-def">To rigorously measure internal performance or metrics against an authoritative industry standard.</div>
-            </div>
-            <div class="vcard-example">
-              <strong><i data-lucide="message-square" style="width:13px;height:13px;vertical-align:middle;color:#2563eb;margin-right:3px;"></i> Pitch Example:</strong><br>
-              <em>"We <strong>benchmarked our response latency against</strong> top Fortune 500 SaaS providers."</em>
+            <div class="wtu-example">
+              <strong>💼 Boardroom Model:</strong><br>
+              <em>"<strong>From our strategic vantage point</strong>, delaying this architecture migration introduces compounding technical debt."</em>
             </div>
           </div>
         </div>
-
-        <!-- FULL MATRIX TABLE VIEW (Initially Hidden) -->
-        <div id="vocab-view-matrix" style="display:none; overflow-x:auto;">
-          <table class="rubric-table" style="width:100%; border-collapse:collapse; margin-top:10px;">
-            <thead>
-              <tr>
-                <th style="width:20%;">Collocation</th>
-                <th style="width:14%;">Part of Speech</th>
-                <th style="width:18%;">Level 1 (Basic)</th>
-                <th style="width:40%;">Executive Definition & Example</th>
-                <th style="width:8%; text-align:center;">Audio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Walk you through</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Phrasal Verb</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Show you</span></td>
-                <td>To guide an audience step-by-step through a system.<br><small style="color:#475569;">&rarr; <em>"I'd like to walk you through our new user interface."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('walk you through')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Shed light on</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Idiom</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Explain clearly</span></td>
-                <td>To clarify a complex or ambiguous concept.<br><small style="color:#475569;">&rarr; <em>"These metrics shed light on why user engagement dipped."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('shed light on')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>High-level overview</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Noun Phrase</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Short summary</span></td>
-                <td>A strategic executive summary without getting bogged in minutiae.<br><small style="color:#475569;">&rarr; <em>"Let me start with a high-level overview of the roadmap."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('high level overview')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Bring to the table</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Idiom</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Offer / Provide</span></td>
-                <td>To contribute unique expertise, tools, or value.<br><small style="color:#475569;">&rarr; <em>"What our solution brings to the table is zero-downtime migration."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('bring to the table')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Key takeaway</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Noun Phrase</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Main point</span></td>
-                <td>The primary lesson or conclusion to remember.<br><small style="color:#475569;">&rarr; <em>"The key takeaway from this trial is improved efficiency."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('key takeaway')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Value proposition</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Noun Phrase</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Good points</span></td>
-                <td>The unique set of benefits a product delivers.<br><small style="color:#475569;">&rarr; <em>"Our core value proposition is automated compliance."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('value proposition')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Seamless integration</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Adj + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Easy connection</span></td>
-                <td>Flawless technical compatibility without user friction.<br><small style="color:#475569;">&rarr; <em>"The software provides seamless integration with Slack and Jira."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('seamless integration')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Scalable architecture</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Adj + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Can grow big</span></td>
-                <td>A design capable of handling massive expansion without breaking.<br><small style="color:#475569;">&rarr; <em>"We architected a fully scalable cloud backend."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('scalable architecture')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Turnkey solution</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Adj + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Ready to use</span></td>
-                <td>A fully configured product ready for immediate deployment.<br><small style="color:#475569;">&rarr; <em>"We provide a turnkey solution for client onboarding."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('turnkey solution')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Outpace competitors</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Verb + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Beat others</span></td>
-                <td>To grow or execute faster than industry peers.<br><small style="color:#475569;">&rarr; <em>"Our processing speeds outpace competitors by 40%."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('outpace competitors')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Plateau</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Verb / Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Stop growing</span></td>
-                <td>To reach a stable period with no further growth.<br><small style="color:#475569;">&rarr; <em>"User acquisition has plateaued over the last two quarters."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('plateau')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Exponential growth</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Adj + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Very fast growth</span></td>
-                <td>Rapid, compounding expansion.<br><small style="color:#475569;">&rarr; <em>"We observed exponential growth in enterprise subscriptions."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('exponential growth')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Granular data</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Adj + Noun</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Detailed numbers</span></td>
-                <td>Highly specific, detailed metrics.<br><small style="color:#475569;">&rarr; <em>"We can examine more granular data on a per-region basis."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('granular data')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-              <tr>
-                <td><strong>Benchmark against</strong></td>
-                <td><span style="font-size:0.75rem; background:#f1f5f9; padding:2px 6px; border-radius:4px;">Verb + Prep</span></td>
-                <td><span style="color:#991b1b; font-weight:600;">Compare with</span></td>
-                <td>To measure performance against an established industry standard.<br><small style="color:#475569;">&rarr; <em>"We benchmarked our response times against industry leaders."</em></small></td>
-                <td style="text-align:center;"><button class="speak-btn" onclick="speakText('benchmark against')"><i data-lucide="volume-2" style="width:14px;height:14px;"></i></button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- QUICK MATCHER MINI-GAME VIEW (Initially Hidden) -->
-        <div id="vocab-view-matcher" style="display:none;">
-          <div class="matcher-container">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-              <div>
-                <h4 style="font-size:1rem; color:var(--navy); margin:0; display:flex; align-items:center; gap:6px;"><i data-lucide="zap" style="width:16px;height:16px;color:#2563eb;"></i> Rapid Collocation Matcher</h4>
-                <p style="font-size:0.82rem; color:var(--text-muted); margin:2px 0 0;">Click a Level 1 phrase on the left, then click its Level 3 Executive upgrade on the right to match!</p>
-              </div>
-              <div style="display:flex; align-items:center; gap:12px;">
-                <span id="matcher-score" style="font-size:0.88rem; font-weight:700; color:#166534;">Matches: 0 / 4</span>
-                <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px; display:inline-flex; align-items:center; gap:4px;" onclick="initMatcherRound()"><i data-lucide="rotate-ccw" style="width:13px;height:13px;"></i> New Shuffle</button>
-              </div>
-            </div>
-            <div class="matcher-grid">
-              <div id="matcher-col-left" style="display:flex; flex-direction:column; gap:8px;"></div>
-              <div id="matcher-col-right" style="display:flex; flex-direction:column; gap:8px;"></div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
 
       <!-- CORE CONCEPT 5: VOCAL MECHANICS -->
       <h3 id="section-vocal" class="section-title">
@@ -3138,180 +2763,335 @@
         </ol>
       </div>
 
-      <!-- ======================================================== -->
-      <!-- TASK 4: LESSON 2 VOCABULARY PREVIEW                     -->
+            <!-- ======================================================== -->
+      <!-- TASK 4: "WHEN TO USE" EXECUTIVE CONTEXT & DECISION EXERCISES (1-6) -->
       <!-- ======================================================== -->
       <h3 class="section-title">
-        <span>Task 4: Vocabulary Preview for Lesson 2</span>
-        <span style="font-size:0.75rem; font-weight:600; color:#2563eb; text-transform:uppercase;">Product Demos & Presentations</span>
+        <span>Task 4: "When to Use" Executive Context & Decision Exercises (1–6)</span>
+        <span style="font-size:0.75rem; font-weight:600; color:#166534; text-transform:uppercase;">Contextual Application</span>
       </h3>
-      <p class="section-desc">Study these <strong>14 executive presentation collocations</strong> before our next class. Click 🔊 to listen:</p>
+      <p class="section-desc">
+        For each workplace scenario below, select the <strong>exact Tier-3 Collocation (1 to 6)</strong> that fits the boardroom objective, then craft your high-impact executive statement:
+      </p>
 
-      <div class="ladder-table-container">
-        <table class="ladder-table">
-          <thead>
-            <tr>
-              <th style="width:180px;">Term / Collocation</th>
-              <th style="width:120px;">Part of Speech</th>
-              <th style="width:130px;">Level 1 Basic</th>
-              <th>Level 3 Executive Definition & Real Example</th>
-              <th style="width:50px; text-align:center;">Audio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Walk you through</strong></td>
-              <td><span style="background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Phrasal Verb</span></td>
-              <td><em>Show you</em></td>
-              <td>To guide an audience step-by-step through a system or roadmap.<br><small style="color:#475569;">👉 <em>"I'd like to walk you through our new user interface."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('walk you through')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Shed light on</strong></td>
-              <td><span style="background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Idiom</span></td>
-              <td><em>Explain clearly</em></td>
-              <td>To clarify a complex or ambiguous situation with data.<br><small style="color:#475569;">👉 <em>"These metrics shed light on why user engagement dipped."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('shed light on')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Value proposition</strong></td>
-              <td><span style="background:#f1f5f9; color:#334155; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Noun Phrase</span></td>
-              <td><em>Good points</em></td>
-              <td>The unique set of measurable business benefits a solution delivers.<br><small style="color:#475569;">👉 <em>"Our core value proposition is automated compliance with zero downtime."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('value proposition')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Outpace competitors</strong></td>
-              <td><span style="background:#dcfce7; color:#166534; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Verb + Noun</span></td>
-              <td><em>Beat others</em></td>
-              <td>To grow, ship, or execute faster than industry peers.<br><small style="color:#475569;">👉 <em>"Our processing speeds outpace competitors by 40%."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('outpace competitors')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Plateau</strong></td>
-              <td><span style="background:#f3e8ff; color:#7e22ce; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Verb / Noun</span></td>
-              <td><em>Stop growing</em></td>
-              <td>To reach a stable period with no further upward momentum.<br><small style="color:#475569;">👉 <em>"User acquisition has plateaued over the last two quarters."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('plateau')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Exponential growth</strong></td>
-              <td><span style="background:#dcfce7; color:#166534; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Very fast growth</em></td>
-              <td>Rapid, compounding expansion at an aggressive rate.<br><small style="color:#475569;">👉 <em>"We observed exponential growth in enterprise subscriptions."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('exponential growth')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Bring to the table</strong></td>
-              <td><span style="background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Idiom</span></td>
-              <td><em>Offer / Provide</em></td>
-              <td>To contribute unique expertise, tools, or tangible value.<br><small style="color:#475569;">👉 <em>"What our solution brings to the table is zero-downtime migration."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('bring to the table')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Seamless integration</strong></td>
-              <td><span style="background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Easy connection</em></td>
-              <td>Flawless technical compatibility without workflow friction.<br><small style="color:#475569;">👉 <em>"The software provides seamless integration with Slack and Jira."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('seamless integration')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Granular data</strong></td>
-              <td><span style="background:#f1f5f9; color:#334155; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Detailed numbers</em></td>
-              <td>Highly specific, detailed metrics rather than high-level estimates.<br><small style="color:#475569;">👉 <em>"We can examine more granular data on a per-region basis."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('granular data')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>High-level overview</strong></td>
-              <td><span style="background:#f1f5f9; color:#334155; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Short summary</em></td>
-              <td>A strategic executive summary without getting bogged down in minutiae.<br><small style="color:#475569;">👉 <em>"Let me start with a high-level overview of the roadmap."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('high level overview')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Key takeaway</strong></td>
-              <td><span style="background:#f1f5f9; color:#334155; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Noun Phrase</span></td>
-              <td><em>Main point</em></td>
-              <td>The primary conclusion or lesson to remember.<br><small style="color:#475569;">👉 <em>"The key takeaway from this trial is improved efficiency."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('key takeaway')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Benchmark against</strong></td>
-              <td><span style="background:#dcfce7; color:#166534; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Verb + Prep</span></td>
-              <td><em>Compare with</em></td>
-              <td>To measure performance against an established industry standard.<br><small style="color:#475569;">👉 <em>"We benchmarked our response times against industry leaders."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('benchmark against')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Scalable architecture</strong></td>
-              <td><span style="background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Can grow big</em></td>
-              <td>A technical design capable of handling massive expansion without breaking.<br><small style="color:#475569;">👉 <em>"We engineered a fully scalable architecture for high traffic."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('scalable architecture')">🔊</button></td>
-            </tr>
-            <tr>
-              <td><strong>Turnkey solution</strong></td>
-              <td><span style="background:#f1f5f9; color:#334155; padding:2px 6px; border-radius:3px; font-size:0.75rem;">Adj + Noun</span></td>
-              <td><em>Ready to use</em></td>
-              <td>A fully configured product ready for immediate deployment.<br><small style="color:#475569;">👉 <em>"We provide a turnkey solution for client onboarding."</em></small></td>
-              <td style="text-align:center;"><button class="speak-btn" onclick="speakText('turnkey solution')">🔊</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Quick Check Challenge -->
-      <div style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin-top:24px;">
-        <h4 style="font-size:0.95rem; color:var(--navy); margin-bottom:12px;">⚡ Lesson 2 Preview Challenge: Fill in the Blank</h4>
+      <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:32px;">
         
-        <div style="display:flex; flex-direction:column; gap:12px; font-size:0.88rem;">
-          <div>
-            1. <em>"Before diving into the technical details, let me give you a 
-            <select id="quiz_q1" class="drill-select">
-              <option value="">[Choose term]</option>
-              <option value="high-level overview">high-level overview</option>
-              <option value="granular data">granular data</option>
-              <option value="turnkey solution">turnkey solution</option>
-            </select> of the roadmap."</em>
+        <!-- Exercise 1 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #1</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Slide Transition & High-Stakes Metric Reveal</strong>
+            </div>
+            <span id="badge_dec_1" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
           </div>
-
-          <div>
-            2. <em>"Our cloud backend was engineered with a 
-            <select id="quiz_q2" class="drill-select">
-              <option value="">[Choose term]</option>
-              <option value="scalable architecture">scalable architecture</option>
-              <option value="key takeaway">key takeaway</option>
-              <option value="plateau">plateau</option>
-            </select> so sudden traffic surges won't crash the server."</em>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> You are presenting Slide 4 to the executive board. A red trendline shows that mobile user drop-off jumped 40% after the checkout update. The VP of Product is looking down at his laptop.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"I want to show you this chart about sign-ups."</em> / <em>"Look at this slide."</em>
           </div>
-
-          <div>
-            3. <em>"After six months of rapid adoption, our conversion rate has 
-            <select id="quiz_q3" class="drill-select">
-              <option value="">[Choose term]</option>
-              <option value="plateaued">plateaued</option>
-              <option value="walked through">walked through</option>
-              <option value="shed light on">shed light on</option>
-            </select> at 12%."</em>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_1" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_1" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., I'd like to direct your attention to the 40% drop-off...">
+            </div>
           </div>
-
-          <div>
-            4. <em>"What our deployment team 
-            <select id="quiz_q4" class="drill-select">
-              <option value="">[Choose term]</option>
-              <option value="brings to the table">brings to the table</option>
-              <option value="benchmarks against">benchmarks against</option>
-              <option value="outpaces competitors">outpaces competitors</option>
-            </select> is ten years of direct enterprise experience."</em>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(1)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_1')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_1" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #1 (<em>direct your attention to...</em>)<br>
+              <strong>Executive Model:</strong> "I want to <strong>direct your attention to</strong> the 40% contraction in checkout completion highlighted in red on slide four."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> In executive presentations, "direct your attention to" commands visual focus without sounding like a junior asking for permission.</small>
+            </div>
           </div>
         </div>
 
-        <div style="margin-top:16px;">
-          <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="checkPreviewQuiz()">Check Quiz Answers</button>
-          <span id="quizScoreText" style="margin-left:12px; font-weight:700; font-size:0.88rem; color:#166534;"></span>
+        <!-- Exercise 2 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #2</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Enterprise Architecture & Reliability Pitch</strong>
+            </div>
+            <span id="badge_dec_2" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
+          </div>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> During a technical demo with a multinational enterprise client, their Head of Infrastructure asks whether your tool can handle 100,000 simultaneous users across Tokyo, London, and New York.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"We made a very good tool for international offices and it doesn't break."</em>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_2" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_2" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., We have engineered a robust platform tailored for...">
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(2)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_2')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_2" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #2 (<em>engineered a robust platform...</em>)<br>
+              <strong>Executive Model:</strong> "To ensure high availability across distributed regions, our team has <strong>engineered a robust platform</strong> with automated multi-zone failover."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> "Engineered a robust platform" replaces vague colloquial words like "tool" or "app", instantly conveying enterprise-grade rigor and architectural maturity.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 3 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #3</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Eliminating 20 Hours of Operational Drag</strong>
+            </div>
+            <span id="badge_dec_3" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
+          </div>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> You discover that six engineers spend 3 hours every Monday manually checking spreadsheet permissions and sync statuses, causing release delays. You are proposing an automated script.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"This script will fix the big problems in our team's workflow."</em>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_3" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_3" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., Implementing this automation will alleviate critical bottlenecks...">
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(3)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_3')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_3" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #3 (<em>alleviate critical bottlenecks...</em>)<br>
+              <strong>Executive Model:</strong> "Implementing this automated sync will <strong>alleviate critical bottlenecks</strong> that currently drain 18 hours of engineering capacity each week."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> Executives care about operational flow. "Alleviate critical bottlenecks" frames issues as system throughput constraints rather than personal complaints.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 4 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #4</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Commercial Velocity & Beating Competitor Launch Dates</strong>
+            </div>
+            <span id="badge_dec_4" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
+          </div>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> An industry competitor has announced a competing payment feature launching in Q4. You are proposing a pre-built Stripe integration that will allow your team to launch one month ahead of them.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"Using this pre-built API will make our launch much faster."</em>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_4" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_4" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., Deploying this turnkey module will accelerate time-to-market...">
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(4)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_4')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_4" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #4 (<em>accelerate time-to-market...</em>)<br>
+              <strong>Executive Model:</strong> "Adopting this pre-built integration will <strong>accelerate time-to-market</strong> by four weeks, ensuring we capture market share before our rival's Q4 release."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> "Accelerate time-to-market" turns engineering speed into commercial advantage and shareholder value.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 5 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #5</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Executive Alignment & C-Level OKR Targeting</strong>
+            </div>
+            <span id="badge_dec_5" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
+          </div>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> You are presenting an automated audit logger to the Chief Security Officer (CSO). Her annual bonus and board evaluation are tied 100% to zero regulatory compliance penalties.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"This logger will be very good for your compliance goal."</em>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_5" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_5" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., This automated audit trail directly addresses your core mandate...">
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(5)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_5')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_5" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #5 (<em>directly addresses your core mandate...</em>)<br>
+              <strong>Executive Model:</strong> "By automating end-to-end audit logging, this solution <strong>directly addresses your core mandate</strong> of eradicating regulatory compliance exposure."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> "Core mandate" proves you understand executive priorities and speak as a peer aligned with their highest fiduciary duty.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise 6 -->
+        <div class="scenario-exercise-card">
+          <div class="scenario-exercise-header">
+            <div>
+              <span class="scenario-num-badge">Exercise #6</span>
+              <strong style="color:var(--navy); font-size:0.95rem; margin-left:8px;">Executive Pushback & Authoritative Risk Advisory</strong>
+            </div>
+            <span id="badge_dec_6" style="font-size:0.78rem; font-weight:700; color:#64748b;">Not checked</span>
+          </div>
+          <p style="font-size:0.86rem; color:#334155; margin:6px 0 10px; line-height:1.5;">
+            <strong>Scenario:</strong> Stakeholders want to skip comprehensive integration testing to hit an arbitrary marketing deadline. Your engineering leadership knows this will cause widespread outages. You need to advise the Director against rushing.
+          </p>
+          <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:4px; padding:6px 12px; font-size:0.8rem; color:#991b1b; margin-bottom:10px;">
+            <strong>❌ Weak Habit to Eradicate:</strong> <em>"In my opinion, I think maybe we shouldn't rush this."</em> / <em>"I'm sorry, but it might be dangerous."</em>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-bottom:10px;">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 1. Which Collocation must you deploy?
+              </label>
+              <select id="pitch_use_colloc_6" class="drill-select" style="width:100%;">
+                <option value="">[Select Collocation #1–#6]</option>
+                <option value="1">#1: direct your attention to...</option>
+                <option value="2">#2: engineered a robust platform...</option>
+                <option value="3">#3: alleviate critical bottlenecks...</option>
+                <option value="4">#4: accelerate time-to-market...</option>
+                <option value="5">#5: directly addresses your core mandate...</option>
+                <option value="6">#6: from our strategic vantage point...</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">
+                👉 2. Your Full Executive Sentence:
+              </label>
+              <input type="text" id="pitch_use_sent_6" style="width:100%; padding:8px 10px; border:1px solid var(--border-dark); border-radius:4px; font-size:0.88rem;" placeholder="e.g., From our strategic vantage point, bypassing this testing...">
+            </div>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center; margin-top:8px;">
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="checkSingleDecision(6)">Check Collocation</button>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:4px 10px;" onclick="toggleAnswer('model_use_6')">👁️ Reveal Coach Model & Rationale</button>
+          </div>
+          <div id="model_use_6" class="answer-content" style="margin-top:8px;">
+            <div class="model-text">
+              <strong>Correct Collocation:</strong> #6 (<em>from our strategic vantage point...</em>)<br>
+              <strong>Executive Model:</strong> "<strong>From our strategic vantage point</strong>, bypassing integration testing to meet an arbitrary date introduces unacceptable operational downtime risk."<br>
+              <small style="color:#475569;">💡 <strong>Strategic Rationale:</strong> "From our strategic vantage point" completely eliminates timid hedging (*I think maybe / in my opinion*), establishing calm, peer-level executive gravity.</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Check Challenge Scoring Bar -->
+      <div style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius); padding:20px; margin-top:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h4 style="font-size:1rem; color:var(--navy); margin:0 0 4px;">⚡ Executive Decision Scorecard (All 6 Exercises)</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin:0;">Check your answers across all 6 scenarios to ensure you know exactly when to deploy each collocation.</p>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <button class="btn btn-primary" style="font-size:0.88rem; padding:8px 18px;" onclick="checkAllWhenToUseDecisions()">⚡ Check All 6 Decisions</button>
+            <span id="whenToUseScoreText" style="font-weight:800; font-size:0.95rem; color:#166534;"></span>
+          </div>
         </div>
       </div>
+
 
     </div>
   </div>
@@ -5266,7 +5046,12 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       'pitch_macro_a', 'pitch_macro_b', 'pitch_macro_c',
       'pitch_t3_1', 'pitch_t3_2', 'pitch_t3_3', 'pitch_t3_4', 'pitch_t3_5', 'pitch_t3_6',
       'pitch_plan_shift', 'pitch_plan_friction', 'pitch_plan_anchor',
-      'quiz_q1', 'quiz_q2', 'quiz_q3', 'quiz_q4'
+      'pitch_use_colloc_1', 'pitch_use_sent_1',
+      'pitch_use_colloc_2', 'pitch_use_sent_2',
+      'pitch_use_colloc_3', 'pitch_use_sent_3',
+      'pitch_use_colloc_4', 'pitch_use_sent_4',
+      'pitch_use_colloc_5', 'pitch_use_sent_5',
+      'pitch_use_colloc_6', 'pitch_use_sent_6'
     ];
 
     function toggleAnswer(id) {
@@ -5335,49 +5120,99 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       text += "2. Friction: " + (document.getElementById('pitch_plan_friction')?.value || "") + "\n";
       text += "3. Value Anchor: " + (document.getElementById('pitch_plan_anchor')?.value || "") + "\n\n";
 
-      text += "--- PART 4: LESSON 2 PREVIEW QUIZ ---\n";
-      text += "Q1: " + (document.getElementById('quiz_q1')?.value || "") + "\n";
-      text += "Q2: " + (document.getElementById('quiz_q2')?.value || "") + "\n";
-      text += "Q3: " + (document.getElementById('quiz_q3')?.value || "") + "\n";
-      text += "Q4: " + (document.getElementById('quiz_q4')?.value || "") + "\n";
+      text += "--- PART 4: WHEN TO USE DECISION EXERCISES (1-6) ---\n";
+      const collocNames = {
+        '1': 'direct your attention to...',
+        '2': 'engineered a robust platform...',
+        '3': 'alleviate critical bottlenecks...',
+        '4': 'accelerate time-to-market...',
+        '5': 'directly addresses your core mandate...',
+        '6': 'from our strategic vantage point...'
+      };
+      for (let i = 1; i <= 6; i++) {
+        const choice = document.getElementById('pitch_use_colloc_' + i)?.value || "";
+        const choiceText = collocNames[choice] ? #:  : "[No choice selected]";
+        const sent = document.getElementById('pitch_use_sent_' + i)?.value || "[No sentence written]";
+        text += Exercise :\n  Selected Collocation: \n  Executive Statement: ""\n\n;
+      }
 
       navigator.clipboard.writeText(text).then(() => {
-        showToast("\uD83D\uDCCB All pitch homework answers copied to clipboard! Ready to paste into Preply (Ctrl+V)", "success"); if (typeof confetti === "function") { confetti({ particleCount: 70, spread: 60, origin: { y: 0.5 } }); }
+        showToast("ðŸ“‹ All pitch homework answers copied to clipboard! Ready to paste into Preply (Ctrl+V)", "success");
+        if (typeof confetti === "function") { confetti({ particleCount: 70, spread: 60, origin: { y: 0.5 } }); }
       }).catch(() => {
         prompt("Copy your answers manually below:", text);
       });
     }
 
-    function checkPreviewQuiz() {
-      const answers = {
-        'quiz_q1': 'high-level overview',
-        'quiz_q2': 'scalable architecture',
-        'quiz_q3': 'plateaued',
-        'quiz_q4': 'brings to the table'
-      };
-      let score = 0;
-      Object.keys(answers).forEach(id => {
-        const el = document.getElementById(id);
-        if (el && el.value === answers[id]) {
-          score++;
-          el.style.borderColor = '#16a34a';
-          el.style.backgroundColor = '#f0fdf4';
-        } else if (el) {
-          el.style.borderColor = '#dc2626';
-          el.style.backgroundColor = '#fef2f2';
+    const correctDecisions = {
+      1: "1",
+      2: "2",
+      3: "3",
+      4: "4",
+      5: "5",
+      6: "6"
+    };
+
+    function checkSingleDecision(num) {
+      const select = document.getElementById('pitch_use_colloc_' + num);
+      const badge = document.getElementById('badge_dec_' + num);
+      if (!select) return;
+      if (!select.value) {
+        showToast(Please select a collocation for Exercise # first!, "info");
+        return;
+      }
+      if (select.value === correctDecisions[num]) {
+        select.style.borderColor = '#16a34a';
+        select.style.backgroundColor = '#f0fdf4';
+        if (badge) {
+          badge.textContent = "âœ“ Correct Decision";
+          badge.style.color = "#16a34a";
         }
-      });
-      const scoreText = document.getElementById('quizScoreText');
+        showToast(ðŸŽ‰ Exercise # Correct! Right collocation selected., "success");
+      } else {
+        select.style.borderColor = '#dc2626';
+        select.style.backgroundColor = '#fef2f2';
+        if (badge) {
+          badge.textContent = "âœ— Review Selection";
+          badge.style.color = "#dc2626";
+        }
+        showToast(Exercise #: Incorrect collocation. Check the coach rationale!, "error");
+      }
+    }
+
+    function checkAllWhenToUseDecisions() {
+      let score = 0;
+      for (let i = 1; i <= 6; i++) {
+        const select = document.getElementById('pitch_use_colloc_' + i);
+        const badge = document.getElementById('badge_dec_' + i);
+        if (select && select.value === correctDecisions[i]) {
+          score++;
+          select.style.borderColor = '#16a34a';
+          select.style.backgroundColor = '#f0fdf4';
+          if (badge) {
+            badge.textContent = "âœ“ Correct Decision";
+            badge.style.color = "#16a34a";
+          }
+        } else if (select) {
+          select.style.borderColor = '#dc2626';
+          select.style.backgroundColor = '#fef2f2';
+          if (badge) {
+            badge.textContent = select.value ? "âœ— Review Selection" : "Not answered";
+            badge.style.color = "#dc2626";
+          }
+        }
+      }
+      const scoreText = document.getElementById('whenToUseScoreText');
       if (scoreText) {
-        scoreText.innerText = `Score: ${score} / 4 correct!`;
-        if (score === 4) {
-          scoreText.innerText += " 🎉 Perfect!";
-          showToast("\uD83C\uDF89 100% on Vocab Challenge! All collocations correct!", "success");
+        scoreText.innerText = Score:  / 6 correct!;
+        if (score === 6) {
+          scoreText.innerText += " ðŸŽ‰ 100% Executive Mastery!";
+          showToast("ðŸŽ‰ Perfect Score (6/6)! You know exactly when to deploy every Tier-3 collocation!", "success");
           if (typeof confetti === 'function') {
-            confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
+            confetti({ particleCount: 110, spread: 80, origin: { y: 0.6 } });
           }
         } else {
-          showToast(`Checked: ${score} / 4 correct. Review the highlighted fields!`, "info");
+          showToast(Checked:  / 6 correct. Reveal Coach Model answers for highlighted items!, "info");
         }
       }
     }
@@ -5432,7 +5267,7 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
           pitchSecondsElapsed++;
           const mins = String(Math.floor(pitchSecondsElapsed / 60)).padStart(2, '0');
           const secs = String(pitchSecondsElapsed % 60).padStart(2, '0');
-          if (timer) timer.innerText = `${mins}:${secs}`;
+          if (timer) timer.innerText = ${mins}:;
         }, 1000);
 
         if (btn) {
@@ -5454,12 +5289,12 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       if (!pitchAudioBlob) return;
       const a = document.createElement('a');
       a.href = URL.createObjectURL(pitchAudioBlob);
-      const filename = `YH_Lesson1_Executive_Pitch_${new Date().toISOString().slice(0,10)}.webm`;
+      const filename = YH_Lesson1_Executive_Pitch_.webm;
       a.download = filename;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      showToast(`🎙️ Audio saved (${filename})! Attach via Paperclip (📎) in Preply.`, "success");
+      showToast(ðŸŽ™ï¸ Audio saved ()! Attach via Paperclip (ðŸ“Ž) in Preply., "success");
       if (typeof confetti === 'function') {
         confetti({ particleCount: 50, spread: 50, origin: { y: 0.7 } });
       }
@@ -5493,10 +5328,10 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       }
     }
 
-    function jumpToVocabSuite() {
+    function jumpToWhenToUse() {
       switchTab('lesson1');
       setTimeout(() => {
-        const el = document.getElementById('master-vocab-suite');
+        const el = document.getElementById('section-when-to-use');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -5504,158 +5339,33 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
     }
 
     // ==========================================
-    // 14 EXECUTIVE VOCABULARY SUITE CONTROLLER
+    // 6 TIER-3 EXECUTIVE COLLOCATIONS CONTROLLER
     // ==========================================
-    function filterVocab(cat, btn) {
-      document.querySelectorAll('.vocab-pill').forEach(p => p.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      document.querySelectorAll('.vcard').forEach(card => {
-        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    function setVocabMode(mode) {
-      document.querySelectorAll('.vocab-mode-btn').forEach(b => b.classList.remove('active'));
-      const btn = document.getElementById('vmode-' + mode);
-      if (btn) btn.classList.add('active');
-
-      const cardsView = document.getElementById('vocab-view-cards');
-      const matrixView = document.getElementById('vocab-view-matrix');
-      const matcherView = document.getElementById('vocab-view-matcher');
-
-      if (cardsView) cardsView.style.display = (mode === 'cards') ? 'grid' : 'none';
-      if (matrixView) matrixView.style.display = (mode === 'matrix') ? 'block' : 'none';
-      if (matcherView) matcherView.style.display = (mode === 'matcher') ? 'block' : 'none';
-
-      if (mode === 'matcher') {
-        initMatcherRound(); if (typeof lucide !== "undefined" && lucide.createIcons) { lucide.createIcons(); }
-      }
-    }
-
-    const executiveVocabList = [
-      "walk you through", "shed light on", "high level overview", "bring to the table",
-      "key takeaway", "value proposition", "seamless integration", "scalable architecture",
-      "turnkey solution", "outpace competitors", "plateau", "exponential growth",
-      "granular data", "benchmark against"
+    const sixCollocationsList = [
+      "I want to direct your attention to",
+      "We have engineered a robust platform",
+      "alleviate critical bottlenecks",
+      "accelerate time to market",
+      "directly addresses your core mandate",
+      "from our strategic vantage point"
     ];
 
-    function speakAllVocab() {
+    function speakAll6Collocations() {
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       let i = 0;
       function playNext() {
-        if (i >= executiveVocabList.length) {
-          showToast("Completed playback of 14 collocations!", "success");
+        if (i >= sixCollocationsList.length) {
+          showToast("Completed playback of all 6 Tier-3 collocations!", "success");
           return;
         }
-        const utterance = new SpeechSynthesisUtterance(executiveVocabList[i]);
-        utterance.rate = 0.9;
-        utterance.onend = () => { i++; setTimeout(playNext, 600); };
+        const utterance = new SpeechSynthesisUtterance(sixCollocationsList[i]);
+        utterance.rate = 0.88;
+        utterance.onend = () => { i++; setTimeout(playNext, 700); };
         window.speechSynthesis.speak(utterance);
       }
       playNext();
-      showToast("\uD83D\uDD0A Playing through all 14 collocations...", "info");
-    }
-
-    const vocabMatcherPairs = [
-      { id: 1, l1: "Show you", l3: "Walk you through" },
-      { id: 2, l1: "Explain clearly", l3: "Shed light on" },
-      { id: 3, l1: "Good points", l3: "Value proposition" },
-      { id: 4, l1: "Beat others", l3: "Outpace competitors" },
-      { id: 5, l1: "Stop growing", l3: "Plateau" },
-      { id: 6, l1: "Very fast growth", l3: "Exponential growth" },
-      { id: 7, l1: "Offer / Provide", l3: "Bring to the table" },
-      { id: 8, l1: "Easy connection", l3: "Seamless integration" },
-      { id: 9, l1: "Detailed numbers", l3: "Granular data" },
-      { id: 10, l1: "Short summary", l3: "High-level overview" },
-      { id: 11, l1: "Main point", l3: "Key takeaway" },
-      { id: 12, l1: "Compare with", l3: "Benchmark against" },
-      { id: 13, l1: "Can grow big", l3: "Scalable architecture" },
-      { id: 14, l1: "Ready to use", l3: "Turnkey solution" }
-    ];
-
-    let matcherSelectedLeft = null;
-    let matcherSelectedRight = null;
-    let matcherMatchesCount = 0;
-
-    function initMatcherRound() {
-      const leftCol = document.getElementById('matcher-col-left');
-      const rightCol = document.getElementById('matcher-col-right');
-      const scoreEl = document.getElementById('matcher-score');
-      if (!leftCol || !rightCol) return;
-
-      matcherSelectedLeft = null;
-      matcherSelectedRight = null;
-      matcherMatchesCount = 0;
-      if (scoreEl) scoreEl.textContent = "Matches: 0 / 4";
-
-      const shuffled = [...vocabMatcherPairs].sort(() => 0.5 - Math.random()).slice(0, 4);
-      const leftItems = [...shuffled];
-      const rightItems = [...shuffled].sort(() => 0.5 - Math.random());
-
-      leftCol.innerHTML = leftItems.map(item => `
-        <button class="matcher-item" data-id="${item.id}" onclick="onMatcherClick('left', ${item.id}, this)">
-          <span style="color:#991b1b; font-size:0.75rem; font-weight:700;">Level 1:</span> "${item.l1}"
-        </button>
-      `).join('');
-
-      rightCol.innerHTML = rightItems.map(item => `
-        <button class="matcher-item" data-id="${item.id}" onclick="onMatcherClick('right', ${item.id}, this)">
-          <span style="color:#166534; font-size:0.75rem; font-weight:700;">Executive:</span> <strong>${item.l3}</strong>
-        </button>
-      `).join('');
-    }
-
-    function onMatcherClick(side, id, btn) {
-      if (btn.classList.contains('matched')) return;
-
-      if (side === 'left') {
-        document.querySelectorAll('#matcher-col-left .matcher-item').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        matcherSelectedLeft = { id, btn };
-      } else {
-        document.querySelectorAll('#matcher-col-right .matcher-item').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        matcherSelectedRight = { id, btn };
-      }
-
-      if (matcherSelectedLeft && matcherSelectedRight) {
-        if (matcherSelectedLeft.id === matcherSelectedRight.id) {
-          matcherSelectedLeft.btn.classList.remove('selected');
-          matcherSelectedRight.btn.classList.remove('selected');
-          matcherSelectedLeft.btn.classList.add('matched');
-          matcherSelectedRight.btn.classList.add('matched');
-          matcherMatchesCount++;
-          const scoreEl = document.getElementById('matcher-score');
-          if (scoreEl) scoreEl.textContent = `Matches: ${matcherMatchesCount} / 4`;
-          matcherSelectedLeft = null;
-          matcherSelectedRight = null;
-
-          if (matcherMatchesCount === 4) {
-            if (typeof confetti === 'function') {
-              confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
-            }
-            showToast("\uD83C\uDF89 Perfect Match! All 4 collocations mastered!", "success");
-          }
-        } else {
-          matcherSelectedLeft.btn.classList.add('wrong');
-          matcherSelectedRight.btn.classList.add('wrong');
-          setTimeout(() => {
-            if (matcherSelectedLeft) {
-              matcherSelectedLeft.btn.classList.remove('wrong', 'selected');
-              matcherSelectedLeft = null;
-            }
-            if (matcherSelectedRight) {
-              matcherSelectedRight.btn.classList.remove('wrong', 'selected');
-              matcherSelectedRight = null;
-            }
-          }, 700);
-        }
-      }
+      showToast("ðŸ”Š Playing through all 6 Tier-3 collocations with executive cadence...", "info");
     }
 
     // ==========================================
@@ -5667,13 +5377,12 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
       loadSavedPitchProgress();
       drawIdleVisualizer();
       if (typeof lucide !== 'undefined' && lucide.createIcons) { lucide.createIcons(); }
-      initMatcherRound();
       if (window.location.hash) {
         const hash = window.location.hash.replace('#', '');
-        if (hash === 'master-vocab-suite') {
+        if (hash === 'section-when-to-use' || hash === 'master-vocab-suite') {
           switchTab('lesson1');
           setTimeout(() => {
-            const el = document.getElementById('master-vocab-suite');
+            const el = document.getElementById('section-when-to-use');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }, 120);
         } else if (document.getElementById('tab-' + hash)) {
@@ -5681,6 +5390,6 @@ I look forward to connecting tomorrow at 10 AM so we can <strong>align on expect
         }
       }
     });
-  </script>
+    </script>
 </body>
 </html>
