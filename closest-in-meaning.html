@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closest in Meaning — 100-Question Context Clue Mega-Vault | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --navy: #0f2744;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .top-nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #0f2744, #2563eb);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      background: #ffffff;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+    .btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .btn-amber {
+      background: #fffbeb;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+    .btn-amber:hover {
+      background: #fef3c7;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      position: sticky;
+      top: 58px;
+      z-index: 90;
+    }
+    .filter-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      font-family: inherit;
+      font-size: 0.82rem;
+      min-width: 220px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+    .score-pill {
+      background: #0f2744;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 24px auto 64px;
+      padding: 0 20px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #0f2744 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-card h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .hero-card p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      max-width: 760px;
+    }
+
+    /* Question Card */
+    .q-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease;
+    }
+    .q-card.solved {
+      border-color: #86efac;
+      background: #fcfffd;
+    }
+    .q-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .cat-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    .target-pill {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: #f1f5f9;
+      border: 1px solid var(--border-dark);
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+
+    .focus-sentence {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      background: #f8fafc;
+      border-left: 4px solid var(--navy);
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+    }
+    .focus-sentence mark {
+      background: #fef08a;
+      color: #0f172a;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .opt-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .opt-btn {
+      width: 100%;
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      background: #ffffff;
+      font-family: inherit;
+      font-size: 0.89rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1.45;
+    }
+    .opt-btn:hover {
+      background: #f8fafc;
+      border-color: var(--accent);
+    }
+    .opt-btn.correct {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #14532d;
+      font-weight: 700;
+    }
+    .opt-btn.wrong {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+
+    .clue-box {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      font-size: 0.85rem;
+    }
+    .clue-box.visible {
+      display: block;
+    }
+    .clue-line {
+      color: #166534;
+      margin-bottom: 6px;
+    }
+    .speak-prompt {
+      color: #1e3a8a;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 8px 12px;
+      border-radius: 5px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand">
+        <div class="brand-badge">YH</div>
+        <div>
+          <div class="brand-title">"Closest in Meaning" — 100-Question Context Clue Mega-Vault</div>
+          <div class="brand-sub">10 Domains · 100 High-Impact Business, Marketing, Tech, Finance & Everyday Idioms</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="btn">← Main Portal</a>
+        <a href="marketing-scenarios.html" class="btn">📈 Marketing Scenarios</a>
+        <button class="btn btn-amber" onclick="pickRandomSprint()">🎲 Random 10-Question Sprint</button>
+        <button class="btn" id="teacherToggleBtn" onclick="toggleTeacherMode()">👨‍🏫 Teacher Mode</button>
+        <button class="btn" onclick="resetQuiz()">↺ Reset Progress</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <div class="filter-row-top">
+        <div class="filter-tabs">
+          <button class="btn active" onclick="filterCategory('all', this)">All (100)</button>
+          <button class="btn" onclick="filterCategory('unsolved', this)">⏳ Unsolved Only</button>
+          <button class="btn" onclick="filterCategory('marketing', this)">1. 📈 Marketing (10)</button>
+          <button class="btn" onclick="filterCategory('meetings', this)">2. 🤝 Meetings (10)</button>
+          <button class="btn" onclick="filterCategory('negotiations', this)">3. 📊 Negotiations (10)</button>
+          <button class="btn" onclick="filterCategory('leadership', this)">4. 👥 Leadership (10)</button>
+          <button class="btn" onclick="filterCategory('everyday', this)">5. 🌍 Everyday Idioms (10)</button>
+          <button class="btn" onclick="filterCategory('finance', this)">6. 💰 Finance & ROI (10)</button>
+          <button class="btn" onclick="filterCategory('tech', this)">7. 💻 Tech & Ops (10)</button>
+          <button class="btn" onclick="filterCategory('pitching', this)">8. 🎤 Pitching & Data (10)</button>
+          <button class="btn" onclick="filterCategory('clients', this)">9. 📞 Client Crisis (10)</button>
+          <button class="btn" onclick="filterCategory('career', this)">10. 🚀 Career & Life (10)</button>
+        </div>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search word, idiom, or #..." oninput="handleSearch()">
+          <div class="score-pill" id="scorePill">Mastered: 0 / 100</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero-card">
+      <div>
+        <h1>100 Context-Clue Challenges Across 10 Real-World Domains</h1>
+        <p><strong>How to Play (No Dictionary Rule):</strong> Read the Focus Sentence and use the surrounding context clues (contrasts, numbers, cause-and-effect) to pick the sentence (A, B, or C) closest in meaning. Then answer the 15-second speaking prompt out loud!</p>
+      </div>
+      <div id="showingCount" style="font-weight:800; font-size:0.9rem; background:rgba(255,255,255,0.12); padding:8px 14px; border-radius:6px;">Showing 100 Questions</div>
+    </section>
+
+    <div id="quizContainer"></div>
+  </main>
+
+  <script>
+    // Compact builder: [id, cat, catLabel, target, focusHtml, optA, optB, optC, correctIndex(0/1/2), clue, prompt]
+    const rawData = [
+      // ==================== 1. MARKETING, GROWTH & COMMERCIAL STRATEGY (Q1-Q10) ====================
+      [1, 'marketing', '📈 Marketing & Growth', 'low-hanging fruit',
+        'Before we spend six months building a new TikTok channel from scratch, let\'s capture the <mark>low-hanging fruit</mark> by fixing our broken mobile checkout page.',
+        'A) We should prioritize the quick, easy fixes that will deliver immediate results with minimal effort.',
+        'B) We should invest our budget into prestigious marketing campaigns that win industry awards.',
+        'C) We should stop selling to mobile users and focus exclusively on desktop buyers.', 0,
+        'Contrasted with "spend six months building from scratch" vs. simply "fixing our broken checkout page."',
+        'What is one piece of "low-hanging fruit" your team could fix at work this month?'],
+      [2, 'marketing', '📈 Marketing & Growth', 'cannibalize sales',
+        'Launching a $10 basic plan might attract budget-conscious freelancers, but we risk <mark>cannibalizing</mark> our $50-a-month Pro tier.',
+        'A) A $10 plan will aggressively take market share away from our biggest competitor.',
+        'B) A cheap starter plan could steal existing customers and revenue away from our own higher-priced plan.',
+        'C) Freelancers will complain that $10 a month is still too expensive for the features offered.', 1,
+        '"Might attract freelancers, BUT we risk [hurting] our own $50-a-month Pro tier."',
+        'Why do luxury brands or software companies worry about "cannibalizing" their flagship product?'],
+      [3, 'marketing', '📈 Marketing & Growth', 'loss leader',
+        'Our $9 diagnostic audit acts as a <mark>loss leader</mark>—we actually lose money delivering it, but 35% of those clients sign a $10,000 annual consulting contract.',
+        'A) The $9 audit is a failed product that the company plans to discontinue next quarter.',
+        'B) Only 35% of our sales representatives are able to hit their annual consulting quota.',
+        'C) We intentionally price the initial audit below cost to attract buyers who will later purchase high-margin services.', 2,
+        '"We actually lose money delivering it, BUT 35% of those clients sign a $10,000 annual contract."',
+        'Can you think of a "loss leader" that supermarkets, Costco, or software companies use to bring customers in?'],
+      [4, 'marketing', '📈 Marketing & Growth', 'gain traction',
+        'After three sluggish months in the Singapore market, our B2B referral program is finally <mark>gaining traction</mark> among enterprise buyers.',
+        'A) After a slow start, the referral program is now showing real momentum and customer adoption.',
+        'B) The referral program is being delayed by legal and compliance bottlenecks in Singapore.',
+        'C) Enterprise buyers in Singapore are asking us to replace the referral program with a price cut.', 0,
+        'Transition from "After three sluggish months..." to "...is finally [succeeding/moving forward]."',
+        'Tell me about a project, habit, or tool at your company that took a while to "gain traction."'],
+      [5, 'marketing', '📈 Marketing & Growth', 'move the needle',
+        'Changing the button color on our homepage is a nice cosmetic tweak, but it won\'t <mark>move the needle</mark> on our Q4 revenue target.',
+        'A) The design team does not have the technical capacity to update the homepage before Q4.',
+        'B) Changing the button color will not make a noticeable, measurable impact on our sales numbers.',
+        'C) Small visual updates on the website are the most cost-effective way to double our revenue.', 1,
+        'Contrasted with "a nice cosmetic tweak, BUT it won\'t... on our Q4 revenue target."',
+        'What is one initiative that would genuinely "move the needle" for your team right now?'],
+      [6, 'marketing', '📈 Marketing & Growth', 'erode brand equity',
+        'Running 50%-off flash sales every single month will <mark>erode our brand equity</mark> and train customers to never pay full price.',
+        'A) Frequent half-price sales will gradually wear down and damage our brand\'s prestige and perceived value.',
+        'B) Monthly flash sales will rapidly strengthen our reputation as a premium provider.',
+        'C) Customers prefer simple pricing tiers rather than complicated seasonal promotions.', 0,
+        'Linked directly to the negative consequence: "...and train customers to never pay full price."',
+        'Besides heavy discounting, what else can "erode a company\'s brand equity"?'],
+      [7, 'marketing', '📈 Marketing & Growth', 'word-of-mouth',
+        'We spent zero dollars on paid billboards; our restaurant grew entirely through <mark>word-of-mouth</mark> as happy customers recommended us to their friends and coworkers.',
+        'A) Organic recommendations and personal referrals passed directly from one satisfied customer to another.',
+        'B) Radio commercials read aloud by professional voice actors.',
+        'C) Cold-calling random phone numbers to pitch our dinner menu.', 0,
+        '"Spent zero dollars on paid billboards... as happy customers recommended us to their friends."',
+        'What is a product or restaurant you discovered recently through "word-of-mouth"?'],
+      [8, 'marketing', '📈 Marketing & Growth', 'saturated market',
+        'Because there are already over 200 coffee shops within five blocks of Shibuya Station, entering such a <mark>saturated market</mark> without a unique angle is financial suicide.',
+        'A) A brand-new market where no competitors exist yet.',
+        'B) A market so crowded with existing competitors that there is almost no room left for new entrants to grow.',
+        'C) A neighborhood where customers have high disposable income.', 1,
+        '"Already over 200 coffee shops within five blocks... without a unique angle is financial suicide."',
+        'Is your company operating in a "saturated market" or an emerging one?'],
+      [9, 'marketing', '📈 Marketing & Growth', 'window shopping',
+        'Our website gets 50,000 visitors a month, but 99% of them are just <mark>window shopping</mark>—they browse our product photos for two minutes and leave without adding anything to their cart.',
+        'A) Buying large quantities of glass and home renovation supplies online.',
+        'B) Casually looking at products without any serious intention of buying right now.',
+        'C) Comparing our prices on a desktop computer rather than a smartphone.', 1,
+        '"Browse our product photos for two minutes and leave without adding anything to their cart."',
+        'How can an online store convert "window shoppers" into paying buyers?'],
+      [10, 'marketing', '📈 Marketing & Growth', 'cash cow',
+        'While our new AI experiments are still losing money, our legacy enterprise accounting software remains a reliable <mark>cash cow</mark> that funds the entire company.',
+        'A) An outdated product that costs too much money to maintain.',
+        'B) A steady, highly profitable product or business unit that consistently generates surplus revenue.',
+        'C) A marketing campaign targeted at the agricultural industry.', 1,
+        'Contrasted with "new experiments still losing money" vs. "reliable ___ that funds the entire company."',
+        'What is the main "cash cow" product or service at your company?'],
+
+      // ==================== 2. MEETINGS, PROJECTS & TEAMWORK (Q11-Q20) ====================
+      [11, 'meetings', '🤝 Meetings & Projects', 'bottleneck',
+        'The engineering team has already finished coding the new feature, so the legal department\'s contract review is our only <mark>bottleneck</mark> holding up Monday\'s release.',
+        'A) The legal team discovered a fatal security flaw in the engineering team\'s code.',
+        'B) The entire launch is delayed because everything is stuck waiting on one slow stage—the legal review.',
+        'C) Both engineering and legal agreed to postpone the release until next quarter.', 1,
+        '"Engineering has already finished... so legal\'s review is our only ___ holding up Monday\'s release."',
+        'In your typical workflow, what stage most often becomes a "bottleneck"?'],
+      [12, 'meetings', '🤝 Meetings & Projects', 'bandwidth',
+        'I would love to help you overhaul the client onboarding deck, but with two product launches this week, I simply don\'t have the <mark>bandwidth</mark>.',
+        'A) My office internet connection is too slow to download the large presentation files.',
+        'B) I don\'t have the design skills required to format an executive presentation.',
+        'C) I do not have the available time, energy, or mental capacity to take on extra work this week.', 2,
+        '"With two product launches this week, I simply don\'t have the..."',
+        'How do you politely tell a colleague that you don\'t have the "bandwidth" to take on an extra task?'],
+      [13, 'meetings', '🤝 Meetings & Projects', 'iron out the kinks',
+        'The beta version of the software is 95% ready; we just need two more days to <mark>iron out a few kinks</mark> in the payment gateway before launching to the public.',
+        'A) We need to resolve a few minor technical bugs and small friction points so the system runs smoothly.',
+        'B) We need to completely rebuild the software from scratch because the beta test failed.',
+        'C) We need to renegotiate our transaction fees with the credit card company.', 0,
+        '"The beta version is 95% ready; we just need two more days to..."',
+        'Before a big presentation or launch, what final "kinks" do you usually have to "iron out"?'],
+      [14, 'meetings', '🤝 Meetings & Projects', 'table the discussion',
+        'Since we only have three minutes left in today\'s standup and we don\'t have the Q3 budget numbers yet, let\'s <mark>table the discussion</mark> on hiring until Tuesday.',
+        'A) Let\'s put all the hiring numbers into a table in Excel before the meeting ends.',
+        'B) Let\'s postpone talking about hiring for now and revisit it at Tuesday\'s meeting.',
+        'C) Let\'s cancel our hiring plans permanently because the Q3 budget was rejected.', 1,
+        '"Only three minutes left... don\'t have the numbers yet... until Tuesday."',
+        'When a meeting goes off-track, how can you suggest "tabling the discussion" until next week?'],
+      [15, 'meetings', '🤝 Meetings & Projects', 'single point of failure',
+        'Because Kenji is the only person who knows how to deploy the server code, his two-week vacation creates a dangerous <mark>single point of failure</mark> for our team.',
+        'A) Kenji made a serious mistake on the server and was placed on two weeks of suspension.',
+        'B) Relying on just one person for a critical task means the entire operation could halt if he is unavailable.',
+        'C) The team prefers having one dedicated specialist handle all server deployments.', 1,
+        '"Only person who knows how... his two-week vacation creates a dangerous..."',
+        'How can a team eliminate a "single point of failure" in a project?'],
+      [16, 'meetings', '🤝 Meetings & Projects', 'on the back burner',
+        'When the main database crashed on Tuesday morning, we had to put the website redesign <mark>on the back burner</mark> so every engineer could focus on restoring client data.',
+        'A) We temporarily de-prioritized and paused the website redesign to handle a more urgent emergency.',
+        'B) We outsourced the website redesign to an external agency to save time.',
+        'C) We finished the website redesign ahead of schedule before fixing the database.', 0,
+        'Cooking metaphor: moving a pot to the back stove burner while dealing with the emergency on the front burner.',
+        'Is there a project you have had to put "on the back burner" recently because of more urgent priorities?'],
+      [17, 'meetings', '🤝 Meetings & Projects', 'get the ball rolling',
+        'Everyone is sitting quietly waiting for someone else to speak, so I\'ll <mark>get the ball rolling</mark> by sharing our Q2 sales numbers first.',
+        'A) End the meeting early so everyone can go back to their desks.',
+        'B) Initiate the discussion or start an activity so others can follow.',
+        'C) Change the subject to talk about weekend sports.', 1,
+        '"Everyone is sitting quietly waiting... so I\'ll ___ by sharing our Q2 numbers first."',
+        'How do you usually "get the ball rolling" when leading a Monday morning meeting?'],
+      [18, 'meetings', '🤝 Meetings & Projects', 'go down a rabbit hole',
+        'We only have 15 minutes to finalize the launch date, so let\'s not <mark>go down a rabbit hole</mark> debating minor font sizes on the settings page.',
+        'A) Get distracted and waste time obsessing over an irrelevant, overly detailed tangent.',
+        'B) Conduct thorough market research before making a final decision.',
+        'C) Invite the graphic design team to join the meeting.', 0,
+        '"Only have 15 minutes to finalize the launch date, so let\'s not ___ debating minor font sizes."',
+        'What topic often causes your team to "go down a rabbit hole" during meetings?'],
+      [19, 'meetings', '🤝 Meetings & Projects', 'wrap up',
+        'It\'s already 4:55 PM and another team has booked this conference room at 5:00, so let\'s <mark>wrap up</mark> by confirming our three action items.',
+        'A) Extend the meeting for another thirty minutes in the hallway.',
+        'B) Bring the meeting to a close and summarize the final takeaways.',
+        'C) Keep the project details secret from other departments.', 1,
+        '"Already 4:55 PM... booked at 5:00, so let\'s ___ by confirming our three action items."',
+        'What phrase do you use when you need to "wrap up" a call on time?'],
+      [20, 'meetings', '🤝 Meetings & Projects', 'reinvent the wheel',
+        'Before you spend three days coding a custom calendar widget, check our shared library—there\'s no need to <mark>reinvent the wheel</mark> if the Tokyo team already built one last month.',
+        'A) Waste time building something from scratch that has already been created and proven to work.',
+        'B) Upgrade our company vehicles to reduce transportation costs.',
+        'C) Copy a competitor\'s patented technology without permission.', 0,
+        '"No need to ___ if the Tokyo team already built one last month."',
+        'How can teams avoid "reinventing the wheel" across different offices?'],
+
+      // ==================== 3. NEGOTIATIONS, CONTRACTS & CLIENTS (Q21-Q30) ====================
+      [21, 'negotiations', '📊 Negotiations & Clients', 'contingent upon',
+        'We are happy to grant your team a 15% volume discount, <mark>contingent upon</mark> your company signing a two-year agreement before Friday.',
+        'A) We will give you the 15% discount regardless of whether you sign a one-year or two-year contract.',
+        'B) The 15% discount is strictly conditional—it will only happen if you commit to a two-year contract by Friday.',
+        'C) We cannot offer any discounts on two-year agreements due to rising operational costs.', 1,
+        'Links the concession (15% discount) directly to the required condition (signing a 2-year agreement).',
+        'Make a sentence using "contingent upon" for a client or project deadline!'],
+      [22, 'negotiations', '📊 Negotiations & Clients', 'out of scope',
+        'Our signed contract covers building the iOS mobile app; building an Android version at the same budget is completely <mark>out of scope</mark>.',
+        'A) The Android version exceeds the agreed-upon contract boundaries and would require a separate budget.',
+        'B) Our engineering team does not know how to write code for Android devices.',
+        'C) We will include the Android app for free to keep the client satisfied.', 0,
+        'Contrasts what "our signed contract covers (iOS)" against the extra unpaid demand ("Android at the same budget").',
+        'What is a polite way to tell a client that their last-minute request is "out of scope"?'],
+      [23, 'negotiations', '📊 Negotiations & Clients', 'sweeten the deal',
+        'While we cannot lower our $50,000 software license fee, we can <mark>sweeten the deal</mark> by including three months of dedicated 24/7 engineering support at no extra charge.',
+        'A) We will increase the license fee if the client requires 24/7 engineering support.',
+        'B) We will make our offer more attractive by adding a valuable bonus perk instead of cutting the price.',
+        'C) We are prepared to walk away from the negotiation if the client asks for free support.', 1,
+        '"Cannot lower our fee, [but] we can ___ by including three months of support at no extra charge."',
+        'If you can\'t lower your price for a client, what can you offer to "sweeten the deal"?'],
+      [24, 'negotiations', '📊 Negotiations & Clients', 'hold our ground',
+        'The procurement director will definitely push for a 90-day payment term, but our CFO instructed us to <mark>hold our ground</mark> on our standard 30-day invoice policy.',
+        'A) We should compromise and meet the client halfway at 60 days.',
+        'B) We should apologize for our strict invoicing rules and ask the CFO for an exception.',
+        'C) We must remain firm and refuse to give in on our 30-day payment requirement despite pressure.', 2,
+        '"Procurement will push for 90-day, BUT our CFO instructed us to ___ on our standard 30-day policy."',
+        'In a client negotiation, what is one term where your company must always "hold its ground"?'],
+      [25, 'negotiations', '📊 Negotiations & Clients', 'ballpark figure',
+        'I\'ll need two days with my engineering lead to calculate an exact quote, but if you just need a <mark>ballpark figure</mark> for your board meeting today, the project will run between $40,000 and $50,000.',
+        'A) A rough, reasonable numerical estimate or range rather than a precise final price.',
+        'B) A legally binding contract price that cannot be changed later.',
+        'C) The minimum budget required to sponsor a professional sports stadium.', 0,
+        'Contrasted with "an exact quote, but if you just need a ___... between $40,000 and $50,000."',
+        'When a client asks for an exact timeline or price on the spot, how can you give them a "ballpark figure"?'],
+      [26, 'negotiations', '📊 Negotiations & Clients', 'deal-breaker',
+        'We are flexible on the delivery timeline, but storing our healthcare data on an unencrypted public server is an absolute <mark>deal-breaker</mark> for our compliance team.',
+        'A) A minor technical detail that we can easily resolve after the contract is signed.',
+        'B) A non-negotiable issue so unacceptable that it will cause us to walk away from the entire agreement.',
+        'C) A special incentive that convinces the compliance team to sign the contract faster.', 1,
+        'Contrasted with "We are flexible on timeline, BUT unencrypted data is an absolute..."',
+        'When interviewing a job candidate or choosing a vendor, what is a "deal-breaker" for you?'],
+      [27, 'negotiations', '📊 Negotiations & Clients', 'meet halfway',
+        'The vendor wanted $60,000 and our initial budget was $40,000, so after two hours of negotiation we agreed to <mark>meet halfway</mark> at $50,000.',
+        'A) Cancel the contract and look for a cheaper supplier.',
+        'B) Reach a compromise where both sides make an equal concession.',
+        'C) Pay $30,000 now and refuse to pay the remaining balance.', 1,
+        'Math clue: "$60,000 and $40,000... agreed to ___ at $50,000."',
+        'Tell me about a time you had to "meet a client or colleague halfway" on a timeline or budget.'],
+      [28, 'negotiations', '📊 Negotiations & Clients', 'strings attached',
+        'The vendor offered us a "free" three-month trial of their analytics platform, but there were <mark>strings attached</mark>—if you don\'t cancel 30 days in advance, you are automatically locked into a two-year paid contract.',
+        'A) Hidden conditions, catches, or obligations attached to an offer that looks free on the surface.',
+        'B) Physical cables and hardware included in the software package.',
+        'C) A completely transparent agreement with zero hidden fees.', 0,
+        'Explained right after the dash: "—if you don\'t cancel 30 days in advance, you are automatically locked into a two-year paid contract."',
+        'Why are buyers suspicious when an offer claims to have "no strings attached"?'],
+      [29, 'negotiations', '📊 Negotiations & Clients', 'in the driver\'s seat',
+        'Because we are the only supplier in Asia certified to manufacture this microchip, we are <mark>in the driver\'s seat</mark> during pricing negotiations.',
+        'A) Required to deliver the microchips using our own company trucks.',
+        'B) In a position of strong control and leverage over the outcome of the situation.',
+        'C) At risk of losing the contract to a cheaper competitor.', 1,
+        '"Because we are the ONLY supplier certified... during pricing negotiations."',
+        'What gives a company or job candidate the leverage to be "in the driver\'s seat" during negotiations?'],
+      [30, 'negotiations', '📊 Negotiations & Clients', 'ironclad',
+        'Before sharing our proprietary source code with the outsourcing partner, our legal team drafted an <mark>ironclad</mark> non-disclosure agreement (NDA) with strict financial penalties for leaks.',
+        'A) A casual, informal gentleman\'s agreement based on trust.',
+        'B) So solid, unbreakable, and legally watertight that it cannot be bypassed or challenged.',
+        'C) A temporary draft that still has many loopholes.', 1,
+        '"Before sharing proprietary source code... with strict financial penalties for leaks."',
+        'When do businesses need an "ironclad" contract or guarantee?'],
+
+      // ==================== 4. LEADERSHIP, MANAGING TEAMS & WORKPLACE (Q31-Q40) ====================
+      [31, 'leadership', '👥 Leadership & Teams', 'micromanage',
+        'When a director demands to approve every routine Slack message and checks in four times a day, it <mark>micromanages</mark> the team and destroys their sense of autonomy.',
+        'A) It gives employees clear strategic direction so they can work independently.',
+        'B) It controls and monitors every tiny detail excessively instead of trusting employees to do their jobs.',
+        'C) It delegates high-level responsibilities to junior team members too quickly.', 1,
+        '"Demands to approve every routine Slack message and checks in four times a day... destroys autonomy."',
+        'What is the difference between supportive leadership and "micromanaging"?'],
+      [32, 'leadership', '👥 Leadership & Teams', 'break down silos',
+        'For years, our sales and product teams barely spoke to each other; our new weekly cross-functional sync was designed to <mark>break down silos</mark> and get both departments sharing customer feedback.',
+        'A) Eliminate the isolation and communication barriers between separate company departments.',
+        'B) Reduce the number of people attending weekly meetings to save time.',
+        'C) Divide the company into smaller, strictly independent business units.', 0,
+        '"Barely spoke to each other... get both departments sharing customer feedback."',
+        'Do departments at your company ever work in "silos"? How can leaders "break down silos"?'],
+      [33, 'leadership', '👥 Leadership & Teams', 'candid feedback',
+        'During our private 1-on-1, my manager gave me very <mark>candid</mark> feedback: she praised my technical output, but told me plainly that my hesitant tone in client meetings was holding me back from a promotion.',
+        'A) Vague and overly polite feedback designed to avoid hurting my feelings.',
+        'B) Honest, direct, and straightforward feedback, even when the truth is uncomfortable.',
+        'C) Unfair criticism delivered in front of the entire department.', 1,
+        '"Told me plainly that my hesitant tone in client meetings was holding me back."',
+        'Why is it sometimes difficult to give or receive "candid feedback" in corporate culture?'],
+      [34, 'leadership', '👥 Leadership & Teams', 'spread too thin',
+        'Because Hiroshi is currently managing four regional launches at the same time, he is <mark>spread too thin</mark> and starting to miss critical quality checks.',
+        'A) He is trying to handle too many responsibilities simultaneously, so he cannot give enough focus to any single one.',
+        'B) He has too much free time on his hands and needs more challenging projects.',
+        'C) He has delegated all of his daily work to his junior reports.', 0,
+        'Like spreading a small amount of butter across too many slices of bread: "managing four launches at the same time... starting to miss checks."',
+        'What warning signs show that a team member is "spread too thin"?'],
+      [35, 'leadership', '👥 Leadership & Teams', 'get buy-in',
+        'Even the smartest workflow overhaul will fail if you force it on people top-down; you have to <mark>get buy-in</mark> from the department leads before rolling it out.',
+        'A) Purchase expensive project-management software licenses for every manager.',
+        'B) Keep the new workflow secret until the day it officially launches.',
+        'C) Secure genuine agreement, support, and commitment from key stakeholders so they actively back the plan.', 2,
+        'Contrasted with "if you force it on people top-down; you have to ___ from the department leads."',
+        'When proposing a change at work, how do you "get buy-in" from skeptical colleagues?'],
+      [36, 'leadership', '👥 Leadership & Teams', 'scapegoat',
+        'Although the Q2 product launch failed because executive leadership rushed the deadline by six weeks, the junior project manager was made the <mark>scapegoat</mark> and blamed for the bugs.',
+        'A) The junior manager was promoted for working overtime during the rushed launch.',
+        'B) The junior manager was unfairly singled out to take the blame for a failure caused by others.',
+        'C) The junior manager successfully identified the root cause of the software bugs.', 1,
+        '"Although it failed because leadership rushed the deadline... the junior manager was ___ and blamed."',
+        'How do good leaders prevent a culture of looking for a "scapegoat" when a project goes wrong?'],
+      [37, 'leadership', '👥 Leadership & Teams', 'pass the buck',
+        'Instead of taking responsibility for the missed deadline, the account director tried to <mark>pass the buck</mark> to the junior copywriter.',
+        'A) Give a cash bonus to the junior copywriter for working late.',
+        'B) Shift blame or responsibility for a problem onto someone else.',
+        'C) Approve the project budget without checking the numbers.', 1,
+        'Contrasted with "Instead of taking responsibility for the missed deadline..."',
+        'How should a team leader respond when two departments try to "pass the buck" to each other?'],
+      [38, 'leadership', '👥 Leadership & Teams', 'lead by example',
+        'If you want your team to stop sending emails at midnight and respect work-life balance, you have to <mark>lead by example</mark> and log off at 6 PM yourself.',
+        'A) Write a strict 20-page policy manual punishing late-night emails.',
+        'B) Model the exact behavior and standards yourself that you expect others to follow.',
+        'C) Delegate all evening client calls to junior staff members.', 1,
+        '"...and log off at 6 PM yourself."',
+        'What is one area where a manager must always "lead by example"?'],
+      [39, 'leadership', '👥 Leadership & Teams', 'high turnover',
+        'Because the call center has grueling hours and low pay, it suffers from <mark>high turnover</mark>—nearly 60% of new hires quit within their first six months.',
+        'A) High annual revenue and rapid profit growth.',
+        'B) A fast rate at which employees leave a company and have to be replaced.',
+        'C) A workplace where employees stay for 20 years until retirement.', 1,
+        'Defined right after the dash: "—nearly 60% of new hires quit within their first six months."',
+        'What are the hidden costs to a team when a department has "high turnover"?'],
+      [40, 'leadership', '👥 Leadership & Teams', 'take someone under your wing',
+        'When I joined the firm as a nervous graduate, a senior director <mark>took me under her wing</mark>, coaching me before every client pitch until I was confident enough to lead my own accounts.',
+        'A) Protected, mentored, and guided a less experienced person closely.',
+        'B) Assigned me to book all of her international flights and hotels.',
+        'C) Competed against me to win the largest client accounts.', 0,
+        '"...coaching me before every client pitch until I was confident enough to lead my own accounts."',
+        'Did a mentor ever "take you under their wing" early in your career?'],
+
+      // ==================== 5. EVERYDAY BUSINESS & DECISION IDIOMS (Q41-Q50) ====================
+      [41, 'everyday', '🌍 Everyday Business Idioms', 'a blessing in disguise',
+        'Losing that demanding client felt like a disaster in January, but it turned out to be <mark>a blessing in disguise</mark>—it freed up our engineers to build the enterprise feature that doubled our revenue in Q3.',
+        'A) Something that seemed like a terrible setback at first, but ultimately led to a much better outcome.',
+        'B) A financial loss that permanently damaged the company\'s reputation.',
+        'C) A strategic plan that worked exactly as we predicted from day one.', 0,
+        '"Felt like a disaster in January, BUT... freed up our engineers to double our revenue."',
+        'Has a setback in your career or life ever turned out to be "a blessing in disguise"?'],
+      [42, 'everyday', '🌍 Everyday Business Idioms', 'play devil\'s advocate',
+        'I actually love your proposal for the Tokyo office expansion, but let me <mark>play devil\'s advocate</mark> for a minute: what happens to our cash flow if interest rates rise next year?',
+        'A) I strongly oppose your proposal and will vote against it in the board meeting.',
+        'B) Even though I agree with your idea, I am going to argue the opposing side to test for hidden risks and weaknesses.',
+        'C) I want to hand over the financial responsibility of the project to the accounting team.', 1,
+        '"I actually love your proposal, BUT let me ___ for a minute: what happens if..."',
+        'Why is "playing devil\'s advocate" a polite and useful way to test a colleague\'s idea in a meeting?'],
+      [43, 'everyday', '🌍 Everyday Business Idioms', 'up in the air',
+        'Until the board of directors finishes reviewing the merger on Friday, the exact date of our Singapore team offsite remains completely <mark>up in the air</mark>.',
+        'A) Undecided, uncertain, and not yet settled.',
+        'B) Officially confirmed and booked with the airline.',
+        'C) Canceled permanently due to travel budget cuts.', 0,
+        '"Until the board finishes reviewing on Friday, the exact date remains..."',
+        'Is there any upcoming plan or project timeline at your work that is still "up in the air"?'],
+      [44, 'everyday', '🌍 Everyday Business Idioms', 'cut corners',
+        'To finish the warehouse construction two weeks early and save 20% on materials, the contractor <mark>cut corners</mark> on the roof insulation, which leaked during the first heavy rain.',
+        'A) Used innovative engineering techniques to improve building durability.',
+        'B) Skipped important steps or used cheaper, inferior methods to save time or money, sacrificing quality.',
+        'C) Renegotiated the construction timeline with the city building inspectors.', 1,
+        '"Save 20% on materials... which leaked during the first heavy rain."',
+        'What happens in software development or client service when a team tries to "cut corners"?'],
+      [45, 'everyday', '🌍 Everyday Business Idioms', 'back to the drawing board',
+        'When the safety regulator rejected our battery prototype due to overheating, we had to go <mark>back to the drawing board</mark> and redesign the cooling system from scratch.',
+        'A) Start over from the beginning with a fresh design because the previous attempt failed.',
+        'B) Hire a graphic designer to make better illustrations for the user manual.',
+        'C) Appeal the regulator\'s decision in court without changing the product.', 0,
+        '"Rejected our prototype... and redesign the cooling system from scratch."',
+        'Have you ever worked on a proposal or campaign where you had to go "back to the drawing board"?'],
+      [46, 'everyday', '🌍 Everyday Business Idioms', 'read between the lines',
+        'The CEO\'s email didn\'t explicitly mention layoffs, but if you <mark>read between the lines</mark>—especially her comment about "restructuring non-core divisions"—a hiring freeze and headcount reduction are coming.',
+        'A) Read the email out loud to check for grammatical and spelling mistakes.',
+        'B) Infer the hidden or implied meaning behind someone\'s polite or indirect words.',
+        'C) Ask the CEO to send a shorter summary of the company\'s financial report.', 1,
+        '"Didn\'t explicitly mention layoffs, BUT if you ___..."',
+        'In business emails or client meetings, when do you have to "read between the lines"?'],
+      [47, 'everyday', '🌍 Everyday Business Idioms', 'bite the bullet',
+        'We\'ve been postponing the server migration for two years because of the downtime risk, but we finally have to <mark>bite the bullet</mark> and do it this weekend before our old hardware fails completely.',
+        'A) Cancel the migration and keep using the old hardware indefinitely.',
+        'B) Face a difficult, unpleasant, or painful task head-on after delaying it.',
+        'C) Blame the IT vendor for selling us outdated servers.', 1,
+        '"Been postponing for two years... finally have to ___ and do it this weekend."',
+        'What is a difficult decision or task where a company has to "bite the bullet"?'],
+      [48, 'everyday', '🌍 Everyday Business Idioms', 'rule of thumb',
+        'While every enterprise software deployment is different, a good <mark>rule of thumb</mark> is to budget 20% of the total project time for user testing and bug fixes.',
+        'A) A strict national law enforced by government regulators.',
+        'B) A practical, approximate guideline based on experience rather than exact science.',
+        'C) A secret formula known only to the company\'s founders.', 1,
+        'Contrasted with "While every deployment is different, a good ___ is to budget 20%..."',
+        'What is a good "rule of thumb" in your line of work?'],
+      [49, 'everyday', '🌍 Everyday Business Idioms', 'on the same page',
+        'Before we walk into the client negotiation, let\'s have a 10-minute pre-meeting to make sure our sales and engineering leads are <mark>on the same page</mark> regarding what we can deliver.',
+        'A) Reading the exact same page of a printed textbook in silence.',
+        'B) In complete agreement and sharing the same understanding of the plan.',
+        'C) Competing against each other to impress the client.', 1,
+        '"Before we walk into the client negotiation... make sure sales and engineering are ___ regarding what we can deliver."',
+        'What happens in a client meeting when two teammates are NOT "on the same page"?'],
+      [50, 'everyday', '🌍 Everyday Business Idioms', 'play it by ear',
+        'Because we don\'t know yet how many executives will attend tomorrow\'s Q&A session, we can\'t follow a rigid script—we\'ll have to <mark>play it by ear</mark> and adapt to their questions as we go.',
+        'A) Record the meeting audio and listen to it on headphones later.',
+        'B) Improvise and decide how to handle a situation as it unfolds rather than sticking to a fixed plan.',
+        'C) Cancel the Q&A session until every attendee submits written questions.', 1,
+        '"Can\'t follow a rigid script—we\'ll have to ___ and adapt to their questions as we go."',
+        'Do you prefer having a strict agenda or "playing it by ear" when talking to clients?'],
+
+      // ==================== 6. FINANCE, BUDGETS, PRICING & PROFITABILITY (Q51-Q60) ====================
+      [51, 'finance', '💰 Finance & Profitability', 'break even',
+        'After investing $200,000 to open the new Osaka branch, we expect it will take 14 months of steady sales just to <mark>break even</mark>, and we\'ll start generating net profit in month 15.',
+        'A) Go bankrupt and close the Osaka branch within 14 months.',
+        'B) Reach the point where total revenue exactly equals total costs, with neither a profit nor a loss.',
+        'C) Double our initial $200,000 investment in the first month.', 1,
+        '"Take 14 months just to ___, and start generating net profit in month 15."',
+        'When launching a new product or campaign, how long does it usually take to "break even"?'],
+      [52, 'finance', '💰 Finance & Profitability', 'overhead',
+        'By switching to a remote-first model and giving up our expensive downtown Tokyo office lease, we slashed our monthly <mark>overhead</mark> by 40%.',
+        'A) Ongoing fixed business expenses required to run the company (like rent, utilities, and insurance) that aren\'t tied to making a specific product.',
+        'B) The commission bonuses paid to top-performing sales reps.',
+        'C) The price we charge enterprise clients for software licenses.', 0,
+        '"Giving up our expensive downtown Tokyo office lease, we slashed our monthly ___ by 40%."',
+        'What are some ways a growing company can keep its "overhead" low?'],
+      [53, 'finance', '💰 Finance & Profitability', 'razor-thin margins',
+        'Supermarkets operate on <mark>razor-thin margins</mark>—after paying for food inventory, shipping, and staff, they often keep less than 2 cents of profit on every dollar of sales.',
+        'A) Extremely high profit percentages that make supermarkets recession-proof.',
+        'B) Extremely small, narrow profit percentages where even a tiny cost increase can wipe out profitability.',
+        'C) Selling剃刀 (razors) and grooming products at a discount.', 1,
+        'Defined right after the dash: "—they often keep less than 2 cents of profit on every dollar of sales."',
+        'How does a business survive when it operates on "razor-thin margins"?'],
+      [54, 'finance', '💰 Finance & Profitability', 'sunk cost',
+        'I know we already spent $80,000 developing that legacy app, but that money is a <mark>sunk cost</mark>—we shouldn\'t waste another $50,000 trying to rescue a product nobody wants.',
+        'A) Money that has already been spent and cannot be recovered, which should not trap you into making bad future decisions.',
+        'B) An emergency reserve fund saved in the company bank account.',
+        'C) A tax refund that the company will receive at the end of the fiscal year.', 0,
+        '"Already spent $80,000... we shouldn\'t waste another $50,000 trying to rescue a product nobody wants."',
+        'Why do managers often fall into the "sunk cost fallacy" and keep funding failing projects?'],
+      [55, 'finance', '💰 Finance & Profitability', 'shoestring budget',
+        'When the two founders started the company in their garage, they operated on a <mark>shoestring budget</mark>, building their first prototype with $500 and free open-source tools.',
+        'A) A massive venture-capital budget with unlimited spending.',
+        'B) A very small, tightly restricted amount of money.',
+        'C) A budget dedicated specifically to footwear and apparel marketing.', 1,
+        '"Started in their garage... building their first prototype with $500 and free open-source tools."',
+        'How do you market a product effectively when you are working on a "shoestring budget"?'],
+      [56, 'finance', '💰 Finance & Profitability', 'bottom line',
+        'Automating our warehouse logistics won\'t just speed up delivery times; by cutting shipping errors in half, it will add $1.2 million directly to our <mark>bottom line</mark> this year.',
+        'A) The final line of a financial statement showing net profit or net earnings after all expenses.',
+        'B) The footer text at the bottom of the company website.',
+        'C) The starting salary for entry-level warehouse staff.', 0,
+        '"By cutting shipping errors in half, it will add $1.2 million directly to our..."',
+        'When pitching to a CEO or CFO, why must you always connect your idea to the "bottom line"?'],
+      [57, 'finance', '💰 Finance & Profitability', 'sticker shock',
+        'Prospects love our enterprise demo, but when we show them the $120,000 annual price slide at the end, many experience <mark>sticker shock</mark> and freeze up.',
+        'A) Excitement over how affordable the software package is.',
+        'B) Surprise and dismay experienced by a buyer when confronted with a much higher price than expected.',
+        'C) A technical glitch that prevents the pricing slide from loading.', 1,
+        '"When we show them the $120,000 annual price slide... many experience ___ and freeze up."',
+        'How can a salesperson frame ROI early in a pitch to prevent "sticker shock"?'],
+      [58, 'finance', '💰 Finance & Profitability', 'foot the bill',
+        'The client asked our engineers to fly to London for an in-person workshop, so we agreed—provided the client is willing to <mark>foot the bill</mark> for business-class flights and hotels.',
+        'A) Pay the cost or cover the expense for something.',
+        'B) Cancel the workshop and hold the meeting on Zoom instead.',
+        'C) Split the travel expenses equally among the engineers.', 0,
+        '"Provided the client is willing to ___ for business-class flights and hotels."',
+        'If a client asks for custom third-party integrations, who should "foot the bill"?'],
+      [59, 'finance', '💰 Finance & Profitability', 'skyrocket',
+        'After a famous tech YouTuber reviewed our productivity app on Tuesday, our daily downloads <mark>skyrocketed</mark> from 300 a day to 45,000 overnight.',
+        'A) Dropped steadily over several months.',
+        'B) Rose extremely rapidly and dramatically.',
+        'C) Remained flat and unchanged.', 1,
+        'Numbers clue: "...from 300 a day to 45,000 overnight."',
+        'What caused a metric or cost in your industry to "skyrocket" recently?'],
+      [60, 'finance', '💰 Finance & Profitability', 'tighten our belts',
+        'Because Q1 revenue came in 20% below forecast, the CFO announced that all departments must <mark>tighten their belts</mark>—freezing non-essential travel and pausing external agency retainers.',
+        'A) Spend more aggressively on luxury client dinners to win new business.',
+        'B) Reduce spending and live more frugally during a period of financial constraint.',
+        'C) Hire 20% more staff to hit the Q2 forecast.', 1,
+        '"Q1 revenue came in 20% below forecast... freezing non-essential travel and pausing retainers."',
+        'When companies have to "tighten their belts," which expenses are usually cut first?'],
+
+      // ==================== 7. TECH, PRODUCT DEVELOPMENT & OPERATIONS (Q61-Q70) ====================
+      [61, 'tech', '💻 Tech, Product & Ops', 'workaround',
+        'Until the engineering team releases a permanent patch for the PDF export bug on Friday, our temporary <mark>workaround</mark> is to print the report to Google Drive first.',
+        'A) A permanent architectural upgrade that fixes the root cause of the bug.',
+        'B) A temporary bypass or alternative method used to get the job done while a system is broken.',
+        'C) Refusing to send any reports to clients until Friday.', 1,
+        '"Until engineering releases a permanent patch on Friday, our temporary ___ is to..."',
+        'What is a clever "workaround" you have used when a tool or process wasn\'t working?'],
+      [62, 'tech', '💻 Tech, Product & Ops', 'seamless integration',
+        'Clients love our CRM plugin because it offers <mark>seamless integration</mark> with Slack and Outlook—you can sync all your contacts in two clicks with zero coding.',
+        'A) Smooth, frictionless compatibility between systems with no awkward gaps or manual setup.',
+        'B) A complex installation process that requires two weeks of IT consulting.',
+        'C) A standalone system that cannot connect to any outside software.', 0,
+        '"Sync all your contacts in two clicks with zero coding."',
+        'Why is "seamless integration" with existing tools such a strong selling point for B2B buyers?'],
+      [63, 'tech', '💻 Tech, Product & Ops', 'scalable',
+        'Manually checking every customer invoice in Excel works fine when you have 20 clients, but it is not <mark>scalable</mark> when your company grows to 20,000 clients.',
+        'A) Able to handle massive growth in volume or users without breaking down or requiring proportional manual labor.',
+        'B) Easy for beginners to learn on their first day at work.',
+        'C) Compliant with local tax and accounting regulations.', 0,
+        'Contrasted: "works fine when you have 20 clients, but is NOT ___ when you grow to 20,000 clients."',
+        'What is one manual process in your work that needs to be automated to become "scalable"?'],
+      [64, 'tech', '💻 Tech, Product & Ops', 'bells and whistles',
+        'Our enterprise buyers don\'t care about flashy <mark>bells and whistles</mark> like animated avatars; they just want a rock-solid database that never crashes.',
+        'A) Core security infrastructure and server uptime guarantees.',
+        'B) Extra, showy, non-essential features added to make a product look fancy.',
+        'C) Audio notifications that alert engineers when a server fails.', 1,
+        '"Flashy ___ like animated avatars; they just want a rock-solid database that never crashes."',
+        'When buying software or electronics, do you prefer simplicity or lots of "bells and whistles"?'],
+      [65, 'tech', '💻 Tech, Product & Ops', 'pull the plug',
+        'After the beta test showed that users found the new voice-assistant feature confusing and annoying, product leadership decided to <mark>pull the plug</mark> on the project.',
+        'A) Double the engineering budget to add more voice commands.',
+        'B) Terminate, cancel, or discontinue a project so no more resources are wasted on it.',
+        'C) Unplug the office computers during a thunderstorm.', 1,
+        '"Users found it confusing and annoying... decided to ___ on the project."',
+        'How do leaders know when it\'s time to "pull the plug" on an underperforming project?'],
+      [66, 'tech', '💻 Tech, Product & Ops', 'from scratch',
+        'The legacy codebase was so tangled and outdated that instead of patching it, the engineers decided to build the new mobile app <mark>from scratch</mark>.',
+        'A) Starting from the very beginning with nothing pre-made.',
+        'B) By copying and modifying the old templates.',
+        'C) Using a quick drag-and-drop website builder.', 0,
+        'Contrasted with "instead of patching the legacy codebase, they decided to build it..."',
+        'When is it better to build a presentation or campaign "from scratch" rather than using an old template?'],
+      [67, 'tech', '💻 Tech, Product & Ops', 'stress-test',
+        'Before Black Friday, our e-commerce engineers simulated 100,000 simultaneous shoppers to <mark>stress-test</mark> the checkout servers and make sure they wouldn\'t crash under peak load.',
+        'A) Cause mental anxiety for the customer support team.',
+        'B) Test a system or plan under extreme pressure or maximum capacity to see where it might fail.',
+        'C) Shut down the website during the busiest shopping day of the year.', 1,
+        '"Simulated 100,000 simultaneous shoppers to ___ the servers and make sure they wouldn\'t crash."',
+        'How can you "stress-test" a business pitch before delivering it to a tough client?'],
+      [68, 'tech', '💻 Tech, Product & Ops', 'bottleneck ➔ streamline',
+        'By replacing four separate paper approval forms with a single automated Slack workflow, we <mark>streamlined</mark> our vendor onboarding from two weeks down to 20 minutes.',
+        'A) Made a process simpler, faster, and more efficient by eliminating unnecessary steps.',
+        'B) Added more security checkpoints to slow down approvals.',
+        'C) Outsourced all vendor onboarding to an external law firm.', 0,
+        '"Replacing four separate paper forms with a single automated workflow... from two weeks down to 20 minutes."',
+        'What is one administrative process at your company that you would love to "streamline"?'],
+      [69, 'tech', '💻 Tech, Product & Ops', 'under the hood',
+        'While the new dashboard looks identical on the surface, we completely rebuilt the search engine <mark>under the hood</mark> so queries run ten times faster.',
+        'A) Internally—referring to the hidden technical mechanics working behind the scenes.',
+        'B) On the public marketing homepage.',
+        'C) Inside the company\'s parking garage.', 0,
+        'Contrasted with "looks identical on the surface, [but] we completely rebuilt the search engine ___ so queries run 10x faster."',
+        'When pitching to a non-technical executive, how much do they need to know about what happens "under the hood"?'],
+      [70, 'tech', '💻 Tech, Product & Ops', 'glitches / teething problems',
+        'Whenever you roll out a brand-new ERP system across five offices, you have to expect a few <mark>teething problems</mark> during the first week as staff adjust to the new interface.',
+        'A) Permanent, catastrophic failures that ruin the company.',
+        'B) Temporary minor difficulties and growing pains that naturally occur during the early stages of something new.',
+        'C) Dental insurance claims submitted by employees.', 1,
+        '"Whenever you roll out a brand-new system... during the first week as staff adjust."',
+        'How do you reassure a client when a newly launched campaign or system has minor "teething problems"?'],
+
+      // ==================== 8. PRESENTATIONS, DATA STORYTELLING & PITCHING (Q71-Q80) ====================
+      [71, 'pitching', '🎤 Pitching & Data Narration', 'shed light on',
+        'Our Q2 exit surveys <mark>shed light on</mark> why small-business users were canceling: 68% said they simply didn\'t know how to set up automated reports.',
+        'A) Hid the embarrassing survey data from senior leadership.',
+        'B) Clarified and revealed the reason behind something that was previously unclear.',
+        'C) Upgraded the lighting in the conference room for the presentation.', 1,
+        'Followed by the colon revealing the exact reason: ": 68% said they simply didn\'t know how..."',
+        'What kind of data helps "shed light on" why customers buy or leave?'],
+      [72, 'pitching', '🎤 Pitching & Data Narration', 'cherry-pick',
+        'If you only show metrics from our two best weeks in December and ignore the five slow months before that, the board will accuse you of <mark>cherry-picking</mark> the data.',
+        'A) Conducting a comprehensive, unbiased audit of the entire year.',
+        'B) Selectively choosing only the most favorable facts or statistics to support your argument while hiding the rest.',
+        'C) Using agricultural metaphors to explain software growth.', 1,
+        '"Only show metrics from our two best weeks... and ignore the five slow months before that."',
+        'Why does "cherry-picking" data backfire when presenting to experienced executives?'],
+      [73, 'pitching', '🎤 Pitching & Data Narration', 'boil it down',
+        'The engineering team handed me a 40-page technical report, but for tomorrow\'s 3-minute CEO briefing, I need to <mark>boil it down</mark> to three core bullet points.',
+        'A) Print all 40 pages and read them as fast as possible.',
+        'B) Condense and reduce a large amount of complex information into its most essential points.',
+        'C) Delete the report without reading it.', 1,
+        '"40-page technical report... for a 3-minute briefing, I need to ___ to three core bullet points."',
+        'If you had to "boil down" your company\'s value proposition into one sentence, what would it be?'],
+      [74, 'pitching', '🎤 Pitching & Data Narration', 'drive the point home',
+        'Showing the churn chart got the executives\' attention, but playing a 30-second audio clip of an angry customer threatening to cancel really <mark>drove the point home</mark>.',
+        'A) Made the message unmistakably clear, forceful, and memorable.',
+        'B) Ended the meeting so everyone could commute home.',
+        'C) Confused the audience with too many unrelated details.', 0,
+        '"Showing the chart got their attention, BUT playing the audio clip really..."',
+        'In a presentation, what works better than bullet points to "drive your point home"?'],
+      [75, 'pitching', '🎤 Pitching & Data Narration', 'a tough sell',
+        'Asking the CFO to approve a $100,000 rebranding campaign right after a quarter of budget cuts is going to be <mark>a tough sell</mark>.',
+        'A) A proposal that will be approved immediately without any questions.',
+        'B) An idea or proposal that will be very difficult to persuade people to accept.',
+        'C) A product that sells out within minutes.', 1,
+        '"Asking for $100,000 right after a quarter of budget cuts is going to be..."',
+        'How do you prepare when you know your proposal is going to be "a tough sell"?'],
+      [76, 'pitching', '🎤 Pitching & Data Narration', 'off the cuff',
+        'When the projector failed five minutes into my keynote, I couldn\'t read my slides—I had to speak <mark>off the cuff</mark> for twenty minutes and tell real client stories instead.',
+        'A) Spontaneously and without preparation or a script.',
+        'B) By reading word-for-word from printed notes on my shirt cuff.',
+        'C) In a quiet whisper that only the front row could hear.', 0,
+        '"When the projector failed, I couldn\'t read my slides—I had to speak..."',
+        'How can frameworks like PREP help when an executive asks you a tough question and you have to answer "off the cuff"?'],
+      [77, 'pitching', '🎤 Pitching & Data Narration', 'birds-eye view',
+        'Before we drill down into the granular Q3 spreadsheets for each city, let me give you a <mark>bird\'s-eye view</mark> of our overall APAC strategy on Slide 1.',
+        'A) A high-level, big-picture overview of the whole subject from above.',
+        'B) A microscopic examination of every single invoice.',
+        'C) An outdoor drone video of our company headquarters.', 0,
+        'Contrasted with "Before we drill down into the granular spreadsheets... let me give you a ___ of our overall strategy."',
+        'Why should a presentation always start with a "bird\'s-eye view" before diving into granular details?'],
+      [78, 'pitching', '🎤 Pitching & Data Narration', 'elephant in the room',
+        'We can\'t spend an hour presenting our Q4 growth plan without addressing <mark>the elephant in the room</mark>: our main competitor just slashed their prices by 40% yesterday.',
+        'A) An obvious, major problem or sensitive issue that everyone is aware of, but people are hesitant to mention.',
+        'B) A minor formatting typo on the title slide.',
+        'C) The largest and most profitable client in our portfolio.', 0,
+        'Followed by the obvious massive issue: ": our main competitor just slashed their prices by 40% yesterday."',
+        'In a client or team meeting, why is it better to address "the elephant in the room" yourself right away?'],
+      [79, 'pitching', '🎤 Pitching & Data Narration', 'take it with a grain of salt',
+        'The vendor claims their AI tool will cut our support workload by 90% in week one, but we should <mark>take that with a grain of salt</mark> until we test it on our own tickets.',
+        'A) Believe the vendor\'s promise 100% and sign the contract immediately.',
+        'B) View a bold claim with healthy skepticism rather than accepting it as literal truth.',
+        'C) Reject the vendor without even testing their software.', 1,
+        '"...until we test it on our own tickets."',
+        'What kinds of marketing claims or forecasts do you always "take with a grain of salt"?'],
+      [80, 'pitching', '🎤 Pitching & Data Narration', 'connect the dots',
+        'If you just dump 30 raw numbers on a slide, the board will tune out; your job as a presenter is to <mark>connect the dots</mark> and show how rising page latency directly caused the dip in Q2 renewals.',
+        'A) Draw physical lines between bullet points using a laser pointer.',
+        'B) Show the logical relationship between separate facts so the audience understands the bigger picture.',
+        'C) Hide negative metrics by removing charts from the deck.', 1,
+        '"...and show how rising page latency directly caused the dip in Q2 renewals."',
+        'How does the NMTA formula (Number-Meaning-Trajectory-Action) help you "connect the dots" for executives?'],
+
+      // ==================== 9. CUSTOMER SUCCESS, CRISIS & STAKEHOLDERS (Q81-Q90) ====================
+      [81, 'clients', '📞 Client Relations & Crisis', 'drop the ball',
+        'Our account team really <mark>dropped the ball</mark> when they forgot to send the renewal contract before the client\'s fiscal year ended, costing us a $40,000 quarter.',
+        'A) Celebrated a successful contract signing with the client.',
+        'B) Made a careless mistake or failed to handle an important responsibility properly.',
+        'C) Negotiated a higher price for the renewal.', 1,
+        '"...when they forgot to send the renewal contract... costing us a $40,000 quarter."',
+        'When a team accidentally "drops the ball" with a client, what is the best way to recover trust?'],
+      [82, 'clients', '📞 Client Relations & Crisis', 'damage control',
+        'As soon as the faulty software update locked 500 enterprise users out of their accounts, our communications team went into <mark>damage control</mark>—sending proactive status updates and offering service credits.',
+        'A) Actions taken to minimize the negative fallout and reputation harm after a crisis has already occurred.',
+        'B) A celebratory marketing campaign announcing a new product.',
+        'C) Shutting down the customer support phone lines so nobody can complain.', 0,
+        '"As soon as the faulty update locked 500 users out... sending proactive updates and offering credits."',
+        'What is the golden rule of effective "damage control" when something goes wrong for a client?'],
+      [83, 'clients', '📞 Client Relations & Crisis', 'keep someone in the loop',
+        'Even if the engineering fix takes another 24 hours, please <mark>keep the client in the loop</mark> with an hourly status email so they don\'t feel ignored.',
+        'A) Keep the client informed and updated with the latest information as a situation progresses.',
+        'B) Exclude the client from all communication until the bug is 100% solved.',
+        'C) Put the client on an automated marketing newsletter list.', 0,
+        '"...with an hourly status email so they don\'t feel ignored."',
+        'How do you "keep stakeholders in the loop" on a complex project without overwhelming them with emails?'],
+      [84, 'clients', '📞 Client Relations & Crisis', 'go the extra mile',
+        'When the client\'s launch event ran into technical trouble on a Sunday night, our onboarding specialist <mark>went the extra mile</mark> and stayed on Zoom with them until 11 PM to make sure everything worked.',
+        'A) Charged the client triple overtime fees for Sunday support.',
+        'B) Made a special effort above and beyond what is normally expected or required.',
+        'C) Drove an extra mile on the highway after missing the exit.', 1,
+        '"...stayed on Zoom with them on a Sunday night until 11 PM to make sure everything worked."',
+        'Tell me about a time you or a colleague "went the extra mile" for a client!'],
+      [85, 'clients', '📞 Client Relations & Crisis', 'manage expectations',
+        'If the custom integration will realistically take six weeks, don\'t promise two weeks just to close the sale; it\'s far better to <mark>manage expectations</mark> upfront so the client isn\'t disappointed later.',
+        'A) Over-promise impossible results to make the client happy today.',
+        'B) Set realistic, honest boundaries early on so stakeholders know what is actually achievable.',
+        'C) Let the client write their own delivery schedule without engineering input.', 1,
+        'Contrasted with "don\'t promise two weeks just to close the sale... so the client isn\'t disappointed later."',
+        'How do you "manage a client\'s expectations" when they ask for an unrealistic deadline?'],
+      [86, 'clients', '📞 Client Relations & Crisis', 'sweep it under the rug',
+        'When we discovered a billing error that overcharged 30 customers by $50, our CEO refused to <mark>sweep it under the rug</mark>—she ordered an immediate refund and an honest apology email.',
+        'A) Hide an embarrassing mistake or problem in hopes that nobody will notice it.',
+        'B) Clean the office carpets before an important client visit.',
+        'C) Publicly reward the accounting team for finding extra revenue.', 0,
+        'Contrasted with "refused to ___—she ordered an immediate refund and an honest apology."',
+        'Why is trying to "sweep a mistake under the rug" always worse than admitting it upfront?'],
+      [87, 'clients', '📞 Client Relations & Crisis', 'smooth things over',
+        'The client was furious about the three-day shipment delay, so our regional director flew to Osaka to meet them in person, apologize, and <mark>smooth things over</mark>.',
+        'A) Argue with the client and blame the shipping company.',
+        'B) Calm anger, reduce tension, and restore a positive relationship after a disagreement or mistake.',
+        'C) Cancel the client\'s remaining orders.', 1,
+        '"The client was furious... met them in person to apologize and..."',
+        'What works best to "smooth things over" when a client or partner is frustrated?'],
+      [88, 'clients', '📞 Client Relations & Crisis', 'bend over backwards',
+        'We have <mark>bent over backwards</mark> to accommodate this client—giving them custom features, weekend support, and a 20% discount—yet they still complain about every invoice.',
+        'A) Done everything humanly possible and made extreme efforts to please or help someone.',
+        'B) Ignored the client\'s requests and refused to customize the software.',
+        'C) Introduced mandatory morning stretching exercises for the support team.', 0,
+        'Explained between the dashes: "—giving them custom features, weekend support, and a 20% discount—"',
+        'Where do you draw the line between great service and "bending over backwards" for an unreasonable client?'],
+      [89, 'clients', '📞 Client Relations & Crisis', 'leave someone in the lurch',
+        'When our previous print vendor went out of business three days before our trade show without warning, they <mark>left us in the lurch</mark> with no brochures for our booth.',
+        'A) Delivered all of our brochures early and under budget.',
+        'B) Abandoned someone abruptly in a difficult, helpless situation without support.',
+        'C) Recommended a reliable backup printer to handle our order.', 1,
+        '"Went out of business three days before our trade show without warning... with no brochures."',
+        'How do contingency plans protect your team from being "left in the lurch" by a vendor?'],
+      [90, 'clients', '📞 Client Relations & Crisis', 'touch base',
+        'Since we rolled out the new pricing tier to your account two weeks ago, I wanted to <mark>touch base</mark> for five minutes on Thursday to see how your team is finding the new features.',
+        'A) Briefly make contact or check in with someone to get a status update.',
+        'B) Renegotiate the entire legal contract from scratch.',
+        'C) Play a company baseball game on Thursday afternoon.', 0,
+        '"...for five minutes on Thursday to see how your team is finding the new features."',
+        'How often do you "touch base" with your key clients or cross-functional partners?'],
+
+      // ==================== 10. CAREER, INTERVIEWS, NETWORKING & DAILY LIFE (Q91-Q100) ====================
+      [91, 'career', '🚀 Career, Interviews & Life', 'hit the ground running',
+        'Because we are in the middle of our busiest quarter, we don\'t have time to train a beginner for three months; we need an experienced marketing lead who can <mark>hit the ground running</mark> on day one.',
+        'A) Start a new role or project immediately with high energy and effectiveness, needing minimal training.',
+        'B) Run a marathon with the company fitness club on their first day.',
+        'C) Spend their first three months quietly observing meetings.', 0,
+        'Contrasted with "don\'t have time to train a beginner for three months; we need someone who can ___ on day one."',
+        'When starting a new project or job, what helps you "hit the ground running"?'],
+      [92, 'career', '🚀 Career, Interviews & Life', 'wear many hats',
+        'In a 5,000-person corporation you only do one narrow job, but at a 10-person startup you have to <mark>wear many hats</mark>—handling sales in the morning, customer support at lunch, and ad copy at night.',
+        'A) Dress formally in a suit and hat for every client meeting.',
+        'B) Take on multiple different roles and responsibilities at the same time.',
+        'C) Change jobs every six months.', 1,
+        'Contrasted with "only do one narrow job" and explained after the dash: "—handling sales, support, and ad copy."',
+        'Do you prefer a specialized role or a role where you get to "wear many hats"?'],
+      [93, 'career', '🚀 Career, Interviews & Life', 'steep learning curve',
+        'Switching from consumer retail to enterprise cybersecurity had a <mark>steep learning curve</mark>—I had to master dozens of technical compliance terms in my first month, but now I feel completely comfortable.',
+        'A) Something that is effortless and requires zero study.',
+        'B) A role or skill that is challenging to learn at first and requires acquiring a lot of new knowledge very quickly.',
+        'C) A career path with no opportunities for promotion.', 1,
+        '"I had to master dozens of technical compliance terms in my first month..."',
+        'What software tool or professional skill had the "steepest learning curve" for you?'],
+      [94, 'career', '🚀 Career, Interviews & Life', 'burn bridges',
+        'Even if you are frustrated with your boss when resigning, always leave on polite, professional terms; tech is a small industry and you never want to <mark>burn bridges</mark>.',
+        'A) Destroy relationships or goodwill permanently so you can never return or ask for a reference in the future.',
+        'B) Celebrate your new job offer by taking your team out to dinner.',
+        'C) Delete all of your old emails before handing over your laptop.', 0,
+        'Contrasted with "always leave on polite, professional terms; tech is a small industry..."',
+        'Why is it so important not to "burn bridges" with former colleagues or clients?'],
+      [95, 'career', '🚀 Career, Interviews & Life', 'learn the ropes',
+        'Don\'t worry about leading a client pitch during your first two weeks at the agency; just shadow Elena on her calls while you <mark>learn the ropes</mark>.',
+        'A) Master the basic rules, procedures, and how things work in a new job or activity.',
+        'B) Practice rock-climbing at the company team-building retreat.',
+        'C) Rewrite the agency\'s standard operating procedures.', 0,
+        '"During your first two weeks... just shadow Elena on her calls while you..."',
+        'How long does it usually take a new team member to "learn the ropes" in your department?'],
+      [96, 'career', '🚀 Career, Interviews & Life', 'test the waters',
+        'Before signing a five-year office lease in Singapore and hiring 20 full-time staff, let\'s <mark>test the waters</mark> by running a three-month remote pilot with three local clients.',
+        'A) Commit 100% of our capital immediately without doing any research.',
+        'B) Try out a new market or idea on a small, low-risk scale first to see how it performs before making a massive commitment.',
+        'C) Check the water quality in the office building.', 1,
+        'Contrasted with "Before signing a 5-year lease and hiring 20 staff, let\'s ___ by running a 3-month pilot."',
+        'How can a company "test the waters" before launching a brand-new product line?'],
+      [97, 'career', '🚀 Career, Interviews & Life', 'track record',
+        'We hired Maya as our VP of Growth because she has a proven <mark>track record</mark>—she scaled B2B revenue from $2M to $20M at her last two companies.',
+        'A) A verifiable history of past achievements and performance showing what someone is capable of.',
+        'B) A university degree in business administration.',
+        'C) A list of personal hobbies on her resume.', 0,
+        'Explained right after the dash: "—she scaled B2B revenue from $2M to $20M at her last two companies."',
+        'In a job interview or client pitch, how do you highlight your "track record"?'],
+      [98, 'career', '🚀 Career, Interviews & Life', 'call it a day',
+        'We\'ve been reviewing these Q3 budget spreadsheets for six hours straight and everyone is exhausted; let\'s <mark>call it a day</mark> and finish the last two tabs with fresh eyes tomorrow morning.',
+        'A) Order dinner to the office and keep working until midnight.',
+        'B) Stop working for the rest of the day.',
+        'C) Schedule an all-day workshop for next week.', 1,
+        '"Everyone is exhausted; let\'s ___ and finish the last two tabs tomorrow morning."',
+        'At what point in the evening do you usually decide to "call it a day"?'],
+      [99, 'career', '🚀 Career, Interviews & Life', 'get your foot in the door',
+        'Landing a small $5,000 pilot project with Sony wasn\'t about immediate profit; it was a strategic way to <mark>get our foot in the door</mark> so we could pitch their global divisions later.',
+        'A) Win an initial, small-scale opportunity with an organization that opens the way for bigger future deals or career growth.',
+        'B) Block competitors from entering the client\'s office building.',
+        'C) Close the account permanently after the pilot ends.', 0,
+        '"Landing a small $5,000 pilot... so we could pitch their global divisions later."',
+        'What is the best strategy to "get your foot in the door" with a major enterprise client?'],
+      [100, 'career', '🚀 Career, Interviews & Life', 'go the extra mile ➔ second nature',
+        'At first, structuring my meeting updates with the PREP formula required conscious effort, but after practicing it for a month, it has become <mark>second nature</mark>.',
+        'A) An awkward habit that feels unnatural and exhausting.',
+        'B) A skill or behavior so deeply practiced and familiar that you do it automatically without thinking.',
+        'C) The second item on our weekly meeting agenda.', 1,
+        'Contrasted with "At first, it required conscious effort, BUT after practicing it for a month, it has become..."',
+        'What English business skill or phrase is starting to feel like "second nature" to you now?']
+    ];
+
+    const questions = rawData.map(r => ({
+      id: r[0],
+      cat: r[1],
+      catLabel: r[2],
+      target: r[3],
+      focus: r[4],
+      options: [
+        { text: r[5], correct: r[8] === 0 },
+        { text: r[6], correct: r[8] === 1 },
+        { text: r[7], correct: r[8] === 2 }
+      ],
+      clue: r[9],
+      prompt: r[10]
+    }));
+
+    const STORAGE_KEY = 'yh_closest_100_solved';
+    const solvedSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+    let teacherMode = false;
+    let currentFilter = 'all';
+    let randomSprintIds = null;
+
+    function saveProgress() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(solvedSet)));
+      document.getElementById('scorePill').textContent = `Mastered: ${solvedSet.size} / 100`;
+    }
+
+    function renderQuiz() {
+      const container = document.getElementById('quizContainer');
+      const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+      container.innerHTML = '';
+
+      const filtered = questions.filter(q => {
+        if (randomSprintIds) return randomSprintIds.includes(q.id);
+        if (currentFilter === 'unsolved' && solvedSet.has(q.id)) return false;
+        if (currentFilter !== 'all' && currentFilter !== 'unsolved' && q.cat !== currentFilter) return false;
+        if (query) {
+          const hay = `${q.id} ${q.target} ${q.focus} ${q.catLabel}`.toLowerCase();
+          return hay.includes(query);
+        }
+        return true;
+      });
+
+      document.getElementById('showingCount').textContent = randomSprintIds
+        ? `🎲 Random 10-Question Sprint (${filtered.length} Items)`
+        : `Showing ${filtered.length} of 100 Questions`;
+
+      filtered.forEach(q => {
+        const isSolved = solvedSet.has(q.id);
+        const card = document.createElement('div');
+        card.className = 'q-card' + (isSolved ? ' solved' : '');
+        card.id = 'qcard_' + q.id;
+
+        const optsHtml = q.options.map((opt, idx) => `
+          <button class="opt-btn ${isSolved && opt.correct ? 'correct' : ''}" onclick="selectAnswer(${q.id}, ${idx}, ${opt.correct}, this)">
+            ${opt.text}${isSolved && opt.correct ? ' ✅' : ''}
+          </button>
+        `).join('');
+
+        card.innerHTML = `
+          <div class="q-top">
+            <span class="cat-badge">Q#${q.id} · ${q.catLabel}</span>
+            <span class="target-pill">Target: ${q.target}</span>
+          </div>
+          <div class="focus-sentence">${q.focus}</div>
+          <div class="opt-list">${optsHtml}</div>
+          <div class="clue-box ${teacherMode || isSolved ? 'visible' : ''}" id="clue_${q.id}">
+            <div class="clue-line"><strong>🔍 Context Clue Breakdown:</strong> ${q.clue}</div>
+            <div class="speak-prompt">🗣️ <strong>15-Second Speaking Prompt for YH:</strong> "${q.prompt}"</div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function selectAnswer(qId, optIdx, isCorrect, btnEl) {
+      const parent = btnEl.parentElement;
+      parent.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('correct', 'wrong'));
+      if (isCorrect) {
+        btnEl.classList.add('correct');
+        if (!btnEl.textContent.includes('✅')) btnEl.innerHTML += ' ✅';
+        solvedSet.add(qId);
+        document.getElementById('qcard_' + qId)?.classList.add('solved');
+        document.getElementById('clue_' + qId)?.classList.add('visible');
+        saveProgress();
+      } else {
+        btnEl.classList.add('wrong');
+      }
+    }
+
+    function filterCategory(cat, btnEl) {
+      randomSprintIds = null;
+      currentFilter = cat;
+      document.querySelectorAll('.filter-tabs .btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderQuiz();
+    }
+
+    function handleSearch() {
+      randomSprintIds = null;
+      renderQuiz();
+    }
+
+    function pickRandomSprint() {
+      const unsolved = questions.filter(q => !solvedSet.has(q.id));
+      const pool = unsolved.length >= 10 ? unsolved : questions;
+      const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, 10);
+      randomSprintIds = shuffled.map(q => q.id);
+      document.querySelectorAll('.filter-tabs .btn').forEach(b => b.classList.remove('active'));
+      renderQuiz();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleTeacherMode() {
+      teacherMode = !teacherMode;
+      const btn = document.getElementById('teacherToggleBtn');
+      btn.classList.toggle('active', teacherMode);
+      renderQuiz();
+    }
+
+    function resetQuiz() {
+      if (!confirm('Reset all 100 mastered progress items?')) return;
+      solvedSet.clear();
+      saveProgress();
+      renderQuiz();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      saveProgress();
+      renderQuiz();
+    });
+  </script>
+</body>
+</html>

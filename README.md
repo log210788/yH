@@ -34,12 +34,16 @@ yH/
 │       └── Lesson-4-Closing-Objections-and-Pricing/
 │           ├── Teacher-Lesson-Plan.md  # Objection Aikido, Prize Frame & Hardball close
 │           └── Student-Handout.md      # Objection cheat sheet & non-negotiable thresholds
+│   └── Marketing-Vocabulary-and-Scenarios/ # 11 Commercial & Marketing Activities Suite
+│       ├── Teacher-Lesson-Plan-and-Activity-Guide.md # Full facilitation guide & answer keys
+│       └── Student-Handout-and-Scenario-Pack.md      # Student reference, 30-term lexicon & briefs
 ├── Teacher-Materials/
 │   ├── New-Preply-Teacher-Playbook-Selling-Pitching.md # Quick reference for new Preply teachers
 │   ├── Week-01-Homework.md             # Written & audio recording homework assignment
 │   ├── Week-01-Answer-Key.md           # Model answers, recasts & assessment rubrics
 │   └── Complete-Curriculum-Lexicon.md  # 100-word cross-functional Business Lexicon (7 domains)
 ├── index.html                          # Unified Portal (Tab 1: Vocab Ladder Revision, Tab 2: Studio, etc.)
+├── marketing-scenarios.html            # Standalone Interactive Marketing Scenarios & Vocab Lab (11 Activities)
 ├── revision.html                       # Dedicated standalone Vocab Ladder Revision & Homework page
 ├── studio.html                         # Dedicated standalone Audio Recording Studio
 ├── game.html                           # Standalone Vocab Arena Game (drag & drop, reveal, quiz)

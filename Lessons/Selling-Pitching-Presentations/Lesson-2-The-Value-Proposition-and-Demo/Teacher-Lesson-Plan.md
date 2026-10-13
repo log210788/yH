@@ -56,6 +56,7 @@ By the end of this 50-minute session, YH will:
    - **YH Response**: *"Which means your infrastructure scales effortlessly without incurring server crashes during peak traffic spikes."*
 4. **Lewis**: *"Our platform integrates directly with Slack and Microsoft Teams."*
    - **YH Response**: *"Which means your project managers eliminate communication silos and cut status meetings by 40%."*
+   - **Lewis (Teacher Reaction / Warm-Up Banter)**: *"SOLD! Hallelujah! If this means nobody pings me 'Hey, quick question?' on Friday at 4:59 PM, take my company card right now!"*
 
 #### Exercise 1.2: Rapid-Fire Filler Interception Drill (4 mins)
 *Facilitation: Ask YH a spontaneous question: "Why should a company upgrade their legacy software this quarter?"*

@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Scenarios & Business Vocabulary Lab | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --navy: #0f2744;
+      --navy-light: #1e3a8a;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --t1-text: #991b1b;
+      --t1-bg: #fef2f2;
+      --t1-border: #fecaca;
+      --t2-text: #1e40af;
+      --t2-bg: #eff6ff;
+      --t2-border: #bfdbfe;
+      --t3-text: #166534;
+      --t3-bg: #f0fdf4;
+      --t3-border: #bbf7d0;
+      --amber-text: #92400e;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky Top Navigation */
+    .top-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .top-nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #0f2744, #2563eb);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      background: #ffffff;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+    .btn-emerald {
+      background: #166534;
+      color: #ffffff;
+      border-color: #166534;
+    }
+    .btn-emerald:hover {
+      background: #14532d;
+    }
+
+    /* Section Jump Bar */
+    .jump-bar {
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 20px;
+      overflow-x: auto;
+    }
+    .jump-bar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .jump-chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .jump-chip:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1120px;
+      margin: 28px auto 64px;
+      padding: 0 20px;
+    }
+
+    /* Hero Banner */
+    .hero-card {
+      background: linear-gradient(135deg, #0f2744 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      max-width: 700px;
+    }
+    .hero-meta {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 6px;
+      padding: 14px 18px;
+      min-width: 230px;
+      font-size: 0.84rem;
+    }
+    .hero-meta div {
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .hero-meta div:last-child { margin-bottom: 0; }
+    .hero-meta span.lbl { color: #94a3b8; }
+    .hero-meta span.val { font-weight: 700; color: #fff; }
+
+    /* Activity Cards */
+    .activity-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      scroll-margin-top: 110px;
+    }
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .activity-tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: var(--t2-bg);
+      color: var(--t2-text);
+      border: 1px solid var(--t2-border);
+      margin-bottom: 6px;
+    }
+    .activity-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .activity-source {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Word Bank Chips */
+    .word-bank-bar {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+    .word-bank-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .vocab-chip {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--t3-bg);
+      color: var(--t3-text);
+      border: 1px solid var(--t3-border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .vocab-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+    .vocab-chip.used {
+      background: #166534;
+      color: #ffffff;
+      border-color: #14532d;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 860px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* Mockup Cards */
+    .mockup-box {
+      border: 2px solid var(--border-dark);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .mockup-box.bad { border-color: #fca5a5; }
+    .mockup-box.good { border-color: #86efac; }
+    .mockup-top {
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: flex;
+      justify-content: space-between;
+    }
+    .mockup-box.bad .mockup-top { background: #fef2f2; color: #991b1b; border-bottom: 1px solid #fecaca; }
+    .mockup-box.good .mockup-top { background: #f0fdf4; color: #166534; border-bottom: 1px solid #bbf7d0; }
+    .mockup-body {
+      padding: 18px;
+      font-size: 0.88rem;
+    }
+    .mockup-headline {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .mockup-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .mockup-copy {
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 14px;
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .mockup-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+    .mockup-box.bad .mockup-cta { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    .mockup-box.good .mockup-cta { background: #16a34a; color: #ffffff; }
+
+    /* Option Cards (Activity 2) */
+    .option-card {
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .option-card h4 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .metric-row:last-of-type { border-bottom: none; }
+
+    /* Interactive Timer Widget */
+    .timer-widget {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .timer-display {
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+    .timer-display.warning { color: #fbbf24; }
+    .timer-display.danger { color: #f87171; }
+    .timer-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Funnel Table */
+    .funnel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .funnel-table th {
+      background: #f1f5f9;
+      color: var(--navy);
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border-dark);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    .funnel-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .funnel-leak {
+      background: #fef2f2 !important;
+      color: #991b1b;
+      font-weight: 700;
+    }
+
+    /* Inputs & Textareas */
+    .input-field {
+      width: 100%;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .input-field:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    textarea.input-field {
+      min-height: 74px;
+      resize: vertical;
+    }
+    .field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    /* Substitution Ladder Rungs */
+    .ladder-box {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background: #fafafa;
+    }
+    .rung-step {
+      padding: 8px 12px;
+      margin-top: 8px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      background: #ffffff;
+      border-left: 3px solid var(--accent);
+      display: none;
+    }
+    .rung-step.visible { display: block; }
+
+    /* Multiple Choice Quiz */
+    .quiz-item {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background: #ffffff;
+    }
+    .quiz-q {
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+    .quiz-opt {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      background: #f8fafc;
+      font-family: inherit;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .quiz-opt:hover { background: #eff6ff; border-color: #93c5fd; }
+    .quiz-opt.correct { background: #dcfce7; border-color: #16a34a; color: #14532d; font-weight: 700; }
+    .quiz-opt.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+    /* Collapsible Reveal */
+    .reveal-box {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      color: #14532d;
+    }
+    .reveal-box.open { display: block; }
+
+    .save-toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: none;
+      z-index: 999;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand">
+        <div class="brand-badge">YH</div>
+        <div>
+          <div class="brand-title">Marketing Scenarios & Business Vocabulary Suite</div>
+          <div class="brand-sub">11 Practical Commercial Activities Adapted for YH · Zero Accent Filler</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="btn">← Back to Main Portal</a>
+        <a href="game.html" class="btn">🎮 Vocab Arena</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Pack</button>
+        <button class="btn btn-primary" onclick="copyAllMarketingWork()">📋 Copy My Answers for Preply</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK JUMP BAR -->
+  <nav class="jump-bar">
+    <div class="jump-bar-inner">
+      <a href="#lexicon" class="jump-chip">📚 30-Term Lexicon</a>
+      <a href="#act1" class="jump-chip">1. Ad Copy Tear-Down</a>
+      <a href="#act2" class="jump-chip">2. $50k Channel Matrix</a>
+      <a href="#act3" class="jump-chip">3. Funnel Analytics (60s)</a>
+      <a href="#act4" class="jump-chip">4. Product Repositioning</a>
+      <a href="#act5" class="jump-chip">5. Crisis Pushback</a>
+      <a href="#act6" class="jump-chip">6. 120-90-60 GTM Pitch</a>
+      <a href="#act7" class="jump-chip">7. Vocab Upgrade Ladder</a>
+      <a href="#act8" class="jump-chip">8. Marketing Idioms Quiz</a>
+      <a href="#act9" class="jump-chip">9. Headline Lab</a>
+      <a href="#act10" class="jump-chip">10. Scope Creep Roleplay</a>
+      <a href="#act11" class="jump-chip">11. Pile-Up & Email</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero-card">
+      <div>
+        <span class="hero-badge">Executive Commercial & Marketing Track</span>
+        <h1 class="hero-title">Business Vocabulary & Real-World Marketing Scenarios</h1>
+        <p class="hero-sub">All 11 activities from Jackie Bolen's <em>101 Activities for Teaching English Online</em> adapted specifically for YH's commercial goals: ad copy tear-downs, budget allocation trade-offs, funnel analytics, product repositioning, and high-density marketing vocabulary.</p>
+      </div>
+      <div class="hero-meta">
+        <div><span class="lbl">Student:</span><span class="val">YH</span></div>
+        <div><span class="lbl">Coach:</span><span class="val">Lewis O.</span></div>
+        <div><span class="lbl">Core Focus:</span><span class="val" style="color:#86efac;">Vocab & Marketing</span></div>
+        <div><span class="lbl">Auto-Save:</span><span class="val" id="saveStatus">Active ✓</span></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         MASTER 30-TERM MARKETING & BUSINESS LEXICON
+         ===================================================================== -->
+    <section id="lexicon" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Reference Vault</span>
+          <h2 class="activity-title">The 30-Term Marketing & Commercial Upgrade Matrix</h2>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button class="btn" onclick="filterLexicon('all')">All (30)</button>
+          <button class="btn" onclick="filterLexicon('copy')">Positioning & Copy</button>
+          <button class="btn" onclick="filterLexicon('metrics')">Funnel & Metrics</button>
+          <button class="btn" onclick="filterLexicon('strategy')">Strategy & Budget</button>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto; border:1px solid var(--border); border-radius:6px;">
+        <table class="funnel-table" style="margin-bottom:0;">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Tier-1 Crutch Phrase (Banned)</th>
+              <th>Tier-3 Executive Marketing Upgrade</th>
+              <th>Commercial Nuance & Example</th>
+            </tr>
+          </thead>
+          <tbody id="lexiconBody">
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Good points / feature</span></td><td><span class="vocab-chip">Value proposition / USP</span></td><td><em>"Our core <strong>value proposition</strong> is cutting client reporting overhead by 80%."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Customer problem</span></td><td><span class="vocab-chip">Pain point / Friction</span></td><td><em>"A 12-field signup form creates massive <strong>friction</strong> for mobile prospects."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Group of buyers</span></td><td><span class="vocab-chip">Target persona / Segment</span></td><td><em>"This ad copy doesn't resonate with our enterprise <strong>target persona</strong>."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Bottom button</span></td><td><span class="vocab-chip">Call-to-Action (CTA)</span></td><td><em>"Let's test a low-friction <strong>Call-to-Action (CTA)</strong> on the landing page."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Brand image (Image-up)</span></td><td><span class="vocab-chip">Brand equity</span></td><td><em>"Heavy discounting will permanently <strong>erode our brand equity</strong>."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Change who we sell to</span></td><td><span class="vocab-chip">Reposition / Pivot</span></td><td><em>"We <strong>repositioned</strong> the tool from B2C freelancers to B2B agencies."</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Make us look different</span></td><td><span class="vocab-chip">Differentiate</span></td><td><em>"How do we <strong>differentiate</strong> our solution from cheaper competitors?"</em></td></tr>
+            <tr data-cat="copy"><td>Positioning</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Customer reviews</span></td><td><span class="vocab-chip">Social proof</span></td><td><em>"Adding enterprise client logos above the fold provides instant <strong>social proof</strong>."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Cost to get a buyer</span></td><td><span class="vocab-chip">Customer Acquisition Cost (CAC)</span></td><td><em>"Paid search has a high <strong>CAC</strong> of $200, but high buyer intent."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Good cospa / ad profit</span></td><td><span class="vocab-chip">Return on Ad Spend (ROAS) / ROI</span></td><td><em>"Our Q2 retargeting campaign delivered a 4.5x <strong>ROAS</strong>."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Total money from 1 buyer</span></td><td><span class="vocab-chip">Customer Lifetime Value (LTV)</span></td><td><em>"Upselling annual retainers doubled our <strong>Customer Lifetime Value (LTV)</strong>."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">People seeing the ad</span></td><td><span class="vocab-chip">Impressions / Reach</span></td><td><em>"The campaign generated 310,000 <strong>impressions</strong> in May."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Percent who click</span></td><td><span class="vocab-chip">Click-Through Rate (CTR)</span></td><td><em>"Rewriting the hook lifted our <strong>click-through rate (CTR)</strong> to 3.2%."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Leaving right away</span></td><td><span class="vocab-chip">Bounce rate / Drop-off</span></td><td><em>"An 8-second load time caused a 79% mobile <strong>bounce rate</strong>."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Customers canceling</span></td><td><span class="vocab-chip">Customer churn (vs. Retention)</span></td><td><em>"Better onboarding cut our monthly <strong>customer churn</strong> from 8% to 3%."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Knowing which ad worked</span></td><td><span class="vocab-chip">Attribution</span></td><td><em>"Influencer sponsorships have strong reach, but murky <strong>attribution</strong>."</em></td></tr>
+            <tr data-cat="metrics"><td>Funnel & ROI</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Testing 2 versions</span></td><td><span class="vocab-chip">A/B test / Split test</span></td><td><em>"Let's <strong>A/B test</strong> a 3-field form against the 12-field form."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Launch plan</span></td><td><span class="vocab-chip">Go-To-Market (GTM) strategy</span></td><td><em>"We are aligning sales and marketing on our Q3 <strong>GTM strategy</strong>."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Get new prospects</span></td><td><span class="vocab-chip">Drive lead generation</span></td><td><em>"Whitepapers are our most cost-effective way to <strong>drive lead generation</strong>."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Start working well</span></td><td><span class="vocab-chip">Gain traction</span></td><td><em>"Our B2B referral program is finally <strong>gaining traction</strong> in APAC."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Make a big impact</span></td><td><span class="vocab-chip">Move the needle</span></td><td><em>"Cosmetic website tweaks won't <strong>move the needle</strong> on revenue."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Easy wins first</span></td><td><span class="vocab-chip">Low-hanging fruit</span></td><td><em>"Re-engaging past trial users is our best <strong>low-hanging fruit</strong>."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Steal our own sales</span></td><td><span class="vocab-chip">Cannibalize sales</span></td><td><em>"A cheap lite tier might <strong>cannibalize</strong> our enterprise subscriptions."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Cheap item to hook buyers</span></td><td><span class="vocab-chip">Loss leader</span></td><td><em>"We offer the diagnostic audit as a <strong>loss leader</strong> to win retainers."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Move money to X</span></td><td><span class="vocab-chip">Allocate / Reallocate budget</span></td><td><em>"Let's <strong>reallocate</strong> $15k from display ads into high-intent search."</em></td></tr>
+            <tr data-cat="strategy"><td>Strategy</td><td><span class="vocab-chip" style="background:var(--t1-bg);color:var(--t1-text);border-color:var(--t1-border);">Redo / Remake</span></td><td><span class="vocab-chip">Overhaul / Re-architect</span></td><td><em>"We need to <strong>overhaul</strong> our landing page copy before launch."</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 1: LIVE AD COPY & LANDING PAGE TEAR-DOWN
+         ===================================================================== -->
+    <section id="act1" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 1 · Positioning & Copy Audit</span>
+          <h2 class="activity-title">Live Ad Copy & Landing Page Tear-Down</h2>
+        </div>
+        <span class="activity-source">Adapted from: Flyer Time (p. 127) & Brochure Scanning (p. 112)</span>
+      </div>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>🎯 Target Vocabulary Bank (Click each term as you use it in your critique!)</span>
+          <span id="act1Count">0 / 8 Used</span>
+        </div>
+        <div class="chip-list" data-counter="act1Count">
+          <span class="vocab-chip" onclick="toggleChip(this)">value proposition</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">target persona</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">pain point</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">call-to-action (CTA)</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">friction</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">social proof</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">overhaul</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">conversion rate</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="mockup-box bad">
+          <div class="mockup-top">
+            <span>Mockup A: CloudSync Pro</span>
+            <span>Conversion Rate: 0.4% (Failing)</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-headline">"We Made a Great New Cloud Tool With 256-Bit Encryption & 40 Features!"</div>
+            <div class="mockup-sub">Our engineers worked hard for 2 years to build this system for everyone.</div>
+            <div class="mockup-copy">
+              Do you want to put files on the computer? CloudSync Pro has folders, color tags, IT admin webhooks, and family photo sharing. Available in 5 plans: $9/mo, $29/mo, $49/mo, $89/mo, or Enterprise.
+            </div>
+            <div class="mockup-cta">[ Click Here to Fill Out an Inquiry Form & Wait for a Sales Call ]</div>
+          </div>
+        </div>
+
+        <div class="mockup-box good">
+          <div class="mockup-top">
+            <span>Mockup B: FlowDesk Agency Suite</span>
+            <span>Conversion Rate: 6.8% (High-Performing)</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-headline">"Eliminate 12 Hours of Manual Client Reporting Every Single Week."</div>
+            <div class="mockup-sub">Built exclusively for Digital Marketing Agencies managing 10+ client accounts.</div>
+            <div class="mockup-copy">
+              Stop copy-pasting metrics across 6 spreadsheets every Friday. Automatically sync Google Ads, Meta, and CRM data into client dashboards in 60 seconds. Trusted by 1,400+ agency directors to cut overhead by 80%.
+            </div>
+            <div class="mockup-cta">[ Start Your 14-Day Free Trial — No Credit Card Required ]</div>
+          </div>
+        </div>
+      </div>
+
+      <label class="field-label">Your Executive Audit of Mockup A (Identify 3 flaws in Target Persona, Value Proposition, and CTA Friction, and how to overhaul it):</label>
+      <textarea id="mk_act1_notes" class="input-field" placeholder="1. Target Persona flaw: ...&#10;2. Value Proposition vs. Feature-dumping: ...&#10;3. How to overhaul the CTA to reduce friction: ..."></textarea>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 2: $50,000 Q3 MARKETING CHANNEL SELECTION MATRIX
+         ===================================================================== -->
+    <section id="act2" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 2 · Trade-Offs & Budget Allocation</span>
+          <h2 class="activity-title">Marketing Channel Selection Matrix ($50,000 Q3 Budget)</h2>
+        </div>
+        <span class="activity-source">Adapted from: Real House Hunters (p. 60)</span>
+      </div>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>🎯 Target Vocabulary Bank (Click each term as you use it!)</span>
+          <span id="act2Count">0 / 8 Used</span>
+        </div>
+        <div class="chip-list" data-counter="act2Count">
+          <span class="vocab-chip" onclick="toggleChip(this)">allocate budget</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">Customer Acquisition Cost (CAC)</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">Return on Ad Spend (ROAS)</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">trade-off</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">drive lead generation</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">brand awareness</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">attribution</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">cost-effective</span>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="option-card">
+          <div>
+            <h4>Option A: Paid Search & LinkedIn Ads</h4>
+            <div class="metric-row"><span>Cost:</span><strong>$50,000</strong></div>
+            <div class="metric-row"><span>Time to Launch:</span><strong>5 Days (Immediate)</strong></div>
+            <div class="metric-row"><span>Projected KPI:</span><strong>250 Demos (CAC: $200)</strong></div>
+            <div class="metric-row"><span>Upside:</span><span>High buyer intent; clear attribution</span></div>
+            <div class="metric-row"><span>Trade-Off:</span><span style="color:#991b1b;">Expensive CAC; leads stop the day ad spend stops</span></div>
+          </div>
+        </div>
+
+        <div class="option-card">
+          <div>
+            <h4>Option B: Tech KOL / YouTube Sponsorships</h4>
+            <div class="metric-row"><span>Cost:</span><strong>$45,000</strong></div>
+            <div class="metric-row"><span>Time to Launch:</span><strong>4 Weeks</strong></div>
+            <div class="metric-row"><span>Projected KPI:</span><strong>180,000 Views</strong></div>
+            <div class="metric-row"><span>Upside:</span><span>Massive brand awareness & credibility</span></div>
+            <div class="metric-row"><span>Trade-Off:</span><span style="color:#991b1b;">Murky attribution; hard to prove direct ROAS to CFO</span></div>
+          </div>
+        </div>
+
+        <div class="option-card">
+          <div>
+            <h4>Option C: B2B Webinar & Lead Magnet Funnel</h4>
+            <div class="metric-row"><span>Cost:</span><strong>$30,000</strong></div>
+            <div class="metric-row"><span>Time to Launch:</span><strong>6 Weeks</strong></div>
+            <div class="metric-row"><span>Projected KPI:</span><strong>600 Leads (CAC: $50)</strong></div>
+            <div class="metric-row"><span>Upside:</span><span>Highly cost-effective; evergreen nurture asset</span></div>
+            <div class="metric-row"><span>Trade-Off:</span><span style="color:#991b1b;">Slowest initial ramp-up; requires internal bandwidth</span></div>
+          </div>
+        </div>
+      </div>
+
+      <label class="field-label">Your Q3 Budget Allocation Pitch to the CMO & CFO (Will you choose one option or split the $50,000 budget? Defend the trade-offs):</label>
+      <textarea id="mk_act2_notes" class="input-field" placeholder="Example: To strike a balance between immediate pipeline traction and long-term CAC reduction, I propose allocating $20,000 to Option A and $30,000 to Option C..."></textarea>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 3: 60-SECOND CAMPAIGN ANALYTICS & FUNNEL NARRATION
+         ===================================================================== -->
+    <section id="act3" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 3 · Data Storytelling & Funnel Diagnostics</span>
+          <h2 class="activity-title">60-Second Campaign Analytics & Funnel Narration</h2>
+        </div>
+        <span class="activity-source">Adapted from: Describing a Photo (p. 69) & Picture Prompt (p. 232)</span>
+      </div>
+
+      <div class="timer-widget">
+        <div>
+          <div style="font-size:0.78rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">60-Second Boardroom Data Narration Sprint</div>
+          <div style="font-size:0.88rem; color:#e2e8f0;">Narrate the top-of-funnel spike, the Stage 3 bottleneck, the root cause, and your next A/B test!</div>
+        </div>
+        <div class="timer-display" id="timerAct3">01:00</div>
+        <div class="timer-btns">
+          <button class="btn btn-primary" onclick="startCountdown('timerAct3', 60)">▶ Start 60s</button>
+          <button class="btn" onclick="resetCountdown('timerAct3', 60)">↺ Reset</button>
+        </div>
+      </div>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>🎯 Target Vocabulary Bank (Click each term as you use it!)</span>
+          <span id="act3Count">0 / 7 Used</span>
+        </div>
+        <div class="chip-list" data-counter="act3Count">
+          <span class="vocab-chip" onclick="toggleChip(this)">impressions</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">click-through rate (CTR)</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">bounce rate</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">critical bottleneck</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">spike</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">plateau</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">A/B test (split test)</span>
+        </div>
+      </div>
+
+      <table class="funnel-table">
+        <thead>
+          <tr>
+            <th>Funnel Stage</th>
+            <th>April Baseline</th>
+            <th>May Campaign</th>
+            <th>Trajectory / Diagnostic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stage 1: Ad Impressions</strong></td>
+            <td>120,000</td>
+            <td>310,000</td>
+            <td style="color:#166534; font-weight:700;">+158% Spike (Strong top-of-funnel reach)</td>
+          </tr>
+          <tr>
+            <td><strong>Stage 2: Ad Clicks (CTR)</strong></td>
+            <td>2.5% (3,000 clicks)</td>
+            <td>3.2% (9,920 clicks)</td>
+            <td style="color:#166534; font-weight:700;">+230% Growth (Ad hook is resonating)</td>
+          </tr>
+          <tr class="funnel-leak">
+            <td><strong>Stage 3: Landing Page Bounce Rate</strong></td>
+            <td>38%</td>
+            <td>79%</td>
+            <td>🚨 CRITICAL BOTTLENECK (8-sec mobile load + 12-field form!)</td>
+          </tr>
+          <tr>
+            <td><strong>Stage 4: Free Trial Signups</strong></td>
+            <td>240 signups</td>
+            <td>245 signups</td>
+            <td style="color:#92400e; font-weight:700;">Plateaued (+2% despite 3x ad traffic)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <label class="field-label">Key Bullet Notes for Your 60-Second Narration (Number ➔ Meaning ➔ Trajectory ➔ Action):</label>
+      <textarea id="mk_act3_notes" class="input-field" placeholder="• Top of funnel: Impressions spiked 158% and CTR hit 3.2%...&#10;• Bottleneck: However, signups plateaued because of a 79% bounce rate...&#10;• Action: On Monday, we will A/B test..."></textarea>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 4: PRODUCT REPOSITIONING & NEW MARKET ENTRY BRAINSTORM
+         ===================================================================== -->
+    <section id="act4" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 4 · Commercial Brainstorming</span>
+          <h2 class="activity-title">Product Repositioning & New Market Entry Brainstorm</h2>
+        </div>
+        <span class="activity-source">Adapted from: What Can I Do With a _____? (p. 79)</span>
+      </div>
+
+      <div class="grid-3">
+        <div class="option-card">
+          <div>
+            <h4>Case A: Directional Noise-Canceling Mic</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:10px;">Originally sold to B2C gamers ($80), but the gaming market is saturated and margins are shrinking. How do you <strong>reposition</strong> this technology into 3 high-margin B2B commercial segments?</p>
+          </div>
+        </div>
+        <div class="option-card">
+          <div>
+            <h4>Case B: Consumer Flashcard & Voice App</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:10px;">Currently sold to individual learners at $5/mo with high <strong>customer churn</strong>. How do you <strong>pivot</strong> and package this into a $5,000/yr B2B enterprise training platform?</p>
+          </div>
+        </div>
+        <div class="option-card">
+          <div>
+            <h4>Case C: $6 Ceremonial Matcha Can</h4>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:10px;">Struggling in supermarkets because shoppers compare it to $1.50 sodas. How do you <strong>reposition</strong> it into 3 premium lifestyle or corporate B2B channels?</p>
+          </div>
+        </div>
+      </div>
+
+      <label class="field-label">Brainstorm 3 Untapped Market Segments / Use Cases & Their Core Value Drivers (Benefits over Features):</label>
+      <textarea id="mk_act4_notes" class="input-field" placeholder="1. Segment 1: ... (Value driver: ...)&#10;2. Segment 2: ... (Value driver: ...)&#10;3. Segment 3: ... (Value driver: ...)"></textarea>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 5: "CAMPAIGN IN CRISIS" TURNAROUND & PUSHBACK
+         ===================================================================== -->
+    <section id="act5" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 5 · Crisis Turnaround & Diplomatic Pushback</span>
+          <h2 class="activity-title">"Campaign in Crisis" — Pushing Back on a 30% Price Cut</h2>
+        </div>
+        <span class="activity-source">Adapted from: Agony Aunt (p. 108) & Speaking to Essay Writing (p. 239)</span>
+      </div>
+
+      <div style="background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; padding:16px 20px; border-radius:6px; margin-bottom:18px; font-size:0.9rem;">
+        <div style="font-weight:800; color:#991b1b; margin-bottom:4px;">📩 Urgent Message from Kenji Sato (Regional Sales Director):</div>
+        <em>"Team, Marketing generated 500 leads from the recent 'Win a Free iPad' social media giveaway, but my sales reps say 90% of those leads refuse to buy when they hear our $10,000 annual price tag! They say we are too expensive. I want Marketing to announce a 30% discount across the board this week so we can hit our Q3 quota!"</em>
+      </div>
+
+      <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:14px 18px; border-radius:6px; margin-bottom:18px; font-size:0.86rem;">
+        <strong style="color:#1e40af;">💡 Opposing-Viewpoint Pushback Starters (Adapted from p. 239):</strong>
+        <ul style="margin-left:20px; margin-top:6px; color:#1e3a8a;">
+          <li><em>"Some would argue that a 30% price cut is the fastest way to close deals; however, from a long-term <strong>brand equity</strong> standpoint..."</em></li>
+          <li><em>"While I understand the urgency to hit Q3 quota, slashing prices will <strong>cannibalize</strong> our renewals. The real bottleneck is..."</em></li>
+        </ul>
+      </div>
+
+      <label class="field-label">Your 3-Part Response to the Sales Director (1. Reject the 30% cut, 2. Diagnose the "Free iPad" lead-quality flaw, 3. Propose 2 ways to sweeten the deal without discounting):</label>
+      <textarea id="mk_act5_notes" class="input-field" placeholder="Write or outline your response using: erode brand equity, messaging misalignment, target persona, sweeten the deal, social proof..."></textarea>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 6: THE 120-90-60 GTM ELEVATOR PITCH
+         ===================================================================== -->
+    <section id="act6" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 6 · High-Density Oral Fluency</span>
+          <h2 class="activity-title">The 120-90-60 Go-To-Market (GTM) Elevator Pitch</h2>
+        </div>
+        <span class="activity-source">Adapted from: 120-90-60 Speaking Activity (pp. 42–44)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+        <strong>The Rule:</strong> Write <strong>only 1–2 words per box</strong> below (no full sentences!). Deliver your full GTM pitch in <strong>120 seconds</strong>. Then deliver <strong>100% of the same information</strong> in <strong>90 seconds</strong>, and finally in <strong>60 seconds</strong> by replacing wordy explanations with dense Tier-3 marketing vocabulary.
+      </p>
+
+      <div class="timer-widget">
+        <div>
+          <div style="font-size:0.78rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">120-90-60 Compression Stopwatch</div>
+          <div style="font-size:0.86rem; color:#e2e8f0;" id="timerAct6Label">Select Round 1 (120s), Round 2 (90s), or Round 3 (60s)</div>
+        </div>
+        <div class="timer-display" id="timerAct6">02:00</div>
+        <div class="timer-btns">
+          <button class="btn btn-primary" onclick="startCountdown('timerAct6', 120, 'Round 1: 120 Seconds (Full Context)')">120s</button>
+          <button class="btn btn-primary" onclick="startCountdown('timerAct6', 90, 'Round 2: 90 Seconds (Tighter Collocations)')">90s</button>
+          <button class="btn btn-emerald" onclick="startCountdown('timerAct6', 60, 'Round 3: 60 Seconds (Executive Elevator Pitch!)')">60s</button>
+          <button class="btn" onclick="startCountdown('timerAct6', 30, '30s Compression Thinking Pause')">30s Pause</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label class="field-label">1. Market Pain Point (1–2 words only):</label>
+          <input type="text" id="mk_act6_p1" class="input-field" placeholder="e.g., Manual reporting">
+        </div>
+        <div>
+          <label class="field-label">2. Target Persona (1–2 words only):</label>
+          <input type="text" id="mk_act6_p2" class="input-field" placeholder="e.g., Agency directors">
+        </div>
+        <div>
+          <label class="field-label">3. GTM Channels & Hook (1–2 words only):</label>
+          <input type="text" id="mk_act6_p3" class="input-field" placeholder="e.g., LinkedIn + Webinar">
+        </div>
+        <div>
+          <label class="field-label">4. Projected ROI / KPI (1–2 words only):</label>
+          <input type="text" id="mk_act6_p4" class="input-field" placeholder="e.g., 4x ROAS / $50 CAC">
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 7: PLAIN-ENGLISH TO EXECUTIVE MARKETING UPGRADE
+         ===================================================================== -->
+    <section id="act7" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 7 · Lexical Precision & Paraphrasing</span>
+          <h2 class="activity-title">Plain-English to Executive Marketing Upgrade</h2>
+        </div>
+        <span class="activity-source">Adapted from: Sentence Substitution Ladder (p. 218) & Paraphrasing (p. 133)</span>
+      </div>
+
+      <!-- Interactive Ladder Demo -->
+      <div class="ladder-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <span style="font-size:0.75rem; font-weight:800; color:var(--text-dim); text-transform:uppercase;">Interactive Substitution Ladder</span>
+            <div style="font-weight:700; color:var(--t1-text); font-size:0.95rem;">Base Sentence: "We want to <u>get more customers</u> by <u>changing</u> our <u>website button</u>."</div>
+          </div>
+          <button class="btn" onclick="revealNextRung()">+ Reveal Next Rung Upgrade</button>
+        </div>
+        <div class="rung-step" id="rung1"><strong>Rung 1 (Verb + Noun):</strong> "We want to <strong style="color:#166534;">drive lead generation</strong> by changing our website button."</div>
+        <div class="rung-step" id="rung2"><strong>Rung 2 (Action Verb):</strong> "We want to drive lead generation by <strong style="color:#166534;">overhauling</strong> our website button."</div>
+        <div class="rung-step" id="rung3"><strong>Rung 3 (Full Executive Register):</strong> "We aim to <strong style="color:#166534;">drive qualified lead generation</strong> by <strong style="color:#166534;">overhauling</strong> our landing page <strong style="color:#166534;">call-to-action (CTA)</strong>."</div>
+      </div>
+
+      <!-- 4 Rewrite Exercises -->
+      <div style="margin-top:20px;">
+        <div style="margin-bottom:16px;">
+          <label class="field-label">Rewrite 1: "This ad <u>costs too much money per buyer</u> and is <u>not making a big difference</u> in <u>sales</u>." <span style="color:var(--t3-text);">(Targets: unsustainable CAC, move the needle, quarterly revenue)</span></label>
+          <input type="text" id="mk_rw1" class="input-field" placeholder="Type your executive upgrade...">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label class="field-label">Rewrite 2: "If we <u>make the price 30% cheaper</u>, we will <u>hurt our brand image</u> and <u>steal sales from our Pro plan</u>." <span style="color:var(--t3-text);">(Targets: slash pricing, erode brand equity, cannibalize)</span></label>
+          <input type="text" id="mk_rw2" class="input-field" placeholder="Type your executive upgrade...">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label class="field-label">Rewrite 3: "Instead of building a complex new funnel, let's <u>do the easy wins first</u> by <u>fixing</u> our <u>high number of people leaving the mobile page</u>." <span style="color:var(--t3-text);">(Targets: capture the low-hanging fruit, optimize, mobile bounce rate)</span></label>
+          <input type="text" id="mk_rw3" class="input-field" placeholder="Type your executive upgrade...">
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <label class="field-label">Rewrite 4 (Full Brief Paraphrase): "In Q2, we <u>spent</u> $20,000 on Instagram ads, which got 50,000 <u>views</u>, but almost nobody bought. Our <u>big problem</u> was a slow page. In Q3, let's <u>move that money</u> into automated emails to <u>keep current customers</u>." <span style="color:var(--t3-text);">(Targets: allocated, impressions, conversions, critical bottleneck, reallocate, nurture sequences, client retention)</span></label>
+          <textarea id="mk_rw4" class="input-field" placeholder="Write your 2-sentence executive paraphrase..."></textarea>
+        </div>
+
+        <button class="btn" onclick="toggleReveal('act7Answers')">👁️ Toggle Model Upgrades</button>
+        <div id="act7Answers" class="reveal-box">
+          <p><strong>1:</strong> "This campaign has an <strong>unsustainable CAC</strong> and is failing to <strong>move the needle</strong> on <strong>quarterly revenue</strong>."</p>
+          <p style="margin-top:6px;"><strong>2:</strong> "If we <strong>slash our pricing by 30%</strong>, we will <strong>erode our brand equity</strong> and <strong>cannibalize</strong> our Pro tier subscriptions."</p>
+          <p style="margin-top:6px;"><strong>3:</strong> "Instead of building a complex new funnel, let's <strong>capture the low-hanging fruit</strong> by <strong>optimizing</strong> our <strong>mobile bounce rate</strong>."</p>
+          <p style="margin-top:6px;"><strong>4:</strong> "In Q2, we <strong>allocated</strong> $20,000 to Instagram campaigns, generating 50,000 <strong>impressions</strong> but minimal <strong>conversions</strong> due to a page-latency <strong>bottleneck</strong>. For Q3, let's <strong>reallocate</strong> that budget into automated <strong>nurture sequences</strong> to boost <strong>client retention</strong>."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 8: MARKETING IDIOMS "CLOSEST IN MEANING" QUIZ
+         ===================================================================== -->
+    <section id="act8" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 8 · Context Clue Idiom Drill</span>
+          <h2 class="activity-title">Marketing Idioms & Collocations — Closest in Meaning</h2>
+        </div>
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <a href="closest-in-meaning.html" class="btn btn-primary">🔥 Open Full 100-Question Mega-Vault →</a>
+          <span class="activity-source">Adapted from: Closest in Meaning (pp. 119–120)</span>
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">1. "Before we invest six months building a custom TikTok channel, let's capture the <u>low-hanging fruit</u> by fixing our broken checkout link."</div>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">A) High-budget campaigns that win industry marketing awards.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, true)">B) Quick, easily achievable optimizations that deliver immediate return with minimal effort.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">C) Price-sensitive customers who only buy during seasonal sales.</button>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">2. "Launching a $10 starter plan might attract freelancers, but we risk <u>cannibalizing</u> our $50/month Pro tier."</div>
+        <button class="quiz-opt" onclick="checkQuiz(this, true)">A) Taking revenue and existing buyers away from our own higher-margin product line.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">B) Aggressively capturing market share from a smaller competitor.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">C) Exceeding our quarterly customer acquisition budget.</button>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">3. "Our free ROI calculator acts as a <u>loss leader</u>—18% of companies who use it upgrade to our paid consulting retainer."</div>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">A) A failed product launch that resulted in a financial write-off.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">B) A marketing campaign with a high bounce rate.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, true)">C) A product or service offered free or below cost specifically to attract buyers into the paid ecosystem.</button>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">4. "After three slow months in Singapore, our B2B partner referral program is finally <u>gaining traction</u>."</div>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">A) Experiencing regulatory delays and legal bottlenecks.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, true)">B) Showing measurable momentum, market adoption, and commercial results.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">C) Requiring an immediate overhaul of the creative assets.</button>
+      </div>
+
+      <div class="quiz-item">
+        <div class="quiz-q">5. "Changing the font on our blog is a nice cosmetic tweak, but it won't <u>move the needle</u> on our Q4 enterprise pipeline."</div>
+        <button class="quiz-opt" onclick="checkQuiz(this, true)">A) Generate a noticeable, quantifiable impact on core business metrics.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">B) Require sign-off from the product engineering lead.</button>
+        <button class="quiz-opt" onclick="checkQuiz(this, false)">C) Disrupt our existing customer onboarding workflow.</button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 9: MARKETING HEADLINE PREDICTION LAB
+         ===================================================================== -->
+    <section id="act9" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 9 · Strategic Hypothesis & Case Reading</span>
+          <h2 class="activity-title">Business & Marketing Headline Prediction Lab (5Ws + H)</h2>
+        </div>
+        <span class="activity-source">Adapted from: Headline Prediction Practice (pp. 129–130)</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="option-card">
+          <div>
+            <span class="activity-tag" style="background:#fef3c7;color:#92400e;border-color:#fde68a;">Case Study Headline #1</span>
+            <h4 style="margin-top:6px;">"Why B2B SaaS Company 'MetricFlow' Deleted Its Free Plan—And Saw Paid Conversions Jump 42%"</h4>
+            <label class="field-label" style="margin-top:10px;">Your Prediction (Why did deleting the free tier boost paid conversions?):</label>
+            <textarea id="mk_act9_h1" class="input-field" placeholder="Predict 2 commercial reasons before revealing the case study..."></textarea>
+          </div>
+          <div style="margin-top:10px;">
+            <button class="btn" onclick="toggleReveal('caseReveal1')">📖 Reveal Case Study #1</button>
+            <div id="caseReveal1" class="reveal-box">
+              <strong>What Happened:</strong> MetricFlow found that 95% of its support <strong>bandwidth</strong> was consumed by free-tier users who never upgraded. Worse, the restricted free plan hid the product's core <strong>value proposition</strong>. By replacing the free tier with a <strong>14-day full-featured trial + guided onboarding</strong>, they filtered out freebie-hunters, cut support overhead by 60%, and lifted paid <strong>conversion rates</strong> by 42%.
+            </div>
+          </div>
+        </div>
+
+        <div class="option-card">
+          <div>
+            <span class="activity-tag" style="background:#fef3c7;color:#92400e;border-color:#fde68a;">Case Study Headline #2</span>
+            <h4 style="margin-top:6px;">"How a Tokyo Coffee Chain Cut Ad Spend to $0 and Doubled Customer Retention in 6 Months"</h4>
+            <label class="field-label" style="margin-top:10px;">Your Prediction (What marketing mechanic replaced paid ads?):</label>
+            <textarea id="mk_act9_h2" class="input-field" placeholder="Predict how they acquired and retained customers with $0 ad spend..."></textarea>
+          </div>
+          <div style="margin-top:10px;">
+            <button class="btn" onclick="toggleReveal('caseReveal2')">📖 Reveal Case Study #2</button>
+            <div id="caseReveal2" class="reveal-box">
+              <strong>What Happened:</strong> Instead of spending $30k/month on social ads with rising <strong>CAC</strong> and weak <strong>attribution</strong>, the chain <strong>reallocated</strong> its budget into an app-based <strong>Loss Leader Coffee Subscription</strong> ("1st month $15, bring a coworker free on Fridays"). Existing subscribers became a zero-CAC referral engine, doubling <strong>retention</strong> and <strong>Customer Lifetime Value (LTV)</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 10: CLIENT SCOPE CREEP ROLEPLAY WITH MANDATORY WORD BANK
+         ===================================================================== -->
+    <section id="act10" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 10 · Live Simulation with Word Bank</span>
+          <h2 class="activity-title">Client Campaign Scope-Creep Roleplay (Mandatory 6-Word Bank)</h2>
+        </div>
+        <span class="activity-source">Adapted from: Role-Plays with Word Bank (pp. 63–66)</span>
+      </div>
+
+      <div style="background:#f8fafc; border:1px solid var(--border); padding:16px 20px; border-radius:6px; margin-bottom:18px; font-size:0.9rem;">
+        <strong>Scenario Brief:</strong> Your client (Lewis) signed off on a <strong>3-week product launch</strong> (1 landing page + 4 LinkedIn ads). Now, 4 days before launch, the client says: <em>"Honestly, 1 page and 4 ads is bad cospa. We need 3 custom animated videos and Mandarin localization added before Monday's launch at the same budget."</em><br>
+        <strong>Your Mission:</strong> Push back diplomatically (no apologizing!), protect your team's schedule, and propose a Phase 2 conditional trade-off while clicking off <strong>all 6 mandatory phrases</strong> below as you say them!
+      </div>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>🔥 Mandatory Roleplay Word Bank (Click each phrase the moment you say it out loud!)</span>
+          <span id="act10Count">0 / 6 Deployed</span>
+        </div>
+        <div class="chip-list" data-counter="act10Count">
+          <span class="vocab-chip" onclick="toggleChip(this)">out of scope</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">bandwidth</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">cost-effective / ROI</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">trade-off</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">contingent upon</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">sign off on</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         ACTIVITY 11: NEW LANGUAGE PILE UP & EXECUTIVE CAMPAIGN EMAIL
+         ===================================================================== -->
+    <section id="act11" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Activity 11 · Lesson Consolidation & Email Output</span>
+          <h2 class="activity-title">"New Language Pile Up" & Executive Campaign Email</h2>
+        </div>
+        <span class="activity-source">Adapted from: New Language Pile Up (p. 230) & Write an Email (p. 199)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+        <strong>Step 1 (Pile Up):</strong> Log the <strong>6 most useful marketing/business collocations</strong> you practiced today.<br>
+        <strong>Step 2 (Executive Email):</strong> Write a concise (&lt;150 words) email to your Marketing Director summarizing why the Q2 campaign underperformed and how you propose reallocating the Q3 budget—using all 6 terms from your Pile Up.
+      </p>
+
+      <div style="margin-bottom:16px;">
+        <label class="field-label">Today's 6 "New Language Pile Up" Collocations:</label>
+        <input type="text" id="mk_act11_pile" class="input-field" placeholder="e.g., 1. value proposition, 2. bounce rate, 3. reallocate budget, 4. CAC, 5. low-hanging fruit, 6. move the needle">
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label class="field-label">Executive Subject Line (Specific & Action-Oriented — p. 199):</label>
+        <input type="text" id="mk_act11_subj" class="input-field" placeholder="[Action Required] Q3 Marketing Budget Reallocation & Funnel Optimization Plan">
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label class="field-label">Email Body (&lt;150 Words, Direct & Polite):</label>
+        <textarea id="mk_act11_email" class="input-field" style="min-height:130px;" placeholder="Hi [Director Name],&#10;&#10;Following our review of Q2 campaign metrics..."></textarea>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <button class="btn" onclick="toggleReveal('act11Model')">👁️ View Model Executive Email</button>
+        <button class="btn btn-primary" onclick="copyAllMarketingWork()">📋 Copy All My Marketing Work for Preply</button>
+      </div>
+
+      <div id="act11Model" class="reveal-box">
+        <strong>Subject:</strong> [Sign-Off Requested] Q3 Budget Reallocation & Landing Page Conversion Overhaul<br><br>
+        Hi Sarah,<br><br>
+        Following our Q2 performance audit, while our social ads generated 310,000 <strong>impressions</strong>, trial conversions <strong>plateaued</strong> due to a 79% mobile <strong>bounce rate</strong> on our 12-field registration form.<br><br>
+        To capture the <strong>low-hanging fruit</strong> before scaling spend, we are <strong>overhauling</strong> the landing page <strong>CTA</strong> and running an <strong>A/B test</strong> with a 3-field signup flow this week. For Q3, I propose <strong>reallocating</strong> $30,000 into our B2B webinar funnel to bring our <strong>CAC</strong> down from $200 to $50.<br><br>
+        Once you <strong>sign off on</strong> this reallocation, we will lock in the Q3 launch timeline.<br><br>
+        Best regards,<br>
+        YH
+      </div>
+    </section>
+
+  </main>
+
+  <div id="saveToast" class="save-toast">✓ Copied to clipboard! Paste into Preply chat.</div>
+
+  <script>
+    // 1. Lexicon Category Filter
+    function filterLexicon(cat) {
+      const rows = document.querySelectorAll('#lexiconBody tr');
+      rows.forEach(r => {
+        if (cat === 'all' || r.dataset.cat === cat) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. Interactive Word Bank Chips
+    function toggleChip(el) {
+      el.classList.toggle('used');
+      const parent = el.parentElement;
+      const counterId = parent.dataset.counter;
+      if (counterId) {
+        const total = parent.querySelectorAll('.vocab-chip').length;
+        const used = parent.querySelectorAll('.vocab-chip.used').length;
+        const label = counterId === 'act10Count' ? 'Deployed' : 'Used';
+        document.getElementById(counterId).textContent = `${used} / ${total} ${label}`;
+      }
+    }
+
+    // 3. Countdown Timers (Activity 3 & Activity 6)
+    const activeTimers = {};
+    function startCountdown(displayId, seconds, labelText) {
+      if (activeTimers[displayId]) clearInterval(activeTimers[displayId]);
+      if (labelText && displayId === 'timerAct6') {
+        document.getElementById('timerAct6Label').textContent = labelText;
+      }
+      let remaining = seconds;
+      const el = document.getElementById(displayId);
+      updateTimerUI(el, remaining);
+      activeTimers[displayId] = setInterval(() => {
+        remaining--;
+        updateTimerUI(el, remaining);
+        if (remaining <= 0) {
+          clearInterval(activeTimers[displayId]);
+          el.textContent = "00:00 — TIME!";
+        }
+      }, 1000);
+    }
+
+    function resetCountdown(displayId, seconds) {
+      if (activeTimers[displayId]) clearInterval(activeTimers[displayId]);
+      const el = document.getElementById(displayId);
+      updateTimerUI(el, seconds);
+    }
+
+    function updateTimerUI(el, sec) {
+      const m = String(Math.floor(sec / 60)).padStart(2, '0');
+      const s = String(sec % 60).padStart(2, '0');
+      el.textContent = `${m}:${s}`;
+      el.classList.remove('warning', 'danger');
+      if (sec <= 10) el.classList.add('danger');
+      else if (sec <= 25) el.classList.add('warning');
+    }
+
+    // 4. Substitution Ladder Rung Reveal
+    let currentRung = 0;
+    function revealNextRung() {
+      currentRung = (currentRung % 3) + 1;
+      for (let i = 1; i <= 3; i++) {
+        const el = document.getElementById('rung' + i);
+        if (i <= currentRung) el.classList.add('visible');
+        else el.classList.remove('visible');
+      }
+    }
+
+    // 5. Quiz Checker
+    function checkQuiz(btn, isCorrect) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.quiz-opt').forEach(b => {
+        b.classList.remove('correct', 'wrong');
+      });
+      if (isCorrect) {
+        btn.classList.add('correct');
+        if (!btn.textContent.includes('✅')) btn.textContent += ' ✅';
+      } else {
+        btn.classList.add('wrong');
+      }
+    }
+
+    // 6. Collapsible Reveal
+    function toggleReveal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('open');
+    }
+
+    // 7. LocalStorage Auto-Save for All Inputs
+    const fieldIds = [
+      'mk_act1_notes', 'mk_act2_notes', 'mk_act3_notes', 'mk_act4_notes', 'mk_act5_notes',
+      'mk_act6_p1', 'mk_act6_p2', 'mk_act6_p3', 'mk_act6_p4',
+      'mk_rw1', 'mk_rw2', 'mk_rw3', 'mk_rw4',
+      'mk_act9_h1', 'mk_act9_h2',
+      'mk_act11_pile', 'mk_act11_subj', 'mk_act11_email'
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      fieldIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const saved = localStorage.getItem('yh_' + id);
+        if (saved !== null) el.value = saved;
+        el.addEventListener('input', () => {
+          localStorage.setItem('yh_' + id, el.value);
+          const status = document.getElementById('saveStatus');
+          if (status) status.textContent = 'Saved just now ✓';
+        });
+      });
+    });
+
+    // 8. Copy All Answers for Preply
+    function copyAllMarketingWork() {
+      const getVal = id => (document.getElementById(id)?.value || '').trim() || '(Not completed yet)';
+      const summary = [
+        '=== YH MARKETING SCENARIOS & BUSINESS VOCABULARY SUBMISSION ===',
+        '',
+        '1. AD COPY & LANDING PAGE TEAR-DOWN:',
+        getVal('mk_act1_notes'),
+        '',
+        '2. $50K Q3 MARKETING CHANNEL ALLOCATION:',
+        getVal('mk_act2_notes'),
+        '',
+        '3. 60-SECOND FUNNEL ANALYTICS NARRATION NOTES:',
+        getVal('mk_act3_notes'),
+        '',
+        '4. PRODUCT REPOSITIONING BRAINSTORM:',
+        getVal('mk_act4_notes'),
+        '',
+        '5. CAMPAIGN IN CRISIS (30% DISCOUNT PUSHBACK):',
+        getVal('mk_act5_notes'),
+        '',
+        '6. 120-90-60 GTM ELEVATOR PITCH KEYWORDS:',
+        `Pain Point: ${getVal('mk_act6_p1')} | Persona: ${getVal('mk_act6_p2')} | Channels: ${getVal('mk_act6_p3')} | ROI: ${getVal('mk_act6_p4')}`,
+        '',
+        '7. EXECUTIVE MARKETING REWRITES:',
+        `Rewrite 1: ${getVal('mk_rw1')}`,
+        `Rewrite 2: ${getVal('mk_rw2')}`,
+        `Rewrite 3: ${getVal('mk_rw3')}`,
+        `Brief Paraphrase: ${getVal('mk_rw4')}`,
+        '',
+        '9. HEADLINE PREDICTIONS:',
+        `Headline 1: ${getVal('mk_act9_h1')}`,
+        `Headline 2: ${getVal('mk_act9_h2')}`,
+        '',
+        '11. NEW LANGUAGE PILE UP & EXECUTIVE CAMPAIGN EMAIL:',
+        `Pile Up Words: ${getVal('mk_act11_pile')}`,
+        `Subject: ${getVal('mk_act11_subj')}`,
+        `Email:\n${getVal('mk_act11_email')}`
+      ].join('\n');
+
+      navigator.clipboard.writeText(summary).then(() => {
+        const toast = document.getElementById('saveToast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>
