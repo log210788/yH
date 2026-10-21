@@ -1,0 +1,2909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crocodile Brain Spin & Sell Showdown — Executive Pitch Wheel | YH & Lewis O.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Showy UI & Animation Plugins (GSAP, Canvas-Confetti, Vanilla-Tilt, SweetAlert2, Toastify, Lucide Icons) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-deep: #060b14;
+      --bg-stage: #0b1322;
+      --surface: rgba(17, 27, 46, 0.86);
+      --surface-solid: #111b2e;
+      --surface-card: rgba(24, 37, 62, 0.92);
+      --surface-hover: #223354;
+      --border: rgba(148, 163, 184, 0.18);
+      --border-gold: rgba(245, 158, 11, 0.45);
+      --border-emerald: rgba(16, 185, 129, 0.45);
+
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --gold: #f59e0b;
+      --gold-bright: #fbbf24;
+      --gold-glow: rgba(245, 158, 11, 0.35);
+
+      --emerald: #10b981;
+      --emerald-bright: #34d399;
+      --emerald-glow: rgba(16, 185, 129, 0.35);
+
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.3);
+
+      --rose: #f43f5e;
+      --rose-glow: rgba(244, 63, 94, 0.35);
+
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.35);
+
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 22px;
+      --shadow-stage: 0 20px 50px -12px rgba(0, 0, 0, 0.75);
+    }
+
+    body.light-stage {
+      --bg-deep: #f1f5f9;
+      --bg-stage: #e2e8f0;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-solid: #ffffff;
+      --surface-card: #f8fafc;
+      --surface-hover: #e2e8f0;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --shadow-stage: 0 15px 35px -10px rgba(15, 23, 42, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 80% 15%, rgba(245, 158, 11, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Sparkle Particle Canvas */
+    #sparkleCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Red Screen Danger Flash for Beta Trap */
+    #dangerFlash {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle, transparent 30%, rgba(244, 63, 94, 0.55) 100%);
+      pointer-events: none;
+      opacity: 0;
+      z-index: 999;
+      transition: opacity 0.15s ease;
+    }
+
+    /* Top Sticky Navigation */
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 11, 20, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    body.light-stage header.top-nav {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .nav-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      background: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
+      color: #060b14;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.12rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .vip-pill {
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.2));
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-nav {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 13px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-nav:hover {
+      border-color: var(--gold);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+    .btn-nav.active-gold {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.08));
+      border-color: var(--gold);
+      color: var(--gold-bright);
+    }
+
+    /* Main Stage Container */
+    .stage-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 20px 24px 64px;
+    }
+
+    /* Croc Brain Concept Marquee Banner */
+    .croc-edu-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.14) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(245, 158, 11, 0.14) 100%);
+      border: 1px solid var(--border-emerald);
+      border-radius: var(--radius);
+      padding: 16px 22px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    body.light-stage .croc-edu-banner {
+      background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #fffbeb 100%);
+    }
+
+    .croc-edu-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .croc-mascot-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #059669, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+      flex-shrink: 0;
+    }
+
+    .croc-edu-text h2 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--emerald-bright);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    body.light-stage .croc-edu-text h2 { color: #047857; }
+
+    .croc-edu-text p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .croc-pillars {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .croc-pillar {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-size: 0.76rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    body.light-stage .croc-pillar {
+      background: #f8fafc;
+    }
+    .croc-pillar span.p-lbl {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .croc-pillar span.p-sub {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+
+    /* Filter & Controls Bar */
+    .wheel-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+    }
+
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cat-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .cat-btn:hover {
+      color: var(--text);
+      border-color: var(--text-muted);
+    }
+    .cat-btn.active {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #060b14;
+      border-color: #fbbf24;
+      box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
+      font-weight: 800;
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toggle-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .toggle-chip input {
+      accent-color: var(--emerald);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       2-COLUMN SHOWCASE GRID: WHEEL STAGE (LEFT) + CROC COACHING DECK (RIGHT)
+       ========================================================================== */
+    .arena-grid {
+      display: grid;
+      grid-template-columns: 560px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 1140px) {
+      .arena-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LEFT COLUMN: GLITZY WHEEL CASINO STAGE */
+    .wheel-stage-card {
+      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.95) 0%, rgba(9, 14, 26, 0.98) 100%);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 26px 20px 24px;
+      box-shadow: var(--shadow-stage), 0 0 40px rgba(245, 158, 11, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    body.light-stage .wheel-stage-card {
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+      color: #f8fafc;
+    }
+
+    /* Stage Spotlight Beams */
+    .spotlight-beam {
+      position: absolute;
+      top: -120px;
+      width: 260px;
+      height: 420px;
+      background: linear-gradient(180deg, rgba(251, 191, 36, 0.16) 0%, transparent 100%);
+      filter: blur(20px);
+      pointer-events: none;
+      transform-origin: top center;
+      animation: swayBeam 6s ease-in-out infinite alternate;
+    }
+    .spotlight-beam.left { left: -40px; transform: rotate(-22deg); }
+    .spotlight-beam.right { right: -40px; transform: rotate(22deg); animation-direction: alternate-reverse; }
+
+    @keyframes swayBeam {
+      0% { transform: rotate(-18deg) scaleX(1); opacity: 0.5; }
+      100% { transform: rotate(18deg) scaleX(1.2); opacity: 0.9; }
+    }
+
+    .stage-title-bar {
+      text-align: center;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stage-kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-bright);
+      margin-bottom: 2px;
+    }
+
+    .stage-headline {
+      font-size: 1.35rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ffffff, #fde68a, #34d399, #ffffff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerText 4s linear infinite;
+    }
+
+    @keyframes shimmerText {
+      to { background-position: 200% center; }
+    }
+
+    /* Wheel Outer Frame & Marquee Chaser Lights */
+    .wheel-housing {
+      position: relative;
+      width: 480px;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 8px 0 18px;
+      z-index: 3;
+    }
+
+    @media (max-width: 560px) {
+      .wheel-housing {
+        width: 340px;
+        height: 340px;
+      }
+    }
+
+    /* Metallic Gold Casino Bezel */
+    .wheel-bezel {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #78350f,
+        #f59e0b,
+        #fef08a,
+        #d97706,
+        #78350f,
+        #f59e0b,
+        #fef08a,
+        #b45309,
+        #78350f
+      );
+      padding: 18px;
+      box-shadow:
+        0 0 0 4px #451a03,
+        0 0 35px rgba(245, 158, 11, 0.55),
+        inset 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .wheel-bezel-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #090d16;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Marquee Bulbs Ring */
+    .marquee-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .marquee-bulb {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-top: -5px;
+      margin-left: -5px;
+      background: #fef08a;
+      box-shadow: 0 0 8px #fbbf24, 0 0 14px #f59e0b;
+      transition: opacity 0.12s, transform 0.12s;
+    }
+    .marquee-bulb.dim {
+      opacity: 0.28;
+      transform: scale(0.8);
+      box-shadow: none;
+    }
+    .marquee-bulb.emerald {
+      background: #6ee7b7;
+      box-shadow: 0 0 10px #10b981, 0 0 18px #059669;
+    }
+
+    /* The Canvas Wheel */
+    #wheelCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    /* Center Spin Hub Button */
+    .wheel-center-hub {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fef08a 0%, #f59e0b 45%, #92400e 90%, #451a03 100%);
+      border: 4px solid #fffbeb;
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.75),
+        0 0 25px rgba(245, 158, 11, 0.8),
+        inset 0 2px 6px rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 12;
+      user-select: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .wheel-center-hub:hover {
+      transform: scale(1.07);
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.85),
+        0 0 35px rgba(251, 191, 36, 1);
+    }
+    .wheel-center-hub:active {
+      transform: scale(0.96);
+    }
+    .hub-croc {
+      font-size: 1.65rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+    }
+    .hub-text {
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: #451a03;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* Top Mechanical Flapper / Pointer (12 O'Clock) */
+    .wheel-pointer-assembly {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.75));
+      pointer-events: none;
+    }
+
+    #wheelPointer {
+      transform-origin: 50% 14px;
+      width: 48px;
+      height: 58px;
+    }
+
+    /* Big Showy Spin Trigger CTA */
+    .spin-controls-row {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      z-index: 3;
+    }
+
+    .btn-mega-spin {
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #f59e0b 100%);
+      background-size: 200% auto;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 999px;
+      border: 2px solid #fef08a;
+      cursor: pointer;
+      box-shadow: 0 0 28px rgba(16, 185, 129, 0.55), 0 8px 20px rgba(0, 0, 0, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+    .btn-mega-spin:hover:not(:disabled) {
+      background-position: right center;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 38px rgba(245, 158, 11, 0.8), 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+    .btn-mega-spin:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .speed-selector {
+      display: flex;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+    }
+    .speed-opt {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .speed-opt.active {
+      background: var(--gold);
+      color: #060b14;
+      font-weight: 800;
+    }
+
+    /* Quick Add Custom Slice Form inside Left Column */
+    .custom-slice-bar {
+      margin-top: 18px;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 14px;
+      z-index: 3;
+    }
+    .custom-slice-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .custom-input-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .custom-input {
+      flex: 1;
+      min-width: 160px;
+      background: rgba(6, 11, 20, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.82rem;
+    }
+    .custom-input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .custom-select {
+      background: rgba(6, 11, 20, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .btn-add-slice {
+      background: var(--gold);
+      color: #060b14;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-add-slice:hover {
+      background: var(--gold-bright);
+    }
+
+    /* ==========================================================================
+       RIGHT COLUMN: SPOTLIGHT WINNER PROMPT + CROC METER + 3-STEP HOOK COACH
+       ========================================================================== */
+    .coaching-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* 1. THE WINNER SPOTLIGHT CARD */
+    .spotlight-card {
+      background: linear-gradient(145deg, rgba(24, 37, 62, 0.95) 0%, rgba(12, 20, 36, 0.98) 100%);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      box-shadow: var(--shadow-stage), 0 0 35px rgba(245, 158, 11, 0.16);
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+    body.light-stage .spotlight-card {
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+    }
+
+    .spotlight-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .slice-cat-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--gold-bright);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+    }
+    body.light-stage .slice-cat-tag {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .buyer-persona-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      background: rgba(244, 63, 94, 0.18);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    body.light-stage .buyer-persona-pill {
+      background: #ffe4e6;
+      color: #be123c;
+    }
+
+    .prompt-headline-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .prompt-kicker {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--emerald-bright);
+      margin-bottom: 4px;
+    }
+    body.light-stage .prompt-kicker { color: #059669; }
+
+    .prompt-main-title {
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .prompt-mission-sentence {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fde68a;
+      background: rgba(245, 158, 11, 0.12);
+      border-left: 4px solid var(--gold);
+      padding: 12px 16px;
+      border-radius: 0 10px 10px 0;
+    }
+    body.light-stage .prompt-mission-sentence {
+      color: #92400e;
+      background: #fef3c7;
+    }
+
+    .btn-speak-round {
+      background: var(--surface-card);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-bright);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+    .btn-speak-round:hover {
+      background: var(--gold);
+      color: #060b14;
+      transform: scale(1.08);
+    }
+
+    /* Croc Brain Trap Warning Box */
+    .beta-trap-alert {
+      margin-top: 14px;
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.84rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    body.light-stage .beta-trap-alert {
+      background: #fff1f2;
+      color: #881337;
+    }
+
+    /* 2. CROC BRAIN LIVE METER & TIMER HUD */
+    .hud-split-row {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 18px;
+    }
+    @media (max-width: 760px) {
+      .hud-split-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .croc-meter-card, .timer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      backdrop-filter: blur(12px);
+    }
+
+    .meter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .meter-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .meter-status-badge {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+
+    .croc-bar-track {
+      width: 100%;
+      height: 22px;
+      background: rgba(6, 11, 20, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 14px;
+    }
+    body.light-stage .croc-bar-track {
+      background: #e2e8f0;
+    }
+
+    .croc-bar-fill {
+      height: 100%;
+      width: 50%;
+      background: linear-gradient(90deg, #f43f5e 0%, #f59e0b 45%, #10b981 100%);
+      border-radius: 999px;
+      transition: width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+    }
+
+    .soundboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+    }
+
+    .sb-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 8px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      text-align: center;
+      transition: all 0.15s ease;
+    }
+    .sb-btn:hover {
+      transform: translateY(-2px);
+    }
+    .sb-btn.pos {
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .sb-btn.pos:hover {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: var(--emerald);
+    }
+    .sb-btn.neg {
+      border-color: rgba(244, 63, 94, 0.4);
+    }
+    .sb-btn.neg:hover {
+      background: rgba(244, 63, 94, 0.2);
+      border-color: var(--rose);
+    }
+
+    /* Countdown Timer Box */
+    .timer-display-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 0;
+    }
+    .timer-digits {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+      letter-spacing: 1px;
+      line-height: 1.1;
+      margin: 6px 0 10px;
+    }
+    body.light-stage .timer-digits { color: #0f172a; }
+    .timer-digits.urgent {
+      color: var(--rose);
+      animation: pulseUrgent 0.6s infinite alternate;
+    }
+    @keyframes pulseUrgent {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .timer-preset-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .preset-chip {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface-card);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .preset-chip.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .timer-btn-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+    .btn-timer {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface-card);
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .btn-timer.start {
+      background: var(--emerald);
+      color: #060b14;
+      border-color: var(--emerald-bright);
+    }
+    .btn-timer.start:hover { background: var(--emerald-bright); }
+
+    /* 3. THE 3-STEP CROC BRAIN HOOK SCAFFOLD & TIER-3 POWER CHIPS */
+    .scaffold-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      backdrop-filter: blur(12px);
+    }
+
+    .scaffold-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scaffold-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-reveal-model {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.2));
+      border: 1px solid var(--gold);
+      color: var(--gold-bright);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    body.light-stage .btn-reveal-model { color: #b45309; }
+    .btn-reveal-model:hover {
+      background: var(--gold);
+      color: #060b14;
+    }
+
+    /* Tier 3 Power Words Checklist */
+    .tier3-bank-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tier3-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .t3-chip {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: var(--emerald-bright);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    body.light-stage .t3-chip {
+      background: #ecfdf5;
+      color: #047857;
+    }
+    .t3-chip.used {
+      background: var(--emerald);
+      color: #060b14;
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    }
+    .t3-chip .chip-audio {
+      opacity: 0.8;
+      font-size: 0.85rem;
+    }
+    .t3-chip .chip-audio:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    /* 3-Step Hook Formula Boxes */
+    .hook-steps-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hook-step-box {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      transition: all 0.2s;
+    }
+    .hook-step-box.step-1 { border-left-color: #38bdf8; }
+    .hook-step-box.step-2 { border-left-color: #f43f5e; }
+    .hook-step-box.step-3 { border-left-color: #10b981; }
+
+    .step-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .step-badge {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .step-1 .step-badge { color: #38bdf8; }
+    .step-2 .step-badge { color: #fb7185; }
+    .step-3 .step-badge { color: #34d399; }
+    body.light-stage .step-1 .step-badge { color: #0284c7; }
+    body.light-stage .step-2 .step-badge { color: #e11d48; }
+    body.light-stage .step-3 .step-badge { color: #059669; }
+
+    .step-scaffold-prompt {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .step-model-answer {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      display: none;
+    }
+    .step-model-answer.visible {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 4. QUICK IN-BROWSER VOICE RECORDER BAR */
+    .recorder-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .rec-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .rec-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--text-dim);
+    }
+    .rec-dot.recording {
+      background: var(--rose);
+      box-shadow: 0 0 12px var(--rose);
+      animation: pulseUrgent 0.6s infinite alternate;
+    }
+    .rec-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-rec {
+      background: rgba(244, 63, 94, 0.16);
+      border: 1px solid rgba(244, 63, 94, 0.45);
+      color: #fda4af;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    body.light-stage .btn-rec { color: #be123c; }
+    .btn-rec.active {
+      background: var(--rose);
+      color: #ffffff;
+    }
+    audio#pitchAudioPlayback {
+      height: 34px;
+      max-width: 220px;
+    }
+
+    /* Slice Library Grid Below Stage */
+    .library-section {
+      margin-top: 38px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .lib-item {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .lib-item:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .lib-item.active-slice {
+      border-color: var(--emerald);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Sparkle Background Canvas -->
+  <canvas id="sparkleCanvas"></canvas>
+
+  <!-- Red Danger Flash Overlay for "I'm Sorry" Beta Trap -->
+  <div id="dangerFlash"></div>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="brand-wrap">
+        <div class="brand-logo">🐊 CROC WHEEL</div>
+        <div>
+          <div class="brand-title">
+            Spin & Sell Showdown
+            <span class="vip-pill">✨ Oren Klaff Pitch Lab</span>
+          </div>
+          <div class="brand-sub">Bypass the Buyer's Crocodile Brain in 90 Seconds · YH & Lewis O.</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn-nav" title="Back to Main Coaching Portal">
+          🏠 Main Portal
+        </a>
+        <a href="marketing-scenarios.html" class="btn-nav" title="Marketing Scenarios">
+          📈 Marketing (11)
+        </a>
+        <a href="closest-in-meaning.html" class="btn-nav" title="Closest in Meaning">
+          🔍 100 Questions
+        </a>
+        <a href="game.html" class="btn-nav" title="Vocab Arena Game">
+          🎮 Vocab Arena
+        </a>
+        <button class="btn-nav active-gold" id="soundToggleBtn" onclick="toggleSoundFX()">
+          🔊 Sound FX: ON
+        </button>
+        <button class="btn-nav" onclick="toggleStageTheme()">
+          ☀️ Stage Light
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN STAGE CONTAINER -->
+  <main class="stage-container">
+
+    <!-- CROC BRAIN NEURO-PITCHING REMINDER BANNER -->
+    <section class="croc-edu-banner">
+      <div class="croc-edu-left">
+        <div class="croc-mascot-badge">🐊</div>
+        <div class="croc-edu-text">
+          <h2>Rule #1 of the Crocodile Brain: Don't Be Boring, Needy, or Small!</h2>
+          <p>Whether you are selling a <strong>Friday Pizza Party</strong> or a <strong>$100K Software Overhaul</strong>, the buyer's primitive Crocodile Brain filters out apologies (<em>"I'm sorry..."</em>) and personal desk complaints. Hook it with <strong>Big Scope, Urgent Tension, and a Quantified Win!</strong></p>
+        </div>
+      </div>
+      <div class="croc-pillars">
+        <div class="croc-pillar">
+          <span class="p-lbl" style="color:#38bdf8;">1. Macro Shift 🌍</span>
+          <span class="p-sub">Zoom out to company/market scale</span>
+        </div>
+        <div class="croc-pillar">
+          <span class="p-lbl" style="color:#fb7185;">2. High-Stakes Tension ⚡</span>
+          <span class="p-sub">Cost of doing nothing right now</span>
+        </div>
+        <div class="croc-pillar">
+          <span class="p-lbl" style="color:#34d399;">3. Value Anchor 💎</span>
+          <span class="p-sub">Concrete ROI + Downward Drop (↘)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER & DECK TOOLBAR -->
+    <section class="wheel-toolbar">
+      <div class="category-pills">
+        <button class="cat-btn active" onclick="filterWheelCategory('all', this)">
+          🎰 All Showdown Mix (18)
+        </button>
+        <button class="cat-btn" onclick="filterWheelCategory('fun', this)">
+          🍕 Fun & Office Perks (6)
+        </button>
+        <button class="cat-btn" onclick="filterWheelCategory('business', this)">
+          💼 High-Stakes Business (6)
+        </button>
+        <button class="cat-btn" onclick="filterWheelCategory('wildcard', this)">
+          🔥 Wildcard "Sell Me This!" (6)
+        </button>
+      </div>
+
+      <div class="toolbar-right">
+        <label class="toggle-chip" title="Automatically remove a slice after it lands so you never repeat during class">
+          <input type="checkbox" id="eliminateLandedToggle">
+          Eliminate Slice After Spin
+        </label>
+        <button class="btn-nav" onclick="shuffleWheelSlices()" title="Shuffle Wheel Order">
+          🔀 Shuffle
+        </button>
+        <button class="btn-nav" onclick="resetWheelSlices()" title="Restore All 18 Default Slices">
+          🔄 Reset Wheel
+        </button>
+      </div>
+    </section>
+
+    <!-- 2-COLUMN ARENA: WHEEL (LEFT) + SPOTLIGHT PITCH COACH (RIGHT) -->
+    <div class="arena-grid">
+
+      <!-- ====================================================
+           LEFT COLUMN: THE GLITZY CASINO SPIN WHEEL
+           ==================================================== -->
+      <div class="wheel-stage-card">
+        <div class="spotlight-beam left"></div>
+        <div class="spotlight-beam right"></div>
+
+        <div class="stage-title-bar">
+          <div class="stage-kicker">✨ LIVE EXECUTIVE PITCH ROULETTE ✨</div>
+          <h1 class="stage-headline">SPIN TO HOOK THE CROC BRAIN</h1>
+        </div>
+
+        <!-- WHEEL HOUSING WITH MARQUEE LIGHTS & POINTER -->
+        <div class="wheel-housing">
+          <!-- Top Spring-Loaded Pointer (12 O'Clock) -->
+          <div class="wheel-pointer-assembly">
+            <svg id="wheelPointer" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pointerGold" x1="0" y1="0" x2="60" y2="72" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fef08a"/>
+                  <stop offset="50%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#b45309"/>
+                </linearGradient>
+              </defs>
+              <path d="M30 68L8 20C5 13 10 4 18 4H42C50 4 55 13 52 20L30 68Z" fill="url(#pointerGold)" stroke="#ffffff" stroke-width="3"/>
+              <circle cx="30" cy="18" r="7" fill="#060b14" stroke="#fef08a" stroke-width="2.5"/>
+            </svg>
+          </div>
+
+          <!-- Outer Metallic Bezel & 36 LED Chaser Bulbs -->
+          <div class="wheel-bezel">
+            <div class="marquee-ring" id="marqueeRing"></div>
+            <div class="wheel-bezel-inner">
+              <canvas id="wheelCanvas" width="900" height="900" onclick="spinWheel()"></canvas>
+            </div>
+          </div>
+
+          <!-- Center Hub Button -->
+          <div class="wheel-center-hub" onclick="spinWheel()" title="Click or Press Spacebar to Spin!">
+            <span class="hub-croc">🐊</span>
+            <span class="hub-text">SPIN</span>
+          </div>
+        </div>
+
+        <!-- SPIN CTA & SPEED SELECTOR -->
+        <div class="spin-controls-row">
+          <button class="btn-mega-spin" id="spinBtnMain" onclick="spinWheel()">
+            <span>🎰 SPIN THE WHEEL!</span>
+          </button>
+
+          <div class="speed-selector" title="Spin Suspense Duration">
+            <button class="speed-opt" onclick="setSpinDuration(3.8, this)">⚡ Fast</button>
+            <button class="speed-opt active" onclick="setSpinDuration(6.2, this)">🎡 Classic</button>
+            <button class="speed-opt" onclick="setSpinDuration(9.0, this)">🔥 Suspense</button>
+          </div>
+        </div>
+
+        <!-- ADD CUSTOM ITEM / SENTENCE ON THE FLY -->
+        <div class="custom-slice-bar">
+          <div class="custom-slice-title">
+            <span>➕ Add Custom Item or Sentence to the Wheel</span>
+            <span id="sliceCountBadge" style="color:var(--gold-bright);">18 Active Slices</span>
+          </div>
+          <div class="custom-input-group">
+            <input type="text" id="customTitleInput" class="custom-input" placeholder="e.g., 🍕 Friday Pizza Party or Why we need 2 monitors...">
+            <select id="customCatSelect" class="custom-select">
+              <option value="fun">🍕 Fun / Perks</option>
+              <option value="business">💼 Business</option>
+              <option value="wildcard">🔥 Wildcard</option>
+            </select>
+            <button class="btn-add-slice" onclick="addCustomSlice()">Add & Spin</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================
+           RIGHT COLUMN: SPOTLIGHT BRIEFING, CROC METER & HOOKS
+           ==================================================== -->
+      <div class="coaching-column">
+
+        <!-- 1. WINNER PITCH BRIEFING CARD -->
+        <div class="spotlight-card" id="spotlightCard" data-tilt data-tilt-max="2" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08">
+          <div class="spotlight-badge-row">
+            <span class="slice-cat-tag" id="activeCategoryBadge">🍕 FUN & OFFICE PERK PITCH</span>
+            <span class="buyer-persona-pill" id="activePersonaBadge">🦈 Buyer: Skeptical CFO (Hates Wasted Budget)</span>
+          </div>
+
+          <div class="prompt-headline-wrap">
+            <div>
+              <div class="prompt-kicker">🎯 YOUR 90-SECOND SELLING MISSION:</div>
+              <h2 class="prompt-main-title" id="activeSliceTitle">🍕 Friday Gourmet Pizza Party</h2>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <button class="btn-nav active-gold" onclick="celebrateDealWon()" title="Trigger Deal Won Jackpot Celebration!">
+                🏆 Deal Won!
+              </button>
+              <button class="btn-speak-round" onclick="speakCurrentPrompt()" title="Listen to Mission Prompt">
+                🔊
+              </button>
+            </div>
+          </div>
+
+          <div class="prompt-mission-sentence" id="activeSliceMission">
+            "Sell the CEO & CFO on why the company must fund a gourmet Friday Pizza Party every single week."
+          </div>
+
+          <div class="beta-trap-alert">
+            <span style="font-size:1.15rem;">🚨</span>
+            <div>
+              <strong>Croc Brain Trap to Avoid (Desk-Level / Needy):</strong>
+              <span id="activeBetaTrap" style="font-style:italic; opacity:0.92;">"Sorry to bother you, I really like pizza and everyone is hungry on Friday, so can we please have a pizza party?"</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. LIVE CROC BRAIN METER + PITCH COUNTDOWN TIMER -->
+        <div class="hud-split-row">
+
+          <!-- Interactive Crocodile Brain Meter & Soundboard -->
+          <div class="croc-meter-card">
+            <div class="meter-header">
+              <div class="meter-title">
+                <span>🐊 Crocodile Brain Hook Meter</span>
+              </div>
+              <span class="meter-status-badge" id="crocStatusText">50% · Curious 👀</span>
+            </div>
+
+            <div class="croc-bar-track">
+              <div class="croc-bar-fill" id="crocBarFill" style="width: 50%;"></div>
+            </div>
+
+            <div class="soundboard-grid">
+              <button class="sb-btn pos" onclick="adjustCrocMeter(25, '🚀 Macro Shift! Zoomed out to company level!', 'macro')">
+                <span>🚀 +Macro Shift</span>
+                <span style="color:var(--emerald-bright); font-size:0.68rem;">+25% Hook</span>
+              </button>
+              <button class="sb-btn pos" onclick="adjustCrocMeter(25, '⚡ High-Stakes Tension! Urgent cost of inaction!', 'tension')">
+                <span>⚡ +Urgent Tension</span>
+                <span style="color:var(--emerald-bright); font-size:0.68rem;">+25% Hook</span>
+              </button>
+              <button class="sb-btn pos" onclick="adjustCrocMeter(20, '💎 Tier-3 Executive Collocation Deployed!', 'tier3')">
+                <span>💎 +Tier-3 Word</span>
+                <span style="color:var(--emerald-bright); font-size:0.68rem;">+20% Hook</span>
+              </button>
+              <button class="sb-btn pos" onclick="adjustCrocMeter(15, '↘️ Authoritative Downward Inflection!', 'drop')">
+                <span>↘️ +Pitch Drop</span>
+                <span style="color:var(--emerald-bright); font-size:0.68rem;">+15% Hook</span>
+              </button>
+              <button class="sb-btn neg" onclick="adjustCrocMeter(-30, '🚨 BETA TRAP! Apologized or begged for approval!', 'buzzer')">
+                <span>🚨 "I'm Sorry"</span>
+                <span style="color:var(--rose); font-size:0.68rem;">-30% Snap!</span>
+              </button>
+              <button class="sb-btn neg" onclick="adjustCrocMeter(-20, '😴 Neocortex Overload! Too much boring detail!', 'yawn')">
+                <span>😴 Boring Detail</span>
+                <span style="color:var(--rose); font-size:0.68rem;">-20% Yawn</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 60s / 90s Pitch Countdown Timer -->
+          <div class="timer-card">
+            <div class="meter-header" style="margin-bottom:4px;">
+              <div class="meter-title">⏱️ Pitch Clock</div>
+              <div class="timer-preset-row" style="margin:0;">
+                <button class="preset-chip" onclick="setPitchTimer(30, this)">30s</button>
+                <button class="preset-chip active" onclick="setPitchTimer(60, this)">60s</button>
+                <button class="preset-chip" onclick="setPitchTimer(90, this)">90s</button>
+              </div>
+            </div>
+
+            <div class="timer-display-wrap">
+              <div class="timer-digits" id="timerDisplay">01:00</div>
+              <div class="timer-btn-row">
+                <button class="btn-timer start" id="timerStartBtn" onclick="togglePitchTimer()">▶ Start Pitch</button>
+                <button class="btn-timer" onclick="resetPitchTimer()">↺ Reset</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3. 3-PART EXECUTIVE HOOK BLUEPRINT & TIER-3 POWER BANK -->
+        <div class="scaffold-card">
+          <div class="scaffold-header">
+            <div class="scaffold-title">
+              <span>🧭 3-Part Crocodile Brain Hook Blueprint</span>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="btn-reveal-model" id="revealModelBtn" onclick="toggleModelAnswers()">
+                💡 Reveal Executive Model Pitch
+              </button>
+              <button class="btn-nav" onclick="speakFullModelPitch()" title="Listen to Complete 3-Part Executive Pitch">
+                🔊 Hear Full Pitch
+              </button>
+            </div>
+          </div>
+
+          <!-- Target Tier-3 Vocabulary Chips -->
+          <div class="tier3-bank-label">
+            <span>💎 Target Tier-3 Power Words (Click to Check Off When Spoken · Click 🔊 to Hear)</span>
+            <span id="powerWordsCount">0 / 3 Deployed</span>
+          </div>
+          <div class="tier3-chips-row" id="tier3ChipsContainer"></div>
+
+          <!-- 3-Step Hook Formula Stack -->
+          <div class="hook-steps-stack">
+            <div class="hook-step-box step-1">
+              <div class="step-top-row">
+                <span class="step-badge">STEP 1: THE MACRO SHIFT (NOVELTY & COMPANY SCOPE)</span>
+                <button class="btn-nav" style="padding:3px 8px; font-size:0.72rem;" onclick="speakStepModel(1)">🔊</button>
+              </div>
+              <div class="step-scaffold-prompt">
+                Starter: "Over the past [6 months / two quarters], our [operational landscape / team scale] has shifted..."
+              </div>
+              <div class="step-model-answer" id="modelStep1"></div>
+            </div>
+
+            <div class="hook-step-box step-2">
+              <div class="step-top-row">
+                <span class="step-badge">STEP 2: THE HIGH-STAKES FRICTION (COST OF DOING NOTHING)</span>
+                <button class="btn-nav" style="padding:3px 8px; font-size:0.72rem;" onclick="speakStepModel(2)">🔊</button>
+              </div>
+              <div class="step-scaffold-prompt">
+                Starter: "Yet, we are still relying on [old habit], which creates [bottleneck / wasted hours / risk]..."
+              </div>
+              <div class="step-model-answer" id="modelStep2"></div>
+            </div>
+
+            <div class="hook-step-box step-3">
+              <div class="step-top-row">
+                <span class="step-badge">STEP 3: THE VALUE ANCHOR (CONCRETE WIN + DOWNWARD DROP ↘)</span>
+                <button class="btn-nav" style="padding:3px 8px; font-size:0.72rem;" onclick="speakStepModel(3)">🔊</button>
+              </div>
+              <div class="step-scaffold-prompt">
+                Starter: "My proposal today is [solution], which eliminates this friction and delivers [quantified ROI]."
+              </div>
+              <div class="step-model-answer" id="modelStep3"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. QUICK IN-BROWSER VOICE RECORDER -->
+        <div class="recorder-bar">
+          <div class="rec-left">
+            <div class="rec-dot" id="recDot"></div>
+            <div>
+              <div style="font-size:0.86rem; font-weight:800;">🎙️ Live Spin & Sell Voice Recorder</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);" id="recStatusLabel">Record your 60s pitch & listen back immediately</div>
+            </div>
+          </div>
+          <div class="rec-actions">
+            <button class="btn-rec" id="recToggleBtn" onclick="toggleRecording()">
+              ⏺ Record Pitch
+            </button>
+            <audio id="pitchAudioPlayback" controls style="display:none;"></audio>
+            <a id="downloadAudioLink" class="btn-nav" style="display:none;" download="yh-croc-wheel-pitch.webm">
+              ⬇️ Save .webm
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================
+         ALL WHEEL SLICES DIRECTORY (CLICK ANY CARD TO SELECT)
+         ==================================================== -->
+    <section class="library-section">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h3 style="font-size:1.1rem; font-weight:800;">📚 Complete Pitch Prompt Vault (Click Any Slice to Load Instantly)</h3>
+          <p style="font-size:0.82rem; color:var(--text-muted);">Mix of fun office culture pitches, high-stakes corporate proposals, and wildcard "Sell Me This!" items.</p>
+        </div>
+      </div>
+      <div class="library-grid" id="sliceLibraryGrid"></div>
+    </section>
+
+  </main>
+
+  <script>
+    /* ==========================================================================
+       1. MASTER PITCH PROMPTS DATASET (18 CURATED SLICES: FUN, BUSINESS, WILDCARD)
+       ========================================================================== */
+    const DEFAULT_SLICES = [
+      // --- FUN & OFFICE PERKS (6) ---
+      {
+        id: 'pizza-party',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '🍕 Friday Pizza Party',
+        title: '🍕 Weekly Friday Gourmet Pizza Party',
+        color: '#e11d48',
+        persona: '🦈 Buyer: Skeptical CFO (Thinks Free Food is a Waste)',
+        mission: 'Sell the CEO & CFO on why the company must fund a gourmet Friday Pizza Party every single week.',
+        trap: '"Sorry to bother you, I really like pizza and everyone is hungry on Friday, so can we please have a pizza party?"',
+        tier3: ['alleviate critical bottlenecks', 'from our strategic vantage point', 'directly addresses your core mandate'],
+        step1: 'Over the past two quarters, our hybrid work schedule has isolated engineering and sales into separate silos, dropping cross-team communication by 35%.',
+        step2: 'Yet, we still rely on formal Zoom calls to build team alignment, leading to Friday afternoon burnout and costly project handoff delays.',
+        step3: 'For just $150 a week, a structured Friday Pizza Sync will alleviate critical bottlenecks between departments and directly address your core mandate of employee retention.'
+      },
+      {
+        id: 'nap-pods',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '😴 25m Power Nap Pods',
+        title: '😴 Afternoon Executive Power Nap Pods',
+        color: '#7c3aed',
+        persona: '🦈 Buyer: Old-School Operations Director',
+        mission: 'Convince your strict Operations Director to install two 25-minute "Power Nap Pods" in the office quiet room.',
+        trap: '"I always feel very sleepy after lunch at my desk, so I hope it is okay to buy a sofa so we can sleep?"',
+        tier3: ['direct your attention to', 'accelerate time-to-market', 'mitigate risks'],
+        step1: 'I want to direct your attention to NASA and corporate productivity data showing that cognitive accuracy drops by 40% between 2:00 PM and 4:00 PM.',
+        step2: 'Yet, our engineers push through afternoon fatigue to write complex production code, resulting in 70% of our software bugs being introduced after 2:00 PM.',
+        step3: 'Installing two 25-minute recharge pods will mitigate risks in production QA and accelerate time-to-market across every sprint.'
+      },
+      {
+        id: 'dog-wednesday',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '🐶 Dog Wednesdays',
+        title: '🐶 "Bring Your Dog to Work" Wednesdays',
+        color: '#d97706',
+        persona: '🦈 Buyer: Strict HR Vice President',
+        mission: 'Pitch HR on launching an official dog-friendly "Chief Barking Officer" Wednesday policy.',
+        trap: '"Dogs are very cute and make people happy, so maybe we can bring our pets on Wednesday?"',
+        tier3: ['directly addresses your core mandate', 'from our strategic vantage point', 'enhance brand equity'],
+        step1: 'Since mandating return-to-office three days a week, mid-week office attendance on Wednesdays has fallen to a record low of 42%.',
+        step2: 'We are currently paying full commercial rent for a half-empty floor while morale dips and top performers request remote transfers.',
+        step3: 'From our strategic vantage point, a structured Dog-Friendly Wednesday pilot directly addresses your core mandate of boosting in-office attendance to 90% at zero cost.'
+      },
+      {
+        id: 'espresso-machine',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '☕ $3K Espresso Bar',
+        title: '☕ $3,000 Barista Espresso Machine',
+        color: '#059669',
+        persona: '🦈 Buyer: Budget-Conscious Finance VP',
+        mission: 'Sell the Finance VP on replacing the terrible office instant coffee with a $3,000 Italian espresso machine.',
+        trap: '"Our current office coffee tastes really bad and I want to drink a nice latte in the morning."',
+        tier3: ['direct your attention to', 'alleviate critical bottlenecks', 'cost-effective'],
+        step1: 'Right now, 25 members of our product and sales teams leave the building every morning to stand in line at Starbucks.',
+        step2: 'At 22 minutes per coffee run, our department is losing 45 hours of high-value engineering and sales focus time every single week.',
+        step3: 'A cost-effective $3,000 espresso station pays for itself in 14 business days by keeping our talent on-site and recovering 180 productive hours a month.'
+      },
+      {
+        id: 'four-day-week',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '🏝️ 4-Day Workweek',
+        title: '🏝️ The 4-Day Workweek (Fridays Off!)',
+        color: '#0284c7',
+        persona: '🦈 Buyer: Demanding CEO Focused on Q4 Targets',
+        mission: 'Pitch executive leadership on transitioning to a 4-day workweek (Monday–Thursday) at 100% pay.',
+        trap: '"Everyone on the team is very tired lately, sorry to ask, but can we please have Friday off?"',
+        tier3: ['from our strategic vantage point', 'accelerate time-to-market', 'streamline operations'],
+        step1: 'Across our industry, top-performing enterprise teams are shifting from measuring "hours in chairs" to measuring "shipped deliverables per sprint."',
+        step2: 'Currently, 28% of our Monday-through-Friday schedule is consumed by low-value status meetings and context-switching fatigue.',
+        step3: 'From our strategic vantage point, eliminating redundant meetings allows us to streamline operations into four high-intensity days while guaranteeing 100% of our Q4 targets.'
+      },
+      {
+        id: 'mario-kart',
+        cat: 'fun',
+        catLabel: '🍕 FUN & OFFICE PERK PITCH',
+        shortLabel: '🎮 Thursday Gaming League',
+        title: '🎮 Thursday Mario Kart & Ping-Pong Showdown',
+        color: '#9333ea',
+        persona: '🦈 Buyer: Serious VP of Engineering',
+        mission: 'Convince your manager that blocking 45 minutes every Thursday for a team gaming tournament will boost sprint velocity.',
+        trap: '"Playing video games is fun and helps us relax a little bit when work is stressful."',
+        tier3: ['alleviate critical bottlenecks', 'direct your attention to', 'optimal'],
+        step1: 'Over the last two quarters, we onboarded eight new engineers across three different project tracks.',
+        step2: 'Because junior developers feel hesitant to interrupt senior architects, minor technical blockers sit unresolved for 48 hours.',
+        step3: 'A 45-minute Thursday tournament builds psychological safety across ranks, helping us alleviate critical bottlenecks in 5 minutes instead of two days.'
+      },
+
+      // --- HIGH-STAKES BUSINESS & CORPORATE (6) ---
+      {
+        id: 'kill-monday-meeting',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '⚡ Kill 2h Monday Meeting',
+        title: '⚡ Replace the 2-Hour Monday Meeting with Async Slack',
+        color: '#2563eb',
+        persona: '🦈 Buyer: Traditional Department Head',
+        mission: 'Pitch your boss on replacing the painful 2-hour Monday status meeting with a 5-minute async Slack update.',
+        trap: '"I think our Monday morning meetings are too long and boring, can we make them shorter?"',
+        tier3: ['direct your attention to', 'alleviate critical bottlenecks', 'accelerate time-to-market'],
+        step1: 'Over the past six months, our active project workload has doubled, requiring deep, uninterrupted execution time.',
+        step2: 'Yet, ten of us spend two hours every Monday morning reading task lists out loud—burning 80 hours of prime engineering capacity every month.',
+        step3: 'Replacing that call with a structured 5-minute async Slack update will alleviate critical bottlenecks and give everyone back a full workday of focus time each month.'
+      },
+      {
+        id: 'automation-plugin',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '🤖 $25 Automation Tool',
+        title: '🤖 Approve a $25/Month Workflow Automation Plugin',
+        color: '#0d9488',
+        persona: '🦈 Buyer: Budget-Frozen Operations Manager',
+        mission: 'Sell your manager on approving a $25/month browser plugin that eliminates 5 hours of manual Excel copy-pasting.',
+        trap: '"I spend an hour every evening copy-pasting Excel rows and my hands hurt, can we buy this $25 tool?"',
+        tier3: ['engineered a robust platform', 'directly addresses your core mandate', 'cost-effective'],
+        step1: 'Our inbound client order volume has surged by 85% compared to last quarter.',
+        step2: 'Right now, our specialists spend 6 hours every week manually copy-pasting order numbers into Excel, creating a 24-hour client response lag.',
+        step3: 'For just $25 a month, this one-click automation directly addresses your core mandate of faster client turnaround while freeing 24 hours a month for customer calls.'
+      },
+      {
+        id: 'mobile-checkout',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '📱 3-Tap Mobile Form',
+        title: '📱 Overhaul the 8-Field Mobile Contact Form into 3 Taps',
+        color: '#4f46e5',
+        persona: '🦈 Buyer: Stubborn Client Marketing Director',
+        mission: 'Convince a skeptical client to cut their 8-field website contact form down to 3 taps to stop losing mobile visitors.',
+        trap: '"Your website contact form is annoying to type on my phone, so I think maybe you should change it."',
+        tier3: ['direct your attention to', 'alleviate critical bottlenecks', 'directly addresses your core mandate'],
+        step1: 'I want to direct your attention to your traffic analytics: over 74% of your prospects now browse your site on smartphones.',
+        step2: 'However, your legacy form forces mobile users to type eight manual fields, causing 60% of qualified buyers to leave without contacting you.',
+        step3: 'Consolidating that form into three simple taps will alleviate critical bottlenecks in your funnel and immediately double weekly customer inquiries.'
+      },
+      {
+        id: 'shared-drive',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '📂 3-Folder Cloud Rescue',
+        title: '📂 Overhaul the 400-File Messy Shared Drive',
+        color: '#0891b2',
+        persona: '🦈 Buyer: Busy Cross-Functional Team',
+        mission: 'Pitch your team on adopting a strict 3-folder cloud architecture before someone sends an outdated price sheet to a client.',
+        trap: '"Our Google Drive folder is really messy and I can never find my files quickly."',
+        tier3: ['from our strategic vantage point', 'mitigate risks', 'streamline operations'],
+        step1: 'Our active client documentation has scaled to over 400 files spread across 14 unindexed folders.',
+        step2: 'Last week, draft confusion nearly caused us to send an outdated pricing schedule to a tier-1 client—a mistake that would have cost $40,000.',
+        step3: 'From our strategic vantage point, implementing this 3-folder architecture will mitigate risks immediately and ensure anyone can locate any live file in 10 seconds.'
+      },
+      {
+        id: 'automated-qa',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '🛡️ Automated QA Pipeline',
+        title: '🛡️ Pause Feature Work for 1 Sprint to Automate QA',
+        color: '#b45309',
+        persona: '🦈 Buyer: Aggressive Sales VP Demanding New Features',
+        mission: 'Pitch leadership on pausing new features for 1 sprint to build an automated QA pipeline that slashes release delays.',
+        trap: '"Our QA testing is very slow right now, sorry, can we stop making features for two weeks?"',
+        tier3: ['engineered a robust platform', 'alleviate critical bottlenecks', 'accelerate time-to-market'],
+        step1: 'Over the last three quarters, our enterprise user base has grown 3x, raising our uptime SLA requirements to 99.9%.',
+        step2: 'Yet, we are still running manual regression tests, which delays every deployment by four days and risks bugs during live client demos.',
+        step3: 'Investing one sprint into automated QA will alleviate critical bottlenecks and allow us to accelerate time-to-market by three weeks in Q4.'
+      },
+      {
+        id: 'hybrid-policy',
+        cat: 'business',
+        catLabel: '💼 HIGH-STAKES BUSINESS PITCH',
+        shortLabel: '🏠 3-Day Hybrid Policy',
+        title: '🏠 Lock In a Permanent 3-Day Remote / Hybrid Policy',
+        color: '#be123c',
+        persona: '🦈 Buyer: Managing Director Pushing 5-Day Office Return',
+        mission: 'Sell the Managing Director on locking in a permanent 3-days-remote policy to prevent senior engineering churn.',
+        trap: '"The train commute is very crowded and long, so we hope you let us work from home more."',
+        tier3: ['from our strategic vantage point', 'directly addresses your core mandate', 'mitigate risks'],
+        step1: 'In our current regional talent market, 80% of senior bilingual engineers rank hybrid flexibility as their #1 career requirement.',
+        step2: 'Enforcing a 5-day commute adds 10 hours of weekly transit exhaustion and puts us at immediate risk of losing our top technical leads to competitors.',
+        step3: 'From our strategic vantage point, formalizing a 3-day hybrid model directly addresses your core mandate of retaining top engineering talent while maximizing deep-work output.'
+      },
+
+      // --- WILDCARD "SELL ME THIS!" ITEMS (6) ---
+      {
+        id: 'titanium-pen',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '🖊️ $500 Titanium Pen',
+        title: '🖊️ Sell Me This $500 Solid Titanium Executive Pen',
+        color: '#ca8a04',
+        persona: '🦈 Buyer: Pragmatic CEO Who Uses Free Plastic Pens',
+        mission: 'Convince a pragmatic CEO to buy a $500 solid titanium executive pen right now.',
+        trap: '"This pen is made of very strong titanium and writes very smoothly, do you want to buy it?"',
+        tier3: ['direct your attention to', 'from our strategic vantage point', 'engineered a robust platform'],
+        step1: 'In high-stakes boardrooms and M&A closings, physical micro-signals establish status and authority before a single word is spoken.',
+        step2: 'Yet, executives spend $2,000 on a tailored suit and then pull out a $0.50 disposable plastic pen to sign a $10 million contract—shattering the frame of precision.',
+        step3: 'I want to direct your attention to this aerospace-grade titanium instrument: it commands instant boardroom gravitas and is engineered to last a lifetime.'
+      },
+      {
+        id: 'gps-umbrella',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '☂️ $120 GPS Umbrella',
+        title: '☂️ Sell a $120 Smart GPS Umbrella to a Commuter',
+        color: '#dc2626',
+        persona: '🦈 Buyer: Commuter Who Buys $5 Convenience Store Umbrellas',
+        mission: 'Convince a busy Tokyo or Singapore executive to buy a $120 smart umbrella that texts your phone before you leave it behind.',
+        trap: '"This umbrella has Bluetooth GPS and strong carbon ribs, it is very good quality."',
+        tier3: ['engineered a robust platform', 'mitigate risks', 'cost-effective'],
+        step1: 'Urban professionals buy an average of eight disposable plastic umbrellas every year, only to leave them on trains or have them snap in a typhoon.',
+        step2: 'Getting caught in a sudden downpour right before a client pitch ruins your presentation attire and forces you into the boardroom soaked and flustered.',
+        step3: 'We have engineered a robust carbon-fiber umbrella that alerts your phone before you leave it behind—guaranteeing you walk into every client meeting immaculate.'
+      },
+      {
+        id: 'rubber-croc',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '🦖 Desk Rubber Crocodile',
+        title: '🦖 Sell a $15 Desk Toy Rubber Crocodile to the Sales VP',
+        color: '#16a34a',
+        persona: '🦈 Buyer: Hard-Nosed VP of Sales Who Hates Desk Clutter',
+        mission: 'Convince the VP of Sales that placing a rubber crocodile on every salesperson\'s desk will double their closing rate.',
+        trap: '"This little crocodile toy is a funny reminder of our training lesson, can we put it on our desks?"',
+        tier3: ['alleviate critical bottlenecks', 'directly addresses your core mandate', 'from our strategic vantage point'],
+        step1: 'Neuro-finance research proves that 90% of B2B sales pitches fail in the first 90 seconds because reps pitch complex logic to the buyer\'s primitive Crocodile Brain.',
+        step2: 'The moment a rep gets nervous on a Zoom call, they forget their training, start apologizing, and dump boring technical bullet points.',
+        step3: 'Placing this physical crocodile right below every webcam acts as a real-time cognitive anchor that directly addresses your core mandate of doubling our Q4 pitch conversion.'
+      },
+      {
+        id: 'luxury-ice',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '🧊 $2 Luxury Ice Cubes',
+        title: '🧊 Sell $2 Hand-Carved Artisanal Ice Spheres',
+        color: '#0284c7',
+        persona: '🦈 Buyer: Restaurant Owner Who Gets Freezer Ice for Free',
+        mission: 'Sell a luxury restaurant owner on buying crystal-clear hand-carved ice spheres at $2 per cube.',
+        trap: '"Our ice cubes are very clear and round and look much nicer than normal ice."',
+        tier3: ['direct your attention to', 'from our strategic vantage point', 'directly addresses your core mandate'],
+        step1: 'In modern hospitality, guests no longer pay $25 for a drink alone—they pay for a theatrical visual experience they can share with clients.',
+        step2: 'Standard cloudy machine ice melts in four minutes, watering down top-shelf spirits and making a $25 pour look like a $6 happy-hour drink.',
+        step3: 'From our strategic vantage point, a $2 diamond-clear ice sphere melts 60% slower and lets you command an $8 premium per glass—delivering an instant 400% ROI.'
+      },
+      {
+        id: 'noise-headphones',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '🎧 $300 ANC Headphones',
+        title: '🎧 $300 Noise-Canceling Headphones for Every Desk',
+        color: '#7c3aed',
+        persona: '🦈 Buyer: CFO Who Thinks Headphones Look Unfriendly',
+        mission: 'Convince leadership to buy $300 active noise-canceling headphones for every employee in the open office.',
+        trap: '"The office is very noisy when people talk on Zoom, so headphones would be nice."',
+        tier3: ['alleviate critical bottlenecks', 'accelerate time-to-market', 'cost-effective'],
+        step1: 'Since transitioning to an open-plan floor, ambient noise from simultaneous client Zoom calls has surged by 60 decibels.',
+        step2: 'Cognitive research confirms that every time an engineer is interrupted by background chatter, it takes 23 minutes to regain deep coding focus.',
+        step3: 'Equipping the team with active noise cancellation will alleviate critical bottlenecks in concentration and recover 5 hours of deep output per person every week.'
+      },
+      {
+        id: 'smoothie-cart',
+        cat: 'wildcard',
+        catLabel: '🔥 WILDCARD "SELL ME THIS!" CHALLENGE',
+        shortLabel: '🥗 3PM Brain Smoothies',
+        title: '🥗 Free 3:00 PM "Brain-Fuel" Smoothie Cart',
+        color: '#db2777',
+        persona: '🦈 Buyer: Skeptical Operations Director',
+        mission: 'Sell the company on replacing the sugary office vending machine with a free 3:00 PM Brain-Fuel Smoothie drop.',
+        trap: '"Healthy smoothies taste delicious and are much better for our health than candy bars."',
+        tier3: ['direct your attention to', 'directly addresses your core mandate', 'from our strategic vantage point'],
+        step1: 'I want to direct your attention to our daily schedule: our highest-stakes international client calls happen between 3:30 PM and 5:30 PM.',
+        step2: 'Right now, team members grab sugary vending-machine snacks at 3:00 PM, triggering a 4:00 PM glucose crash right in the middle of client negotiations.',
+        step3: 'A targeted 3:00 PM high-protein smoothie drop sustains peak vocal authority through 6:00 PM and directly addresses your core mandate of client closing performance.'
+      }
+    ];
+
+    /* ==========================================================================
+       2. STATE MANAGEMENT
+       ========================================================================== */
+    let activeSlices = [...DEFAULT_SLICES];
+    let currentCategory = 'all';
+    let currentSlice = activeSlices[0];
+    let isSpinning = false;
+    let spinDurationSec = 6.2;
+    let wheelState = { angle: 0 };
+    let lastTickSliceIndex = -1;
+    let soundEnabled = true;
+    let modelRevealed = false;
+    let crocScore = 50;
+    let usedPowerWords = new Set();
+
+    /* ==========================================================================
+       3. WEB AUDIO API GAME-SHOW SYNTHESIZER (NO EXTERNAL MP3 DEPENDENCIES)
+       ========================================================================== */
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playPegTick(velocityFactor = 1) {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        const baseFreq = 520 + Math.min(400, velocityFactor * 280);
+        osc.frequency.setValueAtTime(baseFreq, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.038);
+
+        gain.gain.setValueAtTime(0.24, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.042);
+      } catch (e) {}
+    }
+
+    function playWinnerFanfare() {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // C5 E5 G5 C6 E6
+        notes.forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sawtooth';
+          const startTime = ctx.currentTime + i * 0.075;
+          osc.frequency.setValueAtTime(freq, startTime);
+
+          gain.gain.setValueAtTime(0.001, startTime);
+          gain.gain.linearRampToValueAtTime(0.16, startTime + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.55);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(startTime);
+          osc.stop(startTime + 0.58);
+        });
+      } catch (e) {}
+    }
+
+    function playSoundboardFX(type) {
+      if (!soundEnabled) return;
+      try {
+        const ctx = getAudioCtx();
+        if (type === 'buzzer') {
+          // Deep crocodile snap / game-show wrong buzzer
+          [110, 116.5, 82.4].forEach(f => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(f, ctx.currentTime);
+            osc.frequency.linearRampToValueAtTime(f * 0.82, ctx.currentTime + 0.45);
+            gain.gain.setValueAtTime(0.18, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.48);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.5);
+          });
+        } else if (type === 'yawn') {
+          // Descending trombone slide
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(340, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(130, ctx.currentTime + 0.45);
+          gain.gain.setValueAtTime(0.22, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.48);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.5);
+        } else {
+          // Positive power chime
+          const chords = [587.33, 880, 1174.66];
+          chords.forEach((f, idx) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            const t = ctx.currentTime + idx * 0.05;
+            osc.frequency.setValueAtTime(f, t);
+            gain.gain.setValueAtTime(0.18, t);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start(t);
+            osc.stop(t + 0.38);
+          });
+        }
+      } catch (e) {}
+    }
+
+    function toggleSoundFX() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('soundToggleBtn');
+      btn.textContent = soundEnabled ? '🔊 Sound FX: ON' : '🔇 Sound FX: OFF';
+      btn.classList.toggle('active-gold', soundEnabled);
+    }
+
+    /* ==========================================================================
+       4. MARQUEE LED CHASER BULBS (36 BULBS AROUND BEZEL)
+       ========================================================================== */
+    const NUM_BULBS = 36;
+    let marqueeStep = 0;
+    let marqueeMode = 'idle'; // 'idle' | 'spin' | 'win'
+
+    function initMarqueeBulbs() {
+      const ring = document.getElementById('marqueeRing');
+      ring.innerHTML = '';
+      for (let i = 0; i < NUM_BULBS; i++) {
+        const bulb = document.createElement('div');
+        bulb.className = 'marquee-bulb' + (i % 3 === 0 ? ' emerald' : '');
+        const angleDeg = (i * 360) / NUM_BULBS;
+        bulb.style.transform = `rotate(${angleDeg}deg) translateY(-231px)`;
+        ring.appendChild(bulb);
+      }
+      updateBulbRadius();
+      window.addEventListener('resize', updateBulbRadius);
+
+      setInterval(() => {
+        marqueeStep = (marqueeStep + 1) % NUM_BULBS;
+        const bulbs = ring.querySelectorAll('.marquee-bulb');
+        bulbs.forEach((b, idx) => {
+          const angleDeg = (idx * 360) / NUM_BULBS;
+          const r = getBulbRadius();
+          if (marqueeMode === 'spin') {
+            const lit = (idx + marqueeStep) % 3 === 0;
+            b.classList.toggle('dim', !lit);
+          } else if (marqueeMode === 'win') {
+            const lit = marqueeStep % 2 === idx % 2;
+            b.classList.toggle('dim', !lit);
+          } else {
+            const lit = (idx + Math.floor(marqueeStep / 2)) % 2 === 0;
+            b.classList.toggle('dim', !lit);
+          }
+          b.style.transform = `rotate(${angleDeg}deg) translateY(-${r}px)`;
+        });
+      }, 95);
+    }
+
+    function getBulbRadius() {
+      const housing = document.querySelector('.wheel-housing');
+      return housing ? (housing.offsetWidth / 2) - 9 : 231;
+    }
+
+    function updateBulbRadius() {
+      const r = getBulbRadius();
+      const bulbs = document.querySelectorAll('.marquee-bulb');
+      bulbs.forEach((b, idx) => {
+        const angleDeg = (idx * 360) / NUM_BULBS;
+        b.style.transform = `rotate(${angleDeg}deg) translateY(-${r}px)`;
+      });
+    }
+
+    /* ==========================================================================
+       5. HIGH-DPI HTML5 CANVAS WHEEL RENDERER
+       ========================================================================== */
+    const canvas = document.getElementById('wheelCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawWheel() {
+      const w = canvas.width;
+      const h = canvas.height;
+      const cx = w / 2;
+      const cy = h / 2;
+      const radius = w / 2 - 14;
+
+      ctx.clearRect(0, 0, w, h);
+
+      const n = activeSlices.length;
+      if (n === 0) return;
+      const arc = (2 * Math.PI) / n;
+      // Rotate so 0 rad is at 12 o'clock (-PI/2) plus current wheelState.angle
+      const baseAngle = (wheelState.angle * Math.PI) / 180 - Math.PI / 2;
+
+      for (let i = 0; i < n; i++) {
+        const slice = activeSlices[i];
+        const startAngle = baseAngle + i * arc;
+        const endAngle = startAngle + arc;
+
+        // Draw Wedge
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, radius, startAngle, endAngle);
+        ctx.closePath();
+
+        // Rich Gradient per slice
+        const grad = ctx.createRadialGradient(cx, cy, 40, cx, cy, radius);
+        grad.addColorStop(0, shadeColor(slice.color, -25));
+        grad.addColorStop(0.65, slice.color);
+        grad.addColorStop(1, shadeColor(slice.color, 18));
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // Gold Divider Line
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = 'rgba(254, 240, 138, 0.75)';
+        ctx.stroke();
+        ctx.restore();
+
+        // Radial Slice Text
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(startAngle + arc / 2);
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#ffffff';
+        ctx.font = n > 14 ? '800 22px "Plus Jakarta Sans", sans-serif' : '800 25px "Plus Jakarta Sans", sans-serif';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
+        ctx.shadowBlur = 6;
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 2;
+
+        const label = slice.shortLabel.length > 22 ? slice.shortLabel.slice(0, 21) + '…' : slice.shortLabel;
+        ctx.fillText(label, radius - 34, 0);
+        ctx.restore();
+
+        // Outer Metallic Rim Pegs at each slice boundary
+        ctx.save();
+        const pegX = cx + Math.cos(startAngle) * (radius - 8);
+        const pegY = cy + Math.sin(startAngle) * (radius - 8);
+        ctx.beginPath();
+        ctx.arc(pegX, pegY, 7, 0, Math.PI * 2);
+        ctx.fillStyle = '#fef08a';
+        ctx.shadowColor = '#000000';
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#78350f';
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Inner Ring Shadow
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.lineWidth = 8;
+      ctx.strokeStyle = 'rgba(254, 240, 138, 0.45)';
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function shadeColor(hex, percent) {
+      const num = parseInt(hex.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = Math.max(0, Math.min(255, (num >> 16) + amt));
+      const G = Math.max(0, Math.min(255, ((num >> 8) & 0x00ff) + amt));
+      const B = Math.max(0, Math.min(255, (num & 0x0000ff) + amt));
+      return '#' + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1);
+    }
+
+    /* ==========================================================================
+       6. GSAP PHYSICS SPIN ENGINE & MECHANICAL FLAPPER COLLISION
+       ========================================================================== */
+    function getWinningIndexFromAngle(deg) {
+      const n = activeSlices.length;
+      const sliceDeg = 360 / n;
+      const normalized = ((360 - (deg % 360)) + 360) % 360;
+      return Math.floor(normalized / sliceDeg) % n;
+    }
+
+    function spinWheel() {
+      if (isSpinning || activeSlices.length === 0) return;
+      isSpinning = true;
+      marqueeMode = 'spin';
+
+      const spinBtn = document.getElementById('spinBtnMain');
+      spinBtn.disabled = true;
+      spinBtn.innerHTML = '<span>🎡 SPINNING...</span>';
+
+      // Stop any ongoing speech
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+      // Calculate dramatic spin: 6 to 10 full rotations + random slice offset
+      const extraSpins = (5 + Math.floor(Math.random() * 4)) * 360;
+      const randomAngle = Math.random() * 360;
+      const startAngle = wheelState.angle;
+      const targetAngle = startAngle + extraSpins + randomAngle;
+
+      lastTickSliceIndex = getWinningIndexFromAngle(startAngle);
+
+      gsap.to(wheelState, {
+        angle: targetAngle,
+        duration: spinDurationSec,
+        ease: 'power4.out',
+        onUpdate: () => {
+          drawWheel();
+          const currentIdx = getWinningIndexFromAngle(wheelState.angle);
+          if (currentIdx !== lastTickSliceIndex) {
+            lastTickSliceIndex = currentIdx;
+            const remainingRatio = Math.max(0.15, (targetAngle - wheelState.angle) / (targetAngle - startAngle));
+            playPegTick(remainingRatio);
+
+            // Physical flapper deflection animation
+            gsap.fromTo(
+              '#wheelPointer',
+              { rotation: -30 * Math.min(1, remainingRatio + 0.35) },
+              { rotation: 0, duration: 0.18, ease: 'elastic.out(1.2, 0.4)', overwrite: true }
+            );
+          }
+        },
+        onComplete: () => {
+          isSpinning = false;
+          marqueeMode = 'win';
+          setTimeout(() => { if (!isSpinning) marqueeMode = 'idle'; }, 3500);
+
+          spinBtn.disabled = false;
+          spinBtn.innerHTML = '<span>🎰 SPIN AGAIN!</span>';
+
+          const winnerIdx = getWinningIndexFromAngle(wheelState.angle);
+          const winnerSlice = activeSlices[winnerIdx];
+          onWheelLanded(winnerSlice, winnerIdx);
+        }
+      });
+    }
+
+    function onWheelLanded(slice, idx) {
+      playWinnerFanfare();
+      fireWinnerConfetti();
+      loadSliceIntoSpotlight(slice);
+
+      // Pulse spotlight card with GSAP
+      gsap.fromTo(
+        '#spotlightCard',
+        { scale: 0.94, boxShadow: '0 0 0px rgba(245, 158, 11, 0)' },
+        { scale: 1, boxShadow: '0 20px 50px rgba(0,0,0,0.75), 0 0 55px rgba(245, 158, 11, 0.55)', duration: 0.65, ease: 'elastic.out(1, 0.5)' }
+      );
+
+      showToast(`🎯 LANDED ON: ${slice.shortLabel}! You have 60 seconds to hook the Croc Brain!`, '#f59e0b');
+
+      // Eliminate slice if toggle is checked
+      const eliminateToggle = document.getElementById('eliminateLandedToggle');
+      if (eliminateToggle && eliminateToggle.checked && activeSlices.length > 2) {
+        setTimeout(() => {
+          activeSlices.splice(idx, 1);
+          updateSliceCountBadge();
+          drawWheel();
+          renderSliceLibrary();
+        }, 1200);
+      }
+    }
+
+    function fireWinnerConfetti() {
+      if (typeof confetti !== 'function') return;
+      confetti({
+        particleCount: 70,
+        angle: 60,
+        spread: 60,
+        origin: { x: 0.08, y: 0.65 },
+        colors: ['#f59e0b', '#10b981', '#fef08a', '#38bdf8']
+      });
+      confetti({
+        particleCount: 70,
+        angle: 120,
+        spread: 60,
+        origin: { x: 0.92, y: 0.65 },
+        colors: ['#f59e0b', '#10b981', '#fef08a', '#f43f5e']
+      });
+    }
+
+    /* ==========================================================================
+       7. SPOTLIGHT CARD & COACHING DECK UPDATER
+       ========================================================================== */
+    function loadSliceIntoSpotlight(slice) {
+      currentSlice = slice;
+      document.getElementById('activeCategoryBadge').textContent = slice.catLabel;
+      document.getElementById('activePersonaBadge').textContent = slice.persona;
+      document.getElementById('activeSliceTitle').textContent = slice.title;
+      document.getElementById('activeSliceMission').textContent = `"${slice.mission}"`;
+      document.getElementById('activeBetaTrap').textContent = slice.trap;
+
+      // Populate 3-Part Hook Model Answers
+      document.getElementById('modelStep1').innerHTML = `<span>💎 "${slice.step1}"</span>`;
+      document.getElementById('modelStep2').innerHTML = `<span>💎 "${slice.step2}"</span>`;
+      document.getElementById('modelStep3').innerHTML = `<span>💎 "${slice.step3}"</span>`;
+
+      // Reset Model Reveal so YH tries cold first
+      modelRevealed = false;
+      updateModelVisibility();
+
+      // Reset Tier-3 Power Words Checklist
+      usedPowerWords.clear();
+      renderTier3Chips();
+
+      // Reset Croc Meter to 50%
+      setCrocMeterValue(50);
+
+      // Highlight in Library
+      renderSliceLibrary();
+    }
+
+    function renderTier3Chips() {
+      const container = document.getElementById('tier3ChipsContainer');
+      container.innerHTML = '';
+      currentSlice.tier3.forEach(phrase => {
+        const isUsed = usedPowerWords.has(phrase);
+        const chip = document.createElement('div');
+        chip.className = 't3-chip' + (isUsed ? ' used' : '');
+        chip.innerHTML = `
+          <span onclick="togglePowerWordUsed('${phrase.replace(/'/g, "\\'")}')">
+            ${isUsed ? '✅' : '⬜'} ${phrase}
+          </span>
+          <span class="chip-audio" title="Listen to pronunciation" onclick="event.stopPropagation(); speakText('${phrase.replace(/'/g, "\\'")}')">🔊</span>
+        `;
+        container.appendChild(chip);
+      });
+      document.getElementById('powerWordsCount').textContent = `${usedPowerWords.size} / ${currentSlice.tier3.length} Deployed`;
+    }
+
+    function togglePowerWordUsed(phrase) {
+      if (usedPowerWords.has(phrase)) {
+        usedPowerWords.delete(phrase);
+      } else {
+        usedPowerWords.add(phrase);
+        adjustCrocMeter(20, `💎 Power Phrase Deployed: "${phrase}"!`, 'tier3');
+      }
+      renderTier3Chips();
+    }
+
+    function toggleModelAnswers() {
+      modelRevealed = !modelRevealed;
+      updateModelVisibility();
+    }
+
+    function updateModelVisibility() {
+      const btn = document.getElementById('revealModelBtn');
+      ['modelStep1', 'modelStep2', 'modelStep3'].forEach(id => {
+        document.getElementById(id).classList.toggle('visible', modelRevealed);
+      });
+      btn.innerHTML = modelRevealed
+        ? '🙈 Hide Executive Model Pitch'
+        : '💡 Reveal Executive Model Pitch';
+    }
+
+    /* ==========================================================================
+       8. INTERACTIVE CROCODILE BRAIN HOOK METER
+       ========================================================================== */
+    function adjustCrocMeter(delta, message, fxType) {
+      playSoundboardFX(fxType);
+      setCrocMeterValue(crocScore + delta);
+
+      if (delta < 0) {
+        // Trigger Red Screen Flash & Shake on Beta Trap
+        const flash = document.getElementById('dangerFlash');
+        flash.style.opacity = '1';
+        setTimeout(() => { flash.style.opacity = '0'; }, 380);
+        gsap.fromTo('.coaching-column', { x: -10 }, { x: 0, duration: 0.4, ease: 'elastic.out(2, 0.2)' });
+        showToast(message, '#e11d48');
+      } else {
+        showToast(message, '#10b981');
+      }
+    }
+
+    function celebrateDealWon() {
+      playWinnerFanfare();
+      fireWinnerConfetti();
+      setTimeout(fireWinnerConfetti, 350);
+
+      if (typeof Swal !== 'undefined') {
+        Swal.fire({
+          title: '🏆 CROC BRAIN HOOKED — DEAL WON!',
+          html: `
+            <div style="text-align:left; font-size:0.95rem; line-height:1.6; color:#e2e8f0;">
+              <p style="margin-bottom:10px;"><strong>Mission Crushed:</strong> ${currentSlice.title}</p>
+              <div style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); padding:12px 14px; border-radius:10px; margin-bottom:10px;">
+                ✅ <strong>Bypassed the Crocodile Brain Filter</strong><br>
+                ✅ <strong>Zero Apologies / High-Status Executive Frame</strong><br>
+                ✅ <strong>Macro Shift + Urgent Tension + Value Anchor</strong>
+              </div>
+              <p style="font-size:0.84rem; color:#94a3b8;">Ready for the next random pitch challenge?</p>
+            </div>
+          `,
+          background: '#0f172a',
+          color: '#f8fafc',
+          confirmButtonText: '🎰 Spin Next Challenge!',
+          confirmButtonColor: '#10b981',
+          showCancelButton: true,
+          cancelButtonText: 'Stay on This Pitch',
+          cancelButtonColor: '#334155'
+        }).then((res) => {
+          if (res.isConfirmed) {
+            spinWheel();
+          }
+        });
+      }
+    }
+
+    function setCrocMeterValue(val) {
+      crocScore = Math.max(5, Math.min(100, val));
+      const fill = document.getElementById('crocBarFill');
+      const status = document.getElementById('crocStatusText');
+      fill.style.width = `${crocScore}%`;
+
+      if (crocScore >= 100) {
+        status.textContent = '100% · 🏆 DEAL WON! NEOCORTEX UNLOCKED!';
+        status.style.background = 'rgba(16, 185, 129, 0.25)';
+        status.style.color = '#34d399';
+        celebrateDealWon();
+      } else if (crocScore >= 75) {
+        status.textContent = `${crocScore}% · 🔥 Croc Brain Hooked!`;
+        status.style.background = 'rgba(245, 158, 11, 0.25)';
+        status.style.color = '#fbbf24';
+      } else if (crocScore >= 40) {
+        status.textContent = `${crocScore}% · 👀 Croc Brain Watching...`;
+        status.style.background = 'rgba(56, 189, 248, 0.15)';
+        status.style.color = '#38bdf8';
+      } else {
+        status.textContent = `${crocScore}% · 🚨 Croc Brain Rejecting!`;
+        status.style.background = 'rgba(244, 63, 94, 0.25)';
+        status.style.color = '#fda4af';
+      }
+    }
+
+    /* ==========================================================================
+       9. PITCH COUNTDOWN TIMER (30S / 60S / 90S)
+       ========================================================================== */
+    let timerSeconds = 60;
+    let timerRemaining = 60;
+    let timerInterval = null;
+
+    function setPitchTimer(sec, btnEl) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerSeconds = sec;
+      timerRemaining = sec;
+      document.querySelectorAll('.preset-chip').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      document.getElementById('timerStartBtn').textContent = '▶ Start Pitch';
+      updateTimerDisplay();
+    }
+
+    function togglePitchTimer() {
+      const btn = document.getElementById('timerStartBtn');
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        btn.textContent = '▶ Resume';
+      } else {
+        if (timerRemaining <= 0) timerRemaining = timerSeconds;
+        btn.textContent = '⏸ Pause';
+        timerInterval = setInterval(() => {
+          timerRemaining--;
+          updateTimerDisplay();
+          if (timerRemaining <= 10 && timerRemaining > 0) {
+            playPegTick(0.3);
+          }
+          if (timerRemaining <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            btn.textContent = '▶ Start Pitch';
+            playWinnerFanfare();
+            showToast('⏱️ TIME IS UP! Drop your final sentence pitch downward (↘)!', '#f59e0b');
+          }
+        }, 1000);
+      }
+    }
+
+    function resetPitchTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerRemaining = timerSeconds;
+      document.getElementById('timerStartBtn').textContent = '▶ Start Pitch';
+      updateTimerDisplay();
+    }
+
+    function updateTimerDisplay() {
+      const disp = document.getElementById('timerDisplay');
+      const m = String(Math.floor(timerRemaining / 60)).padStart(2, '0');
+      const s = String(timerRemaining % 60).padStart(2, '0');
+      disp.textContent = `${m}:${s}`;
+      disp.classList.toggle('urgent', timerRemaining <= 10 && timerRemaining > 0);
+    }
+
+    /* ==========================================================================
+       10. FILTERING, SHUFFLING, AND CUSTOM WHEEL SLICES
+       ========================================================================== */
+    function filterWheelCategory(cat, btnEl) {
+      if (isSpinning) return;
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      if (cat === 'all') {
+        activeSlices = [...DEFAULT_SLICES];
+      } else {
+        activeSlices = DEFAULT_SLICES.filter(s => s.cat === cat);
+      }
+      updateSliceCountBadge();
+      drawWheel();
+      loadSliceIntoSpotlight(activeSlices[0]);
+      renderSliceLibrary();
+    }
+
+    function shuffleWheelSlices() {
+      if (isSpinning) return;
+      for (let i = activeSlices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [activeSlices[i], activeSlices[j]] = [activeSlices[j], activeSlices[i]];
+      }
+      drawWheel();
+      renderSliceLibrary();
+      showToast('🔀 Wheel slices shuffled!', '#38bdf8');
+    }
+
+    function resetWheelSlices() {
+      if (isSpinning) return;
+      activeSlices = [...DEFAULT_SLICES];
+      updateSliceCountBadge();
+      drawWheel();
+      loadSliceIntoSpotlight(activeSlices[0]);
+      renderSliceLibrary();
+      showToast('🔄 All 18 default pitch slices restored!', '#10b981');
+    }
+
+    function setSpinDuration(sec, btnEl) {
+      spinDurationSec = sec;
+      document.querySelectorAll('.speed-opt').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+    }
+
+    function addCustomSlice() {
+      const input = document.getElementById('customTitleInput');
+      const catSelect = document.getElementById('customCatSelect');
+      const rawText = input.value.trim();
+      if (!rawText) {
+        showToast('✏️ Please enter an item or sentence to sell!', '#f43f5e');
+        return;
+      }
+
+      const cat = catSelect.value;
+      const palette = {
+        fun: '#e11d48',
+        business: '#2563eb',
+        wildcard: '#d97706'
+      };
+      const catBadges = {
+        fun: '🍕 CUSTOM FUN PITCH',
+        business: '💼 CUSTOM BUSINESS PITCH',
+        wildcard: '🔥 CUSTOM WILDCARD PITCH'
+      };
+
+      const customSlice = {
+        id: 'custom-' + Date.now(),
+        cat: cat,
+        catLabel: catBadges[cat],
+        shortLabel: rawText.slice(0, 20),
+        title: `✨ ${rawText}`,
+        color: palette[cat] || '#10b981',
+        persona: '🦈 Buyer: Skeptical Executive Decision-Maker',
+        mission: `Pitch the buyer on: "${rawText}" using the 3-Part Crocodile Brain Hook Formula.`,
+        trap: `"Sorry to bother you, I think "${rawText}" is a nice idea, do you think we can maybe try it?"`,
+        tier3: ['direct your attention to', 'alleviate critical bottlenecks', 'directly addresses your core mandate'],
+        step1: `Over the past six months, our operational environment has shifted, making "${rawText}" a strategic priority.`,
+        step2: `Yet, relying on our legacy approach continues to create avoidable friction and wasted team capacity every week.`,
+        step3: `Implementing "${rawText}" immediately eliminates this friction and directly addresses your core mandate of operational excellence.`
+      };
+
+      activeSlices.unshift(customSlice);
+      input.value = '';
+      updateSliceCountBadge();
+      drawWheel();
+      loadSliceIntoSpotlight(customSlice);
+      renderSliceLibrary();
+      showToast(`✨ Added "${customSlice.shortLabel}" to the Wheel!`, '#10b981');
+    }
+
+    function updateSliceCountBadge() {
+      document.getElementById('sliceCountBadge').textContent = `${activeSlices.length} Active Slices`;
+    }
+
+    function renderSliceLibrary() {
+      const grid = document.getElementById('sliceLibraryGrid');
+      grid.innerHTML = '';
+      activeSlices.forEach((slice) => {
+        const card = document.createElement('div');
+        card.className = 'lib-item' + (slice.id === currentSlice.id ? ' active-slice' : '');
+        card.onclick = () => {
+          loadSliceIntoSpotlight(slice);
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        };
+        card.innerHTML = `
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <span style="font-size:0.68rem; font-weight:800; color:${slice.color}; text-transform:uppercase;">${slice.cat}</span>
+              <span style="font-size:0.7rem; color:var(--text-muted);">Click to Load ↗</span>
+            </div>
+            <div style="font-weight:800; font-size:0.92rem; margin-bottom:4px;">${slice.title}</div>
+            <div style="font-size:0.78rem; color:var(--text-muted);">${slice.mission}</div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    /* ==========================================================================
+       11. WEB SPEECH API PRONUNCIATION COACH
+       ========================================================================== */
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      u.rate = 0.96;
+      window.speechSynthesis.speak(u);
+    }
+
+    function speakCurrentPrompt() {
+      speakText(`${currentSlice.title}. Your mission: ${currentSlice.mission}`);
+    }
+
+    function speakStepModel(stepNum) {
+      const text = currentSlice[`step${stepNum}`];
+      if (text) speakText(text);
+    }
+
+    function speakFullModelPitch() {
+      if (!modelRevealed) {
+        modelRevealed = true;
+        updateModelVisibility();
+      }
+      speakText(`${currentSlice.step1} ${currentSlice.step2} ${currentSlice.step3}`);
+    }
+
+    /* ==========================================================================
+       12. IN-BROWSER VOICE RECORDER (.WEBM DOWNLOAD)
+       ========================================================================== */
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecording = false;
+
+    async function toggleRecording() {
+      const btn = document.getElementById('recToggleBtn');
+      const dot = document.getElementById('recDot');
+      const status = document.getElementById('recStatusLabel');
+      const player = document.getElementById('pitchAudioPlayback');
+      const dl = document.getElementById('downloadAudioLink');
+
+      if (!isRecording) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          mediaRecorder = new MediaRecorder(stream);
+          audioChunks = [];
+          mediaRecorder.ondataavailable = e => {
+            if (e.data.size > 0) audioChunks.push(e.data);
+          };
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(audioChunks, { type: 'audio/webm' });
+            const url = URL.createObjectURL(blob);
+            player.src = url;
+            player.style.display = 'block';
+            dl.href = url;
+            dl.download = `yh-croc-pitch-${currentSlice.id}.webm`;
+            dl.style.display = 'inline-flex';
+            stream.getTracks().forEach(t => t.stop());
+          };
+          mediaRecorder.start();
+          isRecording = true;
+          btn.classList.add('active');
+          btn.textContent = '⏹ Stop Recording';
+          dot.classList.add('recording');
+          status.textContent = 'Recording live... Hook the Croc Brain!';
+        } catch (err) {
+          showToast('🎙️ Microphone permission is required to record.', '#f43f5e');
+        }
+      } else {
+        mediaRecorder.stop();
+        isRecording = false;
+        btn.classList.remove('active');
+        btn.textContent = '⏺ Record Again';
+        dot.classList.remove('recording');
+        status.textContent = 'Recording ready! Listen back or save .webm';
+        showToast('🎙️ Pitch recording saved!', '#10b981');
+      }
+    }
+
+    /* ==========================================================================
+       13. AMBIENT STAGE SPARKLE PARTICLES & UTILITIES
+       ========================================================================== */
+    function initSparkleParticles() {
+      const c = document.getElementById('sparkleCanvas');
+      const sCtx = c.getContext('2d');
+      let w = (c.width = window.innerWidth);
+      let h = (c.height = window.innerHeight);
+      window.addEventListener('resize', () => {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+      });
+
+      const particles = Array.from({ length: 42 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2.2 + 0.6,
+        vy: -(Math.random() * 0.35 + 0.1),
+        alpha: Math.random() * 0.65 + 0.15,
+        gold: Math.random() > 0.4
+      }));
+
+      function renderParticles() {
+        sCtx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.y += p.vy;
+          if (p.y < 0) {
+            p.y = h;
+            p.x = Math.random() * w;
+          }
+          sCtx.beginPath();
+          sCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          sCtx.fillStyle = p.gold
+            ? `rgba(251, 191, 36, ${p.alpha})`
+            : `rgba(52, 211, 153, ${p.alpha})`;
+          sCtx.fill();
+        });
+        requestAnimationFrame(renderParticles);
+      }
+      renderParticles();
+    }
+
+    function showToast(text, bgColor = '#10b981') {
+      if (typeof Toastify === 'function') {
+        Toastify({
+          text: text,
+          duration: 3200,
+          gravity: 'bottom',
+          position: 'right',
+          style: {
+            background: bgColor,
+            color: '#ffffff',
+            fontWeight: '800',
+            borderRadius: '10px',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.4)'
+          }
+        }).showToast();
+      }
+    }
+
+    function toggleStageTheme() {
+      document.body.classList.toggle('light-stage');
+    }
+
+    // Spacebar shortcut to spin wheel (when not typing in an input)
+    window.addEventListener('keydown', e => {
+      if (e.code === 'Space' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        spinWheel();
+      }
+    });
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      initMarqueeBulbs();
+      drawWheel();
+      loadSliceIntoSpotlight(activeSlices[0]);
+      renderSliceLibrary();
+      initSparkleParticles();
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

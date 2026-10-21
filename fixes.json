@@ -1,0 +1,22 @@
+[
+  { "time": "00:00", "speaker": "Louie", "wrong": "Help you today?", "right": "How are you today?", "note": "ASR clipped Louie's opening greeting into 'Help you today?'" },
+  { "time": "01:43", "speaker": "YH", "wrong": "this food is a related to the Vietnam orna.", "right": "Is this food related to Vietnam or not?", "note": "Speech-to-text turned 'or not' into the non-existent word 'orna'." },
+  { "time": "03:51", "speaker": "Louie", "wrong": "It can be raw. Yeah, it can be wrong. Yes... I remember.", "right": "It can be raw. Yeah, it can be raw. Yes... I remember.", "note": "ASR mistranscribed 'raw' as 'wrong' in Louie's immediate echo." },
+  { "time": "04:22", "speaker": "YH", "wrong": "they had two dis three questions.", "right": "I have two to three questions left.", "note": "Note-taker heard 'two to three' as 'two dis three'." },
+  { "time": "04:52", "speaker": "YH", "wrong": "You're knowing? PM.", "right": "Morning or PM?", "note": "ASR misheard 'morning' as 'You're knowing'." },
+  { "time": "06:28", "speaker": "Louie", "wrong": "I think, you got to bog down in, vegetables", "right": "I think you got too bogged down in vegetables", "note": "Missed the adverb 'too' and fractured the phrasal verb 'bogged down'." },
+  { "time": "09:12", "speaker": "YH", "wrong": "You're wrong. Actually, I don't know.", "right": "In Europe? Actually, I don't know.", "note": "ASR misheard 'In Europe?' as the confrontational phrase 'You're wrong'." },
+  { "time": "12:37", "speaker": "YH", "wrong": "and the tail is always linked to that all a lot of the data", "right": "and retail is always linked to a lot of data", "note": "Speech-to-text recorded 'retail' as 'the tail'." },
+  { "time": "14:02", "speaker": "Louie", "wrong": "in your individuality, you're selling yourself", "right": "in your interview, you're selling yourself", "note": "Note-taker heard 'interview' as 'individuality'." },
+  { "time": "15:02", "speaker": "YH", "wrong": "Are situation task. But yeah. And the. Something in the result?", "right": "R is Situation, Task, Action, and the Result?", "note": "ASR mangled the STAR acronym explanation into fragmented clauses." },
+  { "time": "18:50", "speaker": "Louie", "wrong": "put the earth and the work in", "right": "put the effort and the work in", "note": "ASR mistranscribed 'effort' as 'earth'." },
+  { "time": "19:11", "speaker": "YH", "wrong": "assigned for the leader of the APAC market. And I need to grow the APC e commerce business", "right": "assigned as the leader of the APAC market, and I needed to grow the APAC e-commerce business", "note": "ASR dropped the preposition 'as' and truncated 'APAC' to 'APC'." },
+  { "time": "20:05", "speaker": "YH", "wrong": "good friends and good items we have", "right": "good brands and good items we have", "note": "ASR mistranscribed commercial 'brands' as 'friends'." },
+  { "time": "26:36", "speaker": "Louie", "wrong": "I got really bad to shoot out for that", "right": "I got chewed out really bad for that", "note": "ASR misheard the British/American idiom 'chewed out' (severely reprimanded) as 'to shoot out'." },
+  { "time": "33:15", "speaker": "Louie", "wrong": "looking back, I would never own a cockta. Or if I, were to do, this again.", "right": "Looking back, I would never own a cocktail bar. Or if I were to do this again...", "note": "Note-taker truncated 'cocktail bar' into 'cockta'." },
+  { "time": "35:21", "speaker": "YH", "wrong": "AAA symmetrical, symmetricical or", "right": "Asymmetrical", "note": "ASR recorded conversational stutter and phonetic search for 'asymmetrical'." },
+  { "time": "36:10", "speaker": "YH", "wrong": "and as fast as this, you can make that decision", "right": "and as far as this, you can make that decision", "note": "Note-taker heard 'as far as' as 'as fast as'." },
+  { "time": "44:10", "speaker": "YH", "wrong": "subordinates are. The grow grown up, which is, through the work... they themselves can be grown up", "right": "subordinates develop and grow professionally through this work", "note": "Note-taker captured hesitation pauses and false starts around professional development." },
+  { "time": "48:10", "speaker": "Louie", "wrong": "two do to do two and share", "right": "Ta-da! Let me share my screen.", "note": "ASR transcribed Louie's playful vocal flourish as 'two do to do two'." },
+  { "time": "52:26", "speaker": "Louie", "wrong": "Jes, goodbye, good bye. Okay, nice.", "right": "Yes, goodbye, goodbye! Okay, nice.", "note": "ASR transcribed the affirmative 'Yes' with a Germanic/Nordic 'Jes'." }
+]

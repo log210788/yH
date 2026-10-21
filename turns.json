@@ -1,0 +1,986 @@
+﻿[
+    {
+        "id":  "turn-1",
+        "chapterId":  "chap-1",
+        "chapterTitle":  "Chapter 1 • 📦 Warm-Up: The 10-Question Deductive Mystery Game (00:00 – 12:35)",
+        "speaker":  "Louie",
+        "time":  "00:00",
+        "html":  "How are you today? \u003cspan class=\"asr-fix-pill\" title=\"ASR clipped Louie\u0027s greeting\"\u003e✨ Fixed: \"How are you today?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Help you today?\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-2",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:03",
+        "html":  "Hello? I think I cannot hear your voice."
+    },
+    {
+        "id":  "turn-3",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:06",
+        "html":  "Could you hear my voice now?"
+    },
+    {
+        "id":  "turn-4",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:10",
+        "html":  "A little bit. Choppy."
+    },
+    {
+        "id":  "turn-5",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:12",
+        "html":  "A little bit choppy, let me just check. Hello, testing, hello. Sorry about that."
+    },
+    {
+        "id":  "turn-6",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:27",
+        "html":  "Hello. Hello. Hello."
+    },
+    {
+        "id":  "turn-7",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:29",
+        "html":  "How are you today? Good, very good. Okay, so we\u0027ll just start with a quick warm-up for today, and we\u0027re going to play a quick situation game. I\u0027m sorry? A quick mental game where you have to guess the item that I\u0027m thinking of. Okay. But you have ten questions to ask me to get some information, but you can only ask me questions that I can answer yes or no. Okay, so I\u0027m thinking of a thing. Okay, so it can be anything, and you have ten questions to ask me. So what would you like to ask me?"
+    },
+    {
+        "id":  "turn-8",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:16",
+        "html":  "Okay, so yeah, I can only ask you ten questions, and I need to..."
+    },
+    {
+        "id":  "turn-9",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:23",
+        "html":  "A guess then? Guess. Sorry. Yes, yeah..."
+    },
+    {
+        "id":  "turn-10",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:27",
+        "html":  "Alright. So, are you thinking about the food or not?"
+    },
+    {
+        "id":  "turn-11",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:36",
+        "html":  "Yes..."
+    },
+    {
+        "id":  "turn-12",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:43",
+        "html":  "Number two, is this food related to Vietnam or not? \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027or not\u0027 as \u0027orna\u0027\"\u003e✨ Fixed: \"related to Vietnam or not\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"related to the Vietnam orna\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-13",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:58",
+        "html":  "But they eat everything. [Laughter] I mean, not like China, but they eat quite a lot. Yes..."
+    },
+    {
+        "id":  "turn-14",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:05",
+        "html":  "Okay, alright, so next question is... This food is cheap or expensive."
+    },
+    {
+        "id":  "turn-15",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:27",
+        "html":  "Cheap. It\u0027s..."
+    },
+    {
+        "id":  "turn-16",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:28",
+        "html":  "Cheap, not..."
+    },
+    {
+        "id":  "turn-17",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:28",
+        "html":  "Very cheap."
+    },
+    {
+        "id":  "turn-18",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:29",
+        "html":  "Yeah, cheap. I have to ask you about yes or no. So..."
+    },
+    {
+        "id":  "turn-19",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:34",
+        "html":  "Yes. It\u0027s che. It\u0027s the ch..."
+    },
+    {
+        "id":  "turn-20",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:36",
+        "html":  "It\u0027s cheap, so cheap... Some are related to Vietnam and food. Okay, so, is this food made from no using the bread or not? No. Okay, and the next question is, is this food using the noodle or not? No. Okay, well, what else? Is this vegetable or not? Is this...? Contains AI, don\u0027t know, is this...? Like a row?"
+    },
+    {
+        "id":  "turn-21",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "03:51",
+        "html":  "It can be raw. Yeah, it can be raw. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027raw\u0027 as \u0027wrong\u0027\"\u003e✨ Fixed: \"raw\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"wrong\")\u003c/span\u003e\u003c/span\u003e Yes... I remember. My answer was, \"I\u0027m in Vietnam, so they have it here, so it\u0027s food.\" Maybe a little bit. It\u0027s not \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e, but maybe it sounds \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e, but it\u0027s not \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e at all."
+    },
+    {
+        "id":  "turn-22",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:22",
+        "html":  "Yes, I have two to three questions left. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027two to three\u0027 as \u0027two dis three\u0027\"\u003e✨ Fixed: \"two to three questions\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"two dis three\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-23",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:25",
+        "html":  "Three questions left. Yeah..."
+    },
+    {
+        "id":  "turn-24",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:38",
+        "html":  "Are you eating this food in the morning or not?"
+    },
+    {
+        "id":  "turn-25",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:45",
+        "html":  "In Europe, no, but in Vietnam, yes. Yeah, so..."
+    },
+    {
+        "id":  "turn-26",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:52",
+        "html":  "Morning or PM? \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027morning\u0027 as \u0027You\u0027re knowing\u0027\"\u003e✨ Fixed: \"Morning or PM?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"You\u0027re knowing? PM.\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-27",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:58",
+        "html":  "I don\u0027t think you would eat it in Japan for breakfast."
+    },
+    {
+        "id":  "turn-28",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "05:08",
+        "html":  "Yeah, because most of that the Vietnamese food are. Yeah."
+    },
+    {
+        "id":  "turn-29",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "05:13",
+        "html":  "They don\u0027t have breakfast here. For example, I think in Japan you can eat rice and egg mixed together or little \u003cspan class=\"vocab-mark\" data-vkey=\"fermented\" onclick=\"inspectVocab(\u0027fermented\u0027)\"\u003efermented things\u003c/span\u003e. I can\u0027t remember what it\u0027s called, but in England we have bacon for breakfast, eggs. But in Vietnam, they don\u0027t have the \u003cspan class=\"vocab-mark\" data-vkey=\"concept\" onclick=\"inspectVocab(\u0027concept\u0027)\"\u003econcept of breakfast\u003c/span\u003e. They will just dinner again, which is... I always laugh. I say Vietnam\u0027s great because you can have dinner for breakfast. Literally, they had dinner for breakfast. Yeah, which is very weird, to have a full meal, very \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-30",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "05:56",
+        "html":  "Okay, so, is this using the rice or not?"
+    },
+    {
+        "id":  "turn-31",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:05",
+        "html":  "No... I. No. I mean, you can use rice with it. But it\u0027s not. It\u0027s. I think, you got too \u003cspan class=\"vocab-mark\" data-vkey=\"bog-down\" onclick=\"inspectVocab(\u0027bog-down\u0027)\"\u003ebogged down\u003c/span\u003e in vegetables \u003cspan class=\"asr-fix-pill\" title=\"ASR missed \u0027too\u0027 and fractured \u0027bogged down\u0027\"\u003e✨ Fixed: \"too \u003cspan class=\"vocab-mark\" data-vkey=\"bog-down\" onclick=\"inspectVocab(\u0027bog-down\u0027)\"\u003ebogged down\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"to bog down in,\")\u003c/span\u003e\u003c/span\u003e and everything like that."
+    },
+    {
+        "id":  "turn-32",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "06:28",
+        "html":  "Wow, so difficult. Last question."
+    },
+    {
+        "id":  "turn-33",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:32",
+        "html":  "So you could eat it, but it\u0027s not a vegetable, it\u0027s not a rice. It\u0027s yeah..."
+    },
+    {
+        "id":  "turn-34",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "06:43",
+        "html":  "Okay, so sometimes you drink it or not?"
+    },
+    {
+        "id":  "turn-35",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:54",
+        "html":  "I would say no, I would largely say no. Yes, no, okay, would you like to have a guess?"
+    },
+    {
+        "id":  "turn-36",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "07:09",
+        "html":  "Well, actually, I don\u0027t have any idea like that."
+    },
+    {
+        "id":  "turn-37",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "07:12",
+        "html":  "I think you \u003cspan class=\"vocab-mark\" data-vkey=\"shot-yourself-in-the-foot\" onclick=\"inspectVocab(\u0027shot-yourself-in-the-foot\u0027)\"\u003eshot yourself in the foot\u003c/span\u003e about asking about Vietnam because Vietnam has a strange relationship with this bird. Yes. In Vietnam, they eat birds, literally. They have small little birds, and they sell them on the street. They\u0027ll have cages full of birds, and you can buy the bird in the cage. Obviously, you could have chicken. You can eat it. It\u0027s a food as well, so, yeah, it\u0027s a bit \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e. It\u0027s a bit \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e. Okay, so it can be alive, okay, it can be anything. Okay, so, please, can you think of a word, an object, and a thing? So we\u0027ll do it the other way around. Can you think of an object or a thing?"
+    },
+    {
+        "id":  "turn-38",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:05",
+        "html":  "Okay. One. Okay."
+    },
+    {
+        "id":  "turn-39",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:15",
+        "html":  "Okay... Is it \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-40",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:19",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-41",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:20",
+        "html":  "Okay, is it a an animal... Is it a some kind of plant?"
+    },
+    {
+        "id":  "turn-42",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:31",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-43",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:34",
+        "html":  "Can we buy it in a supermarket to eat? Primary? Okay, what was that? Three, I think. Okay. Is it popular in Japan?"
+    },
+    {
+        "id":  "turn-44",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:54",
+        "html":  "No, everybody knows that, but it\u0027s very strange."
+    },
+    {
+        "id":  "turn-45",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:06",
+        "html":  "Wow. Okay, and in Europe..."
+    },
+    {
+        "id":  "turn-46",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:12",
+        "html":  "In Europe? Actually, I don\u0027t know. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027In Europe?\u0027 as \u0027You\u0027re wrong\u0027\"\u003e✨ Fixed: \"In Europe?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"You\u0027re wrong.\")\u003c/span\u003e\u003c/span\u003e But I think it\u0027s not so..."
+    },
+    {
+        "id":  "turn-47",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:18",
+        "html":  "Is it in a popular dish?"
+    },
+    {
+        "id":  "turn-48",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:24",
+        "html":  "Not itself."
+    },
+    {
+        "id":  "turn-49",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:29",
+        "html":  "It\u0027s \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e as a plant, it\u0027s not that popular, it\u0027s not in a popular dish, its primary function is to eat it."
+    },
+    {
+        "id":  "turn-50",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:45",
+        "html":  "Yes..."
+    },
+    {
+        "id":  "turn-51",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:48",
+        "html":  "It\u0027s not even a dish. Does it have a health benefit to it?"
+    },
+    {
+        "id":  "turn-52",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:00",
+        "html":  "I think so. Ya have..."
+    },
+    {
+        "id":  "turn-53",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:03",
+        "html":  "Okay. Is it \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e? Is it a seasoning?"
+    },
+    {
+        "id":  "turn-54",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:22",
+        "html":  "Sometimes, but usually no."
+    },
+    {
+        "id":  "turn-55",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:26",
+        "html":  "Usually? No."
+    },
+    {
+        "id":  "turn-56",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:28",
+        "html":  "Yeah..."
+    },
+    {
+        "id":  "turn-57",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:29",
+        "html":  "Okay, I think I can get this. It\u0027s from a plant. Is it green?"
+    },
+    {
+        "id":  "turn-58",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:47",
+        "html":  "A let bit or it depends on kind."
+    },
+    {
+        "id":  "turn-59",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:54",
+        "html":  "Right, I\u0027ll have to guess. It\u0027s not a main ingredient, so I\u0027ll just have to guess something strange and I think it\u0027s a bad guess. I really want to choose seaweed, but it\u0027s definitely not. I say... Very popular. I suppose green was sometimes green passion fruit. I don\u0027t know, I can\u0027t think of anything..."
+    },
+    {
+        "id":  "turn-60",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "11:39",
+        "html":  "Yeah, it\u0027s very close. Very close."
+    },
+    {
+        "id":  "turn-61",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "11:43",
+        "html":  "What is it? Okay, yes, I see, okay, yeah. That\u0027s a good one. Okay, very good. Okay, let\u0027s get into the meat of the lesson. Okay, so today, I think I\u0027m going to show you... Well, what, may I ask? When you\u0027re in an interview, what is it? When someone asks you for a solution that you have provided an outcome, what\u0027s what do you normally suggest? What is your normal automatic answer, for example, how did you contribute, what did you do, what is the example you love to give, that you want to give?"
+    },
+    {
+        "id":  "turn-62",
+        "chapterId":  "chap-2",
+        "chapterTitle":  "Chapter 2 • 🌟 The STAR-L Framework \u0026 Executive Storytelling (12:35 – 22:45)",
+        "speaker":  "YH",
+        "time":  "12:37",
+        "html":  "Okay, so first of all, I keep working in the retail industries, and retail is always linked to a lot of data \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027retail\u0027 as \u0027the tail\u0027\"\u003e✨ Fixed: \"retail\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"the tail\")\u003c/span\u003e\u003c/span\u003e. And what I always share with them is... I always do the data analysis and get the data from... Get the \u003cspan class=\"vocab-mark\" data-vkey=\"hypothesis\" onclick=\"inspectVocab(\u0027hypothesis\u0027)\"\u003ehypothesis\u003c/span\u003e from here and combine \u003cspan class=\"vocab-mark\" data-vkey=\"qualitative\" onclick=\"inspectVocab(\u0027qualitative\u0027)\"\u003equalitative information\u003c/span\u003e and \u003cspan class=\"vocab-mark\" data-vkey=\"quantitative\" onclick=\"inspectVocab(\u0027quantitative\u0027)\"\u003equantitative information\u003c/span\u003e to deliver some results. For example, \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e, when I was working in the \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e, you have a lot of customer data and item data which we sold. But if you want to increase the sales, you need to make a decision about what kind of item we need to focus on or what kind of brand we need to focus on. So we always analyze the data and we keep picking up on the \u003cspan class=\"vocab-mark\" data-vkey=\"best-selling\" onclick=\"inspectVocab(\u0027best-selling\u0027)\"\u003ebest-selling items\u003c/span\u003e or \u003cspan class=\"vocab-mark\" data-vkey=\"best-selling\" onclick=\"inspectVocab(\u0027best-selling\u0027)\"\u003ebest-selling brands\u003c/span\u003e. Then, we make the decision whether we want to extend this item list for this brand or whether we want to expand similar items to this category or not. So what I can contribute to the new company is data analysis and delivery."
+    },
+    {
+        "id":  "turn-63",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "14:02",
+        "html":  "Okay, very good. That\u0027s good. So the reason why I asked... I\u0027ll put it into the canvas for today. I wanted to make sure that maybe the last lesson I said about personality or individual individuality in your interview, you\u0027re selling yourself \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027interview\u0027 as \u0027individuality\u0027\"\u003e✨ Fixed: \"interview\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"individuality\")\u003c/span\u003e\u003c/span\u003e. It\u0027s very important that when you give answers, you stop saying, \"We did this. We did that.\" Okay, so we want to say, \"I contributed. I did that.\" We want to... Because it\u0027s okay to \u003cspan class=\"vocab-mark\" data-vkey=\"sing-your-praises\" onclick=\"inspectVocab(\u0027sing-your-praises\u0027)\"\u003esing your praises\u003c/span\u003e, okay? Because that\u0027s why you\u0027re there to show what you did. For example, we can use a little guide. Okay, so called STAR. Have you ever used STAR before?"
+    },
+    {
+        "id":  "turn-64",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "15:02",
+        "html":  "R is Situation, Task, Action, and the Result? \u003cspan class=\"asr-fix-pill\" title=\"ASR fragmented the STAR acronym explanation\"\u003e✨ Fixed: \"Situation, Task, Action, Result\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Are situation task... Something in the result?\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-65",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "15:08",
+        "html":  "Yeah, exactly. So, yeah, the situation. So you agree at, you know, giving a kind of outline for the, sitch situation? Okay. Okay. And then the task, what you wanted to accomplish, that was great, but remember, we must get away from we because it\u0027s you. Yeah, you know, you do have a team, but you run the team. You know, it\u0027s your direction, it\u0027s your actual body of work as well. Okay... The action. Okay, and so you can give three steps. Okay, you can give three steps to that. That\u0027s c5123. The results and what you learned. Okay, the... What you learned. Okay, so I\u0027ll have a go at doing it. So, a situation that I was involved in was that we needed to... Sorry, we... I needed to get some \u003cspan class=\"vocab-mark\" data-vkey=\"planning-permission\" onclick=\"inspectVocab(\u0027planning-permission\u0027)\"\u003eplanning permission\u003c/span\u003e approved. Okay? So what I did was I was very naughty and I hid it. Actually, that\u0027s a lie. I didn\u0027t hide it. I waited. I waited till lockdown started. Covid and I applied for the \u003cspan class=\"vocab-mark\" data-vkey=\"planning-permission\" onclick=\"inspectVocab(\u0027planning-permission\u0027)\"\u003eplanning permission\u003c/span\u003e as soon as lockdown happened, because the government would never approve it. The people would never approve it. So the task was that I had to... This is actually a true story. I needed a judge to find something, but the judge was in another county. It was out. It was in a county called Buckinghamshire. But I was in Oxford. So the police... We weren\u0027t allowed to travel. We weren\u0027t allowed to travel. It was illegal to travel. So I walked for eight hours to the where the judge lives, and the judge stamped the papers for me. The stamped the papers. Then I had to walk ten hours back through the countryside so that... Because we just weren\u0027t allowed to travel. So that was the action. The result was... Even though I could not get the paperwork done, I managed to get it done, and it was not challenged by any citizens. What I learned from this process is that \"\u003cspan class=\"vocab-mark\" data-vkey=\"who-dares-wins\" onclick=\"inspectVocab(\u0027who-dares-wins\u0027)\"\u003ewho dares wins\u003c/span\u003e.\" \u003cspan class=\"vocab-mark\" data-vkey=\"where-theres-a-will\" onclick=\"inspectVocab(\u0027where-theres-a-will\u0027)\"\u003eWhere there\u0027s a will, there\u0027s a way\u003c/span\u003e. We just have to sometimes \u003cspan class=\"vocab-mark\" data-vkey=\"suck-it-up\" onclick=\"inspectVocab(\u0027suck-it-up\u0027)\"\u003esuck it up\u003c/span\u003e and put the effort and the work in \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027effort\u0027 as \u0027earth\u0027\"\u003e✨ Fixed: \"effort\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"earth\")\u003c/span\u003e\u003c/span\u003e and... Walking [Laughter] and... Anything is possible, even under the most extreme circumstances. Yeah. So would you like to give a situation as well? Using... S. The Star L model."
+    },
+    {
+        "id":  "turn-66",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "18:57",
+        "html":  "Okay, so I\u0027m using the same story. So the situation was... Okay, so this story was when I was working in the \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e company."
+    },
+    {
+        "id":  "turn-67",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "19:09",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-68",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "19:11",
+        "html":  "I was assigned as the leader of the APAC market, and I needed to grow the APAC \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e business \u003cspan class=\"asr-fix-pill\" title=\"ASR dropped \u0027as\u0027 and truncated \u0027APAC\u0027 to \u0027APC\u0027\"\u003e✨ Fixed: \"as leader... APAC \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"for the leader... APC e commerce\")\u003c/span\u003e\u003c/span\u003e in this company. But, that time, most of the members are not so mature and not doesn\u0027t have the knowledge of this e commerce. So I need to teach them and give them guidelines to. I give them directions to how to grow the this market. How to grow this market. And the task is I need to identify, the most selling item for brand. Which is what we have to focus on in the next few months. So like this, we don\u0027t need to split our resources across low-yield channels \u003cspan class=\"asr-fix-pill\" title=\"Colloquial speech upgraded for executive clarity\"\u003e✨ Fixed: \"low-yield channels\" \u003cspan class=\"text-slate-400\"\u003e(spoken: \"the useless things\")\u003c/span\u003e\u003c/span\u003e. And that we can more focus on the \u003cspan class=\"vocab-mark\" data-vkey=\"sales-driving\" onclick=\"inspectVocab(\u0027sales-driving\u0027)\"\u003esales driving factors\u003c/span\u003e. So yeah, this is my responsibility that time. And, the action was I start doing the, no, I check all datas in the system and try to analyze what kind of the customer we have and what kind of the good brands and good items \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard commercial \u0027brands\u0027 as \u0027friends\u0027\"\u003e✨ Fixed: \"brands\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"friends\")\u003c/span\u003e\u003c/span\u003e we have. Then I identified the best selling item and the best selling brand, which we need to focus on. And, we decided I decided to put more items for these brands, which is, we need to list listed a lot of the new items for these top selling brands. Result was because of that action. We could expand. We could grow our business compared we could grow our business like 240% compared to the previous year. So. Which means our strategy and action was right. And customers are willing to buy our products and we could we can grow some of the few brands in our marketplace. So, yeah, that was the situation. That was the, result of that time. Yeah..."
+    },
+    {
+        "id":  "turn-69",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "22:02",
+        "html":  "Very good, very nice. So we can use the word, say, instead of add additional. Yeah, so we can have additional \u003cspan class=\"vocab-mark\" data-vkey=\"product-lines\" onclick=\"inspectVocab(\u0027product-lines\u0027)\"\u003eproduct lines\u003c/span\u003e or, items, it\u0027s fine, it depends if it is it actually a product line or not. Okay, probably nice and maybe, what did you say? Yeah, that\u0027s pretty good for now. So additional and \u003cspan class=\"vocab-mark\" data-vkey=\"product-lines\" onclick=\"inspectVocab(\u0027product-lines\u0027)\"\u003eproduct lines\u003c/span\u003e and do you find your work. How do you find your work? Do you find your work challenging?"
+    },
+    {
+        "id":  "turn-70",
+        "chapterId":  "chap-3",
+        "chapterTitle":  "Chapter 3 • ⚖️ Career Obstacles, Circuit Breakers \u0026 STAR-L Power Vocabulary (22:45 – 34:24)",
+        "speaker":  "YH",
+        "time":  "22:45",
+        "html":  "Well, sometimes it\u0027s challenging, but it\u0027s very... How should I say? We enjoy a lot, so... Which means we have a lot of obstacles. But in the end, we can overcome all the obstacles and grow the business by ourselves. So it was a very fun time."
+    },
+    {
+        "id":  "turn-71",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "23:11",
+        "html":  "So fun time, enjoyable time. We really enjoy the process, we really enjoy the process, we really enjoy the process. If you could go back to. If you could go back. If you could talk to yourself at the beginning of your career, what would you tell yourself? What would you tell yourself \u003cspan class=\"asr-fix-pill\" title=\"ASR recorded plural slip \u0027yourselfs\u0027\"\u003e✨ Fixed: \"yourself\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"yourselfs\")\u003c/span\u003e\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-72",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "23:42",
+        "html":  "Okay, so if I have that kind of situation, I should tell myself, \"Keep learning.\" Okay, maybe a more useful one is, \"Don\u0027t be afraid of mistakes.\""
+    },
+    {
+        "id":  "turn-73",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:11",
+        "html":  "I are you i is that your do you actually feel that do you feel you were scared of mistakes?"
+    },
+    {
+        "id":  "turn-74",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "24:19",
+        "html":  "Yes. So when I was young, I was always very afraid of mistakes or when we have something when I have some problems. I was always very scared to tell our boss \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027tell\u0027 as \u0027be\u0027\"\u003e✨ Fixed: \"tell our boss\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"be our boss\")\u003c/span\u003e\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-75",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:33",
+        "html":  "Okay..."
+    },
+    {
+        "id":  "turn-76",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "24:33",
+        "html":  "In the business s right, like the once something bad, once some bad things happen, then you should report immediately. But when we arrived, we didn\u0027t have that kind of habit. So. Yeah. I should tell myself. Like that?"
+    },
+    {
+        "id":  "turn-77",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:48",
+        "html":  "Interesting. I think I, my what my problem as an employee was I \u003cspan class=\"vocab-mark\" data-vkey=\"voice\" onclick=\"inspectVocab(\u0027voice\u0027)\"\u003ewould not voice\u003c/span\u003e... Problems with my training. So for example, I would be being trained on a new brand, a new company, a new building, or something new. Maybe the person training me was not adequate. So I got in big trouble for this. Because I didn\u0027t realize it was my responsibility. So what would happen is the training was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e, and then I was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e. Then my boss would say to me, \"Why did you not notice that the training was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e? You could have stopped this earlier.\" And he and I now implement half because of that half goal \u003cspan class=\"vocab-mark\" data-vkey=\"circuit-breaker\" onclick=\"inspectVocab(\u0027circuit-breaker\u0027)\"\u003ecircuit breakers\u003c/span\u003e. So I\u0027ve done it ever since. So when there\u0027s a test, I test halfway between that just to make sure there\u0027s not a problem. Because I got in real big trouble. I\u0027ll never forget. I was supposed to know way more than I knew, and I was just going along with the program. I wasn\u0027t assessing because we\u0027re not employees. We\u0027re being trained in a company that we will then build."
+    },
+    {
+        "id":  "turn-78",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "26:36",
+        "html":  "Hey."
+    },
+    {
+        "id":  "turn-79",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "26:36",
+        "html":  "So it\u0027s that we\u0027re not employees. We had to learn how the company worked. The in-house training we got from that company was \u003cspan class=\"vocab-mark\" data-vkey=\"inferior\" onclick=\"inspectVocab(\u0027inferior\u0027)\"\u003einferior\u003c/span\u003e, but not \u003cspan class=\"vocab-mark\" data-vkey=\"inferior\" onclick=\"inspectVocab(\u0027inferior\u0027)\"\u003einferior\u003c/span\u003e from that individual from the trainer. So it was a huge lesson. I got \u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e. I thought I was going to be fired. Yeah. My boss was super unhappy, but I think he was actually setting an example. Don\u0027t just go along. I got \u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e really bad for that \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard idiom \u0027chewed out\u0027 as \u0027to shoot out\u0027\"\u003e✨ Fixed: \"\u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"to shoot out\")\u003c/span\u003e\u003c/span\u003e I\u0027ll never forget. Yeah, it\u0027s my responsibility. My learning is my responsibility, even though I love to learn. Don\u0027t rely on... Notice the mistake in the process, report it. Don\u0027t just take it. That was my biggest lesson, for sure. Okay, very good. So let\u0027s have a look at some vocabulary and the notes. I\u0027m tired because I\u0027ve been spending the last few days \u003cspan class=\"vocab-mark\" data-vkey=\"overhaul\" onclick=\"inspectVocab(\u0027overhaul\u0027)\"\u003eoverhauling the notes\u003c/span\u003e even more. So the notes are... Being taken now, they\u0027re automated. So as soon as this lesson is over, they look amazing and beautiful. So you\u0027re going to have amazing notes. They are absolutely amazing because I haven\u0027t been happy with them. Now, a new system completely. So you\u0027ll see it after the lesson. Okay, let\u0027s have a look at some vocabulary we can add. We can say to say the situation, we can say back in 2025, back in COVID, nice and easy. Okay, back in 2025 or back in quarter two. Okay, back in quarter two of 2025. Okay, so some nice little entryways, entries into the conversation at that time. Okay. Now for the task. Sorry, I put this in the wrong bit here. Now, for the task, when we want to talk about what we did, we can say my task, but we can say my \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. My \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay. My main \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e in England, we strongly use the word \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e because it\u0027s like your company has set what it expects from you literally the \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. So we use it like the prime minister has a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. The prime minister doesn\u0027t have a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay, so a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e is a very nice word. My primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e is what is expected of you. Primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay, so my primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e was to increase sales by 200. My primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e was to deliver the project on time and \u003cspan class=\"vocab-mark\" data-vkey=\"under-budget\" onclick=\"inspectVocab(\u0027under-budget\u0027)\"\u003eunder budget\u003c/span\u003e, which is... But most of what? My work is just on time and \u003cspan class=\"vocab-mark\" data-vkey=\"under-budget\" onclick=\"inspectVocab(\u0027under-budget\u0027)\"\u003eunder budget\u003c/span\u003e, and I love it when I... No, I don\u0027t love it. I don\u0027t know why I said that, but when I work with another company and we share a budget... But our budget is protected. For example, if it goes over, it\u0027s not our problem in some areas, like in the joint company area. We watch one company\u0027s budget get out of control. So, for example, we worked with one company and our cost in the end was 700,000, which was supposed to be their cost. £700,000. Their cost was 2 million. Insane. They were \u003cspan class=\"vocab-mark\" data-vkey=\"remortgaging\" onclick=\"inspectVocab(\u0027remortgaging\u0027)\"\u003eremortgaging\u003c/span\u003e, and it is a horrible thing to see. A horrible thing to see, but... Yeah. Sorry. I\u0027ll never forget it. Okay, yeah, absolutely. Crazy way of looking at money. Okay, so in action, we can use, obviously, first... There\u0027s nothing wrong with using first or to \u003cspan class=\"vocab-mark\" data-vkey=\"tackle\" onclick=\"inspectVocab(\u0027tackle\u0027)\"\u003etackle the problem\u003c/span\u003e. Okay, to \u003cspan class=\"vocab-mark\" data-vkey=\"tackle\" onclick=\"inspectVocab(\u0027tackle\u0027)\"\u003etackle this task\u003c/span\u003e, to tackle this thing we did, I did blah. Okay, and another nice word to be like, to take in charge is \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e. I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e the project, I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e the initiative. The spearhead at the end of the... Yeah, you\u0027re the first one going in first. I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e. Okay. Next result, the nice one \u003cspan class=\"vocab-mark\" data-vkey=\"direct-result\" onclick=\"inspectVocab(\u0027direct-result\u0027)\"\u003eas a direct result of my actions\u003c/span\u003e. Okay, of my actions \u003cspan class=\"vocab-mark\" data-vkey=\"direct-result\" onclick=\"inspectVocab(\u0027direct-result\u0027)\"\u003eas a direct result of my actions\u003c/span\u003e. Okay, nice and easy. From what we\u0027ve learned, a little more \u003cspan class=\"vocab-mark\" data-vkey=\"looking-back\" onclick=\"inspectVocab(\u0027looking-back\u0027)\"\u003elooking back\u003c/span\u003e, I would never have owned a bar. Jeez, you know what? Owning a bar is the worst thing in the world. I went for a cocktail a few weeks back, two weeks ago, and I went in and I went to the bartender. Excuse me, can I have a Manhattan, please? He\u0027s like, \"Yeah, no problem at all.\" Then I said, \"Can I have it with rye whiskey? I prefer a grassy, spicy rye whiskey.\" He\u0027s like, \"No.\" I\u0027m like, \"Why can\u0027t I have the drink I want?\" I said, \"Why can\u0027t I have rye whiskey? Every drink is made to order, and you have rye whiskey there. You can charge me more, you can make more money.\" No. I\u0027m like, \"I hate having owned a bar because I know how horrible this is. This is very \u003cspan class=\"vocab-mark\" data-vkey=\"bad-salesmanship\" onclick=\"inspectVocab(\u0027bad-salesmanship\u0027)\"\u003ebad salesmanship\u003c/span\u003e.\" Very bad. As I always say, the Vietnamese are very good at buying, and they\u0027re terrible at selling. Terrible. They\u0027re the worst salesmen I\u0027ve ever met in my life. Yeah, really, it\u0027s okay, I understand why it\u0027s because they\u0027re scared. I think they\u0027re scared of, I think they don\u0027t believe someone will pay more. Yeah, I they\u0027re not used to it. Well, I\u0027m in Japan. If I go to a cocktail bar, they will say, what kind of whiskey do you like? You know, because they don\u0027t want to \u003cspan class=\"vocab-mark\" data-vkey=\"leave-money-on-the-table\" onclick=\"inspectVocab(\u0027leave-money-on-the-table\u0027)\"\u003eleave money on the table\u003c/span\u003e. But anyway, \u003cspan class=\"vocab-mark\" data-vkey=\"looking-back\" onclick=\"inspectVocab(\u0027looking-back\u0027)\"\u003eLooking back\u003c/span\u003e, I would never own a cocktail bar. Or if I were to do this again... \u003cspan class=\"asr-fix-pill\" title=\"ASR truncated \u0027cocktail bar\u0027 into \u0027cockta\u0027\"\u003e✨ Fixed: \"cocktail bar\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"cockta\")\u003c/span\u003e\u003c/span\u003e Okay. So, what is. What is. One of the biggest lessons that you have learned in your career? What is one of the biggest lessons that you have learned?"
+    },
+    {
+        "id":  "turn-80",
+        "chapterId":  "chap-4",
+        "chapterTitle":  "Chapter 4 • 🔄 Asymmetrical Information \u0026 Strategic Upward Alignment (34:24 – 39:35)",
+        "speaker":  "YH",
+        "time":  "34:24",
+        "html":  "Well, I think this is related to the report to the boss, which is... Okay, we always have the information. But I forgot the words we learned a few weeks ago. You have the information, and then they have the information, but the amount of information is different. So..."
+    },
+    {
+        "id":  "turn-81",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "34:56",
+        "html":  "Get \u003cspan class=\"vocab-mark\" data-vkey=\"out-of-the-loop\" onclick=\"inspectVocab(\u0027out-of-the-loop\u0027)\"\u003eout of the loop\u003c/span\u003e..."
+    },
+    {
+        "id":  "turn-82",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "34:58",
+        "html":  "Out of the, no, like the not symmetry like that..."
+    },
+    {
+        "id":  "turn-83",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:06",
+        "html":  "So when the communication breaks down... So, I see you\u0027re \u003cspan class=\"vocab-mark\" data-vkey=\"out-of-the-loop\" onclick=\"inspectVocab(\u0027out-of-the-loop\u0027)\"\u003eout of the loop\u003c/span\u003e, you have the information, but it\u0027s not coming."
+    },
+    {
+        "id":  "turn-84",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:21",
+        "html":  "No, it start from the a and, \u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e \u003cspan class=\"asr-fix-pill\" title=\"ASR recorded vocal hesitation and phonetic search\"\u003e✨ Fixed: \"\u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"AAA symmetrical, symmetricical or\")\u003c/span\u003e\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-85",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:29",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e. Communication."
+    },
+    {
+        "id":  "turn-86",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:32",
+        "html":  "Yeah. So..."
+    },
+    {
+        "id":  "turn-87",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:33",
+        "html":  "But. Yeah."
+    },
+    {
+        "id":  "turn-88",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:33",
+        "html":  "What I want to say is, for example, the boss says you can handle this project, and once every week you have to report to me and as far as this, you can make that decision \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027as far as\u0027 as \u0027as fast as\u0027\"\u003e✨ Fixed: \"as far as\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"as fast as\")\u003c/span\u003e\u003c/span\u003e by yourself. So which is I can make the decision, but this weekly report for him is not enough. Or sometimes he is not satisfied with this information. So I feel I do my duty, which is I report as far as I can. Which is I report to him. But from that. His angle. This is not enough. Or sometimes he wants to know other things."
+    },
+    {
+        "id":  "turn-89",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:19",
+        "html":  "No."
+    },
+    {
+        "id":  "turn-90",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "36:19",
+        "html":  "So after a few months or something, then, the problem came out, like, exploded."
+    },
+    {
+        "id":  "turn-91",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:30",
+        "html":  "Okay, so you\u0027re saying that, you weren\u0027t reporting enough back to him, you weren\u0027t, so he\u0027s not micromanaging you, but, the your reporting is \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e. Maybe there\u0027s a. A, \u003cspan class=\"vocab-mark\" data-vkey=\"misalignment\" onclick=\"inspectVocab(\u0027misalignment\u0027)\"\u003emisalignment\u003c/span\u003e in your. In your, reporting skills or something..."
+    },
+    {
+        "id":  "turn-92",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "36:55",
+        "html":  "I can\u0027t see right now."
+    },
+    {
+        "id":  "turn-93",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:57",
+        "html":  "So yeah, so it\u0027s, I would, so, how did you grow just so I have a better context, how did you grow your, that skill? What did you think you were actually missing in your reporting skills?"
+    },
+    {
+        "id":  "turn-94",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "37:17",
+        "html":  "Well, first of all, what I learned is I always need to \u003cspan class=\"vocab-mark\" data-vkey=\"put-in-their-shoes\" onclick=\"inspectVocab(\u0027put-in-their-shoes\u0027)\"\u003eput myself in their shoes\u003c/span\u003e, which is seeing the situation from his angle. So what I have to report is what he wants to know. So 50% of something are my... Okay, no, like said 70 to 80% or something. I voice correct, but under 20 to 30% or something. He wants to know the other things, so he wants to... Furthermore, he wants to know... If the task is getting busy and the project is getting busy, and you are lacking this kind of sense, then you always report what you want to say. But actually, what we need to report is based on what our boss wants to know."
+    },
+    {
+        "id":  "turn-95",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:20",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eAnticipate his needs\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-96",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "38:22",
+        "html":  "Yeah. \u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eAnticipate his needs\u003c/span\u003e, right? Yeah."
+    },
+    {
+        "id":  "turn-97",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:25",
+        "html":  "Yeah, I understand. Yes, so you would think, what would he need? I\u0027ve seen this situation, and I know him. So now I have to \u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eanticipate what he would need\u003c/span\u003e from me as the situation or the project evolved."
+    },
+    {
+        "id":  "turn-98",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "38:46",
+        "html":  "Right."
+    },
+    {
+        "id":  "turn-99",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:46",
+        "html":  "For sure, that\u0027s good that you know that you developed that skill. Because that\u0027s why you are where you are now, right? But some people... Yes, they go by the numbers, they go by the numbers. In Germany, they do this, they go by the numbers. Okay, very good. Okay, and... If you let\u0027s ask you one more interview question. So if... What does... Where do you see yourself? This is a very common view question. But I think it\u0027s always very good to ask, where do you see yourself in ten years\u0027 time? When do you see yourself in ten years\u0027 time?"
+    },
+    {
+        "id":  "turn-100",
+        "chapterId":  "chap-5",
+        "chapterTitle":  "Chapter 5 • 👥 Autonomous Team Architecture \u0026 Scaling Across 100+ Staff (39:35 – 47:00)",
+        "speaker":  "YH",
+        "time":  "39:39",
+        "html":  "Sorry, what do you mean? Which means, after ten years or..."
+    },
+    {
+        "id":  "turn-101",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "39:43",
+        "html":  "Where do you see yourself in ten years\u0027 time? I\u0027m being a bit vague with the question, where do you see yourself in ten years\u0027 time?"
+    },
+    {
+        "id":  "turn-102",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "39:51",
+        "html":  "Okay, so, I want to be the running business by myself. So actually, I\u0027m already doing it. But after ten years, I still want to run the business by myself. But maybe that will be my business, which is my own business. So what I want to say is I want to brush up on the management skills and still try to keep running the business after the ten years."
+    },
+    {
+        "id":  "turn-103",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "40:43",
+        "html":  "Nice. So your \u003cspan class=\"vocab-mark\" data-vkey=\"aspirations\" onclick=\"inspectVocab(\u0027aspirations\u0027)\"\u003easpirations\u003c/span\u003e, my \u003cspan class=\"vocab-mark\" data-vkey=\"aspirations\" onclick=\"inspectVocab(\u0027aspirations\u0027)\"\u003easpirations\u003c/span\u003e, yes, are that I would like to have my own business. Okay, I would have my own business. However, I need to improve my \u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eoperational skills\u003c/span\u003e. Is that where you feel your \u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eoperational skills\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-104",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "41:06",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eOperations and management skills\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-105",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "41:09",
+        "html":  "Okay. And what is your style? What is your idea what how what\u0027s your view on management, on your management of your team? What what\u0027s your like, your professional view of management?"
+    },
+    {
+        "id":  "turn-106",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "41:29",
+        "html":  "Okay. So, first of all, I give clear direction, but only the big picture and \u003cspan class=\"vocab-mark\" data-vkey=\"delegate\" onclick=\"inspectVocab(\u0027delegate\u0027)\"\u003edelegate all the tasks\u003c/span\u003e to them and let them do, how should I say, express themselves. So I don\u0027t like to do \u003cspan class=\"vocab-mark\" data-vkey=\"micromanagement\" onclick=\"inspectVocab(\u0027micromanagement\u0027)\"\u003emicro-management\u003c/span\u003e, so I trust my \u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e and \u003cspan class=\"vocab-mark\" data-vkey=\"delegate\" onclick=\"inspectVocab(\u0027delegate\u0027)\"\u003edelegate all the tasks\u003c/span\u003e. As far as they perform well, then I will let them do as fast as they want."
+    },
+    {
+        "id":  "turn-107",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:09",
+        "html":  "Okay. Very nice. So you like them to be have their own \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e, self \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e. Yeah, they have their own self \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e. Okay, very nice. And what about structure? How do you what\u0027s the biggest team you\u0027ve managed? How many people have you managed?"
+    },
+    {
+        "id":  "turn-108",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:36",
+        "html":  "The biggest organization was over a hundred."
+    },
+    {
+        "id":  "turn-109",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:40",
+        "html":  "Wow. So you \u003cspan class=\"vocab-mark\" data-vkey=\"oversee\" onclick=\"inspectVocab(\u0027oversee\u0027)\"\u003eoversaw 100 employees\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-110",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:43",
+        "html":  "Right? Right. Yeah."
+    },
+    {
+        "id":  "turn-111",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:44",
+        "html":  "And how did you structure them..."
+    },
+    {
+        "id":  "turn-112",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:47",
+        "html":  "Well, we have a few layers of that \u003cspan class=\"vocab-mark\" data-vkey=\"hierarchy\" onclick=\"inspectVocab(\u0027hierarchy\u0027)\"\u003ehierarchy\u003c/span\u003e. The management layer. So I don\u0027t need to manage over the hundred people, of course. So we have the local leaders and below them have three sub-leaders. So technically I only need to \u003cspan class=\"vocab-mark\" data-vkey=\"span-of-control\" onclick=\"inspectVocab(\u0027span-of-control\u0027)\"\u003ehandle these four or five people\u003c/span\u003e. Then they will manage their own team. So yeah, this is how I managed over a hundred people at that time."
+    },
+    {
+        "id":  "turn-113",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "43:30",
+        "html":  "Okay. And, okay, very nice. And. And what is one management. Attribute. What is one \u003cspan class=\"vocab-mark\" data-vkey=\"attribute\" onclick=\"inspectVocab(\u0027attribute\u0027)\"\u003emanagement attribute\u003c/span\u003e that you would like to, develop?"
+    },
+    {
+        "id":  "turn-114",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "43:50",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"attribute\" onclick=\"inspectVocab(\u0027attribute\u0027)\"\u003eManagement attribute\u003c/span\u003e. How should I say I want to develop. This has been difficult. Well, I always want to. I always like to see my \u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e develop and grow professionally through this work \u003cspan class=\"asr-fix-pill\" title=\"Speech-to-text recorded pauses and \u0027grow up\u0027 slip\"\u003e✨ Fixed: \"develop and grow professionally\" \u003cspan class=\"text-slate-400\"\u003e(spoken: \"\u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e are the grow grown up... they themselves can be grown up\")\u003c/span\u003e\u003c/span\u003e through this work. So, I always want to win together with the team. So through this the project, through the project or through the work. I always give them the opportunity or some new method, then they can learn and they can be obtained these new skills or the knowledge and that will contribute to the our the company\u0027s growth. So. Yeah. It\u0027s one of my... The principal of the management review."
+    },
+    {
+        "id":  "turn-115",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "45:35",
+        "html":  "Are you saying that you would like to...?"
+    },
+    {
+        "id":  "turn-116",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "45:38",
+        "html":  "Yeah. Developed."
+    },
+    {
+        "id":  "turn-117",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "45:40",
+        "html":  "Develop their skills and methodology? Yes, very nice. Yeah, I think that\u0027s a good thing to develop the team. My aspiration for management in the future is to develop my workplace environment. The workplace environment I developed for my team normally and a student that knows me very well pointed out and it was 100% correct. I think I am too strict in my workplace management. I\u0027m very strict and I think I would like to develop an environment where we do not only \u003cspan class=\"vocab-mark\" data-vkey=\"meritocracy\" onclick=\"inspectVocab(\u0027meritocracy\u0027)\"\u003erely on merit\u003c/span\u003e. We don\u0027t always \u003cspan class=\"vocab-mark\" data-vkey=\"meritocracy\" onclick=\"inspectVocab(\u0027meritocracy\u0027)\"\u003erely on merit\u003c/span\u003e. Maybe there is a place for everyone in the team and it\u0027s not so \u003cspan class=\"vocab-mark\" data-vkey=\"combative\" onclick=\"inspectVocab(\u0027combative\u0027)\"\u003ecombative\u003c/span\u003e in competing, I think. In England, it\u0027s very competitive in London, but not everywhere, I think so. Okay, so just before the adolescence, just a few things. You\u0027ll get your notes straight away and you\u0027ll see. I\u0027ll show you an example. Actually, I have the example because I made a demo for it as well, which is really cool. Okay, documents I put it under then I has it here. Okay, here we go Ta-da! Let me share my screen. \u003cspan class=\"asr-fix-pill\" title=\"ASR transcribed playful vocal flourish as \u0027two do to do two\u0027\"\u003e✨ Fixed: \"Ta-da! Let me share\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"two do to do two and share\")\u003c/span\u003e\u003c/span\u003e. Okay, so I\u0027ll put this here for now. So just so you know what to expect when it comes out, right now, demo, demo the demo. Okay, here we go. So this is just a demo of a conversation. Let\u0027s get rid of this. I might as well clear, I\u0027m looking at you. Okay, continue. So now, sorry, can you turn this off as well? It\u0027s because there are some ladies as well, and they like pretty things. Okay, so the way it works is the conversation. Now, at the end of the lesson, it\u0027s time-stamped completely. Okay. And so it will if you hover over a word, it will obviously have the pronunciation, but it... So obviously it\u0027s not really relevant to you, but it will show you the level of the word C2 automatically. So you can see that\u0027s more for other students, but even you can see how it is. If you click on the word, it should actually open up a sidebar where you can hear the pronunciation. Okay, and you can see what I said, for example. That\u0027s all the way through the conversation. Okay? So you can go, \"Okay, what was that thing he said?\" and you can see it within the context of the conversation, however, then you actually just have it broken down into the lesson. Okay, so you can see this page. Yeah, okay, so you can see it then broken down into the tiles so the model picks up everything. Okay, the program and it knows the lesson we\u0027re learning today. It knows the lesson, so it incorporates the star L into it as well. It\u0027s already read the file. Then it may have a little bit of practice here as well. Just on the words, just in case you need that, but because you\u0027re trying to... This is, I think, very useful for you because you\u0027re trying to increase your vocabulary. So now it\u0027s even clearer, even easier to see where I\u0027ve said additional or develop. You can see it in the conversation and in the vocabulary. This is just the notes as well. There may be more things put in, especially when I quickly review it and put it in as well. Yeah, so that\u0027s how it\u0027s coming out. Now, if you would like me... If you want me to tweak anything, just let me know. I can do that if you want me to add more particle effects. I don\u0027t know if you can hear the wind breezing. I don\u0027t know why it\u0027s on there, but it\u0027s because it has a DNA of some old stuff. But that\u0027s how you\u0027ll get your notes immediately now. And I sped things up as well, so that you can get it quicker as well. Then for the next lesson, I sent... I got the Mac version of that software as well. So I\u0027ve sent you the link in the GitHub. Yeah, obviously. Always check a file. Always check the files, scan it. I\u0027ve scanned it already, but you have the Mac version now in that address, so next lesson we\u0027ll do the opposite. So you are the person with the bomb, and you expect just so you can get used to saying it. I will add homework as well for these notes. Okay, I will add homework as well for these notes as well, and that will be speaking as well. Okay, do you have any questions at all?"
+    },
+    {
+        "id":  "turn-118",
+        "chapterId":  "chap-6",
+        "chapterTitle":  "Chapter 6 • 🎧 The New Sanctuary Notes System \u0026 Bomb Defusal (KTANE) Preview (47:00 – 52:26)",
+        "speaker":  "YH",
+        "time":  "52:06",
+        "html":  "Well, so far, no."
+    },
+    {
+        "id":  "turn-119",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:08",
+        "html":  "Okay, very good. Again. And why? If you. If you ever have a question during the day or anything, you can message me 2047, it\u0027s absolutely fine. Okay, thank you very much and have a lovely day. Thank..."
+    },
+    {
+        "id":  "turn-120",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "52:24",
+        "html":  "Okay, thank you. You too."
+    },
+    {
+        "id":  "turn-121",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:26",
+        "html":  "You very much."
+    },
+    {
+        "id":  "turn-122",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "52:26",
+        "html":  "Bye."
+    },
+    {
+        "id":  "turn-123",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:26",
+        "html":  "Yes, goodbye, goodbye! \u003cspan class=\"asr-fix-pill\" title=\"ASR transcribed \u0027Yes\u0027 as \u0027Jes\u0027\"\u003e✨ Fixed: \"Yes\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Jes\")\u003c/span\u003e\u003c/span\u003e Okay, nice."
+    }
+]

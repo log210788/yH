@@ -1,0 +1,34 @@
+[
+  {
+    "meta": "12:35 – 22:45",
+    "badge": "Core Framework • Executive Presence",
+    "title": "1. The STAR-L Storytelling Architecture",
+    "desc": "Moving from passive, collective reporting ('we did this, we looked at that') to active executive agency. The STAR-L formula breaks career accomplishments into high-impact components: Situation (macro context, e.g. Q2 retail expansion), Task (primary mandate and target KPI), Action (3 concrete operational moves you spearheaded), Result (quantifiable metric, e.g. +240% YoY growth), and Learning (formative principle gained).",
+    "quote": "\"When you give answers in an executive interview, stop saying 'we did this'. You run the team. It is your direction and your body of work — claim ownership with 'I spearheaded' and 'my primary mandate'.\"",
+    "tags": ["mandate", "spearheaded", "under-budget", "who-dares-wins", "suck-it-up"]
+  },
+  {
+    "meta": "34:24 – 39:35",
+    "badge": "Organizational Economics • Upward Management",
+    "title": "2. Asymmetrical Information & The 70/30 Reporting Rule",
+    "desc": "In complex corporate operations, information asymmetry between leaders and executives often leads to explosive misalignment. YH highlighted the breakthrough mindset: viewing the project through the executive's lens ('putting yourself in their shoes'). Effective upward communication follows the 70/30 rule: 70% routine status updates, and 30% anticipating unvoiced strategic anxieties and latent operational bottlenecks.",
+    "quote": "\"What I learned is I always need to put myself in their shoes. If a project is busy and you lack this sense, you only report what you want to say. True upward alignment means reporting what your boss needs to know.\"",
+    "tags": ["asymmetrical", "anticipate", "misalignment", "out-of-loop", "shoes"]
+  },
+  {
+    "meta": "39:35 – 47:00",
+    "badge": "Organizational Architecture • High-Trust Leadership",
+    "title": "3. Scaling Autonomous Teams across Multi-Tiered Hierarchies",
+    "desc": "Managing an organization of over 100 people cannot rely on micromanagement. YH outlined an elegant span-of-control framework: communicating clear macro-strategic direction ('the big picture'), establishing a layered management hierarchy (handling 4–5 regional leaders who in turn steer frontline teams), and granting subordinates self-autonomy. The ultimate leadership objective is elevating team capability so that collective development fuels sustainable company expansion.",
+    "quote": "\"I give clear direction — only the big picture — and delegate all tasks to them. I trust my subordinates and grant them full autonomy as long as they perform. I want to win together with the team.\"",
+    "tags": ["autonomy", "delegate", "hierarchy", "span-of-control", "meritocracy"]
+  },
+  {
+    "meta": "23:10 – 34:20",
+    "badge": "Commercial Acumen • Operational Governance",
+    "title": "4. Value Capture, Circuit Breakers & The Bar Owner's Parable",
+    "desc": "Louie shared two formative career parables: First, getting chewed out by an executive for silently accepting inadequate in-house training, which taught him to install 'half-goal circuit breakers' (milestone checkpoints halfway through a project to audit quality). Second, the cocktail bar owner who refused to sell a rye whiskey Manhattan, exemplifying bad salesmanship that 'leaves money on the table' compared to premium Japanese bespoke hospitality.",
+    "quote": "\"My learning is my responsibility. Don't just take an inadequate process — notice the mistake, report it early, and install circuit breakers before small defects turn into catastrophic failures.\"",
+    "tags": ["circuit-breaker", "chewed-out", "leave-money-table", "inadequate", "look-back"]
+  }
+]

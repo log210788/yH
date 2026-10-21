@@ -1,101 +1,78 @@
-# YH — Executive Business English & Communication Suite
-## Preply Business Coaching | Student: YH | Tutor: Lewis O.
+# 🍂 YH — Executive Business English Sanctuary & Coaching Suite
+## Preply Executive Business Coaching | Student: YH | Tutor: Lewis O'Shea (Louie)
 
-A comprehensive workplace English curriculum, lesson planning system, and interactive web portal designed for **YH** (Intermediate / Conversational B1–B2) to aggressively expand professional vocabulary, eliminate Katakana English (*Wasei-Eigo*) interference, and build spontaneous fluency across 7 critical corporate interaction domains: **Meetings, Presentations, Teamwork, Negotiations, Managing Teams, Communicating with Clients, and Interviews**.
+An executive English sanctuary, conversation transcript repository, and workplace communication portal designed for **YH** (Retail & E-commerce Executive) to build commanding professional fluency across 7 critical corporate interaction domains: **Meetings, Presentations, Teamwork, Negotiations, Managing Teams, Communicating with Clients, and Interviews**.
 
-🌐 **Live Practice Suite & Studio:** [https://log210788.github.io/yH/](https://log210788.github.io/yH/)
+🌐 **Live Executive Sanctuary Web App:** [https://log210788.github.io/yH/](https://log210788.github.io/yH/)
 
 ---
 
-## 📂 Repository & Curriculum Architecture
+## 🌟 Latest Lesson: October 21, 2026 — The STAR-L Executive Masterclass
+
+### Core Strategic Focus
+- **The STAR-L Framework:** Structuring executive narratives with high agency (Situation $\rightarrow$ Primary Mandate $\rightarrow$ Decisive Actions Spearheaded $\rightarrow$ Quantifiable Results Delivered $\rightarrow$ Formative Learning).
+- **Asymmetrical Information & Upward Management:** Applying the **70/30 Rule** to eliminate reporting blindspots and anticipate superior priorities.
+- **Autonomous Multi-Tiered Scaling:** Managing 100+ personnel through structured spans of control (handling 4–5 regional directors with high-trust autonomy).
+- **Commercial Acumen & Circuit Breakers:** Eliminating bad salesmanship (never "leaving money on the table") and installing "half-goal circuit breakers" for quality control.
+
+📄 **Full Offline Lesson Notes:** [`LESSON_NOTES_TODAY.md`](./LESSON_NOTES_TODAY.md)
+
+---
+
+## 🏛️ Sanctuary Web App Features ([`index.html`](./index.html))
+
+1. **Tab 1: 📜 Interactive Transcript & Inline Vocabulary (00:00 – 52:26)**
+   - Complete 123-turn dialogue log organized into 6 thematic chapters.
+   - Search filter, speaker toggle (*Both Speakers / YH Only / Louie Only*), and per-turn Web Speech UK audio synthesis.
+   - 52 inline B2–C2 vocabulary words tagged with `${v("key", "word")}`. Hovering reveals a **Tippy.js** card with IPA, definition, and Japanese translation; clicking opens the sticky **Vocabulary Spotlight** sidebar.
+   - Forensic note-taker fixes embedded via toggleable `fixBadge` pills.
+2. **Tab 2: 📚 Vocabulary Dictionary (52 Items)**
+   - Searchable and level-filtered (B2, C1, C2) master grid.
+   - Clicking any timestamp (`🕒 MM:SS ↗`) smoothly jumps back to Tab 1, scrolls to that exact turn, and pulses the line with a golden glow (`.turn-highlight-flash`).
+3. **Tab 3: ✨ Note-Taker Fixes & Natural Strengths**
+   - **Section A:** 6 executive strengths celebrated (Qualitative & Quantitative synthesis, Sales-driving factors, High-agency resilience, Asymmetrical communication, Putting oneself in the boss's shoes, High-trust delegation).
+   - **Section B:** 6 gentle phrasing polishes (*"In the moment"* vs *"Natural Executive Polish"*) with audio buttons and grammatical analysis.
+   - **Section C:** Visual audit log of 20 note-taker speech-to-text corrections.
+4. **Tab 4: 🏛️ Masterclass Topics & Strategy**
+   - 4 rich editorial cards: The STAR-L Storytelling Architecture, Asymmetrical Information & Upward Alignment, Scaling Autonomous Teams (100+ Staff), and Commercial Acumen & Circuit Breakers.
+5. **Tab 5: ☕ Peaceful Practice Sanctuary**
+   - 12 interactive flip flashcards with Web Speech audio.
+   - 6-question scenario-based context quiz with confetti celebrations.
+   - 3 thoughtful reflection prompts for next lesson (including Mac *Keep Talking & Nobody Explodes* simulation prep).
+6. **🌿 Calming Atmospheric Plugins**
+   - HTML5 Canvas floating autumn breeze overlay (Gentle, Breeze, Still toggle).
+   - Web Audio API ambient soundscape generator (*Kensington Breeze, Soft London Rain, Warm Study Hearth*).
+   - 3 restful themes (*Bath Stone, Winchester Mist, Warm Study*) and UK voice speed toggle (`0.85×` and `1.0×`).
+
+---
+
+## 📂 Repository Architecture
 
 ```
 yH/
+├── index.html                          # Primary Live Executive Sanctuary (October 21, 2026 Masterclass)
+├── LESSON_NOTES_TODAY.md               # Complete Markdown Executive Notes, ASR fixes & 52-term Lexicon
+├── template_base.html                  # Core HTML5 Sanctuary Template Engine
+├── assemble_index_html.ps1             # PowerShell compilation script
+├── build_turns_json.ps1                # Transcript parsing, ASR fixing & vocab tagging engine
+├── chapters.json                       # 6 thematic lesson chapters
+├── turns.json                          # Full 123-turn cleaned dialogue with inline hooks
+├── vocab.json                          # 52 B2-C2 executive vocabulary database with Japanese L1
+├── strengths.json                      # 6 natural student strengths celebrated
+├── polishes.json                       # 6 gentle phrasing polishes
+├── fixes.json                          # 20 ASR note-taker speech-to-text corrections
+├── places.json                         # 4 executive masterclass strategy cards
+├── quiz.json                           # 6 interactive scenario questions
+├── vocab-ladder-portal.html            # Preserved legacy portal (PREP Studio & 3-Tier Vocab Ladder)
+├── closest-in-meaning.html             # 100-Question Closest-in-Meaning Mega-Vault
+├── croc-brain-wheel.html               # Crocodile Brain "Spin & Sell" Pitch Wheel
+├── marketing-scenarios.html            # 11 Interactive Commercial Scenarios & Vocab Lab
+├── revision.html                       # Dedicated Vocab Ladder Revision & Homework page
+├── studio.html                         # Dedicated Audio Recording Studio
+├── transcripts/
+│   └── lesson -starl.txt               # Raw note-taker transcript (October 21, 2026)
 ├── messages/
-│   └── Learning needs.txt              # Preply student profile, timezone, goals & preferences
-├── Curriculum-Overview.md              # Master Executive Business English Curriculum & Specialization Tracks
-├── Lessons/
-│   ├── Week-01/
-│   │   ├── Teacher-Lesson-Plan.md      # Minute-by-minute 50-minute lesson plan for Week 1
-│   │   ├── Student-Handout.md          # Clean, student-facing reference guide & cheat sheet
-│   │   ├── Vocab-Ladder-Revision-Sheet.md # Dedicated student revision sheet, drills & PREP task
-│   │   └── How-To-Teach-Guide.md       # Tutor's pedagogical playbook & neuro-linguistic scripts
-│   └── Selling-Pitching-Presentations/ # 4-Lesson Pitch & Presentation Specialization Track
-│       ├── Teacher-Playbook-How-To-Teach-On-Preply.md # Complete 1-on-1 coaching field manual
-│       ├── Lesson-1-The-Executive-Hook/
-│       │   ├── Teacher-Lesson-Plan.md  # Frame Control, Croc Brain & 3-Part Hook
-│       │   └── Student-Handout.md      # Student cheat sheet, drill cards & vocal checklist
-│       ├── Lesson-2-The-Value-Proposition-and-Demo/
-│       │   ├── Teacher-Lesson-Plan.md  # PISP Stack, "So What?" Drill & Power Pause
-│       │   └── Student-Handout.md      # Solution architecture templates & practice cards
-│       ├── Lesson-3-Data-Narration-and-Slide-Deck/
-│       │   ├── Teacher-Lesson-Plan.md  # NMTA formula, contrastive stress & boardroom Q&A
-│       │   └── Student-Handout.md      # Trajectory lexicon & slide transition formulas
-│       └── Lesson-4-Closing-Objections-and-Pricing/
-│           ├── Teacher-Lesson-Plan.md  # Objection Aikido, Prize Frame & Hardball close
-│           └── Student-Handout.md      # Objection cheat sheet & non-negotiable thresholds
-│   └── Marketing-Vocabulary-and-Scenarios/ # 11 Commercial & Marketing Activities Suite
-│       ├── Teacher-Lesson-Plan-and-Activity-Guide.md # Full facilitation guide & answer keys
-│       └── Student-Handout-and-Scenario-Pack.md      # Student reference, 30-term lexicon & briefs
-├── Teacher-Materials/
-│   ├── New-Preply-Teacher-Playbook-Selling-Pitching.md # Quick reference for new Preply teachers
-│   ├── Week-01-Homework.md             # Written & audio recording homework assignment
-│   ├── Week-01-Answer-Key.md           # Model answers, recasts & assessment rubrics
-│   └── Complete-Curriculum-Lexicon.md  # 100-word cross-functional Business Lexicon (7 domains)
-├── index.html                          # Unified Portal (Tab 1: Vocab Ladder Revision, Tab 2: Studio, etc.)
-├── marketing-scenarios.html            # Standalone Interactive Marketing Scenarios & Vocab Lab (11 Activities)
-├── revision.html                       # Dedicated standalone Vocab Ladder Revision & Homework page
-├── studio.html                         # Dedicated standalone Audio Recording Studio
-├── game.html                           # Standalone Vocab Arena Game (drag & drop, reveal, quiz)
-├── vocab-ladder-game.html              # Full Vocab Ladder interactive game suite
-└── README.md                           # Master project documentation
+│   └── Learning needs.txt              # YH Preply profile, goals, and L1 transfer habits
+├── Lessons/                            # Multi-week curriculum modules & lesson plans
+└── Teacher-Materials/                  # Preply teacher playbooks, answer keys & lexicons
 ```
-
----
-
-## 🎯 Core Portal Sections ([Live App](https://log210788.github.io/yH/))
-
-1. **📝 Vocab Ladder Revision & Homework (New / Primary View)**:
-   - Full 10-step reference matrix (Tier 1 -> Tier 2 -> Tier 3) with usage and register notes.
-   - Grammatical precision rules & Japanese L1 traps (zero-preposition transitive verbs, *deliberate on*, *align on/with*).
-   - Interactive exercises (Part A: message rewrites, Part B: preposition drills, Part C: PREP scenario task).
-   - LocalStorage auto-save, "Copy My Answers" button, and collapsible Coach Answer Key.
-   - Native voice recorder for spoken PREP task recordings with `.webm` download.
-2. **🎙️ Recording Studio**: Choose from 6 presentation/meeting topics, view thought-starters, record voice in-browser with live audio visualizer & timer, listen back, and download recordings for Preply submission.
-3. **🔠 Business Vocab Lab**: 
-   - **Interactive Katakana Purge**: Flip-cards dismantling Japanese-English loanwords (*claim ➔ lodged a complaint*, *cospa ➔ cost-effective / ROI*, *appo ➔ schedule a sync*, *remake ➔ overhaul*, *NG ➔ non-viable / out of scope*).
-   - **The 3-Tier Vocabulary Ladder**: Contrast elementary words (Tier 1) vs. conversational (Tier 2) vs. executive power words (Tier 3) with Web Speech API audio pronouncers.
-   - **Interactive PREP Meeting Generator**: Draft Point, Reason, Example, Point responses and copy them directly into the Recording Studio!
-4. **⚡ Cadence & Rhythm Lab**:
-   - **60 BPM Isochrony Metronome Drill**: Stress-timing vs. Mora-timing practice.
-   - **Subtext Navigation Drill**: Sentence stress shifts (*"I didn't tell him to cancel the project"*).
-   - **Two-Syllable Business Word Stress Shift**: Noun (1st syllable) vs. Verb (2nd syllable) contrast (*REC-ord vs. re-CORD*, *PRES-ent vs. pre-SENT*, *PROJ-ect vs. pro-JECT*).
-5. **🎯 4-Week Milestone Rubric**: Overview of learning focus areas and assessment criteria.
-6. **🎮 Vocab Arena Game ([`game.html`](file:///D:/Documents/yH/game.html))**: Screen-share friendly 1-by-1 Focus slide reveals, 3-bucket drag-and-drop / tap-to-sort game (30 cards), rapid-fire quiz, sound synthesizer, and confetti celebration.
-
----
-
-## 📚 Key Curriculum & Lesson Documents
-
-- **Master Curriculum**: [`Curriculum-Overview.md`](file:///D:/Documents/yH/Curriculum-Overview.md)
-  - Japanese-to-English linguistic transfer matrix, mora-timing vs. stress-timing, Katakana false friends, 50-minute lesson architecture, and 4-week modular syllabus.
-- **Today's Teacher Lesson Plan**: [`Teacher-Lesson-Plan.md`](file:///D:/Documents/yH/Lessons/Week-01/Teacher-Lesson-Plan.md)
-  - Detailed 50-minute minute-by-minute timeline, rapid-fire synonym ladder, consonant guillotine drill, 2-syllable stress contrast, meeting roleplays, and recast protocol.
-- **Student Handout**: [`Student-Handout.md`](file:///D:/Documents/yH/Lessons/Week-01/Student-Handout.md)
-  - Printable reference guide for YH with the Katakana purge table, 3-tier verb ladder, 6 meeting collocations, PREP framework, and simulation cards.
-- **Vocab Ladder Revision Sheet**: [`Vocab-Ladder-Revision-Sheet.md`](file:///D:/Documents/yH/Lessons/Week-01/Vocab-Ladder-Revision-Sheet.md)
-  - Dedicated revision matrix covering all 10 Vocabulary Upgrade Ladders, preposition accuracy rules, email upgrade exercises, and an executive PREP briefing task.
-- **Teacher Pedagogy Guide**: [`How-To-Teach-Guide.md`](file:///D:/Documents/yH/Lessons/Week-01/How-To-Teach-Guide.md)
-  - In-depth coaching notes on Japanese L1 hesitation (*Aimai/Enryo*), physical webcam coaching for vowel epenthesis, and word-for-word facilitation scripts.
-- **Homework & Answer Key**: [`Week-01-Homework.md`](file:///D:/Documents/yH/Teacher-Materials/Week-01-Homework.md) | [`Week-01-Answer-Key.md`](file:///D:/Documents/yH/Teacher-Materials/Week-01-Answer-Key.md)
-- **100-Word Master Business Lexicon**: [`Complete-Curriculum-Lexicon.md`](file:///D:/Documents/yH/Teacher-Materials/Complete-Curriculum-Lexicon.md)
-  - High-impact vocabulary, collocations, and idioms categorized across Meetings, Presentations, Teamwork, Negotiations, Management, Client Relations, and Interviews.
-
----
-
-## 🎧 Step-by-Step Workflow for Live Coaching Sessions
-
-1. **In-Class**: Open [`Teacher-Lesson-Plan.md`](file:///D:/Documents/yH/Lessons/Week-01/Teacher-Lesson-Plan.md) and share [`Student-Handout.md`](file:///D:/Documents/yH/Lessons/Week-01/Student-Handout.md) on screen with YH.
-2. **Interactive Drills**: Open the [Business Vocab Lab](https://log210788.github.io/yH/) on GitHub Pages for the live Katakana purge cards and PREP generator.
-3. **Simulation**: Conduct the sprint sync and client expectation management roleplays.
-4. **Asynchronous Homework**: YH completes [`Week-01-Homework.md`](file:///D:/Documents/yH/Teacher-Materials/Week-01-Homework.md) and records a 60-second PREP update in the online Recording Studio, dropping the audio file into Preply messages.

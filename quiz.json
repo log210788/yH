@@ -1,0 +1,68 @@
+[
+  {
+    "q": "Why is relying heavily on 'we' in executive interviews considered a missed opportunity?",
+    "options": [
+      "Because it implies you worked entirely alone without any team support.",
+      "Because interviewers cannot isolate your individual leadership mandate, decisive actions, or personal contribution.",
+      "Because executive recruiters prefer candidates who never delegate tasks.",
+      "Because using 'we' is grammatically incorrect in British English."
+    ],
+    "correct": 1,
+    "exp": "Overusing 'we' diffuses accountability. Executive interviewers need to understand what you personally spearheaded, directed, and delivered."
+  },
+  {
+    "q": "What does the 'L' represent in the STAR-L storytelling framework?",
+    "options": [
+      "Logistics (the operational transport arrangements)",
+      "Leadership (how many people you supervised)",
+      "Learning (the formative takeaway, principle, or insight gained)",
+      "Liability (the legal and financial risks involved)"
+    ],
+    "correct": 2,
+    "exp": "STAR-L enhances the classic framework by concluding with 'Learning' — demonstrating executive self-reflection, wisdom, and continuous growth."
+  },
+  {
+    "q": "In corporate upward management, what is the best strategy to resolve 'information asymmetry'?",
+    "options": [
+      "Send a 100-page unformatted data dump every morning.",
+      "Anticipate your superior's strategic priorities and proactively address unvoiced risks rather than just reporting routine tasks.",
+      "Wait until project completion before communicating any problems to avoid causing anxiety.",
+      "Only report good news and keep operational roadblocks secret."
+    ],
+    "correct": 1,
+    "exp": "Resolving information asymmetry requires executive empathy ('putting yourself in their shoes') and proactively anticipating what senior leaders need to know."
+  },
+  {
+    "q": "What was the purpose of Louie's 'half-goal circuit breaker' concept?",
+    "options": [
+      "To stop working halfway through the day to take a coffee break.",
+      "To test operational quality halfway between milestones to catch systemic training defects before final failure.",
+      "To cut employee salaries by 50% during economic recessions.",
+      "To automatically shut off electrical power in the corporate office."
+    ],
+    "correct": 1,
+    "exp": "A circuit breaker is a deliberate audit checkpoint halfway through an initiative to ensure training, processes, and alignment are sound."
+  },
+  {
+    "q": "What is the correct English phrasing when describing professional team development?",
+    "options": [
+      "I like to see my subordinates grow up through our work.",
+      "I foster the professional development and autonomy of my team members.",
+      "I raise my employees from childhood to maturity.",
+      "I make my subordinates grown up through hard tasks."
+    ],
+    "correct": 1,
+    "exp": "'Grow up' is reserved for children maturing into adulthood. In professional contexts, use 'foster professional development' or 'cultivate talent'."
+  },
+  {
+    "q": "What commercial idiom describes failing to capitalize on an easy, high-margin sales opportunity?",
+    "options": [
+      "Putting all eggs in one basket",
+      "Leaving money on the table",
+      "Barking up the wrong tree",
+      "Biting off more than you can chew"
+    ],
+    "correct": 1,
+    "exp": "'Leaving money on the table' means failing to capture additional value, margin, or revenue that a customer is willing and eager to pay."
+  }
+]
