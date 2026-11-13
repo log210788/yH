@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Hot Seat: Japanese Meal-Prep Interview Arena | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --bg-deep: #070d19;
+      --bg-stage: #0d1627;
+      --surface: rgba(18, 29, 49, 0.9);
+      --surface-solid: #121d31;
+      --surface-card: rgba(26, 40, 66, 0.92);
+      --surface-hover: #243759;
+      --border: rgba(148, 163, 184, 0.18);
+      --border-strong: rgba(148, 163, 184, 0.32);
+      --border-gold: rgba(245, 158, 11, 0.45);
+      --border-emerald: rgba(16, 185, 129, 0.45);
+      --border-rose: rgba(244, 63, 94, 0.45);
+
+      --text: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+
+      --gold: #f59e0b;
+      --gold-bright: #fbbf24;
+      --gold-soft: rgba(245, 158, 11, 0.14);
+
+      --emerald: #10b981;
+      --emerald-bright: #34d399;
+      --emerald-soft: rgba(16, 185, 129, 0.14);
+
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+
+      --rose: #f43f5e;
+      --rose-bright: #fb7185;
+      --rose-soft: rgba(244, 63, 94, 0.14);
+
+      --purple: #a855f7;
+      --purple-soft: rgba(168, 85, 247, 0.14);
+
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 20px;
+      --shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.65);
+    }
+
+    body.light-mode {
+      --bg-deep: #f1f5f9;
+      --bg-stage: #e2e8f0;
+      --surface: rgba(255, 255, 255, 0.96);
+      --surface-solid: #ffffff;
+      --surface-card: #f8fafc;
+      --surface-hover: #f1f5f9;
+      --border: #cbd5e1;
+      --border-strong: #94a3b8;
+      --text: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      --gold: #d97706;
+      --gold-bright: #b45309;
+      --gold-soft: #fffbeb;
+      --emerald: #059669;
+      --emerald-bright: #047857;
+      --emerald-soft: #ecfdf5;
+      --accent: #0284c7;
+      --accent-soft: #f0f9ff;
+      --rose: #e11d48;
+      --rose-bright: #be123c;
+      --rose-soft: #fff1f2;
+      --purple: #7c3aed;
+      --purple-soft: #f5f3ff;
+      --shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(circle at 12% 10%, rgba(245, 158, 11, 0.09), transparent 35%),
+        radial-gradient(circle at 88% 15%, rgba(16, 185, 129, 0.09), transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(56, 189, 248, 0.06), transparent 45%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+    }
+    .top-bar-inner {
+      max-width: 1340px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #f59e0b, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+    .brand-title {
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .role-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--gold-bright);
+      border: 1px solid var(--border-gold);
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    /* SCORE & CONTROLS CLUSTER */
+    .hud-cluster {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hud-stat {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      padding: 6px 13px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .hud-stat .val {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--emerald-bright);
+    }
+    .hud-stat.gold .val { color: var(--gold-bright); }
+    .hud-stat.rose .val { color: var(--rose-bright); }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--border-strong);
+      background: var(--surface-card);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #070d19;
+      border-color: #fbbf24;
+      font-weight: 800;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #052e16;
+      border-color: #34d399;
+      font-weight: 800;
+    }
+    .btn-emerald:hover {
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.4);
+    }
+    .btn-rose {
+      background: var(--rose-soft);
+      color: var(--rose-bright);
+      border-color: var(--border-rose);
+      font-weight: 800;
+    }
+    .btn-rose:hover {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    /* MAIN NAVIGATION TABS */
+    .tab-bar {
+      background: var(--surface-solid);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      overflow-x: auto;
+    }
+    .tab-bar-inner {
+      max-width: 1340px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+    }
+    .tab-btn {
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 14px 18px;
+      background: transparent;
+      color: var(--text-dim);
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.18s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .tab-btn.active {
+      color: var(--gold-bright);
+      border-bottom-color: var(--gold);
+      background: var(--gold-soft);
+      font-weight: 800;
+    }
+    .tab-time {
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.07);
+      color: var(--text-muted);
+    }
+
+    /* CONTAINER & SECTIONS */
+    .container {
+      max-width: 1340px;
+      margin: 26px auto 80px;
+      padding: 0 24px;
+    }
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.25s ease;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO BRIEFING CARD */
+    .dossier-hero {
+      background: linear-gradient(135deg, rgba(18, 29, 49, 0.96) 0%, rgba(15, 39, 68, 0.96) 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    body.light-mode .dossier-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #f8fafc;
+    }
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+    @media (max-width: 980px) {
+      .dossier-grid { grid-template-columns: 1fr; }
+    }
+    .kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      margin-bottom: 12px;
+    }
+    .dossier-title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1.22;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .dossier-desc {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 12px;
+      padding: 13px 15px;
+    }
+    .kpi-label {
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+    .kpi-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #fbbf24;
+      margin: 2px 0;
+    }
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: #cbd5e1;
+    }
+
+    /* SECTION HEADERS */
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .sec-title {
+      font-size: 1.32rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sec-sub {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* RAPID SPRINT WARM-UP BOX */
+    .sprint-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .sprint-stage {
+      background: var(--surface-card);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+    @media (max-width: 760px) {
+      .sprint-stage { grid-template-columns: 1fr; }
+    }
+    .sprint-prompt-bad {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--rose-bright);
+      margin-bottom: 8px;
+    }
+    .sprint-hint {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .sprint-upgrade-box {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+      display: none;
+    }
+    .sprint-upgrade-box.show {
+      display: block;
+    }
+
+    /* LEXICON GRID */
+    .lex-filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .filter-pill {
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: var(--surface-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .filter-pill.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+    .lex-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 500px) {
+      .lex-grid { grid-template-columns: 1fr; }
+    }
+    .lex-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all 0.18s ease;
+    }
+    .lex-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+    .lex-card.mastered {
+      border-color: var(--emerald);
+      background: linear-gradient(180deg, var(--surface-solid), var(--emerald-soft));
+    }
+    .lex-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .banned-tag {
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--rose-soft);
+      color: var(--rose-bright);
+      border: 1px solid var(--border-rose);
+      text-decoration: line-through;
+    }
+    .jp-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      background: var(--gold-soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .lex-term {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--emerald-bright);
+      margin-top: 6px;
+    }
+    .lex-ipa {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--text-dim);
+    }
+    .lex-def {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+    .lex-example {
+      font-size: 0.83rem;
+      padding: 10px 12px;
+      background: var(--surface-card);
+      border-left: 3px solid var(--gold);
+      border-radius: 6px;
+      color: var(--text);
+      font-style: italic;
+    }
+    .lex-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* TAB 2: HIDDEN TRAP DECODER CARDS */
+    .decoder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .decoder-grid { grid-template-columns: 1fr; }
+    }
+    .decoder-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+    .q-bubble {
+      background: var(--surface-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin: 12px 0 16px;
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .choice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .choice-btn {
+      font-family: inherit;
+      text-align: left;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .choice-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .choice-btn.correct {
+      background: var(--emerald-soft);
+      border-color: var(--emerald);
+      color: var(--emerald-bright);
+      font-weight: 800;
+    }
+    .choice-btn.wrong {
+      background: var(--rose-soft);
+      border-color: var(--rose);
+      color: var(--rose-bright);
+    }
+    .decoder-reveal {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-strong);
+    }
+    .decoder-reveal.show {
+      display: block;
+    }
+    .strategy-box {
+      padding: 12px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+    }
+    .strategy-box.trap {
+      background: var(--rose-soft);
+      border: 1px solid var(--border-rose);
+    }
+    .strategy-box.win {
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+    }
+
+    /* TAB 3: HOT SEAT ARENA (2-COLUMN WHEEL + LIVE COACHING DECK) */
+    .arena-layout {
+      display: grid;
+      grid-template-columns: 470px 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+    @media (max-width: 1100px) {
+      .arena-layout { grid-template-columns: 1fr; }
+    }
+    .wheel-panel {
+      background: radial-gradient(circle at center, #16243d 0%, #09101d 100%);
+      border: 2px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow);
+      color: #f8fafc;
+    }
+    .wheel-wrap {
+      position: relative;
+      width: 390px;
+      height: 390px;
+      margin: 12px 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 480px) {
+      .wheel-wrap { width: 300px; height: 300px; }
+    }
+    #hotSeatWheel {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 6px solid #fbbf24;
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.35);
+      transition: transform 3.6s cubic-bezier(0.14, 0.82, 0.18, 1);
+    }
+    .wheel-pointer {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 28px solid #f43f5e;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+      z-index: 10;
+    }
+    .wheel-center-btn {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      border: 4px solid #fff;
+      color: #070d19;
+      font-weight: 900;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      z-index: 8;
+    }
+    .wheel-center-btn:hover {
+      transform: scale(1.06);
+    }
+
+    /* HOT SEAT RIGHT DECK */
+    .hotseat-deck {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+    .question-stage-box {
+      background: var(--surface-card);
+      border: 2px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+    }
+    .q-cat-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--gold-soft);
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+    .live-question-text {
+      font-size: 1.28rem;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .interviewer-whisper {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      padding: 8px 12px;
+      background: rgba(56, 189, 248, 0.09);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+    }
+
+    /* TIMER & STAR-L TRACKER BAR */
+    .timer-bar-wrap {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .timer-readout {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+      min-width: 90px;
+    }
+    .starl-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .starl-step {
+      flex: 1;
+      min-width: 115px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .starl-step.checked {
+      background: var(--emerald-soft);
+      border-color: var(--emerald);
+    }
+    .starl-letter {
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--gold-bright);
+    }
+    .starl-step.checked .starl-letter {
+      color: var(--emerald-bright);
+    }
+    .starl-desc {
+      font-size: 0.74rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* TARGET VOCAB CHIPS & CRUTCH BUZZER */
+    .chip-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 18px;
+    }
+    .target-chip {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--emerald-soft);
+      color: var(--emerald-bright);
+      border: 1px solid var(--border-emerald);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .target-chip.hit {
+      background: var(--emerald);
+      color: #042f2e;
+      font-weight: 800;
+      transform: scale(1.04);
+    }
+    .crutch-chip {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--rose-soft);
+      color: var(--rose-bright);
+      border: 1px solid var(--border-rose);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .crutch-chip:hover {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    .curveball-box {
+      display: none;
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.16), rgba(168, 85, 247, 0.14));
+      border: 1px solid var(--border-rose);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .curveball-box.show { display: block; }
+
+    .model-answer-box {
+      display: none;
+      background: var(--surface-card);
+      border: 1px solid var(--border-emerald);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+    .model-answer-box.show { display: block; }
+
+    /* TAB 4: TEARDOWN & RECAST CARDS */
+    .teardown-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+    @media (max-width: 860px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .answer-pane {
+      padding: 16px 18px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+    .answer-pane.weak {
+      background: var(--rose-soft);
+      border: 1px solid var(--border-rose);
+    }
+    .answer-pane.strong {
+      background: var(--emerald-soft);
+      border: 1px solid var(--border-emerald);
+    }
+    .flaw-highlight {
+      background: rgba(244, 63, 94, 0.28);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 700;
+      border-bottom: 2px dotted var(--rose-bright);
+    }
+    .power-highlight {
+      background: rgba(16, 185, 129, 0.25);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--emerald-bright);
+    }
+
+    /* TAB 5: REVERSE INTERVIEWING */
+    .reverse-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+      gap: 18px;
+    }
+    @media (max-width: 640px) {
+      .reverse-grid { grid-template-columns: 1fr; }
+    }
+    .reverse-card {
+      background: var(--surface-solid);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    /* TOAST NOTIFICATION */
+    #toastBox {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .toast-item {
+      background: #0f172a;
+      color: #f8fafc;
+      border-left: 4px solid var(--gold);
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      font-size: 0.85rem;
+      font-weight: 700;
+      max-width: 380px;
+      animation: fadeIn 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY TOP HUD -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="brand-cluster">
+        <div class="brand-icon">🍱</div>
+        <div>
+          <div class="brand-title">
+            OishiiBox D2C — Executive Interview Arena
+            <span class="role-pill">Candidate Hot Seat: YH</span>
+          </div>
+          <div class="brand-sub">Target Role: VP of Commercial Growth & APAC E-Commerce | Preply Interactive Coaching Suite</div>
+        </div>
+      </div>
+
+      <div class="hud-cluster">
+        <div class="hud-stat gold" title="Executive Authority Points earned from vocabulary & STAR-L structure">
+          <span>🏆 Executive Score:</span>
+          <span class="val" id="hudScore">0</span>
+        </div>
+        <div class="hud-stat" title="Tier-3 Executive Collocations deployed in context">
+          <span>💎 Vocab Deployed:</span>
+          <span class="val" id="hudVocab">0 / 16</span>
+        </div>
+        <div class="hud-stat rose" title="Times caught using passive 'We' or Tier-1 crutch words">
+          <span>🚨 Crutch Alerts:</span>
+          <span class="val" id="hudBuzzer">0</span>
+        </div>
+        <a class="btn btn-gold" href="japanese-meal-prep-game.html">🕹️ Play 4-in-1 Game</a>
+        <button class="btn" onclick="toggleTheme()" id="themeBtn">☀️ Light Mode</button>
+        <a class="btn" href="index.html">🏛️ Main Sanctuary</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 5-PHASE LESSON TABS -->
+  <nav class="tab-bar">
+    <div class="tab-bar-inner">
+      <button class="tab-btn active" onclick="switchTab('tab1', this)">
+        🍱 1. Company Dossier & Lexicon <span class="tab-time">00–10m</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab2', this)">
+        🕵️‍♂️ 2. Hidden Question Decoder <span class="tab-time">10–20m</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab3', this)">
+        🎡 3. Candidate Hot-Seat Spinner <span class="tab-time">20–38m</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab4', this)">
+        ⚡ 4. Weak vs. Boardroom Recasts <span class="tab-time">38–45m</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab5', this)">
+        ♟️ 5. Reverse-Interview the CEO <span class="tab-time">45–50m</span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ======================================================================
+         TAB 1: THE COMPANY DOSSIER, WARM-UP SPRINT & 16-TERM MEAL-PREP LEXICON
+         ====================================================================== -->
+    <section id="tab1" class="tab-panel active">
+      <div class="dossier-hero">
+        <div class="dossier-grid">
+          <div>
+            <span class="kicker-badge">📋 Confidential Candidate Briefing • Series B D2C Scale-Up</span>
+            <h1 class="dossier-title">Welcome to Your Final-Round Interview at <span style="color:#fbbf24;">OishiiBox (美味しいボックス)</span></h1>
+            <p class="dossier-desc">
+              <strong>The Company:</strong> OishiiBox is a fast-scaling direct-to-consumer (D2C) subscription company delivering chef-crafted, macro-balanced Japanese meal-prep bentos (flash-frozen & chilled: <em>Miso-Glazed Saba, Koji Chicken Breast, Yuzu-Kosho Salmon, High-Protein Wagyu Soboro</em>) across Singapore & APAC.
+            </p>
+            <p class="dossier-desc" style="margin-bottom:0;">
+              <strong>Why the CEO & Board Are Interviewing YH Today:</strong> They love your APAC e-commerce track record (<strong>240% YoY expansion</strong> and leading <strong>100+ personnel</strong>). However, they want to test whether your retail skills translate to <strong>perishable subscription unit economics, cold-chain margins, and Month-2 churn reduction</strong>.
+            </p>
+          </div>
+
+          <div class="kpi-strip">
+            <div class="kpi-card">
+              <div class="kpi-label">Month-2 Subscription Churn</div>
+              <div class="kpi-val" style="color:#fb7185;">34% Drop-Off</div>
+              <div class="kpi-sub">Customers get "menu fatigue" after Week 4 or abuse intro discounts.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Catalog Efficiency</div>
+              <div class="kpi-val">48 Bento SKUs</div>
+              <div class="kpi-sub">Top 12 hero bowls drive 78% of revenue; bottom 20 cause kitchen spoilage.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Cold-Chain & Fulfillment</div>
+              <div class="kpi-val" style="color:#38bdf8;">28% of Revenue</div>
+              <div class="kpi-sub">Dry-ice & chilled courier costs compress gross margin on small boxes.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Org Structure</div>
+              <div class="kpi-val" style="color:#34d399;">110 Staff (4 Silos)</div>
+              <div class="kpi-sub">Central Kitchen, Growth Marketing, E-Com Tech, and Cold-Chain Ops.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 60-SECOND WARM-UP SPRINT -->
+      <div class="sprint-card">
+        <div class="sec-head" style="margin-bottom:6px;">
+          <div>
+            <div class="sec-title">⚡ Phase 1 Warm-Up: The 5-Second Meal-Prep Recast Sprint</div>
+            <div class="sec-sub">Ban Tier-1 crutch words immediately. Read the basic sentence below and recast it into C-suite interview English before revealing the model!</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn" onclick="prevSprint()">◀ Prev</button>
+            <span id="sprintCounter" class="hud-stat" style="font-family:'JetBrains Mono',monospace;">1 / 6</span>
+            <button class="btn btn-gold" onclick="nextSprint()">Next Trigger ▶</button>
+          </div>
+        </div>
+
+        <div class="sprint-stage">
+          <div>
+            <div class="sprint-prompt-bad" id="sprintBad">❌ Basic Candidate: "Many customers buy our Japanese bento once with a cheap coupon, and then they stop buying in the second month."</div>
+            <div class="sprint-hint" id="sprintHint">🎯 <strong>Target Keys to Use:</strong> <em>promotional discount hunters • second-month subscription churn • Lifetime Value (LTV)</em></div>
+            <div class="sprint-upgrade-box" id="sprintUpgradeBox">
+              <div style="font-size:0.76rem; font-weight:800; text-transform:uppercase; color:var(--emerald-bright); margin-bottom:4px;">💎 Boardroom Recast (Click Audio to Compare Cadence):</div>
+              <div id="sprintGood" style="font-weight:700; font-size:0.96rem;">"Heavy intro discounting is attracting promotional discount-hunters, which accelerates second-month subscription churn and erodes our customer Lifetime Value (LTV)."</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; min-width:185px;">
+            <button class="btn btn-emerald" onclick="revealSprint()">👁️ Reveal Upgrade</button>
+            <button class="btn" onclick="speakText(document.getElementById('sprintGood').innerText)">🔊 Listen UK Voice</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16-TERM INTERACTIVE LEXICON -->
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">📚 The 16-Term Japanese Meal-Prep & Executive Interview Lexicon</div>
+          <div class="sec-sub">Click <strong>"🔊 Audio"</strong> to hear stress-timed pronunciation, or <strong>"✅ Mark Deployed"</strong> whenever YH uses the term in a sentence.</div>
+        </div>
+        <div class="lex-filter-bar" style="margin-bottom:0;">
+          <button class="filter-pill active" onclick="filterLex('all', this)">All 16 Terms</button>
+          <button class="filter-pill" onclick="filterLex('economics', this)">📊 Subscription & Unit Economics</button>
+          <button class="filter-pill" onclick="filterLex('ops', this)">🍱 Bento Catalog & Cold-Chain</button>
+          <button class="filter-pill" onclick="filterLex('leadership', this)">🏛️ Executive Agency & STAR-L</button>
+        </div>
+      </div>
+
+      <div class="lex-grid" id="lexGrid"></div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 2: "WHAT THEY ASK VS. WHAT THEY REALLY MEAN" — DECODER LAB
+         ====================================================================== -->
+    <section id="tab2" class="tab-panel">
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">🕵️‍♂️ What They Ask vs. What They REALLY Mean (The Subtext Decoder)</div>
+          <div class="sec-sub">In C-suite interviews, every question masks a hidden commercial anxiety. Step 1: YH diagnoses the interviewer's hidden fear. Step 2: Unlock the winning boardroom frame.</div>
+        </div>
+      </div>
+
+      <div class="decoder-grid" id="decoderGrid"></div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 3: CANDIDATE HOT-SEAT SPINNER & LIVE PRESSURE ARENA
+         ====================================================================== -->
+    <section id="tab3" class="tab-panel">
+      <div class="arena-layout">
+        <!-- LEFT: CASINO / BOARDROOM SPIN WHEEL -->
+        <div class="wheel-panel">
+          <div style="font-size:0.74rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#fbbf24;">OishiiBox Final Round</div>
+          <div style="font-size:1.3rem; font-weight:900; margin-bottom:4px; text-align:center;">Candidate Hot-Seat Wheel</div>
+          <div style="font-size:0.8rem; color:#94a3b8; text-align:center; margin-bottom:6px;">Spin for a live Behavioral, Commercial Case, or CEO Curveball question</div>
+
+          <div class="wheel-wrap">
+            <div class="wheel-pointer"></div>
+            <canvas id="hotSeatWheel" width="420" height="420"></canvas>
+            <button class="wheel-center-btn" onclick="spinHotSeatWheel()">SPIN<br>🔥 SEAT</button>
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; width:100%;">
+            <button class="btn btn-gold" onclick="spinHotSeatWheel()" style="flex:1; justify-content:center;">🎰 Spin Random Question</button>
+            <button class="btn" onclick="nextQuestionSequential()" style="background:#1e293b; color:#fff; border-color:#475569;">⏭️ Next in Deck</button>
+          </div>
+
+          <div style="margin-top:16px; width:100%; border-top:1px solid rgba(255,255,255,0.12); padding-top:12px;">
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:#94a3b8; margin-bottom:8px;">Or Jump Directly to Question # (1–10):</div>
+            <div id="qQuickButtons" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: LIVE QUESTION COACHING DECK -->
+        <div class="hotseat-deck">
+          <div class="question-stage-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <span class="q-cat-badge" id="liveQCat">Category A • STAR-L Behavioral Proof</span>
+              <div style="display:flex; gap:8px;">
+                <button class="btn" onclick="speakText(document.getElementById('liveQText').innerText)">🔊 Hear Interviewer Ask</button>
+                <button class="btn" onclick="copyQuestionToChat()">📋 Copy Q to Preply Chat</button>
+              </div>
+            </div>
+            <div class="live-question-text" id="liveQText">"Wait for the spin or select Question #1..."</div>
+            <div class="interviewer-whisper" id="liveQWhisper">💡 <strong>Interviewer's Hidden Angle:</strong> Click Spin to load your first Japanese Meal-Prep executive question.</div>
+          </div>
+
+          <!-- COUNTDOWN TIMER BAR -->
+          <div class="timer-bar-wrap">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <div class="timer-readout" id="timerDisplay">01:30</div>
+              <div>
+                <div style="font-size:0.8rem; font-weight:800;">Executive Response Timer</div>
+                <div style="font-size:0.74rem; color:var(--text-dim);">Aim for 60–90s structured delivery (Zero rambling)</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button class="btn btn-emerald" onclick="startTimer()" id="timerStartBtn">▶ Start</button>
+              <button class="btn" onclick="pauseTimer()">⏸ Pause</button>
+              <button class="btn" onclick="setTimerPreset(90)">90s STAR-L</button>
+              <button class="btn" onclick="setTimerPreset(60)">60s Pitch</button>
+              <button class="btn" onclick="setTimerPreset(45)">45s Blitz</button>
+            </div>
+          </div>
+
+          <!-- STAR-L LIVE CHECKLIST -->
+          <div style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--text-dim); margin-bottom:6px;">
+            ✅ Live STAR-L / PREP Architecture Tracker (Click each pillar as YH hits it):
+          </div>
+          <div class="starl-pills">
+            <div class="starl-step" onclick="toggleStarl(this)">
+              <div class="starl-letter">[S] Situation</div>
+              <div class="starl-desc">Macro context & timeframe</div>
+            </div>
+            <div class="starl-step" onclick="toggleStarl(this)">
+              <div class="starl-letter">[T] Mandate</div>
+              <div class="starl-desc">"My primary mandate was..."</div>
+            </div>
+            <div class="starl-step" onclick="toggleStarl(this)">
+              <div class="starl-letter">[A] "I Spearheaded"</div>
+              <div class="starl-desc">Personal agency (No "We"!)</div>
+            </div>
+            <div class="starl-step" onclick="toggleStarl(this)">
+              <div class="starl-letter">[R] Quantified KPI</div>
+              <div class="starl-desc">Hard % / revenue / churn metric</div>
+            </div>
+            <div class="starl-step" onclick="toggleStarl(this)">
+              <div class="starl-letter">[L] Takeaway</div>
+              <div class="starl-desc">Applied to OishiiBox today</div>
+            </div>
+          </div>
+
+          <!-- TARGET VOCABULARY CHIPS FOR THIS QUESTION -->
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--emerald-bright);">
+              🎯 Target Power Collocations (Tap as YH uses them in his answer):
+            </span>
+            <span style="font-size:0.76rem; color:var(--text-dim);" id="qChipProgress">0 / 5 used</span>
+          </div>
+          <div class="chip-bank" id="liveVocabChips"></div>
+
+          <!-- BANNED CRUTCH-WORD BUZZER BAR -->
+          <div style="background:var(--surface-card); border:1px solid var(--border); border-radius:12px; padding:12px 15px; margin-bottom:16px;">
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--rose-bright); margin-bottom:8px;">
+              🚨 Live Crutch-Word & "Passive We" Buzzer (Tap if YH slips—copies instant recast to chat!):
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('Passive We (\"We analyzed / We did\")', 'I spearheaded / My primary mandate was / I instituted')">🚫 "We did / We analyzed..."</button>
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('\"Put more items / Many items\"', 'Onboard high-margin hero SKUs / Rationalize our bento catalog')">🚫 "Put more items"</button>
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('\"Useless things\"', 'Low-yield channels that dilute operational bandwidth')">🚫 "Useless things"</button>
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('\"Good cospa / Cheap price\"', 'Compelling unit economics / High perceived value-to-price ratio')">🚫 "Good cospa / Cheap"</button>
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('\"Subordinates grow up\"', 'Foster my team\'s professional development & autonomy')">🚫 "Subordinates grow up"</button>
+              <button class="crutch-chip" onclick="triggerCrutchBuzzer('\"Many people stop buying\"', 'Elevated second-month subscription churn / Cohort drop-off')">🚫 "People stop buying"</button>
+            </div>
+          </div>
+
+          <!-- ACTION BUTTONS: CEO CURVEBALL & MODEL ANSWER -->
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-rose" onclick="toggleBox('liveCurveballBox')">🔥 Drop 30s CEO Follow-Up Twist!</button>
+            <button class="btn btn-emerald" onclick="toggleBox('liveModelBox')">💎 Show C-Suite Model Answer</button>
+          </div>
+
+          <div class="curveball-box" id="liveCurveballBox">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:0.76rem; font-weight:900; text-transform:uppercase; color:var(--rose-bright);">🔥 Live CEO Interruption / Pushback (Read Aloud to Pressure-Test YH!):</span>
+              <button class="btn" style="padding:4px 10px; font-size:0.75rem;" onclick="speakText(document.getElementById('liveCurveballText').innerText)">🔊 Speak Twist</button>
+            </div>
+            <div id="liveCurveballText" style="font-weight:800; font-size:0.98rem; margin-bottom:6px;"></div>
+            <div id="liveCurveballTip" style="font-size:0.83rem; color:var(--text-muted);"></div>
+          </div>
+
+          <div class="model-answer-box" id="liveModelBox">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <span style="font-size:0.76rem; font-weight:900; text-transform:uppercase; color:var(--emerald-bright);">💎 Model Executive Response (B2/C1 Benchmark):</span>
+              <button class="btn" style="padding:4px 10px; font-size:0.75rem;" onclick="speakText(document.getElementById('liveModelText').innerText)">🔊 Listen Model</button>
+            </div>
+            <div id="liveModelText" style="font-size:0.92rem; line-height:1.65;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 4: WEAK VS. BOARDROOM RECAST LAB (SIDE-BY-SIDE TEARDOWNS)
+         ====================================================================== -->
+    <section id="tab4" class="tab-panel">
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">⚡ Weak Candidate vs. Boardroom Partner — Live Answer Teardowns</div>
+          <div class="sec-sub">Compare how an average intermediate candidate answers vs. how a VP of Commercial Growth answers using YH's actual strengths (240% growth, 70/30 rule, SKU audits).</div>
+        </div>
+      </div>
+
+      <div id="teardownList"></div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 5: FLIP THE SCRIPT — REVERSE-INTERVIEWING THE CEO
+         ====================================================================== -->
+    <section id="tab5" class="tab-panel">
+      <div class="sec-head">
+        <div>
+          <div class="sec-title">♟️ Flip the Script: High-Status Questions YH Should Ask the CEO</div>
+          <div class="sec-sub">When the interviewer says <em>"Do you have any questions for us?"</em>, never ask generic HR questions. Ask diagnostic C-suite questions that prove you already think like their VP of Growth.</div>
+        </div>
+      </div>
+
+      <div class="reverse-grid" id="reverseGrid"></div>
+
+      <!-- ROLE REVERSAL FINALE CHALLENGE -->
+      <div class="dossier-hero" style="margin-top:26px; border-color:var(--border-emerald);">
+        <span class="kicker-badge" style="background:var(--emerald-soft); color:var(--emerald-bright); border-color:var(--border-emerald);">🎙️ Final 5-Minute Role-Switch Showdown</span>
+        <h2 style="font-size:1.4rem; font-weight:900; margin-bottom:8px; color:#fff;">Put Louie in the Hot Seat! (YH = OishiiBox CEO • Louie = Candidate)</h2>
+        <p style="font-size:0.92rem; color:#cbd5e1; margin-bottom:14px;">
+          To cement today's question structures, switch roles for the final 5 minutes! <strong>YH plays the tough Founder/CEO of OishiiBox</strong> and grills Louie with 2 sharp follow-up questions about <em>cold-chain spoilage</em> or <em>subscription churn</em>. YH must listen critically and judge whether Louie's answer uses concrete metrics or vague fluff!
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-gold" onclick="celebrateLessonWin()">🎉 Complete Lesson & Trigger Executive Victory Confetti</button>
+          <button class="btn" onclick="copyHomeworkSummary()">📋 Copy Homework Prompt for Preply Chat</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toastBox"></div>
+
+  <script>
+    /* ==========================================================================
+       DATA STORE 1: 6 RAPID WARM-UP SPRINT TRIGGERS
+       ========================================================================== */
+    const SPRINT_DATA = [
+      {
+        bad: '❌ Basic Candidate: "Many customers buy our Japanese bento once with a cheap coupon, and then they stop buying in the second month."',
+        hint: '🎯 Target Keys: promotional discount-hunters • second-month subscription churn • Customer Lifetime Value (LTV)',
+        good: '"Heavy intro discounting is attracting promotional discount-hunters, which accelerates second-month subscription churn and erodes our Customer Lifetime Value."'
+      },
+      {
+        bad: '❌ Basic Candidate: "We have 48 bento boxes on our website, so we should delete the bad ones that don\'t sell well and waste food."',
+        hint: '🎯 Target Keys: SKU rationalization • low-velocity seasonal bowls • mitigate cold-chain spoilage',
+        good: '"I would spearhead a rigorous SKU rationalization to sunset low-velocity bowls, concentrate kitchen bandwidth on our hero items, and mitigate cold-chain spoilage."'
+      },
+      {
+        bad: '❌ Basic Candidate: "We always looked at the sales data and we grew the APAC business by 240% last year."',
+        hint: '🎯 Target Keys: I spearheaded • combined qualitative and quantitative insights • delivered 240% YoY expansion',
+        good: '"In my previous APAC mandate, I spearheaded a granular catalog audit, combined qualitative and quantitative insights, and directly delivered 240% year-on-year revenue expansion."'
+      },
+      {
+        bad: '❌ Basic Candidate: "If something bad happens in the kitchen or delivery, I tell my boss quickly so he is not surprised."',
+        hint: '🎯 Target Keys: eliminate information asymmetry • 70/30 upward reporting rule • proactive mitigation options',
+        good: '"To eliminate information asymmetry, I apply the 70/30 upward reporting rule—escalating operational bottlenecks early alongside concrete mitigation options."'
+      },
+      {
+        bad: '❌ Basic Candidate: "Delivery with dry ice is very expensive, so we need customers to buy more bentos in one box."',
+        hint: '🎯 Target Keys: cold-chain fulfillment overhead • expand Average Order Value (AOV) • high-margin add-on bundles',
+        good: '"To offset cold-chain fulfillment overhead, we must expand Average Order Value by cross-selling high-margin add-on bundles like artisanal miso soups and matcha."'
+      },
+      {
+        bad: '❌ Basic Candidate: "I don\'t check every small thing my 100 staff do because I want my subordinates to grow up."',
+        hint: '🎯 Target Keys: avoid micromanagement • high-trust autonomous delegation • foster professional development',
+        good: '"Rather than micromanaging 100 personnel, I practice high-trust autonomous delegation across my regional directors to foster their professional development."'
+      }
+    ];
+
+    /* ==========================================================================
+       DATA STORE 2: 16-TERM JAPANESE MEAL-PREP & EXECUTIVE INTERVIEW LEXICON
+       ========================================================================== */
+    const LEXICON_DATA = [
+      {
+        id: 'churn',
+        cat: 'economics',
+        banned: 'People stop buying',
+        jp: '解約率 / チャーンレート',
+        term: 'Subscription churn (vs. Retention)',
+        ipa: '/səbˈskrɪp.ʃən tʃɜːn/',
+        def: 'The percentage of meal-prep subscribers who cancel their recurring weekly box within a given period.',
+        ex: '"Our primary commercial bottleneck is a 34% Month-2 subscription churn driven by menu fatigue."'
+      },
+      {
+        id: 'unit_econ',
+        cat: 'economics',
+        banned: 'Good cospa / Profit per box',
+        jp: 'ユニットエコノミクス (1顧客あたりの採算性)',
+        term: 'Unit economics (LTV : CAC ratio)',
+        ipa: '/ˈjuː.nɪt ˌiː.kəˈnɒm.ɪks/',
+        def: 'The direct revenues and costs (ingredients, packaging, cold-chain delivery, ad spend) associated with a single subscriber.',
+        ex: '"Before scaling Meta ad spend, we must fix our unit economics so Customer Lifetime Value exceeds acquisition cost by at least 3x."'
+      },
+      {
+        id: 'sku_rat',
+        cat: 'ops',
+        banned: 'Cut bad bento items',
+        jp: 'SKUの最適化・統廃合',
+        term: 'SKU rationalization',
+        ipa: '/ˌes.keɪˈjuː ˌræʃ.ən.əl.aɪˈzeɪ.ʃən/',
+        def: 'Auditing product lines to discontinue slow-selling, high-spoilage items and focus on high-margin bestsellers.',
+        ex: '"By executing a disciplined SKU rationalization, we reduced kitchen prep complexity by 30% while lifting gross margin."'
+      },
+      {
+        id: 'hero_sku',
+        cat: 'ops',
+        banned: 'Best-selling bento',
+        jp: '主力・高収益商品 (ヒーローSKU)',
+        term: 'High-margin hero SKUs',
+        ipa: '/haɪ ˈmɑː.dʒɪn ˈhɪə.rəʊ ˌes.keɪˈjuːz/',
+        def: 'Signature flagship dishes (e.g., Miso Saba or Wagyu Soboro) that drive the majority of repeat orders and profit.',
+        ex: '"I isolated our top 12 high-margin hero SKUs and built our customer acquisition funnels exclusively around them."'
+      },
+      {
+        id: 'cold_chain',
+        cat: 'ops',
+        banned: 'Frozen delivery cost',
+        jp: 'コールドチェーン物流・鮮度管理',
+        term: 'Cold-chain logistics & spoilage',
+        ipa: '/ˈkəʊld.tʃeɪn ləˈdʒɪs.tɪks/',
+        def: 'Temperature-controlled supply chain and delivery required to keep Japanese meal-prep safe, fresh, and profitable.',
+        ex: '"Last-mile cold-chain logistics currently consume 28% of revenue, requiring us to optimize box density."'
+      },
+      {
+        id: 'menu_fatigue',
+        cat: 'ops',
+        banned: 'Bored of the same food',
+        jp: 'メニュー飽き (定期便のマンネリ化)',
+        term: 'Menu fatigue',
+        ipa: '/ˈmen.juː fəˈtiːɡ/',
+        def: 'When recurring meal-prep subscribers cancel because the weekly rotation feels repetitive.',
+        ex: '"To combat Week-4 menu fatigue without bloating our kitchen inventory, we introduced rotating seasonal tare sauces."'
+      },
+      {
+        id: 'aov',
+        cat: 'economics',
+        banned: 'Buy more in one order',
+        jp: '平均注文単価 (AOV)',
+        term: 'Expand Average Order Value (AOV)',
+        ipa: '/ˈæv.ər.ɪdʒ ˈɔː.dər ˈvæl.juː/',
+        def: 'Increasing the dollar amount spent per delivery box via bundles, premium proteins, or side dishes.',
+        ex: '"Because courier fees are fixed per box, expanding AOV from $68 to $85 directly boosts net margin."'
+      },
+      {
+        id: 'cohort',
+        cat: 'economics',
+        banned: 'Check customer groups',
+        jp: 'コホート分析 (顧客層別継続率)',
+        term: 'Cohort retention analysis',
+        ipa: '/ˈkəʊ.hɔːt rɪˈten.ʃən əˈnæl.ə.sɪs/',
+        def: 'Tracking specific groups of subscribers over time (e.g., Week 1 vs. Week 8) to pinpoint exactly when and why they cancel.',
+        ex: '"Our cohort retention analysis revealed that subscribers who customize their first box retain 42% longer."'
+      },
+      {
+        id: 'spearhead',
+        cat: 'leadership',
+        banned: 'We did / I was in charge of',
+        jp: '陣頭指揮を執る・主導する',
+        term: 'Spearhead a turnaround',
+        ipa: '/ˈspɪə.hed ə ˈtɜːn.ə.raʊnd/',
+        def: 'To personally lead and drive a strategic initiative or business recovery from the front.',
+        ex: '"In Q2, I spearheaded the APAC commercial turnaround, lifting regional e-commerce revenue by 240%."'
+      },
+      {
+        id: 'bandwidth',
+        cat: 'leadership',
+        banned: 'Split resources to useless things',
+        jp: '組織の稼働余力・リソース',
+        term: 'Dilute operational bandwidth',
+        ipa: '/daɪˈluːt ˌɒp.ərˈeɪ.ʃən.əl ˈbænd.wɪtθ/',
+        def: 'Wasting team time and energy across too many low-impact tasks instead of core growth drivers.',
+        ex: '"Eliminating 15 underperforming SKUs ensured we didn\'t dilute operational bandwidth across low-yield dishes."'
+      },
+      {
+        id: 'asymmetry',
+        cat: 'leadership',
+        banned: 'Boss doesn\'t know what happened',
+        jp: '情報の非対称性 (70/30ルール)',
+        term: 'Mitigate information asymmetry',
+        ipa: '/ˈmɪt.ɪ.ɡeɪt ˌɪn.fəˈmeɪ.ʃən æˌsɪm.ə.tri/',
+        def: 'Bridging the gap between frontline operational reality and the CEO\'s strategic priorities via proactive 70/30 reporting.',
+        ex: '"I mitigate information asymmetry with the founder by dedicating 30% of every sync to latent risks and pre-built solutions."'
+      },
+      {
+        id: 'circuit_breaker',
+        cat: 'leadership',
+        banned: 'Check before big mistake',
+        jp: '中間品質ゲート・安全装置',
+        term: 'Install a midpoint circuit breaker',
+        ipa: '/ˈsɜː.kɪt ˈbreɪ.kər/',
+        def: 'A mandatory 50%-mark quality check to catch strategic misalignment before a campaign or kitchen rollout goes live.',
+        ex: '"When delegating to regional leads, I install a midpoint circuit breaker at 50% completion to verify quality alignment."'
+      },
+      {
+        id: 'foster_dev',
+        cat: 'leadership',
+        banned: 'Help subordinates grow up',
+        jp: '部下の専門的成長を育成する',
+        term: 'Foster professional development',
+        ipa: '/ˈfɒs.tər prəˈfeʃ.ən.əl dɪˈvel.əp.mənt/',
+        def: 'Cultivating the career skills and strategic judgment of your team members (never say "grow up" for adults!).',
+        ex: '"My leadership philosophy centers on fostering my directors\' professional development through high-trust autonomy."'
+      },
+      {
+        id: 'qual_quant',
+        cat: 'economics',
+        banned: 'Look at numbers and comments',
+        jp: '定性的・定量的データの統合',
+        term: 'Synthesize qualitative & quantitative data',
+        ipa: '/ˈsɪn.θə.saɪz ˈkwɒl.ɪ.tə.tɪv ænd ˈkwɒn.tɪ.tə.tɪv/',
+        def: 'Combining hard metrics (conversion, churn %) with customer feedback (taste reviews, unboxing survey) to drive decisions.',
+        ex: '"I synthesize quantitative order data with qualitative taste feedback to refine our bento value proposition."'
+      },
+      {
+        id: 'cannibalize',
+        cat: 'economics',
+        banned: 'Steal our own sales',
+        jp: '自社競合する (カニバリゼーション)',
+        term: 'Cannibalize core margins',
+        ipa: '/ˈkæn.ɪ.bəl.aɪz kɔː ˈmɑː.dʒɪnz/',
+        def: 'When a new discount tier or promo item steals full-price sales from your existing profitable products.',
+        ex: '"We must structure our trial box carefully so we don\'t cannibalize core margins from full-price subscribers."'
+      },
+      {
+        id: 'cross_func',
+        cat: 'ops',
+        banned: 'Work together with other teams',
+        jp: '部門横断的な連携',
+        term: 'Cross-functional alignment',
+        ipa: '/krɒs ˈfʌŋk.ʃən.əl əˈlaɪn.mənt/',
+        def: 'Synchronizing Culinary R&D, Cold-Chain Logistics, and Performance Marketing around shared KPIs.',
+        ex: '"In meal-prep D2C, growth requires tight cross-functional alignment between ad forecasting and central kitchen capacity."'
+      }
+    ];
+
+    /* ==========================================================================
+       DATA STORE 3: TAB 2 — 6 HIDDEN INTERVIEW TRAP DECODERS
+       ========================================================================== */
+    const DECODER_DATA = [
+      {
+        num: 1,
+        question: '"Your track record in APAC retail e-commerce is impressive, YH—but you haven\'t run a perishable food or meal-prep business before. Why should we take a risk on you?"',
+        options: [
+          { text: 'A) They want to know if you enjoy cooking Japanese cuisine at home.', correct: false },
+          { text: 'B) Hidden Fear: They worry you only understand one-off retail purchases and won\'t grasp perishable spoilage, weekly recurring retention, and cold-chain unit economics.', correct: true },
+          { text: 'C) They want you to apologize humbly for lacking food industry certificates.', correct: false }
+        ],
+        trap: '❌ The Trap: Apologizing ("I\'m sorry I don\'t have food experience, I will study hard") or giving a consumer answer ("I love eating healthy Japanese bento").',
+        win: '💎 The Winning Frame: Bridge your 240% e-commerce scaling directly to D2C meal-prep mechanics: SKU velocity auditing, cohort retention, and supply-demand synchronization.',
+        model: '"While the product is perishable, the underlying commercial levers of D2C growth are identical to what I spearheaded across APAC. Scaling 240% required rigorous SKU rationalization, cohort retention analysis, and aligning marketing demand with inventory capacity—which directly solves OishiiBox\'s Month-2 churn and kitchen spoilage."'
+      },
+      {
+        num: 2,
+        question: '"Our Board wants to double subscriber volume in the next 12 months. How would you execute that?"',
+        options: [
+          { text: 'A) Hidden Fear: They are testing if you will recklessly burn cash on 50%-off Meta ads before fixing the 34% Month-2 leaky bucket (churn).', correct: true },
+          { text: 'B) They want you to promise a 500% growth target on day one without seeing the budget.', correct: false },
+          { text: 'C) They want you to design a new logo and TV commercial.', correct: false }
+        ],
+        trap: '❌ The Trap: Jumping straight into "spend more money on Facebook/TikTok ads and give bigger coupons" (which destroys LTV:CAC unit economics).',
+        win: '💎 The Winning Frame: Sequence your strategy: 1) Plug the Month-2 retention leak & menu fatigue, 2) Expand AOV via high-margin add-ons to cover cold-chain costs, 3) Scale paid acquisition only on proven hero SKUs.',
+        model: '"Pouring ad spend into a funnel with 34% Month-2 churn simply burns capital. First, I would stabilize cohort retention by solving Week-4 menu fatigue and onboarding subscribers onto our top 12 hero SKUs. Second, I\'d expand AOV with high-margin add-ons to absorb cold-chain costs. Once unit economics hit a 3x LTV-to-CAC ratio, we scale paid acquisition aggressively."'
+      },
+      {
+        num: 3,
+        question: '"Tell me about a time a major initiative or delegation you led went off-track. What happened?"',
+        options: [
+          { text: 'A) They want you to say you have never made a mistake in your career.', correct: false },
+          { text: 'B) They want you to blame a junior subordinate for being lazy.', correct: false },
+          { text: 'C) Hidden Fear: Do you hide bad news from the Board, or do you take ownership and install systemic circuit breakers so it never repeats?', correct: true }
+        ],
+        trap: '❌ The Trap: Using passive "we" to dodge responsibility or failing to show the systemic governance upgrade ([L] Learning) you installed afterward.',
+        win: '💎 The Winning Frame: Use STAR-L + your "Half-Goal Circuit Breaker" and 70/30 upward communication rule.',
+        model: '"Early in my regional leadership, I delegated a campaign brief with macro targets but waited until the final deadline to review execution—discovering late misalignment. I took full ownership, pivoted the launch within 48 hours, and instituted a permanent midpoint circuit breaker: now, at 50% completion, my leads run a 10-minute alignment check so discrepancies are caught before capital is wasted."'
+      },
+      {
+        num: 4,
+        question: '"Our Founder is deeply passionate about authentic washoku recipes and tends to micromanage marketing and kitchen teams. How would you work with him?"',
+        options: [
+          { text: 'A) Hidden Fear: Will you clash with the Founder\'s ego, or can you build enough upward trust (eliminating information asymmetry) that he willingly steps back?', correct: true },
+          { text: 'B) They want you to tell the Founder to stay out of the kitchen.', correct: false },
+          { text: 'C) They want you to wait passively for the Founder to approve every single email.', correct: false }
+        ],
+        trap: '❌ The Trap: Saying "I don\'t like micromanagement so I will ask him to stop" (sounds confrontational) or "I will just do whatever he says" (low executive status).',
+        win: '💎 The Winning Frame: Diagnose WHY founders micromanage: Information Asymmetry! Apply your 70/30 upward reporting rule and "put yourself in his shoes".',
+        model: '"Founders usually micromanage when they experience information asymmetry and fear losing quality control. By putting myself in his shoes, I would establish a structured 70/30 weekly briefing—70% confirming core KPIs and brand standards are protected, and 30% proactively flagging latent risks with pre-vetted options. Once he sees his culinary vision is safeguarded by data, he can comfortably delegate execution."'
+      },
+      {
+        num: 5,
+        question: '"We currently offer 48 different Japanese meal-prep bentos, and our chefs want to add 12 more next quarter. Do you agree with this move?"',
+        options: [
+          { text: 'A) Yes, because more items always equals more sales.', correct: false },
+          { text: 'B) Hidden Fear: Will you let SKU bloat dilute kitchen bandwidth and increase ingredient spoilage, or will you push back diplomatically with data?', correct: true },
+          { text: 'C) Ask the delivery drivers which bento they prefer.', correct: false }
+        ],
+        trap: '❌ The Trap: Saying "Yes, putting more items is good" or "No, the chefs are wrong."',
+        win: '💎 The Winning Frame: Diplomatic pushback backed by Pareto data (78% of revenue comes from 12 hero SKUs). Propose rotating seasonal "Limited Drops" instead of permanent SKU bloat.',
+        model: '"I appreciate the culinary team\'s creativity; however, from a unit-economics standpoint, expanding from 48 to 60 permanent SKUs will dilute kitchen bandwidth and accelerate ingredient spoilage. Since 12 hero SKUs already drive 78% of revenue, I would propose rationalizing the bottom 15 slow movers and channeling the chefs\' talent into 2 rotating monthly Limited-Edition Bentos—creating customer excitement without inventory bloat."'
+      },
+      {
+        num: 6,
+        question: '"If you join us as VP of Growth, how do you manage 100+ staff across 4 departments without losing speed?"',
+        options: [
+          { text: 'A) Hold a 2-hour daily meeting with all 110 employees.', correct: false },
+          { text: 'B) Hidden Fear: Can you scale through a multi-tiered span of control (4–5 department leads) with clear KPIs and autonomous accountability?', correct: true },
+          { text: 'C) Only manage the marketing team and ignore cold-chain operations.', correct: false }
+        ],
+        trap: '❌ The Trap: Using "grow up my subordinates" or sounding disconnected from operational bottlenecks.',
+        win: '💎 The Winning Frame: Articulate your multi-tiered span of control: setting macro strategic direction for the 4 department heads, granting high-trust autonomy, and using data dashboards for cross-functional alignment.',
+        model: '"Managing 100+ personnel effectively requires a disciplined span of control. Rather than micromanaging individual contributors, I align directly with the 4 department leads around shared unit-economic KPIs. I provide clear macro direction, empower them with autonomous execution authority, and foster their professional development through midpoint quality gates."'
+      }
+    ];
+
+    /* ==========================================================================
+       DATA STORE 4: TAB 3 — 10 CANDIDATE HOT-SEAT WHEEL QUESTIONS
+       ========================================================================== */
+    const HOTSEAT_QUESTIONS = [
+      {
+        num: 1,
+        shortLabel: '1. 240% Growth',
+        color: '#d97706',
+        cat: 'Category A • Behavioral STAR-L Proof',
+        q: '"Walk me through your proudest commercial achievement in APAC e-commerce, and explain exactly how you would replicate that playbook here at OishiiBox."',
+        whisper: '💡 Coach Note: Ban "we"! Force YH to say "I spearheaded...", quantify the 240% YoY surge, and connect his catalog audit to OishiiBox\'s 48 bento SKUs.',
+        vocab: ['spearhead a turnaround', 'synthesize qualitative & quantitative data', 'SKU rationalization', 'high-margin hero SKUs', 'dilute operational bandwidth'],
+        curveball: '"Hold on, YH—240% growth sounds great, but how much of that came from overall market tailwinds versus actions YOU personally initiated?"',
+        curveballTip: '👉 Coach YH to isolate his specific personal intervention (cutting low-yield brands & doubling down on top-velocity SKUs) while rival categories stayed flat.',
+        model: '"During our APAC expansion [S], my primary mandate was to turn around underperforming categories under strict budget constraints [T]. I spearheaded a forensic audit combining quantitative sales velocity with qualitative buyer feedback, rationalized low-yield channels so we didn\'t dilute operational bandwidth, and aggressively onboarded high-margin hero SKUs [A]. That directly delivered 240% YoY revenue growth [R]. At OishiiBox, I would apply this exact playbook to consolidate your 48 bentos around the 12 highest-retaining bowls [L]."'
+      },
+      {
+        num: 2,
+        shortLabel: '2. 34% Churn Fix',
+        color: '#059669',
+        cat: 'Category B • Japanese Meal-Prep Commercial Case',
+        q: '"Right now, 34% of our OishiiBox subscribers cancel after their second month. Without lowering our prices, how would you diagnose and cut that churn in half?"',
+        whisper: '💡 Coach Note: Look for PREP structure (Point → Reason → Example → Point) and meal-prep diagnostics (menu fatigue, cohort analysis, onboarding customization).',
+        vocab: ['subscription churn', 'cohort retention analysis', 'menu fatigue', 'synthesize qualitative & quantitative data', 'value proposition'],
+        curveball: '"What if our data shows people aren\'t canceling because of taste—they say their freezer is already full of unconsumed bentos?"',
+        curveballTip: '👉 Great meal-prep reality check! YH can propose flexible "Skip-a-Week / Pause or Downsize to a 6-Pack" friction-free buttons + consumption-reminder nudges so customers pause instead of canceling!',
+        model: '"My immediate priority would be running a cohort retention analysis to isolate whether Month-2 churn stems from menu fatigue or promotional discount-hunting [Point]. Discounting further only erodes unit economics [Reason]. For example, by synthesizing exit surveys with reorder data, we can introduce rotating seasonal sauces for our top 12 hero bentos and offer flexible box-sizing before Week 4 [Example]. This locks in recurring habit formation while protecting gross margin [Point]."'
+      },
+      {
+        num: 3,
+        shortLabel: '3. Cold-Chain Margin',
+        color: '#2563eb',
+        cat: 'Category B • Unit Economics & Pricing Pushback',
+        q: '"Cold-chain delivery with dry ice costs us $14 per box regardless of whether a customer orders 6 meals or 12 meals. How do you fix our gross margin?"',
+        whisper: '💡 Coach Note: Test YH\'s commercial acumen ("never leave money on the table" / expanding AOV / tiered shipping thresholds).',
+        vocab: ['cold-chain logistics & spoilage', 'expand Average Order Value (AOV)', 'unit economics (LTV : CAC ratio)', 'high-margin hero SKUs', 'cannibalize core margins'],
+        curveball: '"If we raise the minimum order size from 6 meals to 10 meals, won\'t our conversion rate for single office workers in Singapore drop?"',
+        curveballTip: '👉 Coach YH on tiered framing: keep the 6-meal entry box at a higher per-meal price, or bundle low-weight, high-margin add-ons (instant freeze-dried yuzu miso soup, ceremonial matcha packs, protein edamame) that add $18 to AOV with zero extra weight!',
+        model: '"Because cold-chain logistics represent a fixed cost per shipment, selling small 6-meal boxes compresses our unit economics. Rather than leaving money on the table, I would re-architect the checkout flow to expand Average Order Value—introducing a free-shipping threshold on 10-meal boxes and cross-selling lightweight, high-margin add-ons like artisanal miso broths and matcha. This absorbs courier overhead without cannibalizing conversion."'
+      },
+      {
+        num: 4,
+        shortLabel: '4. 70/30 Upward',
+        color: '#7c3aed',
+        cat: 'Category D • Upward Governance & CEO Alignment',
+        q: '"In a fast-moving D2C startup, bad news happens—like a contaminated salmon batch or a broken checkout page. How do you communicate bad news to the CEO?"',
+        whisper: '💡 Coach Note: Have YH showcase his signature strength from Oct 21: "Information Asymmetry" + "Putting myself in their shoes" + "The 70/30 Rule"!',
+        vocab: ['mitigate information asymmetry', 'install a midpoint circuit breaker', 'cross-functional alignment', 'dilute operational bandwidth', 'spearhead a turnaround'],
+        curveball: '"What if your cold-chain director asks you to wait 3 days before telling the CEO so he can try to fix the delivery delay quietly?"',
+        curveballTip: '👉 Never sit on latent risks! Escalate immediately with a mitigation plan while protecting psychological safety.',
+        model: '"Sitting on bad news creates dangerous information asymmetry between operations and the C-suite. My rule is to escalate critical bottlenecks immediately, but never bring a raw problem without viable mitigation options. In regular governance, I apply the 70/30 rule—70% validating KPI execution and 30% anticipating latent risks from the CEO\'s angle so leadership is never blindsided."'
+      },
+      {
+        num: 5,
+        shortLabel: '5. 100+ Staff Scale',
+        color: '#e11d48',
+        cat: 'Category D • Multi-Tiered Team Leadership',
+        q: '"You\'ve managed over 100 people before. At OishiiBox, our Marketing team blames the Kitchen for stockouts, and the Kitchen blames Marketing for unpredictable promos. How do you lead them?"',
+        whisper: '💡 Coach Note: Watch out for the "grow up" L1 slip! Prompt YH to use "foster professional development", "cross-functional alignment", and "midpoint circuit breakers".',
+        vocab: ['cross-functional alignment', 'foster professional development', 'install a midpoint circuit breaker', 'SKU rationalization', 'mitigate information asymmetry'],
+        curveball: '"One of your 4 department directors is a brilliant culinary chef, but he refuses to look at e-commerce spreadsheets. Do you fire him?"',
+        curveballTip: '👉 Don\'t fire high-talent specialists immediately—bridge the gap by translating raw spreadsheet metrics into 3 simple kitchen KPIs and pairing him with a commercial analyst.',
+        model: '"Departmental finger-pointing happens when teams operate in silos with conflicting KPIs. In leading 100+ staff, I establish cross-functional alignment by uniting my 4 department directors under shared unit-economic targets. I practice high-trust delegation to foster their professional development, while installing a midpoint circuit breaker two weeks before any promotional surge so Marketing demand and Central Kitchen capacity are 100% synchronized."'
+      },
+      {
+        num: 6,
+        shortLabel: '6. Rival Price War',
+        color: '#d97706',
+        cat: 'Category C • High-Pressure CEO Curveball',
+        q: '"A well-funded competitor just launched in Singapore selling Japanese bento subscriptions 25% cheaper than OishiiBox. Should we slash our prices to match them?"',
+        whisper: '💡 Coach Note: Test brand equity vs. price-war destruction. Why do busy executives buy Japanese meal prep? Convenience, clean macros, authentic Washoku quality!',
+        vocab: ['unit economics (LTV : CAC ratio)', 'cannibalize core margins', 'high-margin hero SKUs', 'subscription churn', 'synthesize qualitative & quantitative data'],
+        curveball: '"Our Board is panicking because our new-customer signups dropped 15% this week after their launch. They demand a 25% discount today. What do you say?"',
+        curveballTip: '👉 Stand firm with diplomatic assertiveness! Propose a targeted value-add bundle (free high-protein breakfast onigiri pack for new cohorts) rather than a permanent price cut.',
+        model: '"Slashing prices by 25% in a perishable cold-chain business would permanently cannibalize our core margins and trigger a race to the bottom. Instead of competing on cheap price, I would differentiate our value proposition around culinary authenticity, verified protein macros, and reliability. If we need a short-term acquisition counter-move, we can bundle a high-margin seasonal side dish for new cohorts rather than devaluing our core subscription price."'
+      },
+      {
+        num: 7,
+        shortLabel: '7. First 90 Days',
+        color: '#059669',
+        cat: 'Category A • Executive Onboarding Blueprint',
+        q: '"If we sign your offer letter Friday, walk me through your exact 30-60-90 day roadmap as VP of Commercial Growth."',
+        whisper: '💡 Coach Note: Structure into 3 crisp horizons: Days 1–30 (Diagnostic Audit), Days 31–60 (Quick Wins & Circuit Breakers), Days 61–90 (Aggressive Scaling).',
+        vocab: ['synthesize qualitative & quantitative data', 'SKU rationalization', 'cohort retention analysis', 'expand Average Order Value (AOV)', 'spearhead a turnaround'],
+        curveball: '"Which single metric will be your North Star KPI by Day 90?"',
+        curveballTip: '👉 Net Revenue Retention (NRR) or 60-Day Cohort Gross Profit per Subscriber (combining retention + AOV + margin!).',
+        model: '"In Days 1 to 30, I would synthesize qualitative customer exit feedback with quantitative cohort data to audit all 48 bento SKUs and pinpoint churn drivers. In Days 31 to 60, I would execute quick wins—rationalizing low-velocity dishes, overhauling the onboarding flow to reduce Week-4 menu fatigue, and launching AOV add-on bundles. By Days 61 to 90, with unit economics fortified, I would scale paid acquisition around our highest-LTV hero SKUs."'
+      },
+      {
+        num: 8,
+        shortLabel: '8. Bad Salesmanship',
+        color: '#2563eb',
+        cat: 'Category C • Commercial Acumen & Upselling',
+        q: '"In our last lesson, we talked about how offering the cheapest option first is \'bad salesmanship\' that leaves money on the table. How does that apply to our OishiiBox website checkout?"',
+        whisper: '💡 Coach Note: Callback to Oct 21 lesson! Decoy pricing / anchoring customers on the 10-Meal Chef\'s Signature Box first instead of the bare-bones 4-Meal trial!',
+        vocab: ['expand Average Order Value (AOV)', 'high-margin hero SKUs', 'unit economics (LTV : CAC ratio)', 'cannibalize core margins', 'dilute operational bandwidth'],
+        curveball: '"Isn\'t anchoring customers on an $88 box going to scare away price-sensitive students?"',
+        curveballTip: '👉 Students aren\'t our target persona! Busy corporate professionals in Singapore value time savings and macro nutrition over saving $3.',
+        model: '"Defaulting new visitors to our smallest, lowest-margin trial box is classic bad salesmanship—it leaves money on the table and hurts both the company and the customer\'s weekly convenience. I would redesign the checkout architecture to anchor prospects on our 10-Meal Executive Washoku Bundle featuring our premium hero SKUs, positioning it as the most cost-effective per-meal choice while lifting our Average Order Value."'
+      },
+      {
+        num: 9,
+        shortLabel: '9. AI & Data Tech',
+        color: '#7c3aed',
+        cat: 'Category B • Forecasting & Spoilage Reduction',
+        q: '"Fresh Japanese ingredients like sashimi-grade salmon and miso tare have strict shelf lives. How do you use data to prevent over-ordering or stockouts?"',
+        whisper: '💡 Coach Note: Connect YH\'s data literacy (" retail is always linked to a lot of data") to predictive subscription forecasting.',
+        vocab: ['synthesize qualitative & quantitative data', 'cold-chain logistics & spoilage', 'SKU rationalization', 'cross-functional alignment', 'cohort retention analysis'],
+        curveball: '"What if an influencer unexpectedly posts our Wagyu Bento on TikTok and orders spike 300% overnight—how do you protect customer trust if the kitchen runs out?"',
+        curveballTip: '👉 Turn stockout friction into scarcity prestige: offer priority waitlist reservation + automatic upgrade to a premium dish with proactive communication.',
+        model: '"Retail and meal-prep profitability live or die by inventory forecasting. Because OishiiBox runs on a recurring subscription model, we have a massive data advantage over traditional restaurants. By locking subscriber menu selections 5 days before delivery and synthesizing historical cohort reorder rates, we can align procurement directly with confirmed demand—cutting ingredient spoilage while protecting gross margin."'
+      },
+      {
+        num: 10,
+        shortLabel: '10. Why Hire You?',
+        color: '#e11d48',
+        cat: 'Category C • The Closing Elevator Pitch',
+        q: '"We are interviewing two other candidates from HelloFresh and Deliveroo. Give me your final 60-second pitch on why YH is the exact leader OishiiBox needs right now."',
+        whisper: '💡 Coach Note: High energy, downward declarative intonation at the end of sentences, zero apologetic hedging!',
+        vocab: ['spearhead a turnaround', 'unit economics (LTV : CAC ratio)', 'SKU rationalization', 'foster professional development', 'mitigate information asymmetry'],
+        curveball: '"And what is one area where the Board will need to support you in your first month?"',
+        curveballTip: '👉 High-status answer: "Granting transparent access to historical cohort and kitchen margin data in Week 1 so we can align on the single source of truth."',
+        model: '"While candidates from giant food-delivery platforms are used to burning venture capital on mass discounts, I bring battle-tested APAC profitability and deep cultural fluency across Japanese and international markets. I have personally spearheaded 240% e-commerce expansion through disciplined SKU rationalization, led 100+ personnel with high-trust autonomy, and mastered upward alignment. I won\'t just grow OishiiBox\'s top line—I will build a resilient, high-margin subscription engine."'
+      }
+    ];
+
+    /* ==========================================================================
+       DATA STORE 5: TAB 4 — 4 SIDE-BY-SIDE ANSWER TEARDOWNS
+       ========================================================================== */
+    const TEARDOWN_DATA = [
+      {
+        title: 'Teardown 1: Explaining Past E-Commerce Growth (Breaking the Passive "We" Habit)',
+        q: 'Interviewer: "Tell me how you grew your previous APAC e-commerce business."',
+        weak: '❌ <span class="flaw-highlight">We always analyze</span> the data and <span class="flaw-highlight">we keep picking up</span> the best-selling items. So <span class="flaw-highlight">we don\'t split resources to useless things</span>, and <span class="flaw-highlight">we put more items</span> for good brands, so we grew 240%.',
+        weakNotes: '3 Fatal Flaws: 1) Hides personal leadership behind passive "we"; 2) Uses elementary words ("useless things", "put more items"); 3) Fails to connect the lesson to OishiiBox.',
+        strong: '💎 "<span class="power-highlight">I spearheaded</span> a forensic APAC catalog audit, <span class="power-highlight">synthesizing quantitative velocity data with qualitative buyer insights</span>. To ensure we didn\'t <span class="power-highlight">dilute operational bandwidth</span> across low-yield channels, I <span class="power-highlight">rationalized underperforming lines</span> and onboarded <span class="power-highlight">high-margin hero SKUs</span>—directly delivering 240% YoY expansion."',
+        strongNotes: 'Why It Wins: Unmistakable C-suite ownership, crisp financial vocabulary, and directly transferable to OishiiBox\'s 48 bento SKUs.'
+      },
+      {
+        title: 'Teardown 2: Diagnosing Japanese Meal-Prep Subscription Churn',
+        q: 'Interviewer: "Why do you think 34% of our bento subscribers cancel in Month 2, and how do we fix it?"',
+        weak: '❌ Maybe <span class="flaw-highlight">customers get bored of eating same bento</span>, or maybe <span class="flaw-highlight">cospa is not good</span> after the first coupon finishes. We should <span class="flaw-highlight">remake the menu</span> and make price cheaper.',
+        weakNotes: '3 Fatal Flaws: 1) Starts with hesitant "Maybe"; 2) Uses Wasei-eigo ("cospa", "remake"); 3) Suggests cutting prices, which destroys cold-chain unit economics.',
+        strong: '💎 "A 34% Month-2 drop-off typically signals a combination of <span class="power-highlight">Week-4 menu fatigue</span> and <span class="power-highlight">promotional discount-hunting</span>. Rather than slashing prices and eroding <span class="power-highlight">unit economics</span>, I would run a <span class="power-highlight">cohort retention analysis</span>, guide new users toward our top 12 <span class="power-highlight">hero SKUs</span>, and introduce rotating seasonal tare sauces to sustain novelty without bloating kitchen inventory."',
+        strongNotes: 'Why It Wins: Replaces "cospa/remake" with authentic D2C terminology and protects gross margin.'
+      },
+      {
+        title: 'Teardown 3: Managing 100+ Staff & Developing Subordinates',
+        q: 'Interviewer: "What is your management style when leading a large multi-layered organization?"',
+        weak: '❌ I don\'t do micromanagement. I give big picture and <span class="flaw-highlight">give all tasks to them</span>. I like to see my <span class="flaw-highlight">subordinates are grown up</span> through the work, and if <span class="flaw-highlight">bad things happen</span>, I check at the half way.',
+        weakNotes: '3 Fatal Flaws: 1) "Subordinates are grown up" sounds like raising children; 2) "Give all tasks to them" can sound hands-off/lazy; 3) "Bad things happen" is too casual.',
+        strong: '💎 "When leading 100+ personnel across 4 functional silos, I practice <span class="power-highlight">high-trust autonomous delegation</span> while maintaining strict accountability. I set macro strategic KPIs for my department directors, install a <span class="power-highlight">midpoint circuit breaker</span> at 50% completion to preempt operational bottlenecks, and focus on <span class="power-highlight">fostering my team\'s professional development</span>."',
+        strongNotes: 'Why It Wins: Balances empowerment with governance rigor ("midpoint circuit breaker") and uses natural executive collocations.'
+      }
+    ];
+
+    /* ==========================================================================
+       DATA STORE 6: TAB 5 — 4 HIGH-STATUS REVERSE-INTERVIEW QUESTIONS
+       ========================================================================== */
+    const REVERSE_DATA = [
+      {
+        tag: '1. Unit Economics & Retention Lever',
+        bad: '❌ Low-Status Question: "Do customers like the taste of your bento boxes?"',
+        good: '💎 High-Status VP Question: "When you look at your best-performing subscriber cohorts—the customers who stay past Month 6—what is the #1 behavioral trigger they share in their first 14 days?"',
+        why: 'Signals that you already think in terms of cohort retention analytics and early onboarding activation.'
+      },
+      {
+        tag: '2. Cold-Chain & Kitchen Capacity Constraints',
+        bad: '❌ Low-Status Question: "How big is the central kitchen?"',
+        good: '💎 High-Status VP Question: "If we successfully cut Month-2 churn from 34% to 18% over the next two quarters, where will the first operational bottleneck emerge—central kitchen prep capacity or last-mile cold-chain fulfillment?"',
+        why: 'Positions you as an executive who thinks cross-functionally and anticipates scaling friction before it happens.'
+      },
+      {
+        tag: '3. Founder Alignment & The 70/30 Governance Rule',
+        bad: '❌ Low-Status Question: "What is the work-life balance and company culture like?"',
+        good: '💎 High-Status VP Question: "To ensure zero information asymmetry between us in my first 90 days, what are the 2 or 3 latent commercial risks that keep you awake at night right now?"',
+        why: 'Directly applies your upward empathy principle ("putting yourself in the boss\'s shoes") and establishes peer-level trust.'
+      },
+      {
+        tag: '4. 12-Month Boardroom Definition of Victory',
+        bad: '❌ Low-Status Question: "What are the main responsibilities of this job?"',
+        good: '💎 High-Status VP Question: "Fast-forward 12 months from today: if we are celebrating an exceptional first year together, what specific unit-economic and revenue milestones did I spearhead to make that happen?"',
+        why: 'Forces the interviewer to picture you succeeding in the role and gives you the exact rubric to close the interview.'
+      }
+    ];
+
+    /* ==========================================================================
+       STATE & INITIALIZATION
+       ========================================================================== */
+    let executiveScore = 0;
+    let buzzerCount = 0;
+    let masteredLexSet = new Set();
+    let currentSprintIdx = 0;
+    let currentQuestionIdx = 0;
+    let wheelRotation = 0;
+    let isSpinning = false;
+    let timerSeconds = 90;
+    let timerInterval = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSprint();
+      renderLexicon('all');
+      renderDecoders();
+      drawWheel();
+      renderQuickQButtons();
+      loadHotSeatQuestion(0);
+      renderTeardowns();
+      renderReverseQuestions();
+    });
+
+    /* ==========================================================================
+       TAB SWITCHING & THEME TOGGLE
+       ========================================================================== */
+    function switchTab(tabId, btnEl) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      if (btnEl) btnEl.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      document.getElementById('themeBtn').innerText = isLight ? '🌙 Dark Mode' : '☀️ Light Mode';
+    }
+
+    function updateHUD() {
+      document.getElementById('hudScore').innerText = executiveScore;
+      document.getElementById('hudVocab').innerText = `${masteredLexSet.size} / ${LEXICON_DATA.length}`;
+      document.getElementById('hudBuzzer').innerText = buzzerCount;
+    }
+
+    function showToast(msg, borderCol = '#f59e0b') {
+      const box = document.getElementById('toastBox');
+      const el = document.createElement('div');
+      el.className = 'toast-item';
+      el.style.borderLeftColor = borderCol;
+      el.innerText = msg;
+      box.appendChild(el);
+      setTimeout(() => el.remove(), 3800);
+    }
+
+    /* ==========================================================================
+       WEB SPEECH API (UK / INTERNATIONAL EXECUTIVE AUDIO)
+       ========================================================================== */
+    function speakText(rawText) {
+      if (!('speechSynthesis' in window)) {
+        showToast('⚠️ Web Speech API not supported in this browser.');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const cleaned = rawText.replace(/\[S\]|\[T\]|\[A\]|\[R\]|\[L\]|\[Point\]|\[Reason\]|\[Example\]|❌|💎/g, '').trim();
+      const utter = new SpeechSynthesisUtterance(cleaned);
+      const voices = window.speechSynthesis.getVoices();
+      const ukVoice = voices.find(v => v.lang.includes('en-GB') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Daniel'))) ||
+                      voices.find(v => v.lang.includes('en-GB')) ||
+                      voices.find(v => v.lang.includes('en'));
+      if (ukVoice) utter.voice = ukVoice;
+      utter.rate = 0.94;
+      utter.pitch = 0.98;
+      window.speechSynthesis.speak(utter);
+    }
+
+    /* ==========================================================================
+       TAB 1: SPRINT & LEXICON FUNCTIONS
+       ========================================================================== */
+    function renderSprint() {
+      const item = SPRINT_DATA[currentSprintIdx];
+      document.getElementById('sprintCounter').innerText = `${currentSprintIdx + 1} / ${SPRINT_DATA.length}`;
+      document.getElementById('sprintBad').innerText = item.bad;
+      document.getElementById('sprintHint').innerHTML = `🎯 <strong>Target Keys to Use:</strong> <em>${item.hint.replace('🎯 Target Keys: ', '')}</em>`;
+      document.getElementById('sprintGood').innerText = item.good;
+      document.getElementById('sprintUpgradeBox').classList.remove('show');
+    }
+
+    function nextSprint() {
+      currentSprintIdx = (currentSprintIdx + 1) % SPRINT_DATA.length;
+      renderSprint();
+    }
+
+    function prevSprint() {
+      currentSprintIdx = (currentSprintIdx - 1 + SPRINT_DATA.length) % SPRINT_DATA.length;
+      renderSprint();
+    }
+
+    function revealSprint() {
+      document.getElementById('sprintUpgradeBox').classList.add('show');
+      executiveScore += 15;
+      updateHUD();
+    }
+
+    function renderLexicon(catFilter) {
+      const grid = document.getElementById('lexGrid');
+      grid.innerHTML = '';
+      const items = catFilter === 'all' ? LEXICON_DATA : LEXICON_DATA.filter(i => i.cat === catFilter);
+      items.forEach(item => {
+        const isMastered = masteredLexSet.has(item.id);
+        const card = document.createElement('div');
+        card.className = `lex-card ${isMastered ? 'mastered' : ''}`;
+        card.innerHTML = `
+          <div>
+            <div class="lex-top">
+              <span class="banned-tag">🚫 ${item.banned}</span>
+              <span class="jp-tag">🇯🇵 ${item.jp}</span>
+            </div>
+            <div class="lex-term">${item.term}</div>
+            <div class="lex-ipa">${item.ipa}</div>
+            <p class="lex-def" style="margin:6px 0 10px;">${item.def}</p>
+            <div class="lex-example">${item.ex}</div>
+          </div>
+          <div class="lex-actions">
+            <button class="btn" onclick="speakLexItem('${item.id}')">🔊 Audio</button>
+            <button class="btn ${isMastered ? 'btn-emerald' : ''}" onclick="toggleLexMastered('${item.id}')">
+              ${isMastered ? '✅ Deployed (+20 pts)' : '⬜ Mark Deployed'}
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function speakLexItem(id) {
+      const item = LEXICON_DATA.find(i => i.id === id);
+      if (item) speakText(`${item.term}. ${item.ex}`);
+    }
+
+    function filterLex(cat, btn) {
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderLexicon(cat);
+    }
+
+    function toggleLexMastered(id) {
+      if (masteredLexSet.has(id)) {
+        masteredLexSet.delete(id);
+        executiveScore = Math.max(0, executiveScore - 20);
+      } else {
+        masteredLexSet.add(id);
+        executiveScore += 20;
+        showToast('💎 +20 Executive Points! Term deployed in context.', '#10b981');
+        if (masteredLexSet.size % 4 === 0 && typeof confetti === 'function') {
+          confetti({ particleCount: 55, spread: 60, origin: { y: 0.7 } });
+        }
+      }
+      updateHUD();
+      const activePill = document.querySelector('.filter-pill.active');
+      const cat = activePill && activePill.innerText.includes('Subscription') ? 'economics'
+                : activePill && activePill.innerText.includes('Bento') ? 'ops'
+                : activePill && activePill.innerText.includes('Executive') ? 'leadership' : 'all';
+      renderLexicon(cat);
+    }
+
+    /* ==========================================================================
+       TAB 2: HIDDEN INTERVIEW QUESTION DECODER
+       ========================================================================== */
+    function renderDecoders() {
+      const grid = document.getElementById('decoderGrid');
+      grid.innerHTML = '';
+      DECODER_DATA.forEach((d, idx) => {
+        const card = document.createElement('div');
+        card.className = 'decoder-card';
+        const optionsHtml = d.options.map((opt, oIdx) => `
+          <button class="choice-btn" onclick="checkDecoderChoice(${idx}, ${oIdx}, this)">
+            ${opt.text}
+          </button>
+        `).join('');
+
+        card.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="kicker-badge" style="margin-bottom:0;">🕵️‍♂️ Subtext Decoder #${d.num}</span>
+            <button class="btn" style="padding:4px 10px; font-size:0.76rem;" onclick="speakDecoderQ(${idx})">🔊 Hear Question</button>
+          </div>
+          <div class="q-bubble">${d.question}</div>
+          <div style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px;">
+            Step 1: What is the Board's REAL hidden fear behind this question?
+          </div>
+          <div class="choice-list" id="decChoices-${idx}">${optionsHtml}</div>
+          <div class="decoder-reveal" id="decReveal-${idx}">
+            <div class="strategy-box trap">${d.trap}</div>
+            <div class="strategy-box win">${d.win}</div>
+            <div style="background:var(--surface-card); border-left:3px solid var(--gold); padding:12px 14px; border-radius:8px; font-size:0.86rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <strong style="color:var(--gold-bright);">🎙️ Model Boardroom Response:</strong>
+                <button class="btn" style="padding:3px 9px; font-size:0.74rem;" onclick="speakDecoderModel(${idx})">🔊 Listen</button>
+              </div>
+              <em>${d.model}</em>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function speakDecoderQ(idx) {
+      if (DECODER_DATA[idx]) speakText(DECODER_DATA[idx].question);
+    }
+
+    function speakDecoderModel(idx) {
+      if (DECODER_DATA[idx]) speakText(DECODER_DATA[idx].model);
+    }
+
+    function checkDecoderChoice(cardIdx, optIdx, btnEl) {
+      const data = DECODER_DATA[cardIdx];
+      const chosen = data.options[optIdx];
+      const container = document.getElementById(`decChoices-${cardIdx}`);
+      if (chosen.correct) {
+        btnEl.classList.add('correct');
+        document.getElementById(`decReveal-${cardIdx}`).classList.add('show');
+        executiveScore += 25;
+        updateHUD();
+        showToast('🎯 Subtext Decoded! +25 Executive Points', '#10b981');
+      } else {
+        btnEl.classList.add('wrong');
+        showToast('🤔 Look closer—think about unit economics, churn, or governance risk!', '#f43f5e');
+      }
+      void container;
+    }
+
+    /* ==========================================================================
+       TAB 3: CANDIDATE HOT-SEAT WHEEL & PRESSURE ARENA
+       ========================================================================== */
+    function drawWheel() {
+      const canvas = document.getElementById('hotSeatWheel');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const r = cx - 8;
+      const slices = HOTSEAT_QUESTIONS.length;
+      const arc = (2 * Math.PI) / slices;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      HOTSEAT_QUESTIONS.forEach((item, i) => {
+        const startAngle = i * arc - Math.PI / 2;
+        const endAngle = startAngle + arc;
+
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, r, startAngle, endAngle);
+        ctx.closePath();
+        ctx.fillStyle = item.color;
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#070d19';
+        ctx.stroke();
+
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(startAngle + arc / 2);
+        ctx.textAlign = 'right';
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 13px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(item.shortLabel, r - 18, 5);
+        ctx.restore();
+      });
+    }
+
+    function renderQuickQButtons() {
+      const wrap = document.getElementById('qQuickButtons');
+      wrap.innerHTML = '';
+      HOTSEAT_QUESTIONS.forEach((item, idx) => {
+        const b = document.createElement('button');
+        b.className = 'btn';
+        b.style.padding = '5px 10px';
+        b.style.fontSize = '0.75rem';
+        b.innerText = `#${item.num}`;
+        b.onclick = () => loadHotSeatQuestion(idx);
+        wrap.appendChild(b);
+      });
+    }
+
+    function spinHotSeatWheel() {
+      if (isSpinning) return;
+      isSpinning = true;
+      const canvas = document.getElementById('hotSeatWheel');
+      const slices = HOTSEAT_QUESTIONS.length;
+      const sliceDeg = 360 / slices;
+      const randomIdx = Math.floor(Math.random() * slices);
+      const extraSpins = 5 * 360;
+      const targetAngle = 360 - (randomIdx * sliceDeg + sliceDeg / 2);
+      wheelRotation += extraSpins + ((targetAngle - (wheelRotation % 360) + 360) % 360);
+      canvas.style.transform = `rotate(${wheelRotation}deg)`;
+
+      setTimeout(() => {
+        isSpinning = false;
+        loadHotSeatQuestion(randomIdx);
+        showToast(`🔥 Hot-Seat Question #${randomIdx + 1} Selected!`, '#f59e0b');
+      }, 3650);
+    }
+
+    function nextQuestionSequential() {
+      const nextIdx = (currentQuestionIdx + 1) % HOTSEAT_QUESTIONS.length;
+      loadHotSeatQuestion(nextIdx);
+    }
+
+    function loadHotSeatQuestion(idx) {
+      currentQuestionIdx = idx;
+      const item = HOTSEAT_QUESTIONS[idx];
+      document.getElementById('liveQCat').innerText = `Question #${item.num} • ${item.cat}`;
+      document.getElementById('liveQText').innerText = item.q;
+      document.getElementById('liveQWhisper').innerHTML = item.whisper;
+      document.getElementById('liveCurveballText').innerText = item.curveball;
+      document.getElementById('liveCurveballTip').innerText = item.curveballTip;
+      document.getElementById('liveModelText').innerText = item.model;
+
+      document.getElementById('liveCurveballBox').classList.remove('show');
+      document.getElementById('liveModelBox').classList.remove('show');
+
+      document.querySelectorAll('.starl-step').forEach(s => s.classList.remove('checked'));
+
+      const chipWrap = document.getElementById('liveVocabChips');
+      chipWrap.innerHTML = '';
+      item.vocab.forEach(v => {
+        const chip = document.createElement('span');
+        chip.className = 'target-chip';
+        chip.innerText = `💎 ${v}`;
+        chip.onclick = () => {
+          chip.classList.toggle('hit');
+          updateQChipProgress();
+        };
+        chipWrap.appendChild(chip);
+      });
+      updateQChipProgress();
+      setTimerPreset(90);
+    }
+
+    function updateQChipProgress() {
+      const all = document.querySelectorAll('#liveVocabChips .target-chip');
+      const hits = document.querySelectorAll('#liveVocabChips .target-chip.hit');
+      document.getElementById('qChipProgress').innerText = `${hits.length} / ${all.length} used`;
+      if (hits.length > 0) {
+        executiveScore += 15;
+        updateHUD();
+      }
+      if (hits.length >= 3 && typeof confetti === 'function') {
+        confetti({ particleCount: 70, spread: 65, origin: { y: 0.65 } });
+        showToast('🌟 3+ Power Collocations Deployed in One Answer! +30 Bonus!', '#10b981');
+      }
+    }
+
+    function toggleStarl(el) {
+      el.classList.toggle('checked');
+      if (el.classList.contains('checked')) {
+        executiveScore += 10;
+        updateHUD();
+      }
+    }
+
+    function toggleBox(id) {
+      document.getElementById(id).classList.toggle('show');
+    }
+
+    function triggerCrutchBuzzer(badUsed, upgradePhrase) {
+      buzzerCount++;
+      updateHUD();
+      const chatText = `🚨 CRUTCH ALERT: Instead of ${badUsed} ➔ Try: "${upgradePhrase}"`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(chatText).catch(() => {});
+      }
+      showToast(`🚨 Buzzer! Copied recast to clipboard: "${upgradePhrase}"`, '#f43f5e');
+    }
+
+    function copyQuestionToChat() {
+      const item = HOTSEAT_QUESTIONS[currentQuestionIdx];
+      const text = `🎙️ INTERVIEW QUESTION #${item.num}: ${item.q}\n🎯 Target Words: ${item.vocab.join(' • ')}`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+      showToast('📋 Question & Word Bank copied for Preply Chat!', '#38bdf8');
+    }
+
+    /* ==========================================================================
+       TIMER FUNCTIONS
+       ========================================================================== */
+    function formatTime(sec) {
+      const m = String(Math.floor(sec / 60)).padStart(2, '0');
+      const s = String(sec % 60).padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function setTimerPreset(sec) {
+      pauseTimer();
+      timerSeconds = sec;
+      const disp = document.getElementById('timerDisplay');
+      disp.innerText = formatTime(timerSeconds);
+      disp.style.color = 'var(--gold-bright)';
+    }
+
+    function startTimer() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          const disp = document.getElementById('timerDisplay');
+          disp.innerText = formatTime(timerSeconds);
+          if (timerSeconds <= 15) {
+            disp.style.color = 'var(--rose-bright)';
+          }
+        } else {
+          pauseTimer();
+          showToast('⏰ Time is up! Land your final [R] Result & [L] Takeaway sentence.', '#f43f5e');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    /* ==========================================================================
+       TAB 4 & TAB 5 RENDERERS
+       ========================================================================== */
+    function renderTeardowns() {
+      const wrap = document.getElementById('teardownList');
+      wrap.innerHTML = '';
+      TEARDOWN_DATA.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'teardown-card';
+        card.innerHTML = `
+          <div style="font-size:1.1rem; font-weight:800; color:var(--gold-bright); margin-bottom:4px;">${t.title}</div>
+          <div style="font-size:0.92rem; font-weight:700; color:var(--text-muted);">${t.q}</div>
+          <div class="compare-grid">
+            <div class="answer-pane weak">
+              <div style="font-size:0.75rem; font-weight:900; text-transform:uppercase; color:var(--rose-bright); margin-bottom:6px;">
+                ⚠️ Passive / Basic B1 Candidate Answer
+              </div>
+              <p style="margin-bottom:10px;">${t.weak}</p>
+              <div style="font-size:0.78rem; color:var(--text-muted); border-top:1px solid var(--border-rose); padding-top:8px;">
+                <strong>Diagnostic Audit:</strong> ${t.weakNotes}
+              </div>
+            </div>
+            <div class="answer-pane strong">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span style="font-size:0.75rem; font-weight:900; text-transform:uppercase; color:var(--emerald-bright);">
+                  💎 Boardroom VP Answer (YH Upgraded)
+                </span>
+                <button class="btn" style="padding:3px 9px; font-size:0.73rem;" onclick="speakText(this.parentElement.nextElementSibling.innerText)">🔊 Listen Audio</button>
+              </div>
+              <p style="margin-bottom:10px;">${t.strong}</p>
+              <div style="font-size:0.78rem; color:var(--text-muted); border-top:1px solid var(--border-emerald); padding-top:8px;">
+                <strong>Executive Impact:</strong> ${t.strongNotes}
+              </div>
+            </div>
+          </div>
+        `;
+        wrap.appendChild(card);
+      });
+    }
+
+    function renderReverseQuestions() {
+      const grid = document.getElementById('reverseGrid');
+      grid.innerHTML = '';
+      REVERSE_DATA.forEach((r, idx) => {
+        const card = document.createElement('div');
+        card.className = 'reverse-card';
+        card.innerHTML = `
+          <span class="kicker-badge">${r.tag}</span>
+          <div style="padding:10px 12px; border-radius:8px; background:var(--rose-soft); border:1px solid var(--border-rose); font-size:0.84rem; margin-bottom:10px;">
+            ${r.bad}
+          </div>
+          <div style="padding:14px 16px; border-radius:10px; background:var(--emerald-soft); border:1px solid var(--border-emerald); font-size:0.95rem; font-weight:700; margin-bottom:10px;">
+            ${r.good}
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span style="font-size:0.8rem; color:var(--text-dim);">💡 <strong>Why It Works:</strong> ${r.why}</span>
+            <button class="btn" style="white-space:nowrap;" onclick="speakReverseQ(${idx})">🔊 Practice</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function speakReverseQ(idx) {
+      if (REVERSE_DATA[idx]) {
+        speakText(REVERSE_DATA[idx].good.replace('💎 High-Status VP Question: ', ''));
+      }
+    }
+
+    function celebrateLessonWin() {
+      executiveScore += 100;
+      updateHUD();
+      if (typeof confetti === 'function') {
+        confetti({ particleCount: 140, spread: 90, origin: { y: 0.6 } });
+      }
+      showToast('🏆 Congratulations YH! OishiiBox VP of Commercial Growth Offer Unlocked!', '#10b981');
+    }
+
+    function copyHomeworkSummary() {
+      const hw = `🍱 OISHIIBOX EXECUTIVE INTERVIEW HOMEWORK (YH):\n1. Record a 90-second voice memo answering Question #2 (How to cut OishiiBox's 34% Month-2 subscription churn without slashing prices).\n2. Deploy at least 5 target terms: SKU rationalization, high-margin hero SKUs, menu fatigue, cohort retention analysis, expand AOV.\n3. Zero passive "we"—use "I spearheaded" and "My primary mandate was..."!`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(hw).catch(() => {});
+      }
+      showToast('📋 Homework prompt copied to clipboard for Preply Chat!', '#fbbf24');
+    }
+  </script>
+</body>
+</html>

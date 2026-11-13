@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">YH's Executive English Sanctuary | STAR-L Framework & Upward Leadership</title>
+
+  <!-- Google Fonts: Cormorant Garamond (Literary Serif), Plus Jakarta Sans (Soft Modern UI), JetBrains Mono (Timestamps & IPA) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            parchment: {
+              50: '#fbf9f5',
+              100: '#f6f1e7',
+              200: '#ede3d1',
+              300: '#dfd0b5',
+              400: '#cbb38e',
+              500: '#b6966b',
+            },
+            autumn: {
+              50: '#fcf6f0',
+              100: '#f7e9db',
+              200: '#eed0b5',
+              300: '#e2b086',
+              400: '#d38c57',
+              500: '#be6f38',
+              600: '#a3582b',
+              700: '#854524',
+              800: '#6c3921',
+            },
+            sage: {
+              50: '#f4f7f5',
+              100: '#e4ece7',
+              200: '#cadad1',
+              300: '#a5bfb1',
+              400: '#7b9f8d',
+              500: '#5b826f',
+              600: '#476858',
+              700: '#3a5448',
+              800: '#30443b',
+            },
+            slatewarm: {
+              700: '#3d4441',
+              800: '#2b312e',
+              900: '#1e2321',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP for Gentle Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Popper & Tippy.js for Interactive Vocabulary Explanations -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away.css" />
+
+  <!-- Canvas Confetti for Gentle Practice Encouragement -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --bg-base: #f9f6f0;
+      --bg-card: rgba(255, 253, 249, 0.90);
+      --bg-subcard: rgba(255, 255, 255, 0.94);
+      --border-soft: #e6decb;
+      --border-accent: #d9c8b0;
+      --text-main: #2b312e;
+      --text-muted: #5c6660;
+      --grad-1: rgba(238, 208, 181, 0.42);
+      --grad-2: rgba(202, 218, 209, 0.48);
+      --grad-3: rgba(246, 241, 231, 0.70);
+    }
+
+    body[data-theme="winchester"] {
+      --bg-base: #f3f6f5;
+      --bg-card: rgba(252, 254, 253, 0.91);
+      --bg-subcard: rgba(255, 255, 255, 0.95);
+      --border-soft: #d7e2dc;
+      --border-accent: #b8ccc2;
+      --text-main: #26312d;
+      --text-muted: #52635c;
+      --grad-1: rgba(202, 218, 209, 0.50);
+      --grad-2: rgba(219, 228, 238, 0.48);
+      --grad-3: rgba(244, 240, 230, 0.55);
+    }
+
+    body[data-theme="twilight"] {
+      --bg-base: #f5efe6;
+      --bg-card: rgba(253, 249, 242, 0.92);
+      --bg-subcard: rgba(255, 252, 247, 0.96);
+      --border-soft: #e2d2be;
+      --border-accent: #cfaea0;
+      --text-main: #2d2622;
+      --text-muted: #665850;
+      --grad-1: rgba(226, 176, 134, 0.36);
+      --grad-2: rgba(214, 196, 176, 0.42);
+      --grad-3: rgba(235, 220, 202, 0.55);
+    }
+
+    body {
+      background-color: var(--bg-base);
+      background-image:
+        radial-gradient(at 8% 5%, var(--grad-1) 0px, transparent 52%),
+        radial-gradient(at 92% 18%, var(--grad-2) 0px, transparent 52%),
+        radial-gradient(at 50% 88%, var(--grad-3) 0px, transparent 58%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      transition: background-color 0.5s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    .sanctuary-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 36px -10px rgba(91, 130, 111, 0.08), 0 4px 14px -3px rgba(43, 49, 46, 0.04);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sanctuary-subcard {
+      background: var(--bg-subcard);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 4px 14px -4px rgba(43, 49, 46, 0.04);
+      transition: all 0.25s ease;
+    }
+
+    /* Inline Vocabulary Highlight in Transcript */
+    .vocab-mark {
+      display: inline-block;
+      background: linear-gradient(120deg, rgba(226, 176, 134, 0.25) 0%, rgba(165, 191, 177, 0.28) 100%);
+      border-bottom: 2px dashed #a3582b;
+      color: #5b3216;
+      font-weight: 600;
+      padding: 0px 5px;
+      margin: 0 1px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .vocab-mark:hover, .vocab-mark.active-vocab {
+      background: linear-gradient(120deg, rgba(190, 111, 56, 0.25) 0%, rgba(91, 130, 111, 0.32) 100%);
+      border-bottom-style: solid;
+      border-bottom-color: #476858;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(163, 88, 43, 0.14);
+    }
+
+    body.hide-vocab-highlights .vocab-mark {
+      background: transparent !important;
+      border-bottom: none !important;
+      color: inherit !important;
+      font-weight: inherit !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+    }
+
+    /* Note-taker fix badge */
+    .asr-fix-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.72rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f4f7f5;
+      color: #476858;
+      border: 1px solid #cadad1;
+      padding: 1px 7px;
+      border-radius: 999px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    body.hide-asr-fixes .asr-fix-pill {
+      display: none !important;
+    }
+
+    /* Custom Tippy Tooltip Theme: Peaceful Autumn */
+    .tippy-box[data-theme~='autumn-sanctuary'] {
+      background-color: #fffdf9;
+      color: #2b312e;
+      border: 1px solid #dfd0b5;
+      border-radius: 1rem;
+      box-shadow: 0 20px 38px -8px rgba(61, 68, 65, 0.16), 0 6px 16px -4px rgba(163, 88, 43, 0.08);
+      padding: 0.35rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .tippy-box[data-theme~='autumn-sanctuary'][data-placement^='top'] > .tippy-arrow::before {
+      border-top-color: #dfd0b5;
+    }
+    .tippy-box[data-theme~='autumn-sanctuary'][data-placement^='bottom'] > .tippy-arrow::before {
+      border-bottom-color: #dfd0b5;
+    }
+
+    /* Highlight pulse when jumping to a transcript line */
+    @keyframes gentleGlow {
+      0% { background-color: rgba(226, 176, 134, 0.45); transform: scale(1.005); }
+      50% { background-color: rgba(165, 191, 177, 0.38); }
+      100% { background-color: transparent; transform: scale(1); }
+    }
+    .turn-highlight-flash {
+      animation: gentleGlow 2.8s ease-out;
+    }
+
+    @media print {
+      .no-print, #autumn-breeze-canvas { display: none !important; }
+      body { background: #fff !important; }
+      .sanctuary-card, .sanctuary-subcard { box-shadow: none !important; border: 1px solid #ccc !important; }
+    }
+  </style>
+</head>
+<body data-theme="kensington" class="font-sans antialiased min-h-screen selection:bg-autumn-200 selection:text-slatewarm-900 relative">
+
+  <!-- CALMING AUTUMN BREEZE CANVAS OVERLAY -->
+  <canvas id="autumn-breeze-canvas" class="fixed inset-0 pointer-events-none z-20 opacity-80"></canvas>
+
+  <!-- STICKY PEACEFUL NAVIGATION & ATMOSPHERE BAR -->
+  <header class="sticky top-0 z-40 border-b border-[#e6decb]/90 bg-[#fbf9f5]/85 backdrop-blur-md no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div id="brand-initial" class="w-10 h-10 rounded-2xl bg-gradient-to-br from-sage-600 via-sage-500 to-autumn-500 flex items-center justify-center text-white font-serif text-xl font-bold shadow-sm">
+          Y
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="brand-title" class="font-serif font-bold text-lg sm:text-xl tracking-tight text-slatewarm-900">YH's Executive English Sanctuary</span>
+            <span id="brand-badge" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-sage-100 text-sage-800 border border-sage-200">
+              October 21, 2026 • STAR-L Framework, Upward Management & Team Scaling
+            </span>
+          </div>
+          <p id="brand-subtitle" class="text-[11px] text-stone-500 hidden md:block">A calm, tidy executive space with your corrected lesson transcript, timestamps, and professional vocabulary</p>
+        </div>
+      </div>
+
+      <!-- Calming Atmosphere Controls -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="flex items-center gap-1.5 bg-white/90 border border-[#dfd0b5] rounded-xl px-2.5 py-1 shadow-sm">
+          <button id="soundscape-btn" onclick="toggleSoundscape()" class="flex items-center gap-1.5 text-xs font-semibold text-sage-700 hover:text-sage-900 transition px-1.5 py-0.5 rounded-lg">
+            <i data-lucide="wind" class="w-3.5 h-3.5 text-autumn-600"></i>
+            <span id="soundscape-label">London Breeze Audio: Off</span>
+          </button>
+          <select id="soundscape-preset" onchange="changeSoundscapePreset(this.value)" class="text-[11px] bg-parchment-50 border border-parchment-200 rounded-lg px-1.5 py-0.5 text-stone-700 focus:outline-none">
+            <option value="breeze">🍂 Kensington Breeze</option>
+            <option value="rain">🌧️ Soft London Rain</option>
+            <option value="study">🕯️ Warm Study Hearth</option>
+          </select>
+          <input id="soundscape-volume" type="range" min="0.05" max="0.6" step="0.05" value="0.22" oninput="updateSoundscapeVolume(this.value)" class="w-14 accent-sage-600 cursor-pointer hidden sm:block" />
+        </div>
+
+        <button id="leaves-toggle-btn" onclick="cycleLeafBreeze()" class="px-2.5 py-1.5 rounded-xl bg-white/90 hover:bg-autumn-50 border border-[#dfd0b5] text-xs font-medium text-stone-700 flex items-center gap-1.5 shadow-sm transition">
+          <i data-lucide="leaf" class="w-3.5 h-3.5 text-autumn-600"></i>
+          <span id="leaves-label" class="hidden sm:inline">Leaves: Gentle</span>
+        </button>
+
+        <div class="flex items-center gap-1 bg-white/90 border border-[#dfd0b5] rounded-xl px-2 py-1 shadow-sm text-xs">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5 text-sage-600"></i>
+          <button onclick="setVoiceRate(0.85)" id="rate-slow" class="px-1.5 py-0.5 rounded-md text-[11px] text-stone-600 hover:bg-parchment-100 transition">0.85×</button>
+          <button onclick="setVoiceRate(1.0)" id="rate-normal" class="px-1.5 py-0.5 rounded-md text-[11px] bg-sage-600 text-white font-semibold transition">UK 1×</button>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-1 bg-white/90 border border-[#dfd0b5] rounded-xl p-1 text-[11px] shadow-sm">
+          <button onclick="setThemeMood('kensington')" id="theme-kensington" class="px-2 py-0.5 rounded-lg bg-autumn-100 text-autumn-800 font-semibold transition">Bath Stone</button>
+          <button onclick="setThemeMood('winchester')" id="theme-winchester" class="px-2 py-0.5 rounded-lg text-stone-600 hover:text-stone-900 transition">Winchester Mist</button>
+          <button onclick="setThemeMood('twilight')" id="theme-twilight" class="px-2 py-0.5 rounded-lg text-stone-600 hover:text-stone-900 transition">Warm Study</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 space-y-7 relative z-10">
+
+    <!-- HERO BANNER -->
+    <section class="sanctuary-card rounded-3xl p-6 sm:p-9 relative overflow-hidden">
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
+        <div class="lg:col-span-8 space-y-3.5">
+          <div id="hero-meta-pill" class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-sage-100/90 border border-sage-200 text-sage-800 text-xs font-medium"></div>
+          <h1 id="hero-heading" class="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-slatewarm-900 leading-[1.16]"></h1>
+          <p id="hero-intro" class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-3xl"></p>
+        </div>
+
+        <div class="lg:col-span-4 grid grid-cols-2 gap-3">
+          <div onclick="switchTab('transcript')" class="cursor-pointer p-4 rounded-2xl bg-parchment-50/95 border border-parchment-300 hover:border-autumn-400 transition shadow-sm">
+            <div class="text-[11px] font-mono font-semibold uppercase text-autumn-700" id="stat-duration">Full Dialogue Log</div>
+            <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Full Transcript</div>
+            <p class="text-[11px] text-stone-600 mt-0.5">Every turn tidied with inline vocab & timestamps</p>
+          </div>
+          <div onclick="switchTab('vocab')" class="cursor-pointer p-4 rounded-2xl bg-sage-50/95 border border-sage-200 hover:border-sage-400 transition shadow-sm">
+            <div class="text-[11px] font-mono font-semibold uppercase text-sage-700" id="stat-vocab-count">52 Items</div>
+            <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Vocabulary & Idioms</div>
+            <p class="text-[11px] text-stone-600 mt-0.5">B2–C2 words, UK audio & Japanese equivalents</p>
+          </div>
+          <div onclick="switchTab('fixes')" class="cursor-pointer p-4 rounded-2xl bg-autumn-50/95 border border-autumn-200 hover:border-autumn-400 transition shadow-sm">
+            <div class="text-[11px] font-mono font-semibold uppercase text-autumn-700" id="stat-fixes-count">12 Fixes</div>
+            <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Note-Taker Fixes</div>
+            <p class="text-[11px] text-stone-600 mt-0.5">Sorted speech-to-text errors & 6 phrasing polishes</p>
+          </div>
+          <div onclick="switchTab('places')" class="cursor-pointer p-4 rounded-2xl bg-parchment-50/95 border border-parchment-300 hover:border-sage-400 transition shadow-sm">
+            <div class="text-[11px] font-mono font-semibold uppercase text-sage-700">Masterclass</div>
+            <div class="font-serif font-bold text-slatewarm-900 text-lg mt-0.5">Topics & Practice</div>
+            <p class="text-[11px] text-stone-600 mt-0.5">Stage breakdowns, flashcards & quiz</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-TAB NAVIGATION BAR -->
+    <nav class="sanctuary-card rounded-2xl p-2 flex flex-wrap items-center justify-between gap-2 no-print">
+      <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
+        <button onclick="switchTab('transcript')" id="tab-btn-transcript" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 bg-sage-700 text-white shadow-sm">
+          <i data-lucide="message-square-quote" class="w-4 h-4"></i>
+          <span>1. Lesson Transcript & Inline Vocab</span>
+        </button>
+        <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
+          <i data-lucide="book-marked" class="w-4 h-4 text-autumn-600"></i>
+          <span>2. Vocabulary Dictionary</span>
+        </button>
+        <button onclick="switchTab('fixes')" id="tab-btn-fixes" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
+          <i data-lucide="sparkles" class="w-4 h-4 text-sage-600"></i>
+          <span>3. Note-Taker Fixes & Natural Strengths</span>
+        </button>
+        <button onclick="switchTab('places')" id="tab-btn-places" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
+          <i data-lucide="landmark" class="w-4 h-4 text-autumn-600"></i>
+          <span>4. Masterclass Topics & Strategy</span>
+        </button>
+        <button onclick="switchTab('practice')" id="tab-btn-practice" class="tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100">
+          <i data-lucide="coffee" class="w-4 h-4 text-sage-600"></i>
+          <span>5. Peaceful Practice</span>
+        </button>
+        <a href="managing-teams.html" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 bg-autumn-100 text-autumn-900 border border-autumn-300 hover:bg-autumn-200 shadow-sm">
+          <i data-lucide="users" class="w-4 h-4 text-autumn-700"></i>
+          <span>6. Book Exercises: Hiring & Managing Teams</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- TAB 1: FULL LESSON TRANSCRIPT -->
+    <section id="tab-panel-transcript" class="tab-panel space-y-6">
+      <div class="sanctuary-card rounded-3xl p-5 sm:p-6 space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#e6decb] pb-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-sage-700 font-semibold">Interactive Conversation Transcript</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900 mt-0.5">
+              Our Speaking Workshop — With Vocabulary Explained Right In Context
+            </h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <input id="transcript-search" type="text" oninput="filterTranscript()" placeholder="Search transcript or time..." class="px-3 py-1.5 rounded-xl bg-white border border-[#dfd0b5] text-xs text-stone-800 focus:outline-none w-48" />
+            <select id="speaker-filter" onchange="filterTranscript()" class="px-3 py-1.5 rounded-xl bg-white border border-[#dfd0b5] text-xs font-medium text-stone-700">
+              <option value="all">Both Speakers</option>
+              <option value="YH" id="opt-student-speaker">YH's Turns Only</option>
+              <option value="Louie">Louie Only</option>
+            </select>
+            <button onclick="toggleVocabHighlights()" id="btn-toggle-highlights" class="px-3 py-1.5 rounded-xl bg-autumn-100 text-autumn-800 border border-autumn-300 text-xs font-semibold">
+              <span>Vocab Highlights: On</span>
+            </button>
+            <button onclick="toggleAsrBadges()" id="btn-toggle-asr" class="px-3 py-1.5 rounded-xl bg-sage-100 text-sage-800 border border-sage-300 text-xs font-semibold">
+              <span>Note-Taker Fixes: Visible</span>
+            </button>
+          </div>
+        </div>
+        <div id="chapter-pills-bar" class="flex flex-wrap items-center gap-1.5 pt-1"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-8 space-y-4" id="transcript-stream-container"></div>
+        <aside class="lg:col-span-4 lg:sticky lg:top-20 space-y-4">
+          <div class="sanctuary-card rounded-3xl p-5 sm:p-6 border-t-4 border-t-autumn-500 space-y-4 shadow-sm" id="vocab-inspector-card">
+            <div class="flex items-center justify-between gap-2 border-b border-[#e6decb] pb-3">
+              <span class="text-[11px] font-mono uppercase tracking-widest text-autumn-700 font-semibold flex items-center gap-1.5">
+                <i data-lucide="sparkle" class="w-3.5 h-3.5"></i>
+                Vocabulary Spotlight
+              </span>
+              <span id="insp-time" class="px-2.5 py-0.5 rounded-full bg-parchment-100 border border-parchment-300 font-mono text-xs text-stone-700">🕒 00:00</span>
+            </div>
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <h3 id="insp-word" class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900">Select a word</h3>
+                <button id="insp-audio-btn" onclick="speakWord('Welcome')" class="p-2.5 rounded-xl bg-sage-100 hover:bg-sage-200 text-sage-800 transition shrink-0">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 mt-1.5">
+                <span id="insp-ipa" class="text-xs font-mono text-stone-500"></span>
+                <span id="insp-pos" class="px-2 py-0.5 text-[11px] rounded-md bg-parchment-100 text-stone-700 font-medium"></span>
+                <span id="insp-level" class="px-2 py-0.5 text-[11px] rounded-md bg-autumn-100 text-autumn-800 font-mono font-semibold"></span>
+              </div>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-parchment-50 border border-parchment-200 space-y-1">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500">Meaning & Nuance</div>
+              <p id="insp-def" class="text-xs sm:text-sm text-slatewarm-800 leading-relaxed"></p>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-sage-50/80 border border-sage-200 space-y-1">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-sage-700">How It Was Used in Our Lesson</div>
+              <p id="insp-quote" class="text-xs italic text-stone-700 leading-relaxed"></p>
+            </div>
+            <div class="flex items-center justify-between pt-1 text-xs border-t border-[#e6decb]">
+              <span class="text-stone-500" id="insp-l1-label">🇯🇵 日本語の解説:</span>
+              <span id="insp-l1" class="font-semibold text-sage-800"></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TAB 2: VOCABULARY DICTIONARY -->
+    <section id="tab-panel-vocab" class="tab-panel hidden space-y-6">
+      <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-5">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#e6decb] pb-5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-autumn-700 font-semibold">Timestamped Lexicon</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900 mt-1">Vocabulary, Idioms & Expressions</h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <input id="vocab-search" type="text" oninput="renderVocabGrid()" placeholder="Search word, meaning, time..." class="px-3 py-2 rounded-xl bg-white border border-[#dfd0b5] text-xs text-stone-800 w-52" />
+            <select id="vocab-level-filter" onchange="renderVocabGrid()" class="px-3 py-2 rounded-xl bg-white border border-[#dfd0b5] text-xs font-medium text-stone-700">
+              <option value="all">All Levels (B2–C2)</option>
+              <option value="C2">C2 Mastery</option>
+              <option value="C1">C1 Advanced</option>
+              <option value="B2">B2 Upper-Intermediate</option>
+            </select>
+          </div>
+        </div>
+        <div id="vocab-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: NOTE-TAKER FIXES & GENTLE NOTES -->
+    <section id="tab-panel-fixes" class="tab-panel hidden space-y-6">
+      <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900">Your Natural Strengths & Gentle Phrasing Polishes</h2>
+        <div class="p-5 rounded-2xl bg-sage-50/90 border border-sage-200 space-y-3">
+          <div class="font-serif font-bold text-xl text-sage-800">Expressions You Used Naturally & Accurately Today</div>
+          <div id="student-strengths-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="gentle-polishes-grid"></div>
+      </div>
+
+      <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-5">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900">How We Sorted Out the Automated Note-Taker's Spelling Mistakes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="asr-fixes-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MASTERCLASS TOPICS -->
+    <section id="tab-panel-places" class="tab-panel hidden space-y-6">
+      <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-6">
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slatewarm-900">Masterclass Frameworks & Strategic Breakdowns</h2>
+        <div id="cultural-places-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: PEACEFUL PRACTICE -->
+    <section id="tab-panel-practice" class="tab-panel hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-6 sanctuary-card rounded-3xl p-6 sm:p-8 space-y-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between">
+            <h3 class="font-serif text-2xl font-bold text-slatewarm-900">Gentle Vocabulary Flashcards</h3>
+            <span id="fc-counter" class="text-xs font-mono text-stone-500">Card 1</span>
+          </div>
+          <div onclick="flipFlashcard()" class="cursor-pointer sanctuary-subcard rounded-2xl p-7 min-h-[240px] flex flex-col items-center justify-center text-center space-y-3 border-2 border-[#dfd0b5] hover:border-autumn-400 transition select-none">
+            <span id="fc-badge" class="px-2.5 py-0.5 rounded-full bg-autumn-100 text-autumn-800 text-[11px] font-mono"></span>
+            <h4 id="fc-front-title" class="font-serif text-3xl font-bold text-slatewarm-900"></h4>
+            <p id="fc-sub" class="text-xs sm:text-sm text-stone-600 max-w-md leading-relaxed"></p>
+            <div id="fc-back-details" class="hidden space-y-2 pt-2 border-t border-parchment-200 w-full">
+              <p id="fc-quote" class="text-xs italic text-sage-800"></p>
+              <p id="fc-l1" class="text-xs font-semibold text-autumn-700"></p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between gap-2 pt-2">
+            <button onclick="prevFlashcard()" class="px-4 py-2 rounded-xl bg-parchment-100 hover:bg-parchment-200 text-xs font-semibold text-stone-700 transition">← Previous</button>
+            <button onclick="speakCurrentFlashcard()" class="px-4 py-2 rounded-xl bg-sage-100 hover:bg-sage-200 text-xs font-semibold text-sage-800 transition">🔊 Listen (UK)</button>
+            <button onclick="nextFlashcard()" class="px-4 py-2 rounded-xl bg-sage-700 hover:bg-sage-800 text-xs font-semibold text-white transition">Next →</button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 sanctuary-card rounded-3xl p-6 sm:p-8 space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-serif text-2xl font-bold text-slatewarm-900">Match the Concept to Our Lesson</h3>
+            <span id="quiz-score-badge" class="px-3 py-1 rounded-full bg-sage-100 text-sage-800 text-xs font-mono font-semibold">0 Completed</span>
+          </div>
+          <div id="quiz-container" class="space-y-4 max-h-[420px] overflow-y-auto pr-1"></div>
+        </div>
+      </div>
+
+      <!-- 3 Thoughtful Conversation Prompts -->
+      <div class="sanctuary-card rounded-3xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-2 text-autumn-800 font-serif font-bold text-2xl">
+          <i data-lucide="coffee" class="w-5 h-5 text-autumn-600"></i>
+          <span>3 Thoughtful Executive Prompts for YH (For Next Lesson)</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+          <div class="sanctuary-subcard rounded-2xl p-5 space-y-2 border-l-4 border-l-sage-500">
+            <span class="text-[11px] font-mono uppercase text-sage-700 font-semibold">Prompt 01 • The STAR-L Boardroom Delivery</span>
+            <h4 class="font-serif font-bold text-lg text-slatewarm-900">Structuring Executive Storytelling</h4>
+            <p class="text-stone-600 leading-relaxed">
+              Prepare a 90-second executive narrative of your next major business project using our 5-part architecture: <em>Situation</em> (macro context) $\rightarrow$ <em>Task</em> (your primary mandate) $\rightarrow$ <em>Action</em> (the 3 moves you personally spearheaded) $\rightarrow$ <em>Result</em> (+240% YoY commercial impact) $\rightarrow$ <em>Learning</em> (the leadership principle).
+            </p>
+          </div>
+          <div class="sanctuary-subcard rounded-2xl p-5 space-y-2 border-l-4 border-l-autumn-500">
+            <span class="text-[11px] font-mono uppercase text-autumn-700 font-semibold">Prompt 02 • Proactive Upward Alignment</span>
+            <h4 class="font-serif font-bold text-lg text-slatewarm-900">Resolving Information Asymmetry</h4>
+            <p class="text-stone-600 leading-relaxed">
+              Select an ongoing cross-departmental initiative where information asymmetry exists between you and executive leadership. Script a concise 3-bullet update that anticipates the executive's unvoiced concerns (the 30% strategic anxieties) rather than routine tasks.
+            </p>
+          </div>
+          <div class="sanctuary-subcard rounded-2xl p-5 space-y-2 border-l-4 border-l-sage-500">
+            <span class="text-[11px] font-mono uppercase text-sage-700 font-semibold">Prompt 03 • Operational Precision Under Fire</span>
+            <h4 class="font-serif font-bold text-lg text-slatewarm-900">Bomb Defusal (KTANE) Simulation</h4>
+            <p class="text-stone-600 leading-relaxed">
+              Next lesson, you will be holding the bomb manual on your Mac! Review high-velocity operational terminology: serial number verification, wire sequence logic, and precise spatial directions (<em>top-left, adjacent, parallel</em>) without hesitation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const LESSON_CONFIG = {
+      studentName: "YH",
+      lessonNumber: "Executive Coaching",
+      lessonDate: "October 21, 2026",
+      lessonSubtitle: "The STAR-L Framework • Upward Management • Scaling 100+ Team",
+      l1FlagAndLabel: "🇯🇵 日本語の解説:",
+      heroHeadingHtml: `Welcome, YH — Your <span class="text-autumn-700 italic font-semibold">Executive Sanctuary</span> for Business English Mastery`,
+      heroIntroText: `Here is your complete, forensically tidied transcript with exact timestamps and flagged professional vernacular. All automated speech-to-text mishearings have been corrected, alongside in-depth breakdowns of today's core pillars: The STAR-L Executive Storytelling Framework, Upward Communication & Asymmetrical Information, Scaling Autonomous Teams across Multi-Tiered Hierarchies, and Louie's formative career lessons.`,
+      defaultSpotlightKey: "spearheaded"
+    };
+
+    const VOCAB_DB = {
+  "asymmetrical": {
+    "word": "asymmetrical communication",
+    "ipa": "/ˌeɪ.sɪˈmet.rɪ.kəl kəˌmjuː.nɪˈkeɪ.ʃən/",
+    "pos": "noun / collocation",
+    "level": "C2",
+    "time": "35:29",
+    "turnId": "turn-85",
+    "cat": "management",
+    "def": "An organizational imbalance where unequal distribution of information between superiors and subordinates causes friction, mismatched expectations, and strategic failure.",
+    "quote": "Louie (35:29): \"Asymmetrical. Communication.\"",
+    "l1": "非対称なコミュニケーション / 情報の非対称性 (情報格差による認識のズレ)"
+  },
+  "spearheaded": {
+    "word": "spearhead",
+    "ipa": "/ˈspɪə.hed.ɪd/",
+    "pos": "verb",
+    "level": "C2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "leadership",
+    "def": "To act as the decisive vanguard or primary driving force of an executive project, turnaround, or commercial initiative.",
+    "quote": "Louie (26:36): \"And another nice word to be like, to take in charge is spearheaded. 'I spearheaded the project, I spearheaded the initiative.'\"",
+    "l1": "陣頭指揮を執った / 主導した / 先頭に立って推進した"
+  },
+  "mandate": {
+    "word": "primary mandate",
+    "ipa": "/ˈmæn.deɪt/",
+    "pos": "noun / collocation",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "leadership",
+    "def": "An authoritative executive directive, formal scope of authority, or explicit strategic objective commissioned by an organization.",
+    "quote": "Louie (26:36): \"Now, for the task... we can say my mandate. My main mandate... my primary mandate was to deliver the project on time and under budget.\"",
+    "l1": "所命 / 委任事項 / 組織から託された最重要ミッション"
+  },
+  "autonomy": {
+    "word": "self-autonomy",
+    "ipa": "/ɔːˈtɒn.ə.mi/",
+    "pos": "noun",
+    "level": "C1",
+    "time": "42:09",
+    "turnId": "turn-107",
+    "cat": "management",
+    "def": "The condition of having operational freedom, independence, and full discretionary authority to make decisions without micromanagement.",
+    "quote": "Louie (42:09): \"So you like them to have their own autonomy, self-autonomy. Yeah, they have their own self-autonomy.\"",
+    "l1": "自律性 / 裁量権 (上司の過度な介入を受けず自走する自由)"
+  },
+  "anticipate": {
+    "word": "anticipate needs",
+    "ipa": "/ænˈtɪs.ɪ.peɪt niːdz/",
+    "pos": "verb / collocation",
+    "level": "C1",
+    "time": "38:20",
+    "turnId": "turn-95",
+    "cat": "management",
+    "def": "To proactively foresee, calculate, and address a stakeholder's latent priorities, concerns, or requirements before they are voiced.",
+    "quote": "Louie (38:20): \"Anticipate his needs... Yes, so you would think, what would he need? I've seen this situation, and I know him. So now I have to anticipate what he would need from me.\"",
+    "l1": "相手のニーズを先回りして察知する / 先手を打って対応する"
+  },
+  "qualitative": {
+    "word": "qualitative",
+    "ipa": "/ˈkwɒl.ɪ.tə.tɪv/",
+    "pos": "adjective",
+    "level": "C1",
+    "time": "12:37",
+    "turnId": "turn-62",
+    "cat": "retail",
+    "def": "Pertaining to narrative descriptions, subjective experiences, contextual customer behavior, and quality rather than numerical measurements.",
+    "quote": "YH (12:37): \"...and get the hypothesis from here and combine qualitative information and quantitative information to deliver some results.\"",
+    "l1": "定性的な / 質的な (数値化できない背景や顧客心理)"
+  },
+  "quantitative": {
+    "word": "quantitative",
+    "ipa": "/ˈkwɒn.tɪ.tə.tɪv/",
+    "pos": "adjective",
+    "level": "C1",
+    "time": "12:37",
+    "turnId": "turn-62",
+    "cat": "retail",
+    "def": "Relating to, measuring, or measured by the quantity, volume, or numerical data of something.",
+    "quote": "YH (12:37): \"...combine qualitative information and quantitative information to deliver some results.\"",
+    "l1": "定量的な / 数値的な (データや指標に基づく)"
+  },
+  "hypothesis": {
+    "word": "hypothesis",
+    "ipa": "/haɪˈpɒθ.ə.sɪs/",
+    "pos": "noun",
+    "level": "C1",
+    "time": "12:37",
+    "turnId": "turn-62",
+    "cat": "retail",
+    "def": "A proposed explanation or commercial assumption formulated as a starting point for further data analysis and strategic testing.",
+    "quote": "YH (12:37): \"I always do the data analysis and get the hypothesis from here...\"",
+    "l1": "仮説 (データ分析や施策の前提となる仮の結論)"
+  },
+  "micromanagement": {
+    "word": "micromanagement",
+    "ipa": "/ˈmaɪ.krəʊˌmæn.ɪdʒ.mənt/",
+    "pos": "noun",
+    "level": "B2",
+    "time": "41:29",
+    "turnId": "turn-106",
+    "cat": "management",
+    "def": "A suffocating management style characterized by excessive control, close observation of trivial details, and refusal to grant autonomy.",
+    "quote": "YH (41:29): \"So I don't like to do micro-management, so I trust my subordinates and delegate all the tasks.\"",
+    "l1": "マイクロマネジメント / 細部に至る過度な干渉・管理"
+  },
+  "delegate": {
+    "word": "delegate",
+    "ipa": "/ˈdel.ɪ.ɡeɪt/",
+    "pos": "verb",
+    "level": "B2",
+    "time": "41:29",
+    "turnId": "turn-106",
+    "cat": "management",
+    "def": "To entrust operational authority, responsibility, and decision-making to team members and direct reports.",
+    "quote": "YH (41:29): \"...I give clear direction, but only the big picture and delegate all the tasks to them...\"",
+    "l1": "権限委譲する / 業務を任せる"
+  },
+  "subordinates": {
+    "word": "subordinates",
+    "ipa": "/səˈbɔː.dɪ.nəts/",
+    "pos": "noun",
+    "level": "C1",
+    "time": "41:29",
+    "turnId": "turn-106",
+    "cat": "management",
+    "def": "Persons under the authority, supervision, or operational guidance of an executive or department lead.",
+    "quote": "YH (41:29): \"...so I trust my subordinates and delegate all the tasks.\"",
+    "l1": "部下 / 統括下の人員"
+  },
+  "hierarchy": {
+    "word": "hierarchy",
+    "ipa": "/ˈhaɪə.rɑː.ki/",
+    "pos": "noun",
+    "level": "B2",
+    "time": "42:47",
+    "turnId": "turn-112",
+    "cat": "management",
+    "def": "A structured system of tiered authority where organizational layers govern reporting relationships and strategic delegation.",
+    "quote": "YH (42:47): \"Well, we have a few layers of that hierarchy. The management layer.\"",
+    "l1": "組織階層 / 階層構造"
+  },
+  "span-of-control": {
+    "word": "span of control",
+    "ipa": "/spæn əv kənˈtrəʊl/",
+    "pos": "noun / collocation",
+    "level": "C1",
+    "time": "42:47",
+    "turnId": "turn-112",
+    "cat": "management",
+    "def": "The optimal number of subordinates or regional leads directly managed by an executive to maintain focus and efficiency.",
+    "quote": "YH (42:47): \"So technically I only need to handle these four or five people. Then they will manage their own team. So yeah, this is how I managed over a hundred people.\"",
+    "l1": "統率スパン / 直接管理可能人数"
+  },
+  "circuit-breaker": {
+    "word": "half-goal circuit breakers",
+    "ipa": "/ˈsɜː.kɪt ˌbreɪ.kər/",
+    "pos": "noun / idiom",
+    "level": "C2",
+    "time": "24:48",
+    "turnId": "turn-77",
+    "cat": "strategy",
+    "def": "A pre-engineered checkpoint or milestone audit installed halfway through an initiative to evaluate quality and arrest failure before delivery.",
+    "quote": "Louie (24:48): \"And I now implement half, because of that, half-goal circuit breakers... So when there's a test, I test halfway between that just to make sure there's not a problem.\"",
+    "l1": "中間安全遮断器 / チェックポイント (重大事故を防ぐ中間監査)"
+  },
+  "chewed-out": {
+    "word": "got chewed out",
+    "ipa": "/tʃuːd aʊt/",
+    "pos": "idiom / phrasal verb",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "mindset",
+    "def": "To be harshly and loudly scolded or formally reprimanded by a superior for failing to uphold executive standards.",
+    "quote": "Louie (26:36): \"So it was a huge lesson. I got chewed out. I thought I was going to be fired. My boss was super unhappy...\"",
+    "l1": "大目玉を食らった / 上司から激しく叱責された"
+  },
+  "inadequate": {
+    "word": "inadequate",
+    "ipa": "/ɪnˈæd.ɪ.kwət/",
+    "pos": "adjective",
+    "level": "C1",
+    "time": "24:48",
+    "turnId": "turn-77",
+    "cat": "strategy",
+    "def": "Lacking the required depth, standard, or competence to fulfill an operational requirement or business role.",
+    "quote": "Louie (24:48): \"What would happen is the training was inadequate, and then I was inadequate. Then my boss would say to me, 'Why did you not notice that the training was inadequate?'\"",
+    "l1": "不十分な / 力不足の / 基準に満たない"
+  },
+  "inferior": {
+    "word": "inferior",
+    "ipa": "/ɪnˈfɪə.ri.ər/",
+    "pos": "adjective",
+    "level": "B2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "strategy",
+    "def": "Noticeably lower in operational quality, value, or professional rigor compared with accepted standards.",
+    "quote": "Louie (26:36): \"The in-house training we got from that company was inferior, but not inferior from that individual, from the trainer...\"",
+    "l1": "劣った / 粗悪な / 質の低い"
+  },
+  "leave-money-on-the-table": {
+    "word": "leave money on the table",
+    "ipa": "/liːv ˈmʌn.i ɒn ðə ˈteɪ.bəl/",
+    "pos": "idiom",
+    "level": "C2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "retail",
+    "def": "To surrender, forfeit, or fail to collect additional commercial margin and revenue that a buyer was fully prepared to pay.",
+    "quote": "Louie (26:36): \"If I go to a cocktail bar in Japan, they will ask, 'What kind of whiskey do you like?' you know, because they don't want to leave money on the table.\"",
+    "l1": "取れるはずの利益を取りこぼす / 付加価値を換金し損ねる"
+  },
+  "bad-salesmanship": {
+    "word": "bad salesmanship",
+    "ipa": "/bæd ˈseɪlz.mən.ʃɪp/",
+    "pos": "noun / collocation",
+    "level": "B2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "retail",
+    "def": "Rigid, unimaginative, or defensive selling practices that alienate willing customers and reject revenue opportunities.",
+    "quote": "Louie (26:36): \"I hate having owned a bar because I know how horrible this is. This is very bad salesmanship. Very bad.\"",
+    "l1": "稚拙なセールス対応 / 顧客心理を無視した無策な商売"
+  },
+  "sing-your-praises": {
+    "word": "sing your praises",
+    "ipa": "/sɪŋ jɔː ˈpreɪ.zɪz/",
+    "pos": "idiom",
+    "level": "C1",
+    "time": "14:02",
+    "turnId": "turn-63",
+    "cat": "interview",
+    "def": "To confidently speak of one's own capabilities, direct leadership impact, and professional triumphs without false modesty.",
+    "quote": "Louie (14:02): \"Because it's okay to sing your praises, okay? Because that's why you're there to show what you did.\"",
+    "l1": "自分の功績や強みを堂々とアピールする / 自賛する"
+  },
+  "under-budget": {
+    "word": "on time and under budget",
+    "ipa": "/ˈʌn.də ˈbʌdʒ.ɪt/",
+    "pos": "collocation",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "strategy",
+    "def": "The gold standard of corporate delivery: achieving all milestones prior to deadline while expending less capital than authorized.",
+    "quote": "Louie (26:36): \"My primary mandate was to deliver the project on time and under budget, which is most of my work.\"",
+    "l1": "納期厳守かつ予算内で (超過なしのプロジェクト遂行)"
+  },
+  "who-dares-wins": {
+    "word": "who dares wins",
+    "ipa": "/huː deəz wɪnz/",
+    "pos": "proverb / idiom",
+    "level": "C2",
+    "time": "15:08",
+    "turnId": "turn-65",
+    "cat": "mindset",
+    "def": "The British military and business maxim that courage, bold calculated risks, and stubborn grit will conquer seemingly impossible obstacles.",
+    "quote": "Louie (15:08): \"What I learned from this process is that 'who dares wins'. Where there's a will, there's a way.\"",
+    "l1": "勇気ある者が勝つ / 挑む者に勝利は微笑む"
+  },
+  "where-theres-a-will": {
+    "word": "where there's a will, there's a way",
+    "ipa": "/weə ðeəz ə wɪl/",
+    "pos": "proverb",
+    "level": "B2",
+    "time": "15:08",
+    "turnId": "turn-65",
+    "cat": "mindset",
+    "def": "Proverb affirming that intense determination and resolve can overcome any procedural or bureaucratic barrier.",
+    "quote": "Louie (15:08): \"Where there's a will, there's a way. We just have to sometimes suck it up and put the effort and work in.\"",
+    "l1": "意志あるところに道は開ける"
+  },
+  "suck-it-up": {
+    "word": "suck it up",
+    "ipa": "/sʌk ɪt ʌp/",
+    "pos": "idiom",
+    "level": "C1",
+    "time": "15:08",
+    "turnId": "turn-65",
+    "cat": "mindset",
+    "def": "To stoically endure an exhausting physical effort or stressful hardship without quitting or making excuses.",
+    "quote": "Louie (15:08): \"We just have to sometimes suck it up and put the effort and the work in... Anything is possible, even under the most extreme circumstances.\"",
+    "l1": "文句を言わず耐え抜く / 覚悟を決めてやり抜く"
+  },
+  "shot-yourself-in-the-foot": {
+    "word": "shot yourself in the foot",
+    "ipa": "/ʃɒt jɔːˈself ɪn ðə fʊt/",
+    "pos": "idiom",
+    "level": "C1",
+    "time": "07:12",
+    "turnId": "turn-37",
+    "cat": "syntax",
+    "def": "To inadvertently destroy one's own advantage or mislead one's own investigation through an unfortunate mistake.",
+    "quote": "Louie (07:12): \"I think you shot yourself in the foot about asking about Vietnam because Vietnam has a strange relationship with this bird.\"",
+    "l1": "自分で自分の首を絞める / 墓穴を掘る / 足を引っ張る"
+  },
+  "bog-down": {
+    "word": "bogged down",
+    "ipa": "/bɒɡd daʊn/",
+    "pos": "phrasal verb",
+    "level": "C1",
+    "time": "06:05",
+    "turnId": "turn-31",
+    "cat": "syntax",
+    "def": "To become heavily delayed, overwhelmed, or bogged down by excessive trivia and non-essential considerations.",
+    "quote": "Louie (06:05): \"I think you got too bogged down in vegetables and everything like that.\"",
+    "l1": "些末な点に行き詰まる / 泥沼にはまる"
+  },
+  "misalignment": {
+    "word": "misalignment",
+    "ipa": "/ˌmɪs.əˈlaɪn.mənt/",
+    "pos": "noun",
+    "level": "C1",
+    "time": "36:30",
+    "turnId": "turn-91",
+    "cat": "management",
+    "def": "A divergence in goals, expectations, or priorities between departments, leaders, or operational reports.",
+    "quote": "Louie (36:30): \"Maybe there's a misalignment in your reporting skills or something...\"",
+    "l1": "認識の不一致 / 方向性のズレ"
+  },
+  "out-of-the-loop": {
+    "word": "out of the loop",
+    "ipa": "/aʊt əv ðə luːp/",
+    "pos": "idiom",
+    "level": "B2",
+    "time": "34:56",
+    "turnId": "turn-81",
+    "cat": "management",
+    "def": "Excluded from vital updates, critical developments, or insider intelligence within an organization.",
+    "quote": "Louie (34:56): \"So, I see you're out of the loop, you have the information, but it's not coming.\"",
+    "l1": "情報共有から外れて / 蚊帳の外で"
+  },
+  "put-in-their-shoes": {
+    "word": "put myself in their shoes",
+    "ipa": "/pʊt ɪn ðeə ʃuːz/",
+    "pos": "idiom",
+    "level": "B2",
+    "time": "37:17",
+    "turnId": "turn-94",
+    "cat": "management",
+    "def": "To evaluate an issue or strategic presentation from the specific vantage point, pressures, and priorities of another executive.",
+    "quote": "YH (37:17): \"Well, first of all, what I learned is I always need to put myself in their shoes, which is seeing the situation from his angle.\"",
+    "l1": "相手の立場に身を置く / 相手の目線で物事を捉える"
+  },
+  "operational": {
+    "word": "operational skills",
+    "ipa": "/ˌɒp.ərˈeɪ.ʃən.əl skɪlz/",
+    "pos": "collocation",
+    "level": "B2",
+    "time": "40:43",
+    "turnId": "turn-103",
+    "cat": "strategy",
+    "def": "Practical expertise in running daily business logistics, supply chain routines, workflow optimization, and execution.",
+    "quote": "Louie (40:43): \"However, I need to improve my operational skills. / YH: Operations and management skills.\"",
+    "l1": "業務推進力 / 運用管理の実務スキル"
+  },
+  "aspirations": {
+    "word": "aspirations",
+    "ipa": "/ˌæs.pɪˈreɪ.ʃənz/",
+    "pos": "noun",
+    "level": "C1",
+    "time": "40:43",
+    "turnId": "turn-103",
+    "cat": "interview",
+    "def": "High-level ambitions, long-range career milestones, and visionary corporate targets.",
+    "quote": "Louie (40:43): \"Nice. So your aspirations... are that I would like to have my own business.\"",
+    "l1": "大志 / キャリア上の抱負 / 長期的な目標"
+  },
+  "attribute": {
+    "word": "management attribute",
+    "ipa": "/ˈæt.rɪ.bjuːt/",
+    "pos": "noun / collocation",
+    "level": "C1",
+    "time": "43:30",
+    "turnId": "turn-113",
+    "cat": "management",
+    "def": "A distinctive executive trait, characteristic behavior, or leadership philosophy exhibited by a manager.",
+    "quote": "Louie (43:30): \"And what is one management attribute that you would like to develop?\"",
+    "l1": "マネジメント資質 / 指導力の特徴"
+  },
+  "overhaul": {
+    "word": "overhauling the notes",
+    "ipa": "/ˌəʊ.vəˈhɔːl/",
+    "pos": "verb",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "strategy",
+    "def": "Completely dismantling, redesigning, and modernizing a system or process from top to bottom.",
+    "quote": "Louie (26:36): \"I'm tired because I've been spending the last few days overhauling the notes even more... Now, a new system completely.\"",
+    "l1": "全面刷新する / 抜本的に見直して作り直す"
+  },
+  "meritocracy": {
+    "word": "rely on merit",
+    "ipa": "/ˈmer.ɪt/",
+    "pos": "noun / collocation",
+    "level": "C1",
+    "time": "45:40",
+    "turnId": "turn-117",
+    "cat": "mindset",
+    "def": "A system where status and promotion are awarded purely on demonstrable competence and quantifiable results.",
+    "quote": "Louie (45:40): \"I think I would like to develop an environment where we do not only rely on merit. Maybe there is a place for everyone in the team.\"",
+    "l1": "実力・成果主義 (純粋な実績のみを評価基準とすること)"
+  },
+  "combative": {
+    "word": "combative",
+    "ipa": "/ˈkɒm.bə.tɪv/",
+    "pos": "adjective",
+    "level": "C2",
+    "time": "45:40",
+    "turnId": "turn-117",
+    "cat": "mindset",
+    "def": "Aggressively contentious, combative, or fiercely competitive in tone or team culture.",
+    "quote": "Louie (45:40): \"Maybe there is a place for everyone in the team and it's not so combative in competing, I think.\"",
+    "l1": "好戦的な / 対立的で刺々しい"
+  },
+  "tackle": {
+    "word": "tackle the problem",
+    "ipa": "/ˈtæk.əl/",
+    "pos": "verb",
+    "level": "B2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "interview",
+    "def": "To aggressively initiate action and confront a complex operational obstacle.",
+    "quote": "Louie (26:36): \"Okay, so in action, we can use, obviously, first... or to tackle the problem, to tackle this task, I did blah.\"",
+    "l1": "課題に果敢に取り組む / 正面から対処する"
+  },
+  "direct-result": {
+    "word": "as a direct result of my actions",
+    "ipa": "/daɪˈrekt rɪˈzʌlt/",
+    "pos": "collocation",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "interview",
+    "def": "Explicitly establishing executive causality between your personal actions and business performance.",
+    "quote": "Louie (26:36): \"Next result, the nice one: as a direct result of my actions. Okay, nice and easy.\"",
+    "l1": "私の施策の直接的な成果として"
+  },
+  "looking-back": {
+    "word": "looking back",
+    "ipa": "/ˈlʊk.ɪŋ bæk/",
+    "pos": "idiom",
+    "level": "B2",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "interview",
+    "def": "Examining past decisions with critical hindsight and seasoned perspective.",
+    "quote": "Louie (26:36): \"Looking back, I would never have owned a bar. Or if I were to do this again...\"",
+    "l1": "今にして思えば / 当時を振り返ってみると"
+  },
+  "sales-driving": {
+    "word": "sales driving factors",
+    "ipa": "/seɪlz ˈdraɪ.vɪŋ ˈfæk.təz/",
+    "pos": "compound noun",
+    "level": "C1",
+    "time": "19:11",
+    "turnId": "turn-68",
+    "cat": "retail",
+    "def": "The pivotal product offerings, customer segments, or marketing channels that generate the overwhelming majority of revenue.",
+    "quote": "YH (19:11): \"And that we can more focus on the sales driving factors. So yeah, this is my responsibility that time.\"",
+    "l1": "売上を牽引する中核要因 / トップライン成長のレバー"
+  },
+  "best-selling": {
+    "word": "best-selling items",
+    "ipa": "/ˌbestˈsel.ɪŋ/",
+    "pos": "adjective",
+    "level": "B2",
+    "time": "12:37",
+    "turnId": "turn-62",
+    "cat": "retail",
+    "def": "Merchandise enjoying the highest sales volume, conversion rate, and transaction frequency in a catalog.",
+    "quote": "YH (12:37): \"So we always analyze the data and we keep picking up on the best-selling items or best-selling brands.\"",
+    "l1": "売れ筋商品 / 最多販売アイテム"
+  },
+  "product-lines": {
+    "word": "product lines",
+    "ipa": "/ˈprɒd.ʌkt laɪnz/",
+    "pos": "compound noun",
+    "level": "B2",
+    "time": "22:02",
+    "turnId": "turn-69",
+    "cat": "retail",
+    "def": "A family of related commercial products marketed by a retail business to satisfy specific consumer segments.",
+    "quote": "Louie (22:02): \"So we can use the word, say, instead of add additional: we can have additional product lines or items...\"",
+    "l1": "製品ライン / 商品カテゴリー群"
+  },
+  "planning-permission": {
+    "word": "planning permission",
+    "ipa": "/ˈplæn.ɪŋ pəˌmɪʃ.ən/",
+    "pos": "compound noun",
+    "level": "C1",
+    "time": "15:08",
+    "turnId": "turn-65",
+    "cat": "strategy",
+    "def": "Formal statutory approval required from local government authorities for physical property development and zoning.",
+    "quote": "Louie (15:08): \"A situation that I was involved in was that I needed to get some planning permission approved...\"",
+    "l1": "都市計画・建築開発許可"
+  },
+  "fermented": {
+    "word": "fermented things",
+    "ipa": "/fəˈmen.tɪd/",
+    "pos": "adjective",
+    "level": "B2",
+    "time": "05:13",
+    "turnId": "turn-29",
+    "cat": "syntax",
+    "def": "Foods transformed through controlled microbial fermentation, such as natto, miso, or kimchi.",
+    "quote": "Louie (05:13): \"For example, I think in Japan you can eat rice and egg mixed together or little fermented things...\"",
+    "l1": "発酵食品 (納豆や味噌など)"
+  },
+  "remortgaging": {
+    "word": "remortgaging",
+    "ipa": "/ˌriːˈmɔː.ɡɪdʒ.ɪŋ/",
+    "pos": "verb / noun",
+    "level": "C1",
+    "time": "26:36",
+    "turnId": "turn-79",
+    "cat": "retail",
+    "def": "Refinancing an existing property loan to obtain emergency capital or stave off corporate insolvency.",
+    "quote": "Louie (26:36): \"Their cost was 2 million. Insane. They were remortgaging, and it is a horrible thing to see.\"",
+    "l1": "再担保設定 / 住宅ローンの借り換え (資金繰りの窮策)"
+  },
+  "organic": {
+    "word": "organic",
+    "ipa": "/ɔːˈɡæn.ɪk/",
+    "pos": "adjective",
+    "level": "B2",
+    "time": "08:15",
+    "turnId": "turn-39",
+    "cat": "syntax",
+    "def": "Derived from living matter without synthetic chemicals; natural biological organism.",
+    "quote": "Louie (08:15): \"Okay... Is it organic? / YH: Yes.\"",
+    "l1": "有機の / 動植物由来の"
+  },
+  "e-commerce": {
+    "word": "e-commerce",
+    "ipa": "/ˈiːˌkɒm.ɜːs/",
+    "pos": "noun",
+    "level": "B2",
+    "time": "12:37",
+    "turnId": "turn-62",
+    "cat": "retail",
+    "def": "Digital commercial transactions conducted across networked platforms and electronic retail storefronts.",
+    "quote": "YH (12:37): \"For example, e-commerce, when I was working in the e-commerce, you have a lot of customer data and item data...\"",
+    "l1": "電子商取引 / Eコマース事業"
+  },
+  "oversee": {
+    "word": "oversaw 100 employees",
+    "ipa": "/ˌəʊ.vəˈsiː/",
+    "pos": "verb",
+    "level": "C1",
+    "time": "42:40",
+    "turnId": "turn-110",
+    "cat": "leadership",
+    "def": "To hold operational command, fiduciary responsibility, and general governance over a large workforce.",
+    "quote": "Louie (42:40): \"Wow. So you oversaw 100 employees. / YH: Right, yeah.\"",
+    "l1": "100名の組織を統括・指揮した"
+  },
+  "voice": {
+    "word": "voice problems",
+    "ipa": "/vɔɪs/",
+    "pos": "verb",
+    "level": "B2",
+    "time": "24:48",
+    "turnId": "turn-77",
+    "cat": "mindset",
+    "def": "To audibly register grievances, training inadequacies, or operational risks before small cracks become crises.",
+    "quote": "Louie (24:48): \"My problem as an employee was I would not voice problems with my training... So I got in big trouble for this.\"",
+    "l1": "問題点や懸念を進んで口に出す / 声を上げる"
+  },
+  "unusual": {
+    "word": "unusual",
+    "ipa": "/ʌnˈjuː.ʒu.əl/",
+    "pos": "adjective",
+    "level": "B2",
+    "time": "03:51",
+    "turnId": "turn-21",
+    "cat": "syntax",
+    "def": "Remarkable, non-standard, or distinct from habitual cultural expectations.",
+    "quote": "Louie (03:51): \"It's not unusual, but maybe it sounds unusual, but it's not unusual at all.\"",
+    "l1": "普通ではない / 珍しい / 異例の"
+  },
+  "concept": {
+    "word": "concept of breakfast",
+    "ipa": "/ˈkɒn.sept/",
+    "pos": "noun",
+    "level": "B2",
+    "time": "05:13",
+    "turnId": "turn-29",
+    "cat": "syntax",
+    "def": "A generalized cultural construct or mental model governing social habits.",
+    "quote": "Louie (05:13): \"In Vietnam, they don't have the concept of breakfast. They will just eat dinner again, which is... very weird to have a full meal.\"",
+    "l1": "朝食という概念 / 観念"
+  }
+}
+;
+    const TRANSCRIPT_TURNS = [
+    {
+        "id":  "turn-1",
+        "chapterId":  "chap-1",
+        "chapterTitle":  "Chapter 1 • 📦 Warm-Up: The 10-Question Deductive Mystery Game (00:00 – 12:35)",
+        "speaker":  "Louie",
+        "time":  "00:00",
+        "html":  "How are you today? \u003cspan class=\"asr-fix-pill\" title=\"ASR clipped Louie\u0027s greeting\"\u003e✨ Fixed: \"How are you today?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Help you today?\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-2",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:03",
+        "html":  "Hello? I think I cannot hear your voice."
+    },
+    {
+        "id":  "turn-3",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:06",
+        "html":  "Could you hear my voice now?"
+    },
+    {
+        "id":  "turn-4",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:10",
+        "html":  "A little bit. Choppy."
+    },
+    {
+        "id":  "turn-5",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:12",
+        "html":  "A little bit choppy, let me just check. Hello, testing, hello. Sorry about that."
+    },
+    {
+        "id":  "turn-6",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "00:27",
+        "html":  "Hello. Hello. Hello."
+    },
+    {
+        "id":  "turn-7",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "00:29",
+        "html":  "How are you today? Good, very good. Okay, so we\u0027ll just start with a quick warm-up for today, and we\u0027re going to play a quick situation game. I\u0027m sorry? A quick mental game where you have to guess the item that I\u0027m thinking of. Okay. But you have ten questions to ask me to get some information, but you can only ask me questions that I can answer yes or no. Okay, so I\u0027m thinking of a thing. Okay, so it can be anything, and you have ten questions to ask me. So what would you like to ask me?"
+    },
+    {
+        "id":  "turn-8",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:16",
+        "html":  "Okay, so yeah, I can only ask you ten questions, and I need to..."
+    },
+    {
+        "id":  "turn-9",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:23",
+        "html":  "A guess then? Guess. Sorry. Yes, yeah..."
+    },
+    {
+        "id":  "turn-10",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:27",
+        "html":  "Alright. So, are you thinking about the food or not?"
+    },
+    {
+        "id":  "turn-11",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:36",
+        "html":  "Yes..."
+    },
+    {
+        "id":  "turn-12",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "01:43",
+        "html":  "Number two, is this food related to Vietnam or not? \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027or not\u0027 as \u0027orna\u0027\"\u003e✨ Fixed: \"related to Vietnam or not\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"related to the Vietnam orna\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-13",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "01:58",
+        "html":  "But they eat everything. [Laughter] I mean, not like China, but they eat quite a lot. Yes..."
+    },
+    {
+        "id":  "turn-14",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:05",
+        "html":  "Okay, alright, so next question is... This food is cheap or expensive."
+    },
+    {
+        "id":  "turn-15",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:27",
+        "html":  "Cheap. It\u0027s..."
+    },
+    {
+        "id":  "turn-16",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:28",
+        "html":  "Cheap, not..."
+    },
+    {
+        "id":  "turn-17",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:28",
+        "html":  "Very cheap."
+    },
+    {
+        "id":  "turn-18",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:29",
+        "html":  "Yeah, cheap. I have to ask you about yes or no. So..."
+    },
+    {
+        "id":  "turn-19",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "02:34",
+        "html":  "Yes. It\u0027s che. It\u0027s the ch..."
+    },
+    {
+        "id":  "turn-20",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "02:36",
+        "html":  "It\u0027s cheap, so cheap... Some are related to Vietnam and food. Okay, so, is this food made from no using the bread or not? No. Okay, and the next question is, is this food using the noodle or not? No. Okay, well, what else? Is this vegetable or not? Is this...? Contains AI, don\u0027t know, is this...? Like a row?"
+    },
+    {
+        "id":  "turn-21",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "03:51",
+        "html":  "It can be raw. Yeah, it can be raw. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027raw\u0027 as \u0027wrong\u0027\"\u003e✨ Fixed: \"raw\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"wrong\")\u003c/span\u003e\u003c/span\u003e Yes... I remember. My answer was, \"I\u0027m in Vietnam, so they have it here, so it\u0027s food.\" Maybe a little bit. It\u0027s not \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e, but maybe it sounds \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e, but it\u0027s not \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e at all."
+    },
+    {
+        "id":  "turn-22",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:22",
+        "html":  "Yes, I have two to three questions left. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027two to three\u0027 as \u0027two dis three\u0027\"\u003e✨ Fixed: \"two to three questions\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"two dis three\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-23",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:25",
+        "html":  "Three questions left. Yeah..."
+    },
+    {
+        "id":  "turn-24",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:38",
+        "html":  "Are you eating this food in the morning or not?"
+    },
+    {
+        "id":  "turn-25",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:45",
+        "html":  "In Europe, no, but in Vietnam, yes. Yeah, so..."
+    },
+    {
+        "id":  "turn-26",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "04:52",
+        "html":  "Morning or PM? \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027morning\u0027 as \u0027You\u0027re knowing\u0027\"\u003e✨ Fixed: \"Morning or PM?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"You\u0027re knowing? PM.\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-27",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "04:58",
+        "html":  "I don\u0027t think you would eat it in Japan for breakfast."
+    },
+    {
+        "id":  "turn-28",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "05:08",
+        "html":  "Yeah, because most of that the Vietnamese food are. Yeah."
+    },
+    {
+        "id":  "turn-29",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "05:13",
+        "html":  "They don\u0027t have breakfast here. For example, I think in Japan you can eat rice and egg mixed together or little \u003cspan class=\"vocab-mark\" data-vkey=\"fermented\" onclick=\"inspectVocab(\u0027fermented\u0027)\"\u003efermented things\u003c/span\u003e. I can\u0027t remember what it\u0027s called, but in England we have bacon for breakfast, eggs. But in Vietnam, they don\u0027t have the \u003cspan class=\"vocab-mark\" data-vkey=\"concept\" onclick=\"inspectVocab(\u0027concept\u0027)\"\u003econcept of breakfast\u003c/span\u003e. They will just dinner again, which is... I always laugh. I say Vietnam\u0027s great because you can have dinner for breakfast. Literally, they had dinner for breakfast. Yeah, which is very weird, to have a full meal, very \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-30",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "05:56",
+        "html":  "Okay, so, is this using the rice or not?"
+    },
+    {
+        "id":  "turn-31",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:05",
+        "html":  "No... I. No. I mean, you can use rice with it. But it\u0027s not. It\u0027s. I think, you got too \u003cspan class=\"vocab-mark\" data-vkey=\"bog-down\" onclick=\"inspectVocab(\u0027bog-down\u0027)\"\u003ebogged down\u003c/span\u003e in vegetables \u003cspan class=\"asr-fix-pill\" title=\"ASR missed \u0027too\u0027 and fractured \u0027bogged down\u0027\"\u003e✨ Fixed: \"too \u003cspan class=\"vocab-mark\" data-vkey=\"bog-down\" onclick=\"inspectVocab(\u0027bog-down\u0027)\"\u003ebogged down\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"to bog down in,\")\u003c/span\u003e\u003c/span\u003e and everything like that."
+    },
+    {
+        "id":  "turn-32",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "06:28",
+        "html":  "Wow, so difficult. Last question."
+    },
+    {
+        "id":  "turn-33",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:32",
+        "html":  "So you could eat it, but it\u0027s not a vegetable, it\u0027s not a rice. It\u0027s yeah..."
+    },
+    {
+        "id":  "turn-34",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "06:43",
+        "html":  "Okay, so sometimes you drink it or not?"
+    },
+    {
+        "id":  "turn-35",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "06:54",
+        "html":  "I would say no, I would largely say no. Yes, no, okay, would you like to have a guess?"
+    },
+    {
+        "id":  "turn-36",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "07:09",
+        "html":  "Well, actually, I don\u0027t have any idea like that."
+    },
+    {
+        "id":  "turn-37",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "07:12",
+        "html":  "I think you \u003cspan class=\"vocab-mark\" data-vkey=\"shot-yourself-in-the-foot\" onclick=\"inspectVocab(\u0027shot-yourself-in-the-foot\u0027)\"\u003eshot yourself in the foot\u003c/span\u003e about asking about Vietnam because Vietnam has a strange relationship with this bird. Yes. In Vietnam, they eat birds, literally. They have small little birds, and they sell them on the street. They\u0027ll have cages full of birds, and you can buy the bird in the cage. Obviously, you could have chicken. You can eat it. It\u0027s a food as well, so, yeah, it\u0027s a bit \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e. It\u0027s a bit \u003cspan class=\"vocab-mark\" data-vkey=\"unusual\" onclick=\"inspectVocab(\u0027unusual\u0027)\"\u003eunusual\u003c/span\u003e. Okay, so it can be alive, okay, it can be anything. Okay, so, please, can you think of a word, an object, and a thing? So we\u0027ll do it the other way around. Can you think of an object or a thing?"
+    },
+    {
+        "id":  "turn-38",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:05",
+        "html":  "Okay. One. Okay."
+    },
+    {
+        "id":  "turn-39",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:15",
+        "html":  "Okay... Is it \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-40",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:19",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-41",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:20",
+        "html":  "Okay, is it a an animal... Is it a some kind of plant?"
+    },
+    {
+        "id":  "turn-42",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:31",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-43",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "08:34",
+        "html":  "Can we buy it in a supermarket to eat? Primary? Okay, what was that? Three, I think. Okay. Is it popular in Japan?"
+    },
+    {
+        "id":  "turn-44",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "08:54",
+        "html":  "No, everybody knows that, but it\u0027s very strange."
+    },
+    {
+        "id":  "turn-45",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:06",
+        "html":  "Wow. Okay, and in Europe..."
+    },
+    {
+        "id":  "turn-46",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:12",
+        "html":  "In Europe? Actually, I don\u0027t know. \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027In Europe?\u0027 as \u0027You\u0027re wrong\u0027\"\u003e✨ Fixed: \"In Europe?\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"You\u0027re wrong.\")\u003c/span\u003e\u003c/span\u003e But I think it\u0027s not so..."
+    },
+    {
+        "id":  "turn-47",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:18",
+        "html":  "Is it in a popular dish?"
+    },
+    {
+        "id":  "turn-48",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:24",
+        "html":  "Not itself."
+    },
+    {
+        "id":  "turn-49",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:29",
+        "html":  "It\u0027s \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e as a plant, it\u0027s not that popular, it\u0027s not in a popular dish, its primary function is to eat it."
+    },
+    {
+        "id":  "turn-50",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "09:45",
+        "html":  "Yes..."
+    },
+    {
+        "id":  "turn-51",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "09:48",
+        "html":  "It\u0027s not even a dish. Does it have a health benefit to it?"
+    },
+    {
+        "id":  "turn-52",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:00",
+        "html":  "I think so. Ya have..."
+    },
+    {
+        "id":  "turn-53",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:03",
+        "html":  "Okay. Is it \u003cspan class=\"vocab-mark\" data-vkey=\"organic\" onclick=\"inspectVocab(\u0027organic\u0027)\"\u003eorganic\u003c/span\u003e? Is it a seasoning?"
+    },
+    {
+        "id":  "turn-54",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:22",
+        "html":  "Sometimes, but usually no."
+    },
+    {
+        "id":  "turn-55",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:26",
+        "html":  "Usually? No."
+    },
+    {
+        "id":  "turn-56",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:28",
+        "html":  "Yeah..."
+    },
+    {
+        "id":  "turn-57",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:29",
+        "html":  "Okay, I think I can get this. It\u0027s from a plant. Is it green?"
+    },
+    {
+        "id":  "turn-58",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "10:47",
+        "html":  "A let bit or it depends on kind."
+    },
+    {
+        "id":  "turn-59",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "10:54",
+        "html":  "Right, I\u0027ll have to guess. It\u0027s not a main ingredient, so I\u0027ll just have to guess something strange and I think it\u0027s a bad guess. I really want to choose seaweed, but it\u0027s definitely not. I say... Very popular. I suppose green was sometimes green passion fruit. I don\u0027t know, I can\u0027t think of anything..."
+    },
+    {
+        "id":  "turn-60",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "11:39",
+        "html":  "Yeah, it\u0027s very close. Very close."
+    },
+    {
+        "id":  "turn-61",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "11:43",
+        "html":  "What is it? Okay, yes, I see, okay, yeah. That\u0027s a good one. Okay, very good. Okay, let\u0027s get into the meat of the lesson. Okay, so today, I think I\u0027m going to show you... Well, what, may I ask? When you\u0027re in an interview, what is it? When someone asks you for a solution that you have provided an outcome, what\u0027s what do you normally suggest? What is your normal automatic answer, for example, how did you contribute, what did you do, what is the example you love to give, that you want to give?"
+    },
+    {
+        "id":  "turn-62",
+        "chapterId":  "chap-2",
+        "chapterTitle":  "Chapter 2 • 🌟 The STAR-L Framework \u0026 Executive Storytelling (12:35 – 22:45)",
+        "speaker":  "YH",
+        "time":  "12:37",
+        "html":  "Okay, so first of all, I keep working in the retail industries, and retail is always linked to a lot of data \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027retail\u0027 as \u0027the tail\u0027\"\u003e✨ Fixed: \"retail\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"the tail\")\u003c/span\u003e\u003c/span\u003e. And what I always share with them is... I always do the data analysis and get the data from... Get the \u003cspan class=\"vocab-mark\" data-vkey=\"hypothesis\" onclick=\"inspectVocab(\u0027hypothesis\u0027)\"\u003ehypothesis\u003c/span\u003e from here and combine \u003cspan class=\"vocab-mark\" data-vkey=\"qualitative\" onclick=\"inspectVocab(\u0027qualitative\u0027)\"\u003equalitative information\u003c/span\u003e and \u003cspan class=\"vocab-mark\" data-vkey=\"quantitative\" onclick=\"inspectVocab(\u0027quantitative\u0027)\"\u003equantitative information\u003c/span\u003e to deliver some results. For example, \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e, when I was working in the \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e, you have a lot of customer data and item data which we sold. But if you want to increase the sales, you need to make a decision about what kind of item we need to focus on or what kind of brand we need to focus on. So we always analyze the data and we keep picking up on the \u003cspan class=\"vocab-mark\" data-vkey=\"best-selling\" onclick=\"inspectVocab(\u0027best-selling\u0027)\"\u003ebest-selling items\u003c/span\u003e or \u003cspan class=\"vocab-mark\" data-vkey=\"best-selling\" onclick=\"inspectVocab(\u0027best-selling\u0027)\"\u003ebest-selling brands\u003c/span\u003e. Then, we make the decision whether we want to extend this item list for this brand or whether we want to expand similar items to this category or not. So what I can contribute to the new company is data analysis and delivery."
+    },
+    {
+        "id":  "turn-63",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "14:02",
+        "html":  "Okay, very good. That\u0027s good. So the reason why I asked... I\u0027ll put it into the canvas for today. I wanted to make sure that maybe the last lesson I said about personality or individual individuality in your interview, you\u0027re selling yourself \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027interview\u0027 as \u0027individuality\u0027\"\u003e✨ Fixed: \"interview\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"individuality\")\u003c/span\u003e\u003c/span\u003e. It\u0027s very important that when you give answers, you stop saying, \"We did this. We did that.\" Okay, so we want to say, \"I contributed. I did that.\" We want to... Because it\u0027s okay to \u003cspan class=\"vocab-mark\" data-vkey=\"sing-your-praises\" onclick=\"inspectVocab(\u0027sing-your-praises\u0027)\"\u003esing your praises\u003c/span\u003e, okay? Because that\u0027s why you\u0027re there to show what you did. For example, we can use a little guide. Okay, so called STAR. Have you ever used STAR before?"
+    },
+    {
+        "id":  "turn-64",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "15:02",
+        "html":  "R is Situation, Task, Action, and the Result? \u003cspan class=\"asr-fix-pill\" title=\"ASR fragmented the STAR acronym explanation\"\u003e✨ Fixed: \"Situation, Task, Action, Result\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Are situation task... Something in the result?\")\u003c/span\u003e\u003c/span\u003e"
+    },
+    {
+        "id":  "turn-65",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "15:08",
+        "html":  "Yeah, exactly. So, yeah, the situation. So you agree at, you know, giving a kind of outline for the, sitch situation? Okay. Okay. And then the task, what you wanted to accomplish, that was great, but remember, we must get away from we because it\u0027s you. Yeah, you know, you do have a team, but you run the team. You know, it\u0027s your direction, it\u0027s your actual body of work as well. Okay... The action. Okay, and so you can give three steps. Okay, you can give three steps to that. That\u0027s c5123. The results and what you learned. Okay, the... What you learned. Okay, so I\u0027ll have a go at doing it. So, a situation that I was involved in was that we needed to... Sorry, we... I needed to get some \u003cspan class=\"vocab-mark\" data-vkey=\"planning-permission\" onclick=\"inspectVocab(\u0027planning-permission\u0027)\"\u003eplanning permission\u003c/span\u003e approved. Okay? So what I did was I was very naughty and I hid it. Actually, that\u0027s a lie. I didn\u0027t hide it. I waited. I waited till lockdown started. Covid and I applied for the \u003cspan class=\"vocab-mark\" data-vkey=\"planning-permission\" onclick=\"inspectVocab(\u0027planning-permission\u0027)\"\u003eplanning permission\u003c/span\u003e as soon as lockdown happened, because the government would never approve it. The people would never approve it. So the task was that I had to... This is actually a true story. I needed a judge to find something, but the judge was in another county. It was out. It was in a county called Buckinghamshire. But I was in Oxford. So the police... We weren\u0027t allowed to travel. We weren\u0027t allowed to travel. It was illegal to travel. So I walked for eight hours to the where the judge lives, and the judge stamped the papers for me. The stamped the papers. Then I had to walk ten hours back through the countryside so that... Because we just weren\u0027t allowed to travel. So that was the action. The result was... Even though I could not get the paperwork done, I managed to get it done, and it was not challenged by any citizens. What I learned from this process is that \"\u003cspan class=\"vocab-mark\" data-vkey=\"who-dares-wins\" onclick=\"inspectVocab(\u0027who-dares-wins\u0027)\"\u003ewho dares wins\u003c/span\u003e.\" \u003cspan class=\"vocab-mark\" data-vkey=\"where-theres-a-will\" onclick=\"inspectVocab(\u0027where-theres-a-will\u0027)\"\u003eWhere there\u0027s a will, there\u0027s a way\u003c/span\u003e. We just have to sometimes \u003cspan class=\"vocab-mark\" data-vkey=\"suck-it-up\" onclick=\"inspectVocab(\u0027suck-it-up\u0027)\"\u003esuck it up\u003c/span\u003e and put the effort and the work in \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027effort\u0027 as \u0027earth\u0027\"\u003e✨ Fixed: \"effort\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"earth\")\u003c/span\u003e\u003c/span\u003e and... Walking [Laughter] and... Anything is possible, even under the most extreme circumstances. Yeah. So would you like to give a situation as well? Using... S. The Star L model."
+    },
+    {
+        "id":  "turn-66",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "18:57",
+        "html":  "Okay, so I\u0027m using the same story. So the situation was... Okay, so this story was when I was working in the \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e company."
+    },
+    {
+        "id":  "turn-67",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "19:09",
+        "html":  "Yes."
+    },
+    {
+        "id":  "turn-68",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "19:11",
+        "html":  "I was assigned as the leader of the APAC market, and I needed to grow the APAC \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e business \u003cspan class=\"asr-fix-pill\" title=\"ASR dropped \u0027as\u0027 and truncated \u0027APAC\u0027 to \u0027APC\u0027\"\u003e✨ Fixed: \"as leader... APAC \u003cspan class=\"vocab-mark\" data-vkey=\"e-commerce\" onclick=\"inspectVocab(\u0027e-commerce\u0027)\"\u003ee-commerce\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"for the leader... APC e commerce\")\u003c/span\u003e\u003c/span\u003e in this company. But, that time, most of the members are not so mature and not doesn\u0027t have the knowledge of this e commerce. So I need to teach them and give them guidelines to. I give them directions to how to grow the this market. How to grow this market. And the task is I need to identify, the most selling item for brand. Which is what we have to focus on in the next few months. So like this, we don\u0027t need to split our resources across low-yield channels \u003cspan class=\"asr-fix-pill\" title=\"Colloquial speech upgraded for executive clarity\"\u003e✨ Fixed: \"low-yield channels\" \u003cspan class=\"text-slate-400\"\u003e(spoken: \"the useless things\")\u003c/span\u003e\u003c/span\u003e. And that we can more focus on the \u003cspan class=\"vocab-mark\" data-vkey=\"sales-driving\" onclick=\"inspectVocab(\u0027sales-driving\u0027)\"\u003esales driving factors\u003c/span\u003e. So yeah, this is my responsibility that time. And, the action was I start doing the, no, I check all datas in the system and try to analyze what kind of the customer we have and what kind of the good brands and good items \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard commercial \u0027brands\u0027 as \u0027friends\u0027\"\u003e✨ Fixed: \"brands\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"friends\")\u003c/span\u003e\u003c/span\u003e we have. Then I identified the best selling item and the best selling brand, which we need to focus on. And, we decided I decided to put more items for these brands, which is, we need to list listed a lot of the new items for these top selling brands. Result was because of that action. We could expand. We could grow our business compared we could grow our business like 240% compared to the previous year. So. Which means our strategy and action was right. And customers are willing to buy our products and we could we can grow some of the few brands in our marketplace. So, yeah, that was the situation. That was the, result of that time. Yeah..."
+    },
+    {
+        "id":  "turn-69",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "22:02",
+        "html":  "Very good, very nice. So we can use the word, say, instead of add additional. Yeah, so we can have additional \u003cspan class=\"vocab-mark\" data-vkey=\"product-lines\" onclick=\"inspectVocab(\u0027product-lines\u0027)\"\u003eproduct lines\u003c/span\u003e or, items, it\u0027s fine, it depends if it is it actually a product line or not. Okay, probably nice and maybe, what did you say? Yeah, that\u0027s pretty good for now. So additional and \u003cspan class=\"vocab-mark\" data-vkey=\"product-lines\" onclick=\"inspectVocab(\u0027product-lines\u0027)\"\u003eproduct lines\u003c/span\u003e and do you find your work. How do you find your work? Do you find your work challenging?"
+    },
+    {
+        "id":  "turn-70",
+        "chapterId":  "chap-3",
+        "chapterTitle":  "Chapter 3 • ⚖️ Career Obstacles, Circuit Breakers \u0026 STAR-L Power Vocabulary (22:45 – 34:24)",
+        "speaker":  "YH",
+        "time":  "22:45",
+        "html":  "Well, sometimes it\u0027s challenging, but it\u0027s very... How should I say? We enjoy a lot, so... Which means we have a lot of obstacles. But in the end, we can overcome all the obstacles and grow the business by ourselves. So it was a very fun time."
+    },
+    {
+        "id":  "turn-71",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "23:11",
+        "html":  "So fun time, enjoyable time. We really enjoy the process, we really enjoy the process, we really enjoy the process. If you could go back to. If you could go back. If you could talk to yourself at the beginning of your career, what would you tell yourself? What would you tell yourself \u003cspan class=\"asr-fix-pill\" title=\"ASR recorded plural slip \u0027yourselfs\u0027\"\u003e✨ Fixed: \"yourself\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"yourselfs\")\u003c/span\u003e\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-72",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "23:42",
+        "html":  "Okay, so if I have that kind of situation, I should tell myself, \"Keep learning.\" Okay, maybe a more useful one is, \"Don\u0027t be afraid of mistakes.\""
+    },
+    {
+        "id":  "turn-73",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:11",
+        "html":  "I are you i is that your do you actually feel that do you feel you were scared of mistakes?"
+    },
+    {
+        "id":  "turn-74",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "24:19",
+        "html":  "Yes. So when I was young, I was always very afraid of mistakes or when we have something when I have some problems. I was always very scared to tell our boss \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard \u0027tell\u0027 as \u0027be\u0027\"\u003e✨ Fixed: \"tell our boss\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"be our boss\")\u003c/span\u003e\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-75",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:33",
+        "html":  "Okay..."
+    },
+    {
+        "id":  "turn-76",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "24:33",
+        "html":  "In the business s right, like the once something bad, once some bad things happen, then you should report immediately. But when we arrived, we didn\u0027t have that kind of habit. So. Yeah. I should tell myself. Like that?"
+    },
+    {
+        "id":  "turn-77",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "24:48",
+        "html":  "Interesting. I think I, my what my problem as an employee was I \u003cspan class=\"vocab-mark\" data-vkey=\"voice\" onclick=\"inspectVocab(\u0027voice\u0027)\"\u003ewould not voice\u003c/span\u003e... Problems with my training. So for example, I would be being trained on a new brand, a new company, a new building, or something new. Maybe the person training me was not adequate. So I got in big trouble for this. Because I didn\u0027t realize it was my responsibility. So what would happen is the training was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e, and then I was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e. Then my boss would say to me, \"Why did you not notice that the training was \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e? You could have stopped this earlier.\" And he and I now implement half because of that half goal \u003cspan class=\"vocab-mark\" data-vkey=\"circuit-breaker\" onclick=\"inspectVocab(\u0027circuit-breaker\u0027)\"\u003ecircuit breakers\u003c/span\u003e. So I\u0027ve done it ever since. So when there\u0027s a test, I test halfway between that just to make sure there\u0027s not a problem. Because I got in real big trouble. I\u0027ll never forget. I was supposed to know way more than I knew, and I was just going along with the program. I wasn\u0027t assessing because we\u0027re not employees. We\u0027re being trained in a company that we will then build."
+    },
+    {
+        "id":  "turn-78",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "26:36",
+        "html":  "Hey."
+    },
+    {
+        "id":  "turn-79",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "26:36",
+        "html":  "So it\u0027s that we\u0027re not employees. We had to learn how the company worked. The in-house training we got from that company was \u003cspan class=\"vocab-mark\" data-vkey=\"inferior\" onclick=\"inspectVocab(\u0027inferior\u0027)\"\u003einferior\u003c/span\u003e, but not \u003cspan class=\"vocab-mark\" data-vkey=\"inferior\" onclick=\"inspectVocab(\u0027inferior\u0027)\"\u003einferior\u003c/span\u003e from that individual from the trainer. So it was a huge lesson. I got \u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e. I thought I was going to be fired. Yeah. My boss was super unhappy, but I think he was actually setting an example. Don\u0027t just go along. I got \u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e really bad for that \u003cspan class=\"asr-fix-pill\" title=\"ASR misheard idiom \u0027chewed out\u0027 as \u0027to shoot out\u0027\"\u003e✨ Fixed: \"\u003cspan class=\"vocab-mark\" data-vkey=\"chewed-out\" onclick=\"inspectVocab(\u0027chewed-out\u0027)\"\u003echewed out\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"to shoot out\")\u003c/span\u003e\u003c/span\u003e I\u0027ll never forget. Yeah, it\u0027s my responsibility. My learning is my responsibility, even though I love to learn. Don\u0027t rely on... Notice the mistake in the process, report it. Don\u0027t just take it. That was my biggest lesson, for sure. Okay, very good. So let\u0027s have a look at some vocabulary and the notes. I\u0027m tired because I\u0027ve been spending the last few days \u003cspan class=\"vocab-mark\" data-vkey=\"overhaul\" onclick=\"inspectVocab(\u0027overhaul\u0027)\"\u003eoverhauling the notes\u003c/span\u003e even more. So the notes are... Being taken now, they\u0027re automated. So as soon as this lesson is over, they look amazing and beautiful. So you\u0027re going to have amazing notes. They are absolutely amazing because I haven\u0027t been happy with them. Now, a new system completely. So you\u0027ll see it after the lesson. Okay, let\u0027s have a look at some vocabulary we can add. We can say to say the situation, we can say back in 2025, back in COVID, nice and easy. Okay, back in 2025 or back in quarter two. Okay, back in quarter two of 2025. Okay, so some nice little entryways, entries into the conversation at that time. Okay. Now for the task. Sorry, I put this in the wrong bit here. Now, for the task, when we want to talk about what we did, we can say my task, but we can say my \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. My \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay. My main \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e in England, we strongly use the word \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e because it\u0027s like your company has set what it expects from you literally the \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. So we use it like the prime minister has a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. The prime minister doesn\u0027t have a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay, so a \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e is a very nice word. My primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e is what is expected of you. Primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e. Okay, so my primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e was to increase sales by 200. My primary \u003cspan class=\"vocab-mark\" data-vkey=\"mandate\" onclick=\"inspectVocab(\u0027mandate\u0027)\"\u003emandate\u003c/span\u003e was to deliver the project on time and \u003cspan class=\"vocab-mark\" data-vkey=\"under-budget\" onclick=\"inspectVocab(\u0027under-budget\u0027)\"\u003eunder budget\u003c/span\u003e, which is... But most of what? My work is just on time and \u003cspan class=\"vocab-mark\" data-vkey=\"under-budget\" onclick=\"inspectVocab(\u0027under-budget\u0027)\"\u003eunder budget\u003c/span\u003e, and I love it when I... No, I don\u0027t love it. I don\u0027t know why I said that, but when I work with another company and we share a budget... But our budget is protected. For example, if it goes over, it\u0027s not our problem in some areas, like in the joint company area. We watch one company\u0027s budget get out of control. So, for example, we worked with one company and our cost in the end was 700,000, which was supposed to be their cost. £700,000. Their cost was 2 million. Insane. They were \u003cspan class=\"vocab-mark\" data-vkey=\"remortgaging\" onclick=\"inspectVocab(\u0027remortgaging\u0027)\"\u003eremortgaging\u003c/span\u003e, and it is a horrible thing to see. A horrible thing to see, but... Yeah. Sorry. I\u0027ll never forget it. Okay, yeah, absolutely. Crazy way of looking at money. Okay, so in action, we can use, obviously, first... There\u0027s nothing wrong with using first or to \u003cspan class=\"vocab-mark\" data-vkey=\"tackle\" onclick=\"inspectVocab(\u0027tackle\u0027)\"\u003etackle the problem\u003c/span\u003e. Okay, to \u003cspan class=\"vocab-mark\" data-vkey=\"tackle\" onclick=\"inspectVocab(\u0027tackle\u0027)\"\u003etackle this task\u003c/span\u003e, to tackle this thing we did, I did blah. Okay, and another nice word to be like, to take in charge is \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e. I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e the project, I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e the initiative. The spearhead at the end of the... Yeah, you\u0027re the first one going in first. I \u003cspan class=\"vocab-mark\" data-vkey=\"spearheaded\" onclick=\"inspectVocab(\u0027spearheaded\u0027)\"\u003espearheaded\u003c/span\u003e. Okay. Next result, the nice one \u003cspan class=\"vocab-mark\" data-vkey=\"direct-result\" onclick=\"inspectVocab(\u0027direct-result\u0027)\"\u003eas a direct result of my actions\u003c/span\u003e. Okay, of my actions \u003cspan class=\"vocab-mark\" data-vkey=\"direct-result\" onclick=\"inspectVocab(\u0027direct-result\u0027)\"\u003eas a direct result of my actions\u003c/span\u003e. Okay, nice and easy. From what we\u0027ve learned, a little more \u003cspan class=\"vocab-mark\" data-vkey=\"looking-back\" onclick=\"inspectVocab(\u0027looking-back\u0027)\"\u003elooking back\u003c/span\u003e, I would never have owned a bar. Jeez, you know what? Owning a bar is the worst thing in the world. I went for a cocktail a few weeks back, two weeks ago, and I went in and I went to the bartender. Excuse me, can I have a Manhattan, please? He\u0027s like, \"Yeah, no problem at all.\" Then I said, \"Can I have it with rye whiskey? I prefer a grassy, spicy rye whiskey.\" He\u0027s like, \"No.\" I\u0027m like, \"Why can\u0027t I have the drink I want?\" I said, \"Why can\u0027t I have rye whiskey? Every drink is made to order, and you have rye whiskey there. You can charge me more, you can make more money.\" No. I\u0027m like, \"I hate having owned a bar because I know how horrible this is. This is very \u003cspan class=\"vocab-mark\" data-vkey=\"bad-salesmanship\" onclick=\"inspectVocab(\u0027bad-salesmanship\u0027)\"\u003ebad salesmanship\u003c/span\u003e.\" Very bad. As I always say, the Vietnamese are very good at buying, and they\u0027re terrible at selling. Terrible. They\u0027re the worst salesmen I\u0027ve ever met in my life. Yeah, really, it\u0027s okay, I understand why it\u0027s because they\u0027re scared. I think they\u0027re scared of, I think they don\u0027t believe someone will pay more. Yeah, I they\u0027re not used to it. Well, I\u0027m in Japan. If I go to a cocktail bar, they will say, what kind of whiskey do you like? You know, because they don\u0027t want to \u003cspan class=\"vocab-mark\" data-vkey=\"leave-money-on-the-table\" onclick=\"inspectVocab(\u0027leave-money-on-the-table\u0027)\"\u003eleave money on the table\u003c/span\u003e. But anyway, \u003cspan class=\"vocab-mark\" data-vkey=\"looking-back\" onclick=\"inspectVocab(\u0027looking-back\u0027)\"\u003eLooking back\u003c/span\u003e, I would never own a cocktail bar. Or if I were to do this again... \u003cspan class=\"asr-fix-pill\" title=\"ASR truncated \u0027cocktail bar\u0027 into \u0027cockta\u0027\"\u003e✨ Fixed: \"cocktail bar\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"cockta\")\u003c/span\u003e\u003c/span\u003e Okay. So, what is. What is. One of the biggest lessons that you have learned in your career? What is one of the biggest lessons that you have learned?"
+    },
+    {
+        "id":  "turn-80",
+        "chapterId":  "chap-4",
+        "chapterTitle":  "Chapter 4 • 🔄 Asymmetrical Information \u0026 Strategic Upward Alignment (34:24 – 39:35)",
+        "speaker":  "YH",
+        "time":  "34:24",
+        "html":  "Well, I think this is related to the report to the boss, which is... Okay, we always have the information. But I forgot the words we learned a few weeks ago. You have the information, and then they have the information, but the amount of information is different. So..."
+    },
+    {
+        "id":  "turn-81",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "34:56",
+        "html":  "Get \u003cspan class=\"vocab-mark\" data-vkey=\"out-of-the-loop\" onclick=\"inspectVocab(\u0027out-of-the-loop\u0027)\"\u003eout of the loop\u003c/span\u003e..."
+    },
+    {
+        "id":  "turn-82",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "34:58",
+        "html":  "Out of the, no, like the not symmetry like that..."
+    },
+    {
+        "id":  "turn-83",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:06",
+        "html":  "So when the communication breaks down... So, I see you\u0027re \u003cspan class=\"vocab-mark\" data-vkey=\"out-of-the-loop\" onclick=\"inspectVocab(\u0027out-of-the-loop\u0027)\"\u003eout of the loop\u003c/span\u003e, you have the information, but it\u0027s not coming."
+    },
+    {
+        "id":  "turn-84",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:21",
+        "html":  "No, it start from the a and, \u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e \u003cspan class=\"asr-fix-pill\" title=\"ASR recorded vocal hesitation and phonetic search\"\u003e✨ Fixed: \"\u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"AAA symmetrical, symmetricical or\")\u003c/span\u003e\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-85",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:29",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"asymmetrical\" onclick=\"inspectVocab(\u0027asymmetrical\u0027)\"\u003eAsymmetrical\u003c/span\u003e. Communication."
+    },
+    {
+        "id":  "turn-86",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:32",
+        "html":  "Yeah. So..."
+    },
+    {
+        "id":  "turn-87",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "35:33",
+        "html":  "But. Yeah."
+    },
+    {
+        "id":  "turn-88",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "35:33",
+        "html":  "What I want to say is, for example, the boss says you can handle this project, and once every week you have to report to me and as far as this, you can make that decision \u003cspan class=\"asr-fix-pill\" title=\"ASR heard \u0027as far as\u0027 as \u0027as fast as\u0027\"\u003e✨ Fixed: \"as far as\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"as fast as\")\u003c/span\u003e\u003c/span\u003e by yourself. So which is I can make the decision, but this weekly report for him is not enough. Or sometimes he is not satisfied with this information. So I feel I do my duty, which is I report as far as I can. Which is I report to him. But from that. His angle. This is not enough. Or sometimes he wants to know other things."
+    },
+    {
+        "id":  "turn-89",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:19",
+        "html":  "No."
+    },
+    {
+        "id":  "turn-90",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "36:19",
+        "html":  "So after a few months or something, then, the problem came out, like, exploded."
+    },
+    {
+        "id":  "turn-91",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:30",
+        "html":  "Okay, so you\u0027re saying that, you weren\u0027t reporting enough back to him, you weren\u0027t, so he\u0027s not micromanaging you, but, the your reporting is \u003cspan class=\"vocab-mark\" data-vkey=\"inadequate\" onclick=\"inspectVocab(\u0027inadequate\u0027)\"\u003einadequate\u003c/span\u003e. Maybe there\u0027s a. A, \u003cspan class=\"vocab-mark\" data-vkey=\"misalignment\" onclick=\"inspectVocab(\u0027misalignment\u0027)\"\u003emisalignment\u003c/span\u003e in your. In your, reporting skills or something..."
+    },
+    {
+        "id":  "turn-92",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "36:55",
+        "html":  "I can\u0027t see right now."
+    },
+    {
+        "id":  "turn-93",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "36:57",
+        "html":  "So yeah, so it\u0027s, I would, so, how did you grow just so I have a better context, how did you grow your, that skill? What did you think you were actually missing in your reporting skills?"
+    },
+    {
+        "id":  "turn-94",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "37:17",
+        "html":  "Well, first of all, what I learned is I always need to \u003cspan class=\"vocab-mark\" data-vkey=\"put-in-their-shoes\" onclick=\"inspectVocab(\u0027put-in-their-shoes\u0027)\"\u003eput myself in their shoes\u003c/span\u003e, which is seeing the situation from his angle. So what I have to report is what he wants to know. So 50% of something are my... Okay, no, like said 70 to 80% or something. I voice correct, but under 20 to 30% or something. He wants to know the other things, so he wants to... Furthermore, he wants to know... If the task is getting busy and the project is getting busy, and you are lacking this kind of sense, then you always report what you want to say. But actually, what we need to report is based on what our boss wants to know."
+    },
+    {
+        "id":  "turn-95",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:20",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eAnticipate his needs\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-96",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "38:22",
+        "html":  "Yeah. \u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eAnticipate his needs\u003c/span\u003e, right? Yeah."
+    },
+    {
+        "id":  "turn-97",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:25",
+        "html":  "Yeah, I understand. Yes, so you would think, what would he need? I\u0027ve seen this situation, and I know him. So now I have to \u003cspan class=\"vocab-mark\" data-vkey=\"anticipate\" onclick=\"inspectVocab(\u0027anticipate\u0027)\"\u003eanticipate what he would need\u003c/span\u003e from me as the situation or the project evolved."
+    },
+    {
+        "id":  "turn-98",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "38:46",
+        "html":  "Right."
+    },
+    {
+        "id":  "turn-99",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "38:46",
+        "html":  "For sure, that\u0027s good that you know that you developed that skill. Because that\u0027s why you are where you are now, right? But some people... Yes, they go by the numbers, they go by the numbers. In Germany, they do this, they go by the numbers. Okay, very good. Okay, and... If you let\u0027s ask you one more interview question. So if... What does... Where do you see yourself? This is a very common view question. But I think it\u0027s always very good to ask, where do you see yourself in ten years\u0027 time? When do you see yourself in ten years\u0027 time?"
+    },
+    {
+        "id":  "turn-100",
+        "chapterId":  "chap-5",
+        "chapterTitle":  "Chapter 5 • 👥 Autonomous Team Architecture \u0026 Scaling Across 100+ Staff (39:35 – 47:00)",
+        "speaker":  "YH",
+        "time":  "39:39",
+        "html":  "Sorry, what do you mean? Which means, after ten years or..."
+    },
+    {
+        "id":  "turn-101",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "39:43",
+        "html":  "Where do you see yourself in ten years\u0027 time? I\u0027m being a bit vague with the question, where do you see yourself in ten years\u0027 time?"
+    },
+    {
+        "id":  "turn-102",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "39:51",
+        "html":  "Okay, so, I want to be the running business by myself. So actually, I\u0027m already doing it. But after ten years, I still want to run the business by myself. But maybe that will be my business, which is my own business. So what I want to say is I want to brush up on the management skills and still try to keep running the business after the ten years."
+    },
+    {
+        "id":  "turn-103",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "40:43",
+        "html":  "Nice. So your \u003cspan class=\"vocab-mark\" data-vkey=\"aspirations\" onclick=\"inspectVocab(\u0027aspirations\u0027)\"\u003easpirations\u003c/span\u003e, my \u003cspan class=\"vocab-mark\" data-vkey=\"aspirations\" onclick=\"inspectVocab(\u0027aspirations\u0027)\"\u003easpirations\u003c/span\u003e, yes, are that I would like to have my own business. Okay, I would have my own business. However, I need to improve my \u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eoperational skills\u003c/span\u003e. Is that where you feel your \u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eoperational skills\u003c/span\u003e?"
+    },
+    {
+        "id":  "turn-104",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "41:06",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"operational\" onclick=\"inspectVocab(\u0027operational\u0027)\"\u003eOperations and management skills\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-105",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "41:09",
+        "html":  "Okay. And what is your style? What is your idea what how what\u0027s your view on management, on your management of your team? What what\u0027s your like, your professional view of management?"
+    },
+    {
+        "id":  "turn-106",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "41:29",
+        "html":  "Okay. So, first of all, I give clear direction, but only the big picture and \u003cspan class=\"vocab-mark\" data-vkey=\"delegate\" onclick=\"inspectVocab(\u0027delegate\u0027)\"\u003edelegate all the tasks\u003c/span\u003e to them and let them do, how should I say, express themselves. So I don\u0027t like to do \u003cspan class=\"vocab-mark\" data-vkey=\"micromanagement\" onclick=\"inspectVocab(\u0027micromanagement\u0027)\"\u003emicro-management\u003c/span\u003e, so I trust my \u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e and \u003cspan class=\"vocab-mark\" data-vkey=\"delegate\" onclick=\"inspectVocab(\u0027delegate\u0027)\"\u003edelegate all the tasks\u003c/span\u003e. As far as they perform well, then I will let them do as fast as they want."
+    },
+    {
+        "id":  "turn-107",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:09",
+        "html":  "Okay. Very nice. So you like them to be have their own \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e, self \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e. Yeah, they have their own self \u003cspan class=\"vocab-mark\" data-vkey=\"autonomy\" onclick=\"inspectVocab(\u0027autonomy\u0027)\"\u003eautonomy\u003c/span\u003e. Okay, very nice. And what about structure? How do you what\u0027s the biggest team you\u0027ve managed? How many people have you managed?"
+    },
+    {
+        "id":  "turn-108",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:36",
+        "html":  "The biggest organization was over a hundred."
+    },
+    {
+        "id":  "turn-109",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:40",
+        "html":  "Wow. So you \u003cspan class=\"vocab-mark\" data-vkey=\"oversee\" onclick=\"inspectVocab(\u0027oversee\u0027)\"\u003eoversaw 100 employees\u003c/span\u003e."
+    },
+    {
+        "id":  "turn-110",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:43",
+        "html":  "Right? Right. Yeah."
+    },
+    {
+        "id":  "turn-111",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "42:44",
+        "html":  "And how did you structure them..."
+    },
+    {
+        "id":  "turn-112",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "42:47",
+        "html":  "Well, we have a few layers of that \u003cspan class=\"vocab-mark\" data-vkey=\"hierarchy\" onclick=\"inspectVocab(\u0027hierarchy\u0027)\"\u003ehierarchy\u003c/span\u003e. The management layer. So I don\u0027t need to manage over the hundred people, of course. So we have the local leaders and below them have three sub-leaders. So technically I only need to \u003cspan class=\"vocab-mark\" data-vkey=\"span-of-control\" onclick=\"inspectVocab(\u0027span-of-control\u0027)\"\u003ehandle these four or five people\u003c/span\u003e. Then they will manage their own team. So yeah, this is how I managed over a hundred people at that time."
+    },
+    {
+        "id":  "turn-113",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "43:30",
+        "html":  "Okay. And, okay, very nice. And. And what is one management. Attribute. What is one \u003cspan class=\"vocab-mark\" data-vkey=\"attribute\" onclick=\"inspectVocab(\u0027attribute\u0027)\"\u003emanagement attribute\u003c/span\u003e that you would like to, develop?"
+    },
+    {
+        "id":  "turn-114",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "43:50",
+        "html":  "\u003cspan class=\"vocab-mark\" data-vkey=\"attribute\" onclick=\"inspectVocab(\u0027attribute\u0027)\"\u003eManagement attribute\u003c/span\u003e. How should I say I want to develop. This has been difficult. Well, I always want to. I always like to see my \u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e develop and grow professionally through this work \u003cspan class=\"asr-fix-pill\" title=\"Speech-to-text recorded pauses and \u0027grow up\u0027 slip\"\u003e✨ Fixed: \"develop and grow professionally\" \u003cspan class=\"text-slate-400\"\u003e(spoken: \"\u003cspan class=\"vocab-mark\" data-vkey=\"subordinates\" onclick=\"inspectVocab(\u0027subordinates\u0027)\"\u003esubordinates\u003c/span\u003e are the grow grown up... they themselves can be grown up\")\u003c/span\u003e\u003c/span\u003e through this work. So, I always want to win together with the team. So through this the project, through the project or through the work. I always give them the opportunity or some new method, then they can learn and they can be obtained these new skills or the knowledge and that will contribute to the our the company\u0027s growth. So. Yeah. It\u0027s one of my... The principal of the management review."
+    },
+    {
+        "id":  "turn-115",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "45:35",
+        "html":  "Are you saying that you would like to...?"
+    },
+    {
+        "id":  "turn-116",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "45:38",
+        "html":  "Yeah. Developed."
+    },
+    {
+        "id":  "turn-117",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "45:40",
+        "html":  "Develop their skills and methodology? Yes, very nice. Yeah, I think that\u0027s a good thing to develop the team. My aspiration for management in the future is to develop my workplace environment. The workplace environment I developed for my team normally and a student that knows me very well pointed out and it was 100% correct. I think I am too strict in my workplace management. I\u0027m very strict and I think I would like to develop an environment where we do not only \u003cspan class=\"vocab-mark\" data-vkey=\"meritocracy\" onclick=\"inspectVocab(\u0027meritocracy\u0027)\"\u003erely on merit\u003c/span\u003e. We don\u0027t always \u003cspan class=\"vocab-mark\" data-vkey=\"meritocracy\" onclick=\"inspectVocab(\u0027meritocracy\u0027)\"\u003erely on merit\u003c/span\u003e. Maybe there is a place for everyone in the team and it\u0027s not so \u003cspan class=\"vocab-mark\" data-vkey=\"combative\" onclick=\"inspectVocab(\u0027combative\u0027)\"\u003ecombative\u003c/span\u003e in competing, I think. In England, it\u0027s very competitive in London, but not everywhere, I think so. Okay, so just before the adolescence, just a few things. You\u0027ll get your notes straight away and you\u0027ll see. I\u0027ll show you an example. Actually, I have the example because I made a demo for it as well, which is really cool. Okay, documents I put it under then I has it here. Okay, here we go Ta-da! Let me share my screen. \u003cspan class=\"asr-fix-pill\" title=\"ASR transcribed playful vocal flourish as \u0027two do to do two\u0027\"\u003e✨ Fixed: \"Ta-da! Let me share\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"two do to do two and share\")\u003c/span\u003e\u003c/span\u003e. Okay, so I\u0027ll put this here for now. So just so you know what to expect when it comes out, right now, demo, demo the demo. Okay, here we go. So this is just a demo of a conversation. Let\u0027s get rid of this. I might as well clear, I\u0027m looking at you. Okay, continue. So now, sorry, can you turn this off as well? It\u0027s because there are some ladies as well, and they like pretty things. Okay, so the way it works is the conversation. Now, at the end of the lesson, it\u0027s time-stamped completely. Okay. And so it will if you hover over a word, it will obviously have the pronunciation, but it... So obviously it\u0027s not really relevant to you, but it will show you the level of the word C2 automatically. So you can see that\u0027s more for other students, but even you can see how it is. If you click on the word, it should actually open up a sidebar where you can hear the pronunciation. Okay, and you can see what I said, for example. That\u0027s all the way through the conversation. Okay? So you can go, \"Okay, what was that thing he said?\" and you can see it within the context of the conversation, however, then you actually just have it broken down into the lesson. Okay, so you can see this page. Yeah, okay, so you can see it then broken down into the tiles so the model picks up everything. Okay, the program and it knows the lesson we\u0027re learning today. It knows the lesson, so it incorporates the star L into it as well. It\u0027s already read the file. Then it may have a little bit of practice here as well. Just on the words, just in case you need that, but because you\u0027re trying to... This is, I think, very useful for you because you\u0027re trying to increase your vocabulary. So now it\u0027s even clearer, even easier to see where I\u0027ve said additional or develop. You can see it in the conversation and in the vocabulary. This is just the notes as well. There may be more things put in, especially when I quickly review it and put it in as well. Yeah, so that\u0027s how it\u0027s coming out. Now, if you would like me... If you want me to tweak anything, just let me know. I can do that if you want me to add more particle effects. I don\u0027t know if you can hear the wind breezing. I don\u0027t know why it\u0027s on there, but it\u0027s because it has a DNA of some old stuff. But that\u0027s how you\u0027ll get your notes immediately now. And I sped things up as well, so that you can get it quicker as well. Then for the next lesson, I sent... I got the Mac version of that software as well. So I\u0027ve sent you the link in the GitHub. Yeah, obviously. Always check a file. Always check the files, scan it. I\u0027ve scanned it already, but you have the Mac version now in that address, so next lesson we\u0027ll do the opposite. So you are the person with the bomb, and you expect just so you can get used to saying it. I will add homework as well for these notes. Okay, I will add homework as well for these notes as well, and that will be speaking as well. Okay, do you have any questions at all?"
+    },
+    {
+        "id":  "turn-118",
+        "chapterId":  "chap-6",
+        "chapterTitle":  "Chapter 6 • 🎧 The New Sanctuary Notes System \u0026 Bomb Defusal (KTANE) Preview (47:00 – 52:26)",
+        "speaker":  "YH",
+        "time":  "52:06",
+        "html":  "Well, so far, no."
+    },
+    {
+        "id":  "turn-119",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:08",
+        "html":  "Okay, very good. Again. And why? If you. If you ever have a question during the day or anything, you can message me 2047, it\u0027s absolutely fine. Okay, thank you very much and have a lovely day. Thank..."
+    },
+    {
+        "id":  "turn-120",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "52:24",
+        "html":  "Okay, thank you. You too."
+    },
+    {
+        "id":  "turn-121",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:26",
+        "html":  "You very much."
+    },
+    {
+        "id":  "turn-122",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "YH",
+        "time":  "52:26",
+        "html":  "Bye."
+    },
+    {
+        "id":  "turn-123",
+        "chapterId":  "",
+        "chapterTitle":  "",
+        "speaker":  "Louie",
+        "time":  "52:26",
+        "html":  "Yes, goodbye, goodbye! \u003cspan class=\"asr-fix-pill\" title=\"ASR transcribed \u0027Yes\u0027 as \u0027Jes\u0027\"\u003e✨ Fixed: \"Yes\" \u003cspan class=\"text-slate-400\"\u003e(note-taker: \"Jes\")\u003c/span\u003e\u003c/span\u003e Okay, nice."
+    }
+];
+    const STUDENT_STRENGTHS = [
+  {
+    "time": "13:35",
+    "turnId": "turn-35",
+    "quote": "\"Combine qualitative information and quantitative information to deliver some results.\"",
+    "title": "1. Qualitative & Quantitative Synthesis",
+    "badge": "Executive Data Literacy",
+    "note": "Flawless C2 executive collocation. Pairing qualitative context with quantitative data is the exact vernacular boardrooms and venture capitalists listen for."
+  },
+  {
+    "time": "16:00",
+    "turnId": "turn-41",
+    "quote": "\"So like this, we don't need to split our resources... and that we can more focus on the sales driving factors.\"",
+    "title": "2. Sales-Driving Factors",
+    "badge": "Commercial Focus",
+    "note": "Sharp commercial compound noun. Captures the strategic discipline of isolating core revenue levers rather than scattering operational bandwidth."
+  },
+  {
+    "time": "22:45",
+    "turnId": "turn-43",
+    "quote": "\"We have a lot of obstacles. But in the end, we can overcome all the obstacles and grow the business by ourselves.\"",
+    "title": "3. Overcoming Obstacles & Ownership",
+    "badge": "Leadership Resilience",
+    "note": "Natural, confident phrasing demonstrating emotional resilience and high agency — framing friction not as failure, but as a stepping stone to autonomous growth."
+  },
+  {
+    "time": "35:21",
+    "turnId": "turn-60",
+    "quote": "\"Asymmetrical... communication / information asymmetry between the boss and me.\"",
+    "title": "4. Asymmetrical Information",
+    "badge": "Organizational Economics",
+    "note": "Brilliant recall and application of advanced organizational economics vocabulary. Demonstrates sophisticated conceptual thinking about management reporting bottlenecks."
+  },
+  {
+    "time": "37:17",
+    "turnId": "turn-64",
+    "quote": "\"What I learned is I always need to put myself in their shoes, which is seeing the situation from his angle.\"",
+    "title": "5. Put Myself in Their Shoes",
+    "badge": "Executive Empathy",
+    "note": "Spontaneous, natural use of the British/American idiom 'put yourself in their shoes'. Shows acute upward empathy and emotional intelligence."
+  },
+  {
+    "time": "41:29",
+    "turnId": "turn-74",
+    "quote": "\"I give clear direction, but only the big picture and delegate all the tasks to them... I don't like to do micro-management, so I trust my subordinates.\"",
+    "title": "6. Autonomy & High-Trust Delegation",
+    "badge": "Executive Philosophy",
+    "note": "Authoritative articulation of modern executive management. Expresses trust-based autonomy and macro-level direction with clarity and poise."
+  }
+]
+;
+    const GENTLE_POLISHES = [
+  {
+    "time": "13:37",
+    "turnId": "turn-35",
+    "category": "Executive Ownership & Active Voice",
+    "spoken": "We always analyze the data and we keep picking up on the best-selling items... so we could expand like 240% compared to previous year.",
+    "polished": "I spearheaded the APAC data audit, isolated our highest-velocity product lines, and directly delivered 240% year-on-year revenue expansion.",
+    "why": "In executive interviews and performance reviews, relying entirely on 'we' obscures your personal leadership impact. Claiming decisive ownership with active verbs like 'spearheaded', 'isolated', and 'delivered' demonstrates authoritative executive presence.",
+    "audioWord": "I spearheaded the APAC data audit, isolated our highest-velocity product lines, and directly delivered 240% year-on-year revenue expansion."
+  },
+  {
+    "time": "16:00",
+    "turnId": "turn-41",
+    "category": "Resource Allocation & Strategic Vernacular",
+    "spoken": "So like this, we don't need to split our resources to the useless things. And that we can more focus on the sales driving factors.",
+    "polished": "This ensured we didn't dilute our operational bandwidth across low-yield channels, allowing us to concentrate capital on primary growth drivers.",
+    "why": "Replace colloquial phrases like 'useless things' with boardroom-grade terminology such as 'diluting operational bandwidth' and 'low-yield channels'. It projects financial rigor and strategic maturity.",
+    "audioWord": "This ensured we didn't dilute our operational bandwidth across low-yield channels, allowing us to concentrate capital on primary growth drivers."
+  },
+  {
+    "time": "16:01",
+    "turnId": "turn-41",
+    "category": "Retail Merchandising & SKU Precision",
+    "spoken": "We decided I decided to put more items for these brands, which is, we need to list listed a lot of the new items for these top selling brands.",
+    "polished": "I decided to aggressively expand our catalog by onboarding high-margin SKUs within our top-performing brand partnerships.",
+    "why": "In corporate retail and e-commerce, 'putting more items' sounds elementary. Using 'onboarding high-margin SKUs' (Stock Keeping Units) and 'catalog expansion' signals immediate industry authority.",
+    "audioWord": "I decided to aggressively expand our catalog by onboarding high-margin SKUs within our top-performing brand partnerships."
+  },
+  {
+    "time": "24:33",
+    "turnId": "turn-46",
+    "category": "Risk Governance & Upward Escalation",
+    "spoken": "Like the once something bad, once some bad things happen, then you should report immediately. But when we arrived, we didn't have that kind of habit.",
+    "polished": "The moment an operational bottleneck emerges, it is vital to escalate it immediately and present viable mitigation options rather than sitting on bad news.",
+    "why": "Reframing 'bad things happen' into 'operational bottlenecks' and 'escalating immediately with mitigation options' converts a defensive reflection into a proactive governance strength.",
+    "audioWord": "The moment an operational bottleneck emerges, it is vital to escalate it immediately and present viable mitigation options rather than sitting on bad news."
+  },
+  {
+    "time": "24:00",
+    "turnId": "turn-64",
+    "category": "Upward Management & Anticipating Priorities",
+    "spoken": "So what I have to report is what he wants to know... But actually, what we need to report is based on what our boss wants to know.",
+    "polished": "Effective upward management requires anticipating my superior's strategic priorities and proactively addressing the latent risks they care most about.",
+    "why": "Saying 'what he wants to know' sounds transactional. 'Anticipating strategic priorities' and 'addressing latent risks' positions you as a peer and strategic partner to executive leadership.",
+    "audioWord": "Effective upward management requires anticipating my superior's strategic priorities and proactively addressing the latent risks they care most about."
+  },
+  {
+    "time": "43:50",
+    "turnId": "turn-78",
+    "category": "Talent Development vs Child Rearing Collocations",
+    "spoken": "I always like to see my subordinates are the grow grown up, which is, through the work, they can learn the new things, and they themselves can be grown up.",
+    "polished": "My core management philosophy centers on fostering my team's professional development and empowering them to master new methodologies.",
+    "why": "In English, 'grow up' is exclusively used for children maturing into adulthood. For corporate team members, always use 'foster professional development', 'cultivate talent', or 'empower them to advance'.",
+    "audioWord": "My core management philosophy centers on fostering my team's professional development and empowering them to master new methodologies."
+  }
+]
+;
+    const ASR_FIXES = [
+  { "time": "00:00", "speaker": "Louie", "wrong": "Help you today?", "right": "How are you today?", "note": "ASR clipped Louie's opening greeting into 'Help you today?'" },
+  { "time": "01:43", "speaker": "YH", "wrong": "this food is a related to the Vietnam orna.", "right": "Is this food related to Vietnam or not?", "note": "Speech-to-text turned 'or not' into the non-existent word 'orna'." },
+  { "time": "03:51", "speaker": "Louie", "wrong": "It can be raw. Yeah, it can be wrong. Yes... I remember.", "right": "It can be raw. Yeah, it can be raw. Yes... I remember.", "note": "ASR mistranscribed 'raw' as 'wrong' in Louie's immediate echo." },
+  { "time": "04:22", "speaker": "YH", "wrong": "they had two dis three questions.", "right": "I have two to three questions left.", "note": "Note-taker heard 'two to three' as 'two dis three'." },
+  { "time": "04:52", "speaker": "YH", "wrong": "You're knowing? PM.", "right": "Morning or PM?", "note": "ASR misheard 'morning' as 'You're knowing'." },
+  { "time": "06:28", "speaker": "Louie", "wrong": "I think, you got to bog down in, vegetables", "right": "I think you got too bogged down in vegetables", "note": "Missed the adverb 'too' and fractured the phrasal verb 'bogged down'." },
+  { "time": "09:12", "speaker": "YH", "wrong": "You're wrong. Actually, I don't know.", "right": "In Europe? Actually, I don't know.", "note": "ASR misheard 'In Europe?' as the confrontational phrase 'You're wrong'." },
+  { "time": "12:37", "speaker": "YH", "wrong": "and the tail is always linked to that all a lot of the data", "right": "and retail is always linked to a lot of data", "note": "Speech-to-text recorded 'retail' as 'the tail'." },
+  { "time": "14:02", "speaker": "Louie", "wrong": "in your individuality, you're selling yourself", "right": "in your interview, you're selling yourself", "note": "Note-taker heard 'interview' as 'individuality'." },
+  { "time": "15:02", "speaker": "YH", "wrong": "Are situation task. But yeah. And the. Something in the result?", "right": "R is Situation, Task, Action, and the Result?", "note": "ASR mangled the STAR acronym explanation into fragmented clauses." },
+  { "time": "18:50", "speaker": "Louie", "wrong": "put the earth and the work in", "right": "put the effort and the work in", "note": "ASR mistranscribed 'effort' as 'earth'." },
+  { "time": "19:11", "speaker": "YH", "wrong": "assigned for the leader of the APAC market. And I need to grow the APC e commerce business", "right": "assigned as the leader of the APAC market, and I needed to grow the APAC e-commerce business", "note": "ASR dropped the preposition 'as' and truncated 'APAC' to 'APC'." },
+  { "time": "20:05", "speaker": "YH", "wrong": "good friends and good items we have", "right": "good brands and good items we have", "note": "ASR mistranscribed commercial 'brands' as 'friends'." },
+  { "time": "26:36", "speaker": "Louie", "wrong": "I got really bad to shoot out for that", "right": "I got chewed out really bad for that", "note": "ASR misheard the British/American idiom 'chewed out' (severely reprimanded) as 'to shoot out'." },
+  { "time": "33:15", "speaker": "Louie", "wrong": "looking back, I would never own a cockta. Or if I, were to do, this again.", "right": "Looking back, I would never own a cocktail bar. Or if I were to do this again...", "note": "Note-taker truncated 'cocktail bar' into 'cockta'." },
+  { "time": "35:21", "speaker": "YH", "wrong": "AAA symmetrical, symmetricical or", "right": "Asymmetrical", "note": "ASR recorded conversational stutter and phonetic search for 'asymmetrical'." },
+  { "time": "36:10", "speaker": "YH", "wrong": "and as fast as this, you can make that decision", "right": "and as far as this, you can make that decision", "note": "Note-taker heard 'as far as' as 'as fast as'." },
+  { "time": "44:10", "speaker": "YH", "wrong": "subordinates are. The grow grown up, which is, through the work... they themselves can be grown up", "right": "subordinates develop and grow professionally through this work", "note": "Note-taker captured hesitation pauses and false starts around professional development." },
+  { "time": "48:10", "speaker": "Louie", "wrong": "two do to do two and share", "right": "Ta-da! Let me share my screen.", "note": "ASR transcribed Louie's playful vocal flourish as 'two do to do two'." },
+  { "time": "52:26", "speaker": "Louie", "wrong": "Jes, goodbye, good bye. Okay, nice.", "right": "Yes, goodbye, goodbye! Okay, nice.", "note": "ASR transcribed the affirmative 'Yes' with a Germanic/Nordic 'Jes'." }
+]
+;
+    const CULTURAL_PLACES = [
+  {
+    "meta": "12:35 – 22:45",
+    "badge": "Core Framework • Executive Presence",
+    "title": "1. The STAR-L Storytelling Architecture",
+    "desc": "Moving from passive, collective reporting ('we did this, we looked at that') to active executive agency. The STAR-L formula breaks career accomplishments into high-impact components: Situation (macro context, e.g. Q2 retail expansion), Task (primary mandate and target KPI), Action (3 concrete operational moves you spearheaded), Result (quantifiable metric, e.g. +240% YoY growth), and Learning (formative principle gained).",
+    "quote": "\"When you give answers in an executive interview, stop saying 'we did this'. You run the team. It is your direction and your body of work — claim ownership with 'I spearheaded' and 'my primary mandate'.\"",
+    "tags": ["mandate", "spearheaded", "under-budget", "who-dares-wins", "suck-it-up"]
+  },
+  {
+    "meta": "34:24 – 39:35",
+    "badge": "Organizational Economics • Upward Management",
+    "title": "2. Asymmetrical Information & The 70/30 Reporting Rule",
+    "desc": "In complex corporate operations, information asymmetry between leaders and executives often leads to explosive misalignment. YH highlighted the breakthrough mindset: viewing the project through the executive's lens ('putting yourself in their shoes'). Effective upward communication follows the 70/30 rule: 70% routine status updates, and 30% anticipating unvoiced strategic anxieties and latent operational bottlenecks.",
+    "quote": "\"What I learned is I always need to put myself in their shoes. If a project is busy and you lack this sense, you only report what you want to say. True upward alignment means reporting what your boss needs to know.\"",
+    "tags": ["asymmetrical", "anticipate", "misalignment", "out-of-loop", "shoes"]
+  },
+  {
+    "meta": "39:35 – 47:00",
+    "badge": "Organizational Architecture • High-Trust Leadership",
+    "title": "3. Scaling Autonomous Teams across Multi-Tiered Hierarchies",
+    "desc": "Managing an organization of over 100 people cannot rely on micromanagement. YH outlined an elegant span-of-control framework: communicating clear macro-strategic direction ('the big picture'), establishing a layered management hierarchy (handling 4–5 regional leaders who in turn steer frontline teams), and granting subordinates self-autonomy. The ultimate leadership objective is elevating team capability so that collective development fuels sustainable company expansion.",
+    "quote": "\"I give clear direction — only the big picture — and delegate all tasks to them. I trust my subordinates and grant them full autonomy as long as they perform. I want to win together with the team.\"",
+    "tags": ["autonomy", "delegate", "hierarchy", "span-of-control", "meritocracy"]
+  },
+  {
+    "meta": "23:10 – 34:20",
+    "badge": "Commercial Acumen • Operational Governance",
+    "title": "4. Value Capture, Circuit Breakers & The Bar Owner's Parable",
+    "desc": "Louie shared two formative career parables: First, getting chewed out by an executive for silently accepting inadequate in-house training, which taught him to install 'half-goal circuit breakers' (milestone checkpoints halfway through a project to audit quality). Second, the cocktail bar owner who refused to sell a rye whiskey Manhattan, exemplifying bad salesmanship that 'leaves money on the table' compared to premium Japanese bespoke hospitality.",
+    "quote": "\"My learning is my responsibility. Don't just take an inadequate process — notice the mistake, report it early, and install circuit breakers before small defects turn into catastrophic failures.\"",
+    "tags": ["circuit-breaker", "chewed-out", "leave-money-table", "inadequate", "look-back"]
+  }
+]
+;
+    const QUIZ_QUESTIONS = [
+  {
+    "q": "Why is relying heavily on 'we' in executive interviews considered a missed opportunity?",
+    "options": [
+      "Because it implies you worked entirely alone without any team support.",
+      "Because interviewers cannot isolate your individual leadership mandate, decisive actions, or personal contribution.",
+      "Because executive recruiters prefer candidates who never delegate tasks.",
+      "Because using 'we' is grammatically incorrect in British English."
+    ],
+    "correct": 1,
+    "exp": "Overusing 'we' diffuses accountability. Executive interviewers need to understand what you personally spearheaded, directed, and delivered."
+  },
+  {
+    "q": "What does the 'L' represent in the STAR-L storytelling framework?",
+    "options": [
+      "Logistics (the operational transport arrangements)",
+      "Leadership (how many people you supervised)",
+      "Learning (the formative takeaway, principle, or insight gained)",
+      "Liability (the legal and financial risks involved)"
+    ],
+    "correct": 2,
+    "exp": "STAR-L enhances the classic framework by concluding with 'Learning' — demonstrating executive self-reflection, wisdom, and continuous growth."
+  },
+  {
+    "q": "In corporate upward management, what is the best strategy to resolve 'information asymmetry'?",
+    "options": [
+      "Send a 100-page unformatted data dump every morning.",
+      "Anticipate your superior's strategic priorities and proactively address unvoiced risks rather than just reporting routine tasks.",
+      "Wait until project completion before communicating any problems to avoid causing anxiety.",
+      "Only report good news and keep operational roadblocks secret."
+    ],
+    "correct": 1,
+    "exp": "Resolving information asymmetry requires executive empathy ('putting yourself in their shoes') and proactively anticipating what senior leaders need to know."
+  },
+  {
+    "q": "What was the purpose of Louie's 'half-goal circuit breaker' concept?",
+    "options": [
+      "To stop working halfway through the day to take a coffee break.",
+      "To test operational quality halfway between milestones to catch systemic training defects before final failure.",
+      "To cut employee salaries by 50% during economic recessions.",
+      "To automatically shut off electrical power in the corporate office."
+    ],
+    "correct": 1,
+    "exp": "A circuit breaker is a deliberate audit checkpoint halfway through an initiative to ensure training, processes, and alignment are sound."
+  },
+  {
+    "q": "What is the correct English phrasing when describing professional team development?",
+    "options": [
+      "I like to see my subordinates grow up through our work.",
+      "I foster the professional development and autonomy of my team members.",
+      "I raise my employees from childhood to maturity.",
+      "I make my subordinates grown up through hard tasks."
+    ],
+    "correct": 1,
+    "exp": "'Grow up' is reserved for children maturing into adulthood. In professional contexts, use 'foster professional development' or 'cultivate talent'."
+  },
+  {
+    "q": "What commercial idiom describes failing to capitalize on an easy, high-margin sales opportunity?",
+    "options": [
+      "Putting all eggs in one basket",
+      "Leaving money on the table",
+      "Barking up the wrong tree",
+      "Biting off more than you can chew"
+    ],
+    "correct": 1,
+    "exp": "'Leaving money on the table' means failing to capture additional value, margin, or revenue that a customer is willing and eager to pay."
+  }
+]
+;
+    const FLASHCARD_KEYS = Object.keys(VOCAB_DB).slice(0, 12);
+
+    // CORE APPLICATION ENGINE
+    let currentCardIndex = 0;
+    let isCardFlipped = false;
+    let quizAnswered = new Set();
+    let speechRate = 1.0;
+
+    function initHeaderAndHero() {
+      document.getElementById('page-title').textContent = `${LESSON_CONFIG.studentName}'s Executive English Sanctuary | ${LESSON_CONFIG.lessonSubtitle}`;
+      document.getElementById('brand-initial').textContent = LESSON_CONFIG.studentName.charAt(0).toUpperCase();
+      document.getElementById('brand-title').textContent = `${LESSON_CONFIG.studentName}'s Executive English Sanctuary`;
+      document.getElementById('brand-badge').textContent = `${LESSON_CONFIG.lessonSubtitle}`;
+      document.getElementById('hero-meta-pill').textContent = `${LESSON_CONFIG.lessonDate} • ${LESSON_CONFIG.lessonSubtitle}`;
+      document.getElementById('hero-heading').innerHTML = LESSON_CONFIG.heroHeadingHtml;
+      document.getElementById('hero-intro').textContent = LESSON_CONFIG.heroIntroText;
+      document.getElementById('opt-student-speaker').value = LESSON_CONFIG.studentName;
+      document.getElementById('opt-student-speaker').textContent = `${LESSON_CONFIG.studentName}'s Turns Only`;
+      document.getElementById('stat-vocab-count').textContent = `${Object.keys(VOCAB_DB).length} Items`;
+      document.getElementById('stat-fixes-count').textContent = `${ASR_FIXES.length} Fixes`;
+
+      const chapters = TRANSCRIPT_TURNS.filter(t => t.chapterId && t.chapterTitle);
+      document.getElementById('chapter-pills-bar').innerHTML = chapters.map(c => `
+        <button onclick="scrollToChapter('${c.chapterId}')" class="px-2.5 py-1 rounded-lg bg-parchment-100 hover:bg-autumn-100 text-stone-700 text-xs font-medium transition border border-parchment-200">
+          ${c.time} • ${c.chapterTitle.split('•')[1] || c.chapterTitle}
+        </button>
+      `).join('');
+    }
+
+    function renderTranscript() {
+      const container = document.getElementById('transcript-stream-container');
+      const searchVal = (document.getElementById('transcript-search')?.value || '').toLowerCase().trim();
+      const speakerFilter = document.getElementById('speaker-filter')?.value || 'all';
+
+      let html = '';
+      TRANSCRIPT_TURNS.forEach(turn => {
+        if (turn.chapterTitle && speakerFilter === 'all' && !searchVal) {
+          html += `
+            <div id="${turn.chapterId}" class="pt-3 pb-1">
+              <div class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-sage-100/90 via-parchment-100 to-autumn-50 border border-sage-200 flex items-center gap-2 text-xs sm:text-sm font-serif font-bold text-sage-800 shadow-sm">
+                <span>${turn.chapterTitle}</span>
+              </div>
+            </div>
+          `;
+        }
+        if (speakerFilter !== 'all' && turn.speaker !== speakerFilter) return;
+        const plainText = turn.html.replace(/<[^>]+>/g, '').toLowerCase();
+        if (searchVal && !plainText.includes(searchVal) && !turn.time.includes(searchVal)) return;
+
+        const isStudent = turn.speaker !== 'Louie';
+        const cardStyle = isStudent
+          ? 'bg-[#fffdf9] border-l-4 border-l-autumn-500 border border-[#e6decb]'
+          : 'bg-[#f8faf8] border-l-4 border-l-sage-600 border border-[#d8e4dc]';
+        const badgeStyle = isStudent
+          ? 'bg-autumn-100 text-autumn-800 border-autumn-200'
+          : 'bg-sage-100 text-sage-800 border-sage-200';
+
+        html += `
+          <article id="${turn.id}" class="rounded-2xl p-4 sm:p-5 ${cardStyle} shadow-sm transition-all duration-300 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold border ${badgeStyle}">
+                  ${isStudent ? '🎙️ ' + turn.speaker : '🍂 Louie'}
+                </span>
+                <span class="font-mono text-xs text-stone-500">🕒 ${turn.time}</span>
+              </div>
+              <button onclick="speakPlainTurn('${turn.id}')" class="text-stone-400 hover:text-sage-700 transition p-1 rounded-lg">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div class="text-sm sm:text-[15px] text-slatewarm-800 leading-relaxed">${turn.html}</div>
+          </article>
+        `;
+      });
+
+      container.innerHTML = html;
+      lucide.createIcons();
+      initVocabTooltips();
+    }
+
+    function initVocabTooltips() {
+      document.querySelectorAll('.vocab-mark').forEach(el => {
+        const key = el.getAttribute('data-vkey');
+        const item = VOCAB_DB[key];
+        if (!item) return;
+        if (el._tippy) el._tippy.destroy();
+        tippy(el, {
+          theme: 'autumn-sanctuary',
+          allowHTML: true,
+          interactive: true,
+          animation: 'shift-away',
+          maxWidth: 320,
+          content: `
+            <div class="p-2.5 space-y-2 text-left">
+              <div class="flex items-center justify-between gap-2 border-b border-parchment-200 pb-1.5">
+                <div>
+                  <span class="font-serif font-bold text-base text-slatewarm-900">${item.word}</span>
+                  <span class="block font-mono text-[10px] text-stone-500">${item.ipa} • ${item.pos}</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <span class="px-1.5 py-0.5 rounded bg-autumn-100 text-autumn-800 font-mono text-[10px] font-bold">${item.level}</span>
+                  <span class="px-1.5 py-0.5 rounded bg-sage-100 text-sage-800 font-mono text-[10px]">🕒 ${item.time}</span>
+                </div>
+              </div>
+              <p class="text-xs text-stone-700 leading-snug">${item.def}</p>
+              <div class="flex items-center justify-between pt-1 text-[11px] border-t border-parchment-200">
+                <span class="text-sage-800 font-semibold">${item.l1 || ''}</span>
+                <button onclick="speakWord('${item.word.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded bg-sage-700 text-white text-[10px] font-semibold">🔊 Listen</button>
+              </div>
+            </div>
+          `
+        });
+      });
+    }
+
+    function inspectVocab(key) {
+      const item = VOCAB_DB[key];
+      if (!item) return;
+      document.getElementById('insp-time').textContent = `🕒 ${item.time}`;
+      document.getElementById('insp-word').textContent = item.word;
+      document.getElementById('insp-ipa').textContent = item.ipa;
+      document.getElementById('insp-pos').textContent = item.pos;
+      document.getElementById('insp-level').textContent = item.level;
+      document.getElementById('insp-def').textContent = item.def;
+      document.getElementById('insp-quote').textContent = item.quote;
+      document.getElementById('insp-l1-label').textContent = LESSON_CONFIG.l1FlagAndLabel;
+      document.getElementById('insp-l1').textContent = item.l1 || '';
+      document.getElementById('insp-audio-btn').setAttribute('onclick', `speakWord('${item.word.replace(/\s*\(.*?\)/g, '').replace(/'/g, "\\'")}')`);
+    }
+
+    function renderVocabGrid() {
+      const grid = document.getElementById('vocab-cards-grid');
+      const search = (document.getElementById('vocab-search')?.value || '').toLowerCase().trim();
+      const levelFilter = document.getElementById('vocab-level-filter')?.value || 'all';
+
+      const entries = Object.entries(VOCAB_DB).filter(([key, item]) => {
+        if (levelFilter !== 'all' && item.level !== levelFilter) return false;
+        if (search) {
+          const hay = `${item.word} ${item.def} ${item.l1 || ''} ${item.time}`.toLowerCase();
+          if (!hay.includes(search)) return false;
+        }
+        return true;
+      });
+
+      grid.innerHTML = entries.map(([key, item]) => `
+        <div class="sanctuary-subcard rounded-2xl p-5 flex flex-col justify-between space-y-3 hover:border-autumn-400">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <span class="px-2 py-0.5 rounded-md bg-autumn-100 text-autumn-800 font-mono text-[11px] font-bold">${item.level}</span>
+                <span class="px-2 py-0.5 rounded-md bg-parchment-100 text-stone-600 text-[11px]">${item.pos}</span>
+              </div>
+              <button onclick="jumpToTranscriptTurn('${item.turnId}', '${key}')" class="px-2.5 py-0.5 rounded-full bg-sage-100 hover:bg-sage-200 text-sage-800 font-mono text-[11px] font-semibold">
+                🕒 ${item.time} ↗
+              </button>
+            </div>
+            <div class="flex items-center justify-between gap-2 pt-1">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-slatewarm-900">${item.word}</h3>
+                <span class="text-xs font-mono text-stone-500">${item.ipa}</span>
+              </div>
+              <button onclick="speakWord('${item.word.replace(/\s*\(.*?\)/g, '').replace(/'/g, "\\'")}')" class="p-2 rounded-xl bg-parchment-100 hover:bg-sage-100 text-sage-800">
+                <i data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${item.def}</p>
+            <p class="text-xs italic text-stone-500 bg-parchment-50 p-2.5 rounded-xl border border-parchment-200">${item.quote}</p>
+          </div>
+          <div class="pt-2 border-t border-parchment-200 flex items-center justify-between text-xs">
+            <span class="text-sage-800 font-medium">${item.l1 || ''}</span>
+            <button onclick="jumpToTranscriptTurn('${item.turnId}', '${key}')" class="text-autumn-700 hover:underline font-semibold text-[11px]">See in Transcript →</button>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function jumpToTranscriptTurn(turnId, vocabKey) {
+      switchTab('transcript');
+      setTimeout(() => {
+        if (vocabKey) inspectVocab(vocabKey);
+        const el = document.getElementById(turnId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.classList.remove('turn-highlight-flash');
+          void el.offsetWidth;
+          el.classList.add('turn-highlight-flash');
+        }
+      }, 100);
+    }
+
+    function renderFixesAndPlaces() {
+      // 1. Natural Strengths
+      const strengthsContainer = document.getElementById('student-strengths-grid');
+      if (strengthsContainer && Array.isArray(STUDENT_STRENGTHS)) {
+        strengthsContainer.innerHTML = STUDENT_STRENGTHS.map(s => {
+          const time = s.time || '⭐ Observed Today';
+          const phrase = s.phrase || s.title || '';
+          const note = s.note || s.desc || s.quote || '';
+          return `
+            <div class="p-4 rounded-2xl bg-white/95 border border-sage-200/90 shadow-sm space-y-1.5 transition hover:border-sage-400">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[11px] text-sage-700 font-semibold">${time}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-sage-100 text-sage-800 font-medium">Natural Reflex</span>
+              </div>
+              <div class="font-bold text-slatewarm-900 text-sm leading-snug">${phrase}</div>
+              <p class="text-stone-600 text-xs leading-relaxed">${note}</p>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2. Gentle Phrasing Polishes
+      const polishesContainer = document.getElementById('gentle-polishes-grid');
+      if (polishesContainer && Array.isArray(GENTLE_POLISHES)) {
+        polishesContainer.innerHTML = GENTLE_POLISHES.map(p => {
+          const topic = p.topic || 'Phrasing Polish';
+          const time = p.time || '';
+          const said = p.said || p.spoken || '';
+          const natural = p.natural || p.polished || '';
+          const why = p.why || p.note || '';
+          const safeAudio = (natural || '').replace(/'/g, "\\'");
+          return `
+            <div class="sanctuary-subcard rounded-2xl p-5 space-y-3 border-l-4 border-l-sage-500 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-sage-800 font-serif text-sm">${topic}</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-parchment-100 font-mono text-[11px] text-stone-600 border border-parchment-200">🕒 ${time}</span>
+              </div>
+              <div class="p-3 rounded-xl bg-autumn-50/70 border border-autumn-200/80 text-xs text-stone-600 space-y-1">
+                <div class="font-semibold text-autumn-800 uppercase text-[10px] tracking-wider">In the moment:</div>
+                <div class="italic text-stone-700 font-medium">"${said}"</div>
+              </div>
+              <div class="p-3 rounded-xl bg-sage-50 border border-sage-200 text-xs text-slatewarm-900 flex items-center justify-between gap-2">
+                <div>
+                  <div class="font-semibold text-sage-800 uppercase text-[10px] tracking-wider">Natural Polish:</div>
+                  <strong class="text-slatewarm-900 text-sm font-serif">"${natural}"</strong>
+                </div>
+                ${natural ? `<button onclick="speakWord('${safeAudio}')" class="p-2 rounded-xl bg-white text-sage-700 hover:bg-sage-100 border border-sage-200 transition shadow-xs" title="Listen">🔊</button>` : ''}
+              </div>
+              <p class="text-xs text-stone-600 leading-relaxed pt-0.5">${why}</p>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 3. ASR Speech-to-Text Corrections
+      const fixesContainer = document.getElementById('asr-fixes-grid');
+      if (fixesContainer && Array.isArray(ASR_FIXES)) {
+        fixesContainer.innerHTML = ASR_FIXES.map(f => `
+          <div class="sanctuary-subcard rounded-2xl p-4 sm:p-5 space-y-2.5 border-t-4 border-t-autumn-400 shadow-sm hover:border-autumn-500 transition">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="font-semibold text-autumn-700 px-2 py-0.5 rounded-md bg-autumn-50 border border-autumn-200">${f.speaker}</span>
+              <span class="text-stone-500">🕒 ${f.time}</span>
+            </div>
+            <div class="p-2 rounded-lg bg-parchment-50 border border-parchment-200 text-xs text-stone-500 line-through">
+              Note-taker wrote: "${f.wrong}"
+            </div>
+            <div class="text-sm font-serif font-bold text-sage-800 flex items-center gap-1.5">
+              <span>✨ Said: "${f.right}"</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed">${f.note}</p>
+          </div>
+        `).join('');
+      }
+
+      // 4. Masterclass Topics & Strategy
+      const placesContainer = document.getElementById('cultural-places-grid');
+      if (placesContainer && Array.isArray(CULTURAL_PLACES)) {
+        placesContainer.innerHTML = CULTURAL_PLACES.map(c => `
+          <div class="sanctuary-subcard rounded-2xl p-6 sm:p-7 space-y-4 border-l-4 border-l-autumn-500 shadow-sm hover:border-autumn-600 transition">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-autumn-700 font-semibold px-2.5 py-0.5 rounded-full bg-autumn-50 border border-autumn-200">${c.meta}</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-autumn-100 text-autumn-800 text-[11px] font-medium border border-autumn-200">${c.badge}</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-[1.65rem] font-bold text-slatewarm-900 leading-snug">${c.title}</h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${c.desc}</p>
+            <div class="p-4 rounded-xl bg-parchment-50 border border-parchment-200 text-xs sm:text-sm italic text-stone-700 leading-relaxed border-l-2 border-l-autumn-400">
+              ${c.quote}
+            </div>
+            ${c.tags && c.tags.length ? `
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                ${c.tags.map(t => `<span class="px-2 py-0.5 rounded-md bg-sage-50 text-sage-700 text-[10px] font-mono border border-sage-200">#${t}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `).join('');
+      }
+    }
+
+    function renderFlashcard() {
+      const key = FLASHCARD_KEYS[currentCardIndex];
+      const item = VOCAB_DB[key];
+      if (!item) return;
+      document.getElementById('fc-counter').textContent = `Card ${currentCardIndex + 1} of ${FLASHCARD_KEYS.length}`;
+      document.getElementById('fc-badge').textContent = `${item.time} • ${item.pos} (${item.level})`;
+      document.getElementById('fc-front-title').textContent = item.word;
+      const subEl = document.getElementById('fc-sub');
+      const backEl = document.getElementById('fc-back-details');
+      if (!isCardFlipped) {
+        subEl.textContent = `${item.ipa} — Click card to reveal meaning & lesson context`;
+        backEl.classList.add('hidden');
+      } else {
+        subEl.textContent = item.def;
+        document.getElementById('fc-quote').textContent = item.quote;
+        document.getElementById('fc-l1').textContent = item.l1 || '';
+        backEl.classList.remove('hidden');
+      }
+    }
+    function flipFlashcard() { isCardFlipped = !isCardFlipped; renderFlashcard(); }
+    function nextFlashcard() { isCardFlipped = false; currentCardIndex = (currentCardIndex + 1) % FLASHCARD_KEYS.length; renderFlashcard(); }
+    function prevFlashcard() { isCardFlipped = false; currentCardIndex = (currentCardIndex - 1 + FLASHCARD_KEYS.length) % FLASHCARD_KEYS.length; renderFlashcard(); }
+    function speakCurrentFlashcard() { const item = VOCAB_DB[FLASHCARD_KEYS[currentCardIndex]]; if (item) speakWord(item.word); }
+
+    function renderQuiz() {
+      document.getElementById('quiz-container').innerHTML = QUIZ_QUESTIONS.map((q, qIdx) => `
+        <div class="sanctuary-subcard rounded-2xl p-4 space-y-2.5">
+          <p class="text-xs sm:text-sm font-medium text-slatewarm-900">${q.q}</p>
+          <div class="flex flex-wrap gap-2">
+            ${q.options.map((opt, oIdx) => `
+              <button id="qbtn-${qIdx}-${oIdx}" onclick="answerQuiz(${qIdx}, ${oIdx})" class="px-3 py-1.5 rounded-xl border border-[#dfd0b5] bg-parchment-50 hover:bg-autumn-100 text-xs font-medium text-stone-700 transition">${opt}</button>
+            `).join('')}
+          </div>
+          <p id="qexp-${qIdx}" class="hidden text-xs text-sage-800 bg-sage-50 p-2.5 rounded-xl border border-sage-200"></p>
+        </div>
+      `).join('');
+    }
+
+    function answerQuiz(qIdx, oIdx) {
+      const q = QUIZ_QUESTIONS[qIdx];
+      const expEl = document.getElementById(`qexp-${qIdx}`);
+      q.options.forEach((_, idx) => {
+        const btn = document.getElementById(`qbtn-${qIdx}-${idx}`);
+        if (idx === q.correct) btn.className = 'px-3 py-1.5 rounded-xl border border-sage-500 bg-sage-600 text-white text-xs font-semibold';
+        else if (idx === oIdx) btn.className = 'px-3 py-1.5 rounded-xl border border-autumn-300 bg-autumn-100 text-autumn-900 text-xs';
+      });
+      expEl.textContent = `✨ ${q.explain}`;
+      expEl.classList.remove('hidden');
+      if (oIdx === q.correct && !quizAnswered.has(qIdx)) {
+        quizAnswered.add(qIdx);
+        document.getElementById('quiz-score-badge').textContent = `${quizAnswered.size} / ${QUIZ_QUESTIONS.length} Completed`;
+        if (quizAnswered.size === QUIZ_QUESTIONS.length && typeof confetti === 'function') {
+          confetti({ particleCount: 55, spread: 60, origin: { y: 0.7 } });
+        }
+      }
+    }
+
+    function switchTab(tabName) {
+      ['transcript', 'vocab', 'fixes', 'places', 'practice'].forEach(t => {
+        const panel = document.getElementById(`tab-panel-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tabName) {
+          panel.classList.remove('hidden');
+          btn.className = 'tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 bg-sage-700 text-white shadow-sm';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'tab-btn flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 text-stone-700 hover:bg-parchment-100';
+        }
+      });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function filterTranscript() { renderTranscript(); }
+    function scrollToChapter(chapId) {
+      document.getElementById('speaker-filter').value = 'all';
+      document.getElementById('transcript-search').value = '';
+      renderTranscript();
+      const el = document.getElementById(chapId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    let highlightsOn = true;
+    function toggleVocabHighlights() {
+      highlightsOn = !highlightsOn;
+      document.body.classList.toggle('hide-vocab-highlights', !highlightsOn);
+      document.getElementById('btn-toggle-highlights').querySelector('span').textContent = `Vocab Highlights: ${highlightsOn ? 'On' : 'Off'}`;
+    }
+
+    let asrBadgesOn = true;
+    function toggleAsrBadges() {
+      asrBadgesOn = !asrBadgesOn;
+      document.body.classList.toggle('hide-asr-fixes', !asrBadgesOn);
+      document.getElementById('btn-toggle-asr').querySelector('span').textContent = `Note-Taker Fixes: ${asrBadgesOn ? 'Visible' : 'Hidden'}`;
+    }
+
+    function setThemeMood(mood) { document.body.setAttribute('data-theme', mood); }
+    function setVoiceRate(rate) { speechRate = rate; }
+
+    function speakWord(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-GB';
+      utter.rate = speechRate;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function speakPlainTurn(turnId) {
+      const turn = TRANSCRIPT_TURNS.find(t => t.id === turnId);
+      if (!turn) return;
+      const temp = document.createElement('div');
+      temp.innerHTML = turn.html;
+      temp.querySelectorAll('.asr-fix-pill').forEach(el => el.remove());
+      speakWord(temp.textContent || '');
+    }
+
+    // Web Audio API Soundscape Engine
+    let audioCtx = null, soundscapePlaying = false, masterGain = null, lfoTimer = null, currentFilter = null;
+    function buildNoiseBuffer(ctx) {
+      const bufferSize = ctx.sampleRate * 4;
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const output = buffer.getChannelData(0);
+      let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        b3 = 0.86650 * b3 + white * 0.3104856;
+        b4 = 0.55000 * b4 + white * 0.5329522;
+        b5 = -0.7616 * b5 - white * 0.0168980;
+        output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.04;
+        b6 = white * 0.115926;
+      }
+      return buffer;
+    }
+
+    function toggleSoundscape() {
+      const label = document.getElementById('soundscape-label');
+      if (!soundscapePlaying) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const noiseSource = audioCtx.createBufferSource();
+        noiseSource.buffer = buildNoiseBuffer(audioCtx);
+        noiseSource.loop = true;
+        currentFilter = audioCtx.createBiquadFilter();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.value = parseFloat(document.getElementById('soundscape-volume').value || '0.22');
+        noiseSource.connect(currentFilter);
+        currentFilter.connect(masterGain);
+        masterGain.connect(audioCtx.destination);
+        noiseSource.start();
+        audioCtx._activeSource = noiseSource;
+        soundscapePlaying = true;
+        changeSoundscapePreset(document.getElementById('soundscape-preset').value);
+        label.textContent = 'London Breeze: Playing';
+      } else {
+        if (lfoTimer) clearInterval(lfoTimer);
+        if (audioCtx && audioCtx._activeSource) { try { audioCtx._activeSource.stop(); } catch (e) {} }
+        soundscapePlaying = false;
+        label.textContent = 'London Breeze Audio: Off';
+      }
+    }
+
+    function changeSoundscapePreset(preset) {
+      if (!currentFilter || !audioCtx) return;
+      if (lfoTimer) clearInterval(lfoTimer);
+      if (preset === 'breeze') {
+        currentFilter.type = 'bandpass';
+        currentFilter.frequency.value = 340;
+      } else if (preset === 'rain') {
+        currentFilter.type = 'lowpass';
+        currentFilter.frequency.value = 880;
+      } else {
+        currentFilter.type = 'lowpass';
+        currentFilter.frequency.value = 240;
+      }
+    }
+    function updateSoundscapeVolume(val) { if (masterGain && audioCtx) masterGain.gain.value = parseFloat(val); }
+
+    // Canvas Autumn Leaves Engine
+    const canvas = document.getElementById('autumn-breeze-canvas');
+    const ctx = canvas.getContext('2d');
+    let leaves = [], leafMode = 1, breezeTime = 0;
+    const LEAF_COLORS = ['rgba(190,111,56,0.42)', 'rgba(211,140,87,0.40)', 'rgba(165,191,177,0.42)', 'rgba(203,179,142,0.45)'];
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    function rebuildLeaves() {
+      const count = leafMode === 1 ? 15 : leafMode === 2 ? 30 : 0;
+      leaves = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        size: 6 + Math.random() * 8, speedY: 0.35 + Math.random() * 0.55, speedX: 0.25 + Math.random() * 0.45,
+        angle: Math.random() * Math.PI * 2, spin: (Math.random() - 0.5) * 0.014, swayOffset: Math.random() * 100,
+        color: LEAF_COLORS[Math.floor(Math.random() * LEAF_COLORS.length)]
+      }));
+    }
+    function cycleLeafBreeze() {
+      leafMode = (leafMode + 1) % 3;
+      document.getElementById('leaves-label').textContent = leafMode === 1 ? 'Leaves: Gentle' : leafMode === 2 ? 'Leaves: Breeze' : 'Leaves: Still';
+      rebuildLeaves();
+    }
+    function animateLeaves() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (leafMode !== 0) {
+        breezeTime += 0.01;
+        leaves.forEach(l => {
+          l.y += l.speedY; l.x += l.speedX + Math.sin(breezeTime + l.swayOffset) * 0.45; l.angle += l.spin;
+          if (l.y > canvas.height + 20) { l.y = -20; l.x = Math.random() * canvas.width; }
+          if (l.x > canvas.width + 20) l.x = -20;
+          ctx.save(); ctx.translate(l.x, l.y); ctx.rotate(l.angle); ctx.fillStyle = l.color;
+          ctx.beginPath(); ctx.ellipse(0, 0, l.size, l.size * 0.52, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+        });
+      }
+      requestAnimationFrame(animateLeaves);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initHeaderAndHero();
+      renderTranscript();
+      renderVocabGrid();
+      renderFixesAndPlaces();
+      renderFlashcard();
+      renderQuiz();
+      if (LESSON_CONFIG.defaultSpotlightKey) inspectVocab(LESSON_CONFIG.defaultSpotlightKey);
+      rebuildLeaves();
+      animateLeaves();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

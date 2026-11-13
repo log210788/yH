@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Exercises: Interviews, Hiring & Managing Teams | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --navy: #0f2744;
+      --navy-light: #1e3a8a;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --t1-text: #991b1b;
+      --t1-bg: #fef2f2;
+      --t1-border: #fecaca;
+      --t2-text: #1e40af;
+      --t2-bg: #eff6ff;
+      --t2-border: #bfdbfe;
+      --t3-text: #166534;
+      --t3-bg: #f0fdf4;
+      --t3-border: #bbf7d0;
+      --amber-text: #92400e;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --radius: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .top-nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #0f2744, #2563eb);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      background: #ffffff;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+    .btn-emerald {
+      background: #166534;
+      color: #ffffff;
+      border-color: #166534;
+    }
+    .btn-emerald:hover {
+      background: #14532d;
+    }
+
+    .jump-bar {
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 20px;
+      overflow-x: auto;
+    }
+    .jump-bar-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .jump-chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .jump-chip:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 28px auto 64px;
+      padding: 0 20px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #0f2744 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      max-width: 700px;
+    }
+    .hero-meta {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 6px;
+      padding: 14px 18px;
+      min-width: 245px;
+      font-size: 0.84rem;
+    }
+    .hero-meta div {
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .hero-meta div:last-child { margin-bottom: 0; }
+    .hero-meta span.lbl { color: #94a3b8; }
+    .hero-meta span.val { font-weight: 700; color: #fff; }
+
+    .activity-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      scroll-margin-top: 110px;
+    }
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .activity-tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: var(--t2-bg);
+      color: var(--t2-text);
+      border: 1px solid var(--t2-border);
+      margin-bottom: 6px;
+    }
+    .activity-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .activity-source {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .word-bank-bar {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+    .word-bank-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .vocab-chip {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--t3-bg);
+      color: var(--t3-text);
+      border: 1px solid var(--t3-border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .vocab-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+    .vocab-chip.used {
+      background: #166534;
+      color: #ffffff;
+      border-color: #14532d;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 860px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .role-card {
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+    }
+    .role-card.active-card {
+      border: 2px solid var(--accent);
+      background: #eff6ff;
+    }
+    .role-card h4 {
+      font-size: 0.96rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .role-card ul {
+      padding-left: 18px;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .role-card ul li { margin-bottom: 4px; }
+
+    .timer-widget {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .timer-display {
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+    .timer-display.warning { color: #fbbf24; }
+    .timer-display.danger { color: #f87171; }
+    .timer-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .exercise-row {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background: #ffffff;
+      font-size: 0.9rem;
+    }
+    .exercise-row.correct-row {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+    .exercise-row.wrong-row {
+      background: #fef2f2;
+      border-color: #fca5a5;
+    }
+    .inline-input {
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      border: 1px solid var(--border-dark);
+      border-radius: 5px;
+      background: #f8fafc;
+      min-width: 170px;
+      outline: none;
+    }
+    .inline-input:focus {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+    }
+    .inline-select {
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      border: 1px solid var(--border-dark);
+      border-radius: 5px;
+      background: #fffbeb;
+      cursor: pointer;
+    }
+    .feedback-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .feedback-badge.ok {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .feedback-badge.err {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #ffffff;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .input-field:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+    textarea.input-field {
+      min-height: 78px;
+      resize: vertical;
+    }
+    .field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .q-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.87rem;
+      margin-bottom: 16px;
+    }
+    .q-table th {
+      background: #f1f5f9;
+      color: var(--navy);
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-dark);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+    .q-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .q-table tr:nth-child(even) { background: #f8fafc; }
+    .q-radio-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.82rem;
+      margin-right: 10px;
+    }
+
+    .reveal-box {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 6px;
+      font-size: 0.86rem;
+      color: #14532d;
+    }
+    .reveal-box.open { display: block; }
+
+    .score-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 12px;
+      display: none;
+    }
+
+    .save-toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: none;
+      z-index: 999;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand">
+        <div class="brand-badge">YH</div>
+        <div>
+          <div class="brand-title">Book Exercises: Interviews, Hiring & Managing Teams</div>
+          <div class="brand-sub">English File 4e Advanced (1A, 1B, 3A, 5A, 6A, 7A, Rev 2&3) & Priscilla Osborne's Teaching English One to One</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="btn">← Back to Main Portal</a>
+        <a href="marketing-scenarios.html" class="btn">📈 Marketing Scenarios</a>
+        <a href="closest-in-meaning.html" class="btn">🎯 Closest in Meaning</a>
+        <button class="btn" onclick="window.print()">🖨️ Print Pack</button>
+        <button class="btn btn-primary" onclick="copyAllTeamWork()">📋 Copy My Answers for Preply</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK JUMP BAR -->
+  <nav class="jump-bar">
+    <div class="jump-bar-inner">
+      <a href="#ex1-work" class="jump-chip">1. 1B Work Vocab (16 Items)</a>
+      <a href="#ex2-interview" class="jump-chip">2. 1B "Have I Got the Job?" Role-Play</a>
+      <a href="#ex3-personality" class="jump-chip">3. 1A Personality & Appraisals (14 Items)</a>
+      <a href="#ex4-time" class="jump-chip">4. 5A Managing Time Audit (20 Items)</a>
+      <a href="#ex5-linkers" class="jump-chip">5. 1B Manager Linkers</a>
+      <a href="#ex6-directives" class="jump-chip">6. 6A & 7A Directives & Rules</a>
+      <a href="#ex7-idioms" class="jump-chip">7. 3A Get, Phrasal Verbs & Idioms</a>
+      <a href="#ex8-osborne" class="jump-chip">8. Osborne Ch. 6 & 7 Management Lab</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- HERO BANNER -->
+    <section class="hero-card">
+      <div>
+        <span class="hero-badge">Interactive Book Exercises · Management Team Edition</span>
+        <h1 class="hero-title">Interviews, Hiring & Managing Teams — Live Book Lab</h1>
+        <p class="hero-sub">
+          Complete the official C1 exercises from <strong>English File 4th Edition Advanced</strong> and <strong>Teaching English One to One (2nd Ed.)</strong> directly in your browser with instant answer-checking, live timers, and auto-saved responses.
+        </p>
+      </div>
+      <div class="hero-meta">
+        <div><span class="lbl">Student:</span><span class="val">YH (APAC Executive)</span></div>
+        <div><span class="lbl">Role Focus:</span><span class="val">Management & Hiring Team</span></div>
+        <div><span class="lbl">Source Books:</span><span class="val">English File C1 & Osborne</span></div>
+        <div><span class="lbl">Auto-Save:</span><span class="val" id="saveStatus" style="color:#86efac;">Active ✓</span></div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 1: ENGLISH FILE 1B VOCABULARY — WORK (16 SENTENCE PARAPHRASES)
+         ===================================================================== -->
+    <section id="ex1-work" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 1 · Vocabulary Paraphrasing</span>
+          <h2 class="activity-title">1B Vocabulary: Work — 16 Workplace Transformations</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 219 (Key p. 214)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Book Instructions:</strong> Complete the second sentence with <strong>one or two words</strong> from the word bank so that it means the same as the first. Click a chip in the Word Bank to cross it off as you go, then click <strong>Check My 16 Answers</strong>!
+      </p>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>1B Work Vocabulary Bank (Click to mark used)</span>
+          <span id="ex1ChipCount">0 / 16 Used</span>
+        </div>
+        <div class="chip-list" data-counter="ex1ChipCount">
+          <span class="vocab-chip" onclick="toggleChip(this)">maternity leave</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">work experience</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">off work</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">fixed-term</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">career ladder</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">freelance</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">colleagues</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">academic qualifications</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">made redundant</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">staff</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">perks</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">resign</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">out of work</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">civil servant</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">dead-end</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">repetitive</span>
+        </div>
+      </div>
+
+      <div id="ex1Container">
+        <div class="exercise-row">
+          <strong>1.</strong> Look at the photo of Warden's new baby! She's not working at the moment.<br>
+          ➔ She's on <input type="text" class="inline-input" data-ans="maternity leave" placeholder="2 words"> at the moment. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>2.</strong> I didn't get the job because I'd never worked in marketing before.<br>
+          ➔ I didn't get the job because I didn't have any <input type="text" class="inline-input" data-ans="work experience" placeholder="2 words"> in marketing. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>3.</strong> I'm not working right now because I'm ill.<br>
+          ➔ I'm <input type="text" class="inline-input" data-ans="off work" placeholder="2 words"> right now because I'm ill. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>4.</strong> My contract's only from March to June.<br>
+          ➔ I've only got a <input type="text" class="inline-input" data-ans="fixed-term|fixed term" placeholder="hyphenated word"> contract. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>5.</strong> He worked briefly as a sales assistant and now he's been promoted to area manager.<br>
+          ➔ He worked briefly as a sales assistant and now he's moving up the <input type="text" class="inline-input" data-ans="career ladder" placeholder="2 words">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>6.</strong> My sister's a journalist and she writes articles for lots of different newspapers.<br>
+          ➔ My sister's a journalist and has a number of different <input type="text" class="inline-input" data-ans="freelance" placeholder="1 word"> contracts. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>7.</strong> I don't enjoy my job very much, but I get on well with the people that I work with.<br>
+          ➔ I don't enjoy my job very much, but I get on well with my <input type="text" class="inline-input" data-ans="colleagues|co-workers|coworkers" placeholder="1 word">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>8.</strong> She's got a degree and a PhD.<br>
+          ➔ She has good <input type="text" class="inline-input" data-ans="academic qualifications|qualifications" placeholder="1–2 words">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>9.</strong> I lost my job last year, since the company I was working for wasn't making a profit.<br>
+          ➔ I was <input type="text" class="inline-input" data-ans="made redundant|laid off" placeholder="2 words"> last year. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>10.</strong> The nurses who work at this hospital are fantastic.<br>
+          ➔ The nursing <input type="text" class="inline-input" data-ans="staff" placeholder="1 word"> at this hospital are fantastic. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>11.</strong> Apart from my salary, I also get a company car and free lunches, which is brilliant!<br>
+          ➔ The <input type="text" class="inline-input" data-ans="perks|benefits" placeholder="1 word"> are brilliant in this job. I get a company car and free lunches. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>12.</strong> I decided to tell my boss I was leaving because I'd had a better offer from another company.<br>
+          ➔ I decided to <input type="text" class="inline-input" data-ans="resign" placeholder="1 word"> from my job because I'd had a better offer from another company. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>13.</strong> My friend's been unemployed for over a year now.<br>
+          ➔ My friend's been <input type="text" class="inline-input" data-ans="out of work" placeholder="3 words"> for over a year now. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>14.</strong> Adriana graduated from university and got a job in local government.<br>
+          ➔ Adriana graduated from university and became a <input type="text" class="inline-input" data-ans="civil servant" placeholder="2 words">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>15.</strong> Stuart's going nowhere in his job.<br>
+          ➔ Stuart's in a <input type="text" class="inline-input" data-ans="dead-end|dead end" placeholder="hyphenated word"> job. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>16.</strong> He works on a car production line and does exactly the same thing every day.<br>
+          ➔ His job on a car production line is very monotonous and <input type="text" class="inline-input" data-ans="repetitive" placeholder="1 word">. <span class="feedback-badge"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <button class="btn btn-primary" onclick="checkSectionInputs('ex1Container', 'ex1Score')">✅ Check My 16 Answers</button>
+        <button class="btn" onclick="fillSectionAnswers('ex1Container')">👁️ Show All Answers</button>
+      </div>
+      <div id="ex1Score" class="score-banner"></div>
+
+      <div style="margin-top:18px;">
+        <label class="field-label">ACTIVATION (From Book p. 219): Write 3–6 sentences about people in your APAC team or company using the words from the gaps:</label>
+        <textarea id="mt_ex1_act" class="input-field" placeholder="e.g., Moving up the career ladder in our APAC division requires strong leadership..."></textarea>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 2: ENGLISH FILE 1B COMMUNICATIVE — HAVE I GOT THE JOB? (p. 194)
+         ===================================================================== -->
+    <section id="ex2-interview" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 2 · Management Team Hiring Role-Play</span>
+          <h2 class="activity-title">1B Communicative: "Have I Got the Job?" (3-Minute Speed Interviews)</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 194 (Notes p. 187)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">
+        <strong>Book Instructions (TG p. 187 & p. 194):</strong> You are on the <strong>Hiring & Management Team</strong>. Select one of the official Interviewer Role Cards below. You have <strong>3 minutes</strong> on the clock to interview the candidate (Lewis) and decide whether they fit the ideal profile. At the end, explain who you chose and why!
+      </p>
+
+      <div class="timer-widget">
+        <div>
+          <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; color:#94a3b8; font-weight:700;">1B Official Interview Timer (3 Minutes per Interviewee)</div>
+          <div style="font-size:0.9rem; color:#e2e8f0;" id="interviewRoleLabel">Selected Role Card: Card 3 — Toy Shop / Retail Supervisor</div>
+        </div>
+        <div id="timerInterview" class="timer-display">03:00</div>
+        <div class="timer-btns">
+          <button class="btn btn-primary" onclick="startCountdown('timerInterview', 180)">▶ Start 3:00 Interview</button>
+          <button class="btn" onclick="resetCountdown('timerInterview', 180)">↺ Reset</button>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="role-card active-card" onclick="selectRoleCard(this, 'Card 3 — Toy Shop / Retail Supervisor (Book p. 194)')">
+          <h4><span>🛍️ Card 3: Retail / Toy Shop Supervisor</span><span style="font-size:0.72rem; background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px;">Book p. 194</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">3-month trial period ➔ permanent, full-time contract (job share possible).</p>
+          <ul>
+            <li>Proven <strong>team leader</strong></li>
+            <li>Excellent <strong>organizational skills</strong></li>
+            <li>Basic <strong>accounting knowledge</strong></li>
+            <li>Knowledge of current popular trends/products desirable</li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+
+        <div class="role-card" onclick="selectRoleCard(this, 'Card 2 — Telemarketing & Sales Lead (Book p. 194)')">
+          <h4><span>📞 Card 2: Telemarketing Position</span><span style="font-size:0.72rem; background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px;">Book p. 194</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">3-month non-renewable contract. Basic salary + commission.</p>
+          <ul>
+            <li>Good <strong>interpersonal skills</strong> & telephone manner</li>
+            <li>Experience in <strong>sales or marketing</strong> a bonus</li>
+            <li><strong>Determination and drive</strong> essential</li>
+            <li>Able to <strong>work well under pressure</strong></li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+
+        <div class="role-card" onclick="selectRoleCard(this, 'Card 4 — Operations & Customer Attendant (Book p. 194)')">
+          <h4><span>🏢 Card 4: Shift Operations Attendant</span><span style="font-size:0.72rem; background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px;">Book p. 194</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">Full-time, 12-hour shifts (day & night), permanent contract.</p>
+          <ul>
+            <li>Self-sufficient; not easily bored</li>
+            <li><strong>Numerate</strong></li>
+            <li>Able to make <strong>on-the-spot decisions</strong></li>
+            <li>Able to deal with <strong>difficult or aggressive customers</strong></li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+
+        <div class="role-card" onclick="selectRoleCard(this, 'Card 1 — Part-Time Assistant Librarian (Book p. 194)')">
+          <h4><span>📚 Card 1: Assistant Librarian</span><span style="font-size:0.72rem; background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px;">Book p. 194</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">Short-term contract to cover maternity leave.</p>
+          <ul>
+            <li>Book lover & prepared to work <strong>flexible hours</strong></li>
+            <li>Previous experience desirable</li>
+            <li>Able to <strong>work well alone</strong> & <strong>organized</strong></li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+
+        <div class="role-card" onclick="selectRoleCard(this, 'Card 5 — Express Courier / Bike Messenger (Book p. 194)')">
+          <h4><span>📦 Card 5: Express City Courier</span><span style="font-size:0.72rem; background:#dbeafe; color:#1e40af; padding:2px 6px; border-radius:4px;">Book p. 194</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">6-month contract with extension possibility + some Saturdays.</p>
+          <ul>
+            <li><strong>Reliable and trustworthy</strong> with confidential documents</li>
+            <li><strong>Organized and punctual</strong></li>
+            <li>Strong spatial & city route knowledge</li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+
+        <div class="role-card" onclick="selectRoleCard(this, 'Executive Bonus Card — APAC Regional Retail Director')">
+          <h4><span>🌏 Bonus: APAC Regional Director</span><span style="font-size:0.72rem; background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px;">YH Executive</span></h4>
+          <p style="font-size:0.8rem; color:var(--navy); font-weight:600; margin-bottom:6px;">Permanent executive role overseeing 25 stores under YH.</p>
+          <ul>
+            <li><strong>Resourceful & self-sufficient</strong> (no micromanagement)</li>
+            <li>Track record onboarding <strong>high-margin SKUs</strong></li>
+            <li>Escalates bottlenecks at the <strong>50% circuit-breaker</strong> mark</li>
+          </ul>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent);">Click to select role card</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label class="field-label">1. My Interview Questions to Ask the Candidate (Book Setup):</label>
+          <textarea id="mt_ex2_questions" class="input-field" placeholder="Write 3–4 sharp questions to test if the candidate fits the profile (e.g., How do you handle on-the-spot decisions when dealing with a difficult customer?)..."></textarea>
+        </div>
+        <div>
+          <label class="field-label">2. Management Team Hiring Decision & Justification:</label>
+          <textarea id="mt_ex2_verdict" class="input-field" placeholder="Did the candidate get the job? Explain why or why not using C1 vocabulary from 1A/1B..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 3: ENGLISH FILE 1A VOCABULARY — PERSONALITY & APPRAISALS (p. 218)
+         ===================================================================== -->
+    <section id="ex3-personality" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 3 · Team Appraisal Lexis & Softening</span>
+          <h2 class="activity-title">1A Vocabulary: Personality Clues (14 Items) & Diplomatic Softening</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 218 & p. 15 (Key p. 214)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Part A (Book Worksheet p. 218):</strong> Complete the 14 personality clues from the <em>1A Personality</em> worksheet using the words in the box:
+      </p>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>1A Personality Word Bank (Click to mark used)</span>
+          <span id="ex3ChipCount">0 / 14 Used</span>
+        </div>
+        <div class="chip-list" data-counter="ex3ChipCount">
+          <span class="vocab-chip" onclick="toggleChip(this)">down to earth</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">resourceful</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">gentle</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">sympathetic</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">bright</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">spontaneous</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">self-sufficient</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">deep down</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">soft touch</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">thorough</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">conscientious</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">steady</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">sarcastic</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">determined</span>
+        </div>
+      </div>
+
+      <div id="ex3Container" class="grid-2">
+        <div class="exercise-row">
+          <strong>1 (Across 5):</strong> Practical, sensible, and realistic, without pretentious illusions:<br>
+          <input type="text" class="inline-input" data-ans="down to earth|down-to-earth" placeholder="3 words"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>2 (Across 7):</strong> Good at finding quick, clever ways to overcome difficulties:<br>
+          <input type="text" class="inline-input" data-ans="resourceful" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>3 (Across 8):</strong> Calm, kind, and calm-mannered (never rough or violent):<br>
+          <input type="text" class="inline-input" data-ans="gentle" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>4 (Across 10):</strong> Kind to somebody who is hurt or sad; showing that you understand their problems:<br>
+          <input type="text" class="inline-input" data-ans="sympathetic" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>5 (Across 12):</strong> Intelligent and quick to learn (e.g., a fast-track graduate trainee):<br>
+          <input type="text" class="inline-input" data-ans="bright" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>6 (Across 13):</strong> Doing things without planning them first; acting on impulse:<br>
+          <input type="text" class="inline-input" data-ans="spontaneous" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>7 (Across 14):</strong> Able to do or decide things on your own without needing help from other people:<br>
+          <input type="text" class="inline-input" data-ans="self-sufficient|self sufficient" placeholder="hyphenated word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>8 (Down 1):</strong> Idiom — beneath the surface / what someone is really like underneath:<br>
+          <input type="text" class="inline-input" data-ans="deep down" placeholder="2 words"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>9 (Down 2):</strong> Idiom — a manager who is too easily persuaded or taken advantage of because they are too kind: a <input type="text" class="inline-input" data-ans="soft touch" placeholder="2 words"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>10 (Down 3):</strong> Doing things very carefully and with great attention to detail:<br>
+          <input type="text" class="inline-input" data-ans="thorough" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>11 (Down 4):</strong> Taking care to do things carefully and correctly; hardworking and dutiful:<br>
+          <input type="text" class="inline-input" data-ans="conscientious" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>12 (Down 6):</strong> Sensible, reliable, and calm; not changing suddenly in mood or attitude:<br>
+          <input type="text" class="inline-input" data-ans="steady" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>13 (Down 9):</strong> Saying the opposite of what you mean in order to mock or criticize someone:<br>
+          <input type="text" class="inline-input" data-ans="sarcastic" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>14 (Down 11):</strong> Having made a firm decision to do something and not letting anyone prevent you:<br>
+          <input type="text" class="inline-input" data-ans="determined" placeholder="1 word"> <span class="feedback-badge"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+        <button class="btn btn-primary" onclick="checkSectionInputs('ex3Container', 'ex3Score')">✅ Check My 14 Personality Answers</button>
+        <button class="btn" onclick="fillSectionAnswers('ex3Container')">👁️ Show All Answers</button>
+      </div>
+      <div id="ex3Score" class="score-banner"></div>
+
+      <div style="margin-top:18px; border-top:1px solid var(--border); padding-top:16px;">
+        <label class="field-label">Part B (From TG p. 15 — Softening Negative Characteristics): Rewrite these 2 blunt manager appraisals using <em>"a bit / a bit of a..."</em> or <em>"not very + positive adjective"</em>:</label>
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:8px;">
+          1. Blunt: <em>"Marcus is a cold fish and is sarcastic in team meetings."</em> &nbsp;|&nbsp; 2. Blunt: <em>"David is a soft touch and is not thorough with store audits."</em>
+        </p>
+        <textarea id="mt_ex3_soft" class="input-field" placeholder="1. Marcus can come across as a bit of a cold fish...&#10;2. David tends to be a bit of a soft touch..."></textarea>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 4: ENGLISH FILE 5A COMMUNICATIVE — MANAGING TIME (20 ITEMS, p. 201)
+         ===================================================================== -->
+    <section id="ex4-time" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 4 · Interactive 20-Item Questionnaire</span>
+          <h2 class="activity-title">5A Communicative: Managing Time (Official 20-Statement Audit)</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 201 (Notes p. 189)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Book Instructions (TG p. 201):</strong> Read the 20 statements from the book and tick <strong>Always</strong>, <strong>Sometimes</strong>, or <strong>Never</strong>. The page automatically calculates your score using the book's exact odd/even scoring formula (out of 40 points). Be ready to give workplace examples for your answers!
+      </p>
+
+      <table class="q-table" id="timeAuditTable">
+        <thead>
+          <tr>
+            <th style="width:45px;">#</th>
+            <th>Statement (English File Advanced 5A, p. 201)</th>
+            <th style="width:270px;">Your Frequency</th>
+          </tr>
+        </thead>
+        <tbody id="timeAuditBody">
+          <!-- Populated dynamically by JS -->
+        </tbody>
+      </table>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <button class="btn btn-primary" onclick="calculateTimeAuditScore()">📊 Calculate My Book Score (0–40 pts)</button>
+        <span id="timeAuditLiveScore" style="font-weight:800; color:var(--navy); font-size:0.95rem;">Select your answers above to calculate your score.</span>
+      </div>
+
+      <div id="timeAuditProfile" class="reveal-box"></div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 5: ENGLISH FILE 1B GRAMMAR — DISCOURSE MARKERS (1): LINKERS (p. 168)
+         ===================================================================== -->
+    <section id="ex5-linkers" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 5 · Management Narrative & Linkers</span>
+          <h2 class="activity-title">1B Grammar: Discourse Markers (1): Linkers in Management</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 168 (Key p. 165)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Part A (Book p. 168, Exercise a — Junior Management Position):</strong> Choose the correct linker in each dropdown to complete the manager's reflection:
+      </p>
+
+      <div id="ex5PartA" class="exercise-row" style="line-height:2.0; margin-bottom:16px;">
+        "I would say that the most challenging period in my career so far was my first junior management position in the company where I still work today. I had always wanted to be an accounts manager,
+        <strong>(1)</strong>
+        <select class="inline-select" data-ans="so">
+          <option value="">-- choose --</option>
+          <option value="so">so</option>
+          <option value="although">although</option>
+          <option value="despite">despite</option>
+        </select> <span class="feedback-badge"></span>
+        I was thrilled when I got the job, but little did I know what was waiting for me on my first day. The office environment was rather disorganized, and to make matters worse, my boss was completely unsupportive of me. For some reason, he just refused to take any responsibility for dealing with the clients, and
+        <strong>(2)</strong>
+        <select class="inline-select" data-ans="consequently">
+          <option value="">-- choose --</option>
+          <option value="consequently">consequently</option>
+          <option value="so as to">so as to</option>
+          <option value="although">although</option>
+        </select> <span class="feedback-badge"></span>,
+        I was forced to deal with all the problems by myself. I used to stay late at the office almost every night
+        <strong>(3)</strong>
+        <select class="inline-select" data-ans="so as not to">
+          <option value="">-- choose --</option>
+          <option value="because of">because of</option>
+          <option value="so that">so that</option>
+          <option value="so as not to">so as not to</option>
+        </select> <span class="feedback-badge"></span>
+        miss any of the clients' deadlines. It seems ridiculous now, but I was so stressed that I used to check my emails every five minutes, even at weekends,
+        <strong>(4)</strong>
+        <select class="inline-select" data-ans="in case">
+          <option value="">-- choose --</option>
+          <option value="so that">so that</option>
+          <option value="in case">in case</option>
+          <option value="as a result">as a result</option>
+        </select> <span class="feedback-badge"></span>
+        there was an urgent message asking me to sort something out. It was worth it in the end,
+        <strong>(5)</strong>
+        <select class="inline-select" data-ans="though">
+          <option value="">-- choose --</option>
+          <option value="though">though</option>
+          <option value="but">but</option>
+          <option value="as">as</option>
+        </select> <span class="feedback-badge"></span>,
+        because eventually my boss was fired and I got promoted in his place!"
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+        <button class="btn btn-primary" onclick="checkSectionSelects('ex5PartA', 'ex5Score')">✅ Check Linkers</button>
+      </div>
+      <div id="ex5Score" class="score-banner"></div>
+
+      <div style="margin-top:16px;">
+        <label class="field-label">ACTIVATION (From Book p. 168): Write a short paragraph about a challenging management experience you have faced and how you overcame it (use at least 5 linkers: <em>consequently, owing to, so as to, so as not to, despite, nevertheless, however</em>):</label>
+        <textarea id="mt_ex5_act" class="input-field" placeholder="When I took over the APAC e-commerce division, despite having strong brands..."></textarea>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 6: ENGLISH FILE 6A & 7A GRAMMAR — DIRECTIVES & OBLIGATION
+         ===================================================================== -->
+    <section id="ex6-directives" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 6 · Delegation & Team Compliance Grammar</span>
+          <h2 class="activity-title">6A Verb + Object + Infinitive/Gerund & 7A Permission, Obligation & Necessity</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG p. 177 & p. 179 (Keys p. 166)</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Complete each management sentence with the correct form of the verb or modal structure in brackets:</strong>
+      </p>
+
+      <div id="ex6Container">
+        <div class="exercise-row">
+          <strong>1 (6A — expect):</strong> As head of APAC, I expect my five regional directors <input type="text" class="inline-input" data-ans="to escalate" placeholder="escalate"> operational bottlenecks before the 50% milestone. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>2 (6A — let vs. empower):</strong> I don't micromanage; I let my regional leads <input type="text" class="inline-input" data-ans="make" placeholder="make"> local merchandising decisions, and I empower them <input type="text" class="inline-input" data-ans="to manage" placeholder="manage"> their own store rosters. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>3 (6A — prevent):</strong> Installing a half-goal circuit breaker prevents our teams <input type="text" class="inline-input" data-ans="from wasting|wasting" placeholder="waste"> budget on low-yield campaigns. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>4 (6A — involve):</strong> Scaling a 100-person retail organization involves regional managers <input type="text" class="inline-input" data-ans="taking" placeholder="take"> full ownership of store-level recruitment. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>5 (6A — urge / advise):</strong> In my weekly upward briefing, I urged the CEO <input type="text" class="inline-input" data-ans="to approve" placeholder="approve"> the warehouse automation budget. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>6 (7A — supposed to):</strong> All regional monthly reports are <input type="text" class="inline-input" data-ans="supposed to|meant to" placeholder="2 words (obligation)"> be submitted on the final working day of the month, but Ken's is two weeks late. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>7 (7A — needn't have vs. didn't need to):</strong> The junior buyer spent 6 hours manually typing the SKU list; she <input type="text" class="inline-input" data-ans="needn't have done|need not have done" placeholder="3 words (unnecessary past action)"> that because our system exports it automatically! <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>8 (5B — It's high time / I'd rather):</strong> It's high time we <input type="text" class="inline-input" data-ans="streamlined|automated|overhauled" placeholder="past tense verb (streamline/automate)"> our Friday store paperwork, and I'd rather the team <input type="text" class="inline-input" data-ans="focused" placeholder="past tense of 'focus'"> on high-margin brands. <span class="feedback-badge"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <button class="btn btn-primary" onclick="checkSectionInputs('ex6Container', 'ex6Score')">✅ Check Directives & Rules</button>
+        <button class="btn" onclick="fillSectionAnswers('ex6Container')">👁️ Show All Answers</button>
+      </div>
+      <div id="ex6Score" class="score-banner"></div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 7: ENGLISH FILE 3A GET + VOCAB REVISION 2 (PHRASAL VERBS) & 3 (IDIOMS)
+         ===================================================================== -->
+    <section id="ex7-idioms" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 7 · Phrasal Verbs, Idioms & Phrases with Get</span>
+          <h2 class="activity-title">3A Phrases with Get (p. 220), Revision 2 Phrasal Verbs (p. 230) & Revision 3 Idioms (p. 231)</h2>
+        </div>
+        <span class="activity-source">📖 English File 4e Advanced TG pp. 220, 230, 231</span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:14px;">
+        <strong>Complete these 14 official sentences from the book's Vocabulary worksheets (3A, Revision 2, and Revision 3):</strong>
+      </p>
+
+      <div class="word-bank-bar">
+        <div class="word-bank-title">
+          <span>Book Idioms & Phrasal Verbs Bank (Click to mark used)</span>
+          <span id="ex7ChipCount">0 / 14 Used</span>
+        </div>
+        <div class="chip-list" data-counter="ex7ChipCount">
+          <span class="vocab-chip" onclick="toggleChip(this)">head-on</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">gut</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">heart</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">hold</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">blue</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">nose</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">wrong</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">picture</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">belts</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">tape</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">behind</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">come</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">act</span>
+          <span class="vocab-chip" onclick="toggleChip(this)">through</span>
+        </div>
+      </div>
+
+      <div id="ex7Container" class="grid-2">
+        <div class="exercise-row">
+          <strong>1 (Rev 3 #4):</strong> We have to face this problem <input type="text" class="inline-input" data-ans="head-on|head on" placeholder="hyphenated word"> and find a solution as quickly as possible. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>2 (Rev 3 #5):</strong> The more you think about it, the harder it can be to decide what to do. Just go with your <input type="text" class="inline-input" data-ans="gut" placeholder="g___"> feeling and see what happens. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>3 (Rev 3 #7):</strong> The proposal has been criticized for not getting to the <input type="text" class="inline-input" data-ans="heart" placeholder="h____"> of the problem. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>4 (Rev 3 #8):</strong> There was a lot of competition, but she was able to <input type="text" class="inline-input" data-ans="hold" placeholder="h___"> her own. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>5 (Rev 3 #9):</strong> We were so surprised by Sally's decision to resign. It came completely out of the <input type="text" class="inline-input" data-ans="blue" placeholder="bl__">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>6 (Rev 3 #10):</strong> If I keep my <input type="text" class="inline-input" data-ans="nose" placeholder="n___"> to the grindstone, I'm sure I'll get that pay rise. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>7 (Rev 3 #12 / 3A #6):</strong> I got the <input type="text" class="inline-input" data-ans="wrong" placeholder="wr___"> end of the stick. I thought the meeting was next week, but it's tomorrow! <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>8 (Rev 3 #13):</strong> For the time being, you really need to focus on the big <input type="text" class="inline-input" data-ans="picture" placeholder="p______"> and ignore the details. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>9 (Rev 3 #17):</strong> Consumers and departments are being encouraged to tighten their <input type="text" class="inline-input" data-ans="belts" placeholder="b____"> as costs rise. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>10 (Rev 3 #18):</strong> You wouldn't believe the amount of red <input type="text" class="inline-input" data-ans="tape" placeholder="t___"> that was involved in getting this permit. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>11 (Rev 2 a#10):</strong> I haven't been feeling too well lately and I've got a bit <input type="text" class="inline-input" data-ans="behind" placeholder="1 word"> with my work. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>12 (Rev 2 c#6):</strong> My regional director can always <input type="text" class="inline-input" data-ans="come" placeholder="1 verb"> up with brilliant solutions to most problems. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>13 (3A #15):</strong> Your desk is a mess and you've missed two deadlines—you need to get your <input type="text" class="inline-input" data-ans="act" placeholder="a__"> together! <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>14 (3A #9):</strong> I've explained the new KPI policy three times, but I just can't seem to get <input type="text" class="inline-input" data-ans="through" placeholder="1 word"> to him. <span class="feedback-badge"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <button class="btn btn-primary" onclick="checkSectionInputs('ex7Container', 'ex7Score')">✅ Check All 14 Idioms & Phrasal Verbs</button>
+        <button class="btn" onclick="fillSectionAnswers('ex7Container')">👁️ Show All Answers</button>
+      </div>
+      <div id="ex7Score" class="score-banner"></div>
+    </section>
+
+    <!-- =====================================================================
+         EXERCISE 8: PRISCILLA OSBORNE — CH. 6 RECYCLING & CH. 7 MANAGEMENT LAB
+         ===================================================================== -->
+    <section id="ex8-osborne" class="activity-card">
+      <div class="activity-header">
+        <div>
+          <span class="activity-tag">Book Exercise 8 · Teaching English One to One (Ch. 6 & Ch. 7)</span>
+          <h2 class="activity-title">Osborne's Management Team Recycling & Accountability Lab</h2>
+        </div>
+        <span class="activity-source">📖 Priscilla Osborne, 2nd Ed., pp. 127–129 & pp. 143–153</span>
+      </div>
+
+      <h3 style="font-size:1.05rem; color:var(--navy); margin-bottom:10px;">Part A: Osborne's Master Recycling Template (Ch. 6, pp. 127–129)</h3>
+      <div id="ex8Container" style="margin-bottom:20px;">
+        <div class="exercise-row">
+          <strong>1 (Ex. 4 Prepositions, p. 127):</strong> We must pay close attention <input type="text" class="inline-input" data-ans="to" style="min-width:80px;" placeholder="prep"> store morale, act <input type="text" class="inline-input" data-ans="in" style="min-width:80px;" placeholder="prep"> our long-term interests, and put firm pressure <input type="text" class="inline-input" data-ans="on" style="min-width:80px;" placeholder="prep"> slow suppliers. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>2 (Ex. 7 Noun ➔ Verb Rewriting, p. 128):</strong> Rewrite <em>"There was a 240% increase in our APAC e-commerce sales"</em> using an active verb:<br>
+          ➔ Our APAC e-commerce sales <input type="text" class="inline-input" data-ans="increased by 240%|grew by 240%|expanded by 240%" placeholder="verb + by 240%">. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>3 (Ex. 10 Fine Distinctions, p. 128 — Moral vs. Morale):</strong> Failing to promote top performers has damaged staff <input type="text" class="inline-input" data-ans="morale" style="min-width:110px;" placeholder="moral / morale"> across our retail stores, whereas transparent reporting is a <input type="text" class="inline-input" data-ans="moral" style="min-width:110px;" placeholder="moral / morale"> obligation. <span class="feedback-badge"></span>
+        </div>
+        <div class="exercise-row">
+          <strong>4 (Ex. 11 Collocations, pp. 128–129):</strong> Complete with one noun that collocates with all three verbs (<em>To carry out / To conduct / To commission a _________</em>):<br>
+          ➔ <input type="text" class="inline-input" data-ans="survey|study|review|audit|report" placeholder="1 business noun (e.g. survey/audit)"> <span class="feedback-badge"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px;">
+        <button class="btn btn-primary" onclick="checkSectionInputs('ex8Container', 'ex8Score')">✅ Check Osborne Drills</button>
+        <button class="btn" onclick="fillSectionAnswers('ex8Container')">👁️ Show Answers</button>
+      </div>
+      <div id="ex8Score" class="score-banner"></div>
+
+      <h3 style="font-size:1.05rem; color:var(--navy); margin:20px 0 10px;">Part B: Osborne Ch. 7 Management Team Case Tasks (pp. 150–153)</h3>
+      <div class="grid-2">
+        <div class="role-card">
+          <h4><span>📧 Task 1: Jean Schmidt's Overdue Report Email</span><span style="font-size:0.72rem; background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px;">Osborne p. 152</span></h4>
+          <p style="font-size:0.83rem; color:var(--text-muted); margin-bottom:10px;">
+            <strong>Book Scenario (p. 152):</strong> Regional Monthly Reports must be on your desk by the last working day of each month so you can compile the consolidated report for the CEO. Today is the <strong>13th of the month</strong>, and one regional manager still hasn't sent theirs. Write a firm, diplomatic executive email holding them accountable:
+          </p>
+          <textarea id="mt_ex8_email" class="input-field" placeholder="Subject: Overdue Monthly Regional Report&#10;&#10;Hi [Name], As you know, regional reports are supposed to be submitted..."></textarea>
+          <button class="btn" style="margin-top:8px;" onclick="toggleReveal('osborneEmailModel')">👁️ View Model Executive Email (p. 152)</button>
+          <div id="osborneEmailModel" class="reveal-box">
+            <strong>Model Upgrade (Osborne p. 152 + C1 Linkers):</strong><br>
+            "As agreed in our regional governance protocol, monthly performance reports are <strong>supposed to</strong> be submitted on the final working day of each month <strong>so as to</strong> allow headquarters to consolidate the APAC figures. <strong>Owing to</strong> the fact that your report is now nearly two weeks overdue, we are unable to finalize the executive briefing for the CEO. Please ensure it reaches my desk by 15:00 today, and going forward, <strong>I expect you to</strong> flag any bottlenecks 48 hours in advance."
+          </div>
+        </div>
+
+        <div class="role-card">
+          <h4><span>📉 Task 2: Staff Turnover Report & Role Cards E–F</span><span style="font-size:0.72rem; background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px;">Osborne pp. 150, 153</span></h4>
+          <p style="font-size:0.83rem; color:var(--text-muted); margin-bottom:10px;">
+            <strong>Book Scenario (p. 153):</strong> The Managing Director is worried about a spike in <strong>staff turnover</strong> and low <strong>morale</strong> in one of your regional branches. Outline a 3-point Executive Action Plan (Introduction, Findings, Recommendations) to fix micromanagement, red tape, and career progression:
+          </p>
+          <textarea id="mt_ex8_turnover" class="input-field" placeholder="1. Findings (Root causes of turnover):&#10;2. Recommendations (Empowering autonomy, cutting red tape, career ladder):"></textarea>
+          <button class="btn" style="margin-top:8px;" onclick="toggleReveal('osborneTurnoverModel')">👁️ View Model Report Structure (p. 153)</button>
+          <div id="osborneTurnoverModel" class="reveal-box">
+            <strong>Model Executive Summary (Osborne p. 153):</strong><br>
+            • <strong>Findings:</strong> Exit interviews indicate that the 28% turnover spike stems from excessive <strong>micromanagement</strong>, burdensome Friday <strong>red tape</strong>, and the perception that store supervisor roles are <strong>dead-end jobs</strong>.<br>
+            • <strong>Recommendations:</strong> (1) Replace micromanagement with high-trust autonomy backed by a <strong>half-goal circuit breaker</strong>; (2) <strong>Streamline</strong> Friday reporting; (3) Put high performers <strong>on the fast track</strong> up the <strong>career ladder</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="saveToast" class="save-toast">✓ Copied to clipboard! Paste into Preply chat.</div>
+
+  <script>
+    // 1. Word Bank Chip Toggle
+    function toggleChip(el) {
+      el.classList.toggle('used');
+      const parent = el.parentElement;
+      const counterId = parent.dataset.counter;
+      if (counterId) {
+        const total = parent.querySelectorAll('.vocab-chip').length;
+        const used = parent.querySelectorAll('.vocab-chip.used').length;
+        document.getElementById(counterId).textContent = `${used} / ${total} Used`;
+      }
+    }
+
+    // 2. Role Card Selection (Exercise 2)
+    function selectRoleCard(cardEl, titleText) {
+      document.querySelectorAll('#ex2-interview .role-card').forEach(c => c.classList.remove('active-card'));
+      cardEl.classList.add('active-card');
+      document.getElementById('interviewRoleLabel').textContent = 'Selected Role Card: ' + titleText;
+    }
+
+    // 3. Countdown Timer
+    const activeTimers = {};
+    function startCountdown(displayId, seconds) {
+      if (activeTimers[displayId]) clearInterval(activeTimers[displayId]);
+      let remaining = seconds;
+      const el = document.getElementById(displayId);
+      updateTimerUI(el, remaining);
+      activeTimers[displayId] = setInterval(() => {
+        remaining--;
+        updateTimerUI(el, remaining);
+        if (remaining <= 0) {
+          clearInterval(activeTimers[displayId]);
+          el.textContent = "00:00 — TIME!";
+        }
+      }, 1000);
+    }
+
+    function resetCountdown(displayId, seconds) {
+      if (activeTimers[displayId]) clearInterval(activeTimers[displayId]);
+      updateTimerUI(document.getElementById(displayId), seconds);
+    }
+
+    function updateTimerUI(el, sec) {
+      const m = String(Math.floor(sec / 60)).padStart(2, '0');
+      const s = String(sec % 60).padStart(2, '0');
+      el.textContent = `${m}:${s}`;
+      el.classList.remove('warning', 'danger');
+      if (sec <= 15) el.classList.add('danger');
+      else if (sec <= 45) el.classList.add('warning');
+    }
+
+    // 4. Check Text Inputs in a Section
+    function checkSectionInputs(containerId, scoreBannerId) {
+      const container = document.getElementById(containerId);
+      const inputs = container.querySelectorAll('.inline-input');
+      let correctCount = 0;
+
+      inputs.forEach(inp => {
+        const userVal = inp.value.trim().toLowerCase().replace(/\s+/g, ' ');
+        const accepted = inp.dataset.ans.toLowerCase().split('|').map(a => a.trim());
+        const row = inp.closest('.exercise-row');
+        const badge = row.querySelector('.feedback-badge');
+
+        if (accepted.includes(userVal)) {
+          correctCount++;
+          inp.style.borderColor = '#16a34a';
+          inp.style.backgroundColor = '#f0fdf4';
+          if (badge) {
+            badge.className = 'feedback-badge ok';
+            badge.textContent = '✓ Correct';
+          }
+        } else {
+          inp.style.borderColor = '#ef4444';
+          inp.style.backgroundColor = '#fef2f2';
+          if (badge) {
+            badge.className = 'feedback-badge err';
+            badge.textContent = `✗ Key: ${inp.dataset.ans.split('|')[0]}`;
+          }
+        }
+      });
+
+      const banner = document.getElementById(scoreBannerId);
+      if (banner) {
+        banner.style.display = 'block';
+        banner.textContent = `Score: ${correctCount} / ${inputs.length} correct (${Math.round((correctCount / inputs.length) * 100)}%)`;
+      }
+    }
+
+    function fillSectionAnswers(containerId) {
+      const container = document.getElementById(containerId);
+      container.querySelectorAll('.inline-input').forEach(inp => {
+        inp.value = inp.dataset.ans.split('|')[0];
+      });
+      const scoreId = containerId.replace('Container', 'Score');
+      checkSectionInputs(containerId, scoreId);
+    }
+
+    // 5. Check Select Dropdowns (Exercise 5)
+    function checkSectionSelects(containerId, scoreBannerId) {
+      const container = document.getElementById(containerId);
+      const selects = container.querySelectorAll('.inline-select');
+      let correctCount = 0;
+
+      selects.forEach(sel => {
+        const badge = sel.nextElementSibling;
+        if (sel.value === sel.dataset.ans) {
+          correctCount++;
+          sel.style.borderColor = '#16a34a';
+          sel.style.backgroundColor = '#f0fdf4';
+          if (badge) {
+            badge.className = 'feedback-badge ok';
+            badge.textContent = '✓';
+          }
+        } else {
+          sel.style.borderColor = '#ef4444';
+          sel.style.backgroundColor = '#fef2f2';
+          if (badge) {
+            badge.className = 'feedback-badge err';
+            badge.textContent = `✗ (${sel.dataset.ans})`;
+          }
+        }
+      });
+
+      const banner = document.getElementById(scoreBannerId);
+      if (banner) {
+        banner.style.display = 'block';
+        banner.textContent = `Linkers Score: ${correctCount} / ${selects.length} correct!`;
+      }
+    }
+
+    // 6. Populate & Score 5A Managing Time Questionnaire (20 Items, Book p. 201)
+    const timeStatements = [
+      "I make a list of things I have to do each week.",
+      "I leave things to the last minute.",
+      "I turn off my electronic devices (e.g. phone) when I'm working on something important.",
+      "I arrive late for meetings or classes.",
+      "I make time to be with my friends and family.",
+      "I do two or three things at the same time.",
+      "I deal with difficult or unpleasant tasks straight away.",
+      "I have trouble saying 'no'.",
+      "I control my phone, it doesn't control me.",
+      "I skip meals or exercise so that I can work or study.",
+      "When I have a lot to do, I prioritize tasks.",
+      "I work or study on my days off.",
+      "When I'm travelling or waiting, e.g. for an appointment, I use the time to work or study.",
+      "I'm stressed about the deadlines I have to meet.",
+      "My desk is tidy.",
+      "I ask for extensions to deadlines.",
+      "I open any emails / messages as soon as they arrive.",
+      "Thinking about the things I have to do worries me.",
+      "I know the time of day I'm most productive.",
+      "I have problems finding time to relax."
+    ];
+
+    function renderTimeAudit() {
+      const tbody = document.getElementById('timeAuditBody');
+      tbody.innerHTML = timeStatements.map((stmt, idx) => {
+        const num = idx + 1;
+        return `
+          <tr>
+            <td><strong>${num}</strong></td>
+            <td>${stmt}</td>
+            <td>
+              <label class="q-radio-label"><input type="radio" name="ta_${num}" value="always" onchange="calculateTimeAuditScore()"> Always</label>
+              <label class="q-radio-label"><input type="radio" name="ta_${num}" value="sometimes" onchange="calculateTimeAuditScore()"> Sometimes</label>
+              <label class="q-radio-label"><input type="radio" name="ta_${num}" value="never" onchange="calculateTimeAuditScore()"> Never</label>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function calculateTimeAuditScore() {
+      // Book scoring system (TG p. 201):
+      // Odd numbers: always = 2, sometimes = 1, never = 0
+      // Even numbers: always = 0, sometimes = 1, never = 2
+      let total = 0;
+      let answered = 0;
+      for (let i = 1; i <= 20; i++) {
+        const checked = document.querySelector(`input[name="ta_${i}"]:checked`);
+        if (!checked) continue;
+        answered++;
+        const isOdd = (i % 2 === 1);
+        if (checked.value === 'sometimes') total += 1;
+        else if (checked.value === 'always') total += (isOdd ? 2 : 0);
+        else if (checked.value === 'never') total += (isOdd ? 0 : 2);
+      }
+
+      const liveEl = document.getElementById('timeAuditLiveScore');
+      liveEl.textContent = `Book Score: ${total} / 40 points (${answered}/20 answered)`;
+
+      const profileEl = document.getElementById('timeAuditProfile');
+      profileEl.classList.add('open');
+      if (total >= 30) {
+        profileEl.innerHTML = `<strong>Score: ${total}/40 — Master of Executive Time Management (30–40 pts):</strong> You are highly organized, prioritize tasks effectively, and control your schedule rather than letting your inbox or subordinates' emergencies control you. <em>Discussion Prompt: Which 2 habits here do you enforce most strictly with your 5 regional directors?</em>`;
+      } else if (total >= 18) {
+        profileEl.innerHTML = `<strong>Score: ${total}/40 — Balanced but Under Pressure (18–29 pts):</strong> You have solid prioritization habits, but urgent messages, multitasking, or difficulty saying 'no' occasionally dilute your operational bandwidth. <em>Discussion Prompt: Look at statements 6, 8, 12, and 17—how do you prevent these from burning out your management team?</em>`;
+      } else {
+        profileEl.innerHTML = `<strong>Score: ${total}/40 — Pressed for Time / Firefighting Mode (0–17 pts):</strong> You are constantly reacting to urgent deadlines and notifications. <em>Discussion Prompt: How can delegating more autonomy to your regional leads improve your score?</em>`;
+      }
+    }
+
+    function toggleReveal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('open');
+    }
+
+    // 7. Auto-Save Textareas
+    const textIds = ['mt_ex1_act', 'mt_ex2_questions', 'mt_ex2_verdict', 'mt_ex3_soft', 'mt_ex5_act', 'mt_ex8_email', 'mt_ex8_turnover'];
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTimeAudit();
+      textIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const saved = localStorage.getItem('yh_' + id);
+        if (saved !== null) el.value = saved;
+        el.addEventListener('input', () => {
+          localStorage.setItem('yh_' + id, el.value);
+          const status = document.getElementById('saveStatus');
+          if (status) status.textContent = 'Saved just now ✓';
+        });
+      });
+    });
+
+    // 8. Copy All Work for Preply
+    function copyAllTeamWork() {
+      const getVal = id => (document.getElementById(id)?.value || '').trim() || '(Not completed yet)';
+      const summary = [
+        '=== YH BOOK EXERCISES: INTERVIEWS, HIRING & MANAGING TEAMS ===',
+        '',
+        '1. 1B WORK VOCABULARY ACTIVATION SENTENCES:',
+        getVal('mt_ex1_act'),
+        '',
+        '2. 1B "HAVE I GOT THE JOB?" INTERVIEW QUESTIONS & HIRING VERDICT:',
+        'Questions: ' + getVal('mt_ex2_questions'),
+        'Verdict: ' + getVal('mt_ex2_verdict'),
+        '',
+        '3. 1A DIPLOMATIC APPRAISAL SOFTENING:',
+        getVal('mt_ex3_soft'),
+        '',
+        '5. 1B LINKERS MANAGEMENT CHALLENGE PARAGRAPH:',
+        getVal('mt_ex5_act'),
+        '',
+        '8A. OSBORNE P.152 OVERDUE MONTHLY REPORT EMAIL:',
+        getVal('mt_ex8_email'),
+        '',
+        '8B. OSBORNE P.153 STAFF TURNOVER & MORALE ACTION PLAN:',
+        getVal('mt_ex8_turnover')
+      ].join('\n');
+
+      navigator.clipboard.writeText(summary).then(() => {
+        const toast = document.getElementById('saveToast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>

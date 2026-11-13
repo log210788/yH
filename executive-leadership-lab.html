@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Leadership, Crisis Operations & APAC Commercial Lab | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --navy: #0f2744;
+      --navy-light: #1e3a8a;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --t1-text: #991b1b;
+      --t1-bg: #fef2f2;
+      --t1-border: #fecaca;
+      --t2-text: #1e40af;
+      --t2-bg: #eff6ff;
+      --t2-border: #bfdbfe;
+      --t3-text: #166534;
+      --t3-bg: #f0fdf4;
+      --t3-border: #bbf7d0;
+      --amber-text: #92400e;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --radius: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .top-nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-badge {
+      background: linear-gradient(135deg, #0f2744, #2563eb);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    .brand-title { font-weight: 800; font-size: 1.05rem; color: var(--navy); }
+    .brand-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-dark);
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-teacher.active { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    .hero {
+      background: linear-gradient(135deg, #0f2744 0%, #1e3a8a 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+    }
+    .hero h1 { font-size: 1.65rem; font-weight: 800; margin-bottom: 8px; }
+    .hero p { color: #cbd5e1; font-size: 0.95rem; max-width: 880px; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+    .stat-label { font-size: 0.75rem; color: #93c5fd; font-weight: 700; text-transform: uppercase; }
+    .stat-val { font-size: 0.95rem; font-weight: 700; color: #fff; margin-top: 2px; }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .tab-btn {
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+      background: #fff;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { color: var(--navy); background: #f1f5f9; }
+    .tab-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+    }
+    .badge-blue { background: var(--t2-bg); color: var(--t2-text); border: 1px solid var(--t2-border); }
+    .badge-green { background: var(--t3-bg); color: var(--t3-text); border: 1px solid var(--t3-border); }
+    .badge-amber { background: var(--amber-bg); color: var(--amber-text); border: 1px solid var(--amber-border); }
+    .badge-red { background: var(--t1-bg); color: var(--t1-text); border: 1px solid var(--t1-border); }
+
+    h2 { font-size: 1.25rem; font-weight: 800; color: var(--navy); }
+    h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+
+    .word-bank {
+      background: #f8fafc;
+      border: 1px dashed var(--border-dark);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 14px 0;
+    }
+    .word-bank-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .vocab-pill {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 99px;
+      background: #fff;
+      border: 1px solid var(--border-dark);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .vocab-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .vocab-pill.used {
+      background: var(--t3-bg);
+      color: var(--t3-text);
+      border-color: var(--t3-border);
+      text-decoration: line-through;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .box-t1 {
+      background: var(--t1-bg);
+      border: 1px solid var(--t1-border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .box-t3 {
+      background: var(--t3-bg);
+      border: 1px solid var(--t3-border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .teacher-note {
+      display: none;
+      background: #f5f3ff;
+      border-left: 4px solid #7c3aed;
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: #4c1d95;
+    }
+    body.show-teacher .teacher-note { display: block; }
+
+    /* Interactive Quiz Rows */
+    .quiz-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+    .quiz-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .quiz-feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+    }
+    .quiz-feedback.show { display: block; }
+
+    /* War-Room 3x2 Grid Simulator */
+    .war-room-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 14px;
+      background: #0f172a;
+      padding: 18px;
+      border-radius: 12px;
+      color: #f8fafc;
+      margin-top: 14px;
+    }
+    .module-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #93c5fd;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 6px;
+    }
+    .wire-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 6px 10px;
+      margin-bottom: 6px;
+      border-radius: 4px;
+      border: 1px solid #475569;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .wire-btn.cut { opacity: 0.45; text-decoration: line-through; border-style: dashed; }
+
+    /* Timer Bar */
+    .timer-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f1f5f9;
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+    .timer-display {
+      font-family: 'Inter', monospace;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+      min-width: 72px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th { background: #f1f5f9; font-weight: 700; color: var(--navy); }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand">
+        <span class="brand-badge">YH × LOUIE</span>
+        <div>
+          <div class="brand-title">Executive Leadership, Crisis Operations & APAC Commercial Lab</div>
+          <div class="brand-sub">12 Tailored Exercises Adapted from Jackie Bolen's <em>101 Activities for Teaching English Online</em></div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="btn">🍂 Main Sanctuary</a>
+        <a href="marketing-scenarios.html" class="btn">📊 Marketing Lab</a>
+        <a href="closest-in-meaning.html" class="btn">🎯 100-Q Vault</a>
+        <button id="teacherToggle" class="btn btn-teacher" onclick="toggleTeacher()">👨‍🏫 Teacher Answer Key: OFF</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="hero-tag">Bespoke Curriculum • Built from Oct 21 & Oct 23 Live Transcripts</span>
+      <h1>Executive Agency, 100+ Team Scaling & High-Pressure Precision</h1>
+      <p>Designed specifically for YH's role as an APAC Retail & E-Commerce Executive. Every exercise upgrades real phrases from your recent sessions into authoritative C-suite vernacular—covering the <strong>70/30 Upward Reporting Rule</strong>, <strong>Half-Goal Circuit Breakers</strong>, <strong>Closed-Loop Crisis Precision</strong>, and <strong>STAR-L Interviews</strong>.</p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-label">Module 1 Focus</div>
+          <div class="stat-val">70/30 Upward Management & Agency</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Module 2 Focus</div>
+          <div class="stat-val">100+ Staff Span of Control & Circuit Breakers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Module 3 Focus</div>
+          <div class="stat-val">"Keep Talking" Crisis & Spatial Precision</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Module 4 Focus</div>
+          <div class="stat-val">$1M Negotiations & Reverse STAR-L</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-lexicon', this)">📚 1. 32-Term Upgrade Matrix</button>
+      <button class="tab-btn" onclick="switchTab('tab-mod1', this)">🏛️ 2. Lesson 1: Upward & Agency (Ex 1–3)</button>
+      <button class="tab-btn" onclick="switchTab('tab-mod2', this)">👥 3. Lesson 2: Scaling 100+ Teams (Ex 4–6)</button>
+      <button class="tab-btn" onclick="switchTab('tab-mod3', this)">🚨 4. Lesson 3: Crisis Precision (Ex 7–9)</button>
+      <button class="tab-btn" onclick="switchTab('tab-mod4', this)">🤝 5. Lesson 4: Negotiations & STAR-L (Ex 10–12)</button>
+    </nav>
+
+    <!-- TAB 1: LEXICON -->
+    <section id="tab-lexicon" class="tab-panel active">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-blue">Diagnostic Upgrade Matrix</span>
+            <h2>The 32-Term Executive Leadership, Retail & Crisis Lexicon</h2>
+          </div>
+          <span class="badge badge-green">Click 🔊 to Hear UK Executive Pronunciation</span>
+        </div>
+        <p style="margin-bottom:14px; color:var(--text-muted);">Every row below replaces an elementary conversational habit or Japanese L1 transfer slip observed in your lessons with high-impact C1/C2 executive English.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Conversational / L1 Slip (Avoid)</th>
+              <th>Executive C1/C2 Upgrade (Click 🔊)</th>
+              <th>Practical Nuance & 🇯🇵 日本語</th>
+            </tr>
+          </thead>
+          <tbody id="lexiconTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 2: MODULE 1 (EXERCISES 1-3) -->
+    <section id="tab-mod1" class="tab-panel">
+      <!-- Exercise 1 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-blue">Exercise 1 • Adapted from Bolen's "Same Same but Different" (split_067)</span>
+            <h2>The Asymmetrical Briefing Audit (100% Routine vs. 70/30 Foresight)</h2>
+          </div>
+        </div>
+        <p>Compare <strong>Version A</strong> (a passive routine task update) with <strong>Version B</strong> (an authoritative 70/30 executive briefing). Identify the <strong>5 strategic & lexical upgrades</strong> and click each target phrase in the Word Bank as you explain it to Louie.</p>
+
+        <div class="word-bank">
+          <div class="word-bank-title">Click to Check Off Target Upgrades Used in Your Audit:</div>
+          <div class="pill-row">
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">I spearheaded a catalog audit</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">dilute operational bandwidth</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">onboarding high-margin SKUs</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">half-goal circuit breaker</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">anticipate latent risks</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">information asymmetry</span>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          <div class="box-t1">
+            <h3 style="color:var(--t1-text);">❌ Version A: Passive Routine Report (Creates Anxiety)</h3>
+            <p style="font-size:0.92rem;">"Hi Boss, this month our team looked at the APAC sales data. We stopped spending time on <strong>useless things</strong> and <strong>put 30 new items from our good brands</strong> on the website. Sales went up 180% so far. Also, our new warehouse staff are still learning, and <strong>if some bad things happen</strong> next month during the holiday rush, we will tell you right away."</p>
+          </div>
+          <div class="box-t3">
+            <h3 style="color:var(--t3-text);">✅ Version B: The 70/30 Executive Brief (Eliminates Asymmetry)</h3>
+            <p style="font-size:0.92rem;">"To update you on our APAC Q3 mandate: <strong>I spearheaded a catalog audit</strong> to ensure we don't <strong>dilute operational bandwidth across low-yield channels</strong>. By <strong>onboarding 30 high-margin SKUs from our top-performing brand partners</strong>, we have driven 180% YoY revenue growth. Looking ahead to Q4 (30% Risk Foresight): to prevent fulfillment bottlenecks with our newly onboarded warehouse team, I have <strong>installed a half-goal circuit breaker</strong> this Friday to audit packing velocity—and we have a backup 3PL partner on standby so Q4 delivery SLAs remain 100% protected."</p>
+          </div>
+        </div>
+
+        <div class="teacher-note">
+          <strong>👨‍🏫 Teacher Key (5 Upgrades):</strong> (1) <em>Our team looked at</em> → <strong>I spearheaded a catalog audit</strong>; (2) <em>Useless things</em> → <strong>dilute operational bandwidth across low-yield channels</strong>; (3) <em>Put 30 new items</em> → <strong>onboarding 30 high-margin SKUs</strong>; (4) <em>Still learning</em> → <strong>installed a half-goal circuit breaker</strong>; (5) <em>If bad things happen</em> → <strong>pre-engineered backup 3PL mitigation</strong>.
+        </div>
+      </div>
+
+      <!-- Exercise 2 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-amber">Exercise 2 • Adapted from Bolen's "Is That Sentence Correct?" (split_115)</span>
+            <h2>Executive Collocation Clinic: Auditing Real Transcript Sentences</h2>
+          </div>
+        </div>
+        <p style="margin-bottom:14px;">Decide whether each sentence below is <strong>✅ Boardroom-Ready</strong> or <strong>❌ Needs an Executive Upgrade</strong> (L1 collocation slip, <em>Wasei-Eigo</em>, or Oct 23 bomb-defusal slip). If ❌, speak your upgraded version aloud before clicking Reveal!</p>
+        <div id="collocationQuizContainer"></div>
+      </div>
+
+      <!-- Exercise 3 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-green">Exercise 3 • Adapted from Bolen's "Main Ideas Only Please!" (split_048)</span>
+            <h2>The 60-Second CEO Elevator Synthesis</h2>
+          </div>
+        </div>
+        <p>Listen to (or read) the rambling 1-minute message from your Malaysia Regional Manager below. Jot down <strong>only 5–6 keywords</strong>, start the 60-second timer, and synthesize it into <strong>3 crisp executive sentences</strong> for your CEO using the 70/30 rule.</p>
+
+        <div class="timer-bar">
+          <span class="timer-display" id="timerEx3">01:00</span>
+          <button class="btn btn-primary" onclick="startTimer('timerEx3', 60)">▶ Start 60s CEO Synthesis</button>
+          <button class="btn" onclick="speakText(document.getElementById('malaysiaPassage').innerText)">🔊 Listen to Regional Manager</button>
+        </div>
+
+        <blockquote id="malaysiaPassage" style="background:#f8fafc; border-left:4px solid var(--navy); padding:14px 18px; border-radius:6px; font-style:italic;">
+          "Hey YH, sorry for the long message. So in Malaysia this month, we launched the 11.11 beauty campaign on Shopee and Lazada. The good news is that our top three Korean skincare brands sold out in 48 hours, which pushed our regional revenue up by 165% compared to last November. However, we spent $15,000 on local influencer livestreams for our smaller home-decor items, and almost nobody bought them—we only made $2,000 back, so that was a waste. Also, because the skincare sold so fast, the distributor told me this morning that restocking will be delayed by 10 days unless we authorize air-freight shipping by tomorrow afternoon, which will cost an extra $4,000 but saves $60,000 in backorders."
+        </blockquote>
+
+        <div class="teacher-note">
+          <strong>👨‍🏫 Model 3-Sentence Synthesis:</strong> "In Malaysia, our 11.11 launch delivered <strong>165% YoY revenue growth</strong>, propelled by rapid sell-through across our top three Korean skincare lines. To prevent <strong>diluting bandwidth</strong>, we are immediately <strong>reallocating budget</strong> away from underperforming home-decor KOL livestreams. Finally, to mitigate a <strong>10-day restocking bottleneck</strong>, I recommend <strong>greenlighting $4,000 in expedited air-freight</strong> today to protect $60,000 in confirmed backorders."
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: MODULE 2 (EXERCISES 4-6) -->
+    <section id="tab-mod2" class="tab-panel">
+      <!-- Exercise 4 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-blue">Exercise 4 • Adapted from Bolen's "Fortunately, Unfortunately" (split_102)</span>
+            <h2>The "Half-Goal Circuit Breaker" Escalation Chain</h2>
+          </div>
+        </div>
+        <p>Louie will throw an unexpected APAC operational crisis starting with <strong>"Unfortunately..."</strong>. Within 5 seconds, counter with an authoritative mitigation starting with <strong>"Fortunately, because we installed a half-goal circuit breaker..."</strong> or <strong>"To mitigate the fallout, I spearheaded..."</strong>.</p>
+        <div class="word-bank">
+          <div class="word-bank-title">Target Mitigation Collocations (Click as You Use Them):</div>
+          <div class="pill-row">
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">half-goal circuit breaker</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">reallocate operational bandwidth</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">high-trust self-autonomy</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">mitigate the fallout</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">overhaul the workflow</span>
+            <span class="vocab-pill" onclick="this.classList.toggle('used')">on time and under budget</span>
+          </div>
+        </div>
+        <div class="quiz-item">
+          <strong>Crisis Turn 1 (Louie):</strong> "We kicked off our Q4 APAC mega-sale across 100 staff, but <em>unfortunately</em>, two weeks in, a junior merchandiser uploaded a 50% discount code across 400 luxury SKUs!"<br>
+          <strong>Your Turn (YH):</strong> <em>Speak your "Fortunately..." circuit-breaker recovery aloud!</em>
+        </div>
+        <div class="quiz-item">
+          <strong>Crisis Turn 2 (Louie):</strong> "Your audit caught the glitch in 15 minutes! <em>Unfortunately</em>, the luxury brand's Regional VP saw a screenshot and threatened to pull their exclusive inventory from our storefront."<br>
+          <strong>Your Turn (YH):</strong> <em>Pivot and de-escalate using upward empathy ("put myself in their shoes") + a value-add guarantee!</em>
+        </div>
+      </div>
+
+      <!-- Exercise 5 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-amber">Exercise 5 • Adapted from Bolen's "Would You Rather?" (split_110) & "Give a Reason" (split_084)</span>
+            <h2>Executive Leadership Dilemmas (Managing 100+ Staff)</h2>
+          </div>
+        </div>
+        <p>Select your executive stance on each dilemma below and defend it for 60 seconds using C1/C2 causal & consequence framing: <em>"I would opt for X primarily because..."</em>, <em>"Were I to tolerate Y, the downstream consequence would be..."</em></p>
+        <div class="compare-grid">
+          <div class="quiz-item">
+            <h3>Dilemma A: Meritocracy vs. Combative Culture</h3>
+            <p style="font-size:0.9rem; margin-top:6px;">Would you rather retain a Regional Director who consistently delivers <strong>140% of revenue quota</strong> but is <strong>combative</strong> and causes subordinate turnover—OR replace them with a steady <strong>100% quota</strong> leader who <strong>fosters team development</strong>?</p>
+          </div>
+          <div class="quiz-item">
+            <h3>Dilemma B: Span of Control in New Market Entry</h3>
+            <p style="font-size:0.9rem; margin-top:6px;">When launching in Vietnam, would you rather personally approve every SKU for 6 months—OR grant your Country Manager <strong>100% self-autonomy</strong> from Day 1 governed by a <strong>half-goal circuit breaker</strong> at Day 45?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise 6 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-green">Exercise 6 • Adapted from Bolen's "An Irrelevant Sentence" (split_053)</span>
+            <h2>Pruning the Boardroom Memo (Spotting Register & Cohesion Flaws)</h2>
+          </div>
+        </div>
+        <p style="margin-bottom:12px;">Each boardroom memo below has 4 sentences, but <strong>1 sentence breaks executive register, span of control, or cohesion</strong>. Click the sentence number that must be cut!</p>
+        <div id="irrelevantMemoContainer"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MODULE 3 (EXERCISES 7-9) -->
+    <section id="tab-mod3" class="tab-panel">
+      <!-- Exercise 7 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-red">Exercise 7 • Adapted from Bolen's "Draw a Picture, Someone Else is Talking" (split_101)</span>
+            <h2>The "Keep Talking" War-Room Control Panel Simulator</h2>
+          </div>
+          <div class="timer-bar" style="margin:0;">
+            <span class="timer-display" id="timerEx7">03:00</span>
+            <button class="btn btn-primary" onclick="startTimer('timerEx7', 180)">▶ Start 3m Defusal Clock</button>
+          </div>
+        </div>
+        <p>In our Oct 23 <em>Keep Talking and Nobody Explodes</em> session, speed depended on exact spatial & hardware words (<strong>button</strong> vs. <em>bottom</em>, <strong>symbol</strong> vs. <em>mark</em>, <strong>wire</strong> vs. <em>cable</em>, <strong>rhombus/diamond</strong> vs. <em>diagram</em>). Direct Louie through all 6 modules below using crisp coordinates and closed-loop confirmation!</p>
+
+        <div class="war-room-grid">
+          <div class="module-box">
+            <div class="module-header"><span>Row 1, Col 1 (Top-Left)</span><span>Module 1: Wires</span></div>
+            <button class="wire-btn" style="background:#1e3a8a; color:#fff;" onclick="this.classList.toggle('cut')">1st Horizontal Wire: BLUE</button>
+            <button class="wire-btn" style="background:#ca8a04; color:#fff;" onclick="this.classList.toggle('cut')">2nd Horizontal Wire: YELLOW (Target ✂️)</button>
+            <button class="wire-btn" style="background:#991b1b; color:#fff;" onclick="this.classList.toggle('cut')">3rd Horizontal Wire: RED</button>
+            <button class="wire-btn" style="background:#f8fafc; color:#0f172a;" onclick="this.classList.toggle('cut')">4th Horizontal Wire: WHITE</button>
+          </div>
+
+          <div class="module-box">
+            <div class="module-header"><span>Row 1, Col 2 (Top-Center)</span><span>Module 2: Push-Button</span></div>
+            <div style="text-align:center; padding:10px 0;">
+              <button onclick="this.innerText = this.innerText.includes('HOLDING') ? 'WHITE BUTTON: HOLD' : '🔵 HOLDING... RELEASE ON [4]'" style="width:110px; height:110px; border-radius:50%; background:#f8fafc; color:#0f172a; font-weight:800; border:4px solid #38bdf8; cursor:pointer;">WHITE BUTTON: HOLD</button>
+              <p style="font-size:0.78rem; color:#cbd5e1; margin-top:8px;">Rule: <strong>Press and hold</strong> the button; confirm the <strong>blue indicator strip</strong>; release when timer displays <strong>4</strong>.</p>
+            </div>
+          </div>
+
+          <div class="module-box">
+            <div class="module-header"><span>Row 1, Col 3 (Top-Right)</span><span>Module 3: Symbol Keypad</span></div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button class="btn" style="justify-content:center; font-size:1.1rem;" onclick="this.classList.toggle('btn-primary')">(X1,Y1) Ω Omega</button>
+              <button class="btn" style="justify-content:center; font-size:1.1rem;" onclick="this.classList.toggle('btn-primary')">(X2,Y1) # Hashtag</button>
+              <button class="btn" style="justify-content:center; font-size:1.1rem;" onclick="this.classList.toggle('btn-primary')">(X1,Y2) Æ Ligature</button>
+              <button class="btn" style="justify-content:center; font-size:1.1rem;" onclick="this.classList.toggle('btn-primary')">(X2,Y2) ★ Star</button>
+            </div>
+            <p style="font-size:0.76rem; color:#cbd5e1; margin-top:8px;">Target Order: <strong># Hashtag → Æ Ligature → Ω Omega → ★ Star</strong></p>
+          </div>
+
+          <div class="module-box">
+            <div class="module-header"><span>Row 2, Col 1 (Bottom-Left)</span><span>Module 4: Rhombus Keypad</span></div>
+            <p style="font-size:0.8rem; color:#e2e8f0; margin-bottom:8px;"><strong>Diamond / Rhombus</strong> layout (Top: Red, Right: Blue, Bottom: Yellow, Left: Green).</p>
+            <p style="font-size:0.78rem; color:#fde047;">Flashing Sequence (3 pulses): <strong>RED → YELLOW → GREEN</strong></p>
+            <p style="font-size:0.78rem; color:#86efac; margin-top:4px;">Required Input: <strong>BLUE → GREEN → YELLOW</strong></p>
+          </div>
+
+          <div class="module-box">
+            <div class="module-header"><span>Row 2, Col 2 (Bottom-Center)</span><span>Module 5: 6×6 Coordinate Grid</span></div>
+            <p style="font-size:0.8rem;">• <strong>Origin Node:</strong> (X3, Y1)<br>• <strong>Red Hazard Triangles:</strong> (X4, Y1) & (X3, Y2)<br>• <strong>Destination Node:</strong> (X4, Y6)</p>
+            <p style="font-size:0.76rem; color:#93c5fd; margin-top:6px;">Direct Louie step-by-step without hitting adjacent hazard coordinates!</p>
+          </div>
+
+          <div class="module-box">
+            <div class="module-header"><span>Row 2, Col 3 (Bottom-Right)</span><span>Module 6: Chassis Metadata</span></div>
+            <p style="font-size:0.8rem;">• <strong>Serial Number:</strong> <code>A87-AA5</code> (Starts with vowel <strong>A</strong>; terminates in odd digit <strong>5</strong>)<br>• <strong>Power Supply:</strong> 2 AA Batteries<br>• <strong>Lit Indicator Label:</strong> <code>BOB</code> (Illuminated)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise 8 & 9 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-blue">Exercises 8 & 9 • Adapted from "Excuse Me, What Did You Say?" (split_046) & "20 Questions" (split_043)</span>
+            <h2>Closed-Loop Crisis Readbacks & The 10-Question KPI Drop Interrogation</h2>
+          </div>
+        </div>
+        <div class="compare-grid">
+          <div class="quiz-item">
+            <h3>Exercise 8: High-Noise Crisis Readback Formulas</h3>
+            <p style="font-size:0.88rem; margin-bottom:8px;">When Louie reads a fast or garbled crisis instruction, verify before acting:</p>
+            <ul style="padding-left:18px; font-size:0.86rem;">
+              <li><strong>Action Check:</strong> "Before I execute: are we <em>deploying immediately</em>, or <em>staging and holding</em>?"</li>
+              <li><strong>Numeric Check:</strong> "The threshold broke up—did you specify <em>15 percent</em> or <em>50 percent</em>?"</li>
+              <li><strong>Homophone Check:</strong> "To avoid ambiguity—are you referencing <em>Y-O-U-R</em> or <em>Y-O-U apostrophe R-E</em>?"</li>
+            </ul>
+          </div>
+          <div class="quiz-item">
+            <h3>Exercise 9: The 10-Question Storefront Drop Mystery</h3>
+            <p style="font-size:0.88rem;">Weekend APAC revenue dropped <strong>45%</strong> while traffic stayed flat at 200,000 sessions. Ask Louie up to <strong>10 Yes/No diagnostic questions</strong> (testing Desktop vs. Mobile, Checkout Gateway, Hero SKU stockouts, and Traffic Source) to isolate the root cause!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: MODULE 4 (EXERCISES 10-12) -->
+    <section id="tab-mod4" class="tab-panel">
+      <!-- Exercise 10 & 11 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-blue">Exercises 10 & 11 • Adapted from "If I Had $1M" (split_028) & "Reverse Writing" (split_091)</span>
+            <h2>$1M Conditional Capital Allocation & Reverse-Engineered STAR-L Interview</h2>
+          </div>
+          <div class="timer-bar" style="margin:0;">
+            <span class="timer-display" id="timerEx11">01:30</span>
+            <button class="btn btn-primary" onclick="startTimer('timerEx11', 90)">▶ 90s STAR-L Pitch Timer</button>
+          </div>
+        </div>
+        <div class="compare-grid">
+          <div class="box-t3">
+            <h3>Exercise 10: Conditional Concession Formulas</h3>
+            <p style="font-size:0.88rem; margin-top:6px;">• <strong>Strategic Allocation:</strong> "If the Board <em>allocated</em> an incremental $1M, I <em>would deploy</em> 60% into high-margin SKUs..."<br>• <strong>Inverted C2 Conditional:</strong> "<em>Were we to automate</em> our regional hubs, we <em>could compress</em> lead times by 48 hours."<br>• <strong>Trade-Off Framing:</strong> "<em>Provided that</em> you guarantee a 42% margin, we <em>are prepared to</em> feature your line on our 11.11 banner."</p>
+          </div>
+          <div class="box-t1" style="background:#eff6ff; border-color:#bfdbfe;">
+            <h3 style="color:var(--navy);">Exercise 11: Reverse-Engineer the 5 Interview Questions</h3>
+            <p style="font-size:0.86rem; margin-top:6px;">Deliver <strong>one seamless 90-second STAR-L story</strong> that answers all 5 C-Suite questions:<br>
+            1. <strong>(S)</strong> What was the state of APAC e-commerce when you took command?<br>
+            2. <strong>(T)</strong> How did you combine qualitative & quantitative data to form your hypothesis?<br>
+            3. <strong>(A)</strong> What SKU & brand actions did <strong>you personally spearhead</strong>?<br>
+            4. <strong>(R)</strong> What quantifiable YoY revenue surge (240%) did you deliver?<br>
+            5. <strong>(L)</strong> What did this teach you about high-trust delegation & circuit breakers?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise 12 -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="badge badge-amber">Exercise 12 • Adapted from Bolen's "Odd One Out" (split_107)</span>
+            <h2>Executive Register "Odd One Out" Challenge</h2>
+          </div>
+        </div>
+        <p style="margin-bottom:12px;">Click the <strong>1 phrase in each set of 4</strong> that does NOT belong (due to opposite meaning, <em>Wasei-Eigo</em>, or L1 collocation slip) and explain why!</p>
+        <div id="oddOneOutContainer"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const lexiconData = [
+      { cat: "Agency & Strategy", bad: "We looked at / We did", good: "I spearheaded / I championed", jp: "陣頭指揮を執った・主導した (Claims personal C-suite agency)" },
+      { cat: "Agency & Strategy", bad: "Split resources to useless things", good: "Dilute operational bandwidth across low-yield channels", jp: "低収益チャネルに運用リソースを分散させる" },
+      { cat: "Retail & Catalog", bad: "Put more items for good brands", good: "Onboard high-margin SKUs for top-performing brand partners", jp: "主力ブランドの高収益SKU（商品）を新規導入する" },
+      { cat: "Upward Governance", bad: "Once bad things happen, report", good: "Escalate operational bottlenecks immediately with mitigation options", jp: "業務上のボトルネックを緩和策と共に即座にエスカレーションする" },
+      { cat: "Upward Governance", bad: "What the boss wants to know", good: "Anticipate strategic priorities and latent risks", jp: "経営陣の戦略的優先事項と潜在リスクを先回りして察知する (70/30 Rule)" },
+      { cat: "Upward Governance", bad: "Information gap with the boss", good: "Asymmetrical communication / Information asymmetry", jp: "情報の非対称性・非対称なコミュニケーション" },
+      { cat: "Scaling 100+ Staff", bad: "See my subordinates grown up", good: "Foster professional development / Cultivate talent", jp: "部下の専門的成長を促進する (※grow upは子供にのみ使用)" },
+      { cat: "Scaling 100+ Staff", bad: "Check halfway so we don't fail", good: "Install a half-goal circuit breaker", jp: "中間監査ポイント（ハーフゴール・サーキットブレーカー）を設ける" },
+      { cat: "Scaling 100+ Staff", bad: "Manage 4-5 leaders over 100 staff", good: "Optimize my span of control across a tiered hierarchy", jp: "階層型組織において統率スパンを最適化する" },
+      { cat: "Crisis Precision", bad: "Push the white bottom", good: "Press and hold the button vs. Tap and release immediately", jp: "ボタンを長押しする vs. 押してすぐ離す (bottomではなくbutton)" },
+      { cat: "Crisis Precision", bad: "The four-color diagram / mark", good: "The diamond (rhombus) keypad / Indicator symbol", jp: "ひし形キーパッド・インジケーター記号" },
+      { cat: "Negotiation", bad: "Lose easy profit / Bad cospa", good: "Leave money on the table / Unsustainable ROI", jp: "取れるはずの利益を取りこぼす・採算（ROI）が合わない" }
+    ];
+
+    const collocationQuiz = [
+      {
+        sentence: "1. \"I always like to see my subordinates grown up through challenging projects.\"",
+        isCorrect: false,
+        explanation: "❌ L1 Collocation Slip! In English, 'grow up' is exclusively used for children maturing into adults. ✅ Executive Polish: \"I take pride in fostering my subordinates' professional development and empowering them to advance.\""
+      },
+      {
+        sentence: "2. \"By combining qualitative customer context with quantitative transaction data, we validated our core hypothesis.\"",
+        isCorrect: true,
+        explanation: "✅ 100% Boardroom-Ready! You produced this naturally at 13:35 in our Oct 21 session—flawless C2 executive phrasing."
+      },
+      {
+        sentence: "3. \"When we got a big claim from the brand partner about bad cost-performance, we decided to remake our promotion plan.\"",
+        isCorrect: false,
+        explanation: "❌ Contains 3 Wasei-Eigo traps ('claim', 'cost-performance', 'remake'). ✅ Executive Polish: \"When the brand partner escalated a formal concern regarding low ROI, we decided to overhaul our promotional strategy.\""
+      },
+      {
+        sentence: "4. \"Once some bad things happen in the supply chain, my team knows they should not hide it.\"",
+        isCorrect: false,
+        explanation: "❌ Too elementary ('some bad things happen'). ✅ Executive Polish: \"The moment an operational bottleneck emerges, my team knows to escalate it immediately alongside viable mitigation options.\""
+      },
+      {
+        sentence: "5. \"Please push the white bottom on the right side and see if the mark changes.\"",
+        isCorrect: false,
+        explanation: "❌ Oct 23 Bomb-Defusal Slip ('bottom' vs 'button', 'mark' vs 'symbol'). ✅ Executive Polish: \"Please press and hold the white button on the right-hand module and confirm whether the indicator symbol changes.\""
+      },
+      {
+        sentence: "6. \"If we refuse to customize our enterprise package for high-value clients, we are simply leaving money on the table.\"",
+        isCorrect: true,
+        explanation: "✅ 100% Boardroom-Ready! Natural deployment of the C2 commercial idiom 'leaving money on the table'."
+      }
+    ];
+
+    const memos = [
+      {
+        title: "Memo A: Q3 APAC E-Commerce Restructuring (To: Board of Directors)",
+        sentences: [
+          "(1) During Q3, my primary mandate was to reverse margin compression across our Southeast Asian marketplaces.",
+          "(2) First, I spearheaded a comprehensive SKU rationalization, phasing out 120 low-margin items that were diluting our warehouse bandwidth.",
+          "(3) I also personally checked the font size on the interns' Excel spreadsheets every Tuesday morning and told them which desk chairs to sit in.",
+          "(4) As a direct result of focusing capital on our top 15 brand partnerships, net operating margin expanded by 8.4 percentage points."
+        ],
+        badIndex: 2,
+        reason: "Sentence (3) violates executive span of control by plunging from C-suite macro strategy into trivial micromanagement!"
+      },
+      {
+        title: "Memo B: Supply Chain Risk Escalation (To: VP of Operations)",
+        sentences: [
+          "(1) Looking at our November fulfillment projections, I want to flag a latent risk in our cold-chain logistics pipeline.",
+          "(2) Our primary courier in Taipei is currently operating at 98% capacity, which risks delaying premium perishable deliveries by up to 36 hours.",
+          "(3) I am so sorry to bother you with my bad English and I really hope you don't get angry at our team for this big problem.",
+          "(4) To mitigate this proactively, we have pre-negotiated overflow capacity with a secondary carrier, contingent upon your sign-off by Thursday."
+        ],
+        badIndex: 2,
+        reason: "Sentence (3) falls into the apologetic Beta Trap (L1 Enryo transfer), undermining the proactive 70/30 risk governance of the memo."
+      }
+    ];
+
+    const oddSets = [
+      {
+        items: ["spearhead", "orchestrate", "champion", "micromanage"],
+        odd: 3,
+        why: "'micromanage' is negative excessive control that suffocates autonomy, whereas the first three are positive C1/C2 verbs for macro executive leadership."
+      },
+      {
+        items: ["information asymmetry", "misalignment", "out of the loop", "seamless synergy"],
+        odd: 3,
+        why: "'seamless synergy' describes harmonious alignment, whereas the first three describe communication bottlenecks and reporting gaps."
+      },
+      {
+        items: ["lodge a complaint", "escalate a grievance", "make a claim", "flag a bottleneck"],
+        odd: 2,
+        why: "'make a claim' is a Wasei-Eigo false friend (means insurance payout or legal assertion in English), whereas the others mean raising a business issue."
+      },
+      {
+        items: ["foster development", "cultivate talent", "empower subordinates", "grow up staff"],
+        odd: 3,
+        why: "'grow up staff' is an L1 transfer error ('grow up' is intransitive and only for children); use 'foster professional development' instead."
+      }
+    ];
+
+    function renderAll() {
+      // Render Lexicon
+      const tbody = document.getElementById('lexiconTableBody');
+      tbody.innerHTML = lexiconData.map(row => `
+        <tr>
+          <td><span class="badge badge-blue">${row.cat}</span></td>
+          <td style="color:var(--t1-text); font-weight:600;">❌ "${row.bad}"</td>
+          <td style="color:var(--t3-text); font-weight:700;">
+            ✅ ${row.good}
+            <button class="btn" style="padding:2px 8px; font-size:0.74rem; margin-left:6px;" onclick="speakText('${row.good.replace(/'/g, "\\'")}')">🔊</button>
+          </td>
+          <td>${row.jp}</td>
+        </tr>
+      `).join('');
+
+      // Render Collocation Quiz
+      const qBox = document.getElementById('collocationQuizContainer');
+      qBox.innerHTML = collocationQuiz.map((q, i) => `
+        <div class="quiz-item">
+          <div style="font-weight:700; font-size:0.96rem;">${q.sentence}</div>
+          <div class="quiz-actions">
+            <button class="btn" onclick="checkCollocation(${i}, true)">✅ Boardroom-Ready</button>
+            <button class="btn" onclick="checkCollocation(${i}, false)">❌ Needs Executive Polish</button>
+          </div>
+          <div id="colloc-fb-${i}" class="quiz-feedback"></div>
+        </div>
+      `).join('');
+
+      // Render Irrelevant Sentence Memos
+      const mBox = document.getElementById('irrelevantMemoContainer');
+      mBox.innerHTML = memos.map((m, mi) => `
+        <div class="quiz-item">
+          <h3>${m.title}</h3>
+          <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+            ${m.sentences.map((s, si) => `
+              <button class="btn" style="text-align:left; justify-content:flex-start; font-weight:500;" onclick="checkMemo(${mi}, ${si})">${s}</button>
+            `).join('')}
+          </div>
+          <div id="memo-fb-${mi}" class="quiz-feedback"></div>
+        </div>
+      `).join('');
+
+      // Render Odd One Out
+      const oBox = document.getElementById('oddOneOutContainer');
+      oBox.innerHTML = oddSets.map((set, si) => `
+        <div class="quiz-item">
+          <div style="font-weight:700; margin-bottom:8px;">Set #${si + 1}: Click the Odd One Out</div>
+          <div class="quiz-actions">
+            ${set.items.map((item, ii) => `
+              <button class="btn" onclick="checkOdd(${si}, ${ii})">${item}</button>
+            `).join('')}
+          </div>
+          <div id="odd-fb-${si}" class="quiz-feedback"></div>
+        </div>
+      `).join('');
+    }
+
+    function checkCollocation(idx, userChoice) {
+      const q = collocationQuiz[idx];
+      const fb = document.getElementById(`colloc-fb-${idx}`);
+      const right = userChoice === q.isCorrect;
+      fb.className = 'quiz-feedback show';
+      fb.style.background = right ? '#f0fdf4' : '#fef2f2';
+      fb.style.border = `1px solid ${right ? '#bbf7d0' : '#fecaca'}`;
+      fb.innerHTML = `<strong>${right ? '🎯 Spot On!' : '💡 Look Closer:'}</strong> ${q.explanation}`;
+    }
+
+    function checkMemo(mi, si) {
+      const m = memos[mi];
+      const fb = document.getElementById(`memo-fb-${mi}`);
+      const right = si === m.badIndex;
+      fb.className = 'quiz-feedback show';
+      fb.style.background = right ? '#f0fdf4' : '#fffbeb';
+      fb.style.border = `1px solid ${right ? '#bbf7d0' : '#fde68a'}`;
+      fb.innerHTML = right
+        ? `<strong>🎯 Correct!</strong> ${m.reason}`
+        : `<strong>Not that one!</strong> Sentence (${si + 1}) fits the executive register. Look for the sentence that breaks span of control or falls into the Beta Trap.`;
+    }
+
+    function checkOdd(si, ii) {
+      const set = oddSets[si];
+      const fb = document.getElementById(`odd-fb-${si}`);
+      const right = ii === set.odd;
+      fb.className = 'quiz-feedback show';
+      fb.style.background = right ? '#f0fdf4' : '#fffbeb';
+      fb.style.border = `1px solid ${right ? '#bbf7d0' : '#fde68a'}`;
+      fb.innerHTML = right
+        ? `<strong>🎯 Correct!</strong> ${set.why}`
+        : `<strong>Try again!</strong> "${set.items[ii]}" belongs to the core executive group. Which one breaks the pattern?`;
+    }
+
+    function switchTab(id, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function toggleTeacher() {
+      document.body.classList.toggle('show-teacher');
+      const btn = document.getElementById('teacherToggle');
+      const on = document.body.classList.contains('show-teacher');
+      btn.classList.toggle('active', on);
+      btn.innerText = on ? '👨‍🏫 Teacher Answer Key: ON' : '👨‍🏫 Teacher Answer Key: OFF';
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    const activeTimers = {};
+    function startTimer(displayId, seconds) {
+      if (activeTimers[displayId]) clearInterval(activeTimers[displayId]);
+      let rem = seconds;
+      const el = document.getElementById(displayId);
+      const fmt = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+      el.innerText = fmt(rem);
+      activeTimers[displayId] = setInterval(() => {
+        rem--;
+        if (rem <= 0) {
+          clearInterval(activeTimers[displayId]);
+          el.innerText = "00:00";
+          el.style.color = "#dc2626";
+        } else {
+          el.innerText = fmt(rem);
+          el.style.color = rem <= 10 ? "#d97706" : "var(--navy)";
+        }
+      }, 1000);
+    }
+
+    renderAll();
+  </script>
+</body>
+</html>

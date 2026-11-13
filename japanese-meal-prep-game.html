@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OishiiBox Executive Arcade — 4-in-1 Interview & Crisis Game | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --bg: #060a12;
+      --surface: #0f172a;
+      --surface-card: #162238;
+      --surface-hover: #1e2f4d;
+      --border: rgba(148, 163, 184, 0.2);
+      --text: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --gold: #f59e0b;
+      --gold-bright: #fbbf24;
+      --emerald: #10b981;
+      --emerald-bright: #34d399;
+      --rose: #f43f5e;
+      --rose-bright: #fb7185;
+      --cyan: #38bdf8;
+      --purple: #a855f7;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.12), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.1), transparent 35%),
+        radial-gradient(circle at 50% 90%, rgba(244, 63, 94, 0.08), transparent 40%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* TOP ARCADE HUD */
+    .arcade-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+    }
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .title-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .arcade-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f59e0b, #f43f5e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+    .hud-stats {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .stat-pill {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-pill .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .btn {
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-card);
+      color: var(--text);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #060a12;
+      border-color: #fbbf24;
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #042f2e;
+      border-color: #34d399;
+    }
+    .btn-rose {
+      background: linear-gradient(135deg, #f43f5e, #e11d48);
+      color: #fff;
+      border-color: #fb7185;
+    }
+
+    /* MODE SELECTOR TABS */
+    .mode-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      overflow-x: auto;
+    }
+    .mode-bar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+    .mode-tab {
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 15px 20px;
+      background: transparent;
+      color: var(--text-dim);
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.18s ease;
+    }
+    .mode-tab:hover { color: var(--text); }
+    .mode-tab.active {
+      color: var(--gold-bright);
+      border-bottom-color: var(--gold);
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 26px auto 80px;
+      padding: 0 24px;
+    }
+    .game-screen { display: none; }
+    .game-screen.active { display: block; animation: popIn 0.25s ease; }
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       GAME 1: BOARDROOM BOSS GAUNTLET (STOCK PRICE & BOSS HP)
+       ========================================================================== */
+    .boss-arena {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .boss-arena { grid-template-columns: 1fr; }
+    }
+    .boss-card {
+      background: radial-gradient(circle at top, #1e293b, #0f172a);
+      border: 2px solid rgba(244, 63, 94, 0.5);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+    .boss-avatar {
+      font-size: 4.2rem;
+      margin-bottom: 8px;
+      display: inline-block;
+      animation: floatBoss 2.6s ease-in-out infinite alternate;
+    }
+    @keyframes floatBoss {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-8px); }
+    }
+    .hp-bar-outer {
+      width: 100%;
+      height: 16px;
+      background: #090d16;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      overflow: hidden;
+      margin: 10px 0 6px;
+    }
+    .hp-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, #f43f5e, #f59e0b);
+      width: 100%;
+      transition: width 0.35s ease;
+    }
+
+    .battle-stage {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
+    .boss-speech {
+      background: var(--surface-card);
+      border-left: 4px solid var(--rose);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin: 12px 0 20px;
+      line-height: 1.45;
+    }
+    .move-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .move-btn {
+      font-family: inherit;
+      text-align: left;
+      background: var(--surface-card);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 18px;
+      color: var(--text);
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .move-btn:hover {
+      border-color: var(--cyan);
+      background: var(--surface-hover);
+      transform: translateX(4px);
+    }
+    .move-btn.power-win {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: var(--emerald);
+    }
+    .move-btn.trap-lose {
+      background: rgba(244, 63, 94, 0.18);
+      border-color: var(--rose);
+    }
+    .move-btn.safe-mid {
+      background: rgba(245, 158, 11, 0.16);
+      border-color: var(--gold);
+    }
+
+    .combo-finisher-box {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(56, 189, 248, 0.12));
+      border: 2px solid var(--emerald);
+    }
+    .combo-finisher-box.show { display: block; }
+
+    .crit-word-btn {
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--emerald-bright);
+      border: 2px solid var(--emerald);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .crit-word-btn.struck {
+      background: var(--emerald);
+      color: #042f2e;
+      transform: scale(1.06);
+      box-shadow: 0 0 18px rgba(16, 185, 129, 0.5);
+    }
+
+    /* ==========================================================================
+       GAME 2: CONVEYOR-BELT BENTO BLITZ (KAITEN-ZUSHI CRUTCH BUSTER)
+       ========================================================================== */
+    .belt-housing {
+      background: linear-gradient(180deg, #131c2e 0%, #090e17 100%);
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .conveyor-track {
+      background: repeating-linear-gradient(90deg, #1e293b 0px, #1e293b 40px, #0f172a 40px, #0f172a 80px);
+      border-top: 4px solid #475569;
+      border-bottom: 4px solid #475569;
+      border-radius: 14px;
+      padding: 26px 20px;
+      margin: 14px 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bento-plate {
+      background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+      border: 4px solid #f43f5e;
+      border-radius: 18px;
+      padding: 20px 26px;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+    }
+    .timer-strip {
+      width: 100%;
+      height: 10px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .timer-strip-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #10b981, #fbbf24, #f43f5e);
+      transition: width 0.2s linear;
+    }
+    .chef-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 720px) {
+      .chef-options-grid { grid-template-columns: 1fr; }
+    }
+    .chef-plate-btn {
+      font-family: inherit;
+      background: var(--surface-card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chef-plate-btn:hover {
+      border-color: var(--gold-bright);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       GAME 3: "KEEP TALKING & NOBODY CANCELS" — CO-OP CRISIS BOMB DEFUSAL
+       ========================================================================== */
+    .bomb-casing {
+      background: radial-gradient(circle at center, #1e2631 0%, #0b0f17 100%);
+      border: 4px solid #475569;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85), inset 0 0 30px rgba(244, 63, 94, 0.12);
+    }
+    .bomb-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: #06090f;
+      border: 2px solid #334155;
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-bottom: 22px;
+    }
+    .digital-clock {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #f43f5e;
+      text-shadow: 0 0 18px rgba(244, 63, 94, 0.7);
+      background: #140508;
+      padding: 6px 18px;
+      border-radius: 10px;
+      border: 2px solid #881337;
+    }
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 920px) {
+      .modules-grid { grid-template-columns: 1fr; }
+    }
+    .bomb-module {
+      background: #131b29;
+      border: 2px solid #334155;
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+    }
+    .bomb-module.defused {
+      border-color: var(--emerald);
+      box-shadow: inset 0 0 25px rgba(16, 185, 129, 0.18);
+    }
+    .module-led {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #f43f5e;
+      box-shadow: 0 0 12px #f43f5e;
+    }
+    .bomb-module.defused .module-led {
+      background: #10b981;
+      box-shadow: 0 0 14px #10b981;
+    }
+    .wire-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .wire-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s ease;
+    }
+    .wire-btn:hover { transform: scale(1.02); }
+    .wire-btn.cut {
+      opacity: 0.35;
+      text-decoration: line-through;
+    }
+
+    .manual-drawer {
+      margin-top: 22px;
+      background: #fffbeb;
+      color: #0f172a;
+      border: 3px solid #d97706;
+      border-radius: 16px;
+      padding: 22px;
+      display: none;
+    }
+    .manual-drawer.show { display: block; }
+
+    /* ==========================================================================
+       GAME 4: SPEED COLLOCATION MATCH ARENA
+       ========================================================================== */
+    .match-board {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    @media (max-width: 860px) {
+      .match-board { grid-template-columns: repeat(2, 1fr); }
+    }
+    .match-card {
+      background: var(--surface-card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 14px;
+      min-height: 105px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.16s ease;
+    }
+    .match-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+    .match-card.selected {
+      border-color: var(--gold-bright);
+      background: rgba(245, 158, 11, 0.2);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+    }
+    .match-card.cleared {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.18);
+      opacity: 0.35;
+      pointer-events: none;
+      transform: scale(0.95);
+    }
+
+    #toastContainer {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .arcade-toast {
+      background: #0f172a;
+      color: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY ARCADE HEADER -->
+  <header class="arcade-header">
+    <div class="header-inner">
+      <div class="title-cluster">
+        <div class="arcade-badge">🕹️</div>
+        <div>
+          <div style="font-weight:900; font-size:1.08rem; letter-spacing:-0.02em;">
+            OishiiBox Executive Game Arena <span style="color:var(--gold-bright); font-size:0.8rem; margin-left:6px;">[4 PLAYABLE MODES]</span>
+          </div>
+          <div style="font-size:0.78rem; color:var(--text-dim); font-weight:600;">
+            Interactive Preply Roleplay & Vocabulary Games for YH
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-stats">
+        <div class="stat-pill">
+          <span>📈 OishiiBox Stock:</span>
+          <span class="mono" style="color:var(--emerald-bright);" id="stockPriceDisplay">¥1,250</span>
+        </div>
+        <div class="stat-pill">
+          <span>🔥 Streak:</span>
+          <span class="mono" style="color:var(--gold-bright);" id="streakDisplay">0x</span>
+        </div>
+        <div class="stat-pill">
+          <span>🏆 Total XP:</span>
+          <span class="mono" style="color:var(--cyan);" id="xpDisplay">0</span>
+        </div>
+        <a class="btn btn-gold" href="japanese-meal-prep-interview.html">🍱 Back to Interview Suite</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4 GAME MODE TABS -->
+  <nav class="mode-bar">
+    <div class="mode-bar-inner">
+      <button class="mode-tab active" onclick="switchGame('game1', this)">
+        👹 Mode 1: Boardroom Boss Battle (RPG)
+      </button>
+      <button class="mode-tab" onclick="switchGame('game2', this)">
+        🍣 Mode 2: Conveyor-Belt Bento Blitz
+      </button>
+      <button class="mode-tab" onclick="switchGame('game3', this)">
+        💣 Mode 3: Co-Op Crisis Bomb Defusal
+      </button>
+      <button class="mode-tab" onclick="switchGame('game4', this)">
+        🃏 Mode 4: 60s Collocation Speed Match
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ======================================================================
+         GAME 1: BOARDROOM BOSS BATTLE (RPG INTERVIEW GAUNTLET)
+         ====================================================================== -->
+    <section id="game1" class="game-screen active">
+      <div class="boss-arena">
+        <!-- LEFT: BOSS CARD -->
+        <div class="boss-card">
+          <div style="font-size:0.74rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:var(--rose-bright);" id="bossStageTag">
+            STAGE 1 OF 6 • BOARDROOM BOSS
+          </div>
+          <div class="boss-avatar" id="bossAvatar">👨‍🍳</div>
+          <h2 style="font-size:1.3rem; font-weight:900;" id="bossName">Kenji Sato — Founder & Master Chef</h2>
+          <p style="font-size:0.82rem; color:var(--text-dim); margin:4px 0 12px;" id="bossTitle">
+            Obsessed with authentic Washoku recipes; terrified of cheap discounting & bad food quality.
+          </p>
+
+          <div style="display:flex; justify-content:space-between; font-size:0.76rem; font-weight:800;">
+            <span>BOSS SKEPTICISM HP</span>
+            <span id="bossHpText">100 / 100</span>
+          </div>
+          <div class="hp-bar-outer">
+            <div class="hp-bar-inner" id="bossHpBar"></div>
+          </div>
+
+          <div style="margin-top:16px; display:flex; gap:8px; justify-content:center;">
+            <button class="btn" onclick="prevBoss()">◀ Prev Boss</button>
+            <button class="btn btn-gold" onclick="nextBoss()">Next Boss ▶</button>
+          </div>
+        </div>
+
+        <!-- RIGHT: BATTLE STAGE -->
+        <div class="battle-stage">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:0.78rem; font-weight:800; text-transform:uppercase; color:var(--gold-bright);">
+              ⚡ Step 1: Choose YH's Strategic Counter-Move (Watch out for Katakana & Passive "We" traps!)
+            </span>
+            <button class="btn" style="padding:5px 11px; font-size:0.76rem;" onclick="speakBossQuestion()">🔊 Hear Boss Speak</button>
+          </div>
+
+          <div class="boss-speech" id="bossQuestionText"></div>
+
+          <div class="move-list" id="bossMoveList"></div>
+
+          <!-- STEP 2: SPOKEN CRITICAL-HIT COMBO -->
+          <div class="combo-finisher-box" id="bossFinisherBox">
+            <div style="font-size:0.8rem; font-weight:900; text-transform:uppercase; color:var(--emerald-bright); margin-bottom:6px;">
+              🗡️ Step 2 — Spoken Critical Hit! (YH: Speak your 45-second answer aloud using these 3 Power Words!)
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:12px;" id="bossFeedbackText"></p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px;" id="bossCritWords"></div>
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.78rem; color:var(--text-dim);">💡 Coach Louie: Click each green pill above as YH speaks it aloud to drain the Boss's HP!</span>
+              <button class="btn btn-gold" onclick="nextBoss()">🏆 Advance to Next Boss ▶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         GAME 2: CONVEYOR-BELT BENTO BLITZ (KAITEN-ZUSHI CRUTCH BUSTER)
+         ====================================================================== -->
+    <section id="game2" class="game-screen">
+      <div class="belt-housing">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="font-size:1.35rem; font-weight:900;">🍣 Kaiten-Zushi Conveyor Belt: Crutch-Word Buster!</h2>
+            <p style="font-size:0.86rem; color:var(--text-dim);">
+              A spoiled "Basic English / Wasei-Eigo" Bento is sliding down the belt! Pick the authentic C-Suite Executive Upgrade before the timer runs out!
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <span class="stat-pill">❤️ Kitchen Lives: <strong id="beltLives" style="color:var(--rose-bright);">❤️❤️❤️</strong></span>
+            <button class="btn btn-emerald" onclick="startBeltRound()">▶ Serve Next Bento Plate</button>
+          </div>
+        </div>
+
+        <div class="conveyor-track">
+          <div class="bento-plate" id="bentoPlateCard">
+            <div class="timer-strip">
+              <div class="timer-strip-fill" id="beltTimerBar"></div>
+            </div>
+            <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--rose-bright); margin-bottom:6px;">
+              🚫 SPOILED TIER-1 / KATAKANA BENTO ON THE BELT:
+            </div>
+            <div style="font-size:1.25rem; font-weight:900; margin-bottom:8px;" id="beltBadPhrase">
+              "Click 'Serve Next Bento Plate' to start the conveyor belt!"
+            </div>
+            <div style="font-size:0.82rem; color:var(--text-dim);" id="beltContextHint">
+              YH can first try saying the upgrade aloud for bonus points, then click the matching plate below!
+            </div>
+          </div>
+        </div>
+
+        <div class="chef-options-grid" id="beltOptionsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         GAME 3: "KEEP TALKING & NOBODY CANCELS" — CO-OP CRISIS BOMB DEFUSAL
+         ====================================================================== -->
+    <section id="game3" class="game-screen">
+      <div class="bomb-casing">
+        <div class="bomb-top-bar">
+          <div>
+            <div style="font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:1.5px; color:var(--rose-bright);">
+              💣 CO-OP COMMUNICATION SIMULATION (INSPIRED BY OCT 23 LESSON!)
+            </div>
+            <h2 style="font-size:1.35rem; font-weight:900;">Keep Talking & Nobody Cancels — OishiiBox Crisis Bomb</h2>
+            <div style="font-size:0.82rem; color:var(--text-dim);">
+              Serial #: <strong style="color:var(--gold-bright); font-family:'JetBrains Mono',monospace;">OBX-240-APAC</strong> • Batteries: <strong>2 Cold-Chain Packs</strong> • Defuse all 4 Modules before the Board pulls funding!
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div class="digital-clock" id="bombClock">05:00</div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <button class="btn btn-rose" onclick="toggleBombClock()" id="bombStartBtn">▶ Start 5:00 Crisis</button>
+              <button class="btn" onclick="toggleManualDrawer()">📖 Toggle Louie's Expert Manual</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modules-grid">
+          <!-- MODULE 1: THE CHURN WIRES -->
+          <div class="bomb-module" id="mod1">
+            <div class="module-led"></div>
+            <div style="font-size:0.75rem; font-weight:800; color:var(--gold-bright); text-transform:uppercase;">Module 1 • Subscription Churn Wires</div>
+            <h3 style="font-size:1.05rem; font-weight:800; margin:4px 0 8px;">34% of Month-2 Customers Are Canceling!</h3>
+            <p style="font-size:0.82rem; color:var(--text-dim);">
+              <strong>YH's Task:</strong> Describe these 4 wires to Louie and explain why cutting prices hurts <em>unit economics</em>. Cut the ONLY wire that solves Week-4 <em>menu fatigue</em> without eroding gross margin!
+            </p>
+            <div class="wire-row">
+              <button class="wire-btn" style="background:#ef4444; color:#fff;" onclick="cutChurnWire(1, this)">
+                <span>WIRE 1 (RED): Slash all bento prices by 30% forever</span>
+                <span>✂️ Cut</span>
+              </button>
+              <button class="wire-btn" style="background:#3b82f6; color:#fff;" onclick="cutChurnWire(2, this)">
+                <span>WIRE 2 (BLUE): Add 25 random new bentos to the kitchen</span>
+                <span>✂️ Cut</span>
+              </button>
+              <button class="wire-btn" style="background:#10b981; color:#042f2e;" onclick="cutChurnWire(3, this)">
+                <span>WIRE 3 (GREEN): Cohort analysis + rotating seasonal tare sauces on Top 12 Hero SKUs</span>
+                <span>✂️ Cut</span>
+              </button>
+              <button class="wire-btn" style="background:#eab308; color:#060a12;" onclick="cutChurnWire(4, this)">
+                <span>WIRE 4 (YELLOW): Hide the "Cancel Subscription" button on the website</span>
+                <span>✂️ Cut</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- MODULE 2: SKU RATIONALIZATION MATRIX -->
+          <div class="bomb-module" id="mod2">
+            <div class="module-led"></div>
+            <div style="font-size:0.75rem; font-weight:800; color:var(--gold-bright); text-transform:uppercase;">Module 2 • The 48-SKU Kitchen Spoilage Matrix</div>
+            <h3 style="font-size:1.05rem; font-weight:800; margin:4px 0 8px;">Rationalize the Bandwidth-Diluting SKU!</h3>
+            <p style="font-size:0.82rem; color:var(--text-dim); margin-bottom:10px;">
+              <strong>YH's Task:</strong> Audit the 4 bentos below using <em>qualitative & quantitative data</em>. Click the SKU that is <strong>diluting operational bandwidth</strong> and causing massive cold-chain spoilage!
+            </p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button class="btn" style="flex-direction:column; align-items:flex-start; padding:10px;" onclick="selectSkuButton(1)">
+                <strong style="color:var(--emerald-bright);">🍱 A: Miso-Glazed Saba</strong>
+                <span style="font-size:0.75rem; color:var(--text-dim);">Margin: 64% • Reorder: 82% • Spoilage: 2%</span>
+              </button>
+              <button class="btn" style="flex-direction:column; align-items:flex-start; padding:10px;" onclick="selectSkuButton(2)">
+                <strong style="color:var(--emerald-bright);">🥩 B: Wagyu Soboro Bowl</strong>
+                <span style="font-size:0.75rem; color:var(--text-dim);">Margin: 59% • Reorder: 79% • Spoilage: 3%</span>
+              </button>
+              <button class="btn" style="flex-direction:column; align-items:flex-start; padding:10px;" onclick="selectSkuButton(3)">
+                <strong style="color:var(--rose-bright);">🐡 C: Raw Uni & Truffle Jelly Bento</strong>
+                <span style="font-size:0.75rem; color:var(--text-dim);">Margin: 11% • Reorder: 4% • Spoilage: 48%!</span>
+              </button>
+              <button class="btn" style="flex-direction:column; align-items:flex-start; padding:10px;" onclick="selectSkuButton(4)">
+                <strong style="color:var(--emerald-bright);">🍗 D: Koji Chicken Breast</strong>
+                <span style="font-size:0.75rem; color:var(--text-dim);">Margin: 68% • Reorder: 85% • Spoilage: 1%</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- MODULE 3: THE 70/30 UPWARD ESCALATION BUTTON -->
+          <div class="bomb-module" id="mod3">
+            <div class="module-led"></div>
+            <div style="font-size:0.75rem; font-weight:800; color:var(--gold-bright); text-transform:uppercase;">Module 3 • Information Asymmetry Valve</div>
+            <h3 style="font-size:1.05rem; font-weight:800; margin:4px 0 8px;">Dry-Ice Courier Delayed 400 Boxes in Singapore!</h3>
+            <p style="font-size:0.82rem; color:var(--text-dim); margin-bottom:12px;">
+              <strong>YH's Spoken Task:</strong> To defuse this module, YH must deliver a <strong>30-second live voice briefing to the CEO (Louie)</strong> applying the <strong>70/30 Upward Rule</strong> and offering <strong>2 proactive mitigation options</strong>. Once Louie is satisfied, click the green override switch!
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-rose" onclick="failUpwardModule()">❌ Wait 3 Days & Hide Bad News</button>
+              <button class="btn btn-emerald" onclick="defuseUpwardModule()">✅ YH Delivered 70/30 Briefing + Mitigation!</button>
+            </div>
+          </div>
+
+          <!-- MODULE 4: THE AOV CHECKOUT ANCHOR LOCK -->
+          <div class="bomb-module" id="mod4">
+            <div class="module-led"></div>
+            <div style="font-size:0.75rem; font-weight:800; color:var(--gold-bright); text-transform:uppercase;">Module 4 • "Never Leave Money on the Table" Keypad</div>
+            <h3 style="font-size:1.05rem; font-weight:800; margin:4px 0 8px;">Cold-Chain Shipping Costs $14 Per Box!</h3>
+            <p style="font-size:0.82rem; color:var(--text-dim); margin-bottom:12px;">
+              <strong>YH's Task:</strong> Which checkout architecture expands <strong>Average Order Value (AOV)</strong> from $68 to $88 without scaring off busy corporate buyers?
+            </p>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <button class="btn" onclick="solveAovKeypad(false)">1) Default every visitor to the smallest 4-meal box ($42)</button>
+              <button class="btn" onclick="solveAovKeypad(true)">2) Anchor visitors on the 10-Meal Executive Washoku Box + high-margin Matcha/Miso bundle</button>
+              <button class="btn" onclick="solveAovKeypad(false)">3) Charge an extra $20 surprise delivery fee at the final payment screen</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOUIE'S EXPERT MANUAL DRAWER -->
+        <div class="manual-drawer" id="manualDrawer">
+          <h3 style="font-size:1.1rem; font-weight:900; margin-bottom:8px;">📖 LOUIE'S SECRET CEO DEFUSAL MANUAL (Prompt YH with these questions!):</h3>
+          <ul style="padding-left:20px; font-size:0.88rem; line-height:1.7;">
+            <li><strong>Module 1 Prompt:</strong> Ask YH: <em>"Why shouldn't we cut the Red Wire (30% discount)? What happens to our LTV-to-CAC unit economics?"</em> (Correct Wire: <strong>WIRE 3 GREEN</strong>).</li>
+            <li><strong>Module 2 Prompt:</strong> Ask YH: <em>"Which bento has the worst spoilage and lowest reorder rate? Use the phrase 'SKU rationalization' and 'dilute operational bandwidth' before clicking!"</em> (Correct SKU: <strong>C — Raw Uni & Truffle Jelly</strong>).</li>
+            <li><strong>Module 3 Prompt:</strong> Say: <em>"YH, I am the CEO. 400 chilled boxes are stuck in warm Singapore traffic. Brief me in 30 seconds using our 70/30 rule!"</em> Then click the green button.</li>
+            <li><strong>Module 4 Prompt:</strong> Callback to your Oct 21st lesson on "Bad Salesmanship"! Ask why defaulting to the cheapest box leaves money on the table. (Correct Option: <strong>#2</strong>).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         GAME 4: 60-SECOND COLLOCATION SPEED MATCH
+         ====================================================================== -->
+    <section id="game4" class="game-screen">
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="font-size:1.35rem; font-weight:900;">🃏 60-Second Executive Collocation Speed Match</h2>
+            <p style="font-size:0.86rem; color:var(--text-dim);">
+              Pair each <strong>🚫 Banned Tier-1 / Katakana Crutch Phrase</strong> with its <strong>💎 C-Suite Meal-Prep Upgrade</strong>! When YH matches a pair, have him make a quick 5-second sentence with it.
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <span class="stat-pill">⏱️ Time: <strong class="mono" id="matchTimerText">0s</strong></span>
+            <span class="stat-pill">✅ Pairs: <strong class="mono" id="matchPairsText">0 / 8</strong></span>
+            <button class="btn btn-gold" onclick="initMatchGame()">🔄 Shuffle New Board</button>
+          </div>
+        </div>
+
+        <div class="match-board" id="matchBoard"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <script>
+    /* ==========================================================================
+       WEB AUDIO SYNTHESIZER (ARCADE SOUND EFFECTS — ZERO EXTERNAL FILES NEEDED)
+       ========================================================================== */
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function playSfx(type) {
+      try {
+        if (!audioCtx) audioCtx = new AudioCtx();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'hit') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.18);
+          gain.gain.setValueAtTime(0.18, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        } else if (type === 'buzz') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(150, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.28);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else if (type === 'fanfare') {
+          [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = 'triangle';
+            o.frequency.value = freq;
+            o.connect(g);
+            g.connect(audioCtx.destination);
+            g.gain.setValueAtTime(0.16, now + i * 0.09);
+            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.25);
+            o.start(now + i * 0.09);
+            o.stop(now + i * 0.09 + 0.25);
+          });
+        }
+      } catch (e) {}
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.rate = 0.95;
+      window.speechSynthesis.speak(utter);
+    }
+
+    /* ==========================================================================
+       GLOBAL HUD STATE
+       ========================================================================== */
+    let stockPrice = 1250;
+    let streak = 0;
+    let totalXp = 0;
+
+    function updateGlobalHud() {
+      const spEl = document.getElementById('stockPriceDisplay');
+      spEl.innerText = `¥${stockPrice.toLocaleString()}`;
+      spEl.style.color = stockPrice >= 1250 ? 'var(--emerald-bright)' : 'var(--rose-bright)';
+      document.getElementById('streakDisplay').innerText = `${streak}x`;
+      document.getElementById('xpDisplay').innerText = totalXp;
+    }
+
+    function toast(msg, color = '#f59e0b') {
+      const box = document.getElementById('toastContainer');
+      const div = document.createElement('div');
+      div.className = 'arcade-toast';
+      div.style.borderLeftColor = color;
+      div.innerText = msg;
+      box.appendChild(div);
+      setTimeout(() => div.remove(), 3500);
+    }
+
+    function switchGame(id, btn) {
+      document.querySelectorAll('.game-screen').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    /* ==========================================================================
+       GAME 1 DATA & LOGIC: BOARDROOM BOSS BATTLE
+       ========================================================================== */
+    const BOSS_STAGES = [
+      {
+        stage: 'STAGE 1 OF 6 • FOUNDER & MASTER CHEF',
+        avatar: '👨‍🍳',
+        name: 'Kenji Sato — Founder & Master Chef',
+        title: 'Terrified that an e-commerce executive will ruin authentic Washoku quality with cheap discounts.',
+        q: '"YH, you scaled APAC retail by 240%, which is impressive. But my bentos are fresh Japanese cuisine, not t-shirts! How do I know you won\'t destroy our brand equity with cheap coupons?"',
+        moves: [
+          {
+            text: 'A) "I am very sorry I have no food experience. Please teach me how to cook bento and I will follow your rules."',
+            type: 'trap',
+            feedback: '💥 SUBSERVIENT TRAP (-¥200 Stock)! Apologizing lowers your executive status immediately.'
+          },
+          {
+            text: 'B) "We will do many Facebook ads and give 50% off coupons so many people try your delicious bento."',
+            type: 'trap',
+            feedback: '💥 MARGIN TRAP (-¥250 Stock)! You just triggered Chef Kenji\'s worst nightmare: discount-hunters & churn.'
+          },
+          {
+            text: 'C) "Heavy discounting attracts low-LTV promo hunters. Instead, I will spearhead SKU rationalization around your Top 12 Hero Bentos and synthesize qualitative taste feedback with quantitative cohort data."',
+            type: 'power',
+            feedback: '💎 CRITICAL BOARDROOM HIT (+¥300 Stock)! Now speak your 30-second elaboration using the 3 Power Words below to drain Kenji\'s HP!'
+          }
+        ],
+        critWords: ['I spearheaded', 'high-margin hero SKUs', 'synthesize qualitative & quantitative data']
+      },
+      {
+        stage: 'STAGE 2 OF 6 • CHIEF FINANCIAL OFFICER',
+        avatar: '📊',
+        name: 'Victoria Tan — CFO (Series B Board)',
+        title: 'Ruthless about unit economics, Month-2 churn (34%), and cold-chain courier costs.',
+        q: '"Thirty-four percent of our subscribers cancel in Month 2, and dry-ice delivery eats 28% of our revenue. Tell me how you fix our unit economics without spending an extra dollar on ads!"',
+        moves: [
+          {
+            text: 'A) "I will run a cohort retention analysis to cure Week-4 menu fatigue with rotating seasonal sauces, while expanding Average Order Value via high-margin matcha and miso add-on bundles."',
+            type: 'power',
+            feedback: '💎 FINANCIAL BULLSEYE (+¥350 Stock)! Victoria is leaning forward—now deliver your spoken follow-through using the 3 Power Words!'
+          },
+          {
+            text: 'B) "Maybe cospa is not good, so we should remake the website and make delivery cheaper."',
+            type: 'trap',
+            feedback: '💥 WASEI-EIGO ALERT (-¥200 Stock)! "Cospa" and "remake" confuse international CFOs!'
+          },
+          {
+            text: 'C) "We should stop using dry ice and use normal shipping to save money."',
+            type: 'trap',
+            feedback: '💥 FOOD SAFETY DISASTER (-¥400 Stock)! Spoiled sashimi salmon just bankrupted the company!'
+          }
+        ],
+        critWords: ['cohort retention analysis', 'menu fatigue', 'expand Average Order Value (AOV)']
+      },
+      {
+        stage: 'STAGE 3 OF 6 • HEAD OF CENTRAL KITCHEN',
+        avatar: '🔪',
+        name: 'Chef Takashi — Culinary Operations Director',
+        title: 'Wants to expand the menu from 48 bentos to 60 bentos next month.',
+        q: '"My kitchen team created 12 new exotic bento recipes! We want to list all 60 bentos permanently on the website next Monday. Will you greenlight this?"',
+        moves: [
+          {
+            text: 'A) "Yes, putting more items on the website is always good for sales."',
+            type: 'trap',
+            feedback: '💥 SKU BLOAT TRAP (-¥250 Stock)! More permanent SKUs = massive ingredient spoilage and kitchen chaos.'
+          },
+          {
+            text: 'B) "I respect your culinary creativity, Takashi; however, adding 12 permanent SKUs will dilute operational bandwidth and increase spoilage. Let\'s rationalize the bottom 15 slow movers and launch 2 rotating Limited-Edition Drops instead."',
+            type: 'power',
+            feedback: '💎 DIPLOMATIC AUTHORITY (+¥300 Stock)! You protected margins while keeping the chef motivated!'
+          },
+          {
+            text: 'C) "No, your new recipes are useless things and we cannot do them."',
+            type: 'safe',
+            feedback: '⚠️ ABRASIVE FRICTION! Calling a chef\'s food "useless things" causes team mutiny. Use "dilute operational bandwidth"!'
+          }
+        ],
+        critWords: ['SKU rationalization', 'dilute operational bandwidth', 'cold-chain spoilage']
+      },
+      {
+        stage: 'STAGE 4 OF 6 • VENTURE CAPITAL PARTNER',
+        avatar: '🦈',
+        name: 'Marcus Sterling — Lead Series B Investor',
+        title: 'Testing how you handle upward governance, bad news, and the 70/30 rule.',
+        q: '"In your career, tell me about a time a project or team you delegated to went off-track. Why did it happen, and how do you stop information asymmetry?"',
+        moves: [
+          {
+            text: 'A) "My subordinates were not grown up yet, so they made a mistake and didn\'t tell me."',
+            type: 'trap',
+            feedback: '💥 L1 TRANSFER SLIP (-¥200 Stock)! Never say "subordinates grow up" or blame juniors in a VC interview.'
+          },
+          {
+            text: 'B) "When an initiative missed early targets due to information asymmetry, I took ownership, instituted a midpoint circuit breaker at 50% completion, and implemented the 70/30 upward reporting rule."',
+            type: 'power',
+            feedback: '💎 EXECUTIVE GOVERNANCE (+¥350 Stock)! Marcus loves the "midpoint circuit breaker" concept!'
+          },
+          {
+            text: 'C) "Now I check every single email and spreadsheet myself every hour so nobody makes a mistake."',
+            type: 'trap',
+            feedback: '💥 MICROMANAGEMENT TRAP (-¥200 Stock)! You cannot scale 110 staff by micromanaging.'
+          }
+        ],
+        critWords: ['mitigate information asymmetry', 'midpoint circuit breaker', '70/30 upward reporting rule']
+      },
+      {
+        stage: 'STAGE 5 OF 6 • CHIEF OPERATING OFFICER',
+        avatar: '🚚',
+        name: 'Elena Rostova — COO (110 Staff Across 4 Silos)',
+        title: 'Needs a leader who can scale 100+ people without departmental finger-pointing.',
+        q: '"Right now, Marketing blames the Kitchen for stockouts, and the Kitchen blames Marketing for surprise promos. How do you manage 110 staff across 4 departments?"',
+        moves: [
+          {
+            text: 'A) "I establish cross-functional alignment across my 4 department directors using shared unit-economic KPIs, granting high-trust autonomy to foster their professional development while synchronizing demand forecasts."',
+            type: 'power',
+            feedback: '💎 MULTI-TIERED LEADERSHIP (+¥350 Stock)! Flawless executive phrasing.'
+          },
+          {
+            text: 'B) "We will have a big meeting every morning with all 110 people to talk about problems."',
+            type: 'trap',
+            feedback: '💥 BANDWIDTH DRAIN (-¥200 Stock)! A 110-person daily meeting paralyzes execution.'
+          },
+          {
+            text: 'C) "I just give big picture and delegate all tasks so they can grow up by themselves."',
+            type: 'trap',
+            feedback: '💥 HANDS-OFF TRAP (-¥150 Stock)! Remember: replace "grow up" with "foster professional development"!'
+          }
+        ],
+        critWords: ['cross-functional alignment', 'foster professional development', 'high-trust autonomous delegation']
+      },
+      {
+        stage: 'STAGE 6 OF 6 • FINAL CEO OFFER NEGOTIATION',
+        avatar: '👑',
+        name: 'The Full OishiiBox Board of Directors',
+        title: 'Final test: Commercial acumen & "Never leaving money on the table".',
+        q: '"Last question, YH: A competitor just launched 25% cheaper bento boxes in Singapore, and our website currently defaults new visitors to our cheapest $42 trial box. What is your move?"',
+        moves: [
+          {
+            text: 'A) "Defaulting visitors to the cheapest box is bad salesmanship that leaves money on the table. Rather than cannibalizing core margins in a price war, I will anchor checkout on our 10-Meal Executive Bundle and differentiate on macro quality."',
+            type: 'power',
+            feedback: '🏆 UNANIMOUS BOARD APPROVAL (+¥500 Stock)! Speak your closing victory statement with the 3 Power Words!'
+          },
+          {
+            text: 'B) "We should cut our prices by 30% today so we are cheaper than the competitor."',
+            type: 'trap',
+            feedback: '💥 RACE TO THE BOTTOM (-¥350 Stock)! Slashing cold-chain prices destroys gross margin.'
+          },
+          {
+            text: 'C) "Keep the $42 cheap box as default so everyone can buy easily."',
+            type: 'trap',
+            feedback: '💥 LEAVING MONEY ON THE TABLE (-¥200 Stock)! Small boxes get crushed by the $14 dry-ice courier cost.'
+          }
+        ],
+        critWords: ['leave money on the table', 'cannibalize core margins', 'differentiate our value proposition']
+      }
+    ];
+
+    let currentBossIdx = 0;
+    let bossHp = 100;
+
+    function renderBossStage() {
+      const b = BOSS_STAGES[currentBossIdx];
+      bossHp = 100;
+      document.getElementById('bossStageTag').innerText = b.stage;
+      document.getElementById('bossAvatar').innerText = b.avatar;
+      document.getElementById('bossName').innerText = b.name;
+      document.getElementById('bossTitle').innerText = b.title;
+      document.getElementById('bossQuestionText').innerText = b.q;
+      updateBossHpUI();
+
+      const moveList = document.getElementById('bossMoveList');
+      moveList.innerHTML = '';
+      b.moves.forEach((m, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'move-btn';
+        btn.innerHTML = `<span>${m.text}</span>`;
+        btn.onclick = () => selectBossMove(idx, btn);
+        moveList.appendChild(btn);
+      });
+
+      document.getElementById('bossFinisherBox').classList.remove('show');
+    }
+
+    function updateBossHpUI() {
+      document.getElementById('bossHpText').innerText = `${bossHp} / 100`;
+      document.getElementById('bossHpBar').style.width = `${bossHp}%`;
+    }
+
+    function selectBossMove(idx, btnEl) {
+      const b = BOSS_STAGES[currentBossIdx];
+      const m = b.moves[idx];
+      if (m.type === 'power') {
+        playSfx('hit');
+        btnEl.classList.add('power-win');
+        stockPrice += 300;
+        streak++;
+        totalXp += 100;
+        bossHp = Math.max(0, bossHp - 40);
+        updateBossHpUI();
+        updateGlobalHud();
+        toast(m.feedback, '#10b981');
+
+        const finisher = document.getElementById('bossFinisherBox');
+        document.getElementById('bossFeedbackText').innerText = m.feedback;
+        const critWrap = document.getElementById('bossCritWords');
+        critWrap.innerHTML = '';
+        b.critWords.forEach(w => {
+          const pill = document.createElement('button');
+          pill.className = 'crit-word-btn';
+          pill.innerText = `⚔️ "${w}" (-20 HP)`;
+          pill.onclick = () => {
+            if (!pill.classList.contains('struck')) {
+              pill.classList.add('struck');
+              playSfx('hit');
+              bossHp = Math.max(0, bossHp - 20);
+              totalXp += 50;
+              updateBossHpUI();
+              updateGlobalHud();
+              if (bossHp === 0) {
+                playSfx('fanfare');
+                if (typeof confetti === 'function') confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
+                toast(`🏆 BOSS DEFEATED! ${b.name} is 100% convinced!`, '#fbbf24');
+              }
+            }
+          };
+          critWrap.appendChild(pill);
+        });
+        finisher.classList.add('show');
+      } else {
+        playSfx('buzz');
+        btnEl.classList.add(m.type === 'trap' ? 'trap-lose' : 'safe-mid');
+        stockPrice = Math.max(100, stockPrice - 200);
+        streak = 0;
+        updateGlobalHud();
+        toast(m.feedback, '#f43f5e');
+      }
+    }
+
+    function speakBossQuestion() {
+      speakText(BOSS_STAGES[currentBossIdx].q);
+    }
+
+    function nextBoss() {
+      currentBossIdx = (currentBossIdx + 1) % BOSS_STAGES.length;
+      renderBossStage();
+    }
+
+    function prevBoss() {
+      currentBossIdx = (currentBossIdx - 1 + BOSS_STAGES.length) % BOSS_STAGES.length;
+      renderBossStage();
+    }
+
+    /* ==========================================================================
+       GAME 2 DATA & LOGIC: CONVEYOR-BELT BENTO BLITZ
+       ========================================================================== */
+    const BELT_ITEMS = [
+      {
+        bad: '"Many customers stop buying our bento in Month 2."',
+        hint: 'Replace "stop buying" with subscription retention terminology!',
+        correct: '💎 "We are experiencing a 34% Month-2 subscription churn driven by menu fatigue."',
+        wrong1: '❌ "Many people make a claim and cancel the appo."',
+        wrong2: '❌ "Customers are grown up so they don\'t eat bento."',
+        wrong3: '❌ "Our bento cospa is NG in the second month."'
+      },
+      {
+        bad: '"We analyzed the data and we put more items for top brands."',
+        hint: 'Break the passive "We" habit and upgrade "put more items"!',
+        correct: '💎 "I spearheaded the catalog audit and onboarded high-margin hero SKUs."',
+        wrong1: '❌ "We remade the menu and added many goods."',
+        wrong2: '❌ "I did a claim check and put more foods."',
+        wrong3: '❌ "We split our resources to many new items."'
+      },
+      {
+        bad: '"We don\'t want to waste team time on useless things."',
+        hint: 'How does a VP say "waste time on useless things"?',
+        correct: '💎 "This ensured we didn\'t dilute operational bandwidth across low-yield channels."',
+        wrong1: '❌ "We stopped doing NG salaryman work."',
+        wrong2: '❌ "We cut the cost-performance of bad jobs."',
+        wrong3: '❌ "I told my subordinates to stop doing small things."'
+      },
+      {
+        bad: '"I want to see my subordinates grow up through their work."',
+        hint: 'Remember: "grow up" is for children! What is the executive upgrade?',
+        correct: '💎 "My philosophy centers on fostering my team\'s professional development and autonomy."',
+        wrong1: '❌ "I help my staff become big adults in the office."',
+        wrong2: '❌ "I make my subordinates image-up their skills."',
+        wrong3: '❌ "I give all tasks to them so they grow up fast."'
+      },
+      {
+        bad: '"When bad things happen in the kitchen, I tell my boss quickly."',
+        hint: 'Use your governance & 70/30 upward management vocabulary!',
+        correct: '💎 "When an operational bottleneck emerges, I escalate it immediately with viable mitigation options."',
+        wrong1: '❌ "When a big claim happens, I make an appo with my boss."',
+        wrong2: '❌ "I report all bad troubles so my boss doesn\'t get angry."',
+        wrong3: '❌ "I do a remake of the kitchen plan when things go NG."'
+      },
+      {
+        bad: '"Frozen delivery is expensive, so customers should buy more boxes."',
+        hint: 'Use D2C logistics and checkout revenue terms!',
+        correct: '💎 "To offset cold-chain fulfillment overhead, we must expand Average Order Value (AOV) via add-on bundles."',
+        wrong1: '❌ "Cool delivery has bad cospa so people must buy big mansion boxes."',
+        wrong2: '❌ "We should make the delivery price free for everyone."',
+        wrong3: '❌ "Customers must pay more money for dry ice boxes."'
+      }
+    ];
+
+    let beltIdx = 0;
+    let beltLives = 3;
+    let beltTimer = null;
+    let beltProgress = 100;
+
+    function startBeltRound() {
+      clearInterval(beltTimer);
+      const item = BELT_ITEMS[beltIdx];
+      beltProgress = 100;
+      document.getElementById('beltTimerBar').style.width = '100%';
+      document.getElementById('beltBadPhrase').innerText = item.bad;
+      document.getElementById('beltContextHint').innerText = `💡 Coach Hint: ${item.hint}`;
+
+      const choices = [
+        { text: item.correct, isCorrect: true },
+        { text: item.wrong1, isCorrect: false },
+        { text: item.wrong2, isCorrect: false },
+        { text: item.wrong3, isCorrect: false }
+      ].sort(() => Math.random() - 0.5);
+
+      const grid = document.getElementById('beltOptionsGrid');
+      grid.innerHTML = '';
+      choices.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'chef-plate-btn';
+        btn.innerText = c.text;
+        btn.onclick = () => checkBeltChoice(c.isCorrect, btn, item.correct);
+        grid.appendChild(btn);
+      });
+
+      beltTimer = setInterval(() => {
+        beltProgress -= 1.25;
+        document.getElementById('beltTimerBar').style.width = `${Math.max(0, beltProgress)}%`;
+        if (beltProgress <= 0) {
+          clearInterval(beltTimer);
+          loseBeltLife('⏰ Bento spoiled at the end of the belt!');
+        }
+      }, 200);
+    }
+
+    function checkBeltChoice(isCorrect, btnEl, correctText) {
+      clearInterval(beltTimer);
+      if (isCorrect) {
+        playSfx('hit');
+        btnEl.style.borderColor = 'var(--emerald)';
+        btnEl.style.background = 'rgba(16, 185, 129, 0.22)';
+        stockPrice += 150;
+        streak++;
+        totalXp += 80;
+        updateGlobalHud();
+        speakText(correctText.replace('💎 ', ''));
+        toast('🍣 Fresh Executive Bento Served! +150 Stock & +80 XP!', '#10b981');
+        beltIdx = (beltIdx + 1) % BELT_ITEMS.length;
+      } else {
+        btnEl.style.borderColor = 'var(--rose)';
+        btnEl.style.background = 'rgba(244, 63, 94, 0.22)';
+        loseBeltLife('💥 Wrong plate! Watch out for Katakana traps!');
+      }
+    }
+
+    function loseBeltLife(reason) {
+      playSfx('buzz');
+      beltLives = Math.max(0, beltLives - 1);
+      streak = 0;
+      stockPrice = Math.max(100, stockPrice - 120);
+      updateGlobalHud();
+      document.getElementById('beltLives').innerText = beltLives > 0 ? '❤️'.repeat(beltLives) : '💀 REFILLING...';
+      toast(reason, '#f43f5e');
+      if (beltLives === 0) {
+        setTimeout(() => {
+          beltLives = 3;
+          document.getElementById('beltLives').innerText = '❤️❤️❤️';
+        }, 1800);
+      }
+    }
+
+    /* ==========================================================================
+       GAME 3 LOGIC: "KEEP TALKING & NOBODY CANCELS" CO-OP CRISIS BOMB
+       ========================================================================== */
+    let bombSeconds = 300;
+    let bombInterval = null;
+    let defusedModules = new Set();
+
+    function toggleBombClock() {
+      if (bombInterval) {
+        clearInterval(bombInterval);
+        bombInterval = null;
+        document.getElementById('bombStartBtn').innerText = '▶ Resume Timer';
+      } else {
+        document.getElementById('bombStartBtn').innerText = '⏸ Pause Timer';
+        bombInterval = setInterval(() => {
+          if (bombSeconds > 0) {
+            bombSeconds--;
+            const m = String(Math.floor(bombSeconds / 60)).padStart(2, '0');
+            const s = String(bombSeconds % 60).padStart(2, '0');
+            document.getElementById('bombClock').innerText = `${m}:${s}`;
+          } else {
+            clearInterval(bombInterval);
+            playSfx('buzz');
+            toast('💥 BOOM! The Board pulled funding! Resetting timer...', '#f43f5e');
+            bombSeconds = 300;
+          }
+        }, 1000);
+      }
+    }
+
+    function toggleManualDrawer() {
+      document.getElementById('manualDrawer').classList.toggle('show');
+    }
+
+    function checkAllDefused() {
+      if (defusedModules.size === 4) {
+        clearInterval(bombInterval);
+        playSfx('fanfare');
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 150, spread: 95, origin: { y: 0.6 } });
+        }
+        stockPrice += 600;
+        totalXp += 500;
+        updateGlobalHud();
+        toast('🏆 CRISIS BOMB DEFUSED! YH & Louie saved OishiiBox! (+500 XP)', '#10b981');
+      }
+    }
+
+    function cutChurnWire(wireNum, btnEl) {
+      btnEl.classList.add('cut');
+      if (wireNum === 3) {
+        playSfx('hit');
+        document.getElementById('mod1').classList.add('defused');
+        defusedModules.add(1);
+        totalXp += 120;
+        updateGlobalHud();
+        toast('✅ Module 1 Defused! Cohort analysis + seasonal tare sauces cured Week-4 menu fatigue!', '#10b981');
+        checkAllDefused();
+      } else {
+        playSfx('buzz');
+        bombSeconds = Math.max(10, bombSeconds - 30);
+        toast('💥 STRIKE! Wrong wire (-30s)! Cutting prices or hiding cancel buttons ruins LTV!', '#f43f5e');
+      }
+    }
+
+    function selectSkuButton(skuNum) {
+      if (skuNum === 3) {
+        playSfx('hit');
+        document.getElementById('mod2').classList.add('defused');
+        defusedModules.add(2);
+        totalXp += 120;
+        updateGlobalHud();
+        toast('✅ Module 2 Defused! Toxic 48%-spoilage SKU rationalized!', '#10b981');
+        checkAllDefused();
+      } else {
+        playSfx('buzz');
+        bombSeconds = Math.max(10, bombSeconds - 30);
+        toast('💥 STRIKE! That is a high-margin Hero SKU—never cut your bestsellers!', '#f43f5e');
+      }
+    }
+
+    function failUpwardModule() {
+      playSfx('buzz');
+      bombSeconds = Math.max(10, bombSeconds - 30);
+      toast('💥 STRIKE! Sitting on bad news creates catastrophic information asymmetry!', '#f43f5e');
+    }
+
+    function defuseUpwardModule() {
+      playSfx('hit');
+      document.getElementById('mod3').classList.add('defused');
+      defusedModules.add(3);
+      totalXp += 150;
+      updateGlobalHud();
+      toast('✅ Module 3 Defused! 70/30 Upward Briefing delivered with executive poise!', '#10b981');
+      checkAllDefused();
+    }
+
+    function solveAovKeypad(isRight) {
+      if (isRight) {
+        playSfx('hit');
+        document.getElementById('mod4').classList.add('defused');
+        defusedModules.add(4);
+        totalXp += 120;
+        updateGlobalHud();
+        toast('✅ Module 4 Defused! Anchoring on the 10-Meal Executive Bundle expanded AOV!', '#10b981');
+        checkAllDefused();
+      } else {
+        playSfx('buzz');
+        bombSeconds = Math.max(10, bombSeconds - 30);
+        toast('💥 STRIKE! Never leave money on the table or ambush buyers with hidden fees!', '#f43f5e');
+      }
+    }
+
+    /* ==========================================================================
+       GAME 4 LOGIC: 60-SECOND COLLOCATION SPEED MATCH
+       ========================================================================== */
+    const MATCH_PAIRS = [
+      { id: 1, bad: '🚫 People stop buying', good: '💎 Subscription churn' },
+      { id: 2, bad: '🚫 Cut bad bento items', good: '💎 SKU rationalization' },
+      { id: 3, bad: '🚫 Good cospa / Profit', good: '💎 Unit economics (LTV:CAC)' },
+      { id: 4, bad: '🚫 Bored of same food', good: '💎 Week-4 menu fatigue' },
+      { id: 5, bad: '🚫 We did / We led', good: '💎 I spearheaded' },
+      { id: 6, bad: '🚫 Subordinates grow up', good: '💎 Foster team development' },
+      { id: 7, bad: '🚫 Split to useless things', good: '💎 Dilute bandwidth' },
+      { id: 8, bad: '🚫 Check at halfway', good: '💎 Midpoint circuit breaker' }
+    ];
+
+    let selectedMatchCard = null;
+    let matchedCount = 0;
+    let matchClockInterval = null;
+    let matchElapsed = 0;
+
+    function initMatchGame() {
+      clearInterval(matchClockInterval);
+      matchElapsed = 0;
+      matchedCount = 0;
+      selectedMatchCard = null;
+      document.getElementById('matchTimerText').innerText = '0s';
+      document.getElementById('matchPairsText').innerText = '0 / 8';
+
+      const deck = [];
+      MATCH_PAIRS.forEach(p => {
+        deck.push({ pairId: p.id, text: p.bad, kind: 'bad' });
+        deck.push({ pairId: p.id, text: p.good, kind: 'good' });
+      });
+      deck.sort(() => Math.random() - 0.5);
+
+      const board = document.getElementById('matchBoard');
+      board.innerHTML = '';
+      deck.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'match-card';
+        card.style.color = item.kind === 'bad' ? 'var(--rose-bright)' : 'var(--emerald-bright)';
+        card.innerText = item.text;
+        card.onclick = () => onMatchCardClick(card, item);
+        board.appendChild(card);
+      });
+
+      matchClockInterval = setInterval(() => {
+        matchElapsed++;
+        document.getElementById('matchTimerText').innerText = `${matchElapsed}s`;
+      }, 1000);
+    }
+
+    function onMatchCardClick(cardEl, item) {
+      if (cardEl.classList.contains('cleared') || cardEl === selectedMatchCard?.el) return;
+
+      cardEl.classList.add('selected');
+      if (!selectedMatchCard) {
+        selectedMatchCard = { el: cardEl, item };
+        return;
+      }
+
+      const first = selectedMatchCard;
+      selectedMatchCard = null;
+
+      if (first.item.pairId === item.pairId && first.item.kind !== item.kind) {
+        playSfx('hit');
+        first.el.classList.remove('selected');
+        cardEl.classList.remove('selected');
+        first.el.classList.add('cleared');
+        cardEl.classList.add('cleared');
+        matchedCount++;
+        streak++;
+        totalXp += 60;
+        stockPrice += 80;
+        updateGlobalHud();
+        document.getElementById('matchPairsText').innerText = `${matchedCount} / 8`;
+        const goodText = item.kind === 'good' ? item.text : first.item.text;
+        speakText(goodText.replace('💎 ', ''));
+
+        if (matchedCount === 8) {
+          clearInterval(matchClockInterval);
+          playSfx('fanfare');
+          if (typeof confetti === 'function') confetti({ particleCount: 110, spread: 80, origin: { y: 0.6 } });
+          toast(`🏆 All 8 Executive Pairs Cleared in ${matchElapsed}s!`, '#fbbf24');
+        }
+      } else {
+        playSfx('buzz');
+        streak = 0;
+        updateGlobalHud();
+        setTimeout(() => {
+          first.el.classList.remove('selected');
+          cardEl.classList.remove('selected');
+        }, 450);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderBossStage();
+      initMatchGame();
+    });
+  </script>
+</body>
+</html>
