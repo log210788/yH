@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retail Insider Case Study: Cross-Border Food Retail Expansion | YH & Lewis O.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --navy: #0f2744;
+      --navy-light: #1e3a8a;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --t1-text: #991b1b;
+      --t1-bg: #fef2f2;
+      --t1-border: #fecaca;
+      --t2-text: #1e40af;
+      --t2-bg: #eff6ff;
+      --t2-border: #bfdbfe;
+      --t3-text: #166534;
+      --t3-bg: #f0fdf4;
+      --t3-border: #bbf7d0;
+      --amber-text: #92400e;
+      --amber-bg: #fffbeb;
+      --amber-border: #fde68a;
+      --radius: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-bottom: 64px;
+    }
+
+    /* Top Header */
+    .topbar {
+      background: linear-gradient(135deg, var(--navy) 0%, #17365d 100%);
+      color: #fff;
+      padding: 28px 24px 24px;
+      border-bottom: 4px solid var(--accent);
+    }
+    .topbar-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: #e2e8f0;
+    }
+    .badge.highlight {
+      background: var(--accent);
+      color: #fff;
+    }
+    .topbar h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .topbar p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      max-width: 780px;
+    }
+
+    /* Navigation Tabs */
+    .nav-wrap {
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-tabs {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4px;
+      padding: 0 16px;
+      overflow-x: auto;
+    }
+    .nav-tab {
+      background: none;
+      border: none;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .nav-tab:hover { color: var(--navy); }
+    .nav-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1040px;
+      margin: 28px auto 0;
+      padding: 0 20px;
+    }
+    .panel { display: none; }
+    .panel.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Cards */
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--t2-bg);
+      color: var(--t2-text);
+      border: 1px solid var(--t2-border);
+      white-space: nowrap;
+    }
+    .pill.amber {
+      background: var(--amber-bg);
+      color: var(--amber-text);
+      border-color: var(--amber-border);
+    }
+    .pill.green {
+      background: var(--t3-bg);
+      color: var(--t3-text);
+      border-color: var(--t3-border);
+    }
+
+    /* Quote Upgrade Table */
+    .upgrade-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      background: #fcfdff;
+    }
+    .upgrade-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .raw-quote {
+      font-size: 0.95rem;
+      color: var(--t1-text);
+      background: var(--t1-bg);
+      border: 1px solid var(--t1-border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .polish-box {
+      margin-top: 10px;
+      display: none;
+      background: var(--t3-bg);
+      border: 1px solid var(--t3-border);
+      padding: 12px 14px;
+      border-radius: 6px;
+    }
+    .polish-box.open { display: block; }
+    .polish-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--t3-text);
+      margin-bottom: 4px;
+    }
+    .polish-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border-dark);
+      background: var(--paper);
+      color: var(--navy);
+      transition: all 0.15s ease;
+    }
+    .btn:hover { background: #f1f5f9; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-sm { padding: 5px 10px; font-size: 0.8rem; }
+
+    /* Article Styling */
+    .article-meta {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .article-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+    .article-body p {
+      font-size: 1.03rem;
+      color: #1e293b;
+      margin-bottom: 16px;
+    }
+    .kw {
+      background: var(--amber-bg);
+      border-bottom: 2px solid #f59e0b;
+      padding: 0 3px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .kw:hover { background: #fef3c7; }
+
+    /* Vocab Grid */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .vocab-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--paper);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .vocab-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .vocab-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .vocab-word {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .vocab-ipa {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 6px;
+    }
+    .vocab-def {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .vocab-jp {
+      font-size: 0.84rem;
+      color: var(--t2-text);
+      background: var(--t2-bg);
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .vocab-ex {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 3px solid var(--border-dark);
+      padding-left: 8px;
+    }
+
+    /* Roleplay Cards */
+    .rp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .rp-card {
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--paper);
+    }
+    .rp-card.investor { border-top-color: var(--accent); }
+    .prompt-box {
+      background: var(--amber-bg);
+      border: 1px solid var(--amber-border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin: 12px 0;
+      font-size: 0.94rem;
+      color: #78350f;
+      font-weight: 600;
+    }
+    .checklist {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .checklist li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      padding: 4px 0 4px 22px;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--t3-text);
+      font-weight: 800;
+    }
+
+    /* Timer Bar */
+    .timer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .timer-display {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+    }
+
+    /* Question Bank & Active Quiz */
+    .q-group {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .q-group:first-of-type { margin-top: 8px; padding-top: 0; border-top: none; }
+    .q-group-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .q-list {
+      padding-left: 20px;
+      color: var(--text);
+    }
+    .q-list li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      background: var(--paper);
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .quiz-option:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: var(--t2-bg);
+    }
+    .quiz-option.correct {
+      background: var(--t3-bg);
+      border-color: #16a34a;
+      color: var(--t3-text);
+    }
+    .quiz-option.wrong {
+      background: var(--t1-bg);
+      border-color: #dc2626;
+      color: var(--t1-text);
+    }
+    .quiz-feedback {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.ok { background: var(--t3-bg); border: 1px solid var(--t3-border); color: var(--t3-text); }
+    .quiz-feedback.err { background: var(--t1-bg); border: 1px solid var(--t1-border); color: var(--t1-text); }
+    .prompt-deck {
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid var(--t2-border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="badge-row">
+        <span class="badge highlight">November 19, 2026</span>
+        <span class="badge">Retail Insider Case Study</span>
+        <span class="badge">Student: YH</span>
+        <span class="badge">Coach: Lewis</span>
+      </div>
+      <h1>Cross-Border Food Retail Expansion &amp; Executive Pitching</h1>
+      <p>Bridging yesterday's <em>Financial Times</em> networking session with a real-world <strong>Retail Insider</strong> case study on Japanese food innovation scaling abroad—applied directly to your December Director launch in Singapore.</p>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showTab('warmup', this)">1. Live Quote Upgrades</button>
+      <button class="nav-tab" onclick="showTab('casestudy', this)">2. Retail Insider Case Study</button>
+      <button class="nav-tab" onclick="showTab('vocab', this)">3. Executive Lexicon (12)</button>
+      <button class="nav-tab" onclick="showTab('roleplay', this)">4. Singapore Boardroom &amp; Investor Lab</button>
+      <button class="nav-tab" onclick="showTab('active', this)">5. Active Quiz &amp; Speaking Drill</button>
+      <button class="nav-tab" onclick="showTab('bonus', this)">6. Fast-Finisher Bonus</button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- TAB 1: LIVE QUOTE UPGRADES -->
+    <section id="warmup" class="panel active">
+      <div class="card" style="border-left: 4px solid #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%);">
+        <div class="card-header">
+          <div>
+            <h2>Icebreaker Game: "Viral or Flop?" Pitch Roulette</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;"><strong>20-Second Founder vs. 10-Second Shark:</strong> Spin a wild food-retail idea. One of you must pitch it seriously for 20s; the other plays a brutal Singapore Shark Investor (Fund or Kill!).</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="spinIcebreaker()">🎲 Spin Concept</button>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--amber-border); border-radius: 10px; padding: 18px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+            <span class="pill amber" id="iceTag">Concept 1 of 4</span>
+            <span class="pill" id="iceRole">YH = Hype Founder · Lewis = Brutal Shark</span>
+          </div>
+          <div style="font-size: 1.12rem; font-weight: 800; color: var(--navy); margin-bottom: 6px;" id="iceTitle"></div>
+          <p style="font-size: 0.94rem; color: var(--text-muted); margin-bottom: 12px;" id="iceDesc"></p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <button class="btn btn-sm" onclick="flipIceRole()">🔄 Swap Roles (Founder &harr; Shark)</button>
+            <button class="btn btn-sm" onclick="voteIce('FUNDED 💰')" style="border-color:#16a34a; color:#166534;">💰 Shark: FUND IT</button>
+            <button class="btn btn-sm" onclick="voteIce('KILLED 💀')" style="border-color:#dc2626; color:#991b1b;">💀 Shark: KILL IT</button>
+            <span id="iceVerdict" style="font-weight:800; font-size:0.9rem; align-self:center; margin-left:6px;"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Warm-Up: 5-Item Live Upgrade Drill</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">From your real transcript on <strong>November 18, 2026</strong>. Upgrade each sentence aloud first, then reveal the executive polish.</p>
+          </div>
+          <span class="pill">05–13 min</span>
+        </div>
+
+        <div class="upgrade-item">
+          <div class="upgrade-top">
+            <strong>1. Finalizing Your December Contract</strong>
+            <button class="btn btn-sm" onclick="togglePolish(this)">Reveal Polish</button>
+          </div>
+          <div class="raw-quote">"Basically, I agree about the condition, but we still have some condition meeting this Friday."</div>
+          <div class="polish-box">
+            <div class="polish-text">"We've aligned on the core terms, and we're finalizing the remaining details this Friday."</div>
+            <div class="polish-note"><strong>Why:</strong> In executive negotiations, use <em>terms</em> (not <em>condition</em>) and <em>aligned on</em> for confident momentum.</div>
+          </div>
+        </div>
+
+        <div class="upgrade-item">
+          <div class="upgrade-top">
+            <strong>2. Macroeconomic Commentary (Weak Yen)</strong>
+            <button class="btn btn-sm" onclick="togglePolish(this)">Reveal Polish</button>
+          </div>
+          <div class="raw-quote">"This kind of situation is very headache in the long run."</div>
+          <div class="polish-box">
+            <div class="polish-text">"In the long run, a weak yen is a real headache for domestic consumption."</div>
+            <div class="polish-note"><strong>Why:</strong> <em>Headache</em> is a countable noun (<em>a real headache</em>), never an adjective after <em>very</em>.</div>
+          </div>
+        </div>
+
+        <div class="upgrade-item">
+          <div class="upgrade-top">
+            <strong>3. Describing Past Leadership</strong>
+            <button class="btn btn-sm" onclick="togglePolish(this)">Reveal Polish</button>
+          </div>
+          <div class="raw-quote">"I'm taking charge of creating new brands for the company."</div>
+          <div class="polish-box">
+            <div class="polish-text">"I spearheaded new brand development for the company."</div>
+            <div class="polish-note"><strong>Why:</strong> High-agency verbs (<em>spearheaded / headed up</em>) immediately signal Director-level ownership.</div>
+          </div>
+        </div>
+
+        <div class="upgrade-item">
+          <div class="upgrade-top">
+            <strong>4. B2B Event Catering Strategy</strong>
+            <button class="btn btn-sm" onclick="togglePolish(this)">Reveal Polish</button>
+          </div>
+          <div class="raw-quote">"We can do some catering service to the company for the event."</div>
+          <div class="polish-box">
+            <div class="polish-text">"We can provide corporate catering at industry events to showcase our product."</div>
+            <div class="polish-note"><strong>Why:</strong> Clean B2B phrasing: <em>provide corporate catering</em> + clear commercial purpose (<em>to showcase</em>).</div>
+          </div>
+        </div>
+
+        <div class="upgrade-item">
+          <div class="upgrade-top">
+            <strong>5. Mental Reset &amp; Work-Life Balance</strong>
+            <button class="btn btn-sm" onclick="togglePolish(this)">Reveal Polish</button>
+          </div>
+          <div class="raw-quote">"When I indulge in sports like playing soccer, I can forget about work."</div>
+          <div class="polish-box">
+            <div class="polish-text">"When I throw myself into football or boxing, I can completely switch off from work."</div>
+            <div class="polish-note"><strong>Why:</strong> <em>Indulge in</em> is usually for food/luxury; <em>throw myself into</em> + <em>switch off</em> sounds natural and energized.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: RETAIL INSIDER CASE STUDY -->
+    <section id="casestudy" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="article-meta">Retail Insider Case Study · Food Retail &amp; Cross-Border Expansion</div>
+            <h2 class="article-title">From Convenience to Culinary Destination: How 7-Eleven Canada Turned a Japanese Staple into a Growth Engine</h2>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="readArticle()">🔊 Listen (UK)</button>
+        </div>
+
+        <div class="article-body" id="articleText">
+          <p>
+            Facing <span class="kw" onclick="jumpToVocab('fierce competition')">fierce competition</span> from discount grocers and third-party delivery apps, 7-Eleven Canada—operating roughly 550 stores across Ontario and British Columbia—is executing a bold <span class="kw" onclick="jumpToVocab('pivot')">pivot</span>. Under Vice President and General Manager Marc Goodman, the chain is shifting away from traditional convenience-store reliance toward a "restaurant-first" model anchored in fresh prepared food and <span class="kw" onclick="jumpToVocab('proprietary')">proprietary</span> beverages.
+          </p>
+          <p>
+            The breakout catalyst for this strategy came from Japan. In early 2026, 7-Eleven Canada imported an iconic Japanese convenience-store <span class="kw" onclick="jumpToVocab('staple')">staple</span>: the <em>tamago sando</em>, a Japanese-style egg salad sandwich made with soft <em>shokupan</em> milk bread, cage-free eggs, and Kewpie mayonnaise. The item went viral on social media and rapidly became the chain's <strong>#1 best-selling sandwich</strong>, proving that authentic international concepts can <span class="kw" onclick="jumpToVocab('command premium demand')">command premium demand</span> in overseas markets.
+          </p>
+          <p>
+            However, scaling fresh, perishable food requires far more than a viral recipe. To protect quality and <span class="kw" onclick="jumpToVocab('margin')">margins</span> during the <span class="kw" onclick="jumpToVocab('rollout')">rollout</span>, 7-Eleven Canada backed its stores with <strong>four dedicated <span class="kw" onclick="jumpToVocab('commissary')">commissaries</span></strong> to guarantee daily consistency. At the same time, the company began testing licensed sit-down dining formats—serving hot meals alongside chilled beer and wine—while expanding franchising to accelerate its regional <span class="kw" onclick="jumpToVocab('footprint')">footprint</span>.
+          </p>
+          <p>
+            Encouraged by the egg salad sandwich breakthrough, 7-Eleven Canada is now importing top-selling Korean snacks and partnering with local specialty producers. Rather than acting as a passive reseller, the retailer has turned its physical stores into an agile, cross-border culinary <span class="kw" onclick="jumpToVocab('test bed')">test bed</span>—a playbook with clear lessons for any food brand preparing to <span class="kw" onclick="jumpToVocab('scale')">scale</span> internationally.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Case Study Question Bank (10 Questions)</h3>
+          <span class="pill">Speak 45–60s Each</span>
+        </div>
+
+        <div class="q-group">
+          <div class="q-group-title">A. Comprehension &amp; Core Facts</div>
+          <ol class="q-list">
+            <li><strong>The 3-Sentence Brief:</strong> Summarize the case using <em>Problem &rarr; Japanese Catalyst &rarr; Operational Enabler</em>.</li>
+            <li>Why did 7-Eleven Canada decide to shift away from traditional convenience-store items toward a "restaurant-first" model?</li>
+            <li>What three specific ingredients made the <em>tamago sando</em> stand out from a standard North American egg salad sandwich?</li>
+          </ol>
+        </div>
+
+        <div class="q-group">
+          <div class="q-group-title">B. Operations, Supply Chain &amp; Margins</div>
+          <ol class="q-list" start="4">
+            <li>Why were <strong>four dedicated commissaries</strong> necessary before scaling fresh food across 550 stores? What breaks if you skip this step?</li>
+            <li>7-Eleven Canada is testing <strong>licensed sit-down dining</strong> (hot meals + beer/wine) and expanding <strong>franchising</strong>. What is the commercial upside—and the biggest operational risk—of each?</li>
+            <li>How does offering <em>proprietary</em> food protect margins compared to selling third-party packaged snacks?</li>
+          </ol>
+        </div>
+
+        <div class="q-group">
+          <div class="q-group-title">C. Strategic Transfer to Singapore (Your December Launch)</div>
+          <ol class="q-list" start="7">
+            <li>In Canada, Japanese <em>shokupan</em> and Kewpie mayo felt novel and viral. In Singapore, Japanese food is already familiar. How do you make your home-cooking brand <strong>command premium demand</strong> there?</li>
+            <li>7-Eleven Canada used its stores as a <strong>cross-border test bed</strong> (Japan &rarr; Korea &rarr; local). What is your Phase 1 <em>test bed</em> in Singapore before scaling across ASEAN?</li>
+            <li>If a Singaporean customer tries your meal-prep once, what turns it into a daily <strong>staple</strong> rather than a one-time curiosity?</li>
+            <li>Thinking back to yesterday's <em>Financial Times</em> article: how could you use <strong>corporate catering</strong> or community tastings to generate warm referrals without sounding "sleazy"?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: EXECUTIVE LEXICON -->
+    <section id="vocab" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Executive Retail &amp; Expansion Lexicon</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Click 🔊 to hear UK pronunciation. Aim to use at least <strong>5 of these terms</strong> in your Singapore role-play.</p>
+          </div>
+          <span class="pill green">12 B2–C2 Terms</span>
+        </div>
+        <div class="vocab-grid" id="vocabGrid"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: BOARDROOM & INVESTOR LAB -->
+    <section id="roleplay" class="panel">
+      <div class="timer-bar">
+        <div>
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">Role-Play Sprint Timer</div>
+          <div class="timer-display" id="timerDisplay">01:00</div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-sm" onclick="setTimer(60)">1 min</button>
+          <button class="btn btn-sm" onclick="setTimer(90)">90 sec</button>
+          <button class="btn btn-primary btn-sm" onclick="toggleTimer()" id="timerBtn">Start</button>
+          <button class="btn btn-sm" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+
+      <div class="rp-grid">
+        <div class="rp-card">
+          <span class="pill amber">Round 1 · 8 min</span>
+          <h3 style="margin-top: 10px;">Skeptical Japanese HQ Executive</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Defend your December Singapore launch for the Japanese home-cooking / meal-prep brand.</p>
+          <div class="prompt-box">
+            "Singapore already has 24,000+ food outlets and brutal delivery-app fees. Why won't our fresh meal-prep concept get crushed on margins?"
+          </div>
+          <ul class="checklist">
+            <li>Position Singapore as a high-income ASEAN <strong>test bed</strong>.</li>
+            <li>Explain <strong>commissary / central-kitchen</strong> quality &amp; cost control.</li>
+            <li>Highlight dual revenue: B2C home delivery + <strong>B2B corporate catering</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="rp-card investor">
+          <span class="pill">Round 2 · 9 min</span>
+          <h3 style="margin-top: 10px;">Singapore Angel Investor Coffee Chat</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Combine yesterday's FT article (<em>trust-first, non-sleazy networking</em>) with today's case study.</p>
+          <div class="prompt-box">
+            Deliver a <strong>60-second founder narrative</strong> on why Japanese home-style meal prep can command premium demand in Singapore, then ask <strong>2 situational discovery questions</strong>.
+          </div>
+          <ul class="checklist">
+            <li><em>"Have you ever run into a situation where...?"</em></li>
+            <li><em>"What's been the biggest bottleneck in...?"</em></li>
+            <li>Close by offering value first (e.g., tasting / sample box), not asking for a cheque on day one.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: ACTIVE QUIZ & SPEAKING DRILL -->
+    <section id="active" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Active Recall Quiz: Case &amp; Executive Vocabulary</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Test comprehension and precision phrasing. Answer aloud <em>before</em> clicking an option.</p>
+          </div>
+          <span class="pill green" id="quizScore">Score: 0 / 8</span>
+        </div>
+
+        <div id="quizContainer">
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-dim); margin-bottom: 6px;" id="quizProgress">Question 1 of 8</div>
+          <h3 id="quizQuestion" style="margin-bottom: 14px; font-size: 1.08rem;"></h3>
+          <div id="quizOptions"></div>
+          <div id="quizFeedback" class="quiz-feedback"></div>
+          <div style="margin-top: 14px; display: flex; gap: 8px;">
+            <button class="btn btn-primary btn-sm" id="nextQuizBtn" onclick="nextQuiz()" style="display:none;">Next Question &rarr;</button>
+            <button class="btn btn-sm" onclick="resetQuiz()">Restart Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Active Speaking Card: 45-Second Hot Seat</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Draw a prompt and answer in 45 seconds using <strong>both</strong> required target words.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="nextSpeakingCard()">Draw Next Card &rarr;</button>
+        </div>
+
+        <div class="prompt-deck">
+          <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 6px;" id="deckTag">Card 1 of 5</div>
+          <div style="font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;" id="deckPrompt"></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">Must use:</span>
+            <span class="pill amber" id="deckWord1"></span>
+            <span class="pill amber" id="deckWord2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: FAST-FINISHER BONUS -->
+    <section id="bonus" class="panel">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Bonus A: 45-Second Contrarian Debates</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">If yH finishes early, pick a statement below—Lewis plays devil's advocate.</p>
+          </div>
+          <span class="pill amber">Fast-Finisher</span>
+        </div>
+        <div class="rp-grid">
+          <div class="upgrade-item" style="margin-bottom:0;">
+            <strong>1. The Discount Trap</strong>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 6px;">"Discounting in Singapore destroys premium Japanese food brands—you should <em>never</em> run a promo."</p>
+            <span class="pill" style="margin-top: 10px;">Agree or Disagree?</span>
+          </div>
+          <div class="upgrade-item" style="margin-bottom:0;">
+            <strong>2. The Franchise Dilemma</strong>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 6px;">"Franchising is the fastest way to expand your footprint—and the fastest way to ruin food quality."</p>
+            <span class="pill" style="margin-top: 10px;">Agree or Disagree?</span>
+          </div>
+          <div class="upgrade-item" style="margin-bottom:0;">
+            <strong>3. Attention vs. Real Estate</strong>
+            <p style="font-size: 0.92rem; color: var(--text-muted); margin-top: 6px;">"In 2026, a viral TikTok/Instagram engine is worth more than a prime physical retail location."</p>
+            <span class="pill" style="margin-top: 10px;">Agree or Disagree?</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="border-top: 4px solid #dc2626;">
+        <div class="card-header">
+          <div>
+            <h2>Bonus B: Live Crisis Simulation — "Launch-Week Supply Shock"</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">High-pressure executive communication drill (60 seconds).</p>
+          </div>
+          <span class="pill" style="background: var(--t1-bg); color: var(--t1-text); border-color: var(--t1-border);">Crisis Mode</span>
+        </div>
+        <div class="prompt-box" style="background: var(--t1-bg); border-color: var(--t1-border); color: var(--t1-text);">
+          <strong>6:30 AM, Launch Week in Singapore:</strong> Your imported Japanese bread/ingredient shipment is stuck at customs. You have <strong>200 corporate catering boxes</strong> due at 11:30 AM for a major fintech client.
+        </div>
+        <ul class="checklist">
+          <li><strong>Call 1 (30 sec) — Operations Manager:</strong> Give clear, calm triage instructions (backup local sourcing, menu swap, or staggered delivery).</li>
+          <li><strong>Call 2 (30 sec) — Corporate Client:</strong> Protect trust, own the solution proactively, and offer a value-add without sounding panicked.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const vocabData = [
+      { word: "pivot", ipa: "/ˈpɪv.ət/", jp: "戦略的転換・方向転換", def: "A fundamental shift in business strategy to capture new growth.", ex: "The retailer made a strategic pivot toward fresh prepared food." },
+      { word: "fierce competition", ipa: "/fɪəs ˌkɒm.pəˈtɪʃ.ən/", jp: "熾烈な競争", def: "Intense rivalry among businesses fighting for the same customers.", ex: "F&B operators in Singapore face fierce competition from delivery apps." },
+      { word: "proprietary", ipa: "/prəˈpraɪ.ə.tər.i/", jp: "独自の・自社開発の", def: "Owned and developed exclusively by a company, differentiating it from rivals.", ex: "Our proprietary recipes protect our brand from price wars." },
+      { word: "staple", ipa: "/ˈsteɪ.pəl/", jp: "定番商品・主力製品", def: "A core, consistently popular item that customers buy regularly.", ex: "Tamago sando is a daily staple in Japanese convenience stores." },
+      { word: "command premium demand", ipa: "/kəˈmɑːnd ˈpriː.mi.əm dɪˈmɑːnd/", jp: "高い需要・プレミアム価格を引き出す", def: "To attract strong customer interest even at a higher price point.", ex: "Authentic Japanese ingredients can command premium demand overseas." },
+      { word: "commissary", ipa: "/ˈkɒm.ɪ.sər.i/", jp: "セントラルキッチン・集中調理施設", def: "A central kitchen that prepares food for distribution to multiple stores.", ex: "Four dedicated commissaries keep our daily food quality consistent." },
+      { word: "rollout", ipa: "/ˈrəʊl.aʊt/", jp: "段階的な展開・導入", def: "The official launch and phased expansion of a product or service.", ex: "We are planning a phased rollout across central Singapore first." },
+      { word: "footprint", ipa: "/ˈfʊt.prɪnt/", jp: "店舗網・事業拠点", def: "The geographic reach or physical presence of a business.", ex: "Franchising helped accelerate their regional footprint." },
+      { word: "test bed", ipa: "/ˈtest bed/", jp: "実験場・テスト市場", def: "A controlled market used to validate a new concept before wider scaling.", ex: "Singapore serves as an ideal ASEAN test bed for Japanese brands." },
+      { word: "scale", ipa: "/skeɪl/", jp: "拡大する・スケールさせる", def: "To grow operations and revenue efficiently without losing quality.", ex: "You need strong unit economics before you scale regionally." },
+      { word: "margin", ipa: "/ˈmɑː.dʒɪn/", jp: "利益率・マージン", def: "The percentage of revenue left after subtracting costs.", ex: "Corporate catering orders deliver much healthier margins." },
+      { word: "localize", ipa: "/ˈləʊ.kə.laɪz/", jp: "現地化する・ローカライズする", def: "To adapt a product or brand to fit a specific local market's tastes.", ex: "We localize packaging while keeping the core Japanese flavor authentic." }
+    ];
+
+    function renderVocab() {
+      const grid = document.getElementById('vocabGrid');
+      grid.innerHTML = vocabData.map(v => `
+        <div class="vocab-card" id="vocab-${v.word.replace(/\s+/g, '-')}">
+          <div class="vocab-head">
+            <span class="vocab-word">${v.word}</span>
+            <button class="btn btn-sm" onclick="speak('${v.word}')">🔊</button>
+          </div>
+          <div class="vocab-ipa">${v.ipa}</div>
+          <div class="vocab-jp">${v.jp}</div>
+          <div class="vocab-def">${v.def}</div>
+          <div class="vocab-ex">"${v.ex}"</div>
+        </div>
+      `).join('');
+    }
+
+    function showTab(id, btn) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    function jumpToVocab(word) {
+      const tabBtn = document.querySelectorAll('.nav-tab')[2];
+      showTab('vocab', tabBtn);
+      const el = document.getElementById('vocab-' + word.replace(/\s+/g, '-'));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.style.borderColor = '#2563eb';
+        el.style.boxShadow = '0 0 0 3px rgba(37,99,235,0.2)';
+        setTimeout(() => { el.style.boxShadow = ''; }, 1800);
+      }
+    }
+
+    function togglePolish(btn) {
+      const box = btn.closest('.upgrade-item').querySelector('.polish-box');
+      box.classList.toggle('open');
+      btn.textContent = box.classList.contains('open') ? 'Hide Polish' : 'Reveal Polish';
+    }
+
+    function speak(text) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = 0.95;
+      window.speechSynthesis.speak(u);
+    }
+
+    function readArticle() {
+      const text = document.getElementById('articleText').innerText;
+      speak(text);
+    }
+
+    // Timer
+    let seconds = 60;
+    let interval = null;
+    function updateTimerUI() {
+      const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      document.getElementById('timerDisplay').textContent = `${m}:${s}`;
+    }
+    function setTimer(sec) {
+      clearInterval(interval);
+      interval = null;
+      seconds = sec;
+      document.getElementById('timerBtn').textContent = 'Start';
+      updateTimerUI();
+    }
+    function toggleTimer() {
+      const btn = document.getElementById('timerBtn');
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+        btn.textContent = 'Resume';
+      } else {
+        btn.textContent = 'Pause';
+        interval = setInterval(() => {
+          if (seconds > 0) {
+            seconds--;
+            updateTimerUI();
+          } else {
+            clearInterval(interval);
+            interval = null;
+            btn.textContent = 'Done';
+          }
+        }, 1000);
+      }
+    }
+    function resetTimer() { setTimer(60); }
+
+    // Active Quiz Data
+    const quizData = [
+      {
+        q: "1. What external pressure pushed 7-Eleven Canada toward a 'restaurant-first' pivot?",
+        opts: [
+          "Rising competition from discount grocers and third-party delivery apps",
+          "A government ban on convenience store snack sales",
+          "Falling tourist numbers in Ontario and British Columbia"
+        ],
+        ans: 0,
+        exp: "Correct! Discount grocers and delivery apps squeezed traditional convenience margins, forcing a strategic pivot."
+      },
+      {
+        q: "2. Which executive phrase best describes a central kitchen that supplies multiple retail locations?",
+        opts: ["A test bed", "A commissary", "A footprint"],
+        ans: 1,
+        exp: "Spot on. 7-Eleven Canada relies on four dedicated commissaries to maintain daily fresh-food consistency."
+      },
+      {
+        q: "3. If a product is 'proprietary', what does that mean for the business?",
+        opts: [
+          "It is imported cheaply from a third-party wholesaler",
+          "It is exclusively developed and owned by the company, protecting margins",
+          "It is only sold during seasonal holidays"
+        ],
+        ans: 1,
+        exp: "Yes! Proprietary recipes and beverages differentiate the brand and prevent pure price wars."
+      },
+      {
+        q: "4. Why did 7-Eleven Canada's tamago sando 'command premium demand'?",
+        opts: [
+          "It was discounted by 50% at launch",
+          "Authentic ingredients (shokupan, cage-free eggs, Kewpie mayo) created viral appeal and #1 sales",
+          "It was only sold to corporate catering clients"
+        ],
+        ans: 1,
+        exp: "Exactly. Authenticity and quality allowed it to become their #1 best-selling sandwich."
+      },
+      {
+        q: "5. Choose the most natural executive collocation: 'We are planning a phased ______ across central Singapore in Q1.'",
+        opts: ["rollout", "staple", "headache"],
+        ans: 0,
+        exp: "Correct! 'A phased rollout' is the standard executive term for a staged market launch."
+      },
+      {
+        q: "6. What does 'using Singapore as an ASEAN test bed' mean?",
+        opts: [
+          "Closing all Japanese stores to focus only on Singapore",
+          "Using Singapore as a controlled market to validate the model before regional scaling",
+          "Outsourcing all cooking to Singaporean restaurants"
+        ],
+        ans: 1,
+        exp: "Right! A test bed lets you prove unit economics and customer fit before scaling wider."
+      },
+      {
+        q: "7. Which upgrade fixes this quote from 11-18-2026? 'I'm taking charge of creating new brands.'",
+        opts: [
+          "'I spearheaded new brand development for the company.'",
+          "'I did a very headache brand creation.'",
+          "'I indulged in creating new brands.'"
+        ],
+        ans: 0,
+        exp: "Yes! 'Spearheaded' (or 'headed up') immediately conveys Director-level ownership."
+      },
+      {
+        q: "8. Before you 'scale' a fresh food business regionally, what must be proven first?",
+        opts: [
+          "Healthy unit economics and consistent supply-chain quality",
+          "That every employee speaks three languages",
+          "That you never localize any packaging"
+        ],
+        ans: 0,
+        exp: "Exactly—scaling a broken margin or an inconsistent commissary only multiplies losses."
+      }
+    ];
+
+    let qIdx = 0, qScore = 0, qAnswered = false;
+    function renderQuiz() {
+      const item = quizData[qIdx];
+      qAnswered = false;
+      document.getElementById('quizProgress').textContent = `Question ${qIdx + 1} of ${quizData.length}`;
+      document.getElementById('quizQuestion').textContent = item.q;
+      document.getElementById('quizScore').textContent = `Score: ${qScore} / ${quizData.length}`;
+      document.getElementById('quizFeedback').className = 'quiz-feedback';
+      document.getElementById('quizFeedback').textContent = '';
+      document.getElementById('nextQuizBtn').style.display = 'none';
+      document.getElementById('quizOptions').innerHTML = item.opts.map((o, i) =>
+        `<button class="quiz-option" onclick="pickQuiz(${i}, this)">${o}</button>`
+      ).join('');
+    }
+
+    function pickQuiz(i, btn) {
+      if (qAnswered) return;
+      qAnswered = true;
+      const item = quizData[qIdx];
+      const btns = document.querySelectorAll('.quiz-option');
+      btns.forEach(b => b.disabled = true);
+      const fb = document.getElementById('quizFeedback');
+      if (i === item.ans) {
+        btn.classList.add('correct');
+        qScore++;
+        fb.className = 'quiz-feedback show ok';
+      } else {
+        btn.classList.add('wrong');
+        btns[item.ans].classList.add('correct');
+        fb.className = 'quiz-feedback show err';
+      }
+      fb.textContent = item.exp;
+      document.getElementById('quizScore').textContent = `Score: ${qScore} / ${quizData.length}`;
+      if (qIdx < quizData.length - 1) {
+        document.getElementById('nextQuizBtn').style.display = 'inline-flex';
+      } else {
+        fb.textContent += ` — Finished! Final score: ${qScore}/${quizData.length}.`;
+      }
+    }
+
+    function nextQuiz() {
+      if (qIdx < quizData.length - 1) { qIdx++; renderQuiz(); }
+    }
+    function resetQuiz() {
+      qIdx = 0; qScore = 0; renderQuiz();
+    }
+
+    // Active Speaking Deck
+    const speakingCards = [
+      { prompt: "Explain to your Japanese HQ why Singapore is the right first market for your brand.", w1: "test bed", w2: "rollout" },
+      { prompt: "Defend your pricing against cheaper local delivery-app competitors.", w1: "proprietary", w2: "command premium demand" },
+      { prompt: "Describe how you will keep daily meal-prep quality consistent as orders grow.", w1: "commissary", w2: "scale" },
+      { prompt: "Explain how your product will shift from a novelty item to a weekly habit.", w1: "staple", w2: "localize" },
+      { prompt: "Pitch why B2B corporate catering improves the overall business model.", w1: "margin", w2: "footprint" }
+    ];
+    let cardIdx = 0;
+    function renderSpeakingCard() {
+      const c = speakingCards[cardIdx];
+      document.getElementById('deckTag').textContent = `Card ${cardIdx + 1} of ${speakingCards.length}`;
+      document.getElementById('deckPrompt').textContent = c.prompt;
+      document.getElementById('deckWord1').textContent = c.w1;
+      document.getElementById('deckWord2').textContent = c.w2;
+    }
+    function nextSpeakingCard() {
+      cardIdx = (cardIdx + 1) % speakingCards.length;
+      renderSpeakingCard();
+    }
+
+    // Icebreaker Roulette
+    const iceConcepts = [
+      {
+        title: "1. The 'Zero-Chat' 90-Second Ramen Vending Bar",
+        desc: "No staff, no chairs, no small talk. Office workers in Raffles Place tap a screen and get piping-hot Japanese ramen in 90 seconds."
+      },
+      {
+        title: "2. The SG$24 Luxury Tamago Sando Desk Subscription",
+        desc: "Every Tuesday at 9:30 AM, a white-gloved courier drops a single Japanese egg sandwich + handwritten chef note on a corporate executive's desk."
+      },
+      {
+        title: "3. Yamazaki Whisky & Late-Night Oden Convenience Lounge",
+        desc: "By day, a normal Japanese grab-and-go shop in Tanjong Pagar. After 8 PM, the back shelves slide open into a standing Yamazaki & oden bar."
+      },
+      {
+        title: "4. The 'Ugly Bento' Mystery Box App",
+        desc: "At 8:30 PM, unsold Japanese home-cooked meals go 50% off—but customers don't know what's inside the box until they open it."
+      }
+    ];
+    let iceIdx = 0;
+    let iceSwapped = false;
+    function renderIcebreaker() {
+      const c = iceConcepts[iceIdx];
+      document.getElementById('iceTag').textContent = `Concept ${iceIdx + 1} of ${iceConcepts.length}`;
+      document.getElementById('iceTitle').textContent = c.title;
+      document.getElementById('iceDesc').textContent = c.desc;
+      document.getElementById('iceVerdict').textContent = '';
+    }
+    function spinIcebreaker() {
+      iceIdx = (iceIdx + 1) % iceConcepts.length;
+      renderIcebreaker();
+    }
+    function flipIceRole() {
+      iceSwapped = !iceSwapped;
+      document.getElementById('iceRole').textContent = iceSwapped
+        ? 'Lewis = Hype Founder · YH = Brutal Shark'
+        : 'YH = Hype Founder · Lewis = Brutal Shark';
+    }
+    function voteIce(verdict) {
+      document.getElementById('iceVerdict').textContent = `Verdict: ${verdict}`;
+    }
+
+    renderVocab();
+    renderQuiz();
+    renderSpeakingCard();
+    renderIcebreaker();
+  </script>
+</body>
+</html>
